@@ -1,0 +1,276 @@
+#include "MenuLayer.h"
+#include "cocostudio/CocoStudio.h"
+#include "ui/CocosGUI.h"
+
+#include "TitleScene.h"
+#include "MypageScene.h"
+#include "QuestScene.h"
+#include "EvolutionScene.h"
+#include "OtherScene.h"
+
+USING_NS_CC;
+
+using namespace cocostudio::timeline;
+
+// on "init" you need to initialize your instance
+bool MenuLayer::init()
+{
+    //////////////////////////////
+    // 1. super init first
+    if (!Layer::init()){
+        return false;
+    }
+    
+    auto rootNode = CSLoader::createNode("res/mypage/Menu.csb");
+    if(rootNode == nullptr){
+        return false;
+    }
+    this->addChild(rootNode);
+    
+    uiButtonPushLoadMypageScene(rootNode);
+    uiButtonPushLoadQuestScene(rootNode);
+    uiButtonPushLoadPartyScene(rootNode);
+    uiButtonPushLoadMixScene(rootNode);
+    uiButtonPushLoadShinkaScene(rootNode);
+    uiButtonPushLoadOtherScene(rootNode);
+    
+    /*
+    uiButtonPushLoadScene(rootNode, ui_mypage_btn, "ui_mypage_btn");
+    uiButtonPushLoadScene(rootNode, ui_quest_btn,  "ui_quest_btn" );
+    uiButtonPushLoadScene(rootNode, ui_party_btn,  "ui_party_btn" );
+    uiButtonPushLoadScene(rootNode, ui_mix_btn,    "ui_mix_btn"   );
+    uiButtonPushLoadScene(rootNode, ui_shinka_btn, "ui_shinka_btn");
+    uiButtonPushLoadScene(rootNode, ui_etc_btn,    "ui_etc_btn"   );
+    */
+     
+    this->scheduleUpdate();
+    return true;
+}
+
+bool MenuLayer::uiButtonPushLoadScene(Node* node, Menu menu, const std::string& name)
+{
+    if(node == nullptr){
+        return false;
+    }
+    // ボタンノードを取得
+    auto btn = node->getChildByName<ui::Button*>(name);
+    if(btn == nullptr){
+        return false;
+    }
+    // タッチイベント追加
+    btn->addTouchEventListener([this, menu](Ref* sender, ui::Widget::TouchEventType type) {
+        // 何度も押されないように一度押されたらアクションを無効にする
+        this->getEventDispatcher()->removeAllEventListeners();
+        auto scene = loadScene(menu);
+        if(scene == nullptr){
+            return false;
+        }
+        // ゲームを始めるアクション
+        auto startLoadScene = CallFunc::create([&scene]{
+            auto transition = TransitionPageTurn::create(0.5f, scene, true);
+            Director::getInstance()->replaceScene(transition);
+        });
+        if(startLoadScene == nullptr){
+            return false;
+        }
+        this->runAction(Sequence::create(startLoadScene, NULL));
+        return true;    // イベントを実行する
+    });
+    return false;
+}
+
+cocos2d::Scene* MenuLayer::loadScene(Menu menu)
+{
+    if( menu == ui_mypage_btn ){ return MypageScene::createScene(); }
+    if( menu == ui_quest_btn  ){ return QuestScene::createScene();  }
+    if( menu == ui_party_btn  ){ return MypageScene::createScene(); }
+    if( menu == ui_mix_btn    ){ return MypageScene::createScene(); }
+    if( menu == ui_shinka_btn ){ return EvolutionScene::createScene(); }
+    if( menu == ui_etc_btn    ){ return OtherScene::createScene(); }
+    
+    return nullptr;
+}
+
+bool MenuLayer::uiButtonPushLoadMypageScene(Node* node)
+{
+    if(node == nullptr){
+        return false;
+    }
+    // ボタンノードを取得
+    auto btn = node->getChildByName<ui::Button*>("ui_mypage_btn");
+    if(btn == nullptr){
+        return false;
+    }
+    // タッチイベント追加
+    btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        // 何度も押されないように一度押されたらアクションを無効にする
+        this->getEventDispatcher()->removeAllEventListeners();
+        // ゲームを始めるアクション
+        auto startLoadScene = CallFunc::create([]{
+            auto scene = MypageScene::createScene();
+            auto transition = TransitionPageTurn::create(0.5f, scene, true);
+            Director::getInstance()->replaceScene(transition);
+        });
+        if(startLoadScene == nullptr){
+            return false;
+        }
+        this->runAction(Sequence::create(startLoadScene, NULL));
+        return true;    // イベントを実行する
+    });
+    return false;
+}
+
+//-----
+
+bool MenuLayer::uiButtonPushLoadQuestScene(Node* node)
+{
+    if(node == nullptr){
+        return false;
+    }
+    // ボタンノードを取得
+    auto btn = node->getChildByName<ui::Button*>("ui_quest_btn");
+    if(btn == nullptr){
+        return false;
+    }
+    // タッチイベント追加
+    btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        // 何度も押されないように一度押されたらアクションを無効にする
+        this->getEventDispatcher()->removeAllEventListeners();
+        // ゲームを始めるアクション
+        auto startLoadScene = CallFunc::create([]{
+            auto scene = QuestScene::createScene();
+            auto transition = TransitionPageTurn::create(0.5f, scene, true);
+            Director::getInstance()->replaceScene(transition);
+        });
+        if(startLoadScene == nullptr){
+            return false;
+        }
+        this->runAction(Sequence::create(startLoadScene, NULL));
+        return true;    // イベントを実行する
+    });
+    return false;
+}
+
+//-----
+
+bool MenuLayer::uiButtonPushLoadPartyScene(Node* node)
+{
+    if(node == nullptr){
+        return false;
+    }
+    // ボタンノードを取得
+    auto btn = node->getChildByName<ui::Button*>("ui_party_btn");
+    if(btn == nullptr){
+        return false;
+    }
+    // タッチイベント追加
+    btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        // 何度も押されないように一度押されたらアクションを無効にする
+        this->getEventDispatcher()->removeAllEventListeners();
+        // ゲームを始めるアクション
+        auto startLoadScene = CallFunc::create([]{
+            auto scene = OtherScene::createScene();
+            auto transition = TransitionPageTurn::create(0.5f, scene, true);
+            Director::getInstance()->replaceScene(transition);
+        });
+        if(startLoadScene == nullptr){
+            return false;
+        }
+        this->runAction(Sequence::create(startLoadScene, NULL));
+        return true;    // イベントを実行する
+    });
+    return false;
+}
+
+//-----
+
+bool MenuLayer::uiButtonPushLoadMixScene(Node* node)
+{
+    if(node == nullptr){
+        return false;
+    }
+    // ボタンノードを取得
+    auto btn = node->getChildByName<ui::Button*>("ui_mix_btn");
+    if(btn == nullptr){
+        return false;
+    }
+    // タッチイベント追加
+    btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        // 何度も押されないように一度押されたらアクションを無効にする
+        this->getEventDispatcher()->removeAllEventListeners();
+        // ゲームを始めるアクション
+        auto startLoadScene = CallFunc::create([]{
+            auto scene = EvolutionScene::createScene();
+            auto transition = TransitionPageTurn::create(0.5f, scene, true);
+            Director::getInstance()->replaceScene(transition);
+        });
+        if(startLoadScene == nullptr){
+            return false;
+        }
+        this->runAction(Sequence::create(startLoadScene, NULL));
+        return true;    // イベントを実行する
+    });
+    return false;
+}
+
+//-----
+
+bool MenuLayer::uiButtonPushLoadShinkaScene(Node* node)
+{
+    if(node == nullptr){
+        return false;
+    }
+    // ボタンノードを取得
+    auto btn = node->getChildByName<ui::Button*>("ui_shinka_btn");
+    if(btn == nullptr){
+        return false;
+    }
+    // タッチイベント追加
+    btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        // 何度も押されないように一度押されたらアクションを無効にする
+        this->getEventDispatcher()->removeAllEventListeners();
+        // ゲームを始めるアクション
+        auto startLoadScene = CallFunc::create([]{
+            auto scene = EvolutionScene::createScene();
+            auto transition = TransitionPageTurn::create(0.5f, scene, true);
+            Director::getInstance()->replaceScene(transition);
+        });
+        if(startLoadScene == nullptr){
+            return false;
+        }
+        this->runAction(Sequence::create(startLoadScene, NULL));
+        return true;    // イベントを実行する
+    });
+    return false;
+}
+
+//-----
+
+bool MenuLayer::uiButtonPushLoadOtherScene(Node* node)
+{
+    if(node == nullptr){
+        return false;
+    }
+    // ボタンノードを取得
+    auto btn = node->getChildByName<ui::Button*>("ui_etc_btn");
+    if(btn == nullptr){
+        return false;
+    }
+    // タッチイベント追加
+    btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        // 何度も押されないように一度押されたらアクションを無効にする
+        this->getEventDispatcher()->removeAllEventListeners();
+        // ゲームを始めるアクション
+        auto startLoadScene = CallFunc::create([]{
+            auto scene = OtherScene::createScene();
+            auto transition = TransitionPageTurn::create(0.5f, scene, true);
+            Director::getInstance()->replaceScene(transition);
+        });
+        if(startLoadScene == nullptr){
+            return false;
+        }
+        this->runAction(Sequence::create(startLoadScene, NULL));
+        return true;    // イベントを実行する
+    });
+    return false;
+}

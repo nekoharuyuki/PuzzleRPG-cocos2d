@@ -1,0 +1,46 @@
+<UserData Version="3.10.0.0">
+  <Properties>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="res/battle/BattleScene.csd" />
+          <FilePathData Path="res/battle/PlayerBattleAnim.csd" />
+          <FilePathData Path="res/battle/fightng.csd" />
+          <FilePathData Path="res/charselect/CharselectScene.csd" />
+          <FilePathData Path="res/charselect/CharIconNode.csd" />
+          <FilePathData Path="res/result/ResultScene.csd" />
+          <FilePathData Path="res/quest/QuestScene.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="res/battle/BattleScene.csd" />
+      </Value>
+    </Item>
+    <Item Key="CocosRecentOperation">
+      <Value ctype="CocosRecentOperation">
+        <LastPublishType Value="Resource" />
+        <IsLastPublish Value="True" />
+        <LastRunType Value="Mac" />
+      </Value>
+    </Item>
+    <Item Key="PackageParamsKey">
+      <Value ctype="PackageParams">
+        <LuaIsEncrypt Value="False" />
+        <LuaEncryptKey Value="" />
+        <LuaEncryptSign Value="" />
+        <Android_PackageName Value="org.cocos.PuzzleRPG" />
+        <AndroidkeyStore Value="" />
+        <AndroidVersion Value="android-24" />
+        <iOS_Target Value="PuzzleRPG-mobile" />
+        <iOS_BundleID Value="iPhone Developer: qqts7nbd@gmail.com (XJ4EUD22W3)" />
+        <Platform Value="None" />
+        <RunPlatform Value="Android" />
+        <FrameworkVersion Value="cocos2d-x-3.10" />
+        <IsDebugKeystore Value="True" />
+        <KeystorePassword Value="" />
+        <KeystoreAliasName Value="" />
+        <KeystoreAliasPassword Value="" />
+        <EnableSourceMap Value="False" />
+        <EnableHTML5Advanced Value="False" />
+      </Value>
+    </Item>
+  </Properties>
+</UserData>
