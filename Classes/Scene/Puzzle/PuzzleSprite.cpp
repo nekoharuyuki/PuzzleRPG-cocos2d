@@ -1,4 +1,5 @@
 #include "PuzzleSprite.h"
+#include "VisibleRect.h"
 
 USING_NS_CC;
 
@@ -31,8 +32,9 @@ PuzzleSprite* PuzzleSprite::create(PuzzleType type, bool visible)
 //初期化
 bool PuzzleSprite::init(PuzzleType type, bool visible)
 {
-    if (!Sprite::initWithFile(getPuzzleImageFilePath(type)))
+    if (!Sprite::initWithFile(getPuzzleImageFilePath(type))){
         return false;
+    }
     
     _ballType = type;
     
@@ -145,8 +147,15 @@ std::string PuzzleSprite::getPuzzleImageFilePath(PuzzleType type)
 //位置インデックスからPointを取得
 Point PuzzleSprite::getPositionForPositionIndex(PositionIndex positionIndex)
 {
-    return Point(BALL_SIZE * (positionIndex.x - 0.5) + 1,
-                 BALL_SIZE * (positionIndex.y - 0.5) + 1);
+    double x = BALL_SIZE * (positionIndex.x - 0.5) + 1;
+    double y = BALL_SIZE * (positionIndex.y - 0.5) + 1;
+    
+    Rect rect = VisibleRect::getVisibleRect();
+    
+    double offset_x = rect.size.width / 2 - BALL_SIZE * 3;
+    double offset_y = 12.f;
+    
+    return Point(x + offset_x, y + offset_y);
 }
 
 //位置インデックスからタグを取得

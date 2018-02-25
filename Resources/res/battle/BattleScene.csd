@@ -7089,7 +7089,7 @@
             <FileData Type="Normal" Path="asset/battlebg/battle_scene3/bg_bameunder.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battle_puzle" ActionTag="1114018643" Tag="1061" IconVisible="True" RightMargin="800.0000" TopMargin="600.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="battle_puzle" ActionTag="1114018643" Tag="10" IconVisible="True" RightMargin="800.0000" TopMargin="600.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position />
@@ -7918,7 +7918,7 @@
             <FileData Type="Normal" Path="asset/battle/gametitle_3.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="PartyHp_bar" ActionTag="2009044631" Tag="1650" IconVisible="False" LeftMargin="6.0000" RightMargin="8.0000" TopMargin="244.4993" BottomMargin="321.5007" ctype="SpriteObjectData">
+          <AbstractNodeData Name="PartyHp_bar" ActionTag="2009044631" Tag="1650" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="244.5000" BottomMargin="321.5000" ctype="SpriteObjectData">
             <Size X="786.0000" Y="34.0000" />
             <Children>
               <AbstractNodeData Name="hpbar_base" ActionTag="1240070865" Tag="1651" IconVisible="False" LeftMargin="3.0000" RightMargin="-17.0000" TopMargin="4.5000" BottomMargin="-0.5000" ctype="SpriteObjectData">
@@ -7955,10 +7955,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="399.0000" Y="338.5007" />
+            <Position X="400.0000" Y="338.5000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4988" Y="0.5642" />
+            <PrePosition X="0.5000" Y="0.5642" />
             <PreSize X="0.9825" Y="0.0567" />
             <FileData Type="Normal" Path="asset/battle/hpbar_base.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />

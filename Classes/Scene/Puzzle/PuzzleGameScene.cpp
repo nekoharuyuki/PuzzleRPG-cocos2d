@@ -97,9 +97,10 @@ PuzzleSprite* PuzzleGameScene::newPuzzles(PuzzleSprite::PositionIndex positionIn
     {
         puzzleType = m_distForPuzzle(m_engine);
         
-        if (!visible)
+        if (!visible){
             break;
-
+        }
+        
         //妥当性のチェック（ボールが隣り合わせにならないようにする）
         
         //左隣のボール
