@@ -1,4 +1,6 @@
 #include "PuzzleGameScene.h"
+#include "cocostudio/CocoStudio.h"
+#include "ui/CocosGUI.h"
 
 #define PUZZLE_NUM_X 6
 #define PUZZLE_NUM_Y 6
@@ -32,8 +34,11 @@ Scene* PuzzleGameScene::createScene()
 //初期化
 bool PuzzleGameScene::init()
 {
-    if (!Layer::init())
+    if (!Layer::init()){
         return false;
+    }
+    
+    initBackground(); //背景の初期化
     
     // シングルタップイベントの取得
     auto touchListener = EventListenerTouchOneByOne::create();
@@ -43,8 +48,7 @@ bool PuzzleGameScene::init()
     touchListener->onTouchEnded = CC_CALLBACK_2(PuzzleGameScene::onTouchEnded, this);
     touchListener->onTouchCancelled = CC_CALLBACK_2(PuzzleGameScene::onTouchCancelled, this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
-
-    initBackground(); //背景の初期化
+    
     initPuzzles(); //ボールの初期表示
     
     return true;
@@ -54,6 +58,10 @@ bool PuzzleGameScene::init()
 void PuzzleGameScene::initBackground()
 {
     //パズル部の背景
+    /*auto rootNode = CSLoader::createNode("title/TitleScene.csb");
+    if(rootNode){
+        addChild(rootNode, ZOrder::BgForPuzzle);
+    }*/
     FileUtils::getInstance()->addSearchPath("asset");
     auto bgForPuzzle = Sprite::create("shared/bg.png");
     if(bgForPuzzle){

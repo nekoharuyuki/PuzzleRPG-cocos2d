@@ -2090,7 +2090,9 @@
           </ScaleFrame>
         </Timeline>
         <Timeline ActionTag="1369172168" Property="FileData">
-          <TextureFrame FrameIndex="0" Tween="False" />
+          <TextureFrame FrameIndex="0" Tween="False">
+            <TextureFile Type="Normal" Path="asset/battlebg/battle_scene1/bg.png" Plist="" />
+          </TextureFrame>
           <TextureFrame FrameIndex="1" Tween="False" />
         </Timeline>
         <Timeline ActionTag="1369172168" Property="Alpha">
@@ -3460,7 +3462,9 @@
           </ScaleFrame>
         </Timeline>
         <Timeline ActionTag="1089388129" Property="FileData">
-          <TextureFrame FrameIndex="0" Tween="False" />
+          <TextureFrame FrameIndex="0" Tween="False">
+            <TextureFile Type="Normal" Path="asset/battlebg/battle_scene2/bg.png" Plist="" />
+          </TextureFrame>
           <TextureFrame FrameIndex="11" Tween="False" />
           <TextureFrame FrameIndex="12" Tween="False" />
           <TextureFrame FrameIndex="13" Tween="False" />
@@ -7075,17 +7079,17 @@
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
           <AbstractNodeData Name="scene1" ActionTag="1369172168" Tag="217" IconVisible="False" LeftMargin="376.9907" RightMargin="377.0093" TopMargin="100.2715" BottomMargin="453.7285" ctype="SpriteObjectData">
-            <Size X="46.0000" Y="46.0000" />
+            <Size X="800.0000" Y="246.0000" />
             <Children>
               <AbstractNodeData Name="lawn_base" ActionTag="-1232682077" Tag="218" IconVisible="False" LeftMargin="376.3266" RightMargin="-376.3266" TopMargin="-99.6305" BottomMargin="99.6305" ctype="SpriteObjectData">
-                <Size X="46.0000" Y="46.0000" />
+                <Size X="800.0000" Y="246.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="399.3266" Y="122.6305" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="8.6810" Y="2.6659" />
                 <PreSize X="1.0000" Y="1.0000" />
-                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+                <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_base.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="innetree_00" ActionTag="1405762090" Tag="219" IconVisible="False" LeftMargin="164.0659" RightMargin="-164.0659" TopMargin="-196.0331" BottomMargin="196.0331" ctype="SpriteObjectData">
@@ -7326,22 +7330,22 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.7945" />
             <PreSize X="0.0575" Y="0.0767" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="Normal" Path="asset/battlebg/battle_scene1/bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="gametitle_1_37_135" ActionTag="1750639368" Tag="240" IconVisible="False" LeftMargin="99.0000" RightMargin="655.0000" TopMargin="-2.0000" BottomMargin="556.0000" ctype="SpriteObjectData">
-            <Size X="46.0000" Y="46.0000" />
+            <Size X="244.0000" Y="35.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="122.0000" Y="579.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1525" Y="0.9650" />
             <PreSize X="0.0575" Y="0.0767" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="Normal" Path="asset/battle/gametitle_1.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="scene2" ActionTag="1089388129" VisibleForFrame="False" Tag="241" IconVisible="False" LeftMargin="376.8714" RightMargin="377.1286" TopMargin="99.9323" BottomMargin="454.0677" ctype="SpriteObjectData">
-            <Size X="46.0000" Y="46.0000" />
+            <Size X="800.0000" Y="246.0000" />
             <Children>
               <AbstractNodeData Name="sand_base_02_48_138" ActionTag="-1383948580" Tag="242" IconVisible="False" LeftMargin="377.1237" RightMargin="-377.1237" TopMargin="-62.4241" BottomMargin="62.4241" ctype="SpriteObjectData">
                 <Size X="46.0000" Y="46.0000" />
@@ -7493,22 +7497,22 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4998" Y="0.7951" />
             <PreSize X="0.0575" Y="0.0767" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="Normal" Path="asset/battlebg/battle_scene2/bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="gametitle_2_62_164" ActionTag="1397930772" VisibleForFrame="False" Tag="255" IconVisible="False" LeftMargin="99.6245" RightMargin="654.3755" TopMargin="-3.8425" BottomMargin="557.8425" ctype="SpriteObjectData">
-            <Size X="46.0000" Y="46.0000" />
+            <Size X="244.0000" Y="35.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="122.6245" Y="580.8425" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1533" Y="0.9681" />
             <PreSize X="0.0575" Y="0.0767" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="Normal" Path="asset/battle/gametitle_2.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="scene3" ActionTag="5379487" VisibleForFrame="False" Tag="256" IconVisible="False" LeftMargin="376.7786" RightMargin="377.2214" TopMargin="100.6879" BottomMargin="453.3121" ctype="SpriteObjectData">
-            <Size X="46.0000" Y="46.0000" />
+            <Size X="800.0000" Y="246.0000" />
             <Children>
               <AbstractNodeData Name="backrock_02_97_167" ActionTag="1774888684" Tag="257" IconVisible="False" LeftMargin="4.2320" RightMargin="-4.2320" TopMargin="-129.6302" BottomMargin="129.6302" ctype="SpriteObjectData">
                 <Size X="46.0000" Y="46.0000" />
@@ -7869,42 +7873,42 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4997" Y="0.7939" />
             <PreSize X="0.0575" Y="0.0767" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="Normal" Path="asset/battlebg/battle_scene3/bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="gametitle_4_100_231" ActionTag="335414275" VisibleForFrame="False" Tag="289" IconVisible="False" LeftMargin="99.0000" RightMargin="655.0000" TopMargin="-2.0000" BottomMargin="556.0000" ctype="SpriteObjectData">
-            <Size X="46.0000" Y="46.0000" />
+            <Size X="244.0000" Y="35.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="122.0000" Y="579.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1525" Y="0.9650" />
             <PreSize X="0.0575" Y="0.0767" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="Normal" Path="asset/battle/gametitle_4.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="gametitle_3_99_233" ActionTag="857042102" VisibleForFrame="False" Tag="290" IconVisible="False" LeftMargin="99.0000" RightMargin="655.0000" TopMargin="-2.0000" BottomMargin="556.0000" ctype="SpriteObjectData">
-            <Size X="46.0000" Y="46.0000" />
+            <Size X="244.0000" Y="35.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="122.0000" Y="579.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1525" Y="0.9650" />
             <PreSize X="0.0575" Y="0.0767" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="Normal" Path="asset/battle/gametitle_3.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="PartyHp_bar" ActionTag="2009044631" Tag="1650" IconVisible="False" LeftMargin="6.0000" RightMargin="8.0000" TopMargin="244.4993" BottomMargin="321.5007" ctype="SpriteObjectData">
             <Size X="786.0000" Y="34.0000" />
             <Children>
-              <AbstractNodeData Name="hpbar_base" ActionTag="1240070865" Tag="1651" IconVisible="False" LeftMargin="10.0000" RightMargin="-10.0000" TopMargin="2.5000" BottomMargin="-2.5000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="hpbar_base" ActionTag="1240070865" Tag="1651" IconVisible="False" LeftMargin="3.0000" RightMargin="-17.0000" TopMargin="4.5000" BottomMargin="-0.5000" ctype="SpriteObjectData">
                 <Size X="800.0000" Y="30.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="403.0000" Y="14.5000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5127" Y="0.4265" />
-                <PreSize X="1.0000" Y="1.0000" />
+                <PreSize X="1.0178" Y="0.8824" />
                 <FileData Type="Normal" Path="asset/battle/bar_base.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
@@ -7942,15 +7946,15 @@
           <AbstractNodeData Name="CharSp_bar0" ActionTag="-601168223" Tag="1654" IconVisible="True" LeftMargin="172.9982" RightMargin="627.0018" TopMargin="360.9993" BottomMargin="239.0007" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="sphpbar_base" ActionTag="924483351" Tag="1655" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
-                <Size X="46.0000" Y="46.0000" />
+              <AbstractNodeData Name="sphpbar_base" ActionTag="924483351" Tag="1655" IconVisible="False" LeftMargin="-50.0000" RightMargin="-50.0000" TopMargin="-10.0000" BottomMargin="-10.0000" ctype="SpriteObjectData">
+                <Size X="100.0000" Y="20.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+                <FileData Type="Normal" Path="asset/battle/sphpbar_base.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="sp_bar" ActionTag="1521787945" Tag="1656" IconVisible="False" LeftMargin="-5.0000" RightMargin="-7.0000" TopMargin="-6.0000" BottomMargin="-6.0000" ctype="LoadingBarObjectData">
@@ -7961,7 +7965,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <ImageFileData Type="Default" Path="Default/LoadingBarFile.png" Plist="" />
+                <ImageFileData Type="Normal" Path="asset/battle/spbar_naka.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
@@ -7974,18 +7978,18 @@
           <AbstractNodeData Name="CharSp_bar1" ActionTag="-1522271128" Tag="1657" IconVisible="True" LeftMargin="173.4998" RightMargin="626.5002" TopMargin="464.5002" BottomMargin="135.4998" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="sphpbar_base_Copy" CanEdit="False" ActionTag="-313267238" Tag="1658" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
-                <Size X="46.0000" Y="46.0000" />
+              <AbstractNodeData Name="sphpbar_base_Copy" ActionTag="-313267238" Tag="1658" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+                <Size X="100.0000" Y="20.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+                <FileData Type="Normal" Path="asset/battle/sphpbar_base.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="sp_bar" CanEdit="False" ActionTag="-1669390179" Tag="1659" IconVisible="False" LeftMargin="-5.0000" RightMargin="-7.0000" TopMargin="-6.0000" BottomMargin="-6.0000" ctype="LoadingBarObjectData">
+              <AbstractNodeData Name="sp_bar" ActionTag="-1669390179" Tag="1659" IconVisible="False" LeftMargin="-5.0000" RightMargin="-7.0000" TopMargin="-6.0000" BottomMargin="-6.0000" ctype="LoadingBarObjectData">
                 <Size X="12.0000" Y="12.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="1.0000" />
@@ -7993,7 +7997,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <ImageFileData Type="Default" Path="Default/LoadingBarFile.png" Plist="" />
+                <ImageFileData Type="Normal" Path="asset/battle/spbar_naka.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.3173" ScaleY="-1.3365" />
@@ -8006,18 +8010,18 @@
           <AbstractNodeData Name="CharSp_bar2" ActionTag="-574656512" Tag="1660" IconVisible="True" LeftMargin="173.5000" RightMargin="626.5000" TopMargin="569.4999" BottomMargin="30.5001" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="sphpbar_base_Copy" CanEdit="False" ActionTag="263655494" Tag="1661" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
-                <Size X="46.0000" Y="46.0000" />
+              <AbstractNodeData Name="sphpbar_base_Copy" ActionTag="263655494" Tag="1661" IconVisible="False" LeftMargin="-50.0000" RightMargin="-50.0000" TopMargin="-10.0000" BottomMargin="-10.0000" ctype="SpriteObjectData">
+                <Size X="100.0000" Y="20.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+                <FileData Type="Normal" Path="asset/battle/sphpbar_base.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="sp_bar" CanEdit="False" ActionTag="-1155043325" Tag="1662" IconVisible="False" LeftMargin="-5.0000" RightMargin="-7.0000" TopMargin="-6.0000" BottomMargin="-6.0000" ctype="LoadingBarObjectData">
+              <AbstractNodeData Name="sp_bar" ActionTag="-1155043325" Tag="1662" IconVisible="False" LeftMargin="-5.0000" RightMargin="-7.0000" TopMargin="-6.0000" BottomMargin="-6.0000" ProgressInfo="79" ctype="LoadingBarObjectData">
                 <Size X="12.0000" Y="12.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="1.0000" />
@@ -8025,7 +8029,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <ImageFileData Type="Default" Path="Default/LoadingBarFile.png" Plist="" />
+                <ImageFileData Type="Normal" Path="asset/battle/spbar_naka.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
@@ -8038,15 +8042,15 @@
           <AbstractNodeData Name="EnemyHp_bar0" ActionTag="1323730554" Tag="1663" IconVisible="True" LeftMargin="653.5104" RightMargin="146.4896" TopMargin="333.5006" BottomMargin="266.4994" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="sphpbar_base_Copy" CanEdit="False" ActionTag="-1539479764" Tag="1664" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
-                <Size X="46.0000" Y="46.0000" />
+              <AbstractNodeData Name="sphpbar_base_Copy" ActionTag="-1539479764" Tag="1664" IconVisible="False" LeftMargin="-50.0000" RightMargin="-50.0000" TopMargin="-10.0000" BottomMargin="-10.0000" ctype="SpriteObjectData">
+                <Size X="100.0000" Y="20.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+                <FileData Type="Normal" Path="asset/battle/sphpbar_base.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="hp_bar" ActionTag="-661065471" Tag="1665" IconVisible="False" LeftMargin="-5.0000" RightMargin="-7.0000" TopMargin="-6.0000" BottomMargin="-6.0000" ctype="LoadingBarObjectData">
@@ -8057,7 +8061,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <ImageFileData Type="Default" Path="Default/LoadingBarFile.png" Plist="" />
+                <ImageFileData Type="Normal" Path="asset/battle/hpbar_naka_2.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
@@ -8070,15 +8074,15 @@
           <AbstractNodeData Name="EnemyHp_bar1" ActionTag="970967450" Tag="1666" IconVisible="True" LeftMargin="653.5154" RightMargin="146.4846" TopMargin="437.5005" BottomMargin="162.4995" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="sphpbar_base_Copy" CanEdit="False" ActionTag="-1063004330" Tag="1667" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
-                <Size X="46.0000" Y="46.0000" />
+              <AbstractNodeData Name="sphpbar_base_Copy" ActionTag="-1063004330" Tag="1667" IconVisible="False" LeftMargin="-50.0000" RightMargin="-50.0000" TopMargin="-10.0000" BottomMargin="-10.0000" ctype="SpriteObjectData">
+                <Size X="100.0000" Y="20.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+                <FileData Type="Normal" Path="asset/battle/sphpbar_base.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="hp_bar" ActionTag="1315705134" Tag="1668" IconVisible="False" LeftMargin="-5.0000" RightMargin="-7.0000" TopMargin="-6.0000" BottomMargin="-6.0000" ctype="LoadingBarObjectData">
@@ -8089,7 +8093,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <ImageFileData Type="Default" Path="Default/LoadingBarFile.png" Plist="" />
+                <ImageFileData Type="Normal" Path="asset/battle/hpbar_naka_2.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
@@ -8102,15 +8106,15 @@
           <AbstractNodeData Name="EnemyHp_bar2" ActionTag="218373337" Tag="1669" IconVisible="True" LeftMargin="653.5208" RightMargin="146.4792" TopMargin="542.5005" BottomMargin="57.4995" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="sphpbar_base_Copy" CanEdit="False" ActionTag="-1195928276" Tag="1670" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
-                <Size X="46.0000" Y="46.0000" />
+              <AbstractNodeData Name="sphpbar_base_Copy" ActionTag="-1195928276" Tag="1670" IconVisible="False" LeftMargin="-50.0000" RightMargin="-50.0000" TopMargin="-10.0000" BottomMargin="-10.0000" ctype="SpriteObjectData">
+                <Size X="100.0000" Y="20.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+                <FileData Type="Normal" Path="asset/battle/sphpbar_base.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="hp_bar" ActionTag="-2018911905" Tag="1671" IconVisible="False" LeftMargin="-5.0000" RightMargin="-7.0000" TopMargin="-6.0000" BottomMargin="-6.0000" ctype="LoadingBarObjectData">
@@ -8121,7 +8125,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <ImageFileData Type="Default" Path="Default/LoadingBarFile.png" Plist="" />
+                <ImageFileData Type="Normal" Path="asset/battle/hpbar_naka_2.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />

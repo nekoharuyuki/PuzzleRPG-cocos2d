@@ -1,19 +1,5 @@
 <UserData Version="3.10.0.0">
   <Properties>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="res/battle/BattleScene.csd" />
-          <FilePathData Path="res/battle/PlayerBattleAnim.csd" />
-          <FilePathData Path="res/battle/fightng.csd" />
-          <FilePathData Path="res/charselect/CharselectScene.csd" />
-          <FilePathData Path="res/charselect/CharIconNode.csd" />
-          <FilePathData Path="res/result/ResultScene.csd" />
-          <FilePathData Path="res/quest/QuestScene.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="res/battle/BattleScene.csd" />
-      </Value>
-    </Item>
     <Item Key="CocosRecentOperation">
       <Value ctype="CocosRecentOperation">
         <LastPublishType Value="Resource" />
