@@ -6,6 +6,7 @@
 #include "MypageScene.h"
 #include "QuestScene.h"
 #include "EvolutionScene.h"
+#include "SyntheticScene.h"
 #include "OtherScene.h"
 
 USING_NS_CC;
@@ -200,7 +201,7 @@ bool MenuLayer::uiButtonPushLoadMixScene(Node* node)
         this->getEventDispatcher()->removeAllEventListeners();
         // ゲームを始めるアクション
         auto startLoadScene = CallFunc::create([]{
-            auto scene = EvolutionScene::createScene();
+            auto scene = SyntheticScene::createScene();
             auto transition = TransitionPageTurn::create(0.5f, scene, true);
             Director::getInstance()->replaceScene(transition);
         });
