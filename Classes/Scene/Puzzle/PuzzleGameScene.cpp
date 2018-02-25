@@ -40,6 +40,11 @@ bool PuzzleGameScene::init()
     
     initBackground(); //背景の初期化
     
+    auto rootNode = CSLoader::createNode("battle/BattleScene.csb");
+    if(rootNode){
+        addChild(rootNode, ZOrder::BgForPuzzle);
+    }
+    
     // シングルタップイベントの取得
     auto touchListener = EventListenerTouchOneByOne::create();
     touchListener->setSwallowTouches(_swallowsTouches);
@@ -58,10 +63,6 @@ bool PuzzleGameScene::init()
 void PuzzleGameScene::initBackground()
 {
     //パズル部の背景
-    /*auto rootNode = CSLoader::createNode("title/TitleScene.csb");
-    if(rootNode){
-        addChild(rootNode, ZOrder::BgForPuzzle);
-    }*/
     FileUtils::getInstance()->addSearchPath("asset");
     auto bgForPuzzle = Sprite::create("shared/bg.png");
     if(bgForPuzzle){
@@ -129,9 +130,10 @@ PuzzleSprite* PuzzleGameScene::newPuzzles(PuzzleSprite::PositionIndex positionIn
     
     //ボールの表示
     auto puzzle = PuzzleSprite::create((PuzzleSprite::PuzzleType)puzzleType, visible);
-    puzzle->setPositionIndexAndChangePosition(positionIndex);
-    addChild(puzzle, ZOrder::Ball);
-    
+    if(puzzle){
+        puzzle->setPositionIndexAndChangePosition(positionIndex);
+        addChild(puzzle, ZOrder::Ball);
+    }
     return puzzle;
 }
 

@@ -7098,7 +7098,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="scene1" ActionTag="1369172168" VisibleForFrame="False" Tag="217" IconVisible="False" LeftMargin="-0.0093" RightMargin="0.0093" TopMargin="0.2715" BottomMargin="353.7285" ctype="SpriteObjectData">
+          <AbstractNodeData Name="scene1" ActionTag="1369172168" Tag="217" IconVisible="False" LeftMargin="-0.0093" RightMargin="0.0093" TopMargin="0.2715" BottomMargin="353.7285" ctype="SpriteObjectData">
             <Size X="800.0000" Y="246.0000" />
             <Children>
               <AbstractNodeData Name="lawn_base" ActionTag="-1232682077" Tag="218" IconVisible="False" LeftMargin="-0.6734" RightMargin="0.6734" TopMargin="0.3695" BottomMargin="-0.3695" ctype="SpriteObjectData">
@@ -7112,25 +7112,25 @@
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_base.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="innetree_00" ActionTag="1405762090" Tag="219" IconVisible="False" LeftMargin="211.2111" RightMargin="511.7889" TopMargin="-44.1871" BottomMargin="146.1871" ctype="SpriteObjectData">
+              <AbstractNodeData Name="innetree_00" ActionTag="1405762090" Tag="219" IconVisible="False" LeftMargin="148.5659" RightMargin="574.4341" TopMargin="-45.0331" BottomMargin="147.0331" ctype="SpriteObjectData">
                 <Size X="77.0000" Y="144.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="249.7111" Y="218.1871" />
+                <Position X="187.0659" Y="219.0331" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3121" Y="0.8869" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.2338" Y="0.8904" />
+                <PreSize X="0.0962" Y="0.5854" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/innetree_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="innetree_00" ActionTag="791637071" Tag="220" IconVisible="False" LeftMargin="553.6711" RightMargin="169.3289" TopMargin="-32.1147" BottomMargin="134.1147" ctype="SpriteObjectData">
+              <AbstractNodeData Name="innetree_00" ActionTag="791637071" Tag="220" IconVisible="False" LeftMargin="719.5909" RightMargin="3.4091" TopMargin="-38.0397" BottomMargin="140.0397" ctype="SpriteObjectData">
                 <Size X="77.0000" Y="144.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="592.1711" Y="206.1147" />
+                <Position X="758.0909" Y="212.0397" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7402" Y="0.8379" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.9476" Y="0.8620" />
+                <PreSize X="0.0962" Y="0.5854" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/innetree_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7141,18 +7141,18 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2288" Y="0.8033" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.0962" Y="0.5854" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/innetree_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="innetree_00" ActionTag="-1585560893" Tag="222" IconVisible="False" LeftMargin="1.6346" RightMargin="721.3654" TopMargin="-25.3821" BottomMargin="127.3821" ctype="SpriteObjectData">
+              <AbstractNodeData Name="innetree_00" ActionTag="-1585560893" Tag="222" IconVisible="False" LeftMargin="510.4125" RightMargin="212.5875" TopMargin="-27.0752" BottomMargin="129.0752" ctype="SpriteObjectData">
                 <Size X="77.0000" Y="144.0000" />
                 <AnchorPoint ScaleX="0.5187" ScaleY="0.4963" />
-                <Position X="41.5745" Y="198.8493" />
+                <Position X="550.3524" Y="200.5424" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0520" Y="0.8083" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.6879" Y="0.8152" />
+                <PreSize X="0.0962" Y="0.5854" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/innetree_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7163,7 +7163,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.6256" Y="0.6618" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1813" Y="0.2967" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_inner_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7174,18 +7174,18 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.0414" Y="0.6063" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1762" Y="0.3415" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_middle_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="lawn_inner_00" ActionTag="-197719460" Tag="225" IconVisible="False" LeftMargin="83.2071" RightMargin="619.7929" TopMargin="73.8014" BottomMargin="116.1986" ctype="SpriteObjectData">
+              <AbstractNodeData Name="lawn_inner_00" ActionTag="-197719460" Tag="225" IconVisible="False" LeftMargin="148.3899" RightMargin="554.6101" TopMargin="73.8013" BottomMargin="116.1987" ctype="SpriteObjectData">
                 <Size X="97.0000" Y="56.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="131.7071" Y="144.1986" />
+                <Position X="196.8899" Y="144.1987" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1646" Y="0.5862" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.2461" Y="0.5862" />
+                <PreSize X="0.1213" Y="0.2276" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_inner_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7196,7 +7196,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.9083" Y="0.6362" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.0962" Y="0.1789" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_inner_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7207,7 +7207,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3176" Y="0.5504" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.0988" Y="0.1870" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_middle_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7218,7 +7218,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4293" Y="0.5758" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.0862" Y="0.1707" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_middle_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7229,51 +7229,51 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.7714" Y="0.5446" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1650" Y="0.2114" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_middle_03.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="lawn_middle_00" ActionTag="1173722634" Tag="230" IconVisible="False" LeftMargin="643.9839" RightMargin="15.0161" TopMargin="54.3198" BottomMargin="107.6802" ctype="SpriteObjectData">
+              <AbstractNodeData Name="lawn_middle_00" ActionTag="1173722634" Tag="230" IconVisible="False" LeftMargin="760.8062" RightMargin="-101.8062" TopMargin="54.3200" BottomMargin="107.6800" ctype="SpriteObjectData">
                 <Size X="141.0000" Y="84.0000" />
                 <AnchorPoint ScaleY="0.4430" />
-                <Position X="643.9839" Y="144.8922" />
+                <Position X="760.8062" Y="144.8920" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8050" Y="0.5890" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.9510" Y="0.5890" />
+                <PreSize X="0.1762" Y="0.3415" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_middle_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="tree_00" ActionTag="-191411273" Tag="231" IconVisible="False" LeftMargin="503.5253" RightMargin="62.4747" TopMargin="-5.6216" BottomMargin="100.6216" ctype="SpriteObjectData">
+              <AbstractNodeData Name="tree_00" ActionTag="-191411273" Tag="231" IconVisible="False" LeftMargin="594.1044" RightMargin="-28.1044" TopMargin="-3.9285" BottomMargin="98.9285" ctype="SpriteObjectData">
                 <Size X="234.0000" Y="151.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="620.5253" Y="176.1216" />
+                <Position X="711.1044" Y="174.4285" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7757" Y="0.7159" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.8889" Y="0.7091" />
+                <PreSize X="0.2925" Y="0.6138" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/tree_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="tree_02" ActionTag="950626542" Tag="232" IconVisible="False" LeftMargin="22.2148" RightMargin="592.7852" TopMargin="-4.6761" BottomMargin="98.6761" ctype="SpriteObjectData">
+              <AbstractNodeData Name="tree_02" ActionTag="950626542" Tag="232" IconVisible="False" LeftMargin="-66.6753" RightMargin="681.6753" TopMargin="-2.9829" BottomMargin="96.9829" ctype="SpriteObjectData">
                 <Size X="185.0000" Y="152.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="114.7148" Y="174.6761" />
+                <Position X="25.8247" Y="172.9829" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1434" Y="0.7101" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.0323" Y="0.7032" />
+                <PreSize X="0.2313" Y="0.6179" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/tree_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="tree_01" ActionTag="272098874" Tag="233" IconVisible="False" LeftMargin="380.7312" RightMargin="181.2688" TopMargin="-4.7526" BottomMargin="96.7526" ctype="SpriteObjectData">
+              <AbstractNodeData Name="tree_01" ActionTag="272098874" Tag="233" IconVisible="False" LeftMargin="385.8105" RightMargin="176.1895" TopMargin="-5.5992" BottomMargin="97.5992" ctype="SpriteObjectData">
                 <Size X="238.0000" Y="154.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="499.7312" Y="173.7526" />
+                <Position X="504.8105" Y="174.5992" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6247" Y="0.7063" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.6310" Y="0.7098" />
+                <PreSize X="0.2975" Y="0.6260" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/tree_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7284,51 +7284,51 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4076" Y="0.7098" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.2925" Y="0.6138" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/tree_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="lawn_02" ActionTag="-2034361193" Tag="235" IconVisible="False" LeftMargin="-19.3280" RightMargin="719.3280" TopMargin="103.7536" BottomMargin="83.2464" ctype="SpriteObjectData">
+              <AbstractNodeData Name="lawn_02" ActionTag="-2034361193" Tag="235" IconVisible="False" LeftMargin="48.3959" RightMargin="651.6041" TopMargin="114.7591" BottomMargin="72.2409" ctype="SpriteObjectData">
                 <Size X="100.0000" Y="59.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="30.6720" Y="112.7464" />
+                <Position X="98.3959" Y="101.7409" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0383" Y="0.4583" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.1230" Y="0.4136" />
+                <PreSize X="0.1250" Y="0.2398" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="lawn_01" ActionTag="234010596" Tag="236" IconVisible="False" LeftMargin="273.0469" RightMargin="434.9531" TopMargin="108.8195" BottomMargin="80.1805" ctype="SpriteObjectData">
+              <AbstractNodeData Name="lawn_01" ActionTag="234010596" Tag="236" IconVisible="False" LeftMargin="142.6775" RightMargin="565.3225" TopMargin="114.7455" BottomMargin="74.2545" ctype="SpriteObjectData">
                 <Size X="92.0000" Y="57.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="319.0469" Y="108.6805" />
+                <Position X="188.6775" Y="102.7545" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3988" Y="0.4418" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.2358" Y="0.4177" />
+                <PreSize X="0.1150" Y="0.2317" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="lawn_00" ActionTag="-1632008728" Tag="237" IconVisible="False" LeftMargin="325.0337" RightMargin="326.9663" TopMargin="110.6715" BottomMargin="65.3285" ctype="SpriteObjectData">
+              <AbstractNodeData Name="lawn_00" ActionTag="-1632008728" Tag="237" IconVisible="False" LeftMargin="433.3915" RightMargin="218.6085" TopMargin="103.8994" BottomMargin="72.1006" ctype="SpriteObjectData">
                 <Size X="148.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="399.0337" Y="100.3285" />
+                <Position X="507.3915" Y="107.1006" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4988" Y="0.4078" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.6342" Y="0.4354" />
+                <PreSize X="0.1850" Y="0.2846" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="lawn_02_32_131" ActionTag="-2044106673" Tag="238" IconVisible="False" LeftMargin="691.6476" RightMargin="31.3524" TopMargin="106.8430" BottomMargin="95.1570" ctype="SpriteObjectData">
+              <AbstractNodeData Name="lawn_02_32_131" ActionTag="-2044106673" Tag="238" IconVisible="False" LeftMargin="588.3674" RightMargin="134.6326" TopMargin="121.2346" BottomMargin="80.7654" ctype="SpriteObjectData">
                 <Size X="77.0000" Y="44.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="730.1476" Y="117.1570" />
+                <Position X="626.8674" Y="102.7654" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9127" Y="0.4762" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.7836" Y="0.4177" />
+                <PreSize X="0.0962" Y="0.1789" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_inner_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7339,14 +7339,14 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.9938" Y="0.4295" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1813" Y="0.2967" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene1/lawn_inner_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="399.9907" Y="476.7285" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.7945" />
             <PreSize X="1.0000" Y="0.4100" />
@@ -7374,7 +7374,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5002" Y="0.3473" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="1.0000" Y="0.6951" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene2/sand_base_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7385,51 +7385,51 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5008" Y="0.3307" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="1.0000" Y="0.6626" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene2/sand_base_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="cactus_01_52_0_142" ActionTag="1422238106" Tag="244" IconVisible="False" LeftMargin="392.3597" RightMargin="313.6403" TopMargin="44.2326" BottomMargin="109.7674" ctype="SpriteObjectData">
+              <AbstractNodeData Name="cactus_01_52_0_142" ActionTag="1422238106" Tag="244" IconVisible="False" LeftMargin="571.8272" RightMargin="134.1728" TopMargin="51.0051" BottomMargin="102.9949" ctype="SpriteObjectData">
                 <Size X="94.0000" Y="92.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="439.3597" Y="155.7674" />
+                <Position X="618.8272" Y="148.9949" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5492" Y="0.6332" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.7735" Y="0.6057" />
+                <PreSize X="0.1175" Y="0.3740" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene2/cactus_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="cactus_01_52_144" ActionTag="1859260117" Tag="245" IconVisible="False" LeftMargin="-44.3215" RightMargin="750.3215" TopMargin="59.7728" BottomMargin="94.2272" ctype="SpriteObjectData">
+              <AbstractNodeData Name="cactus_01_52_144" ActionTag="1859260117" Tag="245" IconVisible="False" LeftMargin="4.7780" RightMargin="701.2220" TopMargin="55.5400" BottomMargin="98.4600" ctype="SpriteObjectData">
                 <Size X="94.0000" Y="92.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="2.6785" Y="140.2272" />
+                <Position X="51.7780" Y="144.4600" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0033" Y="0.5700" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.0647" Y="0.5872" />
+                <PreSize X="0.1175" Y="0.3740" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene2/cactus_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="cactus_00_51_0_146" ActionTag="714603148" Tag="246" IconVisible="False" LeftMargin="749.8029" RightMargin="-15.8029" TopMargin="92.1007" BottomMargin="96.8993" ctype="SpriteObjectData">
+              <AbstractNodeData Name="cactus_00_51_0_146" ActionTag="714603148" Tag="246" IconVisible="False" LeftMargin="695.6224" RightMargin="38.3776" TopMargin="93.7938" BottomMargin="95.2062" ctype="SpriteObjectData">
                 <Size X="66.0000" Y="57.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="782.8029" Y="125.3993" />
+                <Position X="728.6224" Y="123.7062" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9785" Y="0.5098" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.9108" Y="0.5029" />
+                <PreSize X="0.0825" Y="0.2317" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene2/cactus_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="cactus_00_51_148" ActionTag="391721158" Tag="247" IconVisible="False" LeftMargin="366.5901" RightMargin="367.4099" TopMargin="82.3279" BottomMargin="106.6721" ctype="SpriteObjectData">
+              <AbstractNodeData Name="cactus_00_51_148" ActionTag="391721158" Tag="247" IconVisible="False" LeftMargin="305.6378" RightMargin="428.3622" TopMargin="90.7938" BottomMargin="98.2062" ctype="SpriteObjectData">
                 <Size X="66.0000" Y="57.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="399.5901" Y="135.1721" />
+                <Position X="338.6378" Y="126.7062" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4995" Y="0.5495" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.4233" Y="0.5151" />
+                <PreSize X="0.0825" Y="0.2317" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene2/cactus_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7440,18 +7440,18 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3333" Y="0.5001" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.0862" Y="0.1463" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene2/rock_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="rock_00_55_0_156" ActionTag="-155681992" Tag="251" IconVisible="False" LeftMargin="607.7757" RightMargin="144.2243" TopMargin="102.6952" BottomMargin="111.3048" ctype="SpriteObjectData">
+              <AbstractNodeData Name="rock_00_55_0_156" ActionTag="-155681992" Tag="251" IconVisible="False" LeftMargin="483.3311" RightMargin="268.6689" TopMargin="99.3090" BottomMargin="114.6910" ctype="SpriteObjectData">
                 <Size X="48.0000" Y="32.0000" />
                 <AnchorPoint ScaleX="0.4819" ScaleY="0.4734" />
-                <Position X="630.9069" Y="126.4536" />
+                <Position X="506.4623" Y="129.8398" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7886" Y="0.5140" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.6331" Y="0.5278" />
+                <PreSize X="0.0600" Y="0.1301" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene2/rock_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7462,18 +7462,18 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5005" Y="0.2683" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="1.0000" Y="0.5325" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene2/sand_base_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="rock_00_55_152" ActionTag="434744760" Tag="249" IconVisible="False" LeftMargin="206.2699" RightMargin="545.7301" TopMargin="124.6915" BottomMargin="89.3085" ctype="SpriteObjectData">
+              <AbstractNodeData Name="rock_00_55_152" ActionTag="434744760" Tag="249" IconVisible="False" LeftMargin="174.9468" RightMargin="577.0532" TopMargin="130.6174" BottomMargin="83.3826" ctype="SpriteObjectData">
                 <Size X="48.0000" Y="32.0000" />
                 <AnchorPoint ScaleX="0.4819" ScaleY="0.4734" />
-                <Position X="229.4011" Y="104.4573" />
+                <Position X="198.0780" Y="98.5314" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2868" Y="0.4246" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.2476" Y="0.4005" />
+                <PreSize X="0.0600" Y="0.1301" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene2/rock_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7484,54 +7484,54 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8049" Y="0.3219" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.0862" Y="0.1463" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene2/rock_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="skull_00_59_160" ActionTag="851194540" Tag="253" IconVisible="False" LeftMargin="225.3832" RightMargin="511.6168" TopMargin="132.4833" BottomMargin="63.5167" ctype="SpriteObjectData">
+              <AbstractNodeData Name="skull_00_59_160" ActionTag="851194540" Tag="253" IconVisible="False" LeftMargin="60.3053" RightMargin="676.6947" TopMargin="132.4833" BottomMargin="63.5167" ctype="SpriteObjectData">
                 <Size X="63.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="256.8832" Y="88.5167" />
-                <Scale ScaleX="-1.0000" ScaleY="1.0000" />
+                <Position X="91.8053" Y="88.5167" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3211" Y="0.3598" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.1148" Y="0.3598" />
+                <PreSize X="0.0787" Y="0.2033" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene2/skull_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="skull_01_60_162" ActionTag="-919113273" Tag="254" IconVisible="False" LeftMargin="525.4652" RightMargin="180.5348" TopMargin="115.9151" BottomMargin="76.0849" ctype="SpriteObjectData">
+              <AbstractNodeData Name="skull_01_60_162" ActionTag="-919113273" Tag="254" IconVisible="False" LeftMargin="410.3320" RightMargin="295.6680" TopMargin="125.2271" BottomMargin="66.7729" ctype="SpriteObjectData">
                 <Size X="94.0000" Y="54.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="572.4652" Y="103.0849" />
+                <Position X="457.3320" Y="93.7729" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7156" Y="0.4190" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PrePosition X="0.5717" Y="0.3812" />
+                <PreSize X="0.1175" Y="0.2195" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene2/skull_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="399.8714" Y="477.0677" />
-            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4998" Y="0.7951" />
             <PreSize X="1.0000" Y="0.4100" />
             <FileData Type="Normal" Path="asset/battlebg/battle_scene2/bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="gametitle_2_62_164" ActionTag="1397930772" Tag="255" IconVisible="False" RightMargin="556.0000" TopMargin="3.5000" BottomMargin="561.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="gametitle_2_62_164" ActionTag="1397930772" VisibleForFrame="False" Tag="255" IconVisible="False" LeftMargin="0.6245" RightMargin="555.3755" TopMargin="1.6575" BottomMargin="563.3425" ctype="SpriteObjectData">
             <Size X="244.0000" Y="35.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="122.0000" Y="579.0000" />
+            <Position X="122.6245" Y="580.8425" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1525" Y="0.9650" />
+            <PrePosition X="0.1533" Y="0.9681" />
             <PreSize X="0.3050" Y="0.0583" />
             <FileData Type="Normal" Path="asset/battle/gametitle_2.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="scene3" ActionTag="5379487" Tag="256" IconVisible="False" LeftMargin="-0.2214" RightMargin="0.2214" TopMargin="0.6879" BottomMargin="353.3121" ctype="SpriteObjectData">
+          <AbstractNodeData Name="scene3" ActionTag="5379487" VisibleForFrame="False" Tag="256" IconVisible="False" LeftMargin="-0.2214" RightMargin="0.2214" TopMargin="0.6879" BottomMargin="353.3121" ctype="SpriteObjectData">
             <Size X="800.0000" Y="246.0000" />
             <Children>
               <AbstractNodeData Name="backrock_02_97_167" ActionTag="1774888684" Tag="257" IconVisible="False" LeftMargin="-32.7680" RightMargin="712.7680" TopMargin="5.8698" BottomMargin="65.1302" ctype="SpriteObjectData">
@@ -7541,7 +7541,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.0340" Y="0.6204" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1500" Y="0.7114" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7552,7 +7552,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5971" Y="0.4932" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1450" Y="0.6585" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7563,7 +7563,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.7201" Y="0.5787" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1650" Y="0.6707" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_04.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7574,7 +7574,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8905" Y="0.6297" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1425" Y="0.6057" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_03.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7585,7 +7585,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5070" Y="0.5871" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1500" Y="0.7114" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7596,7 +7596,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8211" Y="0.4548" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1450" Y="0.6585" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7607,7 +7607,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2481" Y="0.5416" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1450" Y="0.6585" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7618,7 +7618,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1547" Y="0.6130" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1650" Y="0.6707" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_04.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7629,7 +7629,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1311" Y="0.3564" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1112" Y="0.5041" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7640,7 +7640,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.7189" Y="0.5817" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1650" Y="0.6707" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_04.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7651,40 +7651,40 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4011" Y="0.5860" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1425" Y="0.6057" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_03.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="backrock_02_73_189" ActionTag="1830970217" Tag="268" IconVisible="False" LeftMargin="625.0044" RightMargin="128.9956" TopMargin="77.5531" BottomMargin="122.4469" ctype="SpriteObjectData">
+              <AbstractNodeData Name="backrock_02_73_189" ActionTag="1830970217" Tag="268" IconVisible="False" LeftMargin="588.0044" RightMargin="91.9956" TopMargin="13.0531" BottomMargin="57.9469" ctype="SpriteObjectData">
                 <Size X="120.0000" Y="175.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="648.0044" Y="145.4469" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8100" Y="0.5912" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1500" Y="0.7114" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="backrock_02_78_191" ActionTag="400404703" Tag="269" IconVisible="False" LeftMargin="233.2977" RightMargin="520.7023" TopMargin="98.3089" BottomMargin="101.6911" ctype="SpriteObjectData">
+              <AbstractNodeData Name="backrock_02_78_191" ActionTag="400404703" Tag="269" IconVisible="False" LeftMargin="196.2977" RightMargin="483.7023" TopMargin="33.8089" BottomMargin="37.1911" ctype="SpriteObjectData">
                 <Size X="120.0000" Y="175.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="256.2977" Y="124.6911" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3204" Y="0.5069" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1500" Y="0.7114" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="backrock_02_79_193" ActionTag="-294910625" Tag="270" IconVisible="False" LeftMargin="234.3808" RightMargin="519.6192" TopMargin="97.6781" BottomMargin="102.3219" ctype="SpriteObjectData">
+              <AbstractNodeData Name="backrock_02_79_193" ActionTag="-294910625" Tag="270" IconVisible="False" LeftMargin="197.3808" RightMargin="482.6192" TopMargin="33.1781" BottomMargin="37.8219" ctype="SpriteObjectData">
                 <Size X="120.0000" Y="175.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="257.3808" Y="125.3219" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3217" Y="0.5094" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1500" Y="0.7114" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/backrock_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7695,7 +7695,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.0320" Y="0.4717" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1450" Y="0.6585" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/frontrock_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7706,7 +7706,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1295" Y="0.3751" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1112" Y="0.5041" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/frontrock_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7717,7 +7717,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2317" Y="0.4573" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1500" Y="0.7114" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/frontrock_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7728,7 +7728,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4016" Y="0.5868" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1425" Y="0.6057" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/frontrock_03.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7739,7 +7739,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3350" Y="0.4125" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1425" Y="0.6057" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/frontrock_03.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7750,7 +7750,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4750" Y="0.4425" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1650" Y="0.6707" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/frontrock_04.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7761,7 +7761,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5770" Y="0.4487" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1112" Y="0.5041" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/frontrock_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7772,7 +7772,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.6819" Y="0.5172" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1500" Y="0.7114" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/frontrock_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7783,7 +7783,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.9456" Y="0.4674" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1500" Y="0.7114" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/frontrock_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7794,7 +7794,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8247" Y="0.4548" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1450" Y="0.6585" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/frontrock_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7805,7 +7805,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8680" Y="0.3411" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1112" Y="0.5041" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/frontrock_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7816,7 +7816,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5005" Y="0.2248" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="1.0000" Y="0.4472" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/rood.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7827,7 +7827,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1252" Y="0.4361" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.0938" Y="0.1911" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/stone_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7838,7 +7838,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4363" Y="0.4105" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.0613" Y="0.1911" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/stone_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7849,7 +7849,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3692" Y="0.3884" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.1013" Y="0.2073" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/stone_00.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7860,7 +7860,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8458" Y="0.4315" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.0938" Y="0.1911" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/stone_02.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7871,18 +7871,18 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.7878" Y="0.4097" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.0613" Y="0.1911" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/stone_01.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gate_66_229" ActionTag="44449317" VisibleForFrame="False" Tag="288" IconVisible="False" LeftMargin="744.1294" RightMargin="9.8706" TopMargin="100.7488" BottomMargin="99.2512" ctype="SpriteObjectData">
+              <AbstractNodeData Name="gate_66_229" ActionTag="44449317" VisibleForFrame="False" Tag="288" IconVisible="False" LeftMargin="732.8065" RightMargin="-1.8065" TopMargin="1.4288" BottomMargin="-1.4288" ctype="SpriteObjectData">
                 <Size X="69.0000" Y="246.0000" />
                 <AnchorPoint ScaleX="0.4923" ScaleY="0.5034" />
                 <Position X="766.7752" Y="122.4076" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.9585" Y="0.4976" />
-                <PreSize X="0.0575" Y="0.1870" />
+                <PreSize X="0.0862" Y="1.0000" />
                 <FileData Type="Normal" Path="asset/battlebg/battle_scene3/gate.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -7907,7 +7907,7 @@
             <FileData Type="Normal" Path="asset/battle/gametitle_4.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="gametitle_3_99_233" ActionTag="857042102" Tag="290" IconVisible="False" RightMargin="556.0000" TopMargin="3.5000" BottomMargin="561.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="gametitle_3_99_233" ActionTag="857042102" VisibleForFrame="False" Tag="290" IconVisible="False" RightMargin="556.0000" TopMargin="3.5000" BottomMargin="561.5000" ctype="SpriteObjectData">
             <Size X="244.0000" Y="35.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="122.0000" Y="579.0000" />
