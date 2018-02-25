@@ -1,5 +1,6 @@
 #include "QuestScene.h"
 #include "MenuLayer.h"
+#include "PuzzleGameScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
@@ -55,6 +56,25 @@ bool QuestScene::init()
         quest_btn->setEnabled(true);
 
         //quest_btn->addTouchEventListener( this.onQuest, this );
+        
+        // タッチイベント追加
+        quest_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+            // 何度も押されないように一度押されたらアクションを無効にする
+            this->getEventDispatcher()->removeAllEventListeners();
+            
+            // 0.5秒待ってからCallFuncを呼ぶ
+            auto delay = DelayTime::create(0.5f);
+            
+            // ゲームを始めるアクション
+            auto startGame = CallFunc::create([delay]{
+                auto scene = PuzzleGameScene::createScene();
+                auto transition = TransitionFadeTR::create(0.5f, scene);
+                Director::getInstance()->replaceScene(transition);
+            });
+            this->runAction(Sequence::create(delay, startGame, NULL));
+            return true;    // イベントを実行する
+        });
+        
     }
     
     // レイヤーの初期化

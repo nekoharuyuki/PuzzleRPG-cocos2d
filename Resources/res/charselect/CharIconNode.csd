@@ -6,7 +6,7 @@
       <ObjectData Name="Node" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="icon_chara" ActionTag="1658248206" Tag="109" IconVisible="False" LeftMargin="-50.0000" RightMargin="-50.0000" TopMargin="-50.0000" BottomMargin="-50.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="icon_chara" ActionTag="1658248206" Tag="109" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -14,10 +14,10 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="char/icon_chara_b_4.png" Plist="" />
+            <FileData Type="Normal" Path="asset/char/icon_chara_b_4.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Attribute" ActionTag="1625825347" Tag="111" IconVisible="False" LeftMargin="-48.0000" RightMargin="20.0000" TopMargin="-48.0000" BottomMargin="20.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Attribute" ActionTag="1625825347" Tag="111" IconVisible="False" LeftMargin="-57.0000" RightMargin="11.0000" TopMargin="-57.0000" BottomMargin="11.0000" ctype="SpriteObjectData">
             <Size X="28.0000" Y="28.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-34.0000" Y="34.0000" />
@@ -25,13 +25,13 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="shared/Attribute_1.png" Plist="" />
+            <FileData Type="Normal" Path="asset/shared/Attribute_1.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="charararity_01" ActionTag="-151005365" Tag="310" IconVisible="True" TopMargin="44.0000" BottomMargin="-44.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="icon_charararity_b1" ActionTag="1163594488" Tag="309" IconVisible="False" LeftMargin="-11.0000" RightMargin="-11.0000" TopMargin="-11.0000" BottomMargin="-11.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="icon_charararity_b1" ActionTag="1163594488" Tag="309" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
                 <Size X="22.0000" Y="22.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -39,7 +39,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="shared/icon_charararity_b.png" Plist="" />
+                <FileData Type="Normal" Path="asset/shared/icon_charararity_b.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
             </Children>

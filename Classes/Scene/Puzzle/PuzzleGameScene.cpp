@@ -1,4 +1,6 @@
 #include "PuzzleGameScene.h"
+#include "cocostudio/CocoStudio.h"
+#include "ui/CocosGUI.h"
 
 #define PUZZLE_NUM_X 6
 #define PUZZLE_NUM_Y 6
@@ -32,8 +34,16 @@ Scene* PuzzleGameScene::createScene()
 //初期化
 bool PuzzleGameScene::init()
 {
-    if (!Layer::init())
+    if (!Layer::init()){
         return false;
+    }
+    
+    initBackground(); //背景の初期化
+    
+    auto rootNode = CSLoader::createNode("battle/BattleScene.csb");
+    if(rootNode){
+        addChild(rootNode, ZOrder::BgForPuzzle);
+    }
     
     // シングルタップイベントの取得
     auto touchListener = EventListenerTouchOneByOne::create();
@@ -43,8 +53,7 @@ bool PuzzleGameScene::init()
     touchListener->onTouchEnded = CC_CALLBACK_2(PuzzleGameScene::onTouchEnded, this);
     touchListener->onTouchCancelled = CC_CALLBACK_2(PuzzleGameScene::onTouchCancelled, this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
-
-    initBackground(); //背景の初期化
+    
     initPuzzles(); //ボールの初期表示
     
     return true;
@@ -88,9 +97,10 @@ PuzzleSprite* PuzzleGameScene::newPuzzles(PuzzleSprite::PositionIndex positionIn
     {
         puzzleType = m_distForPuzzle(m_engine);
         
-        if (!visible)
+        if (!visible){
             break;
-
+        }
+        
         //妥当性のチェック（ボールが隣り合わせにならないようにする）
         
         //左隣のボール
@@ -121,9 +131,10 @@ PuzzleSprite* PuzzleGameScene::newPuzzles(PuzzleSprite::PositionIndex positionIn
     
     //ボールの表示
     auto puzzle = PuzzleSprite::create((PuzzleSprite::PuzzleType)puzzleType, visible);
-    puzzle->setPositionIndexAndChangePosition(positionIndex);
-    addChild(puzzle, ZOrder::Ball);
-    
+    if(puzzle){
+        puzzle->setPositionIndexAndChangePosition(positionIndex);
+        addChild(puzzle, ZOrder::Ball);
+    }
     return puzzle;
 }
 

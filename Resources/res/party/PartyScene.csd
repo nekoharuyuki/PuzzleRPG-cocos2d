@@ -8,7 +8,7 @@
           <BoolFrame FrameIndex="1" Tween="False" Value="False" />
         </Timeline>
         <Timeline ActionTag="497837211" Property="VisibleForFrame">
-          <BoolFrame FrameIndex="0" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="0" Tween="False" Value="False" />
           <BoolFrame FrameIndex="1" Tween="False" Value="True" />
         </Timeline>
       </Animation>
@@ -293,7 +293,7 @@
             <FileData Type="Normal" Path="asset/party/paty_base.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="chara_statusbase" ActionTag="497837211" Tag="179" IconVisible="False" LeftMargin="140.5000" RightMargin="142.5000" TopMargin="88.0000" BottomMargin="174.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="chara_statusbase" ActionTag="497837211" VisibleForFrame="False" Tag="179" IconVisible="False" LeftMargin="140.5000" RightMargin="142.5000" TopMargin="88.0000" BottomMargin="174.0000" ctype="SpriteObjectData">
             <Size X="517.0000" Y="338.0000" />
             <Children>
               <AbstractNodeData Name="title_status_4" ActionTag="-1028180002" Tag="180" IconVisible="False" LeftMargin="-141.0000" RightMargin="328.0000" TopMargin="-88.5000" BottomMargin="349.5000" ctype="SpriteObjectData">
@@ -431,7 +431,7 @@
             <FileData Type="Normal" Path="asset/party/chara_statusbase.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="conform" Visible="False" ActionTag="-634056677" Tag="621" IconVisible="True" RightMargin="800.0000" TopMargin="600.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="conform" ActionTag="-634056677" VisibleForFrame="False" Tag="621" IconVisible="True" RightMargin="800.0000" TopMargin="600.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="sell_base_1" ActionTag="-1342753189" Tag="622" IconVisible="False" LeftMargin="140.5000" RightMargin="-657.5000" TopMargin="-390.5000" BottomMargin="197.5000" ctype="SpriteObjectData">

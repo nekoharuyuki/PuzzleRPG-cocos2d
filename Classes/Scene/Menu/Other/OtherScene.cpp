@@ -57,7 +57,7 @@ bool OtherScene::init()
         // ゲームを始めるアクション
         auto startLoadScene = CallFunc::create([]{
             auto scene = TitleScene::createScene();
-            auto transition = TransitionPageTurn::create(0.5f, scene, true);
+            auto transition = TransitionFade::create(0.5f, scene, Color3B::WHITE);
             Director::getInstance()->replaceScene(transition);
         });
         this->runAction(Sequence::create(startLoadScene, NULL));
