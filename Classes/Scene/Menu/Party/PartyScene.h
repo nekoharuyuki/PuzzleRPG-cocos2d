@@ -1,9 +1,9 @@
-#ifndef __SYNTHETIC_SCENE_H__
-#define __SYNTHETIC_SCENE_H__
+#ifndef __PARTY_SCENE_H__
+#define __PARTY_SCENE_H__
 
 #include "cocos2d.h"
 
-class SyntheticScene : public cocos2d::Layer
+class PartyScene : public cocos2d::Layer
 {
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -13,7 +13,7 @@ public:
     virtual bool init();
     
     // implement the "static create()" method manually
-    CREATE_FUNC(SyntheticScene);
+    CREATE_FUNC(PartyScene);
 };
 
-#endif // __SYNTHETIC_SCENE_H__
+#endif // __PARTY_SCENE_H__

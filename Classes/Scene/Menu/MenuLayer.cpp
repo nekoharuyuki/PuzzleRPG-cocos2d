@@ -5,6 +5,7 @@
 #include "TitleScene.h"
 #include "MypageScene.h"
 #include "QuestScene.h"
+#include "PartyScene.h"
 #include "EvolutionScene.h"
 #include "SyntheticScene.h"
 #include "OtherScene.h"
@@ -84,8 +85,8 @@ cocos2d::Scene* MenuLayer::loadScene(Menu menu)
 {
     if( menu == ui_mypage_btn ){ return MypageScene::createScene(); }
     if( menu == ui_quest_btn  ){ return QuestScene::createScene();  }
-    if( menu == ui_party_btn  ){ return MypageScene::createScene(); }
-    if( menu == ui_mix_btn    ){ return MypageScene::createScene(); }
+    if( menu == ui_party_btn  ){ return PartyScene::createScene(); }
+    if( menu == ui_mix_btn    ){ return SyntheticScene::createScene(); }
     if( menu == ui_shinka_btn ){ return EvolutionScene::createScene(); }
     if( menu == ui_etc_btn    ){ return OtherScene::createScene(); }
     
@@ -170,7 +171,7 @@ bool MenuLayer::uiButtonPushLoadPartyScene(Node* node)
         this->getEventDispatcher()->removeAllEventListeners();
         // ゲームを始めるアクション
         auto startLoadScene = CallFunc::create([]{
-            auto scene = OtherScene::createScene();
+            auto scene = PartyScene::createScene();
             auto transition = TransitionPageTurn::create(0.5f, scene, true);
             Director::getInstance()->replaceScene(transition);
         });
