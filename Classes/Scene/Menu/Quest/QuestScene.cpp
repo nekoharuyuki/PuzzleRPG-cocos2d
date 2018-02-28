@@ -4,6 +4,9 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
+#include "json/rapidjson.h"
+#include "json/document.h"
+
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
@@ -54,8 +57,6 @@ bool QuestScene::init()
         // ユーザーデータを確認して、クエストの表示状況を変更する
         quest_btn->setBright(true);
         quest_btn->setEnabled(true);
-
-        //quest_btn->addTouchEventListener( this.onQuest, this );
         
         // タッチイベント追加
         quest_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
@@ -65,8 +66,13 @@ bool QuestScene::init()
             // 0.5秒待ってからCallFuncを呼ぶ
             auto delay = DelayTime::create(0.5f);
             
+            // マスタデータからクエスト情報を取得する
+            
+            
+            
+            
             // ゲームを始めるアクション
-            auto startGame = CallFunc::create([delay]{
+            auto startGame = CallFunc::create([]{
                 auto scene = PuzzleGameScene::createScene();
                 auto transition = TransitionFadeTR::create(0.5f, scene);
                 Director::getInstance()->replaceScene(transition);
@@ -74,7 +80,6 @@ bool QuestScene::init()
             this->runAction(Sequence::create(delay, startGame, NULL));
             return true;    // イベントを実行する
         });
-        
     }
     
     // レイヤーの初期化
