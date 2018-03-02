@@ -1,4 +1,5 @@
 #include "PuzzleGameScene.h"
+#include "QuestScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
@@ -44,6 +45,27 @@ bool PuzzleGameScene::init()
     if(rootNode){
         addChild(rootNode, ZOrder::BgForPuzzle);
     }
+    
+    // メニューへ戻るボタン
+    // ボタンノードを取得
+    auto startBtn = rootNode->getChildByName<ui::Button*>("menu_button");
+    // タッチイベント追加
+    startBtn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        // 何度も押されないように一度押されたらアクションを無効にする
+        this->getEventDispatcher()->removeAllEventListeners();
+        
+        // 0.5秒待ってからCallFuncを呼ぶ
+        auto delay = DelayTime::create(0.5f);
+        
+        // ゲームを始めるアクション
+        auto startGame = CallFunc::create([]{
+            auto scene = QuestScene::createScene();
+            auto transition = TransitionFadeBL::create(0.5f, scene);
+            Director::getInstance()->replaceScene(transition);
+        });
+        this->runAction(Sequence::create(delay, startGame, NULL));
+        return true;    // イベントを実行する
+    });
     
     // シングルタップイベントの取得
     auto touchListener = EventListenerTouchOneByOne::create();

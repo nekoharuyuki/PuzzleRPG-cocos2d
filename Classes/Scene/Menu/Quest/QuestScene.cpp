@@ -66,11 +66,6 @@ bool QuestScene::init()
             // 0.5秒待ってからCallFuncを呼ぶ
             auto delay = DelayTime::create(0.5f);
             
-            // マスタデータからクエスト情報を取得する
-            
-            
-            
-            
             // ゲームを始めるアクション
             auto startGame = CallFunc::create([]{
                 auto scene = PuzzleGameScene::createScene();
