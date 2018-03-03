@@ -3,6 +3,8 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
+#include "GameDataSQL.h"
+
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
@@ -38,8 +40,7 @@ bool TitleScene::init()
     }
     addChild(rootNode);
     
-    // セーブデータの有無を確認
-    
+    // ローカルDBデータの有無を確認
     
     // ボタンノードを取得
     auto startBtn = rootNode->getChildByName<ui::Button*>("start_btn");

@@ -1,9 +1,12 @@
 #include "PuzzleGameScene.h"
+#include "QuestScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
 #define PUZZLE_NUM_X 6
 #define PUZZLE_NUM_Y 6
+
+#define MOTION_STREAK_TAG 10
 
 USING_NS_CC;
 
@@ -44,6 +47,27 @@ bool PuzzleGameScene::init()
     if(rootNode){
         addChild(rootNode, ZOrder::BgForPuzzle);
     }
+    
+    // メニューへ戻るボタン
+    // ボタンノードを取得
+    auto startBtn = rootNode->getChildByName<ui::Button*>("menu_button");
+    // タッチイベント追加
+    startBtn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        // 何度も押されないように一度押されたらアクションを無効にする
+        this->getEventDispatcher()->removeAllEventListeners();
+        
+        // 0.5秒待ってからCallFuncを呼ぶ
+        auto delay = DelayTime::create(0.5f);
+        
+        // ゲームを始めるアクション
+        auto startGame = CallFunc::create([]{
+            auto scene = QuestScene::createScene();
+            auto transition = TransitionFadeBL::create(0.5f, scene);
+            Director::getInstance()->replaceScene(transition);
+        });
+        this->runAction(Sequence::create(delay, startGame, NULL));
+        return true;    // イベントを実行する
+    });
     
     // シングルタップイベントの取得
     auto touchListener = EventListenerTouchOneByOne::create();
@@ -140,6 +164,15 @@ PuzzleSprite* PuzzleGameScene::newPuzzles(PuzzleSprite::PositionIndex positionIn
 
 bool PuzzleGameScene::onTouchBegan(Touch* touch, Event* unused_event)
 {
+    // 指でなぞったラインを描画する
+    this->removeChildByTag(MOTION_STREAK_TAG, true);
+    
+    Point point = this->convertTouchToNodeSpace(touch);
+    MotionStreak* pStreak = MotionStreak::create(0.5f, 1.0f, 10.0f, Color3B(255, 255, 0), "system/images/line.png");
+    pStreak->setPosition(point);
+    this->addChild(pStreak, ZOrder::Ball + 1, MOTION_STREAK_TAG);
+    
+    // パズルのタッチイベント
     if (!m_touchable){
         return false;
     }
@@ -156,6 +189,11 @@ bool PuzzleGameScene::onTouchBegan(Touch* touch, Event* unused_event)
 
 void PuzzleGameScene::onTouchMoved(Touch* touch, Event* unused_event)
 {
+    // 指でなぞったラインを描画する
+    Point point = this->convertTouchToNodeSpace(touch);
+    MotionStreak* pStreak = (MotionStreak*)this->getChildByTag(MOTION_STREAK_TAG);
+    pStreak->setPosition(point);
+    
     //スワイプとともにボールを移動する
     m_movingPuzzle->setPosition(m_movingPuzzle->getPosition() + touch->getDelta());
     

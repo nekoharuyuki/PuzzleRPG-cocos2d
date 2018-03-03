@@ -40,7 +40,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
-
+    
+    // cocos2d-xのバージョン確認
+    CCLOG("cocos version: %s", cocos2dVersion());
+    
     FileUtils::getInstance()->addSearchPath("res");
     
     auto scene = TitleScene::createScene();
