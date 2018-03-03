@@ -1,0 +1,303 @@
+{
+	"map" : [{
+		"id" : 1,
+		"name" : "エメラルドフォレスト1",
+		"stamina" : 1,
+		"enemy" : [1,2,3],
+		"stage" : 1,
+		"dropChar" : [1,2,3],
+		"dropCoin" : 100,
+		"boss" : false
+	},
+	{
+		"id" : 2,
+		"name" : "エメラルドフォレスト2",
+		"stamina" : 1,
+		"enemy" : [1,2,3],
+		"stage" : 1,
+		"dropChar" : [1,2,3],
+		"dropCoin" : 110,
+		"boss" : false
+	},
+	{
+		"id" : 3,
+		"name" : "エメラルドフォレスト3",
+		"stamina" : 1,
+		"enemy" : [1,2,3,1,2,3,1,2,3,4,5,6],
+		"stage" : 1,
+		"dropChar" : [1,2,3],
+		"dropCoin" : 120,
+		"boss" : false
+	},
+	{
+		"id" : 4,
+		"name" : "エメラルドフォレスト4",
+		"stamina" : 1,
+		"enemy" : [1,2,3,1,2,3,1,2,3,4,5,6],
+		"stage" : 1,
+		"dropChar" : [1,2,3],
+		"dropCoin" : 130,
+		"boss" : false
+	},
+	{
+		"id" : 5,
+		"name" : "エメラルドフォレスト5",
+		"stamina" : 1,
+		"enemy" : [1,2,3,1,2,3,1,2,3,4,5,6],
+		"stage" : 1,
+		"dropChar" : [1,2,3],
+		"dropCoin" : 140,
+		"boss" : false
+	},
+	{
+		"id" : 6,
+		"name" : "エメラルドフォレスト6",
+		"stamina" : 1,
+		"enemy" : [1,2,3,1,2,3,4,5,6],
+		"stage" : 1,
+		"dropChar" : [1,2,3],
+		"dropCoin" : 150,
+		"boss" : false
+	},
+	{
+		"id" : 7,
+		"name" : "エメラルドフォレスト7",
+		"stamina" : 1,
+		"enemy" : [1,2,3,1,2,3,4,5,6],
+		"stage" : 1,
+		"dropChar" : [1,2,3],
+		"dropCoin" : 160,
+		"boss" : false
+	},
+	{
+		"id" : 8,
+		"name" : "エメラルドフォレスト8",
+		"stamina" : 1,
+		"enemy" : [1,2,3,4,5,6],
+		"stage" : 1,
+		"dropChar" : [1,2,3,4,5,6],
+		"dropCoin" : 170,
+		"boss" : false
+	},
+	{
+		"id" : 9,
+		"name" : "エメラルドフォレスト9",
+		"stamina" : 1,
+		"enemy" : [1,2,3,4,5,6,4,5,6],
+		"stage" : 1,
+		"dropChar" : [1,2,3,4,5,6],
+		"dropCoin" : 180,
+		"boss" : false
+	},
+	{
+		"id" : 10,
+		"name" : "エメラルドフォレスト10",
+		"stamina" : 1,
+		"enemy" : [1,2,3,4,5,6,4,5,6,4,5,6],
+		"stage" : 1,
+		"dropChar" : [1,2,3,1,2,3,4,5,6,4,5,6,7,8,9,10,11,12],
+		"dropCoin" : 190,
+		"boss" : false
+	},
+	{
+		"id" : 11,
+		"name" : "アンバーデザート1",
+		"stamina" : 1,
+		"enemy" : [1,2,3,1,2,3,4,5,6,4,5,6,4,5,6],
+		"stage" : 1,
+		"dropChar" : [1,2,3,4,5,6],
+		"dropCoin" : 200,
+		"boss" : false
+	},
+	{
+		"id" : 12,
+		"name" : "アンバーデザート2",
+		"stamina" : 1,
+		"enemy" : [1,2,3,1,2,3,4,5,6,4,5,6,4,5,6],
+		"stage" : 1,
+		"dropChar" : [1,2,3,4,5,6],
+		"dropCoin" : 210,
+		"boss" : false
+	},
+	{
+		"id" : 13,
+		"name" : "アンバーデザート3",
+		"stamina" : 1,
+		"enemy" : [1,2,3,1,2,3,4,5,6,4,5,6,4,5,6],
+		"stage" : 1,
+		"dropChar" : [1,2,3,4,5,6],
+		"dropCoin" : 220,
+		"boss" : false
+	},
+	{
+		"id" : 14,
+		"name" : "アンバーデザート4",
+		"stamina" : 1,
+		"enemy" : [1,2,3,4,5,6,4,5,6],
+		"stage" : 1,
+		"dropChar" : [1,2,3,4,5,6,4,5,6],
+		"dropCoin" : 230,
+		"boss" : false
+	},
+	{
+		"id" : 15,
+		"name" : "アンバーデザート5",
+		"stamina" : 1,
+		"enemy" : [1,2,3,4,5,6,4,5,6],
+		"stage" : 1,
+		"dropChar" : [1,2,3,4,5,6,4,5,6],
+		"dropCoin" : 240,
+		"boss" : false
+	},
+	{
+		"id" : 16,
+		"name" : "アンバーデザート6",
+		"stamina" : 1,
+		"enemy" : [1,2,3,4,5,6,4,5,6],
+		"stage" : 1,
+		"dropChar" : [4,5,6,4,5,6,7,8,9],
+		"dropCoin" : 250,
+		"boss" : false
+	},
+	{
+		"id" : 17,
+		"name" : "アンバーデザート7",
+		"stamina" : 1,
+		"enemy" : [1,2,3,4,5,6,4,5,6],
+		"stage" : 1,
+		"dropChar" : [4,5,6,4,5,6,7,8,9],
+		"dropCoin" : 260,
+		"boss" : false
+	},
+	{
+		"id" : 18,
+		"name" : "アンバーデザート8",
+		"stamina" : 1,
+		"enemy" : [1,2,3,4,5,6,4,5,6,4,5,6],
+		"stage" : 1,
+		"dropChar" : [4,5,6,4,5,6,7,8,9],
+		"dropCoin" : 270,
+		"boss" : false
+	},
+	{
+		"id" : 19,
+		"name" : "アンバーデザート9",
+		"stamina" : 1,
+		"enemy" : [4,5,6,4,5,6,4,5,6],
+		"stage" : 1,
+		"dropChar" : [4,5,6,4,5,6,7,8,9],
+		"dropCoin" : 280,
+		"boss" : false
+	},
+	{
+		"id" : 20,
+		"name" : "アンバーデザート10",
+		"stamina" : 1,
+		"enemy" : [4,5,6,7,8,9],
+		"stage" : 1,
+		"dropChar" : [4,5,6,4,5,6,7,8,9,10,11,12],
+		"dropCoin" : 290,
+		"boss" : false
+	},
+	{
+		"id" : 21,
+		"name" : "アメジストマウンテン1",
+		"stamina" : 1,
+		"enemy" : [4,5,6],
+		"stage" : 1,
+		"dropChar" : [4,5,6,7,8,9],
+		"dropCoin" : 300,
+		"boss" : false
+	},
+	{
+		"id" : 22,
+		"name" : "アメジストマウンテン2",
+		"stamina" : 1,
+		"enemy" : [4,5,6],
+		"stage" : 1,
+		"dropChar" : [4,5,6,7,8,9],
+		"dropCoin" : 310,
+		"boss" : false
+	},
+	{
+		"id" : 23,
+		"name" : "アメジストマウンテン3",
+		"stamina" : 1,
+		"enemy" : [4,5,6],
+		"stage" : 1,
+		"dropChar" : [4,5,6,7,8,9],
+		"dropCoin" : 320,
+		"boss" : false
+	},
+	{
+		"id" : 24,
+		"name" : "アメジストマウンテン4",
+		"stamina" : 1,
+		"enemy" : [4,5,6],
+		"stage" : 1,
+		"dropChar" : [4,5,6,7,8,9,7,8,9],
+		"dropCoin" : 330,
+		"boss" : false
+	},
+	{
+		"id" : 25,
+		"name" : "アメジストマウンテン5",
+		"stamina" : 1,
+		"enemy" : [4,5,6,4,5,6,4,5,6,7,8,9],
+		"stage" : 1,
+		"dropChar" : [4,5,6,7,8,9,7,8,9],
+		"dropCoin" : 340,
+		"boss" : false
+	},
+	{
+		"id" : 26,
+		"name" : "アメジストマウンテン6",
+		"stamina" : 1,
+		"enemy" : [4,5,6,4,5,6,4,5,6,7,8,9],
+		"stage" : 1,
+		"dropChar" : [4,5,6,7,8,9,7,8,9,7,8,9],
+		"dropCoin" : 350,
+		"boss" : false
+	},
+	{
+		"id" : 27,
+		"name" : "アメジストマウンテン7",
+		"stamina" : 1,
+		"enemy" : [4,5,6,4,5,6,7,8,9],
+		"stage" : 1,
+		"dropChar" : [4,5,6,7,8,9,7,8,9,10,11,12],
+		"dropCoin" : 360,
+		"boss" : false
+	},
+	{
+		"id" : 28,
+		"name" : "アメジストマウンテン8",
+		"stamina" : 1,
+		"enemy" : [4,5,6,4,5,6,7,8,9],
+		"stage" : 1,
+		"dropChar" : [7,8,9],
+		"dropCoin" : 370,
+		"boss" : false
+	},
+	{
+		"id" : 29,
+		"name" : "アメジストマウンテン9",
+		"stamina" : 1,
+		"enemy" : [4,5,6,7,8,9],
+		"stage" : 1,
+		"dropChar" : [7,8,9,10,11,12],
+		"dropCoin" : 380,
+		"boss" : false
+	},
+	{
+		"id" : 30,
+		"name" : "ダイヤモンドキャッスル",
+		"stamina" : 1,
+		"enemy" : [7,8,9],
+		"stage" : 1,
+		"dropChar" : [10,11,12],
+		"dropCoin" : 400,
+		"boss" : false
+	}
+	]
+}
