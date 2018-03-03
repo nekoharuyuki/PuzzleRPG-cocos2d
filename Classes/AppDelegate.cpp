@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "SimpleAudioEngine.h"
+#include "AudioManager.h"
 #include "Controller.h"
 #include "tests.h"
 
@@ -43,6 +44,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
     // cocos2d-xのバージョン確認
     CCLOG("cocos version: %s", cocos2dVersion());
+    
+    // オーディオ定義ファイルの読み込み
+    AudioManager::getInstance()->readAudioListFile("master/audioData.json");
     
     FileUtils::getInstance()->addSearchPath("res");
     

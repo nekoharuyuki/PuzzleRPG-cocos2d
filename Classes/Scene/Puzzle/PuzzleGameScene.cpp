@@ -2,6 +2,7 @@
 #include "QuestScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "AudioManager.h"
 
 #define PUZZLE_NUM_X 6
 #define PUZZLE_NUM_Y 6
@@ -48,6 +49,9 @@ bool PuzzleGameScene::init()
         addChild(rootNode, ZOrder::BgForPuzzle);
     }
     
+    // バトル中のBGM再生
+    AudioManager::getInstance()->playBgm("battle");
+    
     // メニューへ戻るボタン
     // ボタンノードを取得
     auto startBtn = rootNode->getChildByName<ui::Button*>("menu_button");
@@ -62,6 +66,7 @@ bool PuzzleGameScene::init()
         // ゲームを始めるアクション
         auto startGame = CallFunc::create([]{
             auto scene = QuestScene::createScene();
+            AudioManager::getInstance()->playBgm("all_bgm");
             auto transition = TransitionFadeBL::create(0.5f, scene);
             Director::getInstance()->replaceScene(transition);
         });
