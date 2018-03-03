@@ -6,6 +6,8 @@
 #define PUZZLE_NUM_X 6
 #define PUZZLE_NUM_Y 6
 
+#define MOTION_STREAK_TAG 10
+
 USING_NS_CC;
 
 //コンストラクタ
@@ -162,6 +164,15 @@ PuzzleSprite* PuzzleGameScene::newPuzzles(PuzzleSprite::PositionIndex positionIn
 
 bool PuzzleGameScene::onTouchBegan(Touch* touch, Event* unused_event)
 {
+    // 指でなぞったラインを描画する
+    this->removeChildByTag(MOTION_STREAK_TAG, true);
+    
+    Point point = this->convertTouchToNodeSpace(touch);
+    MotionStreak* pStreak = MotionStreak::create(0.5f, 1.0f, 10.0f, Color3B(255, 255, 0), "system/images/line.png");
+    pStreak->setPosition(point);
+    this->addChild(pStreak, ZOrder::Ball + 1, MOTION_STREAK_TAG);
+    
+    // パズルのタッチイベント
     if (!m_touchable){
         return false;
     }
@@ -178,6 +189,11 @@ bool PuzzleGameScene::onTouchBegan(Touch* touch, Event* unused_event)
 
 void PuzzleGameScene::onTouchMoved(Touch* touch, Event* unused_event)
 {
+    // 指でなぞったラインを描画する
+    Point point = this->convertTouchToNodeSpace(touch);
+    MotionStreak* pStreak = (MotionStreak*)this->getChildByTag(MOTION_STREAK_TAG);
+    pStreak->setPosition(point);
+    
     //スワイプとともにボールを移動する
     m_movingPuzzle->setPosition(m_movingPuzzle->getPosition() + touch->getDelta());
     
