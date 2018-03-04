@@ -4,6 +4,8 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
+#include "AudioManager.h"
+
 #include "json/rapidjson.h"
 #include "json/document.h"
 
@@ -62,6 +64,12 @@ bool QuestScene::init()
         quest_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
             // 何度も押されないように一度押されたらアクションを無効にする
             this->getEventDispatcher()->removeAllEventListeners();
+            
+            // BGMをフェードアウトをしながら停止
+            AudioManager::getInstance()->stopBgm(0.3f);
+            
+            // エリア移動BGM再生
+            AudioManager::getInstance()->playSe("area1");
             
             // 0.5秒待ってからCallFuncを呼ぶ
             auto delay = DelayTime::create(0.5f);

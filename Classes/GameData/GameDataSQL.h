@@ -6,11 +6,11 @@
 
 namespace GameDataSQL
 {
-    static int sqliteOpen(sqlite3 **db);
-    static void sqliteCreateTable();
-    static const char* sqliteGetValueForKey(const char *key);
-    static void sqliteSetValueForKey(const char *key,const char *value);
-    static void sqliteUpdateValueForKey(const char *key,const char *value);
+    int sqliteOpen(sqlite3 **db);
+    void sqliteCreateTable();
+    const char* sqliteGetValueForKey(const char *key);
+    void sqliteSetValueForKey(const char *key,const char *value);
+    void sqliteUpdateValueForKey(const char *key,const char *value);
 };
 
 #endif /* defined(__GAME_DATA_SQL__) */
