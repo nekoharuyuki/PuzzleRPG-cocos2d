@@ -1,13 +1,11 @@
 #include "QuestScene.h"
+#include "MapData.h"
 #include "MenuLayer.h"
 #include "PuzzleGameScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
 #include "AudioManager.h"
-
-#include "json/rapidjson.h"
-#include "json/document.h"
 
 USING_NS_CC;
 
@@ -48,8 +46,27 @@ bool QuestScene::init()
     }
     this->addChild(rootNode);
     
-    for(m_questNo = 0; m_questNo < 30; m_questNo++){
-        auto questNode = rootNode->getChildByName<Node*>("quest_"+std::to_string(m_questNo+1));
+    // マスタデータからクエスト情報を取得する
+    
+    //クエストマスの初期化
+    initQuestmas(rootNode);
+    
+    // レイヤーの初期化
+    auto *layer = MenuLayer::create();
+    if(layer == nullptr){
+        return false;
+    }
+    // シーンにレイヤーを追加する
+    rootNode->addChild(layer);
+    
+    return true;
+}
+
+//クエストマスの初期化
+void QuestScene::initQuestmas(Node* node)
+{
+    for(int i = 0; i < 30; i++){
+        auto questNode = node->getChildByName<Node*>("quest_"+std::to_string(i+1));
         if(questNode == nullptr){
             break;
         }
@@ -75,8 +92,8 @@ bool QuestScene::init()
             auto delay = DelayTime::create(0.5f);
             
             // ゲームを始めるアクション
-            auto startGame = CallFunc::create([]{
-                auto scene = PuzzleGameScene::createScene();
+            auto startGame = CallFunc::create([this]{
+                auto scene = PuzzleGameScene::createScene(MapData::getMapId(m_questNo));
                 auto transition = TransitionFadeTR::create(0.5f, scene);
                 Director::getInstance()->replaceScene(transition);
             });
@@ -84,14 +101,4 @@ bool QuestScene::init()
             return true;    // イベントを実行する
         });
     }
-    
-    // レイヤーの初期化
-    auto *layer = MenuLayer::create();
-    if(layer == nullptr){
-        return false;
-    }
-    // シーンにレイヤーを追加する
-    rootNode->addChild(layer);
-    
-    return true;
 }

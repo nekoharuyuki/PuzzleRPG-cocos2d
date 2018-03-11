@@ -37,6 +37,7 @@ protected:
     int m_maxRemovedNo; //一度に削除される最大連鎖の番号
     int m_chainNumber; //連鎖数のカウント
     std::vector<std::map<PuzzleSprite::PuzzleType, int>> m_removeNumbers; //消去するボールのカウント
+    static int m_questNo;  // クエストの情報取得
     
     void initBackground(); //背景の初期化
     void initPuzzles(); //ボールの初期表示
@@ -57,7 +58,7 @@ public:
     PuzzleGameScene(); //コンストラクタ
     virtual bool init(); //初期化
     CREATE_FUNC(PuzzleGameScene); //create関数生成
-    static cocos2d::Scene* createScene(); //シーン生成
+    static cocos2d::Scene* createScene(int questNo); //シーン生成
 
     //シングルタップイベント
     virtual bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* unused_event);

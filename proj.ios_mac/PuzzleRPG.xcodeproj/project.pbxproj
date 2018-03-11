@@ -94,6 +94,8 @@
 		8054001D2044664E009EE5ED /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 805400182044664E009EE5ED /* sqlite3.c */; };
 		805400302046E961009EE5ED /* GameDataSQL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8054002E2046E961009EE5ED /* GameDataSQL.cpp */; };
 		805400312046E961009EE5ED /* GameDataSQL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8054002E2046E961009EE5ED /* GameDataSQL.cpp */; };
+		80540047204C4087009EE5ED /* MapData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80540043204C4087009EE5ED /* MapData.cpp */; };
+		80540048204C4087009EE5ED /* MapData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80540043204C4087009EE5ED /* MapData.cpp */; };
 		80691D122001D87D00AB4BFB /* PuzzleGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80691D112001D87D00AB4BFB /* PuzzleGameScene.cpp */; };
 		80691D132001D87D00AB4BFB /* PuzzleGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80691D112001D87D00AB4BFB /* PuzzleGameScene.cpp */; };
 		80BDB4E0204291C100F1F36E /* SyntheticScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BDB4DD204291C100F1F36E /* SyntheticScene.cpp */; };
@@ -273,6 +275,8 @@
 		8054001B2044664E009EE5ED /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
 		8054002E2046E961009EE5ED /* GameDataSQL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameDataSQL.cpp; sourceTree = "<group>"; };
 		8054002F2046E961009EE5ED /* GameDataSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameDataSQL.h; sourceTree = "<group>"; };
+		80540043204C4087009EE5ED /* MapData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapData.cpp; sourceTree = "<group>"; };
+		80540046204C4087009EE5ED /* MapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapData.h; sourceTree = "<group>"; };
 		80691D102001D87C00AB4BFB /* PuzzleGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleGameScene.h; sourceTree = "<group>"; };
 		80691D112001D87D00AB4BFB /* PuzzleGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PuzzleGameScene.cpp; sourceTree = "<group>"; };
 		80BDB4DC204291C100F1F36E /* SyntheticScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyntheticScene.h; sourceTree = "<group>"; };
@@ -673,6 +677,8 @@
 			children = (
 				8054002E2046E961009EE5ED /* GameDataSQL.cpp */,
 				8054002F2046E961009EE5ED /* GameDataSQL.h */,
+				80540043204C4087009EE5ED /* MapData.cpp */,
+				80540046204C4087009EE5ED /* MapData.h */,
 			);
 			path = GameData;
 			sourceTree = "<group>";
@@ -887,6 +893,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				800713F81FF7F03F0004DFAB /* BaseTest.cpp in Sources */,
 				800713F01FF7F03F0004DFAB /* Converter.cpp in Sources */,
+				80540047204C4087009EE5ED /* MapData.cpp in Sources */,
 				800713F21FF7F03F0004DFAB /* VisibleRect.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				8007141D1FFBBBB20004DFAB /* PuzzleSprite.cpp in Sources */,
@@ -915,6 +922,7 @@
 				800713FF1FF7F03F0004DFAB /* AudioManager.cpp in Sources */,
 				800713FB1FF7F03F0004DFAB /* MathHelper.cpp in Sources */,
 				800713F71FF7F03F0004DFAB /* Controller.cpp in Sources */,
+				80540048204C4087009EE5ED /* MapData.cpp in Sources */,
 				800713F31FF7F03F0004DFAB /* VisibleRect.cpp in Sources */,
 				801E1DC5203146F20034A904 /* QuestScene.cpp in Sources */,
 				8054001D2044664E009EE5ED /* sqlite3.c in Sources */,

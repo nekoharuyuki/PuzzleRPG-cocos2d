@@ -13,6 +13,8 @@ USING_NS_CC;
 
 using namespace cocostudio::timeline;
 
+int PuzzleGameScene::m_questNo = 0;
+
 //コンストラクタ
 PuzzleGameScene::PuzzleGameScene()
 : m_movingPuzzle(nullptr)
@@ -28,10 +30,11 @@ PuzzleGameScene::PuzzleGameScene()
 }
 
 //シーン生成
-Scene* PuzzleGameScene::createScene()
+Scene* PuzzleGameScene::createScene(int questNo)
 {
     auto scene = Scene::create();
     auto layer = PuzzleGameScene::create();
+    m_questNo = questNo;
     scene->addChild(layer);
     
     return scene;
@@ -55,8 +58,7 @@ bool PuzzleGameScene::init()
     auto action = ActionTimelineCache::getInstance()->createAction("battle/BattleScene.csb");
     if(action) {
         rootNode->runAction(action);
-        // 即、再生する
-        action->gotoFrameAndPlay(0, 9, true);
+        action->gotoFrameAndPause(m_questNo);
     }
     
     // バトル中のBGM再生
