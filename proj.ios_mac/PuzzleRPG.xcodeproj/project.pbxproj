@@ -88,6 +88,8 @@
 		801E1DC92031CA690034A904 /* MypageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 801E1DC72031CA690034A904 /* MypageScene.cpp */; };
 		801E1DCD2031CDFA0034A904 /* EvolutionScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 801E1DCC2031CDF90034A904 /* EvolutionScene.cpp */; };
 		801E1DCE2031CDFA0034A904 /* EvolutionScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 801E1DCC2031CDF90034A904 /* EvolutionScene.cpp */; };
+		8025F0D3205E8ADD0022896B /* UserOptionData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8025F0D1205E8ADD0022896B /* UserOptionData.cpp */; };
+		8025F0D4205E8ADD0022896B /* UserOptionData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8025F0D1205E8ADD0022896B /* UserOptionData.cpp */; };
 		8054001520442E90009EE5ED /* master in Resources */ = {isa = PBXBuildFile; fileRef = 8054001220442E90009EE5ED /* master */; };
 		8054001620442E90009EE5ED /* master in Resources */ = {isa = PBXBuildFile; fileRef = 8054001220442E90009EE5ED /* master */; };
 		8054001C2044664E009EE5ED /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 805400182044664E009EE5ED /* sqlite3.c */; };
@@ -269,6 +271,8 @@
 		801E1DC72031CA690034A904 /* MypageScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MypageScene.cpp; sourceTree = "<group>"; };
 		801E1DCB2031CDF90034A904 /* EvolutionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvolutionScene.h; sourceTree = "<group>"; };
 		801E1DCC2031CDF90034A904 /* EvolutionScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EvolutionScene.cpp; sourceTree = "<group>"; };
+		8025F0D1205E8ADD0022896B /* UserOptionData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UserOptionData.cpp; sourceTree = "<group>"; };
+		8025F0D2205E8ADD0022896B /* UserOptionData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserOptionData.h; sourceTree = "<group>"; };
 		8054001220442E90009EE5ED /* master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = master; sourceTree = "<group>"; };
 		805400182044664E009EE5ED /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		8054001A2044664E009EE5ED /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
@@ -679,6 +683,8 @@
 				8054002F2046E961009EE5ED /* GameDataSQL.h */,
 				80540043204C4087009EE5ED /* MapData.cpp */,
 				80540046204C4087009EE5ED /* MapData.h */,
+				8025F0D1205E8ADD0022896B /* UserOptionData.cpp */,
+				8025F0D2205E8ADD0022896B /* UserOptionData.h */,
 			);
 			path = GameData;
 			sourceTree = "<group>";
@@ -895,6 +901,7 @@
 				800713F01FF7F03F0004DFAB /* Converter.cpp in Sources */,
 				80540047204C4087009EE5ED /* MapData.cpp in Sources */,
 				800713F21FF7F03F0004DFAB /* VisibleRect.cpp in Sources */,
+				8025F0D3205E8ADD0022896B /* UserOptionData.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				8007141D1FFBBBB20004DFAB /* PuzzleSprite.cpp in Sources */,
 			);
@@ -910,6 +917,7 @@
 				801E1DC3203146F20034A904 /* OtherScene.cpp in Sources */,
 				800713F91FF7F03F0004DFAB /* BaseTest.cpp in Sources */,
 				805400312046E961009EE5ED /* GameDataSQL.cpp in Sources */,
+				8025F0D4205E8ADD0022896B /* UserOptionData.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				80BDB4E5204294AF00F1F36E /* PartyScene.cpp in Sources */,
 				8007142C20010EB60004DFAB /* TitleScene.cpp in Sources */,
