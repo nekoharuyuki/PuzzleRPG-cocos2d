@@ -1,0 +1,1 @@
+org.cocos2dx.lib
