@@ -5,7 +5,7 @@
 
 class QuestScene : public cocos2d::Layer
 {
-public:
+protected:
     //クエストの種類
     enum class QuestType
     {
@@ -13,6 +13,9 @@ public:
         Red,    //赤
     };
     
+    void initQuestmas(Node* node); //クエストマスの初期化
+    
+public:
     QuestScene();   //コンストラクタ
     
     // there's no 'id' in cpp, so we recommend returning the class instance pointer

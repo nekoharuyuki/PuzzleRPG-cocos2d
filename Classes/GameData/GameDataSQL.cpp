@@ -91,3 +91,24 @@ void GameDataSQL::sqliteSetValueForKey(const char *key, const char *value)
     }
     sqlite3_close(db);
 }
+
+//keyを元にValueの値を更新する
+void GameDataSQL::sqliteUpdateValueForKey(const char *key,const char *value){
+    std::string fullpath = FileUtils::getInstance()->getWritablePath();
+    fullpath += dbName;
+    sqlite3 *db = NULL;
+    if (sqlite3_open(fullpath.c_str(), &db) == SQLITE_OK) {
+        const char *sql_select = "UPDATE test1 SET value =? WHERE key =? ";
+        sqlite3_stmt *stmt = NULL;
+        if (sqlite3_prepare_v2(db, sql_select, -1, &stmt, NULL) == SQLITE_OK) {
+            sqlite3_bind_text(stmt, 1, value, -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(stmt, 2, key, -1, SQLITE_TRANSIENT);
+            if (sqlite3_step(stmt) == SQLITE_DONE) {
+                CCLOG("change key:%s value:%s",key,value);
+            }
+            sqlite3_reset(stmt);
+        }
+        sqlite3_finalize(stmt);
+    }
+    sqlite3_close(db);
+}

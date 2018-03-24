@@ -6,36 +6,36 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="800.0000" Y="600.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="768368126" Tag="39" IconVisible="False" TopMargin="5.0001" BottomMargin="-5.0001" ctype="SpriteObjectData">
+          <AbstractNodeData Name="bg" ActionTag="768368126" Tag="39" IconVisible="False" ctype="SpriteObjectData">
             <Size X="800.0000" Y="600.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="400.0000" Y="294.9999" />
+            <Position X="400.0000" Y="300.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.4917" />
-            <PreSize X="0.0575" Y="0.0767" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="asset/shared/bg.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title_mypage" ActionTag="-1162579761" Tag="40" IconVisible="False" RightMargin="754.0000" BottomMargin="554.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="title_mypage" ActionTag="-1162579761" Tag="40" IconVisible="False" RightMargin="470.0000" BottomMargin="523.0000" ctype="SpriteObjectData">
             <Size X="330.0000" Y="77.0000" />
             <AnchorPoint ScaleY="1.0000" />
             <Position Y="600.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition Y="1.0000" />
-            <PreSize X="0.0575" Y="0.0767" />
+            <PreSize X="0.4125" Y="0.1283" />
             <FileData Type="Normal" Path="asset/mypage/title_mypage.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="popup_mypage_party" ActionTag="-1781474195" Tag="42" IconVisible="False" LeftMargin="373.7004" RightMargin="380.2996" TopMargin="267.2202" BottomMargin="286.7798" ctype="SpriteObjectData">
+          <AbstractNodeData Name="popup_mypage_party" ActionTag="-1781474195" Tag="42" IconVisible="False" LeftMargin="186.2004" RightMargin="192.7996" TopMargin="95.2202" BottomMargin="114.7798" ctype="SpriteObjectData">
             <Size X="421.0000" Y="390.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="396.7004" Y="309.7798" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4959" Y="0.5163" />
-            <PreSize X="0.0575" Y="0.0767" />
+            <PreSize X="0.5263" Y="0.6500" />
             <FileData Type="Normal" Path="asset/mypage/popup_mypage_party.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>

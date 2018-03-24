@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
-#include "SimpleAudioEngine.h"
+#include "AudioManager.h"
+#include "MapData.h"
 #include "Controller.h"
 #include "tests.h"
 
@@ -29,7 +30,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::createWithRect("HelloCpp", Rect(0, 0, 800, 600));
+        glview = GLViewImpl::createWithRect("Princess Collection", Rect(0, 0, 800, 600));
         director->setOpenGLView(glview);
     }
 
@@ -41,8 +42,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
     
-    // cocos2d-xのバージョン確認
-    CCLOG("cocos version: %s", cocos2dVersion());
+    // オーディオ定義ファイルの読み込み
+    AudioManager::getInstance()->readAudioListFile("master/audioData.json");
+    
+    // クエストマップ定義ファイルの読み込み
+    MapData::getInstance()->mapDataJsonOpen("master/mapData.json");
     
     FileUtils::getInstance()->addSearchPath("res");
     

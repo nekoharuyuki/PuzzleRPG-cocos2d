@@ -2,6 +2,7 @@
 #include "QuestScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "AudioManager.h"
 
 #define PUZZLE_NUM_X 6
 #define PUZZLE_NUM_Y 6
@@ -9,6 +10,10 @@
 #define MOTION_STREAK_TAG 10
 
 USING_NS_CC;
+
+using namespace cocostudio::timeline;
+
+int PuzzleGameScene::m_questNo = 0;
 
 //コンストラクタ
 PuzzleGameScene::PuzzleGameScene()
@@ -25,10 +30,11 @@ PuzzleGameScene::PuzzleGameScene()
 }
 
 //シーン生成
-Scene* PuzzleGameScene::createScene()
+Scene* PuzzleGameScene::createScene(int questNo)
 {
     auto scene = Scene::create();
     auto layer = PuzzleGameScene::create();
+    m_questNo = questNo;
     scene->addChild(layer);
     
     return scene;
@@ -48,6 +54,16 @@ bool PuzzleGameScene::init()
         addChild(rootNode, ZOrder::BgForPuzzle);
     }
     
+    // Animationを読み込む
+    auto action = ActionTimelineCache::getInstance()->createAction("battle/BattleScene.csb");
+    if(action) {
+        rootNode->runAction(action);
+        action->gotoFrameAndPause(m_questNo);
+    }
+    
+    // バトル中のBGM再生
+    AudioManager::getInstance()->playBgm("battle");
+    
     // メニューへ戻るボタン
     // ボタンノードを取得
     auto startBtn = rootNode->getChildByName<ui::Button*>("menu_button");
@@ -59,9 +75,10 @@ bool PuzzleGameScene::init()
         // 0.5秒待ってからCallFuncを呼ぶ
         auto delay = DelayTime::create(0.5f);
         
-        // ゲームを始めるアクション
+        // クエストシーンへ移行する
         auto startGame = CallFunc::create([]{
             auto scene = QuestScene::createScene();
+            AudioManager::getInstance()->playBgm("all_bgm");
             auto transition = TransitionFadeBL::create(0.5f, scene);
             Director::getInstance()->replaceScene(transition);
         });
@@ -99,10 +116,8 @@ void PuzzleGameScene::initBackground()
 //ボールの初期表示
 void PuzzleGameScene::initPuzzles()
 {
-    for (int x = 1; x <= PUZZLE_NUM_X; x++)
-    {
-        for (int y = 1; y <= PUZZLE_NUM_Y; y++)
-        {
+    for (int x = 1; x <= PUZZLE_NUM_X; x++){
+        for (int y = 1; y <= PUZZLE_NUM_Y; y++){
             //ボールを生成する
             newPuzzles(PuzzleSprite::PositionIndex(x, y), true);
         }
@@ -121,9 +136,7 @@ PuzzleSprite* PuzzleGameScene::newPuzzles(PuzzleSprite::PositionIndex positionIn
     {
         puzzleType = m_distForPuzzle(m_engine);
         
-        if (!visible){
-            break;
-        }
+        if (!visible){ break; }
         
         //妥当性のチェック（ボールが隣り合わせにならないようにする）
         
@@ -181,8 +194,7 @@ bool PuzzleGameScene::onTouchBegan(Touch* touch, Event* unused_event)
     
     if (m_movingPuzzle){
         return true;
-    }
-    else{
+    }else{
         return false;
     }
 }
@@ -198,10 +210,12 @@ void PuzzleGameScene::onTouchMoved(Touch* touch, Event* unused_event)
     m_movingPuzzle->setPosition(m_movingPuzzle->getPosition() + touch->getDelta());
     
     auto touchPuzzle = getTouchPuzzle(touch->getLocation(), m_movingPuzzle->getPositionIndex());
-    if (touchPuzzle && m_movingPuzzle != touchPuzzle)
-    {
+    if (touchPuzzle && m_movingPuzzle != touchPuzzle){
         //移動しているボールが、別のボールの位置に移動
         m_movedPuzzle = true;
+        
+        // ボール移動時のSE再生
+        AudioManager::getInstance()->playSe("moving_puzzle");
         
         //別のボールの位置インデックスを取得
         auto touchPuzzlePositionIndex = touchPuzzle->getPositionIndex();
@@ -228,27 +242,21 @@ void PuzzleGameScene::onTouchCancelled(Touch* touch, Event* unused_event)
 //タップした位置のチェック
 PuzzleSprite* PuzzleGameScene::getTouchPuzzle(Point touchPos, PuzzleSprite::PositionIndex withoutPosIndex)
 {
-    for (int x = 1; x <= PUZZLE_NUM_X; x++)
-    {
-        for (int y = 1; y <= PUZZLE_NUM_Y; y++)
-        {
-            if (x == withoutPosIndex.x && y == withoutPosIndex.y)
-            {
+    for (int x = 1; x <= PUZZLE_NUM_X; x++){
+        for (int y = 1; y <= PUZZLE_NUM_Y; y++){
+            if (x == withoutPosIndex.x && y == withoutPosIndex.y){
                 //指定位置のボールの場合は、以下の処理を行わない
                 continue;
             }
-            
             //タップ位置にあるボールかどうかを判断する
             int tag = PuzzleSprite::generateTag(PuzzleSprite::PositionIndex(x, y));
             auto ball = (PuzzleSprite*)(getChildByTag(tag));
-            if (ball)
-            {
+            if (ball){
                 //2点間の距離を求める
                 float distance = ball->getPosition().getDistance(touchPos);
                 
                 //ボールの当たり判定は円形。つまりボールの中心からの半径で判断する
-                if (distance <= BALL_SIZE / 2)
-                {
+                if (distance <= BALL_SIZE / 2){
                     //タップした位置にボールが存在する
                     return ball;
                 }
@@ -278,9 +286,11 @@ void PuzzleGameScene::checksLinedPuzzles()
     //画面をタップ不可とする
     m_touchable = false;
     
-    if (existsLinedPuzzles())
-    {
+    if (existsLinedPuzzles()){
         //3個以上並んだボールの存在する場合
+        
+        //ボールの消去SE再生
+        AudioManager::getInstance()->playSe("removed_no"+std::to_string(m_chainNumber+1));
         
         //連鎖カウントアップ
         m_chainNumber++;
@@ -293,9 +303,7 @@ void PuzzleGameScene::checksLinedPuzzles()
         auto func = CallFunc::create(CC_CALLBACK_0(PuzzleGameScene::checksLinedPuzzles, this));
         auto seq = Sequence::create(delay, func, nullptr);
         runAction(seq);
-    }
-    else
-    {
+    }else{
         //タップを有効にする
         m_touchable = true;
     }
@@ -334,10 +342,10 @@ Map<int, PuzzleSprite*> PuzzleGameScene::getAllPuzzles()
     for (auto object : getChildren())
     {
         auto ball = dynamic_cast<PuzzleSprite*>(object);
-        if (ball)
+        if (ball){
             balls.insert(ball->getTag(), ball);
+        }
     }
-    
     return balls;
 }
 
@@ -347,17 +355,16 @@ bool PuzzleGameScene::isSamePuzzleType(PuzzleSprite::PositionIndex current, Dire
     //全てのボールのPuzzleTypeを取得
     auto allPuzzles = getAllPuzzles();
     
-    if (direction == Direction::x)
-    {
-        if (current.x + 1 > PUZZLE_NUM_X)
+    if (direction == Direction::x){
+        if (current.x + 1 > PUZZLE_NUM_X){
             //列が存在しない場合は抜ける
             return false;
-    }
-    else
-    {
-        if (current.y + 1 > PUZZLE_NUM_Y)
+        }
+    }else{
+        if (current.y + 1 > PUZZLE_NUM_Y){
             //行が存在しない場合は抜ける
             return false;
+        }
     }
     
     //現在のボールを取得
@@ -366,16 +373,17 @@ bool PuzzleGameScene::isSamePuzzleType(PuzzleSprite::PositionIndex current, Dire
     
     //次のボールを取得
     int nextTag;
-    if (direction == Direction::x)
+    if (direction == Direction::x){
         nextTag = PuzzleSprite::generateTag(PuzzleSprite::PositionIndex(current.x + 1, current.y));
-    else
+    }else{
         nextTag = PuzzleSprite::generateTag(PuzzleSprite::PositionIndex(current.x, current.y + 1));
+    }
     auto nextPuzzle = allPuzzles.at(nextTag);
     
-    if (currentPuzzle->getPuzzleType() == nextPuzzle->getPuzzleType())
+    if (currentPuzzle->getPuzzleType() == nextPuzzle->getPuzzleType()){
         //次のボールが同じBallTypeである
         return true;
-    
+    }
     return false;
 }
 
@@ -385,8 +393,7 @@ void PuzzleGameScene::initPuzzleParams()
     //全てのボールのBallTypeを取得
     auto allPuzzles = getAllPuzzles();
     
-    for (auto puzzle : allPuzzles)
-    {
+    for (auto puzzle : allPuzzles){
         puzzle.second->resetParams();
     }
 }
@@ -403,50 +410,41 @@ void PuzzleGameScene::checkedPuzzle(PuzzleSprite::PositionIndex current, Directi
     
     //指定方向のチェック済みフラグを取得
     bool checked;
-    if (direction == Direction::x)
+    if (direction == Direction::x){
         checked = puzzle->getCheckedX();
-    else
+    }else{
         checked = puzzle->getCheckedY();
-    
-    if (!checked)
-    {
+    }
+    if (!checked){
         int num = 0;
-        
         while (true)
         {
             //検索位置を取得
             PuzzleSprite::PositionIndex searchPosition;
-            if (direction == Direction::x)
+            if (direction == Direction::x){
                 searchPosition = PuzzleSprite::PositionIndex(current.x + num, current.y);
-            else
+            }else{
                 searchPosition = PuzzleSprite::PositionIndex(current.x, current.y + num);
-            
+            }
             //次のボールと同じPuzzleTypeかチェックする
-            if (isSamePuzzleType(searchPosition, direction))
-            {
+            if (isSamePuzzleType(searchPosition, direction)){
                 //次のボールと同じPuzzleType
                 int nextTag = PuzzleSprite::generateTag(searchPosition);
                 auto nextPuzzle = allPuzzles.at(nextTag);
-                
                 //チェックしたボールのチェック済みフラグを立てる
-                if (direction == Direction::x)
+                if (direction == Direction::x){
                     nextPuzzle->setCheckedX(true);
-                else
+                }else{
                     nextPuzzle->setCheckedY(true);
-                
+                }
                 num++;
-            }
-            else
-            {
+            }else{
                 //次のボールが異なるballType
-                
-                if (num >= 2)
-                {
+                if (num >= 2){
                     int removedNo = 0;
                     
                     //消去するボールのカウント
-                    if (m_removeNumbers.size() <= m_chainNumber)
-                    {
+                    if (m_removeNumbers.size() <= m_chainNumber){
                         //配列が存在しない場合は追加する
                         std::map<PuzzleSprite::PuzzleType, int> removeNumber;
                         m_removeNumbers.push_back(removeNumber);
@@ -456,50 +454,48 @@ void PuzzleGameScene::checkedPuzzle(PuzzleSprite::PositionIndex current, Directi
                     //すでにRemovedNoがあるものが存在するかチェック
                     for (int i = 0; i <= num; i++)
                     {
-                    PuzzleSprite::PositionIndex linedPosition;
-                        if (direction == Direction::x)
+                        PuzzleSprite::PositionIndex linedPosition;
+                        if (direction == Direction::x){
                             linedPosition = PuzzleSprite::PositionIndex(current.x + i, current.y);
-                        else
+                        }else{
                             linedPosition = PuzzleSprite::PositionIndex(current.x, current.y + i);
-                        
+                        }
                         int linedPuzzleTag = PuzzleSprite::generateTag(linedPosition);
                         auto linedPuzzle = allPuzzles.at(linedPuzzleTag);
-                        if (linedPuzzle->getRemovedNo() > 0)
-                        {
+                        if (linedPuzzle->getRemovedNo() > 0){
                             //すでにRemovedNoがあるものが存在するので、removedNoを取得し次の処理を行う
                             removedNo = linedPuzzle->getRemovedNo();
                             break;
                         }
                     }
-                    
                     //消去する順番のカウントアップ
-                    if (removedNo == 0)
+                    if (removedNo == 0){
                         removedNo = ++m_maxRemovedNo;
-                    
+                    }
                     //3個以上並んでいた場合は、reomvedNoをセットする
                     for (int i = 0; i <= num; i++)
                     {
                         PuzzleSprite::PositionIndex linedPosition;
-                        if (direction == Direction::x)
+                        if (direction == Direction::x){
                             linedPosition = PuzzleSprite::PositionIndex(current.x + i, current.y);
-                        else
+                        }else{
                             linedPosition = PuzzleSprite::PositionIndex(current.x, current.y + i);
-                        
+                        }
                         int linedPuzzleTag = PuzzleSprite::generateTag(linedPosition);
                         auto linedPuzzle = allPuzzles.at(linedPuzzleTag);
                         linedPuzzle->setRemovedNo(removedNo);
                     }
                 }
-                
                 break;
             }
         };
         
         //指定方向をチェック済みとする
-        if (direction == Direction::x)
+        if (direction == Direction::x) {
             puzzle->setCheckedX(true);
-        else
+        }else{
             puzzle->setCheckedY(true);
+        }
     }
 }
 
@@ -511,38 +507,32 @@ void PuzzleGameScene::removeAndGeneratePuzzles()
     
     int maxRemovedNo = 0;
     
-    for (int x = 1; x <= PUZZLE_NUM_X; x++)
-    {
+    for (int x = 1; x <= PUZZLE_NUM_X; x++) {
         int fallCount = 0;
         
-        for (int y = 1; y <= PUZZLE_NUM_Y; y++)
-        {
+        for (int y = 1; y <= PUZZLE_NUM_Y; y++) {
             int tag = PuzzleSprite::generateTag(PuzzleSprite::PositionIndex(x, y));
             auto puzzle = allPuzzles.at(tag);
             
             if (puzzle) {
                 int removedNoForPuzzle = puzzle->getRemovedNo();
                 
-                if (removedNoForPuzzle > 0)
-                {
+                if (removedNoForPuzzle > 0){
                     //落ちる段数をカウント
                     fallCount++;
                     
-                    if (removedNoForPuzzle > maxRemovedNo)
+                    if (removedNoForPuzzle > maxRemovedNo){
                         maxRemovedNo = removedNoForPuzzle;
-                }
-                else
-                {
+                    }
+                }else{
                     //落ちる段数をセット
                     puzzle->setFallCount(fallCount);
                 }
             }
         }
-        
         //ボールを生成する
         generatePuzzles(x, fallCount);
     }
-    
     //ボールの消去＆落下アニメーション
     animationPuzzles();
 }
@@ -550,8 +540,7 @@ void PuzzleGameScene::removeAndGeneratePuzzles()
 //ボールを生成する
 void PuzzleGameScene::generatePuzzles(int xLineNum, int fallCount)
 {
-    for (int i = 1; i <= fallCount; i++)
-    {
+    for (int i = 1; i <= fallCount; i++) {
         //ボールを生成する
         auto positionIndex = PuzzleSprite::PositionIndex(xLineNum, PUZZLE_NUM_Y + i);
         auto puzzle = newPuzzles(positionIndex, false);
@@ -565,8 +554,7 @@ void PuzzleGameScene::animationPuzzles()
     //全てのボールのPuzzleTypeを取得
     auto allPuzzles = getAllPuzzles();
     
-    for (auto Puzzle : allPuzzles)
-    {
+    for (auto Puzzle : allPuzzles) {
         //ボールのアニメーションを実行する
         Puzzle.second->removingAndFallingAnimation(m_maxRemovedNo);
     }

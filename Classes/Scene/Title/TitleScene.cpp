@@ -4,6 +4,7 @@
 #include "ui/CocosGUI.h"
 
 #include "GameDataSQL.h"
+#include "AudioManager.h"
 
 USING_NS_CC;
 
@@ -40,6 +41,9 @@ bool TitleScene::init()
     }
     addChild(rootNode);
     
+    // タイトルBGM再生
+    AudioManager::getInstance()->playBgm("all_bgm");
+    
     // ローカルDBデータの有無を確認
     
     // ボタンノードを取得
@@ -50,11 +54,13 @@ bool TitleScene::init()
         this->getEventDispatcher()->removeAllEventListeners();
         
         // 0.5秒待ってからCallFuncを呼ぶ
-        auto delay = DelayTime::create(0.5f);
+        auto delay = DelayTime::create(0.2f);
         
         // ゲームを始めるアクション
         auto startGame = CallFunc::create([]{
             auto scene = QuestScene::createScene();
+            // スタートボタン音SE再生
+            AudioManager::getInstance()->playSe("ui_title_start");
             auto transition = TransitionFade::create(0.5f, scene, Color3B::WHITE);
             Director::getInstance()->replaceScene(transition);
         });
