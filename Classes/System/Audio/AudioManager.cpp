@@ -342,6 +342,7 @@ int AudioManager::playBgm(const std::string baseName, float fadeTime, bool loop,
     if (m_bgmLoopList.count(m_bgmFileName) > 0) {
         m_bgmLoopList[m_bgmFileName].isLoopInterval = false;
     }
+    CCLOG( "playBgm(  %s  )", baseName.c_str() );
     return m_bgmId;
 }
 
@@ -482,6 +483,7 @@ int AudioManager::playSe(const std::string baseName, int chunkNo, bool loop, flo
         // チャンクにSoundIdを登録
         m_chunk[chunkNo] = soundId;
     }
+    CCLOG( "playSe(  %s  )", baseName.c_str() );
     return soundId;
 }
 // 効果音を再生する
