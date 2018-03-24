@@ -11,6 +11,7 @@
 	{
         "ui_title_start":"sound/se/start.mp3",
 		"ui_page":"sound/se/page.mp3",
+        "cur":"sound/se/cur.mp3",
         "area1":"sound/se/area/area1.mp3",
         "area2":"sound/se/area/area2.mp3",
         "area3":"sound/se/area/area3.mp3",

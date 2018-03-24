@@ -113,6 +113,7 @@ void OtherScene::onSeOnOff(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEven
     }else{
         AudioManager::getInstance()->setSeVolume(0);
     }
+    AudioManager::getInstance()->playSe("cur");
 }
 
 void OtherScene::onBgmOnOff(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type){
@@ -128,4 +129,5 @@ void OtherScene::onBgmOnOff(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
     }else{
         AudioManager::getInstance()->setBgmVolume(0);
     }
+    AudioManager::getInstance()->playSe("cur");
 }
