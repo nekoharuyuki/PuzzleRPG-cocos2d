@@ -92,14 +92,16 @@
 		8025F0D4205E8ADD0022896B /* UserOptionData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8025F0D1205E8ADD0022896B /* UserOptionData.cpp */; };
 		8043CFCE2067394F0019BA4E /* CharselectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8043CFCC2067394F0019BA4E /* CharselectScene.cpp */; };
 		8043CFCF2067394F0019BA4E /* CharselectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8043CFCC2067394F0019BA4E /* CharselectScene.cpp */; };
+		8043CFD520676D8C0019BA4E /* MapData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8043CFD220676D8C0019BA4E /* MapData.cpp */; };
+		8043CFD620676D8C0019BA4E /* MapData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8043CFD220676D8C0019BA4E /* MapData.cpp */; };
+		8043CFD720676D8C0019BA4E /* CharData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8043CFD320676D8C0019BA4E /* CharData.cpp */; };
+		8043CFD820676D8C0019BA4E /* CharData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8043CFD320676D8C0019BA4E /* CharData.cpp */; };
 		8054001520442E90009EE5ED /* master in Resources */ = {isa = PBXBuildFile; fileRef = 8054001220442E90009EE5ED /* master */; };
 		8054001620442E90009EE5ED /* master in Resources */ = {isa = PBXBuildFile; fileRef = 8054001220442E90009EE5ED /* master */; };
 		8054001C2044664E009EE5ED /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 805400182044664E009EE5ED /* sqlite3.c */; };
 		8054001D2044664E009EE5ED /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 805400182044664E009EE5ED /* sqlite3.c */; };
 		805400302046E961009EE5ED /* GameDataSQL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8054002E2046E961009EE5ED /* GameDataSQL.cpp */; };
 		805400312046E961009EE5ED /* GameDataSQL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8054002E2046E961009EE5ED /* GameDataSQL.cpp */; };
-		80540047204C4087009EE5ED /* MapData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80540043204C4087009EE5ED /* MapData.cpp */; };
-		80540048204C4087009EE5ED /* MapData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80540043204C4087009EE5ED /* MapData.cpp */; };
 		80691D122001D87D00AB4BFB /* PuzzleGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80691D112001D87D00AB4BFB /* PuzzleGameScene.cpp */; };
 		80691D132001D87D00AB4BFB /* PuzzleGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80691D112001D87D00AB4BFB /* PuzzleGameScene.cpp */; };
 		80BDB4E0204291C100F1F36E /* SyntheticScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BDB4DD204291C100F1F36E /* SyntheticScene.cpp */; };
@@ -277,14 +279,16 @@
 		8025F0D2205E8ADD0022896B /* UserOptionData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserOptionData.h; sourceTree = "<group>"; };
 		8043CFCC2067394F0019BA4E /* CharselectScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CharselectScene.cpp; sourceTree = "<group>"; };
 		8043CFCD2067394F0019BA4E /* CharselectScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharselectScene.h; sourceTree = "<group>"; };
+		8043CFD120676D8C0019BA4E /* CharData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharData.h; sourceTree = "<group>"; };
+		8043CFD220676D8C0019BA4E /* MapData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapData.cpp; sourceTree = "<group>"; };
+		8043CFD320676D8C0019BA4E /* CharData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharData.cpp; sourceTree = "<group>"; };
+		8043CFD420676D8C0019BA4E /* MapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapData.h; sourceTree = "<group>"; };
 		8054001220442E90009EE5ED /* master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = master; sourceTree = "<group>"; };
 		805400182044664E009EE5ED /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		8054001A2044664E009EE5ED /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		8054001B2044664E009EE5ED /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
 		8054002E2046E961009EE5ED /* GameDataSQL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameDataSQL.cpp; sourceTree = "<group>"; };
 		8054002F2046E961009EE5ED /* GameDataSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameDataSQL.h; sourceTree = "<group>"; };
-		80540043204C4087009EE5ED /* MapData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapData.cpp; sourceTree = "<group>"; };
-		80540046204C4087009EE5ED /* MapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapData.h; sourceTree = "<group>"; };
 		80691D102001D87C00AB4BFB /* PuzzleGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleGameScene.h; sourceTree = "<group>"; };
 		80691D112001D87D00AB4BFB /* PuzzleGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PuzzleGameScene.cpp; sourceTree = "<group>"; };
 		80BDB4DC204291C100F1F36E /* SyntheticScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyntheticScene.h; sourceTree = "<group>"; };
@@ -680,6 +684,17 @@
 			path = Charselect;
 			sourceTree = "<group>";
 		};
+		8043CFD020676D8C0019BA4E /* json */ = {
+			isa = PBXGroup;
+			children = (
+				8043CFD220676D8C0019BA4E /* MapData.cpp */,
+				8043CFD420676D8C0019BA4E /* MapData.h */,
+				8043CFD320676D8C0019BA4E /* CharData.cpp */,
+				8043CFD120676D8C0019BA4E /* CharData.h */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
 		805400172044664E009EE5ED /* sqlite */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,10 +708,9 @@
 		805400272045AF45009EE5ED /* GameData */ = {
 			isa = PBXGroup;
 			children = (
+				8043CFD020676D8C0019BA4E /* json */,
 				8054002E2046E961009EE5ED /* GameDataSQL.cpp */,
 				8054002F2046E961009EE5ED /* GameDataSQL.h */,
-				80540043204C4087009EE5ED /* MapData.cpp */,
-				80540046204C4087009EE5ED /* MapData.h */,
 				8025F0D1205E8ADD0022896B /* UserOptionData.cpp */,
 				8025F0D2205E8ADD0022896B /* UserOptionData.h */,
 			);
@@ -895,6 +909,7 @@
 			files = (
 				801E1DC0203146F20034A904 /* MenuLayer.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				8043CFD520676D8C0019BA4E /* MapData.cpp in Sources */,
 				80BDB4E4204294AF00F1F36E /* PartyScene.cpp in Sources */,
 				800713F61FF7F03F0004DFAB /* Controller.cpp in Sources */,
 				801E1DC82031CA690034A904 /* MypageScene.cpp in Sources */,
@@ -909,12 +924,12 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				80691D122001D87D00AB4BFB /* PuzzleGameScene.cpp in Sources */,
 				800713FE1FF7F03F0004DFAB /* AudioManager.cpp in Sources */,
+				8043CFD720676D8C0019BA4E /* CharData.cpp in Sources */,
 				8007142B20010EB60004DFAB /* TitleScene.cpp in Sources */,
 				801E1DCD2031CDFA0034A904 /* EvolutionScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				800713F81FF7F03F0004DFAB /* BaseTest.cpp in Sources */,
 				800713F01FF7F03F0004DFAB /* Converter.cpp in Sources */,
-				80540047204C4087009EE5ED /* MapData.cpp in Sources */,
 				800713F21FF7F03F0004DFAB /* VisibleRect.cpp in Sources */,
 				8025F0D3205E8ADD0022896B /* UserOptionData.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -927,6 +942,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8043CFCF2067394F0019BA4E /* CharselectScene.cpp in Sources */,
+				8043CFD620676D8C0019BA4E /* MapData.cpp in Sources */,
 				801E1DCE2031CDFA0034A904 /* EvolutionScene.cpp in Sources */,
 				801E1DC1203146F20034A904 /* MenuLayer.cpp in Sources */,
 				801E1DC92031CA690034A904 /* MypageScene.cpp in Sources */,
@@ -934,6 +950,7 @@
 				800713F91FF7F03F0004DFAB /* BaseTest.cpp in Sources */,
 				805400312046E961009EE5ED /* GameDataSQL.cpp in Sources */,
 				8025F0D4205E8ADD0022896B /* UserOptionData.cpp in Sources */,
+				8043CFD820676D8C0019BA4E /* CharData.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				80BDB4E5204294AF00F1F36E /* PartyScene.cpp in Sources */,
 				8007142C20010EB60004DFAB /* TitleScene.cpp in Sources */,
@@ -946,7 +963,6 @@
 				800713FF1FF7F03F0004DFAB /* AudioManager.cpp in Sources */,
 				800713FB1FF7F03F0004DFAB /* MathHelper.cpp in Sources */,
 				800713F71FF7F03F0004DFAB /* Controller.cpp in Sources */,
-				80540048204C4087009EE5ED /* MapData.cpp in Sources */,
 				800713F31FF7F03F0004DFAB /* VisibleRect.cpp in Sources */,
 				801E1DC5203146F20034A904 /* QuestScene.cpp in Sources */,
 				8054001D2044664E009EE5ED /* sqlite3.c in Sources */,

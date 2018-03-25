@@ -48,6 +48,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // クエストマップ定義ファイルの読み込み
     MapData::getInstance()->mapDataJsonOpen("master/mapData.json");
     
+    // キャラクター定義ファイルの読み込み
+    
+    
     FileUtils::getInstance()->addSearchPath("res");
     
     auto scene = TitleScene::createScene();
