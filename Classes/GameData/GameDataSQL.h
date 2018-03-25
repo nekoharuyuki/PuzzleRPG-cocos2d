@@ -7,7 +7,10 @@
 class GameDataSQL{
 
 public:
-
+    
+    // データベースの存在確認
+    static bool hasData();
+    
     //データベースを開く
     static int sqliteOpen(sqlite3 **db);
     

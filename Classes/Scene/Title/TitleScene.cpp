@@ -1,4 +1,5 @@
 #include "TitleScene.h"
+#include "CharselectScene.h"
 #include "QuestScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
@@ -44,8 +45,6 @@ bool TitleScene::init()
     // タイトルBGM再生
     AudioManager::getInstance()->playBgm("all_bgm");
     
-    // ローカルDBデータの有無を確認
-    
     // ボタンノードを取得
     auto startBtn = rootNode->getChildByName<ui::Button*>("start_btn");
     // タッチイベント追加
@@ -58,11 +57,20 @@ bool TitleScene::init()
         
         // ゲームを始めるアクション
         auto startGame = CallFunc::create([]{
-            auto scene = QuestScene::createScene();
+            
             // スタートボタン音SE再生
             AudioManager::getInstance()->playSe("ui_title_start");
-            auto transition = TransitionFade::create(0.5f, scene, Color3B::WHITE);
-            Director::getInstance()->replaceScene(transition);
+            
+            // ローカルDBデータの有無を確認
+            if(!GameDataSQL::hasData()){
+                // キャラクター選択画面へ移行
+                auto transition = TransitionFade::create(0.5f, CharselectScene::createScene(), Color3B::WHITE);
+                Director::getInstance()->replaceScene(transition);
+            } else {
+                // クエスト選択画面へ移行
+                auto transition = TransitionFade::create(0.5f, QuestScene::createScene(), Color3B::WHITE);
+                Director::getInstance()->replaceScene(transition);
+            }
         });
         this->runAction(Sequence::create(delay, startGame, NULL));
         return true;    // イベントを実行する

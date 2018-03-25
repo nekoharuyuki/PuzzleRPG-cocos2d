@@ -7,12 +7,12 @@
 		<key>libcocos2d Mac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>6</integer>
 		</dict>
 		<key>libcocos2d iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>5</integer>
 		</dict>
 		<key>libcocos2d tvOS.xcscheme</key>
 		<dict>
