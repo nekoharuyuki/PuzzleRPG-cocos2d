@@ -9,6 +9,8 @@ bool GameDataSQL::hasData(){
     std::string filePath = FileUtils::getInstance()->getWritablePath();
     filePath += dbName;
     if (FileUtils::getInstance()->isFileExist(filePath)) {
+        // ローカルDBのデータ保存場所
+        CCLOG(" DB File Path : %s", filePath.c_str());
         return true;
     }
     return false;

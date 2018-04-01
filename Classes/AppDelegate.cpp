@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "AudioManager.h"
 #include "MapData.h"
+#include "CharData.h"
 #include "Controller.h"
 #include "tests.h"
 
@@ -49,7 +50,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     MapData::getInstance()->mapDataJsonOpen("master/mapData.json");
     
     // キャラクター定義ファイルの読み込み
-    
+    CharData::getInstance()->charDataJsonOpen("master/charData.json");
     
     FileUtils::getInstance()->addSearchPath("res");
     

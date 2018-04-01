@@ -6,9 +6,11 @@ USING_NS_CC;
 
 CharData* CharData::m_instance = nullptr;
 std::map<int, CharData::CharDataParams> CharData::m_charDataList;
+std::map<int, CharData::EnemyDataParams> CharData::m_enemyDataList;
 
 CharData::CharData()
 : m_charListFile("")
+, m_enemyListFile("")
 {
 }
 
@@ -59,21 +61,50 @@ bool CharData::charDataJsonOpen(const std::string& filename)
     m_charDataList.clear();
     
     // キーと値を変数に登録する
-    const rapidjson::Value& mapList = doc["map"];
+    const rapidjson::Value& charList = doc["char"];
+    
     // キーと値をリストに登録する
-    for(rapidjson::SizeType i = 0; i < mapList.Size(); i++){
-        /*
-        m_charDataList[i].mapId       = mapList[i]["id"].GetInt();
-        m_charDataList[i].mapName     = mapList[i]["name"].GetString();
-        m_charDataList[i].mapStamina  = mapList[i]["stamina"].GetInt();
-        m_charDataList[i].mapStage    = mapList[i]["stage"].GetInt();
-        m_mapDam_charDataListtaList[i].mapDropCoin = mapList[i]["dropCoin"].GetInt();
-        m_charDataList[i].mapBoss     = mapList[i]["boss"].GetBool();
-         */
+    // 敵のデータ取得
+    for(rapidjson::SizeType i = 0; i < charList.Size(); i++){
+        m_charDataList[i].charName      = charList[i]["name"].GetString();
+        m_charDataList[i].charId        = charList[i]["id"].GetInt();
+        m_charDataList[i].charHp        = charList[i]["hp"].GetInt();
+        m_charDataList[i].charMaxHp     = charList[i]["maxHp"].GetInt();
+        m_charDataList[i].charAtk       = charList[i]["atk"].GetInt();
+        m_charDataList[i].charMaxAtk    = charList[i]["maxAtk"].GetInt();
+        m_charDataList[i].charAttribute = charList[i]["attribute"].GetInt();
+        
+        m_charDataList[i].charRare      = charList[i]["rare"].GetInt();
+        m_charDataList[i].charSkill     = charList[i]["skill"].GetInt();
+        m_charDataList[i].charSkillText = charList[i]["skillText"].GetString();
+        m_charDataList[i].charSkillTurn = charList[i]["skillTurn"].GetInt();
+        m_charDataList[i].charMixExp    = charList[i]["mix_exp"].GetInt();
+        m_charDataList[i].charLevel     = charList[i]["level"].GetInt();
+        m_charDataList[i].charExp       = charList[i]["exp"].GetInt();
+        m_charDataList[i].charPrice     = charList[i]["price"].GetInt();
+        m_charDataList[i].charOverLimit = charList[i]["overLimit"].GetInt();
+        
+    }
+    
+    // キーと値を変数に登録する
+    const rapidjson::Value& enemyList = doc["enemy"];
+    
+    // キーと値をリストに登録する
+    // 敵のデータ取得
+    for(rapidjson::SizeType i = 0; i < enemyList.Size(); i++){
+        m_enemyDataList[i].enemyName      = enemyList[i]["name"].GetString();
+        m_enemyDataList[i].enemyHp        = enemyList[i]["hp"].GetInt();
+        m_enemyDataList[i].enemyMaxHp     = enemyList[i]["maxHp"].GetInt();
+        m_enemyDataList[i].enemyAtk       = enemyList[i]["atk"].GetInt();
+        m_enemyDataList[i].enemyMaxAtk    = enemyList[i]["maxAtk"].GetInt();
+        m_enemyDataList[i].enemyAttribute = enemyList[i]["attribute"].GetInt();
+        m_enemyDataList[i].enemyExp       = enemyList[i]["exp"].GetInt();
+        m_enemyDataList[i].enemyTurn      = enemyList[i]["turn"].GetInt();
     }
     
     // 現在のファイルをセット
     m_charListFile = filename;
+    m_enemyListFile = filename;
     
     return true;
 }
