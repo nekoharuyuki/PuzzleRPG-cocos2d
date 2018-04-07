@@ -20,13 +20,6 @@ private:
     };
     static std::map<int, MapDataParams> m_mapDataList;
     
-    /*
-    cocos2d::Value& mapEnemy;
-    std::map<int, cocos2d::Value&> m_mapEnemyList;
-    cocos2d::Value& mapDropChar;
-    std::map<int, cocos2d::Value&> m_DropCharList;
-    */
-     
     // マップ管理ファイルのファイルパス
     CC_SYNTHESIZE(std::string, m_mapListFile, MapListFile);
     

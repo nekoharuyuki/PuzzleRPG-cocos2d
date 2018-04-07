@@ -55,7 +55,7 @@
           <AbstractNodeData Name="popup_1" ActionTag="308958992" Tag="62" IconVisible="False" LeftMargin="144.5003" RightMargin="138.4997" TopMargin="130.4999" BottomMargin="112.5001" ctype="SpriteObjectData">
             <Size X="517.0000" Y="357.0000" />
             <Children>
-              <AbstractNodeData Name="char1_btn" ActionTag="-1706714847" Tag="1006" IconVisible="False" LeftMargin="41.0000" RightMargin="376.0000" TopMargin="135.5000" BottomMargin="121.5000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="-15" Scale9OriginY="-11" Scale9Width="30" Scale9Height="22" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="char1_btn" ActionTag="-1706714847" Tag="1006" IconVisible="False" LeftMargin="41.0000" RightMargin="376.0000" TopMargin="135.5000" BottomMargin="121.5000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="70" Scale9Height="78" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">
                 <Size X="100.0000" Y="100.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="91.0000" Y="171.5000" />
@@ -64,10 +64,13 @@
                 <PrePosition X="0.1760" Y="0.4804" />
                 <PreSize X="0.1934" Y="0.2801" />
                 <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Normal" Path="asset/char/icon_chara_b_1.png" Plist="" />
+                <PressedFileData Type="Normal" Path="asset/char/icon_chara_b_1.png" Plist="" />
+                <NormalFileData Type="Normal" Path="asset/char/icon_chara_b_1.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="char2_btn" ActionTag="-1983845064" Tag="1007" IconVisible="False" LeftMargin="205.9999" RightMargin="211.0001" TopMargin="135.5000" BottomMargin="121.5000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="-15" Scale9OriginY="-11" Scale9Width="30" Scale9Height="22" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="char2_btn" ActionTag="-1983845064" Tag="1007" IconVisible="False" LeftMargin="205.9999" RightMargin="211.0001" TopMargin="135.5000" BottomMargin="121.5000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="70" Scale9Height="78" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">
                 <Size X="100.0000" Y="100.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="255.9999" Y="171.5000" />
@@ -76,10 +79,13 @@
                 <PrePosition X="0.4952" Y="0.4804" />
                 <PreSize X="0.1934" Y="0.2801" />
                 <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Normal" Path="asset/char/icon_chara_b_2.png" Plist="" />
+                <PressedFileData Type="Normal" Path="asset/char/icon_chara_b_2.png" Plist="" />
+                <NormalFileData Type="Normal" Path="asset/char/icon_chara_b_2.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="char3_btn" ActionTag="-1062706575" Tag="1008" IconVisible="False" LeftMargin="370.9999" RightMargin="46.0001" TopMargin="135.5000" BottomMargin="121.5000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="-15" Scale9OriginY="-11" Scale9Width="30" Scale9Height="22" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="char3_btn" ActionTag="-1062706575" Tag="1008" IconVisible="False" LeftMargin="370.9999" RightMargin="46.0001" TopMargin="135.5000" BottomMargin="121.5000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="70" Scale9Height="78" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">
                 <Size X="100.0000" Y="100.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="420.9999" Y="171.5000" />
@@ -88,6 +94,9 @@
                 <PrePosition X="0.8143" Y="0.4804" />
                 <PreSize X="0.1934" Y="0.2801" />
                 <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Normal" Path="asset/char/icon_chara_b_3.png" Plist="" />
+                <PressedFileData Type="Normal" Path="asset/char/icon_chara_b_3.png" Plist="" />
+                <NormalFileData Type="Normal" Path="asset/char/icon_chara_b_3.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
