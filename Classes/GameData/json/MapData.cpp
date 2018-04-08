@@ -75,27 +75,3 @@ bool MapData::mapDataJsonOpen(const std::string& filename)
     
     return true;
 }
-
-int MapData::getMapId(int mapId){
-    return m_mapDataList[mapId].mapId;
-}
-
-std::string MapData::getMapName(int mapId){
-    return m_mapDataList[mapId].mapName;
-}
-
-int MapData::getMapStamina(int mapId){
-    return m_mapDataList[mapId].mapStamina;
-}
-
-int MapData::getMapStage(int mapId){
-    return m_mapDataList[mapId].mapStage;
-}
-
-int MapData::getMapDropCoin(int mapId){
-    return m_mapDataList[mapId].mapDropCoin;
-}
-
-bool MapData::getMapBoss(int mapId){
-    return m_mapDataList[mapId].mapBoss;
-}

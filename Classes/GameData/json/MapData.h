@@ -30,12 +30,7 @@ public:
     
     bool mapDataJsonOpen(const std::string& filename);
     
-    static int getMapId(int mapId);
-    static std::string getMapName(int mapId);
-    static int getMapStamina(int mapId);
-    static int getMapStage(int mapId);
-    static int getMapDropCoin(int mapId);
-    static bool getMapBoss(int mapId);
+    static MapDataParams getMapData(int dataId){ return m_mapDataList[dataId]; }
 };
 
 #endif /* defined(__MAP_DATA__) */
