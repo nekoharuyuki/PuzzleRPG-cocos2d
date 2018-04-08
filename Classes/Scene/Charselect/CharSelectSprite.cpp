@@ -42,7 +42,7 @@ bool CharSelectSprite::init(int charId)
 //選択したキャラクターの画像を取得
 std::string CharSelectSprite::getSelectCharImageFilePath(int charId)
 {
-    //ボールタイプに適した画像を返す
+    //選択したキャラクターに適した画像を返す
     switch (charId)
     {
         case 0:    return "asset/char/chara_princessselect_1.png";
