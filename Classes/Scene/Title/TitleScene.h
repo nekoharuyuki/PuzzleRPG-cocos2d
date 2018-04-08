@@ -18,6 +18,7 @@ public:
 private:
     
     void startButtonPress(Node* rootNode);
+    void mypageButtonPress(Node* rootNode);
     void otherButtonPress(Node* rootNode);
 };
 

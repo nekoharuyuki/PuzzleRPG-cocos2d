@@ -7,7 +7,8 @@
 
 #include "CharselectScene.h"
 #include "QuestScene.h"
-
+#include "CharData.h"
+#include "CharSelectSprite.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
@@ -84,9 +85,9 @@ void CharselectScene::onChar( SelectCharNo no )
     m_popup_1->setVisible(false);
     
     auto yes_btn = m_popup_2->getChildByName<ui::Button*>( "yes_btn" );
-    yes_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+    yes_btn->addTouchEventListener([this, no](Ref* sender, ui::Widget::TouchEventType type) {
         if (type == cocos2d::ui::Widget::TouchEventType::ENDED){
-            onYes();
+            onYes(no);
         }
     });
     
@@ -96,30 +97,23 @@ void CharselectScene::onChar( SelectCharNo no )
             onBack();
         }
     });
-    /*
-    auto AttributeNode = m_popup_2->getChildByName<Node*>( "AttributeNode" );
     
     auto NameText = m_popup_2->getChildByName<ui::Text*>( "NameText" );
-    NameText->setString( CharData.char[_id].name );
-    
-    auto LevelText = m_popup_2->getChildByName<ui::Text*>( "LevelText" );
-    
+    NameText->setString( CharData::getCharData(no).charName );
     auto AtkText = m_popup_2->getChildByName<ui::Text*>( "AtkText" );
-    AtkText->setString( CharData.char[_id].atk );
-    
+    AtkText->setString( std::to_string(CharData::getCharData(no).charAtk) );
     auto SkillText = m_popup_2->getChildByName<ui::Text*>( "SkillText" );
-    SkillText->setString( CharData.char[_id].skillText );
-    
+    SkillText->setString( CharData::getCharData(no).charSkillText );
     auto chara_princessselect = m_popup_2->getChildByName<Node*>( "chara_princessselect" );
     chara_princessselect->removeAllChildren();
-    
-    var charSprite = new charSelectSprite( _id+1 );
-    chara_princessselect.addChild( charSprite, 1 );
-    */
+    auto charSprite = CharSelectSprite::create(no);
+    if(charSprite){
+        chara_princessselect->addChild( charSprite, 1 );
+    }
     m_popup_2->setVisible(true);
 }
 
-void CharselectScene::onYes()
+void CharselectScene::onYes(SelectCharNo no)
 {
     m_popup_2->setVisible(false);
     auto start_btn = m_popup_3->getChildByName<ui::Button*>( "start_btn" );
@@ -145,14 +139,14 @@ void CharselectScene::onYes()
         }
     });
     
-    /*
     auto NameText = m_popup_3->getChildByName<ui::Text*>( "NameText" );
-    NameText.setString( CharData.char[this.selectId].name );
+    NameText->setString( CharData::getCharData(no).charName );
     auto chara_princessselect = m_popup_3->getChildByName<ui::Button*>( "chara_princessselect" );
+    auto charSprite = CharSelectSprite::create( no );
+    if(charSprite){
+        chara_princessselect->addChild( charSprite, 1 );
+    }
     
-     var charSprite = new charSelectSprite( this.selectId+1 );
-     chara_princessselect.addChild( charSprite );
-     */
     m_popup_3->setVisible(true);
 }
 

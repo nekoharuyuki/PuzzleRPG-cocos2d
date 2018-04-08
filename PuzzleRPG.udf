@@ -28,5 +28,17 @@
         <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="res/synthetic/SyntheticScene.csd" />
+          <FilePathData Path="res/title/TitleScene.csd" />
+          <FilePathData Path="res/mypage/Menu.csd" />
+          <FilePathData Path="res/charselect/CharIconNode.csd" />
+          <FilePathData Path="res/charselect/CharselectScene.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="res/charselect/CharselectScene.csd" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>
