@@ -8,6 +8,8 @@ USING_NS_CC;
 
 using namespace cocostudio::timeline;
 
+OtherScene::transition OtherScene::m_transitionScene;
+
 bool OtherScene::m_bgm = true;
 bool OtherScene::m_se  = true;
 
@@ -20,8 +22,11 @@ OtherScene::OtherScene()
 {
 }
 
-Scene* OtherScene::createScene()
+Scene* OtherScene::createScene(OtherScene::transition sceneTransition)
 {
+    // どのシーンから遷移してきた
+    m_transitionScene = sceneTransition;
+    
     // 'scene' is an autorelease object
     auto scene = Scene::create();
     
@@ -30,7 +35,7 @@ Scene* OtherScene::createScene()
 
     // add layer as a child to scene
     scene->addChild(layer);
-
+    
     // return the scene
     return scene;
 }
@@ -51,14 +56,15 @@ bool OtherScene::init()
     }
     this->addChild(rootNode);
     
-    // レイヤーの初期化
-    auto *layer = MenuLayer::create();
-    if(layer == nullptr){
-        return false;
+    if(m_transitionScene == transition_menu){
+        // メニューレイヤーの初期化
+        auto *layer = MenuLayer::create();
+        if(layer == nullptr){
+            return false;
+        }
+        // シーンにメニューレイヤーを追加する
+        rootNode->addChild(layer);
     }
-    // シーンにレイヤーを追加する
-    rootNode->addChild(layer);
-    
     // ボタンノードを取得
     auto popupOther = rootNode->getChildByName("popup_other");
     
@@ -107,13 +113,13 @@ void OtherScene::onSeOnOff(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEven
         m_seOn->setEnabled( !m_se );
         m_seOff->setBright( m_se );
         m_seOff->setEnabled( m_se );
+        if( m_se ){
+            AudioManager::getInstance()->setSeVolume(100);
+        }else{
+            AudioManager::getInstance()->setSeVolume(0);
+        }
+        AudioManager::getInstance()->playSe("cur");
     }
-    if( m_se ){
-        AudioManager::getInstance()->setSeVolume(100);
-    }else{
-        AudioManager::getInstance()->setSeVolume(0);
-    }
-    AudioManager::getInstance()->playSe("cur");
 }
 
 void OtherScene::onBgmOnOff(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type){
@@ -123,11 +129,11 @@ void OtherScene::onBgmOnOff(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
         m_bgmOn->setEnabled( !m_bgm );
         m_bgmOff->setBright( m_bgm );
         m_bgmOff->setEnabled( m_bgm );
+        if( m_bgm ){
+            AudioManager::getInstance()->setBgmVolume(100);
+        }else{
+            AudioManager::getInstance()->setBgmVolume(0);
+        }
+        AudioManager::getInstance()->playSe("cur");
     }
-    if( m_bgm ){
-        AudioManager::getInstance()->setBgmVolume(100);
-    }else{
-        AudioManager::getInstance()->setBgmVolume(0);
-    }
-    AudioManager::getInstance()->playSe("cur");
 }

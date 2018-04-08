@@ -1,6 +1,7 @@
 #include "TitleScene.h"
 #include "CharselectScene.h"
 #include "QuestScene.h"
+#include "OtherScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
@@ -36,6 +37,8 @@ bool TitleScene::init()
         return false;
     }
     
+    // タイトル画面へ移行する前の映像
+    
     auto rootNode = CSLoader::createNode("title/TitleScene.csb");
     if(rootNode == nullptr){
         return false;
@@ -45,6 +48,22 @@ bool TitleScene::init()
     // タイトルBGM再生
     AudioManager::getInstance()->playBgm("all_bgm");
     
+    // スタートボタンが押された時の処理
+    startButtonPress(rootNode);
+    
+    // マイページのボタンが押された時の処理
+    mypageButtonPress(rootNode);
+    
+    // その他のボタンが押された時の処理
+    otherButtonPress(rootNode);
+    
+    this->scheduleUpdate();
+    return true;
+}
+
+// スタートボタンが押された時の処理
+void TitleScene::startButtonPress(Node* rootNode)
+{
     // ボタンノードを取得
     auto startBtn = rootNode->getChildByName<ui::Button*>("start_btn");
     // タッチイベント追加
@@ -75,8 +94,49 @@ bool TitleScene::init()
         this->runAction(Sequence::create(delay, startGame, NULL));
         return true;    // イベントを実行する
     });
-    
-    this->scheduleUpdate();
-    return true;
 }
 
+// マイページのボタンが押された時の処理
+void TitleScene::mypageButtonPress(Node* rootNode)
+{
+    // ボタンノードを取得
+    auto startBtn = rootNode->getChildByName<ui::Button*>("ui_mypage_btn");
+    // タッチイベント追加
+    startBtn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        // 何度も押されないように一度押されたらアクションを無効にする
+        //this->getEventDispatcher()->removeAllEventListeners();
+        
+        // 0.5秒待ってからCallFuncを呼ぶ
+        auto delay = DelayTime::create(0.2f);
+        
+        // マイページからユーザーデータを確認する
+        auto startGame = CallFunc::create([]{
+            //
+        });
+        this->runAction(Sequence::create(delay, startGame, NULL));
+        return true;    // イベントを実行する
+    });
+}
+
+// その他のボタンが押された時の処理
+void TitleScene::otherButtonPress(Node* rootNode)
+{
+    // ボタンノードを取得
+    auto startBtn = rootNode->getChildByName<ui::Button*>("ui_etc_btn");
+    // タッチイベント追加
+    startBtn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        // 何度も押されないように一度押されたらアクションを無効にする
+        this->getEventDispatcher()->removeAllEventListeners();
+        
+        // 0.5秒待ってからCallFuncを呼ぶ
+        auto delay = DelayTime::create(0.2f);
+        
+        // その他メニューへの遷移
+        auto transitionOtherScene = CallFunc::create([]{
+            auto transition = TransitionFade::create(0.5f, OtherScene::createScene(OtherScene::transition_title), Color3B::WHITE);
+            Director::getInstance()->replaceScene(transition);
+        });
+        this->runAction(Sequence::create(delay, transitionOtherScene, NULL));
+        return true;    // イベントを実行する
+    });
+}

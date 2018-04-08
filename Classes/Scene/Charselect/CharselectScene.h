@@ -31,7 +31,7 @@ private:
     };
     
     void onChar( SelectCharNo no );
-    void onYes();
+    void onYes( SelectCharNo no );
     void onBack();
     void onStart();
     

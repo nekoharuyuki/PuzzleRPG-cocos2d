@@ -54,6 +54,9 @@ public:
     static void deleteInstance();
     
     bool charDataJsonOpen(const std::string& filename);
+    
+    static CharDataParams getCharData(int dataId){ return m_charDataList[dataId]; }
+    static EnemyDataParams getEnemyData(int dataId){ return m_enemyDataList[dataId]; }
 };
 
 #endif /* defined(__CHAR_DATA__) */

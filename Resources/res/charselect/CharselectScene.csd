@@ -13,7 +13,7 @@
           </PointFrame>
         </Timeline>
         <Timeline ActionTag="1644708471" Property="VisibleForFrame">
-          <BoolFrame FrameIndex="0" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="0" Tween="False" Value="True" />
           <BoolFrame FrameIndex="1" Tween="False" Value="True" />
           <BoolFrame FrameIndex="2" Tween="False" Value="False" />
         </Timeline>
@@ -52,7 +52,7 @@
             <FileData Type="Normal" Path="asset/charselect/title_princessselect.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="popup_1" ActionTag="308958992" Tag="62" IconVisible="False" LeftMargin="144.5003" RightMargin="138.4997" TopMargin="130.4999" BottomMargin="112.5001" ctype="SpriteObjectData">
+          <AbstractNodeData Name="popup_1" Visible="False" ActionTag="308958992" Tag="62" IconVisible="False" LeftMargin="144.5003" RightMargin="138.4997" TopMargin="130.4999" BottomMargin="112.5001" ctype="SpriteObjectData">
             <Size X="517.0000" Y="357.0000" />
             <Children>
               <AbstractNodeData Name="char1_btn" ActionTag="-1706714847" Tag="1006" IconVisible="False" LeftMargin="41.0000" RightMargin="376.0000" TopMargin="135.5000" BottomMargin="121.5000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="70" Scale9Height="78" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">
@@ -110,7 +110,7 @@
             <FileData Type="Normal" Path="asset/charselect/popup_princessselect_1.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="popup_2" ActionTag="1644708471" VisibleForFrame="False" Alpha="250" Tag="63" IconVisible="False" LeftMargin="144.5001" RightMargin="138.4999" TopMargin="130.4998" BottomMargin="112.5002" ctype="SpriteObjectData">
+          <AbstractNodeData Name="popup_2" ActionTag="1644708471" Alpha="250" Tag="63" IconVisible="False" LeftMargin="144.5001" RightMargin="138.4999" TopMargin="130.4998" BottomMargin="112.5002" ctype="SpriteObjectData">
             <Size X="517.0000" Y="357.0000" />
             <Children>
               <AbstractNodeData Name="yes_btn" ActionTag="-1919112154" Tag="73" IconVisible="False" LeftMargin="39.2396" RightMargin="329.7604" TopMargin="386.3157" BottomMargin="-81.3157" TouchEnable="True" FontSize="14" LeftEage="48" RightEage="48" TopEage="17" BottomEage="17" Scale9OriginX="48" Scale9OriginY="17" Scale9Width="52" Scale9Height="18" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">

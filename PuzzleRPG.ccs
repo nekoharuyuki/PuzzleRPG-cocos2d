@@ -344,43 +344,76 @@
         </Folder>
         <Folder Name="res">
           <Folder Name="battle">
+            <File Name="BattleScene.csb" />
             <Project Name="BattleScene.csd" Type="Scene" />
+            <File Name="EnemyBattleAnim.csb" />
             <Project Name="EnemyBattleAnim.csd" Type="Node" />
+            <File Name="FieldNode01.csb" />
             <Project Name="FieldNode01.csd" Type="Node" />
+            <File Name="fightng.csb" />
             <Project Name="fightng.csd" Type="Scene" />
+            <File Name="PlayerBattleAnim.csb" />
             <Project Name="PlayerBattleAnim.csd" Type="Node" />
           </Folder>
           <Folder Name="charselect">
+            <File Name="CharIconNode.csb" />
             <Project Name="CharIconNode.csd" Type="Node" />
+            <File Name="CharselectScene.csb" />
             <Project Name="CharselectScene.csd" Type="Scene" />
           </Folder>
           <Folder Name="evolution">
+            <File Name="EvolutionScene.csb" />
             <Project Name="EvolutionScene.csd" Type="Scene" />
           </Folder>
           <Folder Name="mypage">
+            <File Name="Menu.csb" />
             <Project Name="Menu.csd" Type="Scene" />
+            <File Name="MypageScene.csb" />
             <Project Name="MypageScene.csd" Type="Scene" />
           </Folder>
           <Folder Name="other">
+            <File Name="OtherScene.csb" />
             <Project Name="OtherScene.csd" Type="Scene" />
           </Folder>
           <Folder Name="party">
+            <File Name="PartyScene.csb" />
             <Project Name="PartyScene.csd" Type="Scene" />
           </Folder>
           <Folder Name="quest">
+            <File Name="QuestIcon1Node.csb" />
             <Project Name="QuestIcon1Node.csd" Type="Node" />
+            <File Name="QuestIcon2Node.csb" />
             <Project Name="QuestIcon2Node.csd" Type="Node" />
+            <File Name="QuestScene.csb" />
             <Project Name="QuestScene.csd" Type="Scene" />
           </Folder>
           <Folder Name="result">
+            <File Name="ResultScene.csb" />
             <Project Name="ResultScene.csd" Type="Scene" />
           </Folder>
           <Folder Name="synthetic">
+            <File Name="SyntheticScene.csb" />
             <Project Name="SyntheticScene.csd" Type="Scene" />
           </Folder>
           <Folder Name="title">
             <File Name="TitleScene.csb" />
             <Project Name="TitleScene.csd" Type="Scene" />
+          </Folder>
+        </Folder>
+        <Folder Name="system">
+          <Folder Name="images">
+            <Image Name="b1.png" />
+            <Image Name="b2.png" />
+            <Image Name="brush.png" />
+            <Image Name="close.png" />
+            <Image Name="f1.png" />
+            <Image Name="f2.png" />
+            <Image Name="frame.png" />
+            <Image Name="line.png" />
+            <Image Name="r1.png" />
+            <Image Name="r2.png" />
+            <Image Name="tg_close_1.png" />
+            <Image Name="tg_close_2.png" />
           </Folder>
         </Folder>
       </RootFolder>
