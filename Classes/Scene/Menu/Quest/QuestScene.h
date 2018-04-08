@@ -27,8 +27,15 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(QuestScene);
     
+private:
     CC_SYNTHESIZE(int, m_questNo, QuestNo);                    //クエストの順番
     CC_SYNTHESIZE_READONLY(QuestType, m_questType, QuestType); //クエストの種類
+    
+    void onQuest();
+    void onQuestStart();
+    void onBack();
+    
+    Node* m_popup_quest;
 };
 
 #endif // __QUEST_SCENE_H__

@@ -46,7 +46,9 @@ bool QuestScene::init()
     }
     this->addChild(rootNode);
     
-    // マスタデータからクエスト情報を取得する
+    // クエスト選択時のポップアップを非表示にする
+    m_popup_quest = rootNode->getChildByName<Node*>( "popup_quest" );
+    m_popup_quest->setVisible(false);
     
     //クエストマスの初期化
     initQuestmas(rootNode);
@@ -79,26 +81,61 @@ void QuestScene::initQuestmas(Node* node)
         
         // タッチイベント追加
         quest_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
-            // 何度も押されないように一度押されたらアクションを無効にする
-            this->getEventDispatcher()->removeAllEventListeners();
-            
-            // BGMをフェードアウトをしながら停止
-            AudioManager::getInstance()->stopBgm(0.3f);
-            
-            // エリア移動BGM再生
-            AudioManager::getInstance()->playSe("area1");
-            
-            // 0.5秒待ってからCallFuncを呼ぶ
-            auto delay = DelayTime::create(0.5f);
-            
-            // ゲームを始めるアクション
-            auto startGame = CallFunc::create([this]{
-                auto scene = PuzzleGameScene::createScene(MapData::getMapId(m_questNo));
-                auto transition = TransitionFadeTR::create(0.5f, scene);
-                Director::getInstance()->replaceScene(transition);
-            });
-            this->runAction(Sequence::create(delay, startGame, NULL));
-            return true;    // イベントを実行する
+            if (type == cocos2d::ui::Widget::TouchEventType::ENDED){
+                onQuest();
+            }
         });
     }
+}
+
+void QuestScene::onQuest()
+{
+    if(m_popup_quest->isVisible() == true){
+        return;
+    }
+    
+    m_popup_quest->setVisible(true);
+    
+    auto quest_btn = m_popup_quest->getChildByName<ui::Button*>( "QuestStart_btn" );
+    quest_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        if (type == cocos2d::ui::Widget::TouchEventType::ENDED){
+            onQuestStart();
+        }
+    });
+    auto Back_btn = m_popup_quest->getChildByName<ui::Button*>( "Back_btn" );
+    Back_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        if (type == cocos2d::ui::Widget::TouchEventType::ENDED){
+            onBack();
+        }
+    });
+    auto nametext = m_popup_quest->getChildByName<ui::Text*>( "nametext" );
+    nametext->setString( MapData::getMapData(m_questNo).mapName );
+}
+
+void QuestScene::onQuestStart()
+{
+    // 何度も押されないように一度押されたらアクションを無効にする
+    this->getEventDispatcher()->removeAllEventListeners();
+    
+    // BGMをフェードアウトをしながら停止
+    AudioManager::getInstance()->stopBgm(0.3f);
+    
+    // エリア移動BGM再生
+    AudioManager::getInstance()->playSe("area1");
+    
+    // 0.5秒待ってからCallFuncを呼ぶ
+    auto delay = DelayTime::create(0.5f);
+    
+    // ゲームを始めるアクション
+    auto startGame = CallFunc::create([this]{
+        auto scene = PuzzleGameScene::createScene(MapData::getMapData(m_questNo).mapId);
+        auto transition = TransitionFadeTR::create(0.5f, scene);
+        Director::getInstance()->replaceScene(transition);
+    });
+    this->runAction(Sequence::create(delay, startGame, NULL));
+}
+
+void QuestScene::onBack()
+{
+    m_popup_quest->setVisible(false);
 }
