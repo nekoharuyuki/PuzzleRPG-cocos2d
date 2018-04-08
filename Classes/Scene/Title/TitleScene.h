@@ -14,6 +14,11 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(TitleScene);
+    
+private:
+    
+    void startButtonPress(Node* rootNode);
+    void otherButtonPress(Node* rootNode);
 };
 
 #endif // __TITLE_SCENE_H__

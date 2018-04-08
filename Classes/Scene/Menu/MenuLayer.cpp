@@ -92,7 +92,7 @@ cocos2d::Scene* MenuLayer::loadScene(Menu menu)
     if( menu == ui_party_btn  ){ return PartyScene::createScene(); }
     if( menu == ui_mix_btn    ){ return SyntheticScene::createScene(); }
     if( menu == ui_shinka_btn ){ return EvolutionScene::createScene(); }
-    if( menu == ui_etc_btn    ){ return OtherScene::createScene(); }
+    if( menu == ui_etc_btn    ){ return OtherScene::createScene(OtherScene::transition_menu); }
     
     return nullptr;
 }
@@ -278,7 +278,7 @@ bool MenuLayer::uiButtonPushLoadOtherScene(Node* node)
         this->getEventDispatcher()->removeAllEventListeners();
         // シーンを切り替える
         auto startLoadScene = CallFunc::create([]{
-            auto scene = OtherScene::createScene();
+            auto scene = OtherScene::createScene(OtherScene::transition_menu);
             // ページをめくる音SE再生
             AudioManager::getInstance()->playSe("ui_page");
             auto transition = TransitionPageTurn::create(0.5f, scene, true);
