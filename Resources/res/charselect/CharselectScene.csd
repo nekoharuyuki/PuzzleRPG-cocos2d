@@ -4,7 +4,7 @@
     <Content>
       <Animation Duration="2" Speed="1.0000">
         <Timeline ActionTag="308958992" Property="VisibleForFrame">
-          <BoolFrame FrameIndex="0" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="0" Tween="False" Value="False" />
           <BoolFrame FrameIndex="1" Tween="False" Value="False" />
         </Timeline>
         <Timeline ActionTag="1644708471" Property="Position">
@@ -13,7 +13,7 @@
           </PointFrame>
         </Timeline>
         <Timeline ActionTag="1644708471" Property="VisibleForFrame">
-          <BoolFrame FrameIndex="0" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="0" Tween="False" Value="False" />
           <BoolFrame FrameIndex="1" Tween="False" Value="True" />
           <BoolFrame FrameIndex="2" Tween="False" Value="False" />
         </Timeline>
@@ -52,7 +52,7 @@
             <FileData Type="Normal" Path="asset/charselect/title_princessselect.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="popup_1" Visible="False" ActionTag="308958992" Tag="62" IconVisible="False" LeftMargin="144.5003" RightMargin="138.4997" TopMargin="130.4999" BottomMargin="112.5001" ctype="SpriteObjectData">
+          <AbstractNodeData Name="popup_1" ActionTag="308958992" VisibleForFrame="False" Tag="62" IconVisible="False" LeftMargin="144.5003" RightMargin="138.4997" TopMargin="130.4999" BottomMargin="112.5001" ctype="SpriteObjectData">
             <Size X="517.0000" Y="357.0000" />
             <Children>
               <AbstractNodeData Name="char1_btn" ActionTag="-1706714847" Tag="1006" IconVisible="False" LeftMargin="41.0000" RightMargin="376.0000" TopMargin="135.5000" BottomMargin="121.5000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="70" Scale9Height="78" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">
@@ -110,7 +110,7 @@
             <FileData Type="Normal" Path="asset/charselect/popup_princessselect_1.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="popup_2" ActionTag="1644708471" Alpha="250" Tag="63" IconVisible="False" LeftMargin="144.5001" RightMargin="138.4999" TopMargin="130.4998" BottomMargin="112.5002" ctype="SpriteObjectData">
+          <AbstractNodeData Name="popup_2" ActionTag="1644708471" VisibleForFrame="False" Alpha="250" Tag="63" IconVisible="False" LeftMargin="144.5001" RightMargin="138.4999" TopMargin="130.4998" BottomMargin="112.5002" ctype="SpriteObjectData">
             <Size X="517.0000" Y="357.0000" />
             <Children>
               <AbstractNodeData Name="yes_btn" ActionTag="-1919112154" Tag="73" IconVisible="False" LeftMargin="39.2396" RightMargin="329.7604" TopMargin="386.3157" BottomMargin="-81.3157" TouchEnable="True" FontSize="14" LeftEage="48" RightEage="48" TopEage="17" BottomEage="17" Scale9OriginX="48" Scale9OriginY="17" Scale9Width="52" Scale9Height="18" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">
@@ -143,23 +143,23 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="AttributeNode" ActionTag="-1747103687" Tag="1010" IconVisible="True" LeftMargin="304.0000" RightMargin="213.0000" TopMargin="101.0000" BottomMargin="256.0000" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="AttributeNode" ActionTag="-1747103687" Tag="1010" IconVisible="True" LeftMargin="317.7855" RightMargin="199.2145" TopMargin="95.0921" BottomMargin="261.9079" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="304.0000" Y="256.0000" />
+                <Position X="317.7855" Y="261.9079" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5880" Y="0.7171" />
+                <PrePosition X="0.6147" Y="0.7336" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="NameText" ActionTag="792179082" Tag="1011" IconVisible="False" LeftMargin="353.5000" RightMargin="71.5000" TopMargin="86.5000" BottomMargin="247.5000" FontSize="20" LabelText="Text Label" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="TextObjectData">
-                <Size X="92.0000" Y="23.0000" />
+              <AbstractNodeData Name="NameText" ActionTag="792179082" Tag="1011" IconVisible="False" LeftMargin="353.5000" RightMargin="49.5000" TopMargin="83.5000" BottomMargin="244.5000" FontSize="25" LabelText="Text Label" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="TextObjectData">
+                <Size X="114.0000" Y="29.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="353.5000" Y="259.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.6838" Y="0.7255" />
-                <PreSize X="0.1779" Y="0.0644" />
+                <PreSize X="0.2205" Y="0.0812" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -242,16 +242,25 @@
                 <PrePosition X="0.4817" Y="-1.1150" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="NameText" ActionTag="1886562465" Tag="1017" IconVisible="False" LeftMargin="134.0000" RightMargin="376.0000" TopMargin="23.5000" BottomMargin="66.5000" FontSize="20" LabelText="Text Label" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="TextObjectData">
-                <Size X="92.0000" Y="23.0000" />
+              <AbstractNodeData Name="NameText" ActionTag="1886562465" Tag="1017" IconVisible="False" LeftMargin="89.0000" RightMargin="376.0000" TopMargin="19.0001" BottomMargin="59.9999" FontSize="30" LabelText="Text Label" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="TextObjectData">
+                <Size X="137.0000" Y="34.0000" />
                 <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
-                <Position X="226.0000" Y="78.0000" />
+                <Position X="226.0000" Y="76.9999" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3754" Y="0.6903" />
-                <PreSize X="0.1528" Y="0.2035" />
+                <PrePosition X="0.3754" Y="0.6814" />
+                <PreSize X="0.2276" Y="0.3009" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="IconCharaNode" ActionTag="729557023" Tag="177" IconVisible="True" LeftMargin="89.0753" RightMargin="512.9247" TopMargin="33.4894" BottomMargin="79.5106" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <AnchorPoint />
+                <Position X="89.0753" Y="79.5106" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1480" Y="0.7036" />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

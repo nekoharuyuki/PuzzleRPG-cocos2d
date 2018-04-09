@@ -186,7 +186,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="2023090927" VisibleForFrame="False" Tag="1496" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="2023090927" VisibleForFrame="False" Tag="1496" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -223,7 +223,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1481414268" VisibleForFrame="False" Tag="1499" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1481414268" VisibleForFrame="False" Tag="1499" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -260,7 +260,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1580534495" VisibleForFrame="False" Tag="1502" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1580534495" VisibleForFrame="False" Tag="1502" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -297,7 +297,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1420663300" VisibleForFrame="False" Tag="1505" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1420663300" VisibleForFrame="False" Tag="1505" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -334,7 +334,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-706756690" VisibleForFrame="False" Tag="1508" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-706756690" VisibleForFrame="False" Tag="1508" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -371,7 +371,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-650542238" VisibleForFrame="False" Tag="1511" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-650542238" VisibleForFrame="False" Tag="1511" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -408,7 +408,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1373687704" VisibleForFrame="False" Tag="1514" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1373687704" VisibleForFrame="False" Tag="1514" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -482,7 +482,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1131655983" VisibleForFrame="False" Tag="1520" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1131655983" VisibleForFrame="False" Tag="1520" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -519,7 +519,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="532405775" VisibleForFrame="False" Tag="1523" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="532405775" VisibleForFrame="False" Tag="1523" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -556,7 +556,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-552540758" VisibleForFrame="False" Tag="1526" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-552540758" VisibleForFrame="False" Tag="1526" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -593,7 +593,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1017764540" VisibleForFrame="False" Tag="1529" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1017764540" VisibleForFrame="False" Tag="1529" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -630,7 +630,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-878534230" VisibleForFrame="False" Tag="1532" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-878534230" VisibleForFrame="False" Tag="1532" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -667,7 +667,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1465447761" VisibleForFrame="False" Tag="1535" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1465447761" VisibleForFrame="False" Tag="1535" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -704,7 +704,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="631800560" VisibleForFrame="False" Tag="1538" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="631800560" VisibleForFrame="False" Tag="1538" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -741,7 +741,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-805545764" VisibleForFrame="False" Tag="1541" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-805545764" VisibleForFrame="False" Tag="1541" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -778,7 +778,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="681560189" VisibleForFrame="False" Tag="1544" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="681560189" VisibleForFrame="False" Tag="1544" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -815,7 +815,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1103908095" VisibleForFrame="False" Tag="1547" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1103908095" VisibleForFrame="False" Tag="1547" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -852,7 +852,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-332920379" VisibleForFrame="False" Tag="1553" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-332920379" VisibleForFrame="False" Tag="1553" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -889,7 +889,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1779583678" VisibleForFrame="False" Tag="1556" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1779583678" VisibleForFrame="False" Tag="1556" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -926,7 +926,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="667270973" VisibleForFrame="False" Tag="1559" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="667270973" VisibleForFrame="False" Tag="1559" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -963,7 +963,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1117882116" VisibleForFrame="False" Tag="1562" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1117882116" VisibleForFrame="False" Tag="1562" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -1000,7 +1000,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1469856020" VisibleForFrame="False" Tag="1565" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1469856020" VisibleForFrame="False" Tag="1565" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -1037,7 +1037,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1281079176" VisibleForFrame="False" Tag="1568" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1281079176" VisibleForFrame="False" Tag="1568" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -1074,7 +1074,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1110271187" VisibleForFrame="False" Tag="1571" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1110271187" VisibleForFrame="False" Tag="1571" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -1111,7 +1111,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1075834394" VisibleForFrame="False" Tag="1574" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="-1075834394" VisibleForFrame="False" Tag="1574" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -1148,7 +1148,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="2105017482" VisibleForFrame="False" Tag="1577" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="2105017482" VisibleForFrame="False" Tag="1577" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -1185,7 +1185,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1090127049" VisibleForFrame="False" Tag="1580" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1090127049" VisibleForFrame="False" Tag="1580" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -1222,7 +1222,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1574095120" VisibleForFrame="False" Tag="1583" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="anlock_Copy" Visible="False" ActionTag="1574095120" VisibleForFrame="False" Tag="1583" IconVisible="False" LeftMargin="-24.5000" RightMargin="-24.5000" TopMargin="-25.0000" BottomMargin="-25.0000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />

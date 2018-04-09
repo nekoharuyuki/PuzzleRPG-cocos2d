@@ -9,6 +9,7 @@
 #include "QuestScene.h"
 #include "CharData.h"
 #include "CharSelectSprite.h"
+#include "CharSelectIconSprite.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
@@ -51,6 +52,7 @@ bool CharselectScene::init()
     addChild(rootNode);
     
     m_popup_1 = rootNode->getChildByName<Node*>( "popup_1" );
+    m_popup_1->setVisible(true);
     auto char1_btn = m_popup_1->getChildByName<ui::Button*>( "char1_btn" );
     char1_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
         if (type == cocos2d::ui::Widget::TouchEventType::ENDED){
@@ -100,6 +102,12 @@ void CharselectScene::onChar( SelectCharNo no )
     
     auto NameText = m_popup_2->getChildByName<ui::Text*>( "NameText" );
     NameText->setString( CharData::getCharData(no).charName );
+    auto AttributeNode = m_popup_2->getChildByName<Node*>( "AttributeNode" );
+    auto charIconSprite = CharSelectIconSprite::create(no);
+    if(charIconSprite){
+        charIconSprite->setScale(0.5);
+        AttributeNode->addChild( charIconSprite, 1 );
+    }
     auto AtkText = m_popup_2->getChildByName<ui::Text*>( "AtkText" );
     AtkText->setString( std::to_string(CharData::getCharData(no).charAtk) );
     auto SkillText = m_popup_2->getChildByName<ui::Text*>( "SkillText" );
@@ -119,28 +127,18 @@ void CharselectScene::onYes(SelectCharNo no)
     auto start_btn = m_popup_3->getChildByName<ui::Button*>( "start_btn" );
     start_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
         if (type == cocos2d::ui::Widget::TouchEventType::ENDED){
-            // 何度も押されないように一度押されたらアクションを無効にする
-            this->getEventDispatcher()->removeAllEventListeners();
-            
-            // 0.5秒待ってからCallFuncを呼ぶ
-            auto delay = DelayTime::create(0.2f);
-            
-            // ゲームを始めるアクション
-            auto startGame = CallFunc::create([]{
-                // スタートボタン音SE再生
-                AudioManager::getInstance()->playSe("ui_title_start");
-                // 初回起動時にローカルDBデータを作成する
-                GameDataSQL::sqliteCreateTable();
-                // クエスト選択画面へ移行
-                auto transition = TransitionFade::create(0.5f, QuestScene::createScene(), Color3B::WHITE);
-                Director::getInstance()->replaceScene(transition);
-            });
-            this->runAction(Sequence::create(delay, startGame, NULL));
+            onStart();
         }
     });
     
     auto NameText = m_popup_3->getChildByName<ui::Text*>( "NameText" );
     NameText->setString( CharData::getCharData(no).charName );
+    auto IconCharaNode = m_popup_3->getChildByName<Node*>( "IconCharaNode" );
+    auto charIconSprite = CharSelectIconSprite::create(no);
+    if(charIconSprite){
+        charIconSprite->setScale(0.5);
+        IconCharaNode->addChild( charIconSprite, 1 );
+    }
     auto chara_princessselect = m_popup_3->getChildByName<ui::Button*>( "chara_princessselect" );
     auto charSprite = CharSelectSprite::create( no );
     if(charSprite){
@@ -159,5 +157,21 @@ void CharselectScene::onBack()
 
 void CharselectScene::onStart()
 {
+    // 何度も押されないように一度押されたらアクションを無効にする
+    this->getEventDispatcher()->removeAllEventListeners();
     
+    // 0.5秒待ってからCallFuncを呼ぶ
+    auto delay = DelayTime::create(0.2f);
+    
+    // ゲームを始めるアクション
+    auto startGame = CallFunc::create([]{
+        // スタートボタン音SE再生
+        AudioManager::getInstance()->playSe("ui_title_start");
+        // 初回起動時にローカルDBデータを作成する
+        GameDataSQL::sqliteCreateTable();
+        // クエスト選択画面へ移行
+        auto transition = TransitionFade::create(0.5f, QuestScene::createScene(), Color3B::WHITE);
+        Director::getInstance()->replaceScene(transition);
+    });
+    this->runAction(Sequence::create(delay, startGame, NULL));
 }
