@@ -110,6 +110,8 @@
 		80F3B67D207A152B00327457 /* system in Resources */ = {isa = PBXBuildFile; fileRef = 80F3B670207A152B00327457 /* system */; };
 		80F3B67E207A152B00327457 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 80F3B671207A152B00327457 /* sound */; };
 		80F3B67F207A152B00327457 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 80F3B671207A152B00327457 /* sound */; };
+		80F3B686207BC40B00327457 /* CharSelectIconSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80F3B684207BC40B00327457 /* CharSelectIconSprite.cpp */; };
+		80F3B687207BC40B00327457 /* CharSelectIconSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80F3B684207BC40B00327457 /* CharSelectIconSprite.cpp */; };
 		80FC7CEB207A0B70007FF5E4 /* CharSelectSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FC7CE9207A0B70007FF5E4 /* CharSelectSprite.cpp */; };
 		80FC7CEC207A0B70007FF5E4 /* CharSelectSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FC7CE9207A0B70007FF5E4 /* CharSelectSprite.cpp */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
@@ -301,6 +303,8 @@
 		80F3B66F207A152B00327457 /* asset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = asset; sourceTree = "<group>"; };
 		80F3B670207A152B00327457 /* system */ = {isa = PBXFileReference; lastKnownFileType = folder; path = system; sourceTree = "<group>"; };
 		80F3B671207A152B00327457 /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
+		80F3B684207BC40B00327457 /* CharSelectIconSprite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CharSelectIconSprite.cpp; sourceTree = "<group>"; };
+		80F3B685207BC40B00327457 /* CharSelectIconSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharSelectIconSprite.h; sourceTree = "<group>"; };
 		80FC7CE9207A0B70007FF5E4 /* CharSelectSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharSelectSprite.cpp; sourceTree = "<group>"; };
 		80FC7CEA207A0B70007FF5E4 /* CharSelectSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharSelectSprite.h; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -693,6 +697,8 @@
 				8043CFCD2067394F0019BA4E /* CharselectScene.h */,
 				80FC7CE9207A0B70007FF5E4 /* CharSelectSprite.cpp */,
 				80FC7CEA207A0B70007FF5E4 /* CharSelectSprite.h */,
+				80F3B684207BC40B00327457 /* CharSelectIconSprite.cpp */,
+				80F3B685207BC40B00327457 /* CharSelectIconSprite.h */,
 			);
 			path = Charselect;
 			sourceTree = "<group>";
@@ -952,6 +958,7 @@
 				800713F81FF7F03F0004DFAB /* BaseTest.cpp in Sources */,
 				800713F01FF7F03F0004DFAB /* Converter.cpp in Sources */,
 				800713F21FF7F03F0004DFAB /* VisibleRect.cpp in Sources */,
+				80F3B686207BC40B00327457 /* CharSelectIconSprite.cpp in Sources */,
 				8025F0D3205E8ADD0022896B /* UserOptionData.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				8007141D1FFBBBB20004DFAB /* PuzzleSprite.cpp in Sources */,
@@ -984,6 +991,7 @@
 				800713FF1FF7F03F0004DFAB /* AudioManager.cpp in Sources */,
 				800713FB1FF7F03F0004DFAB /* MathHelper.cpp in Sources */,
 				800713F71FF7F03F0004DFAB /* Controller.cpp in Sources */,
+				80F3B687207BC40B00327457 /* CharSelectIconSprite.cpp in Sources */,
 				80FC7CEC207A0B70007FF5E4 /* CharSelectSprite.cpp in Sources */,
 				800713F31FF7F03F0004DFAB /* VisibleRect.cpp in Sources */,
 				801E1DC5203146F20034A904 /* QuestScene.cpp in Sources */,
