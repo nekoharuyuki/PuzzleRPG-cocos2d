@@ -57,7 +57,9 @@ const char *GameDataSQL::sqliteGetValueForKey(const char *key)
             int ret = sqlite3_step(stmt);
             if( ret == SQLITE_DONE || ret == SQLITE_ROW){
                 const char *val = (const char *)sqlite3_column_text(stmt, 0);
-                strValue = __String::create(val);
+                if(val != NULL){
+                    strValue = __String::create(val);
+                }
             }
             sqlite3_reset(stmt);
         }
