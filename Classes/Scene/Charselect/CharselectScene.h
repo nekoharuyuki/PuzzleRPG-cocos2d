@@ -25,9 +25,9 @@ public:
 private:
     enum SelectCharNo
     {
-        SelectCharNo01 = 0,
-        SelectCharNo02,
-        SelectCharNo03,
+        SelectCharNo01 = 0, // メイ[火]
+        SelectCharNo02,     // メイ[水]
+        SelectCharNo03,     // メイ[木]
     };
     
     void onChar( SelectCharNo no );
@@ -35,9 +35,9 @@ private:
     void onBack();
     void onStart();
     
-    Node* m_popup_1;
-    Node* m_popup_2;
-    Node* m_popup_3;
+    Node* m_popup_1;    // キャラクター選択ポップアップ
+    Node* m_popup_2;    // キャラクター確認ポップアップ
+    Node* m_popup_3;    // キャラクター決定ポップアップ
 };
 
 #endif /* CharselectScene_h */
