@@ -105,7 +105,7 @@ void CharselectScene::onChar( SelectCharNo no )
     auto AttributeNode = m_popup_2->getChildByName<Node*>( "AttributeNode" );
     auto charIconSprite = CharSelectIconSprite::create(no);
     if(charIconSprite){
-        charIconSprite->setScale(0.5);
+        charIconSprite->setScale(0.5f);
         AttributeNode->addChild( charIconSprite, 1 );
     }
     auto AtkText = m_popup_2->getChildByName<ui::Text*>( "AtkText" );
@@ -136,7 +136,7 @@ void CharselectScene::onYes(SelectCharNo no)
     auto IconCharaNode = m_popup_3->getChildByName<Node*>( "IconCharaNode" );
     auto charIconSprite = CharSelectIconSprite::create(no);
     if(charIconSprite){
-        charIconSprite->setScale(0.5);
+        charIconSprite->setScale(0.5f);
         IconCharaNode->addChild( charIconSprite, 1 );
     }
     auto chara_princessselect = m_popup_3->getChildByName<ui::Button*>( "chara_princessselect" );
