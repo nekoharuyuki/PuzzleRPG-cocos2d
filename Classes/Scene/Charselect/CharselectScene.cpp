@@ -150,6 +150,9 @@ void CharselectScene::onYes(SelectCharNo no)
 
 void CharselectScene::onBack()
 {
+    // キャンセル音 再生
+    AudioManager::getInstance()->playSe("cansell");
+    
     m_popup_1->setVisible(true);
     m_popup_2->setVisible(false);
     m_popup_3->setVisible(false);
