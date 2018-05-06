@@ -32,9 +32,10 @@ PuzzleGameScene::PuzzleGameScene()
 //シーン生成
 Scene* PuzzleGameScene::createScene(int questNo)
 {
+    m_questNo = questNo;
+    
     auto scene = Scene::create();
     auto layer = PuzzleGameScene::create();
-    m_questNo = questNo;
     scene->addChild(layer);
     
     return scene;
