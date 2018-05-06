@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include <random>
 #include "PuzzleSprite.h"
+#include "BattleChar.h"
 
 class PuzzleGameScene : public cocos2d::Layer
 {
@@ -39,6 +40,17 @@ protected:
     std::vector<std::map<PuzzleSprite::PuzzleType, int>> m_removeNumbers; //消去するボールのカウント
     static int m_questNo;  // クエストの情報取得
     
+    BattleChar* m_enemyData; //敵の情報
+    cocos2d::Sprite* m_enemy; //敵画像
+    cocos2d::ProgressTimer* m_hpBarForEnemy; //敵のヒットポイントバー
+    
+    cocos2d::Vector<BattleChar*> m_memberDatum; //メンバーの情報
+    cocos2d::Vector<cocos2d::Sprite*> m_members; //メンバー画像
+    cocos2d::Vector<cocos2d::ProgressTimer*> m_hpBarForMembers; //メンバーのヒットポイントバー
+    
+    int m_level; //現在のレベル
+    int m_nextLevel; //次のレベル
+    
     void initBackground(); //背景の初期化
     void initPuzzles(); //ボールの初期表示
     PuzzleSprite* newPuzzles(PuzzleSprite::PositionIndex positionIndex, bool visible); //新規ボール作成
@@ -53,6 +65,22 @@ protected:
     void removeAndGeneratePuzzles(); //ボールの削除とボールの生成
     void generatePuzzles(int xLineNum, int fallCount); //ボールを生成する
     void animationPuzzles(); //ボールの消去と落下アニメーション
+    
+    void initEnemy(); //敵の表示
+    void initMembers(); //メンバーの表示
+    void calculateDamage(int &chainNum, int &healing, int &damage, std::set<int> &attackers); //ダメージの計算
+    bool isAttacker(PuzzleSprite::PuzzleType type, BattleChar::Element element); //アタッカー判定
+    void attackToEnemy(int damage, std::set<int> attackers); //敵への攻撃
+    void healMember(int healing); //メンバーの回復
+    void attackFromEnemy(); //敵からの攻撃
+    void endAnimation(); //アニメーション終了時処理
+    cocos2d::Spawn* vibratingAnimation(int afterHp); //振動アニメーション
+    
+    void initLevelLayer(); //レベル表示レイヤーの表示
+    void removeLevelLayer(float dt); //レベル表示レイヤーの削除
+    void winAnimation(); //Winアニメーション
+    void loseAnimation(); //Loseアニメーション
+    void nextScene(float dt); //次のシーンへ遷移
 
 public:
     PuzzleGameScene(); //コンストラクタ
