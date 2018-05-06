@@ -95,6 +95,9 @@ void QuestScene::onQuest()
         return;
     }
     
+    // ポップアップ表示音 再生
+    AudioManager::getInstance()->playSe("window");
+    
     m_popup_quest->setVisible(true);
     
     auto quest_btn = m_popup_quest->getChildByName<ui::Button*>( "QuestStart_btn" );
@@ -138,5 +141,8 @@ void QuestScene::onQuestStart()
 
 void QuestScene::onBack()
 {
+    // キャンセル音 再生
+    AudioManager::getInstance()->playSe("cansell");
+    
     m_popup_quest->setVisible(false);
 }
