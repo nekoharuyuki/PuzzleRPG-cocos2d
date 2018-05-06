@@ -1,4 +1,5 @@
 #include "PuzzleGameScene.h"
+#include "ResultScene.h"
 #include "QuestScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
@@ -78,8 +79,10 @@ bool PuzzleGameScene::init()
         
         // クエストシーンへ移行する
         auto startGame = CallFunc::create([]{
-            auto scene = QuestScene::createScene();
-            AudioManager::getInstance()->playBgm("all_bgm");
+//            auto scene = QuestScene::createScene();
+//            AudioManager::getInstance()->playBgm("all_bgm");
+            // TODO : 実装を整理予定
+            auto scene = ResultScene::createScene();
             auto transition = TransitionFadeBL::create(0.5f, scene);
             Director::getInstance()->replaceScene(transition);
         });

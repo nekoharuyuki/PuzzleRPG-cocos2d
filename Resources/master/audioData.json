@@ -35,6 +35,9 @@
         "skill2":"sound/se/skill2.mp3",
         "skill3":"sound/se/skill3.mp3",
         "skill4":"sound/se/skill4.mp3",
-        "skill5":"sound/se/skill5.mp3"
+        "skill5":"sound/se/skill5.mp3",
+        "levelup":"sound/bgm/levelup.mp3",
+        "victory":"sound/bgm/victory.mp3",
+        "lose":"sound/bgm/lose.mp3"
 	}
 }
