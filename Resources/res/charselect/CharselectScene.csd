@@ -4,7 +4,7 @@
     <Content>
       <Animation Duration="2" Speed="1.0000">
         <Timeline ActionTag="308958992" Property="VisibleForFrame">
-          <BoolFrame FrameIndex="0" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="0" Tween="False" Value="True" />
           <BoolFrame FrameIndex="1" Tween="False" Value="False" />
         </Timeline>
         <Timeline ActionTag="1644708471" Property="Position">
@@ -52,7 +52,7 @@
             <FileData Type="Normal" Path="asset/charselect/title_princessselect.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="popup_1" ActionTag="308958992" VisibleForFrame="False" Tag="62" IconVisible="False" LeftMargin="144.5003" RightMargin="138.4997" TopMargin="130.4999" BottomMargin="112.5001" ctype="SpriteObjectData">
+          <AbstractNodeData Name="popup_1" ActionTag="308958992" Tag="62" IconVisible="False" LeftMargin="144.5003" RightMargin="138.4997" TopMargin="130.4999" BottomMargin="112.5001" ctype="SpriteObjectData">
             <Size X="517.0000" Y="357.0000" />
             <Children>
               <AbstractNodeData Name="char1_btn" ActionTag="-1706714847" Tag="1006" IconVisible="False" LeftMargin="41.0000" RightMargin="376.0000" TopMargin="135.5000" BottomMargin="121.5000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="70" Scale9Height="78" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">

@@ -80,8 +80,9 @@ void QuestScene::initQuestmas(Node* node)
         quest_btn->setEnabled(true);
         
         // タッチイベント追加
-        quest_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        quest_btn->addTouchEventListener([this, i](Ref* sender, ui::Widget::TouchEventType type) {
             if (type == cocos2d::ui::Widget::TouchEventType::ENDED){
+                m_questNo = i;
                 onQuest();
             }
         });
@@ -93,6 +94,9 @@ void QuestScene::onQuest()
     if(m_popup_quest->isVisible() == true){
         return;
     }
+    
+    // ポップアップ表示音 再生
+    AudioManager::getInstance()->playSe("window");
     
     m_popup_quest->setVisible(true);
     
@@ -128,7 +132,7 @@ void QuestScene::onQuestStart()
     
     // ゲームを始めるアクション
     auto startGame = CallFunc::create([this]{
-        auto scene = PuzzleGameScene::createScene(MapData::getMapData(m_questNo).mapId);
+        auto scene = PuzzleGameScene::createScene(m_questNo);
         auto transition = TransitionFadeTR::create(0.5f, scene);
         Director::getInstance()->replaceScene(transition);
     });
@@ -137,5 +141,8 @@ void QuestScene::onQuestStart()
 
 void QuestScene::onBack()
 {
+    // キャンセル音 再生
+    AudioManager::getInstance()->playSe("cansell");
+    
     m_popup_quest->setVisible(false);
 }

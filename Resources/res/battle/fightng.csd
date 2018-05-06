@@ -264,7 +264,7 @@
             <FileData Type="Normal" Path="asset/battle/hpbar_freme.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="scene1" ActionTag="-1382123803" VisibleForFrame="False" Tag="10" IconVisible="False" LeftMargin="-0.0093" RightMargin="0.0093" TopMargin="0.2715" BottomMargin="353.7285" ctype="SpriteObjectData">
+          <AbstractNodeData Name="scene1" ActionTag="-1382123803" Tag="10" IconVisible="False" LeftMargin="-0.0093" RightMargin="0.0093" TopMargin="0.2715" BottomMargin="353.7285" ctype="SpriteObjectData">
             <Size X="800.0000" Y="246.0000" />
             <Children>
               <AbstractNodeData Name="lawn_base_7" ActionTag="30085112" Tag="15" IconVisible="False" LeftMargin="-0.6734" RightMargin="0.6734" TopMargin="0.3695" BottomMargin="-0.3695" ctype="SpriteObjectData">
@@ -697,7 +697,7 @@
             <FileData Type="Normal" Path="asset/battlebg/battle_scene2/bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="scene3" ActionTag="-1792459436" Tag="71" IconVisible="False" LeftMargin="-0.2214" RightMargin="0.2214" TopMargin="0.6879" BottomMargin="353.3121" ctype="SpriteObjectData">
+          <AbstractNodeData Name="scene3" ActionTag="-1792459436" VisibleForFrame="False" Tag="71" IconVisible="False" LeftMargin="-0.2214" RightMargin="0.2214" TopMargin="0.6879" BottomMargin="353.3121" ctype="SpriteObjectData">
             <Size X="800.0000" Y="246.0000" />
             <Children>
               <AbstractNodeData Name="backrock_02_97" ActionTag="-455896405" Tag="105" IconVisible="False" LeftMargin="-32.7680" RightMargin="712.7680" TopMargin="5.8698" BottomMargin="65.1302" ctype="SpriteObjectData">

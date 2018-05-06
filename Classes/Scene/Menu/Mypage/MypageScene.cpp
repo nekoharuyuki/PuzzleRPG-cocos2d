@@ -1,4 +1,5 @@
 #include "MypageScene.h"
+#include "TitleScene.h"
 #include "MenuLayer.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
