@@ -32,6 +32,7 @@ protected:
     
     std::default_random_engine m_engine; //乱数生成エンジン
     std::discrete_distribution<int> m_distForPuzzle; //乱数の分布
+    std::uniform_int_distribution<int> m_distForMember; //乱数の範囲
     PuzzleSprite* m_movingPuzzle; //動かしているボール
     bool m_movedPuzzle; //他のボールとの接触有無
     bool m_touchable; //タップの可否
@@ -47,9 +48,6 @@ protected:
     cocos2d::Vector<BattleChar*> m_memberDatum; //メンバーの情報
     cocos2d::Vector<cocos2d::Sprite*> m_members; //メンバー画像
     cocos2d::Vector<cocos2d::ProgressTimer*> m_hpBarForMembers; //メンバーのヒットポイントバー
-    
-    int m_level; //現在のレベル
-    int m_nextLevel; //次のレベル
     
     void initBackground(); //背景の初期化
     void initPuzzles(); //ボールの初期表示
@@ -76,8 +74,6 @@ protected:
     void endAnimation(); //アニメーション終了時処理
     cocos2d::Spawn* vibratingAnimation(int afterHp); //振動アニメーション
     
-    void initLevelLayer(); //レベル表示レイヤーの表示
-    void removeLevelLayer(float dt); //レベル表示レイヤーの削除
     void winAnimation(); //Winアニメーション
     void loseAnimation(); //Loseアニメーション
     void nextScene(float dt); //次のシーンへ遷移

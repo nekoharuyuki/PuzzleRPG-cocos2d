@@ -17,6 +17,7 @@ public:
         Green,  //緑
         Yellow, //黄
         Purple, //紫
+        Pink,   //ピンク
     };
     
     //位置インデックス
@@ -42,12 +43,12 @@ public:
     static PuzzleSprite* create(PuzzleType type, bool visible); //インスタンス生成
     virtual bool init(PuzzleType type, bool visible); //初期化
     
-    CC_SYNTHESIZE(int, _removedNo, RemovedNo); //ボール削除の順番
-    CC_SYNTHESIZE(bool, _checkedX, CheckedX); //横方向確認フラグ
-    CC_SYNTHESIZE(bool, _checkedY, CheckedY); //縦方向確認フラグ
-    CC_SYNTHESIZE(int, _fallCount, FallCount); //ボール落下時の落下段数
-    CC_SYNTHESIZE_READONLY(PuzzleType, _ballType, PuzzleType); //ボールの種類
-    CC_PROPERTY(PositionIndex, _positionIndex, PositionIndex); //位置インデックス
+    CC_SYNTHESIZE(int, m_removedNo, RemovedNo); //ボール削除の順番
+    CC_SYNTHESIZE(bool, m_checkedX, CheckedX); //横方向確認フラグ
+    CC_SYNTHESIZE(bool, m_checkedY, CheckedY); //縦方向確認フラグ
+    CC_SYNTHESIZE(int, m_fallCount, FallCount); //ボール落下時の落下段数
+    CC_SYNTHESIZE_READONLY(PuzzleType, m_ballType, PuzzleType); //ボールの種類
+    CC_PROPERTY(PositionIndex, m_positionIndex, PositionIndex); //位置インデックス
     
     void setPositionIndexAndChangePosition(PositionIndex positionIndex); //位置インデックスの設定および位置変更
     void resetParams(); //パラメータのリセット

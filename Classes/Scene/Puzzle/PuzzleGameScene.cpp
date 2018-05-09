@@ -4,6 +4,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "AudioManager.h"
+#include "VisibleRect.h"
 
 #define PUZZLE_NUM_X 6
 #define PUZZLE_NUM_Y 6
@@ -100,6 +101,8 @@ bool PuzzleGameScene::init()
     _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
     
     initPuzzles(); //ボールの初期表示
+    initEnemy(); //敵の表示
+    initMembers(); //メンバーの表示
     
     return true;
 }
@@ -383,8 +386,7 @@ bool PuzzleGameScene::isSamePuzzleType(PuzzleSprite::PositionIndex current, Dire
         nextTag = PuzzleSprite::generateTag(PuzzleSprite::PositionIndex(current.x, current.y + 1));
     }
     auto nextPuzzle = allPuzzles.at(nextTag);
-    
-    if (currentPuzzle->getPuzzleType() == nextPuzzle->getPuzzleType()){
+    if (currentPuzzle->getPuzzleType() == nextPuzzle->getPuzzleType()) {
         //次のボールが同じBallTypeである
         return true;
     }
@@ -396,8 +398,7 @@ void PuzzleGameScene::initPuzzleParams()
 {
     //全てのボールのBallTypeを取得
     auto allPuzzles = getAllPuzzles();
-    
-    for (auto puzzle : allPuzzles){
+    for (auto puzzle : allPuzzles) {
         puzzle.second->resetParams();
     }
 }
@@ -414,12 +415,12 @@ void PuzzleGameScene::checkedPuzzle(PuzzleSprite::PositionIndex current, Directi
     
     //指定方向のチェック済みフラグを取得
     bool checked;
-    if (direction == Direction::x){
+    if (direction == Direction::x) {
         checked = puzzle->getCheckedX();
-    }else{
+    } else {
         checked = puzzle->getCheckedY();
     }
-    if (!checked){
+    if (!checked) {
         int num = 0;
         while (true)
         {
@@ -493,7 +494,6 @@ void PuzzleGameScene::checkedPuzzle(PuzzleSprite::PositionIndex current, Directi
                 break;
             }
         };
-        
         //指定方向をチェック済みとする
         if (direction == Direction::x) {
             puzzle->setCheckedX(true);
@@ -508,23 +508,17 @@ void PuzzleGameScene::removeAndGeneratePuzzles()
 {
     //全てのボールのPuzzleTypeを取得
     auto allPuzzles = getAllPuzzles();
-    
     int maxRemovedNo = 0;
-    
     for (int x = 1; x <= PUZZLE_NUM_X; x++) {
         int fallCount = 0;
-        
         for (int y = 1; y <= PUZZLE_NUM_Y; y++) {
             int tag = PuzzleSprite::generateTag(PuzzleSprite::PositionIndex(x, y));
             auto puzzle = allPuzzles.at(tag);
-            
             if (puzzle) {
                 int removedNoForPuzzle = puzzle->getRemovedNo();
-                
                 if (removedNoForPuzzle > 0){
                     //落ちる段数をカウント
                     fallCount++;
-                    
                     if (removedNoForPuzzle > maxRemovedNo){
                         maxRemovedNo = removedNoForPuzzle;
                     }
@@ -562,4 +556,301 @@ void PuzzleGameScene::animationPuzzles()
         //ボールのアニメーションを実行する
         Puzzle.second->removingAndFallingAnimation(m_maxRemovedNo);
     }
+}
+
+void PuzzleGameScene::initEnemy()
+{
+    //敵の情報
+    
+    //敵の表示
+    
+    //敵ヒットポイントバー枠の表示
+    
+    //敵ヒットポイントバーの表示
+    
+}
+
+void PuzzleGameScene::initMembers()
+{
+}
+
+// ダメージの計算
+void PuzzleGameScene::calculateDamage(int &chainNum, int &healing, int &damage, std::set<int> &attackers)
+{
+    auto removeIt = m_removeNumbers.begin();
+    while (removeIt != m_removeNumbers.end())
+    {
+        auto ballIt = (*removeIt).begin();
+        while(ballIt != (*removeIt).end())
+        {
+            if ((*ballIt).first == PuzzleSprite::PuzzleType::Pink) {
+                // 回復
+                healing += 5;
+            } else {
+                // アタッカー分のデータを繰り返す
+                for (int i = 0; i < m_memberDatum.size(); i++)
+                {
+                    // メンバー情報取得
+                    auto memberData = m_memberDatum.at(i);
+                    // メンバーのHPが0の場合は、以下の処理を行わない
+                    if (memberData->getHp() <= 0) {
+                        continue;
+                    }
+                    // 消されたボールとアタッカーの属性よりアタッカーの判定
+                    if (isAttacker((*ballIt).first, memberData->getElement())) {
+                        // アタッカー情報の保持
+                        attackers.insert(i);
+                        // ダメージ
+                        damage += BattleChar::getDamage((*ballIt).second, chainNum, memberData, m_enemyData);
+                    }
+                }
+            }
+            chainNum++;
+            ballIt++;
+        }
+        removeIt++;
+    }
+}
+
+// アタッカー判定
+bool PuzzleGameScene::isAttacker(PuzzleSprite::PuzzleType type, BattleChar::Element element)
+{
+    switch (type)
+    {
+        case PuzzleSprite::PuzzleType::Red:
+            // 赤ボール : 火属性
+            if (element == BattleChar::Element::Fire)
+                return true;
+            break;
+            
+        case PuzzleSprite::PuzzleType::Blue:
+            // 青ボール : 水属性
+            if (element == BattleChar::Element::Water)
+                return true;
+            break;
+            
+        case PuzzleSprite::PuzzleType::Green:
+            // 緑ボール : 風属性
+            if (element == BattleChar::Element::Wind)
+                return true;
+            break;
+            
+        case PuzzleSprite::PuzzleType::Yellow:
+            // 黄ボール : 光属性
+            if (element == BattleChar::Element::Holy)
+                return true;
+            break;
+            
+        case PuzzleSprite::PuzzleType::Purple:
+            // 紫ボール : 紫属性
+            if (element == BattleChar::Element::Shadow)
+                return true;
+            break;
+            
+        default:
+            break;
+    }
+    
+    return false;
+}
+
+// 敵への攻撃
+void PuzzleGameScene::attackToEnemy(int damage, std::set<int> attackers)
+{
+    // 敵のHPを取得する
+    float preHpPercentage = m_enemyData->getHpPercentage();
+    
+    //ダメージをセットする
+    int afterHp = m_enemyData->getHp() - damage;
+    if (afterHp < 0) afterHp = 0;
+    m_enemyData->setHp (afterHp);
+    
+    //敵ヒットポイントバーのアニメーション
+    auto act = ProgressFromTo::create(0.5, preHpPercentage, m_enemyData->getHpPercentage());
+    m_hpBarForEnemy->runAction(act);
+    
+    //敵の被ダメージアニメーション
+    m_enemy->runAction(vibratingAnimation(afterHp));
+    
+    //メンバーの攻撃アニメーション
+    for (auto attacker : attackers)
+    {
+        auto member = m_members.at(attacker);
+        member->runAction(Sequence::create(MoveBy::create(0.1, Point(0, 10)),
+                                           MoveBy::create(0.1, Point(0, -10)), nullptr));
+    }
+}
+
+// メンバーの回復
+void PuzzleGameScene::healMember(int healing)
+{
+    for (int i = 0; i < m_memberDatum.size(); i++)
+    {
+        // メンバーデータ取得
+        auto memberData = m_memberDatum.at(i);
+        // HPが0の場合は、回復しない
+        if (memberData->getHp() <= 0) {
+            continue;
+        }
+        // メンバーを回復する
+        float preHpPercentage = memberData->getHpPercentage();
+        int afterHp = memberData->getHp() + healing;
+        if (afterHp > memberData->getMaxHp()) afterHp = memberData->getMaxHp();
+        memberData->setHp(afterHp);
+        // メンバーHPアニメーション
+        auto act = ProgressFromTo::create(0.5, preHpPercentage, memberData->getHpPercentage());
+        m_hpBarForMembers.at(i)->runAction(act);
+    }
+}
+
+//敵からの攻撃
+void PuzzleGameScene::attackFromEnemy()
+{
+    if (!m_enemyData->isAttackTurn()) {
+        //敵の攻撃ターンでない場合は、一連の攻撃の処理を終わらせる
+        endAnimation();
+        return;
+    }
+    
+    //メンバーを1人選択
+    int index;
+    BattleChar* memberData;
+    
+    do {
+        //ランダムでメンバーを選択
+        index = m_distForMember(m_engine);
+        memberData = m_memberDatum. at(index);
+        
+        //HPが0のメンバーを選択した場合は、再度選択し直す
+    } while (memberData->getHp() <= 0);
+    
+    auto member = m_members.at(index);
+    auto hpBarForMember = m_hpBarForMembers.at(index);
+    
+    //メンバーにダメージを与える
+    float preHpPercentage = memberData->getHpPercentage();
+    int afterHp = memberData->getHp() - 25;
+    if (afterHp > memberData->getMaxHp()) afterHp = memberData->getMaxHp();
+    memberData->setHp(afterHp);
+    
+    //メンバーヒットポイントバーのアニメーション
+    auto act = ProgressFromTo::create(0.5, preHpPercentage, memberData->getHpPercentage());
+    hpBarForMember->runAction(act);
+    
+    //メンバーの被ダメージアニメーション
+    member->runAction(vibratingAnimation(afterHp));
+    
+    //敵の攻撃アニメーション
+    auto seq = Sequence::create(MoveBy::create(0.1, Point(0, -10)),
+                                MoveBy::create(0.1, Point(0, 10)), nullptr);
+    m_enemy->runAction(seq);
+    
+    //味方の全滅チェック
+    bool allHpZero = true;
+    
+    for (auto character : m_memberDatum)
+    {
+        if (character->getHp() > 0)
+        {
+            allHpZero = false;
+            break;
+        }
+    }
+    
+    // アニメーション終了時処理
+    CallFunc* func;
+    if (allHpZero)
+        func = CallFunc::create(CC_CALLBACK_0(PuzzleGameScene::loseAnimation, this));
+    else
+        func = CallFunc::create(CC_CALLBACK_0(PuzzleGameScene::endAnimation, this));
+    
+    runAction(Sequence::create(DelayTime::create(0.5), func, nullptr));
+}
+
+// アニメーション終了時処理
+void PuzzleGameScene::endAnimation()
+{
+    // タップを有効にする
+    m_touchable = true;
+}
+
+// 振動アニメーション
+Spawn* PuzzleGameScene::vibratingAnimation(int afterHp)
+{
+    // 振動アニメーション
+    auto move = Sequence::create(MoveBy::create(0.025, Point( 5, 5)),
+                                 MoveBy::create(0.025, Point(-5, -5)),
+                                 MoveBy::create(0.025, Point(-5, -5)),
+                                 MoveBy::create(0.025, Point( 5, 5)),
+                                 MoveBy::create(0.025, Point( 5, -5)),
+                                 MoveBy::create(0.025, Point(-5, 5)),
+                                 MoveBy::create(0.025, Point(-5, 5)),
+                                 MoveBy::create(0.025, Point( 5, -5)),
+                                 nullptr);
+    
+    // ダメージ時に色を赤くする
+    Action* tint;
+    if (afterHp > 0)
+    {
+        // HPが0より大きい場合は、元の色に戻す
+        tint = Sequence::create(TintTo::create(0, 255, 0, 0),
+                                DelayTime::create(0.2),
+                                TintTo::create(0, 255, 255, 255),
+                                nullptr);
+    }
+    else
+    {
+        // HPが0の場合は、赤いままにする
+        tint = TintTo::create(0, 255, 0, 0);
+    }
+    
+    return Spawn::create(move, tint, nullptr);
+}
+
+//Winアニメーション
+void PuzzleGameScene::winAnimation()
+{
+    //白い背景を用意する
+    auto whiteLayer = LayerColor::create(Color4B(255, 255, 255, 127), WINSIZE.width, WINSIZE.height);
+    if(whiteLayer) {
+        whiteLayer->setPosition(Point::ZERO);
+        addChild(whiteLayer, ZOrder::Result);
+    }
+    
+    //Win画像を表示する
+    auto win = Sprite::create("asset/battle/WIN.png");
+    if(win) {
+        win->setPosition(Point(WINSIZE.width / 2, WINSIZE.height / 2));
+        addChild(win, ZOrder::Result);
+    }
+    
+    //指定秒数後に次のシーンへ
+    scheduleOnce(schedule_selector(PuzzleGameScene::nextScene), 3);
+}
+
+//Loseアニメーション
+void PuzzleGameScene::loseAnimation()
+{
+    //黒い背景を用意する
+    auto blackLayer = LayerColor::create(Color4B(0, 0, 0, 127), WINSIZE.width, WINSIZE.height);
+    if(blackLayer) {
+        blackLayer->setPosition(Point::ZERO);
+        addChild(blackLayer, ZOrder::Result);
+    }
+    
+    //Lose画像を表示する
+    auto lose = Sprite::create("asset/battle/LOSE.png");
+    if(lose) {
+        lose->setPosition(Point(WINSIZE.width / 2, WINSIZE.height / 2));
+        addChild(lose, ZOrder::Result);
+    }
+    
+    //指定秒数後に次のシーンへ
+    scheduleOnce(schedule_selector(PuzzleGameScene::nextScene), 3);
+}
+
+//次のシーンへ遷移
+void PuzzleGameScene::nextScene(float dt)
+{
+    // 次のシーンを生成する
 }
