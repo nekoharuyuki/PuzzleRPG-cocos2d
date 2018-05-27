@@ -9,21 +9,21 @@ public:
     //キャラクター属性
     enum class Element
     {
-        Fire, //火
-        Water, //水
-        Wind, //風
-        Holy, //光
+        Fire,   //火
+        Water,  //水
+        Wind,   //風
+        Holy,   //光
         Shadow, //闇
-        None, //なし
+        None,   //なし
     };
     
 protected:
-    int m_remainingTurn; //攻撃するまでの残りターン
-    CC_SYNTHESIZE(int, m_hp, Hp); //ヒットポイント
-    CC_SYNTHESIZE(int, m_maxHp, MaxHp); //最大ヒットポイント
-    CC_SYNTHESIZE(int, m_attack, Attack); //攻撃力
+    int m_remainingTurn;                        //攻撃するまでの残りターン
+    CC_SYNTHESIZE(int, m_hp, Hp);               //ヒットポイント
+    CC_SYNTHESIZE(int, m_maxHp, MaxHp);         //最大ヒットポイント
+    CC_SYNTHESIZE(int, m_attack, Attack);       //攻撃力
     CC_SYNTHESIZE(Element, m_element, Element); //属性
-    CC_PROPERTY(int, m_turnCount, TurnCount); //攻撃ターン数（敵の場合）
+    CC_PROPERTY(int, m_turnCount, TurnCount);   //攻撃ターン数（敵の場合）
     
 public:
     BattleChar(); //コンストラクタ

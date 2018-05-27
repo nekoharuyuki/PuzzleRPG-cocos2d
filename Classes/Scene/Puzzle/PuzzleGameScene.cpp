@@ -1,6 +1,8 @@
 #include "PuzzleGameScene.h"
 #include "ResultScene.h"
 #include "QuestScene.h"
+#include "MapData.h"
+#include "CharData.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "AudioManager.h"
@@ -101,8 +103,8 @@ bool PuzzleGameScene::init()
     _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
     
     initPuzzles(); //ボールの初期表示
-    initEnemy(); //敵の表示
-    initMembers(); //メンバーの表示
+    initEnemy(rootNode); //敵の表示
+    initMembers(rootNode); //メンバーの表示
     
     return true;
 }
@@ -311,8 +313,40 @@ void PuzzleGameScene::checksLinedPuzzles()
         auto seq = Sequence::create(delay, func, nullptr);
         runAction(seq);
     }else{
-        //タップを有効にする
-        m_touchable = true;
+
+        int chainNum = 0;
+        int damage = 0;
+        int healing = 0;
+        std::set<int> attackers;
+        
+        //ダメージ・回復量の計算
+        calculateDamage(chainNum, healing, damage, attackers);
+#if 0
+        //敵にダメージを与える
+        int afterHp = m_enemyData->getHp() - damage;
+        
+        //アタック処理
+        if (damage > 0) {
+            attackToEnemy(damage, attackers);
+        }
+        
+        //回復処理
+        if (healing > 0) {
+            healMember(healing);
+        }
+        
+        //敵にダメージを与えた後の処理を設定
+        CallFunc* func;
+        if (afterHp <= 0) {
+            func = CallFunc::create(CC_CALLBACK_0(PuzzleGameScene::winAnimation, this));
+        } else {
+            func = CallFunc::create(CC_CALLBACK_0(PuzzleGameScene::attackFromEnemy, this));
+        }
+        
+        runAction(Sequence::create(DelayTime::create(0.5), func, nullptr));
+#else
+        endAnimation();
+#endif
     }
 }
 
@@ -558,9 +592,36 @@ void PuzzleGameScene::animationPuzzles()
     }
 }
 
-void PuzzleGameScene::initEnemy()
+void PuzzleGameScene::initEnemy(Node* node)
 {
     //敵の情報
+    auto enemyData = CharData::getEnemyData(MapData::getMapData(m_questNo).mapEnemy[0]);
+    m_enemyData = BattleChar::create();
+    m_enemyData->retain();
+    m_enemyData->setMaxHp(enemyData.enemyMaxHp);
+    m_enemyData->setHp(enemyData.enemyHp);
+    m_enemyData->setAttack(enemyData.enemyAtk);
+    switch (enemyData.enemyAttribute)
+    {
+        case 0: // 赤ボール : 火属性
+            m_enemyData->setElement(BattleChar::Element::Fire);
+            break;
+        case 1: // 青ボール : 水属性
+            m_enemyData->setElement(BattleChar::Element::Water);
+            break;
+        case 2: // 緑ボール : 風属性
+            m_enemyData->setElement(BattleChar::Element::Wind);
+            break;
+        case 3: // 黄ボール : 光属性
+            m_enemyData->setElement(BattleChar::Element::Holy);
+            break;
+        case 4: // 紫ボール : 紫属性
+            m_enemyData->setElement(BattleChar::Element::Shadow);
+            break;
+        default:
+            break;
+    }
+    m_enemyData->setTurnCount(enemyData.enemyTurn);
     
     //敵の表示
     
@@ -570,8 +631,57 @@ void PuzzleGameScene::initEnemy()
     
 }
 
-void PuzzleGameScene::initMembers()
+void PuzzleGameScene::initMembers(Node* node)
 {
+    std::vector<std::string> fileNames
+    {
+        "asset/char/chara_player_10.png",
+        "asset/char/chara_player_11.png",
+        "asset/char/chara_player_12.png",
+    };
+    
+    std::vector<BattleChar::Element> elements
+    {
+        BattleChar::Element::Fire,
+        BattleChar::Element::Water,
+        BattleChar::Element::Wind,
+    };
+    
+    for (int i = 0; i < fileNames.size(); i++)
+    {
+        //メンバー
+        // TODO: ステータスは仮なので、後の実装でユーザーのキャラクターデータを取得する
+        auto memberData = BattleChar::create();
+        memberData->setMaxHp(200);
+        memberData->setHp(200);
+        memberData->setElement(elements[i]);
+        m_memberDatum.pushBack(memberData);
+        
+        //メンバーの表示
+        auto charaPlayerNode = node->getChildByName<Node*>( "chara_player_"+std::to_string(i) );
+        auto charaPlayerSprite = Sprite::create(fileNames[i].c_str());
+        if(charaPlayerSprite){
+            charaPlayerNode->addChild( charaPlayerSprite, ZOrder::Char );
+        }
+        
+        //メンバーヒットポイントバー枠の表示
+//        auto hpBg = Sprite::create("HpCardBackground.png");
+//        hpBg->setPosition(Point(70 + i * 125, 554));
+//        addChild(hpBg, ZOrder::CharHp);
+        
+        //メンバーヒットポイントバーの表示
+//        auto hpBarForMember = ProgressTimer::create(Sprite::create("HpCardGreen.png"));
+//        hpBarForMember->setPosition(Point(hpBg->getContentSize().width / 2, hpBg->getContentSize().height / 2));
+//        hpBarForMember->setType(ProgressTimer::Type::BAR);
+//        hpBarForMember->setMidpoint(Point::ZERO);
+//        hpBarForMember->setBarChangeRate(Point(1, 0));
+//        hpBarForMember->setPercentage(memberData->getHpPercentage());
+//        hpBg->addChild(hpBarForMember);
+        
+        //配列に格納
+//        m_members.pushBack(member);
+//        m_hpBarForMembers.pushBack(hpBarForMember);
+    }
 }
 
 // ダメージの計算
@@ -759,10 +869,11 @@ void PuzzleGameScene::attackFromEnemy()
     
     // アニメーション終了時処理
     CallFunc* func;
-    if (allHpZero)
+    if (allHpZero) {
         func = CallFunc::create(CC_CALLBACK_0(PuzzleGameScene::loseAnimation, this));
-    else
+    } else {
         func = CallFunc::create(CC_CALLBACK_0(PuzzleGameScene::endAnimation, this));
+    }
     
     runAction(Sequence::create(DelayTime::create(0.5), func, nullptr));
 }
@@ -825,7 +936,7 @@ void PuzzleGameScene::winAnimation()
     }
     
     //指定秒数後に次のシーンへ
-    scheduleOnce(schedule_selector(PuzzleGameScene::nextScene), 3);
+    scheduleOnce(schedule_selector(PuzzleGameScene::nextScene), 1.f);
 }
 
 //Loseアニメーション
@@ -838,6 +949,9 @@ void PuzzleGameScene::loseAnimation()
         addChild(blackLayer, ZOrder::Result);
     }
     
+    // LoseBGM再生
+    AudioManager::getInstance()->playBgm("lose");
+    
     //Lose画像を表示する
     auto lose = Sprite::create("asset/battle/LOSE.png");
     if(lose) {
@@ -846,11 +960,18 @@ void PuzzleGameScene::loseAnimation()
     }
     
     //指定秒数後に次のシーンへ
-    scheduleOnce(schedule_selector(PuzzleGameScene::nextScene), 3);
+    scheduleOnce(schedule_selector(PuzzleGameScene::nextScene), 4.5f);
 }
 
 //次のシーンへ遷移
 void PuzzleGameScene::nextScene(float dt)
 {
     // 次のシーンを生成する
+    auto startGame = CallFunc::create([dt]{
+        auto scene = QuestScene::createScene();
+        AudioManager::getInstance()->playBgm("all_bgm");
+        auto transition = TransitionFadeBL::create(dt, scene);
+        Director::getInstance()->replaceScene(transition);
+    });
+    this->runAction(Sequence::create(startGame, NULL));
 }

@@ -64,8 +64,8 @@ protected:
     void generatePuzzles(int xLineNum, int fallCount); //ボールを生成する
     void animationPuzzles(); //ボールの消去と落下アニメーション
     
-    void initEnemy(); //敵の表示
-    void initMembers(); //メンバーの表示
+    void initEnemy(Node* node); //敵の表示
+    void initMembers(Node* node); //メンバーの表示
     void calculateDamage(int &chainNum, int &healing, int &damage, std::set<int> &attackers); //ダメージの計算
     bool isAttacker(PuzzleSprite::PuzzleType type, BattleChar::Element element); //アタッカー判定
     void attackToEnemy(int damage, std::set<int> attackers); //敵への攻撃
