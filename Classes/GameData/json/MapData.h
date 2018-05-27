@@ -2,6 +2,10 @@
 #define __MAP_DATA__
 
 #include "cocos2d.h"
+#include "CharData.h"
+
+#define ENEMY_MAX     15    // １ステージで登場出来る敵の最大数
+#define DROP_CHAR_MAX 15    // １ステージでドロップ出来るキャラの最大数
 
 class MapData
 {
@@ -14,7 +18,9 @@ private:
         int mapId;
         std::string mapName;
         int mapStamina;
+        int mapEnemy[ENEMY_MAX];
         int mapStage;
+        int mapDropChar[DROP_CHAR_MAX];
         int mapDropCoin;
         bool mapBoss;
     };

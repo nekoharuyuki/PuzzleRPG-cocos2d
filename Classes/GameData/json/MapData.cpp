@@ -65,7 +65,21 @@ bool MapData::mapDataJsonOpen(const std::string& filename)
         m_mapDataList[i].mapId       = mapList[i]["id"].GetInt();
         m_mapDataList[i].mapName     = mapList[i]["name"].GetString();
         m_mapDataList[i].mapStamina  = mapList[i]["stamina"].GetInt();
+        if (mapList[i]["enemy"].IsArray()) {
+            const rapidjson::Value& enemy = mapList[i]["enemy"];
+            rapidjson::SizeType num = enemy.Size();
+            for(rapidjson::SizeType enemyCount = 0; enemyCount < num; enemyCount++){
+                m_mapDataList[i].mapEnemy[enemyCount] = enemy[enemyCount].GetInt();
+            }
+        }
         m_mapDataList[i].mapStage    = mapList[i]["stage"].GetInt();
+        if (mapList[i]["dropChar"].IsArray()) {
+            const rapidjson::Value& dropChar = mapList[i]["dropChar"];
+            rapidjson::SizeType num = dropChar.Size();
+            for(rapidjson::SizeType dropCharCount = 0; dropCharCount < num; dropCharCount++){
+                m_mapDataList[i].mapDropChar[dropCharCount] = dropChar[dropCharCount].GetInt();
+            }
+        }
         m_mapDataList[i].mapDropCoin = mapList[i]["dropCoin"].GetInt();
         m_mapDataList[i].mapBoss     = mapList[i]["boss"].GetBool();
     }

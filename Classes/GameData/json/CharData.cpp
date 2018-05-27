@@ -64,7 +64,7 @@ bool CharData::charDataJsonOpen(const std::string& filename)
     const rapidjson::Value& charList = doc["char"];
     
     // キーと値をリストに登録する
-    // 敵のデータ取得
+    // キャラのデータ取得
     for(rapidjson::SizeType i = 0; i < charList.Size(); i++){
         m_charDataList[i].charName      = charList[i]["name"].GetString();
         m_charDataList[i].charId        = charList[i]["id"].GetInt();
