@@ -32,19 +32,33 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="support_btn" ActionTag="1123659232" VisibleForFrame="False" Tag="438" IconVisible="False" LeftMargin="377.1798" RightMargin="376.8202" TopMargin="551.4137" BottomMargin="12.5863" TouchEnable="True" FontSize="11" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="46.0000" Y="36.0000" />
+          <AbstractNodeData Name="ui_etc_btn" ActionTag="964956088" Tag="47" IconVisible="False" LeftMargin="664.9998" RightMargin="5.0002" TopMargin="489.4999" BottomMargin="-0.4999" TouchEnable="True" FontSize="14" LeftEage="42" RightEage="42" TopEage="36" BottomEage="36" Scale9OriginX="42" Scale9OriginY="36" Scale9Width="46" Scale9Height="39" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">
+            <Size X="130.0000" Y="111.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="400.1798" Y="30.5863" />
-            <Scale ScaleX="17.2905" ScaleY="1.5664" />
+            <Position X="729.9998" Y="55.0001" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5002" Y="0.0510" />
-            <PreSize X="0.0575" Y="0.0600" />
-            <FontResource Type="Normal" Path="" Plist="" />
-            <TextColor A="255" R="0" G="0" B="0" />
+            <PrePosition X="0.9125" Y="0.0917" />
+            <PreSize X="0.1625" Y="0.1850" />
+            <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-            <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
+            <PressedFileData Type="Normal" Path="asset/shared/btn_other_on.png" Plist="" />
+            <NormalFileData Type="Normal" Path="asset/shared/btn_other.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="ui_mypage_btn" ActionTag="-1394286786" Tag="48" IconVisible="False" LeftMargin="535.0000" RightMargin="135.0000" TopMargin="489.5000" BottomMargin="-0.5000" TouchEnable="True" FontSize="14" LeftEage="42" RightEage="42" TopEage="36" BottomEage="36" Scale9OriginX="42" Scale9OriginY="36" Scale9Width="46" Scale9Height="39" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">
+            <Size X="130.0000" Y="111.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="600.0000" Y="55.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.7500" Y="0.0917" />
+            <PreSize X="0.1625" Y="0.1850" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="asset/shared/btn_mypage_on.png" Plist="" />
+            <NormalFileData Type="Normal" Path="asset/shared/btn_mypage.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

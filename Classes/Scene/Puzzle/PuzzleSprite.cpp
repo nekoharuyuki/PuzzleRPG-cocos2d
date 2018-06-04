@@ -5,11 +5,11 @@ USING_NS_CC;
 
 //コンストラクタ
 PuzzleSprite::PuzzleSprite()
-: _removedNo(0)
-, _checkedX(false)
-, _checkedY(false)
-, _fallCount(0)
-, _positionIndex(0, 0)
+: m_removedNo(0)
+, m_checkedX(false)
+, m_checkedY(false)
+, m_fallCount(0)
+, m_positionIndex(0, 0)
 {
 }
 
@@ -36,7 +36,7 @@ bool PuzzleSprite::init(PuzzleType type, bool visible)
         return false;
     }
     
-    _ballType = type;
+    m_ballType = type;
     
     setVisible(visible);
     
@@ -46,34 +46,34 @@ bool PuzzleSprite::init(PuzzleType type, bool visible)
 //パラメータのリセット
 void PuzzleSprite::resetParams()
 {
-    _removedNo = 0;
-    _checkedX = false;
-    _checkedY = false;
-    _fallCount = 0;
+    m_removedNo = 0;
+    m_checkedX = false;
+    m_checkedY = false;
+    m_fallCount = 0;
 }
 
 //初期位置へ移動
 void PuzzleSprite::resetPosition()
 {
     //位置を変更する
-    setPosition(getPositionForPositionIndex(_positionIndex));
+    setPosition(getPositionForPositionIndex(m_positionIndex));
 }
 
 //位置インデックスを返す
 PuzzleSprite::PositionIndex PuzzleSprite::getPositionIndex() const
 {
     //位置インデックスを返す
-    return _positionIndex;
+    return m_positionIndex;
 }
 
 //位置インデックスとタグを変更する
 void PuzzleSprite::setPositionIndex(PositionIndex positionIndex)
 {
     //位置インデックスを保持する
-    _positionIndex = positionIndex;
+    m_positionIndex = positionIndex;
     
     //タグをセットする
-    setTag(generateTag(_positionIndex));
+    setTag(generateTag(m_positionIndex));
 }
 
 //インデックスとタグと位置を変更する
@@ -99,12 +99,12 @@ void PuzzleSprite::removingAndFallingAnimation(int maxRemovedNo)
 //ボール削除アニメーション
 void PuzzleSprite::removingAnimation(int maxRemovedNo)
 {
-    if (_removedNo > 0)
+    if (m_removedNo > 0)
     {
         //ボールを消すアニメーション
-        auto delay1 = DelayTime::create(ONE_ACTION_TIME * (_removedNo - 1));
+        auto delay1 = DelayTime::create(ONE_ACTION_TIME * (m_removedNo - 1));
         auto fade = FadeTo::create(ONE_ACTION_TIME, 0);
-        auto delay2 = DelayTime::create(ONE_ACTION_TIME * (maxRemovedNo - _removedNo));
+        auto delay2 = DelayTime::create(ONE_ACTION_TIME * (maxRemovedNo - m_removedNo));
         auto removeSelf = RemoveSelf::create(false);
         
         //アニメーション実行
@@ -115,10 +115,10 @@ void PuzzleSprite::removingAnimation(int maxRemovedNo)
 //ボール落下アニメーション
 void PuzzleSprite::fallingAnimation(int maxRemovedNo)
 {
-    if (_fallCount > 0)
+    if (m_fallCount > 0)
     {
         //ボールを落とすアニメーション
-        setPositionIndex(PositionIndex(_positionIndex.x, _positionIndex.y - _fallCount));
+        setPositionIndex(PositionIndex(m_positionIndex.x, m_positionIndex.y - m_fallCount));
         
         auto delay = DelayTime::create(ONE_ACTION_TIME * maxRemovedNo);
         auto show = Show::create();

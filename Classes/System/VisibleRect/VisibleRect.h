@@ -3,6 +3,8 @@
 
 #include "cocos2d.h"
 
+#define WINSIZE Director::getInstance()->getWinSize()
+
 class VisibleRect
 {
 public:
@@ -21,8 +23,5 @@ private:
     static void lazyInit();
     static cocos2d::Rect s_visibleRect;
 };
-
-
-
 
 #endif /* __VISIBLERECT_H__ */

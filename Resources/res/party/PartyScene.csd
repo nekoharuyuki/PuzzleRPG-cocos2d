@@ -15,13 +15,13 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="800.0000" Y="600.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="-1931106000" Tag="84" IconVisible="False" LeftMargin="1.0000" RightMargin="-1.0000" TopMargin="2.0000" BottomMargin="-2.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="bg" ActionTag="-1931106000" Tag="84" IconVisible="False" ctype="SpriteObjectData">
             <Size X="800.0000" Y="600.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="401.0000" Y="298.0000" />
+            <Position X="400.0000" Y="300.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5013" Y="0.4967" />
+            <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="asset/shared/bg.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />

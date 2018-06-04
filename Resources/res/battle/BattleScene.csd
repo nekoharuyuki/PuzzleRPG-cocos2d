@@ -2042,10 +2042,10 @@
           </ScaleFrame>
         </Timeline>
         <Timeline ActionTag="1369172168" Property="Position">
-          <PointFrame FrameIndex="0" X="399.9907" Y="476.7285">
+          <PointFrame FrameIndex="0" X="400.0000" Y="476.7300">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="1" X="399.9907" Y="476.7285">
+          <PointFrame FrameIndex="1" X="400.0000" Y="476.7285">
             <EasingData Type="0" />
           </PointFrame>
         </Timeline>
@@ -7098,7 +7098,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="scene1" ActionTag="1369172168" Tag="217" IconVisible="False" LeftMargin="-0.0093" RightMargin="0.0093" TopMargin="0.2715" BottomMargin="353.7285" ctype="SpriteObjectData">
+          <AbstractNodeData Name="scene1" ActionTag="1369172168" Tag="217" IconVisible="False" TopMargin="0.2700" BottomMargin="353.7300" ctype="SpriteObjectData">
             <Size X="800.0000" Y="246.0000" />
             <Children>
               <AbstractNodeData Name="lawn_base" ActionTag="-1232682077" Tag="218" IconVisible="False" LeftMargin="-0.6734" RightMargin="0.6734" TopMargin="0.3695" BottomMargin="-0.3695" ctype="SpriteObjectData">
@@ -7345,10 +7345,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="399.9907" Y="476.7285" />
+            <Position X="400.0000" Y="476.7300" />
             <Scale ScaleX="-1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.7945" />
+            <PrePosition X="0.5000" Y="0.7946" />
             <PreSize X="1.0000" Y="0.4100" />
             <FileData Type="Normal" Path="asset/battlebg/battle_scene1/bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
@@ -7921,13 +7921,13 @@
           <AbstractNodeData Name="PartyHp_bar" ActionTag="2009044631" Tag="1650" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="244.5000" BottomMargin="321.5000" ctype="SpriteObjectData">
             <Size X="786.0000" Y="34.0000" />
             <Children>
-              <AbstractNodeData Name="hpbar_base" ActionTag="1240070865" Tag="1651" IconVisible="False" LeftMargin="3.0000" RightMargin="-17.0000" TopMargin="4.5000" BottomMargin="-0.5000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="hpbar_base" ActionTag="1240070865" Tag="1651" IconVisible="False" LeftMargin="-6.0000" RightMargin="-8.0000" TopMargin="4.5000" BottomMargin="-0.5000" ctype="SpriteObjectData">
                 <Size X="800.0000" Y="30.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="403.0000" Y="14.5000" />
+                <Position X="394.0000" Y="14.5000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5127" Y="0.4265" />
+                <PrePosition X="0.5013" Y="0.4265" />
                 <PreSize X="1.0178" Y="0.8824" />
                 <FileData Type="Normal" Path="asset/battle/bar_base.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
@@ -7942,13 +7942,13 @@
                 <PreSize X="0.0229" Y="0.5294" />
                 <ImageFileData Type="Normal" Path="asset/battle/hpbar_naka.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="hpbar_freme" ActionTag="-1034374372" Tag="1652" IconVisible="False" LeftMargin="10.0000" RightMargin="-10.0000" TopMargin="2.5000" BottomMargin="-2.5000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="hpbar_freme" ActionTag="-1034374372" Tag="1652" IconVisible="False" LeftMargin="7.0000" RightMargin="-7.0000" TopMargin="2.5000" BottomMargin="-2.5000" ctype="SpriteObjectData">
                 <Size X="786.0000" Y="34.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="403.0000" Y="14.5000" />
+                <Position X="400.0000" Y="14.5000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5127" Y="0.4265" />
+                <PrePosition X="0.5089" Y="0.4265" />
                 <PreSize X="1.0000" Y="1.0000" />
                 <FileData Type="Normal" Path="asset/battle/hpbar_freme.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />

@@ -10,6 +10,8 @@
 #include "SyntheticScene.h"
 #include "OtherScene.h"
 
+#include "AudioManager.h"
+
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
@@ -67,9 +69,11 @@ bool MenuLayer::uiButtonPushLoadScene(Node* node, Menu menu, const std::string& 
         if(scene == nullptr){
             return false;
         }
-        // ゲームを始めるアクション
+        // シーンを切り替える
         auto startLoadScene = CallFunc::create([&scene]{
             auto transition = TransitionPageTurn::create(0.5f, scene, true);
+            // ページをめくる音SE再生
+            AudioManager::getInstance()->playSe("ui_page");
             Director::getInstance()->replaceScene(transition);
         });
         if(startLoadScene == nullptr){
@@ -88,7 +92,7 @@ cocos2d::Scene* MenuLayer::loadScene(Menu menu)
     if( menu == ui_party_btn  ){ return PartyScene::createScene(); }
     if( menu == ui_mix_btn    ){ return SyntheticScene::createScene(); }
     if( menu == ui_shinka_btn ){ return EvolutionScene::createScene(); }
-    if( menu == ui_etc_btn    ){ return OtherScene::createScene(); }
+    if( menu == ui_etc_btn    ){ return OtherScene::createScene(OtherScene::transition_menu); }
     
     return nullptr;
 }
@@ -107,10 +111,12 @@ bool MenuLayer::uiButtonPushLoadMypageScene(Node* node)
     btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
         // 何度も押されないように一度押されたらアクションを無効にする
         this->getEventDispatcher()->removeAllEventListeners();
-        // ゲームを始めるアクション
+        // シーンを切り替える
         auto startLoadScene = CallFunc::create([]{
             auto scene = MypageScene::createScene();
             auto transition = TransitionPageTurn::create(0.5f, scene, true);
+            // ページをめくる音SE再生
+            AudioManager::getInstance()->playSe("ui_page");
             Director::getInstance()->replaceScene(transition);
         });
         if(startLoadScene == nullptr){
@@ -138,9 +144,11 @@ bool MenuLayer::uiButtonPushLoadQuestScene(Node* node)
     btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
         // 何度も押されないように一度押されたらアクションを無効にする
         this->getEventDispatcher()->removeAllEventListeners();
-        // ゲームを始めるアクション
+        // シーンを切り替える
         auto startLoadScene = CallFunc::create([]{
             auto scene = QuestScene::createScene();
+            // ページをめくる音SE再生
+            AudioManager::getInstance()->playSe("ui_page");
             auto transition = TransitionPageTurn::create(0.5f, scene, true);
             Director::getInstance()->replaceScene(transition);
         });
@@ -169,9 +177,11 @@ bool MenuLayer::uiButtonPushLoadPartyScene(Node* node)
     btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
         // 何度も押されないように一度押されたらアクションを無効にする
         this->getEventDispatcher()->removeAllEventListeners();
-        // ゲームを始めるアクション
+        // シーンを切り替える
         auto startLoadScene = CallFunc::create([]{
             auto scene = PartyScene::createScene();
+            // ページをめくる音SE再生
+            AudioManager::getInstance()->playSe("ui_page");
             auto transition = TransitionPageTurn::create(0.5f, scene, true);
             Director::getInstance()->replaceScene(transition);
         });
@@ -200,9 +210,11 @@ bool MenuLayer::uiButtonPushLoadMixScene(Node* node)
     btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
         // 何度も押されないように一度押されたらアクションを無効にする
         this->getEventDispatcher()->removeAllEventListeners();
-        // ゲームを始めるアクション
+        // シーンを切り替える
         auto startLoadScene = CallFunc::create([]{
             auto scene = SyntheticScene::createScene();
+            // ページをめくる音SE再生
+            AudioManager::getInstance()->playSe("ui_page");
             auto transition = TransitionPageTurn::create(0.5f, scene, true);
             Director::getInstance()->replaceScene(transition);
         });
@@ -231,9 +243,11 @@ bool MenuLayer::uiButtonPushLoadShinkaScene(Node* node)
     btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
         // 何度も押されないように一度押されたらアクションを無効にする
         this->getEventDispatcher()->removeAllEventListeners();
-        // ゲームを始めるアクション
+        // シーンを切り替える
         auto startLoadScene = CallFunc::create([]{
             auto scene = EvolutionScene::createScene();
+            // ページをめくる音SE再生
+            AudioManager::getInstance()->playSe("ui_page");
             auto transition = TransitionPageTurn::create(0.5f, scene, true);
             Director::getInstance()->replaceScene(transition);
         });
@@ -262,9 +276,11 @@ bool MenuLayer::uiButtonPushLoadOtherScene(Node* node)
     btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
         // 何度も押されないように一度押されたらアクションを無効にする
         this->getEventDispatcher()->removeAllEventListeners();
-        // ゲームを始めるアクション
+        // シーンを切り替える
         auto startLoadScene = CallFunc::create([]{
-            auto scene = OtherScene::createScene();
+            auto scene = OtherScene::createScene(OtherScene::transition_menu);
+            // ページをめくる音SE再生
+            AudioManager::getInstance()->playSe("ui_page");
             auto transition = TransitionPageTurn::create(0.5f, scene, true);
             Director::getInstance()->replaceScene(transition);
         });

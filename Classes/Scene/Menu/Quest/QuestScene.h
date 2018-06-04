@@ -5,7 +5,7 @@
 
 class QuestScene : public cocos2d::Layer
 {
-public:
+protected:
     //クエストの種類
     enum class QuestType
     {
@@ -13,6 +13,9 @@ public:
         Red,    //赤
     };
     
+    void initQuestmas(Node* node); //クエストマスの初期化
+    
+public:
     QuestScene();   //コンストラクタ
     
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -24,8 +27,15 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(QuestScene);
     
+private:
     CC_SYNTHESIZE(int, m_questNo, QuestNo);                    //クエストの順番
     CC_SYNTHESIZE_READONLY(QuestType, m_questType, QuestType); //クエストの種類
+    
+    void onQuest();
+    void onQuestStart();
+    void onBack();
+    
+    Node* m_popup_quest;
 };
 
 #endif // __QUEST_SCENE_H__
