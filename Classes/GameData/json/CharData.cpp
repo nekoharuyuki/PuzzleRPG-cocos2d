@@ -73,7 +73,13 @@ bool CharData::charDataJsonOpen(const std::string& filename)
         m_charDataList[i].charAtk       = charList[i]["atk"].GetInt();
         m_charDataList[i].charMaxAtk    = charList[i]["maxAtk"].GetInt();
         m_charDataList[i].charAttribute = charList[i]["attribute"].GetInt();
-        
+        if (charList[i]["maxLevel"].IsArray()) {
+            const rapidjson::Value& maxLevel = charList[i]["maxLevel"];
+            rapidjson::SizeType num = maxLevel.Size();
+            for(rapidjson::SizeType levelCount = 0; levelCount < num; levelCount++){
+                m_charDataList[i].charMaxLevel.push_back(maxLevel[levelCount].GetInt());
+            }
+        }
         m_charDataList[i].charRare      = charList[i]["rare"].GetInt();
         m_charDataList[i].charSkill     = charList[i]["skill"].GetInt();
         m_charDataList[i].charSkillText = charList[i]["skillText"].GetString();
@@ -83,7 +89,13 @@ bool CharData::charDataJsonOpen(const std::string& filename)
         m_charDataList[i].charExp       = charList[i]["exp"].GetInt();
         m_charDataList[i].charPrice     = charList[i]["price"].GetInt();
         m_charDataList[i].charOverLimit = charList[i]["overLimit"].GetInt();
-        
+        if (charList[i]["evolution"].IsArray()) {
+            const rapidjson::Value& evolution = charList[i]["evolution"];
+            rapidjson::SizeType num = evolution.Size();
+            for(rapidjson::SizeType evolCount = 0; evolCount < num; evolCount++){
+                m_charDataList[i].charEvolution.push_back(evolution[evolCount].GetInt());
+            }
+        }
     }
     
     // キーと値を変数に登録する

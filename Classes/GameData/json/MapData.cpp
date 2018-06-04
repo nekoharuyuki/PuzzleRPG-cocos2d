@@ -69,7 +69,7 @@ bool MapData::mapDataJsonOpen(const std::string& filename)
             const rapidjson::Value& enemy = mapList[i]["enemy"];
             rapidjson::SizeType num = enemy.Size();
             for(rapidjson::SizeType enemyCount = 0; enemyCount < num; enemyCount++){
-                m_mapDataList[i].mapEnemy[enemyCount] = enemy[enemyCount].GetInt();
+                m_mapDataList[i].mapEnemy.push_back(enemy[enemyCount].GetInt());
             }
         }
         m_mapDataList[i].mapStage    = mapList[i]["stage"].GetInt();
@@ -77,7 +77,7 @@ bool MapData::mapDataJsonOpen(const std::string& filename)
             const rapidjson::Value& dropChar = mapList[i]["dropChar"];
             rapidjson::SizeType num = dropChar.Size();
             for(rapidjson::SizeType dropCharCount = 0; dropCharCount < num; dropCharCount++){
-                m_mapDataList[i].mapDropChar[dropCharCount] = dropChar[dropCharCount].GetInt();
+                m_mapDataList[i].mapDropChar.push_back(dropChar[dropCharCount].GetInt());
             }
         }
         m_mapDataList[i].mapDropCoin = mapList[i]["dropCoin"].GetInt();

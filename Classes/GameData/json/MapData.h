@@ -18,9 +18,9 @@ private:
         int mapId;
         std::string mapName;
         int mapStamina;
-        int mapEnemy[ENEMY_MAX];
+        std::vector<int> mapEnemy;
         int mapStage;
-        int mapDropChar[DROP_CHAR_MAX];
+        std::vector<int> mapDropChar;
         int mapDropCoin;
         bool mapBoss;
     };

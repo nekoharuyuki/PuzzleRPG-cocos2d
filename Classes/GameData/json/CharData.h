@@ -18,7 +18,7 @@ private:
         int charAtk;
         int charMaxAtk;
         int charAttribute;
-        //int charMaxLevel;
+        std::vector<int> charMaxLevel;
         int charRare;
         int charSkill;
         std::string charSkillText;
@@ -28,7 +28,7 @@ private:
         int charExp;
         int charPrice;
         int charOverLimit;
-        //int charEvolution; 
+        std::vector<int> charEvolution; 
     };
     static std::map<int, CharDataParams> m_charDataList;
     
