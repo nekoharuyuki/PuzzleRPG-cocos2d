@@ -82,10 +82,8 @@ bool PuzzleGameScene::init()
         
         // クエストシーンへ移行する
         auto startGame = CallFunc::create([]{
-//            auto scene = QuestScene::createScene();
-//            AudioManager::getInstance()->playBgm("all_bgm");
-            // TODO : 実装を整理予定
-            auto scene = ResultScene::createScene();
+            auto scene = QuestScene::createScene();
+            AudioManager::getInstance()->playBgm("all_bgm");
             auto transition = TransitionFadeBL::create(0.5f, scene);
             Director::getInstance()->replaceScene(transition);
         });
@@ -345,6 +343,8 @@ void PuzzleGameScene::checksLinedPuzzles()
         
         runAction(Sequence::create(DelayTime::create(0.5), func, nullptr));
 #else
+//        winAnimation();
+//        loseAnimation();
         endAnimation();
 #endif
     }
@@ -936,7 +936,7 @@ void PuzzleGameScene::winAnimation()
     }
     
     //指定秒数後に次のシーンへ
-    scheduleOnce(schedule_selector(PuzzleGameScene::nextScene), 1.f);
+    scheduleOnce(schedule_selector(PuzzleGameScene::nextSceneWin), 1.f);
 }
 
 //Loseアニメーション
@@ -960,18 +960,30 @@ void PuzzleGameScene::loseAnimation()
     }
     
     //指定秒数後に次のシーンへ
-    scheduleOnce(schedule_selector(PuzzleGameScene::nextScene), 4.5f);
+    scheduleOnce(schedule_selector(PuzzleGameScene::nextSceneLose), 5.f);
 }
 
-//次のシーンへ遷移
-void PuzzleGameScene::nextScene(float dt)
+//次のシーンへ遷移 (Win)
+void PuzzleGameScene::nextSceneWin(float dt)
 {
     // 次のシーンを生成する
-    auto startGame = CallFunc::create([dt]{
-        auto scene = QuestScene::createScene();
-        AudioManager::getInstance()->playBgm("all_bgm");
-        auto transition = TransitionFadeBL::create(dt, scene);
+    auto nextScene = CallFunc::create([dt]{
+        auto scene = ResultScene::createScene();
+        auto transition = TransitionFade::create(dt, scene, Color3B::WHITE);
         Director::getInstance()->replaceScene(transition);
     });
-    this->runAction(Sequence::create(startGame, NULL));
+    this->runAction(Sequence::create(nextScene, NULL));
+}
+
+//次のシーンへ遷移 (Lose)
+void PuzzleGameScene::nextSceneLose(float dt)
+{
+    // 次のシーンを生成する
+    auto nextScene = CallFunc::create([dt]{
+        auto scene = QuestScene::createScene();
+        AudioManager::getInstance()->playBgm("all_bgm");
+        auto transition = TransitionFadeBL::create(0.2f, scene);
+        Director::getInstance()->replaceScene(transition);
+    });
+    this->runAction(Sequence::create(nextScene, NULL));
 }
