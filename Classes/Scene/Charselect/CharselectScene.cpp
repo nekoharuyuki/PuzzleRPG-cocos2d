@@ -101,22 +101,32 @@ void CharselectScene::onChar( SelectCharNo no )
     });
     
     auto NameText = m_popup_2->getChildByName<ui::Text*>( "NameText" );
-    NameText->setString( CharData::getCharData(no).charName );
+    if(NameText){
+        NameText->setString( CharData::getCharData(no).charName );
+    }
     auto AttributeNode = m_popup_2->getChildByName<Node*>( "AttributeNode" );
-    auto charIconSprite = CharSelectIconSprite::create(no);
-    if(charIconSprite){
-        charIconSprite->setScale(0.5f);
-        AttributeNode->addChild( charIconSprite, 1 );
+    if(AttributeNode){
+        auto charIconSprite = CharSelectIconSprite::create(no);
+        if(charIconSprite){
+            charIconSprite->setScale(0.5f);
+            AttributeNode->addChild( charIconSprite, 1 );
+        }
     }
     auto AtkText = m_popup_2->getChildByName<ui::Text*>( "AtkText" );
-    AtkText->setString( std::to_string(CharData::getCharData(no).charAtk) );
+    if(AtkText){
+        AtkText->setString( std::to_string(CharData::getCharData(no).charAtk) );
+    }
     auto SkillText = m_popup_2->getChildByName<ui::Text*>( "SkillText" );
-    SkillText->setString( CharData::getCharData(no).charSkillText );
+    if(SkillText){
+        SkillText->setString( CharData::getCharData(no).charSkillText );
+    }
     auto chara_princessselect = m_popup_2->getChildByName<Node*>( "chara_princessselect" );
-    chara_princessselect->removeAllChildren();
-    auto charSprite = CharSelectSprite::create(no);
-    if(charSprite){
-        chara_princessselect->addChild( charSprite, 1 );
+    if(chara_princessselect){
+        chara_princessselect->removeAllChildren();
+        auto charSprite = CharSelectSprite::create(no);
+        if(charSprite){
+            chara_princessselect->addChild( charSprite, 1 );
+        }
     }
     m_popup_2->setVisible(true);
 }

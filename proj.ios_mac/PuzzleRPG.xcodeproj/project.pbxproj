@@ -68,6 +68,8 @@
 		8007141E1FFBBBB20004DFAB /* PuzzleSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8007141B1FFBBBB20004DFAB /* PuzzleSprite.cpp */; };
 		8007142B20010EB60004DFAB /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8007142920010EB60004DFAB /* TitleScene.cpp */; };
 		8007142C20010EB60004DFAB /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8007142920010EB60004DFAB /* TitleScene.cpp */; };
+		800954EB20CD459700C09213 /* BattleCharSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800954E920CD459700C09213 /* BattleCharSprite.cpp */; };
+		800954EC20CD459700C09213 /* BattleCharSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800954E920CD459700C09213 /* BattleCharSprite.cpp */; };
 		8016C2AD209F4BB900C46C03 /* BattleChar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8016C2A9209F4BB800C46C03 /* BattleChar.cpp */; };
 		8016C2AE209F4BB900C46C03 /* BattleChar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8016C2A9209F4BB800C46C03 /* BattleChar.cpp */; };
 		8016C2B2209F5B9500C46C03 /* ResultScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8016C2B0209F5B9500C46C03 /* ResultScene.cpp */; };
@@ -102,6 +104,8 @@
 		80BDB4E1204291C100F1F36E /* SyntheticScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BDB4DD204291C100F1F36E /* SyntheticScene.cpp */; };
 		80BDB4E4204294AF00F1F36E /* PartyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BDB4E2204294AF00F1F36E /* PartyScene.cpp */; };
 		80BDB4E5204294AF00F1F36E /* PartyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BDB4E2204294AF00F1F36E /* PartyScene.cpp */; };
+		80D60FAD20D6AEFF0014EFF0 /* BattleCharIconSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80D60FAB20D6AEFF0014EFF0 /* BattleCharIconSprite.cpp */; };
+		80D60FAE20D6AEFF0014EFF0 /* BattleCharIconSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80D60FAB20D6AEFF0014EFF0 /* BattleCharIconSprite.cpp */; };
 		80F3B674207A152B00327457 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 80F3B66C207A152A00327457 /* fonts */; };
 		80F3B675207A152B00327457 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 80F3B66C207A152A00327457 /* fonts */; };
 		80F3B676207A152B00327457 /* master in Resources */ = {isa = PBXBuildFile; fileRef = 80F3B66D207A152A00327457 /* master */; };
@@ -270,6 +274,8 @@
 		8007141C1FFBBBB20004DFAB /* PuzzleSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleSprite.h; sourceTree = "<group>"; };
 		8007142920010EB60004DFAB /* TitleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TitleScene.cpp; sourceTree = "<group>"; };
 		8007142A20010EB60004DFAB /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
+		800954E920CD459700C09213 /* BattleCharSprite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleCharSprite.cpp; sourceTree = "<group>"; };
+		800954EA20CD459700C09213 /* BattleCharSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleCharSprite.h; sourceTree = "<group>"; };
 		8016C2A9209F4BB800C46C03 /* BattleChar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleChar.cpp; sourceTree = "<group>"; };
 		8016C2AC209F4BB800C46C03 /* BattleChar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleChar.h; sourceTree = "<group>"; };
 		8016C2B0209F5B9500C46C03 /* ResultScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResultScene.cpp; sourceTree = "<group>"; };
@@ -305,6 +311,8 @@
 		80BDB4DD204291C100F1F36E /* SyntheticScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SyntheticScene.cpp; sourceTree = "<group>"; };
 		80BDB4E2204294AF00F1F36E /* PartyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartyScene.cpp; sourceTree = "<group>"; };
 		80BDB4E3204294AF00F1F36E /* PartyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyScene.h; sourceTree = "<group>"; };
+		80D60FAB20D6AEFF0014EFF0 /* BattleCharIconSprite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleCharIconSprite.cpp; sourceTree = "<group>"; };
+		80D60FAC20D6AEFF0014EFF0 /* BattleCharIconSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleCharIconSprite.h; sourceTree = "<group>"; };
 		80F3B66C207A152A00327457 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		80F3B66D207A152A00327457 /* master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = master; sourceTree = "<group>"; };
 		80F3B66E207A152B00327457 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
@@ -624,6 +632,10 @@
 			children = (
 				8016C2A9209F4BB800C46C03 /* BattleChar.cpp */,
 				8016C2AC209F4BB800C46C03 /* BattleChar.h */,
+				800954E920CD459700C09213 /* BattleCharSprite.cpp */,
+				800954EA20CD459700C09213 /* BattleCharSprite.h */,
+				80D60FAB20D6AEFF0014EFF0 /* BattleCharIconSprite.cpp */,
+				80D60FAC20D6AEFF0014EFF0 /* BattleCharIconSprite.h */,
 				80691D112001D87D00AB4BFB /* PuzzleGameScene.cpp */,
 				80691D102001D87C00AB4BFB /* PuzzleGameScene.h */,
 				8007141B1FFBBBB20004DFAB /* PuzzleSprite.cpp */,
@@ -956,6 +968,7 @@
 				801E1DC0203146F20034A904 /* MenuLayer.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				8043CFD520676D8C0019BA4E /* MapData.cpp in Sources */,
+				80D60FAD20D6AEFF0014EFF0 /* BattleCharIconSprite.cpp in Sources */,
 				80BDB4E4204294AF00F1F36E /* PartyScene.cpp in Sources */,
 				800713F61FF7F03F0004DFAB /* Controller.cpp in Sources */,
 				801E1DC82031CA690034A904 /* MypageScene.cpp in Sources */,
@@ -975,6 +988,7 @@
 				8016C2B2209F5B9500C46C03 /* ResultScene.cpp in Sources */,
 				8007142B20010EB60004DFAB /* TitleScene.cpp in Sources */,
 				801E1DCD2031CDFA0034A904 /* EvolutionScene.cpp in Sources */,
+				800954EB20CD459700C09213 /* BattleCharSprite.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				800713F81FF7F03F0004DFAB /* BaseTest.cpp in Sources */,
 				8016C2AD209F4BB900C46C03 /* BattleChar.cpp in Sources */,
@@ -1003,6 +1017,7 @@
 				8043CFD820676D8C0019BA4E /* CharData.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				80BDB4E5204294AF00F1F36E /* PartyScene.cpp in Sources */,
+				80D60FAE20D6AEFF0014EFF0 /* BattleCharIconSprite.cpp in Sources */,
 				8007142C20010EB60004DFAB /* TitleScene.cpp in Sources */,
 				8016C2AE209F4BB900C46C03 /* BattleChar.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
@@ -1015,6 +1030,7 @@
 				800713FB1FF7F03F0004DFAB /* MathHelper.cpp in Sources */,
 				800713F71FF7F03F0004DFAB /* Controller.cpp in Sources */,
 				80F3B687207BC40B00327457 /* CharSelectIconSprite.cpp in Sources */,
+				800954EC20CD459700C09213 /* BattleCharSprite.cpp in Sources */,
 				8016C2B3209F5B9500C46C03 /* ResultScene.cpp in Sources */,
 				80FC7CEC207A0B70007FF5E4 /* CharSelectSprite.cpp in Sources */,
 				800713F31FF7F03F0004DFAB /* VisibleRect.cpp in Sources */,

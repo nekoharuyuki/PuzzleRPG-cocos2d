@@ -53,13 +53,13 @@ protected:
     std::vector<std::map<PuzzleSprite::PuzzleType, int>> m_removeNumbers; //消去するボールのカウント
     static int m_questNo;  // クエストの情報取得
     
-    BattleChar* m_enemyData; //敵の情報
-    cocos2d::Sprite* m_enemy; //敵画像
-    cocos2d::ProgressTimer* m_hpBarForEnemy; //敵のヒットポイントバー
+    cocos2d::Vector<BattleChar*> m_enemyDatum; //敵の情報
+    cocos2d::Vector<cocos2d::Sprite*> m_enemys; //敵画像
+    cocos2d::Vector<cocos2d::ProgressTimer*> m_hpBarForEnemys; //敵のヒットポイントバー
     
     cocos2d::Vector<BattleChar*> m_memberDatum; //メンバーの情報
     cocos2d::Vector<cocos2d::Sprite*> m_members; //メンバー画像
-    cocos2d::Vector<cocos2d::ProgressTimer*> m_hpBarForMembers; //メンバーのヒットポイントバー
+    cocos2d::ProgressTimer* m_hpBarForMembers; //メンバーのヒットポイントバー
     
     void initBackground(); //背景の初期化
     void initPuzzles(); //ボールの初期表示
