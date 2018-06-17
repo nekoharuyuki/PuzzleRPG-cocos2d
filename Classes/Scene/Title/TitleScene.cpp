@@ -51,8 +51,15 @@ bool TitleScene::init()
     // スタートボタンが押された時の処理
     startButtonPress(rootNode);
     
-    // マイページのボタンが押された時の処理
-    mypageButtonPress(rootNode);
+    // ローカルDBデータの有無を確認
+    if(!GameDataSQL::hasData()){
+        // ユーザーがデータを作成していない場合はマイページのボタンを表示しない
+        auto mypageButton = rootNode->getChildByName<ui::Button*>("ui_mypage_btn");
+        mypageButton->setVisible(false);
+    } else {
+        // マイページのボタンが押された時の処理
+        mypageButtonPress(rootNode);
+    }
     
     // その他のボタンが押された時の処理
     otherButtonPress(rootNode);
