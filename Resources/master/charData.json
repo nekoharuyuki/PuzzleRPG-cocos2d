@@ -265,7 +265,7 @@
 		"maxHp" : 2500,
 		"atk" : 20,
 		"maxAtk" : 200,
-		"attribute" : 0,
+		"attribute" : 3,
 		"exp" : 10,
 		"turn" : 3
 	},
@@ -295,7 +295,7 @@
 		"maxHp" : 5000,
 		"atk" : 100,
 		"maxAtk" : 1000,
-		"attribute" : 0,
+		"attribute" : 3,
 		"exp" : 10,
 		"turn" : 4
 	},
@@ -325,7 +325,7 @@
 		"maxHp" : 10000,
 		"atk" : 500,
 		"maxAtk" : 5000,
-		"attribute" : 0,
+		"attribute" : 3,
 		"exp" : 10,
 		"turn" : 5
 	}]

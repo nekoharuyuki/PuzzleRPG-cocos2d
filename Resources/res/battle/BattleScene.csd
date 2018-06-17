@@ -8392,31 +8392,31 @@
             <PrePosition X="0.9475" Y="0.0883" />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="chara_enemy_0" ActionTag="-1765165328" Tag="1078" IconVisible="True" LeftMargin="546.0000" RightMargin="254.0000" TopMargin="166.0000" BottomMargin="434.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="chara_enemy_0" ActionTag="-1765165328" Tag="1078" IconVisible="True" LeftMargin="546.0000" RightMargin="254.0000" TopMargin="89.0000" BottomMargin="511.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="546.0000" Y="434.0000" />
+            <Position X="546.0000" Y="511.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.6825" Y="0.7233" />
+            <PrePosition X="0.6825" Y="0.8517" />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="chara_enemy_1" ActionTag="48420574" Tag="1079" IconVisible="True" LeftMargin="716.0000" RightMargin="84.0000" TopMargin="185.0000" BottomMargin="415.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="chara_enemy_1" ActionTag="48420574" Tag="1079" IconVisible="True" LeftMargin="716.0000" RightMargin="84.0000" TopMargin="120.0000" BottomMargin="480.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="716.0000" Y="415.0000" />
+            <Position X="716.0000" Y="480.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8950" Y="0.6917" />
+            <PrePosition X="0.8950" Y="0.8000" />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="chara_enemy_2" ActionTag="-1226960479" Tag="1080" IconVisible="True" LeftMargin="622.0000" RightMargin="178.0000" TopMargin="239.0000" BottomMargin="361.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="chara_enemy_2" ActionTag="-1226960479" Tag="1080" IconVisible="True" LeftMargin="622.0000" RightMargin="178.0000" TopMargin="166.0000" BottomMargin="434.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="622.0000" Y="361.0000" />
+            <Position X="622.0000" Y="434.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7775" Y="0.6017" />
+            <PrePosition X="0.7775" Y="0.7233" />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
           <AbstractNodeData Name="chara_player_0" ActionTag="-1138320204" Tag="1081" IconVisible="True" LeftMargin="229.0000" RightMargin="571.0000" TopMargin="176.0000" BottomMargin="424.0000" ctype="SingleNodeObjectData">
