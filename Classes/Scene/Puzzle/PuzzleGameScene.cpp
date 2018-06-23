@@ -33,6 +33,7 @@ PuzzleGameScene::PuzzleGameScene()
     std::random_device device;
     m_engine = std::default_random_engine(device());
     m_distForPuzzle = std::discrete_distribution<int>{20, 20, 20, 20, 20, 0};
+    m_distForMember = std::uniform_int_distribution<int>(0, 2);
 }
 
 //シーン生成
@@ -313,14 +314,11 @@ void PuzzleGameScene::checksLinedPuzzles()
         auto seq = Sequence::create(delay, func, nullptr);
         runAction(seq);
     }else{
-#if 0
+        
         int chainNum = 0;
         int damage = 0;
         int healing = 0;
         std::set<int> attackers;
-        
-        //ダメージ・回復量の計算
-        calculateDamage(chainNum, healing, damage, attackers);
         
         //敵にダメージを与える
         do {
@@ -328,6 +326,8 @@ void PuzzleGameScene::checksLinedPuzzles()
             int index = m_distForMember(m_engine);
             BattleChar* enemyData = m_memberDatum.at(index);
             if(enemyData->getHp() > 0){
+                //ダメージ・回復量の計算
+                calculateDamage(chainNum, healing, damage, attackers, enemyData);
                 int afterHp = enemyData->getHp() - damage;
                 enemyData->setHp(afterHp);
                 break;
@@ -355,7 +355,6 @@ void PuzzleGameScene::checksLinedPuzzles()
             func = CallFunc::create(CC_CALLBACK_0(PuzzleGameScene::attackFromEnemy, this));
         }
         runAction(Sequence::create(DelayTime::create(0.5), func, nullptr));
-#endif
         endAnimation();
     }
 }
@@ -365,22 +364,18 @@ bool PuzzleGameScene::existsLinedPuzzles()
 {
     //ボールのパラメータを初期化する
     initPuzzleParams();
-    
     //消去される順番の初期化
     m_maxRemovedNo = 0;
-    
     for (int x = 1; x <= PUZZLE_NUM_X; x++)
     {
         for (int y = 1; y <= PUZZLE_NUM_Y; y++)
         {
             //x方向のボールをチェック
             checkedPuzzle(PuzzleSprite::PositionIndex(x, y), Direction::x);
-            
             //y方向のボールをチェック
             checkedPuzzle(PuzzleSprite::PositionIndex(x, y), Direction::y);
         }
     }
-    
     //戻り値の決定
     return m_maxRemovedNo > 0;
 }
@@ -609,7 +604,6 @@ void PuzzleGameScene::initEnemy(Node* node)
         //敵の情報
         int enemyNo = MapData::getMapData(m_questNo).mapEnemy[rand()% MapData::getMapData(m_questNo).mapEnemy.size()];
         auto enemyDataParam = CharData::getEnemyData(enemyNo-1);
-        
         auto enemyData = BattleChar::create();
         if(enemyData){
             enemyData->retain();
@@ -641,39 +635,44 @@ void PuzzleGameScene::initEnemy(Node* node)
             enemyData->setTurnCount(enemyDataParam.enemyTurn);
             auto eturn = node->getChildByName<ui::Text*>( "eturn"+std::to_string(i) );
             if(eturn){
+                
                 eturn->setString( std::to_string(enemyDataParam.enemyTurn) + " turn" );
             }
             m_enemyDatum.pushBack(enemyData);
-        }
-        
-        //敵の表示
-        auto ename = node->getChildByName<ui::Text*>( "ename"+std::to_string(i) );
-        if(ename){
-            ename->setString( enemyDataParam.enemyName );
-        }
-        
-        auto charaEnemyNode = node->getChildByName<Node*>( "chara_enemy_"+std::to_string(i) );
-        if(charaEnemyNode){
-            auto charaEnemySprite = BattleCharSprite::create(enemyNo, BattleCharSprite::CharType::Enemy);
-            if(charaEnemySprite){
-                charaEnemyNode->addChild( charaEnemySprite, ZOrder::Enemy );
-                m_enemys.pushBack(charaEnemySprite);
+            
+            //敵の表示
+            auto ename = node->getChildByName<ui::Text*>( "ename"+std::to_string(i) );
+            if(ename){
+                ename->setString( enemyDataParam.enemyName );
+            }
+            
+            auto charaEnemyNode = node->getChildByName<Node*>( "chara_enemy_"+std::to_string(i) );
+            if(charaEnemyNode){
+                auto charaEnemySprite = BattleCharSprite::create(enemyNo, BattleCharSprite::CharType::Enemy);
+                if(charaEnemySprite){
+                    charaEnemyNode->addChild( charaEnemySprite, ZOrder::Enemy );
+                    m_enemys.pushBack(charaEnemySprite);
+                }
+            }
+            
+            auto iconEnemyNode = node->getChildByName<Node*>( "enemy_base"+std::to_string(i) );
+            if(iconEnemyNode){
+                auto iconEnemySprite = BattleCharIconSprite::create(enemyNo, BattleCharIconSprite::CharType::Enemy);
+                if(iconEnemySprite){
+                    iconEnemyNode->addChild( iconEnemySprite, ZOrder::Enemy );
+                }
+            }
+            
+            //敵ヒットポイントバーの表示
+            auto enemyHPNode = node->getChildByName<Node*>( "EnemyHp_bar"+std::to_string(i) );
+            if(enemyHPNode){
+                auto hpBar = enemyHPNode->getChildByName<cocos2d::ProgressTimer*>("hp_bar");
+                if(hpBar){
+                    hpBar->setPercentage(enemyData->getHpPercentage());
+                    m_hpBarForEnemys.pushBack(hpBar);
+                }
             }
         }
-        
-        auto iconEnemyNode = node->getChildByName<Node*>( "enemy_base"+std::to_string(i) );
-        if(iconEnemyNode){
-            auto iconEnemySprite = BattleCharIconSprite::create(enemyNo, BattleCharIconSprite::CharType::Enemy);
-            if(iconEnemySprite){
-                iconEnemyNode->addChild( iconEnemySprite, ZOrder::Enemy );
-                m_enemys.pushBack(iconEnemySprite);
-            }
-        }
-        
-        //敵ヒットポイントバー枠の表示
-        
-        //敵ヒットポイントバーの表示
-        
     }
 }
 
@@ -722,32 +721,23 @@ void PuzzleGameScene::initMembers(Node* node)
             auto iconPlayerSprite = BattleCharIconSprite::create(BattleCharNo[i], BattleCharIconSprite::CharType::Member);
             if(iconPlayerSprite){
                 iconPlayerNode->addChild( iconPlayerSprite, ZOrder::Char );
-                m_members.pushBack(iconPlayerSprite);
             }
         }
     }
     
-    //メンバーヒットポイントバー枠の表示
-    //        auto hpBg = Sprite::create("HpCardBackground.png");
-    //        hpBg->setPosition(Point(70 + i * 125, 554));
-    //        addChild(hpBg, ZOrder::CharHp);
-    
-    //メンバーヒットポイントバーの表示
-    //        auto hpBarForMember = ProgressTimer::create(Sprite::create("HpCardGreen.png"));
-    //        hpBarForMember->setPosition(Point(hpBg->getContentSize().width / 2, hpBg->getContentSize().height / 2));
-    //        hpBarForMember->setType(ProgressTimer::Type::BAR);
-    //        hpBarForMember->setMidpoint(Point::ZERO);
-    //        hpBarForMember->setBarChangeRate(Point(1, 0));
-    //        hpBarForMember->setPercentage(memberData->getHpPercentage());
-    //        hpBg->addChild(hpBarForMember);
-    
-    //配列に格納
-    //        m_hpBarForMembers.pushBack(hpBarForMember);
-    
+    //メンバー全員のヒットポイントバーの表示
+    auto partyHpNode = node->getChildByName<Node*>( "PartyHp_bar" );
+    if(partyHpNode){
+        auto hpBar = partyHpNode->getChildByName<cocos2d::ProgressTimer*>("hp_bar");
+        if(hpBar){
+            hpBar->setPercentage(1);
+            m_hpBarForEnemys.pushBack(hpBar);
+        }
+    }
 }
 
 // ダメージの計算
-void PuzzleGameScene::calculateDamage(int &chainNum, int &healing, int &damage, std::set<int> &attackers)
+void PuzzleGameScene::calculateDamage(int &chainNum, int &healing, int &damage, std::set<int> &attackers, BattleChar* defender)
 {
     auto removeIt = m_removeNumbers.begin();
     while (removeIt != m_removeNumbers.end())
@@ -773,7 +763,7 @@ void PuzzleGameScene::calculateDamage(int &chainNum, int &healing, int &damage, 
                         // アタッカー情報の保持
                         attackers.insert(i);
                         // ダメージ
-                        //damage += BattleChar::getDamage((*ballIt).second, chainNum, memberData, m_enemyData);
+                        damage += BattleChar::getDamage((*ballIt).second, chainNum, memberData, defender);
                     }
                 }
             }
@@ -829,21 +819,23 @@ bool PuzzleGameScene::isAttacker(PuzzleSprite::PuzzleType type, BattleChar::Elem
 // 敵への攻撃
 void PuzzleGameScene::attackToEnemy(int damage, std::set<int> attackers)
 {
-/*
     // 敵のHPを取得する
-    float preHpPercentage = m_enemyData->getHpPercentage();
+    //敵を1人選択
+    int index = m_distForMember(m_engine);
+    BattleChar* enemyData = m_enemyDatum.at(index);
+    float preHpPercentage = enemyData->getHpPercentage();
     
     //ダメージをセットする
-    int afterHp = m_enemyDatum->getHp() - damage;
+    int afterHp = enemyData->getHp() - damage;
     if (afterHp < 0) afterHp = 0;
-    m_enemyDatum->setHp (afterHp);
+    enemyData->setHp (afterHp);
     
     //敵ヒットポイントバーのアニメーション
-    auto act = ProgressFromTo::create(0.5, preHpPercentage, m_enemyData->getHpPercentage());
-    m_hpBarForEnemy->runAction(act);
+    auto act = ProgressFromTo::create(0.5, preHpPercentage, enemyData->getHpPercentage());
+    m_hpBarForEnemys.at(index)->runAction(act);
     
     //敵の被ダメージアニメーション
-    m_enemy->runAction(vibratingAnimation(afterHp));
+    m_enemys.at(index)->runAction(vibratingAnimation(afterHp));
     
     //メンバーの攻撃アニメーション
     for (auto attacker : attackers)
@@ -852,7 +844,6 @@ void PuzzleGameScene::attackToEnemy(int damage, std::set<int> attackers)
         member->runAction(Sequence::create(MoveBy::create(0.1, Point(0, 10)),
                                            MoveBy::create(0.1, Point(0, -10)), nullptr));
     }
- */
 }
 
 // メンバーの回復
@@ -881,35 +872,31 @@ void PuzzleGameScene::healMember(int healing)
 void PuzzleGameScene::attackFromEnemy()
 {
     for (const auto& e : m_enemyDatum) {
-        if (!e->isAttackTurn()) {
-            //敵の攻撃ターンでない場合は、一連の攻撃の処理を終わらせる
-            endAnimation();
-            return;
+        if (e->isAttackTurn()) {
+            //メンバーを1人選択
+            //ランダムでメンバーを選択
+            int index = m_distForMember(m_engine);
+            BattleChar* memberData = m_memberDatum.at(index);
+            auto member = m_members.at(index);
+            
+            //メンバーにダメージを与える
+            //float preHpPercentage = memberData->getHpPercentage();
+            int afterHp = memberData->getHp() - 25;
+            if (afterHp > memberData->getMaxHp()) afterHp = memberData->getMaxHp();
+            memberData->setHp(afterHp);
+            
+            //メンバーヒットポイントバーのアニメーション
+            //auto act = ProgressFromTo::create(0.5, preHpPercentage, memberData->getHpPercentage());
+            //m_hpBarForMembers->runAction(act);
+            
+            //メンバーの被ダメージアニメーション
+            member->runAction(vibratingAnimation(afterHp));
+            
+            //敵の攻撃アニメーション
+            auto seq = Sequence::create(MoveBy::create(0.1, Point(0, -10)), MoveBy::create(0.1, Point(0, 10)), nullptr);
+            m_enemys.at(index)->runAction(seq);
         }
     }
-    
-    //メンバーを1人選択
-    //ランダムでメンバーを選択
-    int index = m_distForMember(m_engine);
-    BattleChar* memberData = m_memberDatum.at(index);
-    auto member = m_members.at(index);
-    
-    //メンバーにダメージを与える
-    float preHpPercentage = memberData->getHpPercentage();
-    int afterHp = memberData->getHp() - 25;
-    if (afterHp > memberData->getMaxHp()) afterHp = memberData->getMaxHp();
-    memberData->setHp(afterHp);
-    
-    //メンバーヒットポイントバーのアニメーション
-    auto act = ProgressFromTo::create(0.5, preHpPercentage, memberData->getHpPercentage());
-    m_hpBarForMembers->runAction(act);
-    
-    //メンバーの被ダメージアニメーション
-    member->runAction(vibratingAnimation(afterHp));
-    
-    //敵の攻撃アニメーション
-//    auto seq = Sequence::create(MoveBy::create(0.1, Point(0, -10)), MoveBy::create(0.1, Point(0, 10)), nullptr);
-//    m_enemy->runAction(seq);
     
     //味方の全滅チェック
     bool allHpZero = true;
@@ -928,6 +915,7 @@ void PuzzleGameScene::attackFromEnemy()
     if (allHpZero) {
         func = CallFunc::create(CC_CALLBACK_0(PuzzleGameScene::loseAnimation, this));
     } else {
+        //敵の攻撃ターンでない場合は、一連の攻撃の処理を終わらせる
         func = CallFunc::create(CC_CALLBACK_0(PuzzleGameScene::endAnimation, this));
     }
     

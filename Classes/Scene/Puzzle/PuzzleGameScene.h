@@ -38,7 +38,6 @@ protected:
         Char,
         CharHp,
         Ball,
-        Level,
         Result,
     };
     
@@ -78,7 +77,7 @@ protected:
     
     void initEnemy(Node* node); //敵の表示
     void initMembers(Node* node); //メンバーの表示
-    void calculateDamage(int &chainNum, int &healing, int &damage, std::set<int> &attackers); //ダメージの計算
+    void calculateDamage(int &chainNum, int &healing, int &damage, std::set<int> &attackers, BattleChar* defender); //ダメージの計算
     bool isAttacker(PuzzleSprite::PuzzleType type, BattleChar::Element element); //アタッカー判定
     void attackToEnemy(int damage, std::set<int> attackers); //敵への攻撃
     void healMember(int healing); //メンバーの回復
