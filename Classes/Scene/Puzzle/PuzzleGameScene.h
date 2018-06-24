@@ -2,6 +2,8 @@
 #define __PuzzleGame__GameLayer__
 
 #include "cocos2d.h"
+#include "cocostudio/CocoStudio.h"
+#include "ui/CocosGUI.h"
 #include <random>
 #include "PuzzleSprite.h"
 #include "BattleChar.h"
@@ -44,6 +46,7 @@ protected:
     std::default_random_engine m_engine; //乱数生成エンジン
     std::discrete_distribution<int> m_distForPuzzle; //乱数の分布
     std::uniform_int_distribution<int> m_distForMember; //乱数の範囲
+    std::uniform_int_distribution<int> m_distForEnemy; //乱数の範囲
     PuzzleSprite* m_movingPuzzle; //動かしているボール
     bool m_movedPuzzle; //他のボールとの接触有無
     bool m_touchable; //タップの可否
@@ -54,11 +57,11 @@ protected:
     
     cocos2d::Vector<BattleChar*> m_enemyDatum; //敵の情報
     cocos2d::Vector<cocos2d::Sprite*> m_enemys; //敵画像
-    cocos2d::Vector<cocos2d::ProgressTimer*> m_hpBarForEnemys; //敵のヒットポイントバー
+    cocos2d::Vector<cocos2d::ui::LoadingBar*> m_hpBarForEnemys; //敵のヒットポイントバー
     
     cocos2d::Vector<BattleChar*> m_memberDatum; //メンバーの情報
     cocos2d::Vector<cocos2d::Sprite*> m_members; //メンバー画像
-    cocos2d::ProgressTimer* m_hpBarForMembers; //メンバーのヒットポイントバー
+    cocos2d::ui::LoadingBar* m_hpBarForMembers; //メンバーのヒットポイントバー
     
     void initBackground(); //背景の初期化
     void initPuzzles(); //ボールの初期表示
@@ -83,7 +86,7 @@ protected:
     void healMember(int healing); //メンバーの回復
     void attackFromEnemy(); //敵からの攻撃
     void endAnimation(); //アニメーション終了時処理
-    cocos2d::Spawn* vibratingAnimation(int afterHp); //振動アニメーション
+    cocos2d::Spawn* vibratingAnimation(); //振動アニメーション
     
     void winAnimation(); //Winアニメーション
     void loseAnimation(); //Loseアニメーション
