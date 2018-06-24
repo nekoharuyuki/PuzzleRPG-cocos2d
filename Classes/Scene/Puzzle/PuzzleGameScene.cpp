@@ -346,9 +346,9 @@ void PuzzleGameScene::checksLinedPuzzles()
         
         //敵にダメージを与えた後の処理を設定
         CallFunc* func;
-        if(m_memberDatum.at(0)->getHp() <= 0 &&
-           m_memberDatum.at(1)->getHp() <= 0 &&
-           m_memberDatum.at(2)->getHp() <= 0){
+        if(m_enemyDatum.at(0)->getHp() <= 0 &&
+           m_enemyDatum.at(1)->getHp() <= 0 &&
+           m_enemyDatum.at(2)->getHp() <= 0){
             func = CallFunc::create(CC_CALLBACK_0(PuzzleGameScene::winAnimation, this));
         } else {
             func = CallFunc::create(CC_CALLBACK_0(PuzzleGameScene::attackFromEnemy, this));
@@ -634,8 +634,8 @@ void PuzzleGameScene::initEnemy(Node* node)
             enemyData->setTurnCount(enemyDataParam.enemyTurn);
             auto eturn = node->getChildByName<ui::Text*>( "eturn"+std::to_string(i) );
             if(eturn){
-                
                 eturn->setString( std::to_string(enemyDataParam.enemyTurn) + " turn" );
+                m_enemyTurn.pushBack(eturn);
             }
             m_enemyDatum.pushBack(enemyData);
             
@@ -837,7 +837,7 @@ void PuzzleGameScene::attackToEnemy(int damage, std::set<int> attackers)
         //ランダムで敵を選択
         index = m_distForEnemy(m_engine);
         enemyData = m_enemyDatum.at(index);
-        //HPが0のメンバーを選択した場合は、再度選択し直す
+        //HPが0の敵を選択した場合は、再度選択し直す
     } while (enemyData->getHp() <= 0);
     
     auto enemys = m_enemys.at(index);
@@ -907,7 +907,13 @@ void PuzzleGameScene::healMember(int healing)
 //敵からの攻撃
 void PuzzleGameScene::attackFromEnemy()
 {
+    int enemyCount = 0;
     for (const auto& e : m_enemyDatum) {
+        // 敵のHPが0の場合
+        if (e->getHp() <= 0){
+            continue;
+        }
+        
         if (e->isAttackTurn()) {
             //メンバーを1人選択
             //ランダムでメンバーを選択
@@ -930,8 +936,10 @@ void PuzzleGameScene::attackFromEnemy()
             
             //敵の攻撃アニメーション
             auto seq = Sequence::create(MoveBy::create(0.1, Point(0, -10)), MoveBy::create(0.1, Point(0, 10)), nullptr);
-            m_enemys.at(index)->runAction(seq);
+            m_enemys.at(enemyCount)->runAction(seq);
         }
+        m_enemyTurn.at(enemyCount)->setString( std::to_string(e->getRemainingTurn()) + " turn" );
+        enemyCount++;
     }
     
     //味方の全滅チェック

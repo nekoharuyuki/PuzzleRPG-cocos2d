@@ -25,12 +25,12 @@ public:
     static int getDamage(int ballCount, int chainCount, BattleChar* attacker, BattleChar* defender); //ダメージ数取得
     
 protected:
-    int m_remainingTurn;                        //攻撃するまでの残りターン
-    CC_SYNTHESIZE(int, m_hp, Hp);               //ヒットポイント
-    CC_SYNTHESIZE(int, m_maxHp, MaxHp);         //最大ヒットポイント
-    CC_SYNTHESIZE(int, m_attack, Attack);       //攻撃力
-    CC_SYNTHESIZE(Element, m_element, Element); //属性
-    CC_PROPERTY(int, m_turnCount, TurnCount);   //攻撃ターン数（敵の場合）
+    CC_SYNTHESIZE(int, m_remainingTurn, RemainingTurn); //攻撃するまでの残りターン
+    CC_SYNTHESIZE(int, m_hp, Hp);                       //ヒットポイント
+    CC_SYNTHESIZE(int, m_maxHp, MaxHp);                 //最大ヒットポイント
+    CC_SYNTHESIZE(int, m_attack, Attack);               //攻撃力
+    CC_SYNTHESIZE(Element, m_element, Element);         //属性
+    CC_PROPERTY(int, m_turnCount, TurnCount);           //攻撃ターン数（敵の場合）
     
     static float getElementBonus(Element attackElement, Element defenseElement); //属性による攻撃ボーナス
 };
