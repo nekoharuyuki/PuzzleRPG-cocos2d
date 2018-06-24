@@ -857,11 +857,15 @@ void PuzzleGameScene::attackToEnemy(int damage, std::set<int> attackers)
     enemys->runAction(vibratingAnimation());
     
     //メンバーの攻撃アニメーション
+    int count = 1;
     for (auto attacker : attackers)
     {
+        AudioManager::getInstance()->playSe("attack0"+std::to_string(count));
+        
         auto member = m_members.at(attacker);
         member->runAction(Sequence::create(MoveBy::create(0.1, Point(0, 10)),
                                            MoveBy::create(0.1, Point(0, -10)), nullptr));
+        count++;
     }
     
     //味方の全滅チェック
@@ -933,6 +937,8 @@ void PuzzleGameScene::attackFromEnemy()
             
             //メンバーの被ダメージアニメーション
             member->runAction(vibratingAnimation());
+            
+            AudioManager::getInstance()->playSe("hit");
             
             //敵の攻撃アニメーション
             auto seq = Sequence::create(MoveBy::create(0.1, Point(0, -10)), MoveBy::create(0.1, Point(0, 10)), nullptr);
