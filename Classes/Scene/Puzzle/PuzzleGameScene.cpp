@@ -868,7 +868,7 @@ void PuzzleGameScene::attackToEnemy(int damage, std::set<int> attackers)
         count++;
     }
     
-    //味方の全滅チェック
+    //敵の全滅チェック
     bool allHpZero = true;
     for (auto enemy : m_enemyDatum)
     {
