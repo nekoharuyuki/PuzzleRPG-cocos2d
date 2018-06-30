@@ -1241,7 +1241,7 @@
             <PrePosition X="0.8094" Y="0.7458" />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="popup_quest" ActionTag="611274238" VisibleForFrame="False" Tag="80" IconVisible="False" LeftMargin="214.0000" RightMargin="195.0000" TopMargin="125.0000" BottomMargin="118.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="popup_quest" ActionTag="611274238" Tag="80" IconVisible="False" LeftMargin="214.0000" RightMargin="195.0000" TopMargin="125.0000" BottomMargin="118.0000" ctype="SpriteObjectData">
             <Size X="391.0000" Y="357.0000" />
             <Children>
               <AbstractNodeData Name="QuestStart_btn" ActionTag="1535913486" Tag="81" IconVisible="False" LeftMargin="41.5000" RightMargin="201.5000" TopMargin="264.5000" BottomMargin="40.5000" TouchEnable="True" FontSize="14" LeftEage="48" RightEage="48" TopEage="17" BottomEage="17" Scale9OriginX="48" Scale9OriginY="17" Scale9Width="52" Scale9Height="18" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="ButtonObjectData">
@@ -1274,14 +1274,15 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="nametext" ActionTag="-1064682141" Tag="113" IconVisible="False" LeftMargin="202.0000" RightMargin="-10.0000" TopMargin="95.5000" BottomMargin="240.5000" FontSize="18" LabelText="エメラルドフォレスト10" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="TextObjectData">
-                <Size X="199.0000" Y="21.0000" />
+              <AbstractNodeData Name="nametext" ActionTag="-1064682141" Tag="113" IconVisible="False" LeftMargin="60.0000" RightMargin="56.0000" TopMargin="124.0000" BottomMargin="197.0000" FontSize="24" LabelText="エメラルドフォレスト10" OutlineSize="0" ShadowOffsetX="0.0000" ShadowOffsetY="0.0000" ctype="TextObjectData">
+                <Size X="265.0000" Y="28.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="202.0000" Y="251.0000" />
+                <Position X="60.0000" Y="215.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5166" Y="0.7031" />
-                <PreSize X="0.5090" Y="0.0588" />
+                <PrePosition X="0.1535" Y="0.6022" />
+                <PreSize X="0.7033" Y="0.1008" />
+                <FontResource Type="Default" Path="" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
