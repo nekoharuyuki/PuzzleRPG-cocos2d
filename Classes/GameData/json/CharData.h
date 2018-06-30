@@ -48,9 +48,6 @@ private:
     CC_SYNTHESIZE(std::string, m_charListFile,  CharListFile);
     CC_SYNTHESIZE(std::string, m_enemyListFile, EnemyListFile);
     
-    
-    
-    
 public:
     ~CharData();
     static CharData* getInstance();

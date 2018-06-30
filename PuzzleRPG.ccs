@@ -21,8 +21,10 @@
             <Image Name="icon_Attribute_3.png" />
             <Image Name="icon_Attribute_4.png" />
             <Image Name="icon_Attribute_5.png" />
+            <Image Name="LOSE.png" />
             <Image Name="spbar_naka.png" />
             <Image Name="sphpbar_base.png" />
+            <Image Name="WIN.png" />
           </Folder>
           <Folder Name="battlebg">
             <Folder Name="battle_scene1">
