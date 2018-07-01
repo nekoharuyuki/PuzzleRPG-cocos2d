@@ -659,6 +659,7 @@ void PuzzleGameScene::initEnemy(Node* node)
                 auto iconEnemySprite = BattleCharIconSprite::create(enemyNo, BattleCharIconSprite::CharType::Enemy);
                 if(iconEnemySprite){
                     iconEnemyNode->addChild( iconEnemySprite, ZOrder::Enemy );
+                    m_enemysIcon.pushBack(iconEnemySprite);
                 }
             }
             
@@ -733,6 +734,7 @@ void PuzzleGameScene::initMembers(Node* node)
             auto iconPlayerSprite = BattleCharIconSprite::create(BattleCharNo[i], BattleCharIconSprite::CharType::Member);
             if(iconPlayerSprite){
                 iconPlayerNode->addChild( iconPlayerSprite, ZOrder::Char );
+                m_membersIcon.pushBack(iconPlayerSprite);
             }
         }
     }
@@ -840,9 +842,6 @@ void PuzzleGameScene::attackToEnemy(int damage, std::set<int> attackers)
         //HPが0の敵を選択した場合は、再度選択し直す
     } while (enemyData->getHp() <= 0);
     
-    auto enemys = m_enemys.at(index);
-    auto hpBarForEnemys = m_hpBarForEnemys.at(index);
-    
     // 敵にダメージを与える
     int afterHp = enemyData->getHp() - damage;
     if (afterHp > enemyData->getMaxHp()){
@@ -851,20 +850,19 @@ void PuzzleGameScene::attackToEnemy(int damage, std::set<int> attackers)
     enemyData->setHp(afterHp);
     
     //敵ヒットポイントバーのアニメーション
-    hpBarForEnemys->setPercent(enemyData->getHpPercentage());
+    m_hpBarForEnemys.at(index)->setPercent(enemyData->getHpPercentage());
     
     //敵の被ダメージアニメーション
-    enemys->runAction(vibratingAnimation());
+    m_enemys.at(index)->runAction(vibratingAnimation());
+    m_enemysIcon.at(index)->runAction(vibratingAnimation());
     
     //メンバーの攻撃アニメーション
     int count = 1;
     for (auto attacker : attackers)
     {
         AudioManager::getInstance()->playSe("attack0"+std::to_string(count));
-        
-        auto member = m_members.at(attacker);
-        member->runAction(Sequence::create(MoveBy::create(0.1, Point(0, 10)),
-                                           MoveBy::create(0.1, Point(0, -10)), nullptr));
+        auto seq = Sequence::create(MoveBy::create(0.1, Point(0, 10)), MoveBy::create(0.1, Point(0, -10)), nullptr);
+        m_members.at(attacker)->runAction(seq);
         count++;
     }
     
@@ -923,7 +921,6 @@ void PuzzleGameScene::attackFromEnemy()
             //ランダムでメンバーを選択
             int index = m_distForMember(m_engine);
             BattleChar* memberData = m_memberDatum.at(index);
-            auto member = m_members.at(index);
             
             //メンバーにダメージを与える
             int afterHp = memberData->getHp() - 25;
@@ -936,7 +933,8 @@ void PuzzleGameScene::attackFromEnemy()
             m_hpBarForMembers->setPercent(memberData->getHpPercentage());
             
             //メンバーの被ダメージアニメーション
-            member->runAction(vibratingAnimation());
+            m_members.at(index)->runAction(vibratingAnimation());
+            m_membersIcon.at(index)->runAction(vibratingAnimation());
             
             AudioManager::getInstance()->playSe("hit");
             
@@ -994,9 +992,9 @@ Spawn* PuzzleGameScene::vibratingAnimation()
     
     // ダメージ時に色を赤くする
     Action* tint = Sequence::create(TintTo::create(0, 255, 0, 0),
-                                DelayTime::create(0.2),
-                                TintTo::create(0, 255, 255, 255),
-                                nullptr);
+                                    DelayTime::create(0.2),
+                                    TintTo::create(0, 255, 255, 255),
+                                    nullptr);
     
     return Spawn::create(move, tint, nullptr);
 }
