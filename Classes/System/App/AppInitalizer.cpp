@@ -1,0 +1,59 @@
+//
+//  AppInitalizer.cpp
+//  PuzzleRPG
+//
+//  Created by neko on 2018/07/28.
+//
+
+#include "AppInitalizer.h"
+#include "AudioManager.h"
+#include "MapData.h"
+#include "CharData.h"
+#include "Controller.h"
+#include "TitleScene.h"
+#include "tests.h"
+
+USING_NS_CC;
+
+/*!
+ アプリ起動時の初期処理用のメソッド
+ */
+void AppInitalizer::init()
+{
+    // オーディオ定義ファイルの読み込み
+    AudioManager::getInstance()->readAudioListFile("master/audioData.json");
+    
+    // クエストマップ定義ファイルの読み込み
+    MapData::getInstance()->mapDataJsonOpen("master/mapData.json");
+    
+    // キャラクター定義ファイルの読み込み
+    CharData::getInstance()->charDataJsonOpen("master/charData.json");
+    
+    FileUtils::getInstance()->addSearchPath("res");
+    
+    auto scene = TitleScene::createScene();
+    auto director = Director::getInstance();
+    if(director){
+        director->runWithScene(scene);
+    }
+}
+
+/*!
+ バックグラウンド移行後にコールされるメソッド
+ */
+void AppInitalizer::applicationDidEnterBackground()
+{
+    // if you use SimpleAudioEngine, it must be pause
+    //SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+    CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+}
+
+/*!
+ フォアグラウンド移行直前にコールされるメソッド
+ */
+void AppInitalizer::applicationWillEnterForeground()
+{
+    // if you use SimpleAudioEngine, it must resume here
+    //SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+    CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+}
