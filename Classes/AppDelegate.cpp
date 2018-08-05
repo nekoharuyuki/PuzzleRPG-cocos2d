@@ -1,9 +1,5 @@
 #include "AppDelegate.h"
-#include "AudioManager.h"
-#include "MapData.h"
-#include "CharData.h"
-#include "Controller.h"
-#include "tests.h"
+#include "AppInitalizer.h"
 
 USING_NS_CC;
 
@@ -43,20 +39,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
     
-    // オーディオ定義ファイルの読み込み
-    AudioManager::getInstance()->readAudioListFile("master/audioData.json");
+    AppInitalizer::init();
     
-    // クエストマップ定義ファイルの読み込み
-    MapData::getInstance()->mapDataJsonOpen("master/mapData.json");
-    
-    // キャラクター定義ファイルの読み込み
-    CharData::getInstance()->charDataJsonOpen("master/charData.json");
-    
-    FileUtils::getInstance()->addSearchPath("res");
-    
-    auto scene = TitleScene::createScene();
-    director->runWithScene(scene);
-
     return true;
 }
 
@@ -64,18 +48,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
 // バックグラウンド移行後にコールされるメソッド
 void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
-    
-    // if you use SimpleAudioEngine, it must be pause
-    //SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
-    CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+    AppInitalizer::applicationDidEnterBackground();
 }
 
 // this function will be called when the app is active again
 // フォアグラウンド移行直前にコールされるメソッド
 void AppDelegate::applicationWillEnterForeground() {
     Director::getInstance()->startAnimation();
-    
-    // if you use SimpleAudioEngine, it must resume here
-    //SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
-    CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+    AppInitalizer::applicationWillEnterForeground();
 }

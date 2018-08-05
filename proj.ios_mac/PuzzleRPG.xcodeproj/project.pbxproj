@@ -74,8 +74,6 @@
 		8043CFD820676D8C0019BA4E /* CharData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8043CFD320676D8C0019BA4E /* CharData.cpp */; };
 		8043CFE2206F2C260019BA4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8043CFE1206F2C260019BA4E /* Images.xcassets */; };
 		8043CFE6206F2C510019BA4E /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8043CFE5206F2C510019BA4E /* CoreText.framework */; };
-		8054001C2044664E009EE5ED /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 805400182044664E009EE5ED /* sqlite3.c */; };
-		8054001D2044664E009EE5ED /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 805400182044664E009EE5ED /* sqlite3.c */; };
 		805400302046E961009EE5ED /* GameDataSQL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8054002E2046E961009EE5ED /* GameDataSQL.cpp */; };
 		805400312046E961009EE5ED /* GameDataSQL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8054002E2046E961009EE5ED /* GameDataSQL.cpp */; };
 		80691D122001D87D00AB4BFB /* PuzzleGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80691D112001D87D00AB4BFB /* PuzzleGameScene.cpp */; };
@@ -86,6 +84,12 @@
 		80BDB4E5204294AF00F1F36E /* PartyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BDB4E2204294AF00F1F36E /* PartyScene.cpp */; };
 		80D60FAD20D6AEFF0014EFF0 /* BattleCharIconSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80D60FAB20D6AEFF0014EFF0 /* BattleCharIconSprite.cpp */; };
 		80D60FAE20D6AEFF0014EFF0 /* BattleCharIconSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80D60FAB20D6AEFF0014EFF0 /* BattleCharIconSprite.cpp */; };
+		80DDEB86210C9B4E00C7D575 /* AppInitalizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80DDEB84210C9B4E00C7D575 /* AppInitalizer.cpp */; };
+		80DDEB87210C9B4E00C7D575 /* AppInitalizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80DDEB84210C9B4E00C7D575 /* AppInitalizer.cpp */; };
+		80DDEB9E2116A09300C7D575 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 80DDEB982116A09300C7D575 /* sqlite3.c */; };
+		80DDEB9F2116A09300C7D575 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 80DDEB982116A09300C7D575 /* sqlite3.c */; };
+		80DDEBA02116A09300C7D575 /* README.mkdn in Resources */ = {isa = PBXBuildFile; fileRef = 80DDEB9D2116A09300C7D575 /* README.mkdn */; };
+		80DDEBA12116A09300C7D575 /* README.mkdn in Resources */ = {isa = PBXBuildFile; fileRef = 80DDEB9D2116A09300C7D575 /* README.mkdn */; };
 		80F3B674207A152B00327457 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 80F3B66C207A152A00327457 /* fonts */; };
 		80F3B675207A152B00327457 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 80F3B66C207A152A00327457 /* fonts */; };
 		80F3B676207A152B00327457 /* master in Resources */ = {isa = PBXBuildFile; fileRef = 80F3B66D207A152A00327457 /* master */; };
@@ -280,9 +284,6 @@
 		8043CFD420676D8C0019BA4E /* MapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapData.h; sourceTree = "<group>"; };
 		8043CFE1206F2C260019BA4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "PuzzleRPG-mobile/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		8043CFE5206F2C510019BA4E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
-		805400182044664E009EE5ED /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
-		8054001A2044664E009EE5ED /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
-		8054001B2044664E009EE5ED /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
 		8054002E2046E961009EE5ED /* GameDataSQL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameDataSQL.cpp; sourceTree = "<group>"; };
 		8054002F2046E961009EE5ED /* GameDataSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameDataSQL.h; sourceTree = "<group>"; };
 		80691D102001D87C00AB4BFB /* PuzzleGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleGameScene.h; sourceTree = "<group>"; };
@@ -293,6 +294,13 @@
 		80BDB4E3204294AF00F1F36E /* PartyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyScene.h; sourceTree = "<group>"; };
 		80D60FAB20D6AEFF0014EFF0 /* BattleCharIconSprite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleCharIconSprite.cpp; sourceTree = "<group>"; };
 		80D60FAC20D6AEFF0014EFF0 /* BattleCharIconSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleCharIconSprite.h; sourceTree = "<group>"; };
+		80DDEB84210C9B4E00C7D575 /* AppInitalizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AppInitalizer.cpp; sourceTree = "<group>"; };
+		80DDEB85210C9B4E00C7D575 /* AppInitalizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppInitalizer.h; sourceTree = "<group>"; };
+		80DDEB982116A09300C7D575 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		80DDEB992116A09300C7D575 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		80DDEB9A2116A09300C7D575 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
+		80DDEB9C2116A09300C7D575 /* picojson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = picojson.h; sourceTree = "<group>"; };
+		80DDEB9D2116A09300C7D575 /* README.mkdn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mkdn; sourceTree = "<group>"; };
 		80F3B66C207A152A00327457 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		80F3B66D207A152A00327457 /* master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = master; sourceTree = "<group>"; };
 		80F3B66E207A152B00327457 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
@@ -455,8 +463,8 @@
 			isa = PBXGroup;
 			children = (
 				805400272045AF45009EE5ED /* GameData */,
-				805400172044664E009EE5ED /* sqlite */,
 				800714171FFBB6FF0004DFAB /* Scene */,
+				80DDEB962116A09300C7D575 /* Libs */,
 				800713D71FF7F03E0004DFAB /* System */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
@@ -525,12 +533,13 @@
 		800713D71FF7F03E0004DFAB /* System */ = {
 			isa = PBXGroup;
 			children = (
+				80DDEB80210C9AF000C7D575 /* App */,
+				800713EC1FF7F03E0004DFAB /* Audio */,
 				800713D81FF7F03E0004DFAB /* Converter */,
-				800713DB1FF7F03E0004DFAB /* VisibleRect */,
-				800713DE1FF7F03E0004DFAB /* ModalLayer */,
 				800713E11FF7F03E0004DFAB /* DebugMenu */,
 				800713E91FF7F03E0004DFAB /* MathHelper */,
-				800713EC1FF7F03E0004DFAB /* Audio */,
+				800713DE1FF7F03E0004DFAB /* ModalLayer */,
+				800713DB1FF7F03E0004DFAB /* VisibleRect */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -726,16 +735,6 @@
 			path = json;
 			sourceTree = "<group>";
 		};
-		805400172044664E009EE5ED /* sqlite */ = {
-			isa = PBXGroup;
-			children = (
-				805400182044664E009EE5ED /* sqlite3.c */,
-				8054001A2044664E009EE5ED /* sqlite3.h */,
-				8054001B2044664E009EE5ED /* sqlite3ext.h */,
-			);
-			path = sqlite;
-			sourceTree = "<group>";
-		};
 		805400272045AF45009EE5ED /* GameData */ = {
 			isa = PBXGroup;
 			children = (
@@ -755,6 +754,43 @@
 				80BDB4DC204291C100F1F36E /* SyntheticScene.h */,
 			);
 			path = Synthetic;
+			sourceTree = "<group>";
+		};
+		80DDEB80210C9AF000C7D575 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				80DDEB84210C9B4E00C7D575 /* AppInitalizer.cpp */,
+				80DDEB85210C9B4E00C7D575 /* AppInitalizer.h */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		80DDEB962116A09300C7D575 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				80DDEB972116A09300C7D575 /* sqlite */,
+				80DDEB9B2116A09300C7D575 /* picojson */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		80DDEB972116A09300C7D575 /* sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				80DDEB982116A09300C7D575 /* sqlite3.c */,
+				80DDEB992116A09300C7D575 /* sqlite3.h */,
+				80DDEB9A2116A09300C7D575 /* sqlite3ext.h */,
+			);
+			path = sqlite;
+			sourceTree = "<group>";
+		};
+		80DDEB9B2116A09300C7D575 /* picojson */ = {
+			isa = PBXGroup;
+			children = (
+				80DDEB9C2116A09300C7D575 /* picojson.h */,
+				80DDEB9D2116A09300C7D575 /* README.mkdn */,
+			);
+			path = picojson;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -895,6 +931,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80F3B67E207A152B00327457 /* sound in Resources */,
+				80DDEBA02116A09300C7D575 /* README.mkdn in Resources */,
 				80F3B67A207A152B00327457 /* asset in Resources */,
 				8043CFE2206F2C260019BA4E /* Images.xcassets in Resources */,
 				80F3B676207A152B00327457 /* master in Resources */,
@@ -909,6 +946,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80F3B67F207A152B00327457 /* sound in Resources */,
+				80DDEBA12116A09300C7D575 /* README.mkdn in Resources */,
 				80F3B677207A152B00327457 /* master in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				80F3B67D207A152B00327457 /* system in Resources */,
@@ -936,10 +974,11 @@
 				800713F41FF7F03F0004DFAB /* ModalLayer.cpp in Sources */,
 				801E1DC2203146F20034A904 /* OtherScene.cpp in Sources */,
 				800713FA1FF7F03F0004DFAB /* MathHelper.cpp in Sources */,
+				80DDEB9E2116A09300C7D575 /* sqlite3.c in Sources */,
 				801E1DC4203146F20034A904 /* QuestScene.cpp in Sources */,
 				805400302046E961009EE5ED /* GameDataSQL.cpp in Sources */,
 				8043CFCE2067394F0019BA4E /* CharselectScene.cpp in Sources */,
-				8054001C2044664E009EE5ED /* sqlite3.c in Sources */,
+				80DDEB86210C9B4E00C7D575 /* AppInitalizer.cpp in Sources */,
 				80BDB4E0204291C100F1F36E /* SyntheticScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				80691D122001D87D00AB4BFB /* PuzzleGameScene.cpp in Sources */,
@@ -995,7 +1034,8 @@
 				80FC7CEC207A0B70007FF5E4 /* CharSelectSprite.cpp in Sources */,
 				800713F31FF7F03F0004DFAB /* VisibleRect.cpp in Sources */,
 				801E1DC5203146F20034A904 /* QuestScene.cpp in Sources */,
-				8054001D2044664E009EE5ED /* sqlite3.c in Sources */,
+				80DDEB87210C9B4E00C7D575 /* AppInitalizer.cpp in Sources */,
+				80DDEB9F2116A09300C7D575 /* sqlite3.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
