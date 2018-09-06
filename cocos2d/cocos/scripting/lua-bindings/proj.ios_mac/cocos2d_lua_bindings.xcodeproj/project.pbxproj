@@ -537,7 +537,7 @@
 		15C1C24C1987473200A46ACC /* lua_cocos2dx_experimental_video_manual.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_cocos2dx_experimental_video_manual.hpp; sourceTree = "<group>"; };
 		15C1C24F198747E400A46ACC /* LuaOpengl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaOpengl.cpp; sourceTree = "<group>"; };
 		15C1C250198747E400A46ACC /* LuaOpengl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaOpengl.h; sourceTree = "<group>"; };
-		15C1C2CC198748D200A46ACC /* libcocos2d Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libcocos2d Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15C1C2CC198748D200A46ACC /* libluacocos2d Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libluacocos2d Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C9A10C1AE4972500C15443 /* lua_cocos2dx_experimental_webview_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_cocos2dx_experimental_webview_auto.cpp; sourceTree = "<group>"; };
 		15C9A10D1AE4972500C15443 /* lua_cocos2dx_experimental_webview_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_cocos2dx_experimental_webview_auto.hpp; sourceTree = "<group>"; };
 		15C9A1101AE4973400C15443 /* lua_cocos2dx_experimental_webview_manual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_cocos2dx_experimental_webview_manual.cpp; sourceTree = "<group>"; };
@@ -592,7 +592,7 @@
 		3E2BDB0419C5E5FE0055CDCD /* lua_cocos2dx_audioengine_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_cocos2dx_audioengine_auto.hpp; sourceTree = "<group>"; };
 		3E2BDB0819C5E6100055CDCD /* lua_cocos2dx_audioengine_manual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_cocos2dx_audioengine_manual.cpp; sourceTree = "<group>"; };
 		3E2BDB0919C5E6100055CDCD /* lua_cocos2dx_audioengine_manual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_cocos2dx_audioengine_manual.h; sourceTree = "<group>"; };
-		507B43531C31FA0C0067B53E /* libcocos2d Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libcocos2d Mac.a"; path = "../Debug/libcocos2d Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		507B43531C31FA0C0067B53E /* libluacocos2d tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libluacocos2d tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		566F015D19B5EB0F00FCA620 /* CustomGUIReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomGUIReader.cpp; sourceTree = "<group>"; };
 		566F015E19B5EB0F00FCA620 /* CustomGUIReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGUIReader.h; sourceTree = "<group>"; };
 		ADD1C0D21C196B9500733781 /* lua_module_register.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_module_register.cpp; sourceTree = "<group>"; };
@@ -670,9 +670,9 @@
 				1ABCA1E218CD8F230087CE3A /* external */,
 				1AACE74818BC45C200215002 /* auto */,
 				1AACE75B18BC45C200215002 /* manual */,
-				15C1C2CC198748D200A46ACC /* libcocos2d Mac.a */,
+				15C1C2CC198748D200A46ACC /* libluacocos2d Mac.a */,
 				15EFA616198B2DAA000C57D3 /* libluacocos2d iOS.a */,
-				507B43531C31FA0C0067B53E /* libcocos2d Mac.a */,
+				507B43531C31FA0C0067B53E /* libluacocos2d tvOS.a */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1243,7 +1243,7 @@
 			);
 			name = "libluacocos2d Mac";
 			productName = cocos2dx;
-			productReference = 15C1C2CC198748D200A46ACC /* libcocos2d Mac.a */;
+			productReference = 15C1C2CC198748D200A46ACC /* libluacocos2d Mac.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		15EFA59E198B2DAA000C57D3 /* libluacocos2d iOS */ = {
@@ -1277,7 +1277,7 @@
 			);
 			name = "libluacocos2d tvOS";
 			productName = cocos2dx;
-			productReference = 507B43531C31FA0C0067B53E /* libcocos2d Mac.a */;
+			productReference = 507B43531C31FA0C0067B53E /* libluacocos2d tvOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
