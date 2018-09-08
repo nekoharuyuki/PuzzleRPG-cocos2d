@@ -536,14 +536,14 @@
 		80C993B02141D42A00C10E96 /* Puzzle */ = {
 			isa = PBXGroup;
 			children = (
-				80C993B12141D42A00C10E96 /* PuzzleGameScene.h */,
-				80C993B22141D42A00C10E96 /* BattleCharIconSprite.h */,
-				80C993B32141D42A00C10E96 /* BattleChar.h */,
-				80C993B42141D42A00C10E96 /* BattleCharSprite.cpp */,
 				80C993B52141D42A00C10E96 /* PuzzleGameScene.cpp */,
+				80C993B12141D42A00C10E96 /* PuzzleGameScene.h */,
 				80C993B62141D42A00C10E96 /* BattleCharIconSprite.cpp */,
+				80C993B22141D42A00C10E96 /* BattleCharIconSprite.h */,
+				80C993B42141D42A00C10E96 /* BattleCharSprite.cpp */,
 				80C993B72141D42A00C10E96 /* BattleCharSprite.h */,
 				80C993B82141D42A00C10E96 /* BattleChar.cpp */,
+				80C993B32141D42A00C10E96 /* BattleChar.h */,
 				80C993B92141D42A00C10E96 /* PuzzleSprite.cpp */,
 				80C993BA2141D42A00C10E96 /* PuzzleSprite.h */,
 			);
@@ -562,14 +562,14 @@
 		80C993BE2141D42A00C10E96 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				80C993BF2141D42A00C10E96 /* MenuLayer.cpp */,
 				80C993C02141D42A00C10E96 /* Party */,
-				80C993C32141D42A00C10E96 /* MenuLayer.h */,
 				80C993C42141D42A00C10E96 /* Other */,
 				80C993C72141D42A00C10E96 /* Mypage */,
 				80C993CA2141D42A00C10E96 /* Quest */,
 				80C993CD2141D42A00C10E96 /* Evolution */,
 				80C993D02141D42A00C10E96 /* Synthetic */,
+				80C993BF2141D42A00C10E96 /* MenuLayer.cpp */,
+				80C993C32141D42A00C10E96 /* MenuLayer.h */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -595,8 +595,8 @@
 		80C993C72141D42A00C10E96 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				80C993C82141D42A00C10E96 /* MypageScene.h */,
 				80C993C92141D42A00C10E96 /* MypageScene.cpp */,
+				80C993C82141D42A00C10E96 /* MypageScene.h */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -613,8 +613,8 @@
 		80C993CD2141D42A00C10E96 /* Evolution */ = {
 			isa = PBXGroup;
 			children = (
-				80C993CE2141D42A00C10E96 /* EvolutionScene.h */,
 				80C993CF2141D42A00C10E96 /* EvolutionScene.cpp */,
+				80C993CE2141D42A00C10E96 /* EvolutionScene.h */,
 			);
 			path = Evolution;
 			sourceTree = "<group>";
@@ -622,8 +622,8 @@
 		80C993D02141D42A00C10E96 /* Synthetic */ = {
 			isa = PBXGroup;
 			children = (
-				80C993D12141D42A00C10E96 /* SyntheticScene.h */,
 				80C993D22141D42A00C10E96 /* SyntheticScene.cpp */,
+				80C993D12141D42A00C10E96 /* SyntheticScene.h */,
 			);
 			path = Synthetic;
 			sourceTree = "<group>";
@@ -631,10 +631,10 @@
 		80C993D32141D42A00C10E96 /* Charselect */ = {
 			isa = PBXGroup;
 			children = (
-				80C993D42141D42A00C10E96 /* CharSelectIconSprite.h */,
 				80C993D52141D42A00C10E96 /* CharSelectSprite.cpp */,
-				80C993D62141D42A00C10E96 /* CharSelectIconSprite.cpp */,
 				80C993D72141D42A00C10E96 /* CharSelectSprite.h */,
+				80C993D62141D42A00C10E96 /* CharSelectIconSprite.cpp */,
+				80C993D42141D42A00C10E96 /* CharSelectIconSprite.h */,
 				80C993D82141D42A00C10E96 /* CharselectScene.cpp */,
 				80C993D92141D42A00C10E96 /* CharselectScene.h */,
 			);
@@ -647,8 +647,8 @@
 				80C993DD2141D42B00C10E96 /* json */,
 				80C993DC2141D42B00C10E96 /* UserOptionData.cpp */,
 				80C993E22141D42B00C10E96 /* UserOptionData.h */,
-				80C993E32141D42B00C10E96 /* GameDataSQL.h */,
 				80C993E42141D42B00C10E96 /* GameDataSQL.cpp */,
+				80C993E32141D42B00C10E96 /* GameDataSQL.h */,
 			);
 			path = GameData;
 			sourceTree = "<group>";
@@ -656,10 +656,10 @@
 		80C993DD2141D42B00C10E96 /* json */ = {
 			isa = PBXGroup;
 			children = (
-				80C993DE2141D42B00C10E96 /* CharData.h */,
 				80C993DF2141D42B00C10E96 /* MapData.cpp */,
-				80C993E02141D42B00C10E96 /* CharData.cpp */,
 				80C993E12141D42B00C10E96 /* MapData.h */,
+				80C993E02141D42B00C10E96 /* CharData.cpp */,
+				80C993DE2141D42B00C10E96 /* CharData.h */,
 			);
 			path = json;
 			sourceTree = "<group>";
@@ -681,8 +681,8 @@
 		80C993E72141D42B00C10E96 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				80C993E82141D42B00C10E96 /* AppInitalizer.h */,
 				80C993E92141D42B00C10E96 /* AppInitalizer.cpp */,
+				80C993E82141D42B00C10E96 /* AppInitalizer.h */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -717,12 +717,12 @@
 		80C993F32141D42B00C10E96 /* DebugMenu */ = {
 			isa = PBXGroup;
 			children = (
+				80C993F82141D42B00C10E96 /* Controller.cpp */,
+				80C993F62141D42B00C10E96 /* Controller.h */,
+				80C993F92141D42B00C10E96 /* BaseTest.cpp */,
+				80C993F72141D42B00C10E96 /* BaseTest.h */,
 				80C993F42141D42B00C10E96 /* testBasic.h */,
 				80C993F52141D42B00C10E96 /* tests.h */,
-				80C993F62141D42B00C10E96 /* Controller.h */,
-				80C993F72141D42B00C10E96 /* BaseTest.h */,
-				80C993F82141D42B00C10E96 /* Controller.cpp */,
-				80C993F92141D42B00C10E96 /* BaseTest.cpp */,
 				80C993FA2141D42B00C10E96 /* testResource.h */,
 			);
 			path = DebugMenu;
@@ -740,9 +740,9 @@
 		80C993FE2141D42B00C10E96 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				80C994012141D42B00C10E96 /* AudioManager.cpp */,
 				80C993FF2141D42B00C10E96 /* AudioManager.h */,
 				80C994002141D42B00C10E96 /* README.md */,
-				80C994012141D42B00C10E96 /* AudioManager.cpp */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -805,6 +805,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PuzzleRPG" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1031,7 +1036,9 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -1051,6 +1058,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1065,7 +1073,9 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1084,6 +1094,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
