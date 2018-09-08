@@ -90,6 +90,8 @@ cocos2d/build/cocos2d_libs.xcodeproj/xcuserdata/
 proj.ios_mac/build/
 proj.ios_mac/*.xcodeproj/project.xcworkspace
 proj.ios_mac/*.xcodeproj/xcuserdata/
+proj.ios_mac/*.xcworkspace/project.xcworkspace
+proj.ios_mac/*.xcworkspace/xcuserdata/
 !*.pch
 
 # proj.linux

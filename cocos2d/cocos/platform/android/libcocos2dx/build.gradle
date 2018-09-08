@@ -1,11 +1,8 @@
 apply plugin: 'com.android.library'
 
-import org.apache.tools.ant.taskdefs.condition.Os
-import groovy.json.JsonSlurper
-
 android {
     compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
-    buildToolsVersion '26.0.2'
+    buildToolsVersion PROP_BUILD_TOOLS_VERSION
 
     defaultConfig {
         minSdkVersion PROP_MIN_SDK_VERSION
@@ -22,12 +19,12 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: '../java/libs', include: ['*.jar'])
+    implementation fileTree(dir: '../java/libs', include: ['*.jar'])
 }
