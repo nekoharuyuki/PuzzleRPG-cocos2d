@@ -9,9 +9,18 @@
 #include "AudioManager.h"
 #include "MapData.h"
 #include "CharData.h"
-#include "Controller.h"
 #include "TitleScene.h"
+
+#if COCOS2D_DEBUG
+#include "Controller.h"
 #include "tests.h"
+#endif
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#include "firebase/app.h"
+#include "firebase/admob.h"
+#include "FirebaseHelper.h"
+#endif
 
 USING_NS_CC;
 
@@ -20,6 +29,21 @@ USING_NS_CC;
  */
 void AppInitalizer::init()
 {
+    // Firebaseの初期化
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    // Initialize Firebase for Android.
+    firebase::App* app = firebase::App::Create(firebase::AppOptions(),
+                                               JniHelper::getEnv(),
+                                               JniHelper::getActivity());
+    // Initialize AdMob.
+    firebase::admob::Initialize(*app, "INSERT_YOUR_ADMOB_ANDROID_APP_ID");
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    // Initialize Firebase for iOS.
+    firebase::App* app = firebase::App::Create(firebase::AppOptions());
+    // Initialize AdMob.
+    firebase::admob::Initialize(*app, "INSERT_YOUR_ADMOB_IOS_APP_ID");
+#endif
+    
     // オーディオ定義ファイルの読み込み
     AudioManager::getInstance()->readAudioListFile("master/audioData.json");
     
