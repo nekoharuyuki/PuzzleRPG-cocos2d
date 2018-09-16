@@ -34,6 +34,7 @@
 		8093C56D2143D13100BD3250 /* firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8093C56C2143D13000BD3250 /* firebase.framework */; };
 		8093C56F2143D15D00BD3250 /* firebase_admob.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8093C56E2143D15D00BD3250 /* firebase_admob.framework */; };
 		8093C5712143D1A200BD3250 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8093C5702143D1A200BD3250 /* GameController.framework */; };
+		80C8626A21455CDF006FBDCD /* FirebaseHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80C8626821455CDF006FBDCD /* FirebaseHelper.cpp */; };
 		80C994022141D42B00C10E96 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 80C993A62141D42A00C10E96 /* sqlite3.c */; };
 		80C994032141D42B00C10E96 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 80C993A62141D42A00C10E96 /* sqlite3.c */; };
 		80C994042141D42B00C10E96 /* README.mkdn in Resources */ = {isa = PBXBuildFile; fileRef = 80C993AB2141D42A00C10E96 /* README.mkdn */; };
@@ -234,6 +235,8 @@
 		8093C56C2143D13000BD3250 /* firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = firebase.framework; path = ../firebase_cpp_sdk/frameworks/ios/universal/firebase.framework; sourceTree = "<group>"; };
 		8093C56E2143D15D00BD3250 /* firebase_admob.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = firebase_admob.framework; path = ../firebase_cpp_sdk/frameworks/ios/universal/firebase_admob.framework; sourceTree = "<group>"; };
 		8093C5702143D1A200BD3250 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
+		80C8626821455CDF006FBDCD /* FirebaseHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FirebaseHelper.cpp; sourceTree = "<group>"; };
+		80C8626921455CDF006FBDCD /* FirebaseHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseHelper.h; sourceTree = "<group>"; };
 		80C993A32141D42A00C10E96 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		80C993A62141D42A00C10E96 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		80C993A72141D42A00C10E96 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
@@ -714,6 +717,8 @@
 			children = (
 				80C993E92141D42B00C10E96 /* AppInitalizer.cpp */,
 				80C993E82141D42B00C10E96 /* AppInitalizer.h */,
+				80C8626821455CDF006FBDCD /* FirebaseHelper.cpp */,
+				80C8626921455CDF006FBDCD /* FirebaseHelper.h */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -992,6 +997,7 @@
 				1AF87B781F6F77F7007BE51C /* AppController.mm in Sources */,
 				80C9942E2141D42B00C10E96 /* CharData.cpp in Sources */,
 				80C9942A2141D42B00C10E96 /* UserOptionData.cpp in Sources */,
+				80C8626A21455CDF006FBDCD /* FirebaseHelper.cpp in Sources */,
 				80C9942C2141D42B00C10E96 /* MapData.cpp in Sources */,
 				80C9940C2141D42B00C10E96 /* BattleCharIconSprite.cpp in Sources */,
 				80C994062141D42B00C10E96 /* ResultScene.cpp in Sources */,
