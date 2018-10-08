@@ -1,0 +1,6 @@
+-keep,includedescriptorclasses public class com.google.firebase.remoteconfig.FirebaseRemoteConfig{ *; }
+-keep,includedescriptorclasses public class com.google.firebase.remoteconfig.FirebaseRemoteConfigFetchThrottledException{ *; }
+-keep,includedescriptorclasses public class com.google.firebase.remoteconfig.FirebaseRemoteConfigInfo{ *; }
+-keep,includedescriptorclasses public class com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings{ *; }
+-keep,includedescriptorclasses public class com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings$Builder{ *; }
+-keep,includedescriptorclasses public class com.google.firebase.remoteconfig.FirebaseRemoteConfigValue{ *; }

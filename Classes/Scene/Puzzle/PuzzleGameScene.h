@@ -57,11 +57,13 @@ protected:
     
     cocos2d::Vector<BattleChar*> m_enemyDatum; //敵の情報
     cocos2d::Vector<cocos2d::Sprite*> m_enemys; //敵画像
+    cocos2d::Vector<cocos2d::Sprite*> m_enemysIcon; //敵のアイコン画像
     cocos2d::Vector<cocos2d::ui::LoadingBar*> m_hpBarForEnemys; //敵のヒットポイントバー
     cocos2d::Vector<cocos2d::ui::Text*> m_enemyTurn;    // 敵のターン数表示
     
     cocos2d::Vector<BattleChar*> m_memberDatum; //メンバーの情報
     cocos2d::Vector<cocos2d::Sprite*> m_members; //メンバー画像
+    cocos2d::Vector<cocos2d::Sprite*> m_membersIcon; //メンバーのアイコン画像
     cocos2d::ui::LoadingBar* m_hpBarForMembers; //メンバーのヒットポイントバー
     
     void initBackground(); //背景の初期化
