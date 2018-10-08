@@ -31,6 +31,10 @@
 		5087E78917EB974C00C73F5D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5087E78817EB974C00C73F5D /* AppKit.framework */; };
 		5087E78B17EB975400C73F5D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5087E78A17EB975400C73F5D /* OpenGL.framework */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
+		8038F5DC216AEE860085F19C /* PlayerValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8038F5DA216AEE860085F19C /* PlayerValue.cpp */; };
+		8038F5DD216AEE860085F19C /* PlayerValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8038F5DA216AEE860085F19C /* PlayerValue.cpp */; };
+		8038F5E0216B106E0085F19C /* PartyValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8038F5DE216B106E0085F19C /* PartyValue.cpp */; };
+		8038F5E1216B106E0085F19C /* PartyValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8038F5DE216B106E0085F19C /* PartyValue.cpp */; };
 		8093C56D2143D13100BD3250 /* firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8093C56C2143D13000BD3250 /* firebase.framework */; };
 		8093C56F2143D15D00BD3250 /* firebase_admob.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8093C56E2143D15D00BD3250 /* firebase_admob.framework */; };
 		8093C5712143D1A200BD3250 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8093C5702143D1A200BD3250 /* GameController.framework */; };
@@ -115,7 +119,6 @@
 		80C9945A2141D47000C10E96 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 80C9944C2141D47000C10E96 /* sound */; };
 		80C9946B2141D52E00C10E96 /* libluacocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C994622141D4BF00C10E96 /* libluacocos2d Mac.a */; };
 		80C9946C2141D53B00C10E96 /* libluacocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C994642141D4BF00C10E96 /* libluacocos2d iOS.a */; };
-		80C994722143CA6200C10E96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80C9946F2143CA6200C10E96 /* GoogleService-Info.plist */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		9941501F8E4EEF6ADE151E9B /* libPods-PuzzleRPG-mobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B9346A472DCCC2EEAA89F7 /* libPods-PuzzleRPG-mobile.a */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -232,6 +235,10 @@
 		5087E78A17EB975400C73F5D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		632E164F205499CCB4D7ACCF /* Pods-PuzzleRPG-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuzzleRPG-mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuzzleRPG-mobile/Pods-PuzzleRPG-mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		8038F5DA216AEE860085F19C /* PlayerValue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerValue.cpp; sourceTree = "<group>"; };
+		8038F5DB216AEE860085F19C /* PlayerValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerValue.h; sourceTree = "<group>"; };
+		8038F5DE216B106E0085F19C /* PartyValue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PartyValue.cpp; sourceTree = "<group>"; };
+		8038F5DF216B106E0085F19C /* PartyValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PartyValue.h; sourceTree = "<group>"; };
 		8093C56C2143D13000BD3250 /* firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = firebase.framework; path = ../firebase_cpp_sdk/frameworks/ios/universal/firebase.framework; sourceTree = "<group>"; };
 		8093C56E2143D15D00BD3250 /* firebase_admob.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = firebase_admob.framework; path = ../firebase_cpp_sdk/frameworks/ios/universal/firebase_admob.framework; sourceTree = "<group>"; };
 		8093C5702143D1A200BD3250 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
@@ -313,7 +320,6 @@
 		80C9944B2141D46F00C10E96 /* system */ = {isa = PBXFileReference; lastKnownFileType = folder; path = system; sourceTree = "<group>"; };
 		80C9944C2141D47000C10E96 /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
 		80C9945B2141D4BF00C10E96 /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "../cocos2d/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
-		80C9946F2143CA6200C10E96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -434,7 +440,6 @@
 				503AE10617EB990700D1A890 /* mac */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				20A983BC740A5D37B788D7F0 /* Pods */,
-				80C9946F2143CA6200C10E96 /* GoogleService-Info.plist */,
 				8093C56C2143D13000BD3250 /* firebase.framework */,
 				8093C56E2143D15D00BD3250 /* firebase_admob.framework */,
 			);
@@ -516,6 +521,17 @@
 				503AE10417EB98FF00D1A890 /* Prefix.pch */,
 			);
 			name = mac;
+			sourceTree = "<group>";
+		};
+		8038F5D7216AEE530085F19C /* common */ = {
+			isa = PBXGroup;
+			children = (
+				8038F5DA216AEE860085F19C /* PlayerValue.cpp */,
+				8038F5DB216AEE860085F19C /* PlayerValue.h */,
+				8038F5DE216B106E0085F19C /* PartyValue.cpp */,
+				8038F5DF216B106E0085F19C /* PartyValue.h */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 		80C993A42141D42A00C10E96 /* Libs */ = {
@@ -678,6 +694,7 @@
 		80C993DB2141D42B00C10E96 /* GameData */ = {
 			isa = PBXGroup;
 			children = (
+				8038F5D7216AEE530085F19C /* common */,
 				80C993DD2141D42B00C10E96 /* json */,
 				80C993DC2141D42B00C10E96 /* UserOptionData.cpp */,
 				80C993E22141D42B00C10E96 /* UserOptionData.h */,
@@ -934,7 +951,6 @@
 				80C994512141D47000C10E96 /* master in Resources */,
 				80C994042141D42B00C10E96 /* README.mkdn in Resources */,
 				80C994552141D47000C10E96 /* asset in Resources */,
-				80C994722143CA6200C10E96 /* GoogleService-Info.plist in Resources */,
 				80C994592141D47000C10E96 /* sound in Resources */,
 				80C9944F2141D47000C10E96 /* fonts in Resources */,
 				1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */,
@@ -1002,6 +1018,7 @@
 				80C9940C2141D42B00C10E96 /* BattleCharIconSprite.cpp in Sources */,
 				80C994062141D42B00C10E96 /* ResultScene.cpp in Sources */,
 				80C994182141D42B00C10E96 /* OtherScene.cpp in Sources */,
+				8038F5DC216AEE860085F19C /* PlayerValue.cpp in Sources */,
 				80C994322141D42B00C10E96 /* AppDelegate.cpp in Sources */,
 				80C994122141D42B00C10E96 /* TitleScene.cpp in Sources */,
 				80C994402141D42B00C10E96 /* MathHelper.cpp in Sources */,
@@ -1010,6 +1027,7 @@
 				80C9943C2141D42B00C10E96 /* Controller.cpp in Sources */,
 				80C994102141D42B00C10E96 /* PuzzleSprite.cpp in Sources */,
 				80C994202141D42B00C10E96 /* SyntheticScene.cpp in Sources */,
+				8038F5E0216B106E0085F19C /* PartyValue.cpp in Sources */,
 				80C994262141D42B00C10E96 /* CharselectScene.cpp in Sources */,
 				80C994382141D42B00C10E96 /* VisibleRect.cpp in Sources */,
 				80C994142141D42B00C10E96 /* MenuLayer.cpp in Sources */,
@@ -1038,6 +1056,7 @@
 				80C994152141D42B00C10E96 /* MenuLayer.cpp in Sources */,
 				80C9943F2141D42B00C10E96 /* BaseTest.cpp in Sources */,
 				80C994232141D42B00C10E96 /* CharSelectSprite.cpp in Sources */,
+				8038F5E1216B106E0085F19C /* PartyValue.cpp in Sources */,
 				80C9942D2141D42B00C10E96 /* MapData.cpp in Sources */,
 				80C9941B2141D42B00C10E96 /* MypageScene.cpp in Sources */,
 				80C9943B2141D42B00C10E96 /* ModalLayer.cpp in Sources */,
@@ -1056,6 +1075,7 @@
 				80C994252141D42B00C10E96 /* CharSelectIconSprite.cpp in Sources */,
 				80C9943D2141D42B00C10E96 /* Controller.cpp in Sources */,
 				80C994212141D42B00C10E96 /* SyntheticScene.cpp in Sources */,
+				8038F5DD216AEE860085F19C /* PlayerValue.cpp in Sources */,
 				80C994072141D42B00C10E96 /* ResultScene.cpp in Sources */,
 				80C994332141D42B00C10E96 /* AppDelegate.cpp in Sources */,
 				80C9942B2141D42B00C10E96 /* UserOptionData.cpp in Sources */,

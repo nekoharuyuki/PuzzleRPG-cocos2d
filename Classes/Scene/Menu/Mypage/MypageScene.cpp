@@ -1,6 +1,8 @@
 #include "MypageScene.h"
 #include "TitleScene.h"
 #include "MenuLayer.h"
+#include "PlayerValue.h"
+#include "PartyValue.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
@@ -43,6 +45,39 @@ bool MypageScene::init()
     if(layer == nullptr){
         return false;
     }
+    
+    auto playerValue = PlayerValue::create();
+    playerValue->dataLoad();
+    
+    auto CoinText = rootNode->getChildByName<ui::Text*>( "CoinText" );
+    if(CoinText){
+        CoinText->setString( std::to_string(playerValue->getCoin()) );
+    }
+    
+    //パーティデータ読込み表示
+    auto partyValue = PartyValue::create();
+    partyValue->dataLoad();
+    
+    for(int i = 0; i < 3; i++){
+//        auto CharIconNode = rootNode->getChildByName<Node*>( "CharIconNode"+std::to_string(i) );
+        auto CharLv = rootNode->getChildByName<ui::Text*>( "CharLv"+std::to_string(i) );
+        auto CharName = rootNode->getChildByName<ui::Text*>( "CharName"+std::to_string(i) );
+        
+        CharLv->setString( " " );
+        CharName->setString( " " );
+    }
+    /*
+    auto Atk = new Array();
+    auto CharName = new Array();
+    for(i = 0; i < 3; i++){
+        cc.log(i);
+        Atk[i] = rootNode->getChildByName<ui::Text*>( "Atk"+i );
+        Atk[i].setString( getAtk(i) );
+    }
+    */
+    auto PartyHpText = rootNode->getChildByName<ui::Text*>( "PartyHpText" );
+    PartyHpText->setString( std::to_string(partyValue->getTotalHp()) );
+    
     // シーンにレイヤーを追加する
     rootNode->addChild(layer);
     
