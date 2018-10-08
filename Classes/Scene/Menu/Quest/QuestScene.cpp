@@ -1,10 +1,10 @@
 #include "QuestScene.h"
 #include "MapData.h"
 #include "MenuLayer.h"
+#include "PlayerValue.h"
 #include "PuzzleGameScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-
 #include "AudioManager.h"
 
 USING_NS_CC;
@@ -67,6 +67,11 @@ bool QuestScene::init()
 //クエストマスの初期化
 void QuestScene::initQuestmas(Node* node)
 {
+    // ユーザーデータ作成
+    auto playerValue = PlayerValue::create();
+    playerValue->dataLoad();
+    int clearMap = playerValue->getClearMap();
+    
     for(int i = 0; i < 30; i++){
         auto questNode = node->getChildByName<Node*>("quest_"+std::to_string(i+1));
         if(questNode == nullptr){
@@ -76,8 +81,15 @@ void QuestScene::initQuestmas(Node* node)
         auto quest_btn = questNode->getChildByName<ui::Button*>("quest_btn");
         
         // ユーザーデータを確認して、クエストの表示状況を変更する
-        quest_btn->setBright(true);
-        quest_btn->setEnabled(true);
+        if(i <= clearMap){
+            // Mapに挑戦出来る
+            quest_btn->setBright(true);
+            quest_btn->setEnabled(true);
+        } else {
+            // Mapに挑戦出来ない
+            quest_btn->setBright(false);
+            quest_btn->setEnabled(false);
+        }
         
         // タッチイベント追加
         quest_btn->addTouchEventListener([this, i](Ref* sender, ui::Widget::TouchEventType type) {

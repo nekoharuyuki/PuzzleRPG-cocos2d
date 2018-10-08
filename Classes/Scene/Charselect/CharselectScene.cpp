@@ -7,12 +7,13 @@
 
 #include "CharselectScene.h"
 #include "QuestScene.h"
+#include "PlayerValue.h"
+#include "PartyValue.h"
 #include "CharData.h"
 #include "CharSelectSprite.h"
 #include "CharSelectIconSprite.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-
 #include "GameDataSQL.h"
 #include "AudioManager.h"
 
@@ -135,9 +136,9 @@ void CharselectScene::onYes(SelectCharNo no)
 {
     m_popup_2->setVisible(false);
     auto start_btn = m_popup_3->getChildByName<ui::Button*>( "start_btn" );
-    start_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+    start_btn->addTouchEventListener([this, no](Ref* sender, ui::Widget::TouchEventType type) {
         if (type == cocos2d::ui::Widget::TouchEventType::ENDED){
-            onStart();
+            onStart(no);
         }
     });
     
@@ -168,7 +169,7 @@ void CharselectScene::onBack()
     m_popup_3->setVisible(false);
 }
 
-void CharselectScene::onStart()
+void CharselectScene::onStart(SelectCharNo no)
 {
     // 何度も押されないように一度押されたらアクションを無効にする
     this->getEventDispatcher()->removeAllEventListeners();
@@ -177,11 +178,23 @@ void CharselectScene::onStart()
     auto delay = DelayTime::create(0.2f);
     
     // ゲームを始めるアクション
-    auto startGame = CallFunc::create([]{
+    auto startGame = CallFunc::create([this, no]{
         // スタートボタン音SE再生
         AudioManager::getInstance()->playSe("ui_title_start");
-        // 初回起動時にローカルDBデータを作成する
-        GameDataSQL::sqliteCreateTable();
+        
+        // ユーザーデータ作成
+        auto playerValue = PlayerValue::create();
+        playerValue->initialActivation();
+        auto partyValue = PartyValue::create();
+        partyValue->initialActivation();
+        partyValue->setPartyChar1DataCharId(CharData::getCharData(no).charId);
+        partyValue->setPartyChar1DataCharLv(5);
+        partyValue->setPartyChar1DataCharId(0);
+        partyValue->setPartyChar1DataCharLv(0);
+        partyValue->setPartyChar1DataCharId(0);
+        partyValue->setPartyChar1DataCharLv(0);
+        partyValue->dataSave();
+        
         // クエスト選択画面へ移行
         auto transition = TransitionFade::create(0.5f, QuestScene::createScene(), Color3B::WHITE);
         Director::getInstance()->replaceScene(transition);

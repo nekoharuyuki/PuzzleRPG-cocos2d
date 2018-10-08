@@ -5,6 +5,7 @@
 #include "QuestScene.h"
 #include "MapData.h"
 #include "CharData.h"
+#include "PartyValue.h"
 #include "AudioManager.h"
 #include "VisibleRect.h"
 
@@ -678,6 +679,10 @@ void PuzzleGameScene::initEnemy(Node* node)
 
 void PuzzleGameScene::initMembers(Node* node)
 {
+    //パーティデータ読込み表示
+    auto partyValue = PartyValue::create();
+    partyValue->dataLoad();
+    
     // メンバーは仮
     std::vector<int> BattleCharNo{ 10, 11, 12, };
     

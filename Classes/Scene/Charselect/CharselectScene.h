@@ -33,7 +33,7 @@ private:
     void onChar( SelectCharNo no );
     void onYes( SelectCharNo no );
     void onBack();
-    void onStart();
+    void onStart(SelectCharNo no);
     
     Node* m_popup_1;    // キャラクター選択ポップアップ
     Node* m_popup_2;    // キャラクター確認ポップアップ
