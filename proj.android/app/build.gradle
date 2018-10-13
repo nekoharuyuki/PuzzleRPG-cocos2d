@@ -2,10 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
-    buildToolsVersion PROP_BUILD_TOOLS_VERSION
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
-        applicationId "org.cocos2dx.PuzzleRPG"
+        applicationId "com.example.hoge"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
         versionCode 1
@@ -14,14 +14,14 @@ android {
         externalNativeBuild {
             if (PROP_BUILD_TYPE == 'ndk-build') {
                 ndkBuild {
-                    targets 'PuzzleRPG'
+                    targets 'MyGame'
                     arguments 'NDK_TOOLCHAIN_VERSION=clang'
                     arguments '-j' + Runtime.runtime.availableProcessors()
                 }
             }
             else if (PROP_BUILD_TYPE == 'cmake') {
                 cmake {
-                    targets 'PuzzleRPG'
+                    targets 'MyGame'
                     arguments "-DCMAKE_FIND_ROOT_PATH=", "-DANDROID_STL=c++_static", "-DANDROID_TOOLCHAIN=clang", "-DANDROID_ARM_NEON=TRUE", \
                               "-DUSE_CHIPMUNK=TRUE", "-DUSE_BULLET=TRUE"
                     cppFlags "-frtti -fexceptions"
