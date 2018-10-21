@@ -8,6 +8,8 @@
 #ifndef PlayerValue_h
 #define PlayerValue_h
 
+#include "cocos2d.h"
+
 class PlayerValue : public cocos2d::Ref
 {
 public:
