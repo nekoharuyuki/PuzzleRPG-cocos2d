@@ -189,10 +189,10 @@ void CharselectScene::onStart(SelectCharNo no)
         partyValue->initialActivation();
         partyValue->setPartyChar1DataCharId(CharData::getCharData(no).charId);
         partyValue->setPartyChar1DataCharLv(5);
-        partyValue->setPartyChar1DataCharId(0);
-        partyValue->setPartyChar1DataCharLv(0);
-        partyValue->setPartyChar1DataCharId(0);
-        partyValue->setPartyChar1DataCharLv(0);
+        partyValue->setPartyChar2DataCharId(0);
+        partyValue->setPartyChar2DataCharLv(0);
+        partyValue->setPartyChar3DataCharId(0);
+        partyValue->setPartyChar3DataCharLv(0);
         partyValue->dataSave();
         
         // クエスト選択画面へ移行

@@ -8,6 +8,8 @@
 #ifndef PartyValue_h
 #define PartyValue_h
 
+#include "cocos2d.h"
+
 class PartyValue : public cocos2d::Ref
 {
 public:

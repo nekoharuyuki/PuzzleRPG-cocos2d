@@ -11,13 +11,11 @@ REL_ROOT_DIR := ../../..
 # STL := $(firstword $(subst _, ,$(APP_STL)))
 # FIREBASE_LIBRARY_PATH := $(FIREBASE_CPP_SDK_DIR)/libs/android/$(TARGET_ARCH_ABI)/$(STL)
  
-# include $(CLEAR_VARS)
 # LOCAL_MODULE := firebase_app
 # LOCAL_SRC_FILES := $(FIREBASE_LIBRARY_PATH)/libapp.a
 # LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/$(FIREBASE_CPP_SDK_DIR)/include
 # include $(PREBUILT_STATIC_LIBRARY)
  
-# include $(CLEAR_VARS)
 # LOCAL_MODULE := firebase_feature
 # LOCAL_SRC_FILES := $(FIREBASE_LIBRARY_PATH)/libadmob.a
 # LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/$(FIREBASE_CPP_SDK_DIR)/include
@@ -32,12 +30,13 @@ LOCAL_MODULE := MyGame_shared
 
 LOCAL_MODULE_FILENAME := libMyGame
 
-FILE_LIST := $(wildcard $(LOCAL_PATH)/../../../Classes/*.cpp)
+LOCAL_SRC_FILES := hellocpp/main.cpp \
 
-LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp
-LOCAL_SRC_FILES += $(FILE_LIST:$(LOCAL_PATH)/%=%)
+CLASSES_SRC_FILES := $(shell find $(LOCAL_PATH)/$(REL_ROOT_DIR)/Classes -name *.cpp)
+LOCAL_SRC_FILES += $(CLASSES_SRC_FILES:$(LOCAL_PATH)/%=%)
+LOCAL_SRC_FILES += $(LOCAL_PATH)/$(REL_ROOT_DIR)/Classes/Libs/sqlite/sqlite3.c
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(REL_ROOT_DIR)/Classes
+LOCAL_C_INCLUDES := $(shell find $(LOCAL_PATH)/$(REL_ROOT_DIR)/Classes -type d)
 
 # _COCOS_HEADER_ANDROID_BEGIN
 # _COCOS_HEADER_ANDROID_END
