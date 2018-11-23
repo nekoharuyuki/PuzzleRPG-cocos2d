@@ -680,8 +680,7 @@ void PuzzleGameScene::initEnemy(Node* node)
 void PuzzleGameScene::initMembers(Node* node)
 {
     //パーティデータ読込み表示
-    auto partyValue = PartyValue::create();
-    partyValue->dataLoad();
+    PartyValue::getInstance()->dataLoad();
     
     // メンバーは仮
     std::vector<int> BattleCharNo{ 10, 11, 12, };

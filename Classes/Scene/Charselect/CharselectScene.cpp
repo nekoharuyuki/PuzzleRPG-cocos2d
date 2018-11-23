@@ -183,17 +183,18 @@ void CharselectScene::onStart(SelectCharNo no)
         AudioManager::getInstance()->playSe("ui_title_start");
         
         // ユーザーデータ作成
-        auto playerValue = PlayerValue::create();
-        playerValue->initialActivation();
-        auto partyValue = PartyValue::create();
-        partyValue->initialActivation();
-        partyValue->setPartyChar1DataCharId(CharData::getCharData(no).charId);
-        partyValue->setPartyChar1DataCharLv(5);
-        partyValue->setPartyChar2DataCharId(0);
-        partyValue->setPartyChar2DataCharLv(0);
-        partyValue->setPartyChar3DataCharId(0);
-        partyValue->setPartyChar3DataCharLv(0);
-        partyValue->dataSave();
+        PlayerValue::getInstance()->initialActivation();
+        auto partyValue = PartyValue::getInstance();
+        if(partyValue){
+            partyValue->initialActivation();
+            partyValue->setPartyChar1DataCharId(CharData::getCharData(no).charId);
+            partyValue->setPartyChar1DataCharLv(5);
+            partyValue->setPartyChar2DataCharId(0);
+            partyValue->setPartyChar2DataCharLv(0);
+            partyValue->setPartyChar3DataCharId(0);
+            partyValue->setPartyChar3DataCharLv(0);
+            partyValue->dataSave();
+        }
         
         // クエスト選択画面へ移行
         auto transition = TransitionFade::create(0.5f, QuestScene::createScene(), Color3B::WHITE);

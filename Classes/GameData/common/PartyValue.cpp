@@ -8,6 +8,8 @@
 #include "PartyValue.h"
 #include "GameDataSQL.h"
 
+PartyValue* PartyValue::m_instance = nullptr;
+
 //コンストラクタ
 PartyValue::PartyValue()
 : m_partyChar1DataCharId(0)
@@ -19,13 +21,22 @@ PartyValue::PartyValue()
 {
 }
 
-//インスタンス生成
-PartyValue* PartyValue::create()
-{
-    PartyValue *pRet = new PartyValue();
-    pRet->autorelease();
-    
-    return pRet;
+// デストラクタ
+PartyValue::~PartyValue() {
+    deleteInstance();
+}
+
+// 初期化
+PartyValue* PartyValue::getInstance() {
+    if (m_instance == nullptr) {
+        m_instance = new PartyValue();
+    }
+    return m_instance;
+}
+
+// 削除する際に使用
+void PartyValue::deleteInstance() {
+    CC_SAFE_DELETE(m_instance);
 }
 
 // 初回起動時

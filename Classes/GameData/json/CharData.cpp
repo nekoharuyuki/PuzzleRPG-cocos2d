@@ -16,7 +16,7 @@ CharData::CharData()
 
 // デストラクタ
 CharData::~CharData() {
-    
+    deleteInstance();
 }
 
 // 初期化
@@ -29,10 +29,7 @@ CharData* CharData::getInstance() {
 
 // 削除する際に使用
 void CharData::deleteInstance() {
-    if (m_instance != nullptr) {
-        delete m_instance;
-    }
-    m_instance = nullptr;
+    CC_SAFE_DELETE(m_instance);
 }
 
 bool CharData::charDataJsonOpen(const std::string& filename)

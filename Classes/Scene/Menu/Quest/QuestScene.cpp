@@ -68,9 +68,8 @@ bool QuestScene::init()
 void QuestScene::initQuestmas(Node* node)
 {
     // ユーザーデータ作成
-    auto playerValue = PlayerValue::create();
-    playerValue->dataLoad();
-    int clearMap = playerValue->getClearMap();
+    PlayerValue::getInstance()->dataLoad();
+    int clearMap = PlayerValue::getInstance()->getClearMap();
     
     for(int i = 0; i < 30; i++){
         auto questNode = node->getChildByName<Node*>("quest_"+std::to_string(i+1));
