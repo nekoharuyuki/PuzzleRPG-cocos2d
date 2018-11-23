@@ -46,17 +46,15 @@ bool MypageScene::init()
         return false;
     }
     
-    auto playerValue = PlayerValue::create();
-    playerValue->dataLoad();
+    PlayerValue::getInstance()->dataLoad();
     
     auto CoinText = rootNode->getChildByName<ui::Text*>( "CoinText" );
     if(CoinText){
-        CoinText->setString( std::to_string(playerValue->getCoin()) );
+        CoinText->setString( std::to_string(PlayerValue::getInstance()->getCoin()) );
     }
     
     //パーティデータ読込み表示
-    auto partyValue = PartyValue::create();
-    partyValue->dataLoad();
+    PartyValue::getInstance()->dataLoad();
     
     for(int i = 0; i < 3; i++){
 //        auto CharIconNode = rootNode->getChildByName<Node*>( "CharIconNode"+std::to_string(i) );
@@ -76,7 +74,7 @@ bool MypageScene::init()
     }
     */
     auto PartyHpText = rootNode->getChildByName<ui::Text*>( "PartyHpText" );
-    PartyHpText->setString( std::to_string(partyValue->getTotalHp()) );
+    PartyHpText->setString( std::to_string(PartyValue::getInstance()->getTotalHp()) );
     
     // シーンにレイヤーを追加する
     rootNode->addChild(layer);

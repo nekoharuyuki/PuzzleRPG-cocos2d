@@ -14,7 +14,7 @@ MapData::MapData()
 
 // デストラクタ
 MapData::~MapData() {
-    
+    deleteInstance();
 }
 
 // 初期化
@@ -27,10 +27,7 @@ MapData* MapData::getInstance() {
 
 // 削除する際に使用
 void MapData::deleteInstance() {
-    if (m_instance != nullptr) {
-        delete m_instance;
-    }
-    m_instance = nullptr;
+    CC_SAFE_DELETE(m_instance);
 }
 
 bool MapData::mapDataJsonOpen(const std::string& filename)

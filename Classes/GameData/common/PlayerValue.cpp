@@ -8,6 +8,8 @@
 #include "PlayerValue.h"
 #include "GameDataSQL.h"
 
+PlayerValue* PlayerValue::m_instance = nullptr;
+
 //コンストラクタ
 PlayerValue::PlayerValue()
 : m_coin(0)
@@ -15,13 +17,22 @@ PlayerValue::PlayerValue()
 {
 }
 
-//インスタンス生成
-PlayerValue* PlayerValue::create()
-{
-    PlayerValue *pRet = new PlayerValue();
-    pRet->autorelease();
-    
-    return pRet;
+// デストラクタ
+PlayerValue::~PlayerValue() {
+    deleteInstance();
+}
+
+// 初期化
+PlayerValue* PlayerValue::getInstance() {
+    if (m_instance == nullptr) {
+        m_instance = new PlayerValue();
+    }
+    return m_instance;
+}
+
+// 削除する際に使用
+void PlayerValue::deleteInstance() {
+    CC_SAFE_DELETE(m_instance);
 }
 
 // 初回起動時
