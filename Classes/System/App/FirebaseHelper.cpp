@@ -5,6 +5,8 @@
 //  Created by neko on 2018/09/09.
 //
 
+#ifdef __USE_FIREBASE__
+
 #include "FirebaseHelper.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
@@ -25,3 +27,5 @@ firebase::admob::AdParent getAdParent() {
     return 0;
 #endif
 }
+
+#endif // __USE_FIREBASE__

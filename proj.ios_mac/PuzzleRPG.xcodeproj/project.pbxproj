@@ -36,8 +36,6 @@
 		8038F5E1216B106E0085F19C /* PartyValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8038F5DE216B106E0085F19C /* PartyValue.cpp */; };
 		8038F5F6217B47F00085F19C /* LabelRPG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8038F5F1217B47EE0085F19C /* LabelRPG.cpp */; };
 		8038F5F7217B47F00085F19C /* LabelRPG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8038F5F1217B47EE0085F19C /* LabelRPG.cpp */; };
-		8093C56D2143D13100BD3250 /* firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8093C56C2143D13000BD3250 /* firebase.framework */; };
-		8093C56F2143D15D00BD3250 /* firebase_admob.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8093C56E2143D15D00BD3250 /* firebase_admob.framework */; };
 		80C8626A21455CDF006FBDCD /* FirebaseHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80C8626821455CDF006FBDCD /* FirebaseHelper.cpp */; };
 		80C994022141D42B00C10E96 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 80C993A62141D42A00C10E96 /* sqlite3.c */; };
 		80C994032141D42B00C10E96 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 80C993A62141D42A00C10E96 /* sqlite3.c */; };
@@ -229,7 +227,6 @@
 		5087E78817EB974C00C73F5D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		5087E78A17EB975400C73F5D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		632E164F205499CCB4D7ACCF /* Pods-PuzzleRPG-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuzzleRPG-mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuzzleRPG-mobile/Pods-PuzzleRPG-mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		8038F5DA216AEE860085F19C /* PlayerValue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerValue.cpp; sourceTree = "<group>"; };
 		8038F5DB216AEE860085F19C /* PlayerValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerValue.h; sourceTree = "<group>"; };
 		8038F5DE216B106E0085F19C /* PartyValue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PartyValue.cpp; sourceTree = "<group>"; };
@@ -237,8 +234,6 @@
 		8038F5EF217B47EE0085F19C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8038F5F0217B47EE0085F19C /* LabelRPG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelRPG.h; sourceTree = "<group>"; };
 		8038F5F1217B47EE0085F19C /* LabelRPG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelRPG.cpp; sourceTree = "<group>"; };
-		8093C56C2143D13000BD3250 /* firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = firebase.framework; path = ../firebase_cpp_sdk/frameworks/ios/universal/firebase.framework; sourceTree = "<group>"; };
-		8093C56E2143D15D00BD3250 /* firebase_admob.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = firebase_admob.framework; path = ../firebase_cpp_sdk/frameworks/ios/universal/firebase_admob.framework; sourceTree = "<group>"; };
 		8093C5702143D1A200BD3250 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		80C8626821455CDF006FBDCD /* FirebaseHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FirebaseHelper.cpp; sourceTree = "<group>"; };
 		80C8626921455CDF006FBDCD /* FirebaseHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseHelper.h; sourceTree = "<group>"; };
@@ -328,7 +323,6 @@
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
-		F102128FC999BDF8881E118F /* Pods-PuzzleRPG-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuzzleRPG-mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-PuzzleRPG-mobile/Pods-PuzzleRPG-mobile.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,12 +333,10 @@
 				80C9946C2141D53B00C10E96 /* libluacocos2d iOS.a in Frameworks */,
 				294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
-				8093C56D2143D13100BD3250 /* firebase.framework in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
-				8093C56F2143D15D00BD3250 /* firebase_admob.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				BF1712471292920000B8313A /* libz.dylib in Frameworks */,
 				BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */,
@@ -414,15 +406,6 @@
 			path = ios;
 			sourceTree = "<group>";
 		};
-		20A983BC740A5D37B788D7F0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				632E164F205499CCB4D7ACCF /* Pods-PuzzleRPG-mobile.debug.xcconfig */,
-				F102128FC999BDF8881E118F /* Pods-PuzzleRPG-mobile.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,9 +417,6 @@
 				1AF87B461F6F77D6007BE51C /* ios */,
 				503AE10617EB990700D1A890 /* mac */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				20A983BC740A5D37B788D7F0 /* Pods */,
-				8093C56C2143D13000BD3250 /* firebase.framework */,
-				8093C56E2143D15D00BD3250 /* firebase_admob.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -1117,7 +1097,6 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 632E164F205499CCB4D7ACCF /* Pods-PuzzleRPG-mobile.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1168,7 +1147,6 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F102128FC999BDF8881E118F /* Pods-PuzzleRPG-mobile.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

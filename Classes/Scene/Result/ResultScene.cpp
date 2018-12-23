@@ -60,7 +60,6 @@ bool ResultScene::init()
             Director::getInstance()->replaceScene(transition);
         });
         this->runAction(Sequence::create(delay, startGame, NULL));
-        return true;    // イベントを実行する
     });
     
     this->scheduleUpdate();
