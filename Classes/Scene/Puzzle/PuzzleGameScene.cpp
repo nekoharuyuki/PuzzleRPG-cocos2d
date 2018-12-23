@@ -72,6 +72,19 @@ bool PuzzleGameScene::init()
     // バトル中のBGM再生
     AudioManager::getInstance()->playBgm("battle");
     
+    // シングルタップイベントの取得
+    auto touchListener = EventListenerTouchOneByOne::create();
+    touchListener->setSwallowTouches(_swallowsTouches);
+    touchListener->onTouchBegan = CC_CALLBACK_2(PuzzleGameScene::onTouchBegan, this);
+    touchListener->onTouchMoved = CC_CALLBACK_2(PuzzleGameScene::onTouchMoved, this);
+    touchListener->onTouchEnded = CC_CALLBACK_2(PuzzleGameScene::onTouchEnded, this);
+    touchListener->onTouchCancelled = CC_CALLBACK_2(PuzzleGameScene::onTouchCancelled, this);
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
+    
+    initPuzzles(); //ボールの初期表示
+    initEnemy(rootNode); //敵の表示
+    initMembers(rootNode); //メンバーの表示
+    
     // メニューへ戻るボタン
     // ボタンノードを取得
     auto startBtn = rootNode->getChildByName<ui::Button*>("menu_button");
@@ -91,21 +104,7 @@ bool PuzzleGameScene::init()
             Director::getInstance()->replaceScene(transition);
         });
         this->runAction(Sequence::create(delay, startGame, NULL));
-        return true;    // イベントを実行する
     });
-    
-    // シングルタップイベントの取得
-    auto touchListener = EventListenerTouchOneByOne::create();
-    touchListener->setSwallowTouches(_swallowsTouches);
-    touchListener->onTouchBegan = CC_CALLBACK_2(PuzzleGameScene::onTouchBegan, this);
-    touchListener->onTouchMoved = CC_CALLBACK_2(PuzzleGameScene::onTouchMoved, this);
-    touchListener->onTouchEnded = CC_CALLBACK_2(PuzzleGameScene::onTouchEnded, this);
-    touchListener->onTouchCancelled = CC_CALLBACK_2(PuzzleGameScene::onTouchCancelled, this);
-    _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
-    
-    initPuzzles(); //ボールの初期表示
-    initEnemy(rootNode); //敵の表示
-    initMembers(rootNode); //メンバーの表示
     
     return true;
 }

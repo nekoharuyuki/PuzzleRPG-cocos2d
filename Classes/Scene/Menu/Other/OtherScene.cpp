@@ -100,7 +100,6 @@ bool OtherScene::init()
             Director::getInstance()->replaceScene(transition);
         });
         this->runAction(Sequence::create(startLoadScene, NULL));
-        return true;    // イベントを実行する
     });
     
     return true;

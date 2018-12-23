@@ -1,1 +1,0 @@
--keep,includedescriptorclasses public class com.google.firebase.analytics.FirebaseAnalytics{ *; }

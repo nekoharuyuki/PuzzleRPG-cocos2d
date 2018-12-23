@@ -16,11 +16,13 @@
 #include "tests.h"
 #endif
 
+#ifdef __USE_FIREBASE__
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "firebase/app.h"
 #include "firebase/admob.h"
 #include "FirebaseHelper.h"
 #endif
+#endif // __USE_FIREBASE__
 
 USING_NS_CC;
 
@@ -29,6 +31,7 @@ USING_NS_CC;
  */
 void AppInitalizer::init()
 {
+#ifdef __USE_FIREBASE__
     // Firebaseの初期化
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     // Initialize Firebase for Android.
@@ -43,6 +46,7 @@ void AppInitalizer::init()
     // Initialize AdMob.
     firebase::admob::Initialize(*app, "INSERT_YOUR_ADMOB_IOS_APP_ID");
 #endif
+#endif // __USE_FIREBASE__
     
     // オーディオ定義ファイルの読み込み
     AudioManager::getInstance()->readAudioListFile("master/audioData.json");
