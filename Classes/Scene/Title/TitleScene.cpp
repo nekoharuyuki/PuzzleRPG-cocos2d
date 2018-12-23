@@ -99,7 +99,6 @@ void TitleScene::startButtonPress(Node* rootNode)
             }
         });
         this->runAction(Sequence::create(delay, startGame, NULL));
-        return true;    // イベントを実行する
     });
 }
 
@@ -121,7 +120,6 @@ void TitleScene::mypageButtonPress(Node* rootNode)
             //
         });
         this->runAction(Sequence::create(delay, startGame, NULL));
-        return true;    // イベントを実行する
     });
 }
 
@@ -144,6 +142,5 @@ void TitleScene::otherButtonPress(Node* rootNode)
             Director::getInstance()->replaceScene(transition);
         });
         this->runAction(Sequence::create(delay, transitionOtherScene, NULL));
-        return true;    // イベントを実行する
     });
 }

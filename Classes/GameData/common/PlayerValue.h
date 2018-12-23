@@ -8,18 +8,24 @@
 #ifndef PlayerValue_h
 #define PlayerValue_h
 
-class PlayerValue : public cocos2d::Ref
+#include "cocos2d.h"
+
+class PlayerValue
 {
-public:
+private:
     PlayerValue(); //コンストラクタ
-    static PlayerValue* create(); //インスタンス生成
+    static PlayerValue* m_instance;
+    
+public:
+    ~PlayerValue();
+    static PlayerValue* getInstance();
+    static void deleteInstance();
     
     void initialActivation();   // 初回起動時
     
     void dataLoad();
     void dataSave();
     
-protected:
     CC_SYNTHESIZE(int, m_coin, Coin);           //ユーザーが保有しているコイン
     CC_SYNTHESIZE(int, m_clearMap, ClearMap);   //ユーザーがクリアしているマップ
 };

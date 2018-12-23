@@ -8,6 +8,8 @@
 #ifndef __FIREBASE_HELPER_H__
 #define __FIREBASE_HELPER_H__
 
+#ifdef __USE_FIREBASE__
+
 #include "firebase/admob/types.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
@@ -23,4 +25,5 @@ extern "C" {
 // to the root view of the view controller.
 firebase::admob::AdParent getAdParent();
 
+#endif // __USE_FIREBASE__
 #endif // __FIREBASE_HELPER_H__

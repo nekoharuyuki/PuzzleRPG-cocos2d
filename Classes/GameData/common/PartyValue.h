@@ -8,11 +8,18 @@
 #ifndef PartyValue_h
 #define PartyValue_h
 
-class PartyValue : public cocos2d::Ref
+#include "cocos2d.h"
+
+class PartyValue
 {
-public:
+private:
     PartyValue(); //コンストラクタ
-    static PartyValue* create(); //インスタンス生成
+    static PartyValue* m_instance;
+    
+public:
+    ~PartyValue();
+    static PartyValue* getInstance();
+    static void deleteInstance();
     
     void initialActivation();   // 初回起動時
     
@@ -23,8 +30,6 @@ public:
     std::string getPartyCharLv(int charId);
     
     int getTotalHp();
-    
-protected:
     
     // Party
     CC_SYNTHESIZE(int, m_partyChar1DataCharId, PartyChar1DataCharId);
