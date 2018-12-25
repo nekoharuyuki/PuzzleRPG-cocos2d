@@ -8,6 +8,7 @@
 #include "PartyValue.h"
 #include "AudioManager.h"
 #include "VisibleRect.h"
+#include "DamageEffect.h"
 
 #define PUZZLE_NUM_X 6
 #define PUZZLE_NUM_Y 6
@@ -329,6 +330,16 @@ void PuzzleGameScene::checksLinedPuzzles()
                 calculateDamage(chainNum, healing, damage, attackers, enemyData);
                 int afterHp = enemyData->getHp() - damage;
                 enemyData->setHp(afterHp);
+                
+                // ダメージ表示
+                DamageEffect* effect = DamageEffect::create();
+                if(effect){
+                    effect->setPosition(Vec2(m_enemys.at(index)->getParent()->getPositionX(),
+                                             m_enemys.at(index)->getParent()->getPositionY()));
+                    effect->showEffect(afterHp);
+                    this->addChild(effect, Damage);
+                }
+                
                 break;
             }
             //HPが0のメンバーを選択した場合は、再度選択し直す
