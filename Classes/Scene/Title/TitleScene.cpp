@@ -4,7 +4,7 @@
 #include "OtherScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-
+#include "PlayerValue.h"
 #include "GameDataSQL.h"
 #include "AudioManager.h"
 
@@ -43,13 +43,6 @@ bool TitleScene::init()
     if(rootNode == nullptr){
         return false;
     }
-    addChild(rootNode);
-    
-    // タイトルBGM再生
-    AudioManager::getInstance()->playBgm("all_bgm");
-    
-    // スタートボタンが押された時の処理
-    startButtonPress(rootNode);
     
     // ローカルDBデータの有無を確認
     if(!GameDataSQL::hasData()){
@@ -57,9 +50,29 @@ bool TitleScene::init()
         auto mypageButton = rootNode->getChildByName<ui::Button*>("ui_mypage_btn");
         mypageButton->setVisible(false);
     } else {
+        // サウンドの再生
+        PlayerValue::getInstance()->dataLoad();
+        if(PlayerValue::getInstance()->getSeOnOff()) {
+            AudioManager::getInstance()->setSeVolume(100);
+        } else {
+            AudioManager::getInstance()->setSeVolume(0);
+        }
+        if(PlayerValue::getInstance()->getBgmOnOff()){
+            AudioManager::getInstance()->setBgmVolume(100);
+        }else{
+            AudioManager::getInstance()->setBgmVolume(0);
+        }
         // マイページのボタンが押された時の処理
         mypageButtonPress(rootNode);
     }
+    
+    addChild(rootNode);
+    
+    // タイトルBGM再生
+    AudioManager::getInstance()->playBgm("all_bgm");
+    
+    // スタートボタンが押された時の処理
+    startButtonPress(rootNode);
     
     // その他のボタンが押された時の処理
     otherButtonPress(rootNode);
