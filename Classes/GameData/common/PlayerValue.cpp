@@ -46,6 +46,8 @@ void PlayerValue::initialActivation()
     
     GameDataSQL::sqliteSetValueForKey("Coin", "100");
     GameDataSQL::sqliteSetValueForKey("ClearMap", "0");
+    GameDataSQL::sqliteSetValueForKey("SeOnOff", "1");
+    GameDataSQL::sqliteSetValueForKey("BgmOnOff", "1");
     dataLoad();
 }
 
@@ -55,10 +57,17 @@ void PlayerValue::dataLoad()
     m_coin = atoi(coin);
     const char *clearMap = GameDataSQL::sqliteGetValueForKey("ClearMap");
     m_clearMap = atoi(clearMap);
+    
+    const char *seOnOff = GameDataSQL::sqliteGetValueForKey("SeOnOff");
+    m_seOnOff = atoi(seOnOff);
+    const char *bgmOnOff = GameDataSQL::sqliteGetValueForKey("BgmOnOff");
+    m_bgmOnOff = atoi(bgmOnOff);
 }
 
 void PlayerValue::dataSave()
 {
     GameDataSQL::sqliteUpdateValueForKey("Coin", std::to_string(m_coin).c_str());
     GameDataSQL::sqliteUpdateValueForKey("ClearMap", std::to_string(m_clearMap).c_str());
+    GameDataSQL::sqliteUpdateValueForKey("SeOnOff", std::to_string(m_seOnOff).c_str());
+    GameDataSQL::sqliteUpdateValueForKey("BgmOnOff", std::to_string(m_bgmOnOff).c_str());
 }
