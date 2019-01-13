@@ -39,6 +39,7 @@ protected:
         EnemyHp,
         Char,
         CharHp,
+        Damage,
         Ball,
         Result,
     };

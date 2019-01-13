@@ -113,6 +113,8 @@
 		80C9945A2141D47000C10E96 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 80C9944C2141D47000C10E96 /* sound */; };
 		80C9946B2141D52E00C10E96 /* libluacocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C994622141D4BF00C10E96 /* libluacocos2d Mac.a */; };
 		80C9946C2141D53B00C10E96 /* libluacocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C994642141D4BF00C10E96 /* libluacocos2d iOS.a */; };
+		80D5EEDB21D13387001F80EC /* DamageEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80D5EED921D13387001F80EC /* DamageEffect.cpp */; };
+		80D5EEDC21D13387001F80EC /* DamageEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80D5EED921D13387001F80EC /* DamageEffect.cpp */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		9941501F8E4EEF6ADE151E9B /* libPods-PuzzleRPG-mobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B9346A472DCCC2EEAA89F7 /* libPods-PuzzleRPG-mobile.a */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -313,6 +315,8 @@
 		80C9944B2141D46F00C10E96 /* system */ = {isa = PBXFileReference; lastKnownFileType = folder; path = system; sourceTree = "<group>"; };
 		80C9944C2141D47000C10E96 /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
 		80C9945B2141D4BF00C10E96 /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "../cocos2d/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
+		80D5EED921D13387001F80EC /* DamageEffect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DamageEffect.cpp; sourceTree = "<group>"; };
+		80D5EEDA21D13387001F80EC /* DamageEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DamageEffect.h; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -581,6 +585,8 @@
 				80C993B32141D42A00C10E96 /* BattleChar.h */,
 				80C993B92141D42A00C10E96 /* PuzzleSprite.cpp */,
 				80C993BA2141D42A00C10E96 /* PuzzleSprite.h */,
+				80D5EED921D13387001F80EC /* DamageEffect.cpp */,
+				80D5EEDA21D13387001F80EC /* DamageEffect.h */,
 			);
 			path = Puzzle;
 			sourceTree = "<group>";
@@ -998,6 +1004,7 @@
 				80C8626A21455CDF006FBDCD /* FirebaseHelper.cpp in Sources */,
 				80C9942C2141D42B00C10E96 /* MapData.cpp in Sources */,
 				80C9940C2141D42B00C10E96 /* BattleCharIconSprite.cpp in Sources */,
+				80D5EEDB21D13387001F80EC /* DamageEffect.cpp in Sources */,
 				80C994062141D42B00C10E96 /* ResultScene.cpp in Sources */,
 				80C994182141D42B00C10E96 /* OtherScene.cpp in Sources */,
 				8038F5DC216AEE860085F19C /* PlayerValue.cpp in Sources */,
@@ -1064,6 +1071,7 @@
 				80C994332141D42B00C10E96 /* AppDelegate.cpp in Sources */,
 				80C9942B2141D42B00C10E96 /* UserOptionData.cpp in Sources */,
 				80C994352141D42B00C10E96 /* AppInitalizer.cpp in Sources */,
+				80D5EEDC21D13387001F80EC /* DamageEffect.cpp in Sources */,
 				80C9941F2141D42B00C10E96 /* EvolutionScene.cpp in Sources */,
 				80C9940F2141D42B00C10E96 /* BattleChar.cpp in Sources */,
 			);
