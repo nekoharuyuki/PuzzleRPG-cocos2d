@@ -1,6 +1,6 @@
 ---
 name: Feature request（機能要求）
-about: Suggest an idea for this project（このプロジェクトのアイデアを提案）
+about: Suggest an idea for this project（このプロジェクトへのアイデアを提案します）
 title: ''
 labels: ''
 assignees: ''
@@ -13,7 +13,7 @@ A clear and concise description of what the problem is. Ex. I'm always frustrate
 
 **Describe the solution you'd like**
 A clear and concise description of what you want to happen.
-あなたが望む解決策を説明してください。何を解決・改善させたいのか明確で簡潔な説明をしてください。
+あなたが望む解決策を説明してください。何をどのように解決・改善させたいのか明確で簡潔な説明をしてください。
 
 **Describe alternatives you've considered**
 A clear and concise description of any alternative solutions or features you've considered.
