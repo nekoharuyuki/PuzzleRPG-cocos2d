@@ -59,7 +59,7 @@
             <PrePosition X="0.4887" Y="0.0750" />
             <PreSize X="0.2962" Y="0.0867" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <DisabledFileData Type="Default" Path="asset/Default/Button_Disable.png" Plist="" />
             <PressedFileData Type="Normal" Path="asset/result/btn_questmap_on.png" Plist="" />
             <NormalFileData Type="Normal" Path="asset/result/btn_questmap.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
