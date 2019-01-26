@@ -1,0 +1,281 @@
+<Solution>
+  <PropertyGroup Name="NewCocosProject" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="battle">
+          <Image Name="bar_base.png" />
+          <Image Name="bg_bameunder.png" />
+          <Image Name="enemy_base.png" />
+          <Image Name="gameicon_1.png" />
+          <Image Name="gametitle_1.png" />
+          <Image Name="gametitle_2.png" />
+          <Image Name="gametitle_3.png" />
+          <Image Name="gametitle_4.png" />
+          <Image Name="hpbar_base.png" />
+          <Image Name="hpbar_freme.png" />
+          <Image Name="hpbar_naka.png" />
+          <Image Name="hpbar_naka_2.png" />
+          <Image Name="icon_Attribute_2.png" />
+          <Image Name="icon_Attribute_3.png" />
+          <Image Name="icon_Attribute_4.png" />
+          <Image Name="icon_Attribute_5.png" />
+          <Image Name="spbar_naka.png" />
+          <Image Name="sphpbar_base.png" />
+        </Folder>
+        <Folder Name="battlebg">
+          <Folder Name="battle_scene1">
+            <Image Name="bg.png" />
+            <Image Name="innetree_00.png" />
+            <Image Name="innetree_01.png" />
+            <Image Name="lawn_00.png" />
+            <Image Name="lawn_01.png" />
+            <Image Name="lawn_02.png" />
+            <Image Name="lawn_base.png" />
+            <Image Name="lawn_inner_00.png" />
+            <Image Name="lawn_inner_01.png" />
+            <Image Name="lawn_inner_02.png" />
+            <Image Name="lawn_middle_00.png" />
+            <Image Name="lawn_middle_01.png" />
+            <Image Name="lawn_middle_02.png" />
+            <Image Name="lawn_middle_03.png" />
+            <Image Name="tree_00.png" />
+            <Image Name="tree_01.png" />
+            <Image Name="tree_02.png" />
+          </Folder>
+          <Folder Name="battle_scene2">
+            <Image Name="bg.png" />
+            <Image Name="cactus_00.png" />
+            <Image Name="cactus_01.png" />
+            <Image Name="rock_00.png" />
+            <Image Name="rock_01.png" />
+            <Image Name="sand_base_00.png" />
+            <Image Name="sand_base_01.png" />
+            <Image Name="sand_base_02.png" />
+            <Image Name="skull_00.png" />
+            <Image Name="skull_01.png" />
+          </Folder>
+          <Folder Name="battle_scene3">
+            <Image Name="backrock_00.png" />
+            <Image Name="backrock_01.png" />
+            <Image Name="backrock_02.png" />
+            <Image Name="backrock_03.png" />
+            <Image Name="backrock_04.png" />
+            <Image Name="bg.png" />
+            <Image Name="bg_bameunder.png" />
+            <Image Name="frontrock_00.png" />
+            <Image Name="frontrock_01.png" />
+            <Image Name="frontrock_02.png" />
+            <Image Name="frontrock_03.png" />
+            <Image Name="frontrock_04.png" />
+            <Image Name="gate.png" />
+            <Image Name="rood.png" />
+            <Image Name="stone_00.png" />
+            <Image Name="stone_01.png" />
+            <Image Name="stone_02.png" />
+          </Folder>
+          <Image Name="gametitle_1.png" />
+          <Image Name="gametitle_2.png" />
+          <Image Name="gametitle_3.png" />
+          <Image Name="gametitle_4.png" />
+        </Folder>
+        <Folder Name="char">
+          <Image Name="icon_chara_b_1.png" />
+          <Image Name="icon_chara_b_2.png" />
+          <Image Name="icon_chara_b_3.png" />
+          <Image Name="icon_chara_b_4.png" />
+          <Image Name="icon_chara_b_5.png" />
+          <Image Name="icon_chara_b_6.png" />
+        </Folder>
+        <Folder Name="charselect">
+          <Image Name="btn_adventure.png" />
+          <Image Name="btn_adventure_on.png" />
+          <Image Name="btn_back.png" />
+          <Image Name="btn_back_on.png" />
+          <Image Name="btn_yes.png" />
+          <Image Name="btn_yes_on.png" />
+          <Image Name="chara_princessselect.png" />
+          <Image Name="popup_princessselect_1.png" />
+          <Image Name="popup_princessselect_2.png" />
+          <Image Name="text_princessselect.png" />
+          <Image Name="title_princessselect.png" />
+        </Folder>
+        <Folder Name="effect">
+          <PlistParticleFile Name="Fire_texture1.plist" />
+          <PlistParticleFile Name="Fire_texture2.plist" />
+          <PlistParticleFile Name="Fire_texture3.plist" />
+          <PlistParticleFile Name="Fire_texture4.plist" />
+          <PlistParticleFile Name="Heal_texture1.plist" />
+          <PlistParticleFile Name="Slip_texture1.plist" />
+          <PlistParticleFile Name="Water_texture1.plist" />
+          <PlistParticleFile Name="Water_texture2.plist" />
+          <PlistParticleFile Name="Water_texture3.plist" />
+          <PlistParticleFile Name="Water_texture4.plist" />
+          <PlistParticleFile Name="Wood_texture1.plist" />
+          <PlistParticleFile Name="Wood_texture2.plist" />
+          <PlistParticleFile Name="Wood_texture3.plist" />
+          <PlistParticleFile Name="Wood_texture4.plist" />
+        </Folder>
+        <Folder Name="evolution">
+          <Image Name="btn_back.png" />
+          <Image Name="btn_back_on.png" />
+          <Image Name="btn_evolution.png" />
+          <Image Name="btn_evolution_off.png" />
+          <Image Name="btn_evolution_on.png" />
+          <Image Name="btn_rightleft.png" />
+          <Image Name="evolution_base.png" />
+          <Image Name="evolution_material.png" />
+          <Image Name="evolution_possessionmaterial.png" />
+          <Image Name="icon_charararity_b.png" />
+          <Image Name="title_evolution.png" />
+        </Folder>
+        <Folder Name="fighting">
+          <Image Name="bar_base.png" />
+          <Image Name="hpbar_base.png" />
+          <Image Name="hpbar_freme.png" />
+          <Image Name="hpbar_naka.png" />
+          <Image Name="hpbar_naka_2.png" />
+          <Image Name="spbar_naka.png" />
+          <Image Name="sphpbar_base.png" />
+        </Folder>
+        <Folder Name="mypage">
+          <Image Name="popup_mypage_party.png" />
+          <Image Name="popup_mypage_status.png" />
+          <Image Name="title_mypage.png" />
+        </Folder>
+        <Folder Name="other">
+          <Image Name="btn_off.png" />
+          <Image Name="btn_off_off.png" />
+          <Image Name="btn_on.png" />
+          <Image Name="btn_on_off.png" />
+          <Image Name="btn_titleback.png" />
+          <Image Name="btn_titleback_on.png" />
+          <Image Name="popup_other.png" />
+          <Image Name="title_other.png" />
+        </Folder>
+        <Folder Name="party">
+          <Image Name="btn_back.png" />
+          <Image Name="btn_back_on.png" />
+          <Image Name="btn_no.png" />
+          <Image Name="btn_no_on.png" />
+          <Image Name="btn_sell.png" />
+          <Image Name="btn_sell_on.png" />
+          <Image Name="btn_yes.png" />
+          <Image Name="btn_yes_on.png" />
+          <Image Name="chara_statusbase.png" />
+          <Image Name="paty_base.png" />
+          <Image Name="paty_possessionmaterial.png" />
+          <Image Name="sell_back.png" />
+          <Image Name="sell_base.png" />
+          <Image Name="title_paty.png" />
+          <Image Name="title_status.png" />
+        </Folder>
+        <Folder Name="quest">
+          <Image Name="bg.png" />
+          <Image Name="btn_back.png" />
+          <Image Name="btn_back_on.png" />
+          <Image Name="btn_start.png" />
+          <Image Name="btn_start_off.png" />
+          <Image Name="btn_start_on.png" />
+          <Image Name="icon_quest_1_anlock1.png" />
+          <Image Name="icon_quest_1_anlock2.png" />
+          <Image Name="icon_quest_1_lock.png" />
+          <Image Name="icon_quest_2_anlock1.png" />
+          <Image Name="icon_quest_2_anlock2.png" />
+          <Image Name="icon_quest_2_lock.png" />
+          <Image Name="popup_quest.png" />
+          <Image Name="title_questmap.png" />
+        </Folder>
+        <Folder Name="result">
+          <Image Name="btn_questmap.png" />
+          <Image Name="btn_questmap_on.png" />
+          <Image Name="popup_result.png" />
+          <Image Name="resulttext_clear.png" />
+          <Image Name="title_result.png" />
+        </Folder>
+        <Folder Name="shared">
+          <Image Name="Attribute_1.png" />
+          <Image Name="Attribute_2.png" />
+          <Image Name="Attribute_3.png" />
+          <Image Name="bg.png" />
+          <Image Name="btn_evolution.png" />
+          <Image Name="btn_evolution_on.png" />
+          <Image Name="btn_mypage.png" />
+          <Image Name="btn_mypage_on.png" />
+          <Image Name="btn_other.png" />
+          <Image Name="btn_other_on.png" />
+          <Image Name="btn_party.png" />
+          <Image Name="btn_party_on.png" />
+          <Image Name="btn_quest.png" />
+          <Image Name="btn_quest_on.png" />
+          <Image Name="btn_rightleft.png" />
+          <Image Name="btn_synthetic.png" />
+          <Image Name="btn_synthetic_on.png" />
+          <Image Name="icon_charararity_b.png" />
+          <Image Name="title_base.png" />
+        </Folder>
+        <Folder Name="ss">
+          <Image Name="ss_BattleScene.jpg" />
+          <Image Name="ss_BattleScene_bg1.jpg" />
+          <Image Name="ss_BattleScene_bg2.jpg" />
+          <Image Name="ss_BattleScene_bg3.jpg" />
+          <Image Name="ss_CharacterStatus.jpg" />
+          <Image Name="ss_CharacterStatusBuy.jpg" />
+          <Image Name="ss_CharselectScene_1.jpg" />
+          <Image Name="ss_CharselectScene_2.jpg" />
+          <Image Name="ss_CharselectScene_3.jpg" />
+          <Image Name="ss_EvolutionScene.jpg" />
+          <Image Name="ss_EvolutionSceneConfirmation.jpg" />
+          <Image Name="ss_MypageScene.jpg" />
+          <Image Name="ss_OtherScene.jpg" />
+          <Image Name="ss_PartyScene.jpg" />
+          <Image Name="ss_QuestScene.jpg" />
+          <Image Name="ss_QuestScene_bg.jpg" />
+          <Image Name="ss_QuestSceneConfirmation.jpg" />
+          <Image Name="ss_ResultScene.jpg" />
+          <Image Name="ss_SyntheticScene.jpg" />
+          <Image Name="ss_SyntheticSceneConfirmation.jpg" />
+          <Image Name="ss_TitleScene.jpg" />
+        </Folder>
+        <Folder Name="synthetic">
+          <Image Name="Attribute_1.png" />
+          <Image Name="Attribute_2.png" />
+          <Image Name="Attribute_3.png" />
+          <Image Name="btn_back.png" />
+          <Image Name="btn_back_on.png" />
+          <Image Name="btn_rightleft.png" />
+          <Image Name="btn_synthetic.png" />
+          <Image Name="btn_synthetic_off.png" />
+          <Image Name="btn_synthetic_on.png" />
+          <Image Name="icon_charararity_b.png" />
+          <Image Name="synthetic_base.png" />
+          <Image Name="synthetic_material.png" />
+          <Image Name="synthetic_possessionmaterial.png" />
+          <Image Name="title_synthetic.png" />
+        </Folder>
+        <Folder Name="title">
+          <Image Name="btn_start.png" />
+          <Image Name="btn_start_on.png" />
+          <Image Name="title_bg.png" />
+        </Folder>
+        <Project Name="BattleScene.csd" Type="Scene" />
+        <Project Name="CharIconNode.csd" Type="Node" />
+        <Project Name="CharselectScene.csd" Type="Scene" />
+        <Project Name="EnemyBattleAnim.csd" Type="Node" />
+        <Project Name="EvolutionScene.csd" Type="Scene" />
+        <Project Name="FieldNode01.csd" Type="Node" />
+        <Project Name="Menu.csd" Type="Scene" />
+        <Project Name="MypageScene.csd" Type="Scene" />
+        <Project Name="OtherScene.csd" Type="Scene" />
+        <Project Name="PartyScene.csd" Type="Scene" />
+        <Project Name="PlayerBattleAnim.csd" Type="Node" />
+        <Project Name="QuestIcon1Node.csd" Type="Node" />
+        <Project Name="QuestIcon2Node.csd" Type="Node" />
+        <Project Name="QuestScene.csd" Type="Scene" />
+        <Project Name="ResultScene.csd" Type="Scene" />
+        <Project Name="SyntheticScene.csd" Type="Scene" />
+        <Project Name="TitleScene.csd" Type="Scene" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

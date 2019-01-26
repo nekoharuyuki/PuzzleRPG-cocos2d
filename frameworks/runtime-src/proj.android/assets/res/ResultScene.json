@@ -1,0 +1,497 @@
+{
+  "ID": "9e06bae8-a80b-4f91-9340-4edb84c34080",
+  "Version": "2.3.3.0",
+  "Name": "ResultScene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "shared/bg.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 400.0,
+              "Y": 300.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Tag": 74,
+            "ActionTag": 1717102351,
+            "Size": {
+              "X": 800.0,
+              "Y": 600.0
+            },
+            "Name": "bg",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "result/title_result.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleY": 1.0
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 600.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 1.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "RightMargin": 470.0,
+            "BottomMargin": 523.0,
+            "Tag": 311,
+            "ActionTag": 636100052,
+            "Size": {
+              "X": 330.0,
+              "Y": 77.0
+            },
+            "Name": "title_result",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "result/resulttext_clear.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 408.0006,
+              "Y": 458.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.51,
+              "Y": 0.7642
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 107.0006,
+            "RightMargin": 90.9994,
+            "TopMargin": 85.0,
+            "BottomMargin": 402.0,
+            "Tag": 312,
+            "ActionTag": 715910528,
+            "Size": {
+              "X": 602.0,
+              "Y": 113.0
+            },
+            "Name": "resulttext_clear",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "result/popup_result.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 403.9996,
+              "Y": 241.4997
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.505,
+              "Y": 0.4025
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 80.9996,
+            "RightMargin": 73.0004,
+            "TopMargin": 206.5003,
+            "BottomMargin": 89.4997,
+            "Tag": 313,
+            "ActionTag": 625317686,
+            "Size": {
+              "X": 646.0,
+              "Y": 304.0
+            },
+            "Name": "popup_result",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "result/btn_questmap_on.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "result/btn_questmap.png",
+              "Plist": ""
+            },
+            "Scale9Width": 237,
+            "Scale9Height": 52,
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 0.0,
+            "ShadowOffsetY": 0.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 390.9995,
+              "Y": 45.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4887,
+              "Y": 0.075
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 272.4995,
+            "RightMargin": 290.5005,
+            "TopMargin": 529.0,
+            "BottomMargin": 19.0,
+            "Tag": 314,
+            "ActionTag": 211760257,
+            "Size": {
+              "X": 237.0,
+              "Y": 52.0
+            },
+            "Name": "QuestMap_btn",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 173.4999,
+              "Y": 279.4994
+            },
+            "Scale": {
+              "ScaleX": 0.85,
+              "ScaleY": 0.85
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.2169,
+              "Y": 0.4658
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 173.4999,
+            "RightMargin": 626.5001,
+            "TopMargin": 320.5006,
+            "BottomMargin": 279.4994,
+            "Tag": 1622,
+            "ActionTag": 1595262655,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "char0",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 287.4999,
+              "Y": 279.4993
+            },
+            "Scale": {
+              "ScaleX": 0.85,
+              "ScaleY": 0.85
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.3594,
+              "Y": 0.4658
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 287.4999,
+            "RightMargin": 512.5001,
+            "TopMargin": 320.5007,
+            "BottomMargin": 279.4993,
+            "Tag": 1624,
+            "ActionTag": -2014521503,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "char1",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 402.499,
+              "Y": 279.4993
+            },
+            "Scale": {
+              "ScaleX": 0.85,
+              "ScaleY": 0.85
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.5031,
+              "Y": 0.4658
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 402.499,
+            "RightMargin": 397.501,
+            "TopMargin": 320.5007,
+            "BottomMargin": 279.4993,
+            "Tag": 1626,
+            "ActionTag": 587930924,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "char2",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 517.4978,
+              "Y": 279.4993
+            },
+            "Scale": {
+              "ScaleX": 0.85,
+              "ScaleY": 0.85
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.6469,
+              "Y": 0.4658
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 517.4978,
+            "RightMargin": 282.5022,
+            "TopMargin": 320.5007,
+            "BottomMargin": 279.4993,
+            "Tag": 1628,
+            "ActionTag": -520989205,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "char3",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 632.4992,
+              "Y": 279.4993
+            },
+            "Scale": {
+              "ScaleX": 0.85,
+              "ScaleY": 0.85
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.7906,
+              "Y": 0.4658
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 632.4992,
+            "RightMargin": 167.5008,
+            "TopMargin": 320.5007,
+            "BottomMargin": 279.4993,
+            "Tag": 1630,
+            "ActionTag": 2017454727,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "char4",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "999999999",
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 0.0,
+            "ShadowOffsetY": 0.0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 389.5,
+              "Y": 140.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4869,
+              "Y": 0.2333
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 389.5,
+            "RightMargin": 310.5,
+            "TopMargin": 448.5,
+            "BottomMargin": 128.5,
+            "Tag": 365,
+            "ActionTag": -756243148,
+            "Size": {
+              "X": 100.0,
+              "Y": 23.0
+            },
+            "Name": "cointext",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 800.0,
+          "Y": 600.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Default/Button_Disable.png",
+        "result/btn_questmap.png",
+        "result/btn_questmap_on.png",
+        "result/popup_result.png",
+        "result/resulttext_clear.png",
+        "result/title_result.png",
+        "shared/bg.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}

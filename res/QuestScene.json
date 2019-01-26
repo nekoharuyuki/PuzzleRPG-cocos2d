@@ -1,0 +1,5449 @@
+{
+  "ID": "38bbf482-962b-4856-be85-ca7b57af37e6",
+  "Version": "2.3.4",
+  "Name": "QuestScene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [
+          {
+            "ActionTag": -220973729,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 177.5002,
+                "Y": 180.5,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -220973729,
+            "Property": "Scale",
+            "Frames": [
+              {
+                "X": 1.0,
+                "Y": 1.0,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -220973729,
+            "Property": "RotationSkew",
+            "Frames": [
+              {
+                "X": 0.0,
+                "Y": 0.0,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1756597664,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -25911337,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1061069602,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1574053889,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -12826775,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1095214520,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 566701188,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1664186918,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1399062978,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -393591506,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1994073196,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 76018760,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1196256806,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 802776687,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -196229469,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1893999813,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1393708307,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 922856638,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1046618496,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -134644122,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -2025023032,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1159262959,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1137027285,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1205076731,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -115437368,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1986943152,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 494319350,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -471306716,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 260796134,
+            "Property": "VisibleForFrame",
+            "Frames": [
+              {
+                "Value": true,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "BoolFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          }
+        ],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "quest/bg.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 400.0,
+              "Y": 300.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 75,
+            "ActionTag": -1471467713,
+            "Size": {
+              "X": 800.0,
+              "Y": 600.0
+            },
+            "Name": "bg",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "quest/title_questmap.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleY": 1.0
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 600.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 1.0
+            },
+            "PreSize": {
+              "X": 0.4125,
+              "Y": 0.1283
+            },
+            "RightMargin": 470.0,
+            "BottomMargin": 523.0,
+            "Tag": 77,
+            "ActionTag": -1977389773,
+            "Size": {
+              "X": 330.0,
+              "Y": 77.0
+            },
+            "Name": "title_questmap",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 177.5002,
+              "Y": 180.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.2219,
+              "Y": 0.3008
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 177.5002,
+            "RightMargin": 622.4998,
+            "TopMargin": 419.5,
+            "BottomMargin": 180.5,
+            "Tag": 1490,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1492,
+                "ActionTag": 1668036294,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1493,
+                "ActionTag": 155030073,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -220973729,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_1",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 246.0002,
+              "Y": 177.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.3075,
+              "Y": 0.2958
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 246.0002,
+            "RightMargin": 553.9998,
+            "TopMargin": 422.5,
+            "BottomMargin": 177.5,
+            "Tag": 1494,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1495,
+                "ActionTag": -518169319,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1496,
+                "ActionTag": 2023090927,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 1756597664,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_2",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 310.5004,
+              "Y": 162.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.3881,
+              "Y": 0.2708
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 310.5004,
+            "RightMargin": 489.4996,
+            "TopMargin": 437.5,
+            "BottomMargin": 162.5,
+            "Tag": 1497,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1498,
+                "ActionTag": -1847417604,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1499,
+                "ActionTag": 1481414268,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -25911337,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_3",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 369.0,
+              "Y": 144.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.4613,
+              "Y": 0.2408
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 369.0,
+            "RightMargin": 431.0,
+            "TopMargin": 455.5,
+            "BottomMargin": 144.5,
+            "Tag": 1500,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1501,
+                "ActionTag": -811541905,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1502,
+                "ActionTag": -1580534495,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 1061069602,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_4",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 431.4998,
+              "Y": 151.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.5394,
+              "Y": 0.2525
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 431.4998,
+            "RightMargin": 368.5002,
+            "TopMargin": 448.5,
+            "BottomMargin": 151.5,
+            "Tag": 1503,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1504,
+                "ActionTag": 1459698586,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1505,
+                "ActionTag": 1420663300,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 1574053889,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_5",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 496.9989,
+              "Y": 161.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.6212,
+              "Y": 0.2692
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 496.9989,
+            "RightMargin": 303.0011,
+            "TopMargin": 438.5,
+            "BottomMargin": 161.5,
+            "Tag": 1506,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1507,
+                "ActionTag": 1908227461,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1508,
+                "ActionTag": -706756690,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -12826775,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_6",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 562.499,
+              "Y": 162.4999
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.7031,
+              "Y": 0.2708
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 562.499,
+            "RightMargin": 237.501,
+            "TopMargin": 437.5001,
+            "BottomMargin": 162.4999,
+            "Tag": 1509,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1510,
+                "ActionTag": 1863927353,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1511,
+                "ActionTag": -650542238,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -1095214520,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_7",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 620.9976,
+              "Y": 171.4999
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.7762,
+              "Y": 0.2858
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 620.9976,
+            "RightMargin": 179.0024,
+            "TopMargin": 428.5001,
+            "BottomMargin": 171.4999,
+            "Tag": 1512,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1513,
+                "ActionTag": 995369826,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1514,
+                "ActionTag": -1373687704,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 566701188,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_8",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 661.4978,
+              "Y": 203.4998
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.8269,
+              "Y": 0.3392
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 661.4978,
+            "RightMargin": 138.5022,
+            "TopMargin": 396.5002,
+            "BottomMargin": 203.4998,
+            "Tag": 1515,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1516,
+                "ActionTag": -1467809184,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1517,
+                "ActionTag": 1093372743,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -1664186918,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_9",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 651.5,
+              "Y": 245.5003
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.8144,
+              "Y": 0.4092
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 651.5,
+            "RightMargin": 148.5,
+            "TopMargin": 354.4997,
+            "BottomMargin": 245.5003,
+            "Tag": 1518,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_2_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_2_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_2_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1519,
+                "ActionTag": 1935717977,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_2_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1520,
+                "ActionTag": -1131655983,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 1399062978,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_10",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 611.5,
+              "Y": 277.5001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.7644,
+              "Y": 0.4625
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 611.5,
+            "RightMargin": 188.5,
+            "TopMargin": 322.4999,
+            "BottomMargin": 277.5001,
+            "Tag": 1521,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1522,
+                "ActionTag": 1120326642,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1523,
+                "ActionTag": 532405775,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -393591506,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_11",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 553.1667,
+              "Y": 292.5001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.6915,
+              "Y": 0.4875
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 553.1667,
+            "RightMargin": 246.8333,
+            "TopMargin": 307.4999,
+            "BottomMargin": 292.5001,
+            "Tag": 1524,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1525,
+                "ActionTag": 1094356015,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1526,
+                "ActionTag": -552540758,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -1994073196,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_12",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 488.8334,
+              "Y": 290.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.611,
+              "Y": 0.4842
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 488.8334,
+            "RightMargin": 311.1666,
+            "TopMargin": 309.5,
+            "BottomMargin": 290.5,
+            "Tag": 1527,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1528,
+                "ActionTag": -2016339565,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1529,
+                "ActionTag": 1017764540,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 76018760,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_13",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 431.5,
+              "Y": 272.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.5394,
+              "Y": 0.4542
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 431.5,
+            "RightMargin": 368.5,
+            "TopMargin": 327.5,
+            "BottomMargin": 272.5,
+            "Tag": 1530,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1531,
+                "ActionTag": -1435421786,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1532,
+                "ActionTag": -878534230,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 1196256806,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_14",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 364.1666,
+              "Y": 273.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0112
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.4552,
+              "Y": 0.4558
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 364.1666,
+            "RightMargin": 435.8334,
+            "TopMargin": 326.5,
+            "BottomMargin": 273.5,
+            "Tag": 1533,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1534,
+                "ActionTag": -1641829831,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1535,
+                "ActionTag": -1465447761,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 802776687,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_15",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 309.8332,
+              "Y": 294.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.3873,
+              "Y": 0.4908
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 309.8332,
+            "RightMargin": 490.1668,
+            "TopMargin": 305.5,
+            "BottomMargin": 294.5,
+            "Tag": 1536,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1537,
+                "ActionTag": -2071157087,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1538,
+                "ActionTag": 631800560,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -196229469,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_16",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 246.4997,
+              "Y": 305.4997
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.3081,
+              "Y": 0.5092
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 246.4997,
+            "RightMargin": 553.5003,
+            "TopMargin": 294.5003,
+            "BottomMargin": 305.4997,
+            "Tag": 1539,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1540,
+                "ActionTag": -1958290606,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1541,
+                "ActionTag": -805545764,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 1893999813,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_17",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 181.1665,
+              "Y": 307.4998
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.2265,
+              "Y": 0.5125
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 181.1665,
+            "RightMargin": 618.8335,
+            "TopMargin": 292.5002,
+            "BottomMargin": 307.4998,
+            "Tag": 1542,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1543,
+                "ActionTag": -1990942244,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1544,
+                "ActionTag": 681560189,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 1393708307,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_18",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 122.8324,
+              "Y": 322.5002
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.1535,
+              "Y": 0.5375
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 122.8324,
+            "RightMargin": 677.1676,
+            "TopMargin": 277.4998,
+            "BottomMargin": 322.5002,
+            "Tag": 1545,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1546,
+                "ActionTag": 679766914,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1547,
+                "ActionTag": 1103908095,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 922856638,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_19",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 113.5,
+              "Y": 369.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.1419,
+              "Y": 0.6158
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 113.5,
+            "RightMargin": 686.5,
+            "TopMargin": 230.5,
+            "BottomMargin": 369.5,
+            "Tag": 1551,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_2_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_2_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_2_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1552,
+                "ActionTag": 1639044529,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_2_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1553,
+                "ActionTag": -332920379,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 1046618496,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_20",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 166.4998,
+              "Y": 395.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.2081,
+              "Y": 0.6592
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 166.4998,
+            "RightMargin": 633.5002,
+            "TopMargin": 204.5,
+            "BottomMargin": 395.5,
+            "Tag": 1554,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1555,
+                "ActionTag": -1645445410,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1556,
+                "ActionTag": 1779583678,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -134644122,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_21",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 230.1667,
+              "Y": 390.5001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.2877,
+              "Y": 0.6508
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 230.1667,
+            "RightMargin": 569.8333,
+            "TopMargin": 209.4999,
+            "BottomMargin": 390.5001,
+            "Tag": 1557,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1558,
+                "ActionTag": -1357283119,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1559,
+                "ActionTag": 667270973,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -2025023032,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_22",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 289.8334,
+              "Y": 399.5002
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.3623,
+              "Y": 0.6658
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 289.8334,
+            "RightMargin": 510.1666,
+            "TopMargin": 200.4998,
+            "BottomMargin": 399.5002,
+            "Tag": 1560,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1561,
+                "ActionTag": 1316062767,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1562,
+                "ActionTag": 1117882116,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 1159262959,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_23",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 341.5001,
+              "Y": 421.5001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.4269,
+              "Y": 0.7025
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 341.5001,
+            "RightMargin": 458.4999,
+            "TopMargin": 178.4999,
+            "BottomMargin": 421.5001,
+            "Tag": 1563,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1564,
+                "ActionTag": 60874757,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1565,
+                "ActionTag": -1469856020,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -1137027285,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_24",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 399.1665,
+              "Y": 424.5001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.499,
+              "Y": 0.7075
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 399.1665,
+            "RightMargin": 400.8335,
+            "TopMargin": 175.4999,
+            "BottomMargin": 424.5001,
+            "Tag": 1566,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1567,
+                "ActionTag": 575757316,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1568,
+                "ActionTag": -1281079176,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 1205076731,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_25",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 454.833,
+              "Y": 433.5001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.5685,
+              "Y": 0.7225
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 454.833,
+            "RightMargin": 345.167,
+            "TopMargin": 166.4999,
+            "BottomMargin": 433.5001,
+            "Tag": 1569,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1570,
+                "ActionTag": -1463492638,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1571,
+                "ActionTag": -1110271187,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -115437368,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_26",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 512.5003,
+              "Y": 439.5001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.6406,
+              "Y": 0.7325
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 512.5003,
+            "RightMargin": 287.4997,
+            "TopMargin": 160.4999,
+            "BottomMargin": 439.5001,
+            "Tag": 1572,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1573,
+                "ActionTag": -1619517701,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1574,
+                "ActionTag": -1075834394,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 1986943152,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_27",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 564.1665,
+              "Y": 423.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.7052,
+              "Y": 0.7058
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 564.1665,
+            "RightMargin": 235.8335,
+            "TopMargin": 176.5,
+            "BottomMargin": 423.5,
+            "Tag": 1575,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1576,
+                "ActionTag": -600113490,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1577,
+                "ActionTag": 2105017482,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 494319350,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_28",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 617.8334,
+              "Y": 415.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.7723,
+              "Y": 0.6925
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 617.8334,
+            "RightMargin": 182.1666,
+            "TopMargin": 184.5,
+            "BottomMargin": 415.5,
+            "Tag": 1578,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1579,
+                "ActionTag": -1145943959,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_1_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1580,
+                "ActionTag": 1090127049,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -471306716,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_29",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 647.5,
+              "Y": 447.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.8094,
+              "Y": 0.7458
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 647.5,
+            "RightMargin": 152.5,
+            "TopMargin": 152.5,
+            "BottomMargin": 447.5,
+            "Tag": 1581,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_2_lock.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_2_anlock2.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_2_anlock1.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 49,
+                "Scale9Height": 50,
+                "DisplayState": false,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1582,
+                "ActionTag": 967340520,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "Name": "quest_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "quest/icon_quest_2_anlock2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -24.5,
+                "RightMargin": -24.5,
+                "TopMargin": -25.0,
+                "BottomMargin": -25.0,
+                "Tag": 1583,
+                "ActionTag": 1574095120,
+                "Size": {
+                  "X": 49.0,
+                  "Y": 50.0
+                },
+                "VisibleForFrame": false,
+                "Name": "anlock_Copy",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 260796134,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "quest_30",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "quest/popup_quest.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 409.5,
+              "Y": 296.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5119,
+              "Y": 0.4942
+            },
+            "PreSize": {
+              "X": 0.4888,
+              "Y": 0.595
+            },
+            "LeftMargin": 214.0,
+            "RightMargin": 195.0,
+            "TopMargin": 125.0,
+            "BottomMargin": 118.0,
+            "Tag": 80,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/btn_start_off.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/btn_start_on.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/btn_start.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 148,
+                "Scale9Height": 52,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 115.5,
+                  "Y": 66.5
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2954,
+                  "Y": 0.1863
+                },
+                "PreSize": {
+                  "X": 0.3785,
+                  "Y": 0.1457
+                },
+                "LeftMargin": 41.5,
+                "RightMargin": 201.5,
+                "TopMargin": 264.5,
+                "BottomMargin": 40.5,
+                "Tag": 81,
+                "ActionTag": 1535913486,
+                "Size": {
+                  "X": 148.0,
+                  "Y": 52.0
+                },
+                "Name": "QuestStart_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/btn_back_on.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "quest/btn_back.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 148,
+                "Scale9Height": 52,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 289.5,
+                  "Y": 64.5
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.7404,
+                  "Y": 0.1807
+                },
+                "PreSize": {
+                  "X": 0.3785,
+                  "Y": 0.1457
+                },
+                "LeftMargin": 215.5,
+                "RightMargin": 27.5,
+                "TopMargin": 266.5,
+                "BottomMargin": 38.5,
+                "Tag": 82,
+                "ActionTag": -959801972,
+                "Size": {
+                  "X": 148.0,
+                  "Y": 52.0
+                },
+                "Name": "Back_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 18,
+                "LabelText": "エメラルドフォレスト10",
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0.0,
+                "ShadowOffsetY": 0.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 202.0,
+                  "Y": 251.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5166,
+                  "Y": 0.7031
+                },
+                "PreSize": {
+                  "X": 0.422,
+                  "Y": 0.0504
+                },
+                "LeftMargin": 202.0,
+                "RightMargin": 24.0,
+                "TopMargin": 97.0,
+                "BottomMargin": 242.0,
+                "Tag": 113,
+                "ActionTag": -1064682141,
+                "Size": {
+                  "X": 165.0,
+                  "Y": 18.0
+                },
+                "Name": "nametext",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": 611274238,
+            "Size": {
+              "X": 391.0,
+              "Y": 357.0
+            },
+            "Name": "popup_quest",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 800.0,
+          "Y": 600.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Default/Button_Disable.png",
+        "quest/bg.png",
+        "quest/btn_back.png",
+        "quest/btn_back_on.png",
+        "quest/btn_start.png",
+        "quest/btn_start_off.png",
+        "quest/btn_start_on.png",
+        "quest/icon_quest_1_anlock1.png",
+        "quest/icon_quest_1_anlock2.png",
+        "quest/icon_quest_1_lock.png",
+        "quest/icon_quest_2_anlock1.png",
+        "quest/icon_quest_2_anlock2.png",
+        "quest/icon_quest_2_lock.png",
+        "quest/popup_quest.png",
+        "quest/title_questmap.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}

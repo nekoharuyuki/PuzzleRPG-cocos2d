@@ -1,0 +1,201 @@
+{
+  "ID": "babf908f-a51a-4b91-8d62-fb1a9dcc34d1",
+  "Version": "2.3.4",
+  "Name": "CharIconNode",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "char/icon_chara_b_4.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -50.0,
+            "RightMargin": -50.0,
+            "TopMargin": -50.0,
+            "BottomMargin": -50.0,
+            "Tag": 109,
+            "ActionTag": 1658248206,
+            "Size": {
+              "X": 100.0,
+              "Y": 100.0
+            },
+            "Name": "icon_chara",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "shared/Attribute_1.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -34.0,
+              "Y": 34.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -48.0,
+            "RightMargin": 20.0,
+            "TopMargin": -48.0,
+            "BottomMargin": 20.0,
+            "Tag": 111,
+            "ActionTag": 1625825347,
+            "Size": {
+              "X": 28.0,
+              "Y": 28.0
+            },
+            "Name": "Attribute",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": -44.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "TopMargin": 44.0,
+            "BottomMargin": -44.0,
+            "Tag": 310,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "shared/icon_charararity_b.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -11.0,
+                "RightMargin": -11.0,
+                "TopMargin": -11.0,
+                "BottomMargin": -11.0,
+                "Tag": 309,
+                "ActionTag": 1163594488,
+                "Size": {
+                  "X": 22.0,
+                  "Y": 22.0
+                },
+                "Name": "icon_charararity_b1",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -151005365,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "charararity_01",
+            "ctype": "SingleNodeObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "char/icon_chara_b_4.png",
+        "shared/Attribute_1.png",
+        "shared/icon_charararity_b.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

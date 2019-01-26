@@ -1,0 +1,32 @@
+{
+    "project_type":"javascript",
+    "debugMode":1,
+    "showFPS":false,
+    "frameRate":60,
+    "id":"gameCanvas",
+    "renderMode":0,
+    "engineDir":"frameworks/cocos2d-html5",
+    "modules":[
+        "cocos2d",
+        "extensions",
+        "audio"
+    ],
+    "jsList":[
+        "src/resource.js",
+        "src/GameData.js",
+        "src/battle.js",
+        "src/puzzle.js",
+        "src/jewelry.js",
+        "src/mypage.js",
+        "src/title.js",
+        "src/quest.js",
+        "src/party.js",
+        "src/synthetic.js",
+        "src/evolution.js",
+        "src/other.js",
+        "src/result.js",
+        "src/charselect.js",
+        "src/menu.js",
+        "src/charicon.js"
+    ]
+}
