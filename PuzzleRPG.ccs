@@ -82,6 +82,20 @@
             <Image Name="gametitle_3.png" />
             <Image Name="gametitle_4.png" />
           </Folder>
+          <Folder Name="button">
+            <Image Name="001.png" />
+            <Image Name="001_b.png" />
+            <Image Name="002.png" />
+            <Image Name="002_b.png" />
+            <Image Name="003.png" />
+            <Image Name="003_b.png" />
+            <Image Name="004.png" />
+            <Image Name="004_b.png" />
+            <Image Name="005.png" />
+            <Image Name="005_b.png" />
+            <Image Name="006.png" />
+            <Image Name="006_b.png" />
+          </Folder>
           <Folder Name="char">
             <Image Name="chara_enemy_1.png" />
             <Image Name="chara_enemy_2.png" />
