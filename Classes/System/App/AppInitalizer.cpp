@@ -11,11 +11,6 @@
 #include "CharData.h"
 #include "TitleScene.h"
 
-#if COCOS2D_DEBUG
-#include "Controller.h"
-#include "tests.h"
-#endif
-
 #ifdef __USE_FIREBASE__
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "firebase/app.h"

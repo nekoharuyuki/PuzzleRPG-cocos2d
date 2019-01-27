@@ -10,8 +10,6 @@
 
 #include "cocos2d.h"
 
-class TestController;
-
 class AppInitalizer
 {
 public:
@@ -26,9 +24,6 @@ public:
     // this function will be called when the app is active again
     // フォアグラウンド移行直前にコールされるメソッド
     static void applicationWillEnterForeground();
-    
-private:
-    TestController* _projectController;
 };
 
 #endif /* AppInitalizer_h */

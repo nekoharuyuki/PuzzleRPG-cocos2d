@@ -82,6 +82,20 @@
             <Image Name="gametitle_3.png" />
             <Image Name="gametitle_4.png" />
           </Folder>
+          <Folder Name="button">
+            <Image Name="001.png" />
+            <Image Name="001_b.png" />
+            <Image Name="002.png" />
+            <Image Name="002_b.png" />
+            <Image Name="003.png" />
+            <Image Name="003_b.png" />
+            <Image Name="004.png" />
+            <Image Name="004_b.png" />
+            <Image Name="005.png" />
+            <Image Name="005_b.png" />
+            <Image Name="006.png" />
+            <Image Name="006_b.png" />
+          </Folder>
           <Folder Name="char">
             <Image Name="chara_enemy_1.png" />
             <Image Name="chara_enemy_2.png" />
@@ -342,6 +356,7 @@
         </Folder>
         <Folder Name="fonts">
           <TTF Name="arial.ttf" />
+          <TTF Name="babarageo3.ttf" />
           <TTF Name="Marker Felt.ttf" />
         </Folder>
         <Folder Name="res">
@@ -400,22 +415,6 @@
           <Folder Name="title">
             <File Name="TitleScene.csb" />
             <Project Name="TitleScene.csd" Type="Scene" />
-          </Folder>
-        </Folder>
-        <Folder Name="system">
-          <Folder Name="images">
-            <Image Name="b1.png" />
-            <Image Name="b2.png" />
-            <Image Name="brush.png" />
-            <Image Name="close.png" />
-            <Image Name="f1.png" />
-            <Image Name="f2.png" />
-            <Image Name="frame.png" />
-            <Image Name="line.png" />
-            <Image Name="r1.png" />
-            <Image Name="r2.png" />
-            <Image Name="tg_close_1.png" />
-            <Image Name="tg_close_2.png" />
           </Folder>
         </Folder>
       </RootFolder>

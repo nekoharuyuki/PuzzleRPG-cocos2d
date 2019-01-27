@@ -132,7 +132,7 @@
                 <PrePosition X="0.9554" Y="-0.3629" />
                 <PreSize X="0.0392" Y="0.1392" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <DisabledFileData Type="Default" Path="asset/Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Normal" Path="asset/party/btn_rightleft.png" Plist="" />
                 <NormalFileData Type="Normal" Path="asset/party/btn_rightleft.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
@@ -147,7 +147,7 @@
                 <PrePosition X="0.0419" Y="-0.3587" />
                 <PreSize X="0.0392" Y="0.1392" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <DisabledFileData Type="Default" Path="asset/Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Normal" Path="asset/party/btn_rightleft.png" Plist="" />
                 <NormalFileData Type="Normal" Path="asset/party/btn_rightleft.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
@@ -316,7 +316,7 @@
                 <PrePosition X="0.2205" Y="-0.0947" />
                 <PreSize X="0.2863" Y="0.1538" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <DisabledFileData Type="Default" Path="asset/Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Normal" Path="asset/party/btn_sell_on.png" Plist="" />
                 <NormalFileData Type="Normal" Path="asset/party/btn_sell.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
@@ -331,7 +331,7 @@
                 <PrePosition X="0.7756" Y="-0.0947" />
                 <PreSize X="0.2863" Y="0.1538" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <DisabledFileData Type="Default" Path="asset/Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Normal" Path="asset/party/btn_back_on.png" Plist="" />
                 <NormalFileData Type="Normal" Path="asset/party/btn_back.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
@@ -465,7 +465,7 @@
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <DisabledFileData Type="Default" Path="asset/Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Normal" Path="asset/party/btn_yes_on.png" Plist="" />
                 <NormalFileData Type="Normal" Path="asset/party/btn_yes.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
@@ -480,7 +480,7 @@
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <DisabledFileData Type="Default" Path="asset/Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Normal" Path="asset/party/btn_no_on.png" Plist="" />
                 <NormalFileData Type="Normal" Path="asset/party/btn_no.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />

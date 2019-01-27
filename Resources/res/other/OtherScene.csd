@@ -70,7 +70,7 @@
                 <PrePosition X="0.4807" Y="0.1257" />
                 <PreSize X="0.4584" Y="0.1538" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <DisabledFileData Type="Default" Path="asset/Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Normal" Path="asset/other/btn_titleback_on.png" Plist="" />
                 <NormalFileData Type="Normal" Path="asset/other/btn_titleback.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />

@@ -26,7 +26,7 @@
             <PrePosition X="0.6894" Y="0.3092" />
             <PreSize X="0.2962" Y="0.0867" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <DisabledFileData Type="Default" Path="asset/Default/Button_Disable.png" Plist="" />
             <PressedFileData Type="Normal" Path="asset/title/btn_start_on.png" Plist="" />
             <NormalFileData Type="Normal" Path="asset/title/btn_start.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
@@ -41,7 +41,7 @@
             <PrePosition X="0.9125" Y="0.0917" />
             <PreSize X="0.1625" Y="0.1850" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <DisabledFileData Type="Default" Path="asset/Default/Button_Disable.png" Plist="" />
             <PressedFileData Type="Normal" Path="asset/shared/btn_other_on.png" Plist="" />
             <NormalFileData Type="Normal" Path="asset/shared/btn_other.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
@@ -56,9 +56,25 @@
             <PrePosition X="0.7500" Y="0.0917" />
             <PreSize X="0.1625" Y="0.1850" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <DisabledFileData Type="Default" Path="asset/Default/Button_Disable.png" Plist="" />
             <PressedFileData Type="Normal" Path="asset/shared/btn_mypage_on.png" Plist="" />
             <NormalFileData Type="Normal" Path="asset/shared/btn_mypage.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="debug" ActionTag="1923210792" Tag="134" IconVisible="False" LeftMargin="580.0000" TopMargin="0.1625" BottomMargin="554.8375" TouchEnable="True" FontSize="24" ButtonText="Debug Menu" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="103" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="220.0000" Y="45.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="690.0000" Y="577.3375" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="230" G="230" B="250" />
+            <PrePosition X="0.8625" Y="0.9622" />
+            <PreSize X="0.2750" Y="0.0750" />
+            <FontResource Type="Normal" Path="fonts/arial.ttf" Plist="" />
+            <TextColor A="255" R="26" G="26" B="26" />
+            <DisabledFileData Type="Normal" Path="asset/button/003_b.png" Plist="" />
+            <PressedFileData Type="Normal" Path="asset/button/003_b.png" Plist="" />
+            <NormalFileData Type="Normal" Path="asset/button/003.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

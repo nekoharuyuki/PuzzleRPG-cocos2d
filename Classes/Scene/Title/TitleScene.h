@@ -3,6 +3,8 @@
 
 #include "cocos2d.h"
 
+class TestController;
+
 class TitleScene : public cocos2d::Layer
 {
 public:
@@ -17,9 +19,17 @@ public:
     
 private:
     
+    void titleSceneButtonPress(Node* rootNode);
     void startButtonPress(Node* rootNode);
     void mypageButtonPress(Node* rootNode);
     void otherButtonPress(Node* rootNode);
+    void debugButtonPress(Node* rootNode);
+    
+    static cocos2d::Scene* m_titleScene;
+    
+#if COCOS2D_DEBUG
+    TestController* m_projectController;
+#endif
 };
 
 #endif // __TITLE_SCENE_H__
