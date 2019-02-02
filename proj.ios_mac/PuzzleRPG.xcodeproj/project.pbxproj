@@ -36,6 +36,8 @@
 		8038F5E1216B106E0085F19C /* PartyValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8038F5DE216B106E0085F19C /* PartyValue.cpp */; };
 		8038F5F6217B47F00085F19C /* LabelRPG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8038F5F1217B47EE0085F19C /* LabelRPG.cpp */; };
 		8038F5F7217B47F00085F19C /* LabelRPG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8038F5F1217B47EE0085F19C /* LabelRPG.cpp */; };
+		80A120E72204D0BD0053B2A8 /* SceneData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80A120E52204D0BD0053B2A8 /* SceneData.cpp */; };
+		80A120E82204D0BD0053B2A8 /* SceneData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80A120E52204D0BD0053B2A8 /* SceneData.cpp */; };
 		80C8626A21455CDF006FBDCD /* FirebaseHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80C8626821455CDF006FBDCD /* FirebaseHelper.cpp */; };
 		80C994022141D42B00C10E96 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 80C993A62141D42A00C10E96 /* sqlite3.c */; };
 		80C994032141D42B00C10E96 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 80C993A62141D42A00C10E96 /* sqlite3.c */; };
@@ -237,6 +239,8 @@
 		8038F5F0217B47EE0085F19C /* LabelRPG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelRPG.h; sourceTree = "<group>"; };
 		8038F5F1217B47EE0085F19C /* LabelRPG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelRPG.cpp; sourceTree = "<group>"; };
 		8093C5702143D1A200BD3250 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
+		80A120E52204D0BD0053B2A8 /* SceneData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SceneData.cpp; sourceTree = "<group>"; };
+		80A120E62204D0BD0053B2A8 /* SceneData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneData.h; sourceTree = "<group>"; };
 		80C8626821455CDF006FBDCD /* FirebaseHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FirebaseHelper.cpp; sourceTree = "<group>"; };
 		80C8626921455CDF006FBDCD /* FirebaseHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseHelper.h; sourceTree = "<group>"; };
 		80C993A32141D42A00C10E96 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -559,6 +563,8 @@
 				80C993BB2141D42A00C10E96 /* Title */,
 				80C993BE2141D42A00C10E96 /* Menu */,
 				80C993D32141D42A00C10E96 /* Charselect */,
+				80A120E52204D0BD0053B2A8 /* SceneData.cpp */,
+				80A120E62204D0BD0053B2A8 /* SceneData.h */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -1013,6 +1019,7 @@
 				80C994402141D42B00C10E96 /* MathHelper.cpp in Sources */,
 				80C994442141D42B00C10E96 /* AudioManager.cpp in Sources */,
 				80C9940E2141D42B00C10E96 /* BattleChar.cpp in Sources */,
+				80A120E72204D0BD0053B2A8 /* SceneData.cpp in Sources */,
 				8038F5F6217B47F00085F19C /* LabelRPG.cpp in Sources */,
 				80C9943C2141D42B00C10E96 /* Controller.cpp in Sources */,
 				80C994102141D42B00C10E96 /* PuzzleSprite.cpp in Sources */,
@@ -1048,6 +1055,7 @@
 				80C994232141D42B00C10E96 /* CharSelectSprite.cpp in Sources */,
 				8038F5E1216B106E0085F19C /* PartyValue.cpp in Sources */,
 				80C9942D2141D42B00C10E96 /* MapData.cpp in Sources */,
+				80A120E82204D0BD0053B2A8 /* SceneData.cpp in Sources */,
 				80C9941B2141D42B00C10E96 /* MypageScene.cpp in Sources */,
 				80C9943B2141D42B00C10E96 /* ModalLayer.cpp in Sources */,
 				80C994132141D42B00C10E96 /* TitleScene.cpp in Sources */,
