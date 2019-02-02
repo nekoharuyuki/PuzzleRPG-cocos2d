@@ -2,8 +2,6 @@
 #include "CharselectScene.h"
 #include "QuestScene.h"
 #include "OtherScene.h"
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
 #include "PlayerValue.h"
 #include "GameDataSQL.h"
 #include "AudioManager.h"
@@ -35,17 +33,9 @@ Scene* TitleScene::createScene()
 }
 
 // on "init" you need to initialize your instance
-bool TitleScene::init()
+bool TitleScene::onCreate()
 {
-    //////////////////////////////
-    // 1. super init first
-    if ( !Layer::init() )
-    {
-        return false;
-    }
-    
-    // タイトル画面
-    auto rootNode = CSLoader::createNode("title/TitleScene.csb");
+    auto rootNode = loaded();
     if(rootNode == nullptr){
         return false;
     }
@@ -55,8 +45,6 @@ bool TitleScene::init()
     
     // タイトル画面のボタン処理
     titleSceneButtonPress(rootNode);
-    
-    addChild(rootNode);
     
     this->scheduleUpdate();
     return true;
