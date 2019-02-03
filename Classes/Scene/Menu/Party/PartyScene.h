@@ -1,19 +1,25 @@
+//
+//  PartyScene.h
+//  PuzzleRPG
+//
+//  Created by neko on 2019/02/02.
+//
+
 #ifndef __PARTY_SCENE_H__
 #define __PARTY_SCENE_H__
 
 #include "cocos2d.h"
+#include "SceneData.h"
 
-class PartyScene : public cocos2d::Layer
+class PartyScene :
+public SceneData,
+public cocos2d::Layer
 {
 public:
-    // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
     
-    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-    virtual bool init();
-    
-    // implement the "static create()" method manually
-    CREATE_FUNC(PartyScene);
+    SCENE_CREATE_FUNC(PartyScene, "party/PartyScene.csb")
+    bool onCreate() override;
 };
 
 #endif // __PARTY_SCENE_H__
