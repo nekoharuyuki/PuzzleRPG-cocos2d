@@ -1,3 +1,10 @@
+//
+//  TitleScene.h
+//  PuzzleRPG
+//
+//  Created by neko on 2019/02/03.
+//
+
 #ifndef __TITLE_SCENE_H__
 #define __TITLE_SCENE_H__
 
@@ -24,7 +31,7 @@ private:
     void otherButtonPress(Node* rootNode);
     void debugButtonPress(Node* rootNode);
     
-    static cocos2d::Scene* m_titleScene;
+    static cocos2d::Scene* m_scene;
     
 #if COCOS2D_DEBUG
     TestController* m_projectController;
