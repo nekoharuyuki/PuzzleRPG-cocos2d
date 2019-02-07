@@ -1,54 +1,69 @@
+//
+//  TitleScene.cpp
+//  PuzzleRPG
+//
+//  Created by neko on 2019/02/03.
+//
+
 #include "TitleScene.h"
 #include "CharselectScene.h"
 #include "QuestScene.h"
 #include "OtherScene.h"
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
 #include "PlayerValue.h"
 #include "GameDataSQL.h"
 #include "AudioManager.h"
+
+#if COCOS2D_DEBUG
+#include "Controller.h"
+#include "tests.h"
+#endif
 
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
 
+Scene* TitleScene::m_scene = nullptr;
+
 Scene* TitleScene::createScene()
 {
     // 'scene' is an autorelease object
-    auto scene = Scene::create();
-    
+    m_scene = Scene::create();
     // 'layer' is an autorelease object
     auto layer = TitleScene::create();
-    
     // add layer as a child to scene
-    scene->addChild(layer);
-    
+    m_scene->addChild(layer);
     // return the scene
-    return scene;
+    return m_scene;
 }
 
 // on "init" you need to initialize your instance
-bool TitleScene::init()
+bool TitleScene::onCreate()
 {
-    //////////////////////////////
-    // 1. super init first
-    if ( !Layer::init() )
-    {
+    if ( !Layer::init() ){
         return false;
     }
-    
-    // タイトル画面へ移行する前の映像
-    
-    auto rootNode = CSLoader::createNode("title/TitleScene.csb");
-    if(rootNode == nullptr){
+    auto node = loaded();
+    if(node == nullptr){
         return false;
     }
-    
+    // タイトルBGM再生
+    AudioManager::getInstance()->playBgm("all_bgm");
+    // タイトル画面のボタン処理
+    titleSceneButtonPress(node);
+    this->scheduleUpdate();
+    return true;
+}
+
+// タイトル画面のボタン処理
+void TitleScene::titleSceneButtonPress(Node* node)
+{
+    // スタートボタンが押された時の処理
+    startButtonPress(node);
     // ローカルDBデータの有無を確認
     if(!GameDataSQL::hasData()){
         // ユーザーがデータを作成していない場合はマイページのボタンを表示しない
-        auto mypageButton = rootNode->getChildByName<ui::Button*>("ui_mypage_btn");
-        mypageButton->setVisible(false);
+        auto button = node->getChildByName<ui::Button*>("ui_mypage_btn");
+        button->setVisible(false);
     } else {
         // サウンドの再生
         PlayerValue::getInstance()->dataLoad();
@@ -63,97 +78,105 @@ bool TitleScene::init()
             AudioManager::getInstance()->setBgmVolume(0);
         }
         // マイページのボタンが押された時の処理
-        mypageButtonPress(rootNode);
+        mypageButtonPress(node);
     }
-    
-    addChild(rootNode);
-    
-    // タイトルBGM再生
-    AudioManager::getInstance()->playBgm("all_bgm");
-    
-    // スタートボタンが押された時の処理
-    startButtonPress(rootNode);
-    
     // その他のボタンが押された時の処理
-    otherButtonPress(rootNode);
-    
-    this->scheduleUpdate();
-    return true;
+    otherButtonPress(node);
+    // デバッグボタンが押された時の処理
+    debugButtonPress(node);
 }
 
 // スタートボタンが押された時の処理
-void TitleScene::startButtonPress(Node* rootNode)
+void TitleScene::startButtonPress(Node* node)
 {
     // ボタンノードを取得
-    auto startBtn = rootNode->getChildByName<ui::Button*>("start_btn");
+    auto button = node->getChildByName<ui::Button*>("start_btn");
     // タッチイベント追加
-    startBtn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
-        // 何度も押されないように一度押されたらアクションを無効にする
-        this->getEventDispatcher()->removeAllEventListeners();
-        
-        // 0.5秒待ってからCallFuncを呼ぶ
-        auto delay = DelayTime::create(0.2f);
-        
-        // ゲームを始めるアクション
-        auto startGame = CallFunc::create([]{
-            
-            // スタートボタン音SE再生
-            AudioManager::getInstance()->playSe("ui_title_start");
-            
-            // ローカルDBデータの有無を確認
-            if(!GameDataSQL::hasData()){
-                // キャラクター選択画面へ移行
-                auto transition = TransitionFade::create(0.5f, CharselectScene::createScene(), Color3B::WHITE);
-                Director::getInstance()->replaceScene(transition);
-            } else {
-                // クエスト選択画面へ移行
-                auto transition = TransitionFade::create(0.5f, QuestScene::createScene(), Color3B::WHITE);
-                Director::getInstance()->replaceScene(transition);
-            }
-        });
-        this->runAction(Sequence::create(delay, startGame, NULL));
+    button->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        if(type == ui::Widget::TouchEventType::ENDED) {
+            // 何度も押されないように一度押されたらアクションを無効にする
+            this->getEventDispatcher()->removeAllEventListeners();
+            // ゲームを始めるアクション
+            auto startGame = CallFunc::create([]{
+                // スタートボタン音SE再生
+                AudioManager::getInstance()->playSe("ui_title_start");
+                // ローカルDBデータの有無を確認
+                if(!GameDataSQL::hasData()){
+                    // キャラクター選択画面へ移行
+                    auto transition = TransitionFade::create(0.5f, CharselectScene::createScene(), Color3B::WHITE);
+                    Director::getInstance()->replaceScene(transition);
+                } else {
+                    // クエスト選択画面へ移行
+                    auto transition = TransitionFade::create(0.5f, QuestScene::createScene(), Color3B::WHITE);
+                    Director::getInstance()->replaceScene(transition);
+                }
+            });
+            // 0.5秒待ってからCallFuncを呼ぶ
+            auto delay = DelayTime::create(0.2f);
+            this->runAction(Sequence::create(delay, startGame, NULL));
+        }
     });
 }
 
 // マイページのボタンが押された時の処理
-void TitleScene::mypageButtonPress(Node* rootNode)
+void TitleScene::mypageButtonPress(Node* node)
 {
     // ボタンノードを取得
-    auto startBtn = rootNode->getChildByName<ui::Button*>("ui_mypage_btn");
+    auto button = node->getChildByName<ui::Button*>("ui_mypage_btn");
     // タッチイベント追加
-    startBtn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
-        // 何度も押されないように一度押されたらアクションを無効にする
-        //this->getEventDispatcher()->removeAllEventListeners();
-        
-        // 0.5秒待ってからCallFuncを呼ぶ
-        auto delay = DelayTime::create(0.2f);
-        
-        // マイページからユーザーデータを確認する
-        auto startGame = CallFunc::create([]{
-            //
-        });
-        this->runAction(Sequence::create(delay, startGame, NULL));
+    button->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        if(type == ui::Widget::TouchEventType::ENDED) {
+            // 何度も押されないように一度押されたらアクションを無効にする
+            this->getEventDispatcher()->removeAllEventListeners();
+            // マイページからユーザーデータを確認する
+            auto startGame = CallFunc::create([]{});
+            // 0.5秒待ってからCallFuncを呼ぶ
+            auto delay = DelayTime::create(0.2f);
+            this->runAction(Sequence::create(delay, startGame, NULL));
+        }
     });
 }
 
 // その他のボタンが押された時の処理
-void TitleScene::otherButtonPress(Node* rootNode)
+void TitleScene::otherButtonPress(Node* node)
 {
     // ボタンノードを取得
-    auto startBtn = rootNode->getChildByName<ui::Button*>("ui_etc_btn");
+    auto button = node->getChildByName<ui::Button*>("ui_etc_btn");
     // タッチイベント追加
-    startBtn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
-        // 何度も押されないように一度押されたらアクションを無効にする
-        this->getEventDispatcher()->removeAllEventListeners();
-        
-        // 0.5秒待ってからCallFuncを呼ぶ
-        auto delay = DelayTime::create(0.2f);
-        
-        // その他メニューへの遷移
-        auto transitionOtherScene = CallFunc::create([]{
-            auto transition = TransitionFade::create(0.5f, OtherScene::createScene(OtherScene::transition_title), Color3B::WHITE);
-            Director::getInstance()->replaceScene(transition);
-        });
-        this->runAction(Sequence::create(delay, transitionOtherScene, NULL));
+    button->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        if(type == ui::Widget::TouchEventType::ENDED) {
+            // 何度も押されないように一度押されたらアクションを無効にする
+            this->getEventDispatcher()->removeAllEventListeners();
+            // その他メニューへの遷移
+            auto transitionOtherScene = CallFunc::create([]{
+                auto transition = TransitionFade::create(0.5f, OtherScene::createScene(OtherScene::transition_title), Color3B::WHITE);
+                Director::getInstance()->replaceScene(transition);
+            });
+            // 0.5秒待ってからCallFuncを呼ぶ
+            auto delay = DelayTime::create(0.2f);
+            this->runAction(Sequence::create(delay, transitionOtherScene, NULL));
+        }
     });
+}
+
+// デバッグボタンが押された時の処理
+void TitleScene::debugButtonPress(Node* node)
+{
+    // ボタンノードを取得
+    auto button = node->getChildByName<ui::Button*>("debug");
+#if COCOS2D_DEBUG
+    // タッチイベント追加
+    button->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+        if(type == ui::Widget::TouchEventType::ENDED) {
+            // 何度も押されないように一度押されたらアクションを無効にする
+            this->getEventDispatcher()->removeAllEventListeners();
+            // サウンドを消す
+            AudioManager::getInstance()->pauseBgm();
+            Director::getInstance()->replaceScene(m_scene);
+            m_projectController->getInstance();
+        }
+    });
+#else
+    button->setVisible(false);
+#endif
 }

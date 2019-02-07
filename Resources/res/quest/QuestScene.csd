@@ -453,7 +453,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+                <FileData Type="Default" Path="asset/Default/Sprite.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
             </Children>
@@ -1268,7 +1268,7 @@
                 <PrePosition X="0.7404" Y="0.1807" />
                 <PreSize X="0.3785" Y="0.1457" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <DisabledFileData Type="Default" Path="asset/Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Normal" Path="asset/quest/btn_back_on.png" Plist="" />
                 <NormalFileData Type="Normal" Path="asset/quest/btn_back.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />

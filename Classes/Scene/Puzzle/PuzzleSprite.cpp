@@ -140,7 +140,7 @@ std::string PuzzleSprite::getPuzzleImageFilePath(PuzzleType type)
         case PuzzleType::Green:  return "puzzle/03.png";
         case PuzzleType::Yellow: return "puzzle/04.png";
         case PuzzleType::Purple: return "puzzle/05.png";
-        default:                 return "Default/Sprite.png";
+        default:                 return "asset/Default/Sprite.png";
     }
 }
 
