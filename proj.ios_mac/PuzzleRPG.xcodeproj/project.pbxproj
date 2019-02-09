@@ -36,6 +36,8 @@
 		8038F5E1216B106E0085F19C /* PartyValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8038F5DE216B106E0085F19C /* PartyValue.cpp */; };
 		8038F5F6217B47F00085F19C /* LabelRPG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8038F5F1217B47EE0085F19C /* LabelRPG.cpp */; };
 		8038F5F7217B47F00085F19C /* LabelRPG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8038F5F1217B47EE0085F19C /* LabelRPG.cpp */; };
+		80808799220E873500BE754A /* AppPlatform.mm in Sources */ = {isa = PBXBuildFile; fileRef = 80808796220E873500BE754A /* AppPlatform.mm */; };
+		8080879A220E873500BE754A /* AppPlatform.mm in Sources */ = {isa = PBXBuildFile; fileRef = 80808796220E873500BE754A /* AppPlatform.mm */; };
 		80A120E72204D0BD0053B2A8 /* SceneData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80A120E52204D0BD0053B2A8 /* SceneData.cpp */; };
 		80A120E82204D0BD0053B2A8 /* SceneData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80A120E52204D0BD0053B2A8 /* SceneData.cpp */; };
 		80C8626A21455CDF006FBDCD /* FirebaseHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80C8626821455CDF006FBDCD /* FirebaseHelper.cpp */; };
@@ -238,6 +240,9 @@
 		8038F5EF217B47EE0085F19C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8038F5F0217B47EE0085F19C /* LabelRPG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelRPG.h; sourceTree = "<group>"; };
 		8038F5F1217B47EE0085F19C /* LabelRPG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelRPG.cpp; sourceTree = "<group>"; };
+		80808792220E873400BE754A /* AppPlatform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppPlatform.cpp; sourceTree = "<group>"; };
+		80808795220E873400BE754A /* AppPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppPlatform.h; sourceTree = "<group>"; };
+		80808796220E873500BE754A /* AppPlatform.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppPlatform.mm; sourceTree = "<group>"; };
 		8093C5702143D1A200BD3250 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		80A120E52204D0BD0053B2A8 /* SceneData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SceneData.cpp; sourceTree = "<group>"; };
 		80A120E62204D0BD0053B2A8 /* SceneData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneData.h; sourceTree = "<group>"; };
@@ -732,6 +737,9 @@
 			children = (
 				80C993E92141D42B00C10E96 /* AppInitalizer.cpp */,
 				80C993E82141D42B00C10E96 /* AppInitalizer.h */,
+				80808792220E873400BE754A /* AppPlatform.cpp */,
+				80808795220E873400BE754A /* AppPlatform.h */,
+				80808796220E873500BE754A /* AppPlatform.mm */,
 				80C8626821455CDF006FBDCD /* FirebaseHelper.cpp */,
 				80C8626921455CDF006FBDCD /* FirebaseHelper.h */,
 			);
@@ -998,6 +1006,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80808799220E873500BE754A /* AppPlatform.mm in Sources */,
 				80C994302141D42B00C10E96 /* GameDataSQL.cpp in Sources */,
 				80C994222141D42B00C10E96 /* CharSelectSprite.cpp in Sources */,
 				80C994362141D42B00C10E96 /* Converter.cpp in Sources */,
@@ -1065,6 +1074,7 @@
 				80C994032141D42B00C10E96 /* sqlite3.c in Sources */,
 				80C994412141D42B00C10E96 /* MathHelper.cpp in Sources */,
 				80C994192141D42B00C10E96 /* OtherScene.cpp in Sources */,
+				8080879A220E873500BE754A /* AppPlatform.mm in Sources */,
 				80C994272141D42B00C10E96 /* CharselectScene.cpp in Sources */,
 				80C994372141D42B00C10E96 /* Converter.cpp in Sources */,
 				80C9941D2141D42B00C10E96 /* QuestScene.cpp in Sources */,
