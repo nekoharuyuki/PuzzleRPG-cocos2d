@@ -3,8 +3,6 @@
 #include "MenuLayer.h"
 #include "PlayerValue.h"
 #include "PartyValue.h"
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
 
 USING_NS_CC;
 

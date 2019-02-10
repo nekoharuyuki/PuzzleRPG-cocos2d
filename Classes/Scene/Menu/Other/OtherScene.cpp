@@ -3,7 +3,6 @@
 #include "MenuLayer.h"
 #include "GameDataSQL.h"
 #include "PlayerValue.h"
-#include "cocostudio/CocoStudio.h"
 #include "AudioManager.h"
 
 USING_NS_CC;

@@ -1,7 +1,5 @@
 #include "EvolutionScene.h"
 #include "MenuLayer.h"
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
 
 USING_NS_CC;
 
@@ -22,7 +20,6 @@ Scene* EvolutionScene::createScene()
     return scene;
 }
 
-// on "init" you need to initialize your instance
 bool EvolutionScene::onCreate()
 {
     if ( !Layer::init() ){
