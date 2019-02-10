@@ -9,8 +9,6 @@ bool GameDataSQL::hasData(){
     std::string filePath = FileUtils::getInstance()->getWritablePath();
     filePath += dbName;
     if (FileUtils::getInstance()->isFileExist(filePath)) {
-        // ローカルDBのデータ保存場所
-        CCLOG(" DB File Path : %s", filePath.c_str());
         return true;
     }
     return false;
@@ -79,6 +77,8 @@ void GameDataSQL::sqliteSetValueForKey(const char *key, const char *value)
     // キー文字列に対応する文字列を設定する
     std::string fullpath = FileUtils::getInstance()->getWritablePath();
     fullpath += dbName;
+    // ローカルDBのデータ保存場所
+    CCLOG("DB File Path( %s )", fullpath.c_str());
     sqlite3 *db = NULL;
     if (sqlite3_open(fullpath.c_str(), &db) == SQLITE_OK) {
         const char *sql_select = "REPLACE INTO test1 (key, value) VALUES (?,?)";
