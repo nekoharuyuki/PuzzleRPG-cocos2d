@@ -1,19 +1,26 @@
 #ifndef __MYPAGE_SCENE_H__
 #define __MYPAGE_SCENE_H__
 
-#include "cocos2d.h"
+#include "SceneData.h"
 
-class MypageScene : public cocos2d::Layer
+class MypageScene :
+public SceneData,
+public cocos2d::Layer
 {
 public:
-    // there's no 'id' in cpp, so we recommend returning the class instance pointer
-    static cocos2d::Scene* createScene();
+    enum transition
+    {
+        transition_title = 0,
+        transition_menu,
+        transition_quest,
+    };
+    static transition m_transitionScene;
     
-    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-    virtual bool init();
+    MypageScene(); //コンストラクタ
+    static cocos2d::Scene* createScene(transition scene);
     
-    // implement the "static create()" method manually
-    CREATE_FUNC(MypageScene);
+    SCENE_CREATE_FUNC(MypageScene, "mypage/MypageScene.csb")
+    bool onCreate() override;
 };
 
 #endif // __MYPAGE_SCENE_H__
