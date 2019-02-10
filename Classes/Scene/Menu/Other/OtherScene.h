@@ -1,7 +1,6 @@
 #ifndef __OTHER_SCENE_H__
 #define __OTHER_SCENE_H__
 
-#include "cocos2d.h"
 #include "SceneData.h"
 
 class OtherScene :
@@ -18,7 +17,6 @@ public:
     static transition m_transitionScene;
     
     OtherScene(); //コンストラクタ
-    // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene(transition scene);
     
     SCENE_CREATE_FUNC(OtherScene, "other/OtherScene.csb")
