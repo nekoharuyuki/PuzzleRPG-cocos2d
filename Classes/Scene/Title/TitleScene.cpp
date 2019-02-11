@@ -36,7 +36,6 @@ Scene* TitleScene::createScene()
     return m_scene;
 }
 
-// on "init" you need to initialize your instance
 bool TitleScene::onCreate()
 {
     if ( !Layer::init() ){

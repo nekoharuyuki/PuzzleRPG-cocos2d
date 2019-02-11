@@ -3,15 +3,23 @@
 #include "MenuLayer.h"
 #include "PlayerValue.h"
 #include "PartyValue.h"
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
 
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
 
-Scene* MypageScene::createScene()
+MypageScene::transition MypageScene::m_transitionScene;
+
+//コンストラクタ
+MypageScene::MypageScene()
 {
+}
+
+Scene* MypageScene::createScene(MypageScene::transition sceneTransition)
+{
+    // どのシーンから遷移してきた
+    m_transitionScene = sceneTransition;
+    
     // 'scene' is an autorelease object
     auto scene = Scene::create();
     
@@ -25,30 +33,30 @@ Scene* MypageScene::createScene()
     return scene;
 }
 
-// on "init" you need to initialize your instance
-bool MypageScene::init()
+bool MypageScene::onCreate()
 {
-    //////////////////////////////
-    // 1. super init first
     if ( !Layer::init() ){
         return false;
     }
     
-    auto rootNode = CSLoader::createNode("mypage/MypageScene.csb");
-    if(rootNode == nullptr){
+    auto node = loaded();
+    if(node == nullptr){
         return false;
     }
-    this->addChild(rootNode);
     
-    // レイヤーの初期化
-    auto *layer = MenuLayer::create();
-    if(layer == nullptr){
-        return false;
+    if(m_transitionScene == transition_menu){
+        // メニューレイヤーの初期化
+        auto *layer = MenuLayer::create();
+        if(layer == nullptr){
+            return false;
+        }
+        // シーンにメニューレイヤーを追加する
+        node->addChild(layer);
     }
     
     PlayerValue::getInstance()->dataLoad();
     
-    auto CoinText = rootNode->getChildByName<ui::Text*>( "CoinText" );
+    auto CoinText = node->getChildByName<ui::Text*>( "CoinText" );
     if(CoinText){
         CoinText->setString( std::to_string(PlayerValue::getInstance()->getCoin()) );
     }
@@ -58,8 +66,8 @@ bool MypageScene::init()
     
     for(int i = 0; i < 3; i++){
 //        auto CharIconNode = rootNode->getChildByName<Node*>( "CharIconNode"+std::to_string(i) );
-        auto CharLv = rootNode->getChildByName<ui::Text*>( "CharLv"+std::to_string(i) );
-        auto CharName = rootNode->getChildByName<ui::Text*>( "CharName"+std::to_string(i) );
+        auto CharLv = node->getChildByName<ui::Text*>( "CharLv"+std::to_string(i) );
+        auto CharName = node->getChildByName<ui::Text*>( "CharName"+std::to_string(i) );
         
         CharLv->setString( " " );
         CharName->setString( " " );
@@ -73,11 +81,8 @@ bool MypageScene::init()
         Atk[i].setString( getAtk(i) );
     }
     */
-    auto PartyHpText = rootNode->getChildByName<ui::Text*>( "PartyHpText" );
-    PartyHpText->setString( std::to_string(PartyValue::getInstance()->getTotalHp()) );
-    
-    // シーンにレイヤーを追加する
-    rootNode->addChild(layer);
+    auto PartyHpText = node->getChildByName<ui::Text*>( "PartyHpText" );
+    PartyHpText->setString( "100" );
     
     return true;
 }

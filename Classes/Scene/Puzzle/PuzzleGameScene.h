@@ -1,26 +1,27 @@
 #ifndef __PuzzleGame__GameLayer__
 #define __PuzzleGame__GameLayer__
 
-#include "cocos2d.h"
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
+#include "SceneData.h"
 #include <random>
 #include "PuzzleSprite.h"
 #include "BattleChar.h"
 
-class PuzzleGameScene : public cocos2d::Layer
+class PuzzleGameScene :
+public SceneData,
+public cocos2d::Layer
 {
 public:
     PuzzleGameScene(); //コンストラクタ
-    virtual bool init(); //初期化
-    CREATE_FUNC(PuzzleGameScene); //create関数生成
-    static cocos2d::Scene* createScene(int questNo); //シーン生成
+    static cocos2d::Scene* createScene(int questNo);
+    
+    SCENE_CREATE_FUNC(PuzzleGameScene, "battle/BattleScene.csb")
+    bool onCreate() override;
     
     //シングルタップイベント
-    virtual bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* unused_event);
-    virtual void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* unused_event);
-    virtual void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* unused_event);
-    virtual void onTouchCancelled(cocos2d::Touch* touch, cocos2d::Event* unused_event);
+    virtual bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* unused_event) override;
+    virtual void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* unused_event) override;
+    virtual void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* unused_event) override;
+    virtual void onTouchCancelled(cocos2d::Touch* touch, cocos2d::Event* unused_event) override;
     
 protected:
     //ボールチェック方向

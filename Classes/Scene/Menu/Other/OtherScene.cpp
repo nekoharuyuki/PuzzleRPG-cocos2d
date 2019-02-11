@@ -3,7 +3,6 @@
 #include "MenuLayer.h"
 #include "GameDataSQL.h"
 #include "PlayerValue.h"
-#include "cocostudio/CocoStudio.h"
 #include "AudioManager.h"
 
 USING_NS_CC;
@@ -43,20 +42,16 @@ Scene* OtherScene::createScene(OtherScene::transition sceneTransition)
 }
 
 // on "init" you need to initialize your instance
-bool OtherScene::init()
+bool OtherScene::onCreate()
 {
-    //////////////////////////////
-    // 1. super init first
-    if ( !Layer::init() )
-    {
+    if ( !Layer::init() ){
         return false;
     }
     
-    auto rootNode = CSLoader::createNode("other/OtherScene.csb");
-    if(rootNode == nullptr){
+    auto node = loaded();
+    if(node == nullptr){
         return false;
     }
-    this->addChild(rootNode);
     
     if(m_transitionScene == transition_menu){
         // メニューレイヤーの初期化
@@ -65,7 +60,7 @@ bool OtherScene::init()
             return false;
         }
         // シーンにメニューレイヤーを追加する
-        rootNode->addChild(layer);
+        node->addChild(layer);
     }
     
     // ローカルDBデータの有無を確認
@@ -78,7 +73,7 @@ bool OtherScene::init()
     }
     
     // ボタンノードを取得
-    auto popupOther = rootNode->getChildByName("popup_other");
+    auto popupOther = node->getChildByName("popup_other");
     
     // タッチイベント追加
     m_seOn = popupOther->getChildByName<ui::Button*>("se_on");

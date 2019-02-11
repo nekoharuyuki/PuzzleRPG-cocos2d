@@ -50,23 +50,24 @@ Scene* PuzzleGameScene::createScene(int questNo)
 }
 
 //初期化
-bool PuzzleGameScene::init()
+bool PuzzleGameScene::onCreate()
 {
-    if (!Layer::init()){
+    if ( !Layer::init() ){
         return false;
     }
     
     initBackground(); //背景の初期化
     
-    auto rootNode = CSLoader::createNode("battle/BattleScene.csb");
-    if(rootNode){
-        addChild(rootNode, ZOrder::BgForPuzzle);
+    auto node = loaded();
+    if(node == nullptr){
+        return false;
     }
+    node->setLocalZOrder(ZOrder::BgForPuzzle);
     
     // Animationを読み込む
-    auto action = ActionTimelineCache::getInstance()->createAction("battle/BattleScene.csb");
+    auto action = ActionTimelineCache::getInstance()->createAction(m_fileName.c_str());
     if(action) {
-        rootNode->runAction(action);
+        node->runAction(action);
         action->gotoFrameAndPause(m_questNo);
     }
     
@@ -83,12 +84,12 @@ bool PuzzleGameScene::init()
     _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
     
     initPuzzles(); //ボールの初期表示
-    initEnemy(rootNode); //敵の表示
-    initMembers(rootNode); //メンバーの表示
+    initEnemy(node); //敵の表示
+    initMembers(node); //メンバーの表示
     
     // メニューへ戻るボタン
     // ボタンノードを取得
-    auto startBtn = rootNode->getChildByName<ui::Button*>("menu_button");
+    auto startBtn = node->getChildByName<ui::Button*>("menu_button");
     // タッチイベント追加
     startBtn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
         // 何度も押されないように一度押されたらアクションを無効にする

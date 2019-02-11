@@ -1,13 +1,13 @@
 #ifndef __OTHER_SCENE_H__
 #define __OTHER_SCENE_H__
 
-#include "cocos2d.h"
-#include "ui/CocosGUI.h"
+#include "SceneData.h"
 
-class OtherScene : public cocos2d::Layer
+class OtherScene :
+public SceneData,
+public cocos2d::Layer
 {
 public:
-    
     enum transition
     {
         transition_title = 0,
@@ -17,19 +17,15 @@ public:
     static transition m_transitionScene;
     
     OtherScene(); //コンストラクタ
-    // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene(transition scene);
+    
+    SCENE_CREATE_FUNC(OtherScene, "other/OtherScene.csb")
+    bool onCreate() override;
     
     static bool getBgmStatus(){ return m_bgm; }
     static void setBgmStatus(bool status){ m_bgm = status; }
     static bool getSeStatus(){ return m_se; }
     static void setSeStatus(bool status){ m_se = status; }
-    
-    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-    virtual bool init();
-    
-    // implement the "static create()" method manually
-    CREATE_FUNC(OtherScene);
     
 private:
     

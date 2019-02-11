@@ -8,7 +8,6 @@
 #ifndef __TITLE_SCENE_H__
 #define __TITLE_SCENE_H__
 
-#include "cocos2d.h"
 #include "SceneData.h"
 
 class TestController;
