@@ -9,6 +9,7 @@
 #include "AudioManager.h"
 #include "MapData.h"
 #include "CharData.h"
+#include "AppPlatform.h"
 #include "TitleScene.h"
 
 #ifdef __USE_FIREBASE__
@@ -42,6 +43,11 @@ void AppInitalizer::init()
     firebase::admob::Initialize(*app, "INSERT_YOUR_ADMOB_IOS_APP_ID");
 #endif
 #endif // __USE_FIREBASE__
+    
+    // プラットフォームバージョンを確認
+    const char* version = AppPlatform::getAppVersion();
+    std::string msg = StringUtils::format("version : %s", version);
+    CCLOG("%s", msg.c_str());
     
     // オーディオ定義ファイルの読み込み
     AudioManager::getInstance()->readAudioListFile("master/audioData.json");

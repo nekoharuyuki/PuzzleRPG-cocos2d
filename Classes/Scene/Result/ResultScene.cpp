@@ -1,7 +1,5 @@
 #include "ResultScene.h"
 #include "QuestScene.h"
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
 #include "AudioManager.h"
 
 USING_NS_CC;
@@ -23,27 +21,21 @@ Scene* ResultScene::createScene()
     return scene;
 }
 
-// on "init" you need to initialize your instance
-bool ResultScene::init()
+bool ResultScene::onCreate()
 {
-    //////////////////////////////
-    // 1. super init first
-    if ( !Layer::init() )
-    {
+    if ( !Layer::init() ){
         return false;
     }
-    
-    auto rootNode = CSLoader::createNode("result/ResultScene.csb");
-    if(rootNode == nullptr){
+    auto node = loaded();
+    if(node == nullptr){
         return false;
     }
-    addChild(rootNode);
     
     // 勝利のBGM再生
     AudioManager::getInstance()->playBgm("victory");
     
     // メニューへ戻るボタン
-    auto startBtn = rootNode->getChildByName<ui::Button*>("QuestMap_btn");
+    auto startBtn = node->getChildByName<ui::Button*>("QuestMap_btn");
     // タッチイベント追加
     startBtn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
         // 何度も押されないように一度押されたらアクションを無効にする

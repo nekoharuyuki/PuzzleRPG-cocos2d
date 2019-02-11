@@ -8,7 +8,6 @@
 #ifndef __PARTY_SCENE_H__
 #define __PARTY_SCENE_H__
 
-#include "cocos2d.h"
 #include "SceneData.h"
 
 class PartyScene :

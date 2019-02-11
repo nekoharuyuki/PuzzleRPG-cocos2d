@@ -84,7 +84,7 @@ bool MenuLayer::uiButtonPushLoadScene(Node* node, Menu menu, const std::string& 
 
 cocos2d::Scene* MenuLayer::loadScene(Menu menu)
 {
-    if( menu == ui_mypage_btn ){ return MypageScene::createScene(); }
+    if( menu == ui_mypage_btn ){ return MypageScene::createScene(MypageScene::transition_menu); }
     if( menu == ui_quest_btn  ){ return QuestScene::createScene();  }
     if( menu == ui_party_btn  ){ return PartyScene::createScene(); }
     if( menu == ui_mix_btn    ){ return SyntheticScene::createScene(); }
@@ -110,7 +110,7 @@ bool MenuLayer::uiButtonPushLoadMypageScene(Node* node)
         this->getEventDispatcher()->removeAllEventListeners();
         // シーンを切り替える
         auto startLoadScene = CallFunc::create([]{
-            auto scene = MypageScene::createScene();
+            auto scene = MypageScene::createScene(MypageScene::transition_menu);
             auto transition = TransitionPageTurn::create(0.5f, scene, true);
             // ページをめくる音SE再生
             AudioManager::getInstance()->playSe("ui_page");

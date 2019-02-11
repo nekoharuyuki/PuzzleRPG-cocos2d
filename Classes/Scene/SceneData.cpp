@@ -16,6 +16,7 @@ Node* SceneData::loaded()
     if(buildAndAddRoot() == nullptr){
         return nullptr;
     }
+    CCLOG("SceneData( %s )", m_sceneName.c_str());
     return m_node;
 }
 

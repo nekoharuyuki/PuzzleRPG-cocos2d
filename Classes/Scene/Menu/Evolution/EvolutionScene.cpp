@@ -1,7 +1,5 @@
 #include "EvolutionScene.h"
 #include "MenuLayer.h"
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
 
 USING_NS_CC;
 
@@ -22,20 +20,16 @@ Scene* EvolutionScene::createScene()
     return scene;
 }
 
-// on "init" you need to initialize your instance
-bool EvolutionScene::init()
+bool EvolutionScene::onCreate()
 {
-    //////////////////////////////
-    // 1. super init first
     if ( !Layer::init() ){
         return false;
     }
     
-    auto rootNode = CSLoader::createNode("evolution/EvolutionScene.csb");
-    if(rootNode == nullptr){
+    auto node = loaded();
+    if(node == nullptr){
         return false;
     }
-    this->addChild(rootNode);
     
     // レイヤーの初期化
     auto *layer = MenuLayer::create();
@@ -43,7 +37,7 @@ bool EvolutionScene::init()
         return false;
     }
     // シーンにレイヤーを追加する
-    rootNode->addChild(layer);
+    node->addChild(layer);
     
     return true;
 }

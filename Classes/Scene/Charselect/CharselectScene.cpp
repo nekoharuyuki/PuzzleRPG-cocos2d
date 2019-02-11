@@ -12,8 +12,6 @@
 #include "CharData.h"
 #include "CharSelectSprite.h"
 #include "CharSelectIconSprite.h"
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
 #include "GameDataSQL.h"
 #include "AudioManager.h"
 
@@ -36,23 +34,17 @@ Scene* CharselectScene::createScene()
     return scene;
 }
 
-// on "init" you need to initialize your instance
-bool CharselectScene::init()
+bool CharselectScene::onCreate()
 {
-    //////////////////////////////
-    // 1. super init first
-    if ( !Layer::init() )
-    {
+    if ( !Layer::init() ){
+        return false;
+    }
+    auto node = loaded();
+    if(node == nullptr){
         return false;
     }
     
-    auto rootNode = CSLoader::createNode("charselect/CharselectScene.csb");
-    if(rootNode == nullptr){
-        return false;
-    }
-    addChild(rootNode);
-    
-    m_popup_1 = rootNode->getChildByName<Node*>( "popup_1" );
+    m_popup_1 = node->getChildByName<Node*>( "popup_1" );
     m_popup_1->setVisible(true);
     auto char1_btn = m_popup_1->getChildByName<ui::Button*>( "char1_btn" );
     char1_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
@@ -73,9 +65,9 @@ bool CharselectScene::init()
         }
     });
     
-    m_popup_2 = rootNode->getChildByName<Node*>( "popup_2" );
+    m_popup_2 = node->getChildByName<Node*>( "popup_2" );
     m_popup_2->setVisible(false);
-    m_popup_3 = rootNode->getChildByName<Node*>( "popup_3" );
+    m_popup_3 = node->getChildByName<Node*>( "popup_3" );
     m_popup_3->setVisible(false);
     
     this->scheduleUpdate();
