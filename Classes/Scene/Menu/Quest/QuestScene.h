@@ -1,9 +1,11 @@
 #ifndef __QUEST_SCENE_H__
 #define __QUEST_SCENE_H__
 
-#include "cocos2d.h"
+#include "SceneData.h"
 
-class QuestScene : public cocos2d::Layer
+class QuestScene :
+public SceneData,
+public cocos2d::Layer
 {
 protected:
     //クエストの種類
@@ -18,14 +20,10 @@ protected:
 public:
     QuestScene();   //コンストラクタ
     
-    // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
     
-    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-    virtual bool init();
-    
-    // implement the "static create()" method manually
-    CREATE_FUNC(QuestScene);
+    SCENE_CREATE_FUNC(QuestScene, "quest/QuestScene.csb")
+    bool onCreate() override;
     
 private:
     CC_SYNTHESIZE(int, m_questNo, QuestNo);                    //クエストの順番

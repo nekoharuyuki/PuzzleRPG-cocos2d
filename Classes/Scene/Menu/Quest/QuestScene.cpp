@@ -3,8 +3,6 @@
 #include "MenuLayer.h"
 #include "PlayerValue.h"
 #include "PuzzleGameScene.h"
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
 #include "AudioManager.h"
 
 USING_NS_CC;
@@ -31,27 +29,16 @@ Scene* QuestScene::createScene()
     return scene;
 }
 
-// on "init" you need to initialize your instance
-bool QuestScene::init()
+bool QuestScene::onCreate()
 {
-    //////////////////////////////
-    // 1. super init first
     if ( !Layer::init() ){
         return false;
     }
     
-    auto rootNode = CSLoader::createNode("quest/QuestScene.csb");
-    if(rootNode == nullptr){
+    auto node = loaded();
+    if(node == nullptr){
         return false;
     }
-    this->addChild(rootNode);
-    
-    // クエスト選択時のポップアップを非表示にする
-    m_popup_quest = rootNode->getChildByName<Node*>( "popup_quest" );
-    m_popup_quest->setVisible(false);
-    
-    //クエストマスの初期化
-    initQuestmas(rootNode);
     
     // レイヤーの初期化
     auto *layer = MenuLayer::create();
@@ -59,7 +46,14 @@ bool QuestScene::init()
         return false;
     }
     // シーンにレイヤーを追加する
-    rootNode->addChild(layer);
+    node->addChild(layer);
+    
+    // クエスト選択時のポップアップを非表示にする
+    m_popup_quest = node->getChildByName<Node*>( "popup_quest" );
+    m_popup_quest->setVisible(false);
+    
+    //クエストマスの初期化
+    initQuestmas(node);
     
     return true;
 }

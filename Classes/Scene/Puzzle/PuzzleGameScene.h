@@ -18,10 +18,10 @@ public:
     bool onCreate() override;
     
     //シングルタップイベント
-    virtual bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* unused_event);
-    virtual void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* unused_event);
-    virtual void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* unused_event);
-    virtual void onTouchCancelled(cocos2d::Touch* touch, cocos2d::Event* unused_event);
+    virtual bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* unused_event) override;
+    virtual void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* unused_event) override;
+    virtual void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* unused_event) override;
+    virtual void onTouchCancelled(cocos2d::Touch* touch, cocos2d::Event* unused_event) override;
     
 protected:
     //ボールチェック方向
