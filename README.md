@@ -41,3 +41,6 @@
   * frameworks > runtime-src > proj.ios_mac  
   
 ![ss_BattleScene](https://github.com/nekoharuyuki/PuzzleRPG-cocos2d/blob/master/Resources/asset/ss/ss_BattleScene.jpg)
+
+## Contributor Covenant Code of Conduct
+https://github.com/nekoharuyuki/PuzzleRPG-cocos2d/blob/master/CODE_OF_CONDUCT.md
