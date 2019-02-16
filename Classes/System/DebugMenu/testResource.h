@@ -1,6 +1,9 @@
 #ifndef _TEST_RESOURCE_H_
 #define _TEST_RESOURCE_H_
 
+// fonts
+static const char s_fontArial[]          = "fonts/arial.ttf";
+
 static const char s_pathB1[]             = "system/images/b1.png";
 static const char s_pathB2[]             = "system/images/b2.png";
 static const char s_pathR1[]             = "system/images/r1.png";
@@ -14,7 +17,7 @@ static const char s_pathModalClose1[]    = "System/images/tg_close_1.png";
 static const char s_pathModalClose2[]    = "System/images/tg_close_2.png";
 
 // 仮
-static const char s_pathGrossini[]       = "Images/grossini.png";
+static const char s_pathGrossini[]       = "asset/char/chara_player_10.png";
 static const char s_pathSister1[]        = "Images/grossinis_sister1.png";
 static const char s_pathSister2[]        = "Images/grossinis_sister2.png";
 static const char s_pathBlock[]          = "Images/blocks.png";

@@ -177,7 +177,7 @@ BillBoardTest::BillBoardTest()
     _camera->setPosition3D(Vec3(0, 100, 230));
     _camera->lookAt(Vec3(0,0,0), Vec3(0,1,0));
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 16);
+    TTFConfig ttfConfig(s_fontArial, 16);
     auto label1 = Label::createWithTTF(ttfConfig,"rotate+");
     auto menuItem1 = MenuItemLabel::create(label1, CC_CALLBACK_1(BillBoardTest::rotateCameraCallback,this,10));
     auto label2 = Label::createWithTTF(ttfConfig,"rotate-");

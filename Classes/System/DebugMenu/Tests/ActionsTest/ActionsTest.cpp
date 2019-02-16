@@ -345,7 +345,7 @@ void ActionRotationalSkewVSStandardSkew::onEnter()
     box->setPosition(s.width/2, s.height - 100 - box->getContentSize().height/2);
     this->addChild(box);
 
-    auto label = Label::createWithTTF("Standard cocos2d Skew", "fonts/Marker Felt.ttf", 16.0f);
+    auto label = Label::createWithTTF("Standard cocos2d Skew", s_fontArial, 16.0f);
     label->setPosition(s.width/2, s.height - 100 + label->getContentSize().height);
     this->addChild(label);
 
@@ -361,7 +361,7 @@ void ActionRotationalSkewVSStandardSkew::onEnter()
     box->setPosition(s.width/2, s.height - 250 - box->getContentSize().height/2);
     this->addChild(box);
 
-    label = Label::createWithTTF("Rotational Skew", "fonts/Marker Felt.ttf", 16.0f);
+    label = Label::createWithTTF("Rotational Skew", s_fontArial, 16.0f);
     label->setPosition(s.width/2, s.height - 250 + label->getContentSize().height/2);
     this->addChild(label);
     auto actionTo2 = RotateBy::create(2, 360, 0);
@@ -758,7 +758,7 @@ void ActionSequence2::onEnter()
 void ActionSequence2::callback1()
 {
     auto s = Director::getInstance()->getWinSize();
-    auto label = Label::createWithTTF("callback 1 called", "fonts/Marker Felt.ttf", 16.0f);
+    auto label = Label::createWithTTF("callback 1 called", s_fontArial, 16.0f);
     label->setPosition(s.width/4*1,s.height/2);
 
     addChild(label);
@@ -767,7 +767,7 @@ void ActionSequence2::callback1()
 void ActionSequence2::callback2(Node* sender)
 {
     auto s = Director::getInstance()->getWinSize();
-    auto label = Label::createWithTTF("callback 2 called", "fonts/Marker Felt.ttf", 16.0f);
+    auto label = Label::createWithTTF("callback 2 called", s_fontArial, 16.0f);
     label->setPosition(s.width/4*2,s.height/2);
 
     addChild(label);
@@ -776,7 +776,7 @@ void ActionSequence2::callback2(Node* sender)
 void ActionSequence2::callback3(Node* sender, long data)
 {
     auto s = Director::getInstance()->getWinSize();
-    auto label = Label::createWithTTF("callback 3 called", "fonts/Marker Felt.ttf", 16.0f);
+    auto label = Label::createWithTTF("callback 3 called", s_fontArial, 16.0f);
     label->setPosition(s.width/4*3,s.height/2);
 
     addChild(label);
@@ -906,7 +906,7 @@ void ActionCallFunction::onEnter()
                              // lambda
                              [&](){
                                  auto s = Director::getInstance()->getWinSize();
-                                 auto label = Label::createWithTTF("called:lambda callback", "fonts/Marker Felt.ttf", 16.0f);
+                                 auto label = Label::createWithTTF("called:lambda callback", s_fontArial, 16.0f);
                                  label->setPosition(s.width/4*1,s.height/2-40);
                                  this->addChild(label);
                              }  ),
@@ -933,7 +933,7 @@ void ActionCallFunction::onEnter()
 void ActionCallFunction::callback1()
 {
     auto s = Director::getInstance()->getWinSize();
-    auto label = Label::createWithTTF("callback 1 called", "fonts/Marker Felt.ttf", 16.0f);
+    auto label = Label::createWithTTF("callback 1 called", s_fontArial, 16.0f);
     label->setPosition(s.width/4*1,s.height/2);
 
     addChild(label);
@@ -942,7 +942,7 @@ void ActionCallFunction::callback1()
 void ActionCallFunction::callback2(Node* sender)
 {
     auto s = Director::getInstance()->getWinSize();
-    auto label = Label::createWithTTF("callback 2 called", "fonts/Marker Felt.ttf", 16.0f);
+    auto label = Label::createWithTTF("callback 2 called", s_fontArial, 16.0f);
     label->setPosition(s.width/4*2,s.height/2);
 
     addChild(label);
@@ -953,7 +953,7 @@ void ActionCallFunction::callback2(Node* sender)
 void ActionCallFunction::callback3(Node* sender, long data)
 {
     auto s = Director::getInstance()->getWinSize();
-    auto label = Label::createWithTTF("callback 3 called", "fonts/Marker Felt.ttf", 16.0f);
+    auto label = Label::createWithTTF("callback 3 called", s_fontArial, 16.0f);
     label->setPosition(s.width/4*3,s.height/2);
     addChild(label);
 
@@ -2226,7 +2226,7 @@ void ActionResize::onEnter()
 
     Size widgetSize = getContentSize();
 
-    Text* alert = Text::create("ImageView Content ResizeTo ResizeBy action. \nTop: ResizeTo/ResizeBy on a 9-slice ImageView  \nBottom: ScaleTo/ScaleBy on a 9-slice ImageView (for comparison)", "fonts/Marker Felt.ttf", 14);
+    Text* alert = Text::create("ImageView Content ResizeTo ResizeBy action. \nTop: ResizeTo/ResizeBy on a 9-slice ImageView  \nBottom: ScaleTo/ScaleBy on a 9-slice ImageView (for comparison)", s_fontArial, 14);
     alert->setColor(Color3B(159, 168, 176));
     alert->setPosition(Vec2(widgetSize.width / 2.0f,
                             widgetSize.height / 2.0f - alert->getContentSize().height * 1.125f));
@@ -2340,7 +2340,7 @@ void Issue14936_1::onEnter() {
 
     _count = 0;
 
-    auto counterLabel = Label::createWithTTF("0", "fonts/Marker Felt.ttf", 16.0f);
+    auto counterLabel = Label::createWithTTF("0", s_fontArial, 16.0f);
     counterLabel->setPosition(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2);
     addChild(counterLabel);
 
@@ -2366,7 +2366,7 @@ void Issue14936_2::onEnter() {
     auto visibleSize = cocos2d::Director::getInstance()->getVisibleSize();
 
     _count = 0;
-    auto counterLabel = Label::createWithTTF("0", "fonts/Marker Felt.ttf", 16.0f);
+    auto counterLabel = Label::createWithTTF("0", s_fontArial, 16.0f);
     counterLabel->setPosition(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2);
     addChild(counterLabel);
 

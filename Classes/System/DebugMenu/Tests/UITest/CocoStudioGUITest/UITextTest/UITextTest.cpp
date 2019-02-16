@@ -47,7 +47,7 @@ bool UITextTest::init()
     {
         Size widgetSize = _widget->getContentSize();
 
-        Text* alert = Text::create("Text","fonts/Marker Felt.ttf", 30);
+        Text* alert = Text::create("Text",s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                 widgetSize.height / 2.0f
@@ -74,7 +74,7 @@ bool UITextTest_LineWrap::init()
     {
         Size widgetSize = _widget->getContentSize();
 
-        Text* alert = Text::create("Text line wrap","fonts/Marker Felt.ttf",30);
+        Text* alert = Text::create("Text line wrap",s_fontArial,30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                 widgetSize.height / 2.0f
@@ -123,7 +123,7 @@ bool UILabelTest_Effect::init()
 
         Text* alert = Text::create();
         alert->setString("Label Effect");
-        alert->setFontName("fonts/Marker Felt.ttf");
+        alert->setFontName(s_fontArial);
         alert->setFontSize(30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
@@ -137,7 +137,7 @@ bool UILabelTest_Effect::init()
 
         shadow_label->enableShadow();
         shadow_label->setString("Shadow");
-        shadow_label->setFontName("fonts/Marker Felt.ttf");
+        shadow_label->setFontName(s_fontArial);
         shadow_label->setPosition(Vec2(widgetSize.width / 2.0f,
                                        widgetSize.height / 2.0f
                                       + shadow_label->getContentSize().height + 20));
@@ -147,7 +147,7 @@ bool UILabelTest_Effect::init()
 
         // create the stroke only label
         Text* glow_label = Text::create();
-        glow_label->setFontName("fonts/Marker Felt.ttf");
+        glow_label->setFontName(s_fontArial);
         glow_label->setString("Glow");
         glow_label->enableGlow(Color4B::RED);
 
@@ -177,7 +177,7 @@ bool UILabelTest_Effect::init()
         //create buttons to disable effect and add
         auto disableOutlineBtn= Button::create();
         disableOutlineBtn->setTitleText("Disable outline");
-        disableOutlineBtn->setTitleFontName("fonts/Marker Felt.ttf");
+        disableOutlineBtn->setTitleFontName(s_fontArial);
         disableOutlineBtn->setPosition(Vec2(widgetSize.width * 0.3,
                                  widgetSize.height * 0.7));
         disableOutlineBtn->setPressedActionEnabled(true);
@@ -225,7 +225,7 @@ bool UITextTest_TTF::init()
         Size widgetSize = _widget->getContentSize();
 
         Text* alert = Text::create("Text set TTF font",
-                                   "fonts/Marker Felt.ttf",30);
+                                   s_fontArial,30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                 widgetSize.height / 2.0f
@@ -233,7 +233,7 @@ bool UITextTest_TTF::init()
         _uiLayer->addChild(alert);
 
         // Create the text, and set font with .ttf
-        Text* text = Text::create("Text","fonts/A Damn Mess.ttf",30);
+        Text* text = Text::create("Text",s_fontArial,30);
         text->setPosition(Vec2(widgetSize.width / 2.0f,
                                widgetSize.height / 2.0f
                                + text->getContentSize().height / 4.0f));
@@ -253,7 +253,7 @@ bool UITextTest_IgnoreContentSize::init()
         Size widgetSize = _widget->getContentSize();
 
         Text* leftText = Text::create("ignore content",
-                                   "fonts/Marker Felt.ttf",10);
+                                   s_fontArial,10);
         leftText->setPosition(Vec2(widgetSize.width / 2.0f - 50,
                                 widgetSize.height / 2.0f));
         leftText->ignoreContentAdaptWithSize(false);
@@ -265,7 +265,7 @@ bool UITextTest_IgnoreContentSize::init()
 
 
         Text* rightText = Text::create("ignore content",
-                                      "fonts/Marker Felt.ttf",10);
+                                      s_fontArial,10);
         rightText->setPosition(Vec2(widgetSize.width / 2.0f + 50,
                                    widgetSize.height / 2.0f));
         rightText->setString("Text line with break\nText line with break\nText line with break\nText line with break\n");
@@ -299,7 +299,7 @@ bool UITextTest_Clone::init()
         Size widgetSize = _widget->getContentSize();
 
         Text* singleText = Text::create("ignore content",
-            "fonts/Marker Felt.ttf", 30);
+            s_fontArial, 30);
         singleText->setPosition(Vec2(widgetSize.width / 2.0f - 80,
             widgetSize.height / 2.0f));
         singleText->setString("CHUKONG");

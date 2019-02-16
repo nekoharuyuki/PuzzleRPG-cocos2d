@@ -159,7 +159,7 @@ void PauseTest::onEnter()
     ActionManagerTest::onEnter();
     
 
-    auto l = Label::createWithTTF("After 5 seconds grossini should move", "fonts/Thonburi.ttf", 16.0f);
+    auto l = Label::createWithTTF("After 5 seconds grossini should move", s_fontArial, 16.0f);
     addChild(l);
     l->setPosition(VisibleRect::center().x, VisibleRect::top().y-75);
     
@@ -201,7 +201,7 @@ void StopActionTest::onEnter()
 {
     ActionManagerTest::onEnter();
 
-    auto l = Label::createWithTTF("Should not crash", "fonts/Thonburi.ttf", 16.0f);
+    auto l = Label::createWithTTF("Should not crash", s_fontArial, 16.0f);
     addChild(l);
     l->setPosition(VisibleRect::center().x, VisibleRect::top().y - 75);
 
@@ -237,7 +237,7 @@ void StopAllActionsTest::onEnter()
 {
     ActionManagerTest::onEnter();
     
-    auto l = Label::createWithTTF("Should stop scale & move after 4 seconds but keep rotate", "fonts/Thonburi.ttf", 16.0f);
+    auto l = Label::createWithTTF("Should stop scale & move after 4 seconds but keep rotate", s_fontArial, 16.0f);
     addChild(l);
     l->setPosition( Vec2(VisibleRect::center().x, VisibleRect::top().y - 75) );
     
@@ -292,7 +292,7 @@ void ResumeTest::onEnter()
 {
     ActionManagerTest::onEnter();
 
-    auto l = Label::createWithTTF("Grossini only rotate/scale in 3 seconds", "fonts/Thonburi.ttf", 16.0f);
+    auto l = Label::createWithTTF("Grossini only rotate/scale in 3 seconds", s_fontArial, 16.0f);
     addChild(l);
     l->setPosition(VisibleRect::center().x, VisibleRect::top().y - 75);
 
@@ -327,7 +327,7 @@ void StopActionsByFlagsTest::onEnter()
 {
     ActionManagerTest::onEnter();
 
-    auto l = Label::createWithTTF("Should stop scale & move after 4 seconds but keep rotate", "fonts/Thonburi.ttf", 16.0f);
+    auto l = Label::createWithTTF("Should stop scale & move after 4 seconds but keep rotate", s_fontArial, 16.0f);
     addChild(l);
     l->setPosition( Vec2(VisibleRect::center().x, VisibleRect::top().y - 75) );
 
