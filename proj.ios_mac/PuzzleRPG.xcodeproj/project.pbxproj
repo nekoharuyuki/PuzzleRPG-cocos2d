@@ -1009,8 +1009,8 @@
 		800682A72217CA7C00855C84 /* ActionsProgressTest */ = {
 			isa = PBXGroup;
 			children = (
-				800682A82217CA7C00855C84 /* ActionsProgressTest.h */,
 				800682A92217CA7C00855C84 /* ActionsProgressTest.cpp */,
+				800682A82217CA7C00855C84 /* ActionsProgressTest.h */,
 			);
 			path = ActionsProgressTest;
 			sourceTree = "<group>";

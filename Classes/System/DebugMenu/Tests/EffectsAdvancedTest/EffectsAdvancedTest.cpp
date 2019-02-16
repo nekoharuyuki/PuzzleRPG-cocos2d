@@ -44,7 +44,6 @@ EffectAdvanceTests::EffectAdvanceTests()
     ADD_TEST_CASE(Effect1);
     ADD_TEST_CASE(Effect4);
     ADD_TEST_CASE(Effect5);
-    ADD_TEST_CASE(Issue631);
 }
 
 //------------------------------------------------------------------
@@ -257,52 +256,6 @@ void Effect5::onExit()
 
 //------------------------------------------------------------------
 //
-// Effect5
-//
-//------------------------------------------------------------------
-void Issue631::onEnter()
-{
-    EffectAdvanceBaseTest::onEnter();
-        
-    auto effect = Sequence::create( DelayTime::create(2.0f), Shaky3D::create(5.0f, Size(5, 5), 16, false), nullptr);
-
-    // cleanup
-    //auto bg = getChildByTag(kTagBackground);
-    removeChild(_bgNode, true);
-
-    // background
-    auto layer = LayerColor::create( Color4B(255,0,0,255) );
-    addChild(layer, -10);
-    auto sprite = Sprite::create("Images/grossini.png");
-    sprite->setPosition(50,80);
-    layer->addChild(sprite, 10);
-    
-    // foreground
-    auto layer2BaseGrid = NodeGrid::create();
-    auto layer2 = LayerColor::create(Color4B( 0, 255,0,255 ) );
-    auto fog = Sprite::create("Images/Fog.png");
-
-    BlendFunc bf = {GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA};
-    fog->setBlendFunc(bf);
-    layer2->addChild(fog, 1);
-    addChild(layer2BaseGrid, 1);
-    layer2BaseGrid->addChild(layer2);
-    
-    layer2BaseGrid->runAction( RepeatForever::create(effect) );
-}
-
-std::string Issue631::title() const
-{
-    return "Testing Opacity";
-}
-
-std::string Issue631::subtitle() const
-{
-    return "Effect image should be 100% opaque. Testing issue #631";
-}
-
-//------------------------------------------------------------------
-//
 // EffectAdvanceBaseTest
 //
 //------------------------------------------------------------------
@@ -323,7 +276,7 @@ void EffectAdvanceBaseTest::onEnter(void)
 
     _target1 = NodeGrid::create();
     _target1->setAnchorPoint(Vec2(0.5,0.5));
-    auto grossini = Sprite::create("Images/grossinis_sister2.png");
+    auto grossini = Sprite::create(s_pathSister2);
     _target1->addChild(grossini);
     _bgNode->addChild(_target1);
     _target1->setPosition(VisibleRect::left().x+VisibleRect::getVisibleRect().size.width/3.0f, VisibleRect::bottom().y+ 200);
@@ -334,7 +287,7 @@ void EffectAdvanceBaseTest::onEnter(void)
 
     _target2 = NodeGrid::create();
     _target2->setAnchorPoint(Vec2(0.5,0.5));
-    auto tamara = Sprite::create("Images/grossinis_sister1.png");
+    auto tamara = Sprite::create(s_pathSister1);
     _target2->addChild(tamara);
     _bgNode->addChild(_target2);
     _target2->setPosition(VisibleRect::left().x+2*VisibleRect::getVisibleRect().size.width/3.0f,VisibleRect::bottom().y+200);

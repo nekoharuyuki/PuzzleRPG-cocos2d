@@ -73,19 +73,19 @@ void NewSpriteTest::createSpriteTest()
 
     Sprite* parent = Sprite::create("Images/grossini.png");
     parent->setPosition(winSize.width/4, winSize.height/2);
-    Sprite* child1 = Sprite::create("Images/grossinis_sister1.png");
+    Sprite* child1 = Sprite::create(s_pathSister1);
     child1->setPosition(0.0f, -20.0f);
-    Sprite* child2 = Sprite::create("Images/grossinis_sister2.png");
+    Sprite* child2 = Sprite::create(s_pathSister2);
     child2->setPosition(20.0f, -20.0f);
-    Sprite* child3 = Sprite::create("Images/grossinis_sister1.png");
+    Sprite* child3 = Sprite::create(s_pathSister1);
     child3->setPosition(40.0f, -20.0f);
-    Sprite* child4 = Sprite::create("Images/grossinis_sister2.png");
+    Sprite* child4 = Sprite::create(s_pathSister2);
     child4->setPosition(60.0f, -20.0f);
-    Sprite* child5 = Sprite::create("Images/grossinis_sister2.png");
+    Sprite* child5 = Sprite::create(s_pathSister2);
     child5->setPosition(80.0f, -20.0f);
-    Sprite* child6 = Sprite::create("Images/grossinis_sister2.png");
+    Sprite* child6 = Sprite::create(s_pathSister2);
     child6->setPosition(100.0f, -20.0f);
-    Sprite* child7 = Sprite::create("Images/grossinis_sister2.png");
+    Sprite* child7 = Sprite::create(s_pathSister2);
     child7->setPosition(120.0f, -20.0f);
 
     parent->addChild(child1);

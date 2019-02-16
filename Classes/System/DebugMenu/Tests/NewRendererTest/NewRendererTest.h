@@ -27,6 +27,7 @@
 
 #include "cocos2d.h"
 #include "BaseTest.h"
+#include "testResource.h"
 
 #define kTagSpriteBatchNode 100
 #define kTagClipperNode     101

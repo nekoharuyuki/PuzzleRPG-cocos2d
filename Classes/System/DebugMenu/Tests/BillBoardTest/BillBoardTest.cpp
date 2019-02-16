@@ -52,7 +52,7 @@ BillBoardRotationTest::BillBoardRotationTest()
     root->setPositionNormalized(Vec2(.5,.25));
     addChild(root);
     
-    auto model = Sprite3D::create("Sprite3DTest/orc.c3b");
+    auto model = Sprite3D::create("Images/orc.c3b");
     model->setScale(5);
     model->setRotation3D(Vec3(0,180,0));
     root->addChild(model);

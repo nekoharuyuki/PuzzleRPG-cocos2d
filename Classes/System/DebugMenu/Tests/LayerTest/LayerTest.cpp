@@ -82,8 +82,8 @@ void LayerTestCascadingOpacityA::onEnter()
     auto s = Director::getInstance()->getWinSize();
     auto layer1 = Layer::create();
     
-    auto sister1 = Sprite::create("Images/grossinis_sister1.png");
-    auto sister2 = Sprite::create("Images/grossinis_sister2.png");
+    auto sister1 = Sprite::create(s_pathSister1);
+    auto sister2 = Sprite::create(s_pathSister2);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -134,8 +134,8 @@ void LayerTestCascadingOpacityB::onEnter()
     
     layer1->setPosition( Vec2(0, s.height/2));
     
-    auto sister1 = Sprite::create("Images/grossinis_sister1.png");
-    auto sister2 = Sprite::create("Images/grossinis_sister2.png");
+    auto sister1 = Sprite::create(s_pathSister1);
+    auto sister2 = Sprite::create(s_pathSister2);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -187,8 +187,8 @@ void LayerTestCascadingOpacityC::onEnter()
     
     layer1->setPosition( Vec2(0, s.height/2));
     
-    auto sister1 = Sprite::create("Images/grossinis_sister1.png");
-    auto sister2 = Sprite::create("Images/grossinis_sister2.png");
+    auto sister1 = Sprite::create(s_pathSister1);
+    auto sister2 = Sprite::create(s_pathSister2);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -235,8 +235,8 @@ void LayerTestCascadingColorA::onEnter()
     auto s = Director::getInstance()->getWinSize();
     auto layer1 = Layer::create();
     
-    auto sister1 = Sprite::create("Images/grossinis_sister1.png");
-    auto sister2 = Sprite::create("Images/grossinis_sister2.png");
+    auto sister1 = Sprite::create(s_pathSister1);
+    auto sister2 = Sprite::create(s_pathSister2);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -288,8 +288,8 @@ void LayerTestCascadingColorB::onEnter()
     
     layer1->setPosition( Vec2(0, s.height/2));
     
-    auto sister1 = Sprite::create("Images/grossinis_sister1.png");
-    auto sister2 = Sprite::create("Images/grossinis_sister2.png");
+    auto sister1 = Sprite::create(s_pathSister1);
+    auto sister2 = Sprite::create(s_pathSister2);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -340,8 +340,8 @@ void LayerTestCascadingColorC::onEnter()
     layer1->setCascadeColorEnabled(false);
     layer1->setPosition( Vec2(0, s.height/2));
     
-    auto sister1 = Sprite::create("Images/grossinis_sister1.png");
-    auto sister2 = Sprite::create("Images/grossinis_sister2.png");
+    auto sister1 = Sprite::create(s_pathSister1);
+    auto sister2 = Sprite::create(s_pathSister2);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
