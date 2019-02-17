@@ -27,6 +27,7 @@
 
 #include "VibrateTest.h"
 #include "ui/CocosGUI.h"
+#include "testResource.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
@@ -45,7 +46,7 @@ namespace {
         {
             auto ret = new (std::nothrow) TextButton();
             
-            TTFConfig ttfconfig("fonts/arial.ttf",25);
+            TTFConfig ttfconfig(s_fontArial,25);
             if (ret && ret->setTTFConfig(ttfconfig)) {
                 ret->setString(text);
                 ret->_onTriggered = onTriggered;
@@ -269,7 +270,7 @@ bool VibrateControlTest::init()
     auto ret = VibrateTestDemo::init();
     _duration = 0.1f;
     
-    std::string fontFilePath = "fonts/arial.ttf";
+    std::string fontFilePath = s_fontArial;
     
     auto& layerSize = this->getContentSize();
 

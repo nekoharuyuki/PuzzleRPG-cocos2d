@@ -70,10 +70,7 @@ CocosNodeTests::CocosNodeTests()
     ADD_TEST_CASE(NodeGlobalZValueTest);
     ADD_TEST_CASE(NodeNormalizedPositionTest1);
     ADD_TEST_CASE(NodeNormalizedPositionTest2);
-    ADD_TEST_CASE(NodeNormalizedPositionBugTest);
     ADD_TEST_CASE(NodeNameTest);
-    ADD_TEST_CASE(Issue16100Test);
-    ADD_TEST_CASE(Issue16735Test);
 }
 
 TestCocosNodeDemo::TestCocosNodeDemo(void)
@@ -800,7 +797,7 @@ ConvertToNode::ConvertToNode()
     auto action = RepeatForever::create(rotate);
     for(int i = 0; i < 3; i++)
     {
-        auto sprite = Sprite::create("Images/grossini.png");
+        auto sprite = Sprite::create(s_pathGrossini);
         sprite->setPosition(Vec2( s.width/4*(i+1), s.height/2));
 
         auto point = Sprite::create("Images/r1.png");
@@ -1140,7 +1137,7 @@ NodeNormalizedPositionTest1::NodeNormalizedPositionTest1()
     positions[4] = Vec2(1,1);
 
     for(int i=0; i<5; i++) {
-        sprites[i] = Sprite::create("Images/grossini.png");
+        sprites[i] = Sprite::create(s_pathGrossini);
         sprites[i]->setPositionNormalized(positions[i]);
         addChild(sprites[i]);
     }
@@ -1173,7 +1170,7 @@ NodeNormalizedPositionTest2::NodeNormalizedPositionTest2()
     positions[4] = Vec2(1,1);
 
     for(int i=0; i<5; i++) {
-        sprites[i] = Sprite::create("Images/grossini.png");
+        sprites[i] = Sprite::create(s_pathGrossini);
         sprites[i]->setPositionNormalized(positions[i]);
         addChild(sprites[i]);
     }
@@ -1206,46 +1203,6 @@ void NodeNormalizedPositionTest2::update(float dt)
     Size s = Size(_copyContentSize.width*norm, _copyContentSize.height*norm);
     setContentSize(s);
     CCLOG("s: %f,%f", s.width, s.height);
-}
-
-
-//------------------------------------------------------------------
-//
-// NodeNormalizedPositionBugTest
-//
-//------------------------------------------------------------------
-NodeNormalizedPositionBugTest::NodeNormalizedPositionBugTest()
-: _accum(0)
-{
-    Vec2 position;
-   
-    position = Vec2(0.5,0.5);
-
-    
-    sprite = Sprite::create("Images/grossini.png");
-    sprite->setPositionNormalized(position);
-    addChild(sprite);
-    
-    scheduleUpdate();
-}
-
-std::string NodeNormalizedPositionBugTest::title() const
-{
-    return "NodeNormalizedPositionBugTest";
-}
-
-std::string NodeNormalizedPositionBugTest::subtitle() const
-{
-    return "When changing sprite normalizedPosition, the sprite doesn't move!";
-}
-
-void NodeNormalizedPositionBugTest::update(float dt)
-{
-    _accum += dt;
-    
-    // for 5 seconds
-    float norm = clampf(sinf(_accum), 0, 1.0);
-    sprite->setPositionNormalized(Vec2(norm,norm));
 }
 
 std::string NodeNameTest::title() const
@@ -1447,114 +1404,4 @@ void NodeNameTest::test(float dt)
     }
     auto findChildren = utils::findChildren(*parent, "node");
     CCAssert(findChildren.size() == 50, "");
-}
-
-//------------------------------------------------------------------
-//
-// Issue16100Test
-//
-//------------------------------------------------------------------
-void Issue16100Test::onEnter()
-{
-    TestCocosNodeDemo::onEnter();
-
-    // create user camera
-    auto s = Director::getInstance()->getWinSize();
-
-    auto delay = DelayTime::create(0.1f);
-    auto f = CallFunc::create([this, s]()
-    {
-        auto camera = Camera::createOrthographic(s.width * 2, s.height * 2, -1024, 1024);
-        camera->setCameraFlag(CameraFlag::USER1);
-        addChild(camera);
-    });
-    this->runAction(Sequence::createWithTwoActions(delay, f));
-
-    // grossini using default camera
-    auto sprite = Sprite::create("Images/grossini.png");
-    this->addChild(sprite);
-
-    sprite->setPosition(-200,s.height/3);
-    auto moveby = MoveBy::create(2, Vec2(400,0));
-    auto movebyback = moveby->reverse();
-    auto seq = Sequence::create(moveby, movebyback, nullptr);
-    auto forever = RepeatForever::create(seq);
-
-    sprite->runAction(forever);
-
-    sprite->setCameraMask((int)CameraFlag::DEFAULT);
-
-
-    // grossini's sister using user camera
-    auto sister = Sprite::create("Images/grossinis_sister1.png");
-    this->addChild(sister);
-
-    sister->setPosition(-200,s.height*2/3);
-    auto moveby1 = MoveBy::create(2, Vec2(400,0));
-    auto movebyback1 = moveby1->reverse();
-    auto seq1 = Sequence::create(moveby1, movebyback1, nullptr);
-    auto forever1 = RepeatForever::create(seq1);
-
-    sister->runAction(forever1);
-    sister->setCameraMask((int)CameraFlag::USER1);
-}
-
-void Issue16100Test::onExit()
-{
-    TestCocosNodeDemo::onExit();
-}
-
-std::string Issue16100Test::title() const
-{
-    return "Issue 16100";
-}
-
-std::string Issue16100Test::subtitle() const
-{
-    return "Sprite should appear on the screen";
-}
-
-//------------------------------------------------------------------
-//
-// Issue16735Test
-//
-//------------------------------------------------------------------
-void Issue16735Test::onEnter()
-{
-    TestCocosNodeDemo::onEnter();
-
-    auto visibleSize = Director::getInstance()->getVisibleSize();
-    auto origin = Director::getInstance()->getVisibleOrigin();
-
-    auto sprite1 = Sprite::create("Images/grossini.png");
-    sprite1->setPosition(Vec2(visibleSize / 2) + origin);
-    addChild(sprite1);
-
-    auto sprite2 = Sprite::create("Images/grossini.png");
-    sprite2->setPosition(Vec2(visibleSize / 2) + origin);
-    sprite2->setSkewX(30);
-    sprite2->setScale(2);
-    sprite2->setRotation(30);
-    addChild(sprite2);
-
-    auto d = DrawNode::create();
-    d->drawLine(Vec2(origin.x, origin.y + visibleSize.height/2), Vec2(origin.x + visibleSize.width, origin.y + visibleSize.height/2), Color4F::RED);
-    d->drawLine(Vec2(origin.x + visibleSize.width/2, origin.y), Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height), Color4F::RED);
-    
-    addChild(d);
-}
-
-void Issue16735Test::onExit()
-{
-    TestCocosNodeDemo::onExit();
-}
-
-std::string Issue16735Test::title() const
-{
-    return "Issue 16735";
-}
-
-std::string Issue16735Test::subtitle() const
-{
-    return "Sprite should appear on the center of screen";
 }

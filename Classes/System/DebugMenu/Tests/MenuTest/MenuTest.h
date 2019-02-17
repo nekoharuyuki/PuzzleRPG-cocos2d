@@ -62,7 +62,6 @@ public:
     void menuCallbackDisabled(cocos2d::Ref* sender);
     void menuCallback2(cocos2d::Ref* sender);
     void menuCallbackPriorityTest(cocos2d::Ref* sender);
-    void menuCallbackBugsTest(cocos2d::Ref* pSender);
     void onQuit(cocos2d::Ref* sender);
     void menuMovingCallback(cocos2d::Ref* pSender);
 
@@ -107,16 +106,6 @@ public:
 
     void menuCallback(cocos2d::Ref* sender);
     void backCallback(cocos2d::Ref* sender);
-};
-
-class BugsTest : public cocos2d::Layer
-{
-public:
-    BugsTest();
-    
-    void issue1410MenuCallback(cocos2d::Ref* pSender);
-    void issue1410v2MenuCallback(cocos2d::Ref* pSender);
-    void backMenuCallback(cocos2d::Ref* pSender);
 };
 
 class RemoveMenuItemWhenMove : public cocos2d::Layer

@@ -71,30 +71,4 @@ public:
     virtual std::string title() const override;
 };
 
-class Issue1358 : public MotionStreakTest
-{
-public:
-    CREATE_FUNC(Issue1358);
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    virtual void onEnter() override;
-    virtual void update(float dt) override;
-private:
-    cocos2d::Vec2 _center;
-    float _radius;
-    float _angle;
-};
-
-class Issue12226 : public MotionStreakTest
-{
-public:
-    CREATE_FUNC(Issue12226);
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    virtual void onEnter() override;
-};
-
-
 #endif

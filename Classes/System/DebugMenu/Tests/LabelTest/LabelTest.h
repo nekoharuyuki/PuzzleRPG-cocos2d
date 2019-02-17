@@ -362,18 +362,6 @@ public:
     virtual std::string subtitle() const override;
 };
 
-
-class Issue1343 : public AtlasDemo
-{
-public:
-    CREATE_FUNC(Issue1343);
-
-    Issue1343();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 class LabelBMFontBounds : public AtlasDemo
 {
 public:

@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "CurrentLanguageTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 
@@ -33,14 +34,14 @@ CurrentLanguageTests::CurrentLanguageTests()
 
 CurrentLanguageTest::CurrentLanguageTest()
 {
-    auto label = Label::createWithTTF("Current language Test", "fonts/arial.ttf", 28);
+    auto label = Label::createWithTTF("Current language Test", s_fontArial, 28);
     addChild(label, 0);
     label->setPosition(VisibleRect::center().x, VisibleRect::top().y-50);
 
-    auto labelLanguage = Label::createWithTTF("", "fonts/arial.ttf", 20);
+    auto labelLanguage = Label::createWithTTF("", s_fontArial, 20);
     labelLanguage->setPosition(VisibleRect::center());
     
-    auto labelLanguageCode = Label::createWithTTF("", "fonts/arial.ttf", 20);
+    auto labelLanguageCode = Label::createWithTTF("", s_fontArial, 20);
     labelLanguageCode->setPosition(VisibleRect::center().x, VisibleRect::center().y-50);
     
     const char* currentLanguageCode = Application::getInstance()->getCurrentLanguageCode();

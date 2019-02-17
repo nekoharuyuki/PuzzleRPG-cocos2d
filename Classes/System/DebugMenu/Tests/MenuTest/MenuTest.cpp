@@ -87,7 +87,7 @@ MenuLayerMainMenu::MenuLayerMainMenu()
 	});
 
     item4->setFontSizeObj(20);
-    item4->setFontName("fonts/Marker Felt.ttf");
+    item4->setFontName(s_fontArial);
     
     // Label Item (LabelBMFont)
     auto label = Label::createWithBMFont("fonts/bitmapFontTest3.fnt", "configuration");
@@ -97,21 +97,19 @@ MenuLayerMainMenu::MenuLayerMainMenu()
     item5->setScale( 0.8f );
 
     // Events
-    MenuItemFont::setFontName("fonts/Marker Felt.ttf");
-    // Bugs Item
-    auto item6 = MenuItemFont::create("Bugs", CC_CALLBACK_1(MenuLayerMainMenu::menuCallbackBugsTest, this));
+    MenuItemFont::setFontName(s_fontArial);
 
     // Font Item
-    auto item7= MenuItemFont::create("Quit", CC_CALLBACK_1(MenuLayerMainMenu::onQuit, this));
+    auto item6= MenuItemFont::create("Quit", CC_CALLBACK_1(MenuLayerMainMenu::onQuit, this));
     
-    auto item8 = MenuItemFont::create("Remove menu item when moving", CC_CALLBACK_1(MenuLayerMainMenu::menuMovingCallback, this));
+    auto item7 = MenuItemFont::create("Remove menu item when moving", CC_CALLBACK_1(MenuLayerMainMenu::menuMovingCallback, this));
     
     auto color_action = TintBy::create(0.5f, 0, -255, -255);
     auto color_back = color_action->reverse();
     auto seq = Sequence::create(color_action, color_back, nullptr);
-    item7->runAction(RepeatForever::create(seq));
+    item6->runAction(RepeatForever::create(seq));
 
-    auto menu = Menu::create( item1, item2, item3, item4, item5, item6, item7, item8,  nullptr);
+    auto menu = Menu::create( item1, item2, item3, item4, item5, item6, item7, nullptr);
     menu->alignItemsVertically();
     
     
@@ -193,11 +191,6 @@ void MenuLayerMainMenu::menuCallbackDisabled(Ref* sender)
 void MenuLayerMainMenu::menuCallback2(Ref* sender)
 {
     static_cast<LayerMultiplex*>(_parent)->switchTo(2, false);
-}
-
-void MenuLayerMainMenu::menuCallbackBugsTest(Ref *pSender)
-{
-    static_cast<LayerMultiplex*>(_parent)->switchTo(4, false);
 }
 
 void MenuLayerMainMenu::onQuit(Ref* sender)
@@ -327,7 +320,7 @@ void MenuLayer2::menuCallbackAlign(Ref* sender)
 //------------------------------------------------------------------
 MenuLayer3::MenuLayer3()
 {
-    MenuItemFont::setFontName("fonts/Marker Felt.ttf");
+    MenuItemFont::setFontName(s_fontArial);
     MenuItemFont::setFontSize(28);
 
     auto label = Label::createWithBMFont("fonts/bitmapFontTest3.fnt", "Enable AtlasItem");
@@ -392,7 +385,7 @@ MenuLayer4::MenuLayer4()
     MenuItemFont::setFontSize(18);
     auto title1 = MenuItemFont::create("Sound");
     title1->setEnabled(false);
-    MenuItemFont::setFontName( "fonts/Marker Felt.ttf" );
+    MenuItemFont::setFontName( s_fontArial );
     MenuItemFont::setFontSize(34);
     auto item1 = MenuItemToggle::createWithCallback( CC_CALLBACK_1(MenuLayer4::menuCallback, this),
                                                                 MenuItemFont::create( "On" ),
@@ -403,7 +396,7 @@ MenuLayer4::MenuLayer4()
     MenuItemFont::setFontSize(18);
     auto title2 = MenuItemFont::create( "Music" );
     title2->setEnabled(false);
-    MenuItemFont::setFontName( "fonts/Marker Felt.ttf" );
+    MenuItemFont::setFontName( s_fontArial );
     MenuItemFont::setFontSize(34);
     auto item2 = MenuItemToggle::createWithCallback(CC_CALLBACK_1(MenuLayer4::menuCallback, this),
                                                                 MenuItemFont::create( "On" ),
@@ -414,7 +407,7 @@ MenuLayer4::MenuLayer4()
     MenuItemFont::setFontSize(18);
     auto title3 = MenuItemFont::create( "Quality" );
     title3->setEnabled( false );
-    MenuItemFont::setFontName( "fonts/Marker Felt.ttf" );
+    MenuItemFont::setFontName( s_fontArial );
     MenuItemFont::setFontSize(34);
     auto item3 = MenuItemToggle::createWithCallback(CC_CALLBACK_1(MenuLayer4::menuCallback, this),
                                                                 MenuItemFont::create( "High" ),
@@ -425,7 +418,7 @@ MenuLayer4::MenuLayer4()
     MenuItemFont::setFontSize(18);
     auto title4 = MenuItemFont::create( "Orientation" );
     title4->setEnabled(false);
-    MenuItemFont::setFontName( "fonts/Marker Felt.ttf" );
+    MenuItemFont::setFontName( s_fontArial );
     MenuItemFont::setFontSize(34);
     auto item4 = MenuItemToggle::createWithCallback(CC_CALLBACK_1(MenuLayer4::menuCallback, this),
                                                                 MenuItemFont::create( "Off" ), 
@@ -439,7 +432,7 @@ MenuLayer4::MenuLayer4()
     // you can change the one of the items by doing this
     item4->setSelectedIndex( 2 );
     
-    MenuItemFont::setFontName( "fonts/Marker Felt.ttf" );
+    MenuItemFont::setFontName( s_fontArial );
     MenuItemFont::setFontSize( 34 );
     
     auto label = Label::createWithBMFont("fonts/bitmapFontTest3.fnt",  "go back");
@@ -474,49 +467,11 @@ void MenuLayer4::backCallback(Ref* sender)
     static_cast<LayerMultiplex*>(_parent)->switchTo(0, false);
 }
 
-// BugsTest
-BugsTest::BugsTest()
-{
-    auto issue1410 = MenuItemFont::create("Issue 1410", CC_CALLBACK_1(BugsTest::issue1410MenuCallback, this));
-    auto issue1410_2 = MenuItemFont::create("Issue 1410 #2", CC_CALLBACK_1(BugsTest::issue1410v2MenuCallback, this));
-    auto back = MenuItemFont::create("Back", CC_CALLBACK_1(BugsTest::backMenuCallback, this));
-    
-    auto menu = Menu::create(issue1410, issue1410_2, back, nullptr);
-    addChild(menu);
-    menu->alignItemsVertically();
-    
-    auto s = Director::getInstance()->getWinSize();
-    menu->setPosition(Vec2(s.width/2, s.height/2));
-}
-
-void BugsTest::issue1410MenuCallback(Ref *sender)
-{
-    auto menu = static_cast<Menu*>( static_cast<Node*>(sender)->getParent() );
-    menu->setEnabled(false);
-    menu->setEnabled(true);
-    
-    log("NO CRASHES");
-}
-
-void BugsTest::issue1410v2MenuCallback(cocos2d::Ref *pSender)
-{
-    auto menu = static_cast<Menu*>( static_cast<MenuItem*>(pSender)->getParent() );
-    menu->setEnabled(true);
-    menu->setEnabled(false);
-    
-    log("NO CRASHES. AND MENU SHOULD STOP WORKING");
-}
-
-void BugsTest::backMenuCallback(cocos2d::Ref *pSender)
-{
-    static_cast<LayerMultiplex*>(_parent)->switchTo(0, false);
-}
-
 RemoveMenuItemWhenMove::RemoveMenuItemWhenMove()
 {
     auto s = Director::getInstance()->getWinSize();
     
-    auto label = Label::createWithTTF("click item and move, should not crash", "fonts/arial.ttf", 20);
+    auto label = Label::createWithTTF("click item and move, should not crash", s_fontArial, 20);
     label->setPosition(Vec2(s.width/2, s.height - 30));
     addChild(label);
     
@@ -578,10 +533,9 @@ bool MenuTest::init()
         auto layer2 = new (std::nothrow) MenuLayer2();
         auto layer3 = new (std::nothrow) MenuLayer3();
         auto layer4 = new (std::nothrow) MenuLayer4();
-        auto layer5 = new (std::nothrow) BugsTest();
-        auto layer6 = new (std::nothrow) RemoveMenuItemWhenMove();
+        auto layer5 = new (std::nothrow) RemoveMenuItemWhenMove();
 
-        auto layer = LayerMultiplex::create(layer1, layer2, layer3, layer4, layer5, layer6, nullptr);
+        auto layer = LayerMultiplex::create(layer1, layer2, layer3, layer4, layer5, nullptr);
         addChild(layer, 0);
 
         layer1->release();
@@ -589,7 +543,6 @@ bool MenuTest::init()
         layer3->release();
         layer4->release();
         layer5->release();
-        layer6->release();
 
         return true;
     }

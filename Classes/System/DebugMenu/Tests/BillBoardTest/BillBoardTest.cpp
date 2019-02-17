@@ -52,7 +52,7 @@ BillBoardRotationTest::BillBoardRotationTest()
     root->setPositionNormalized(Vec2(.5,.25));
     addChild(root);
     
-    auto model = Sprite3D::create("Sprite3DTest/orc.c3b");
+    auto model = Sprite3D::create(s_c3bTest);
     model->setScale(5);
     model->setRotation3D(Vec3(0,180,0));
     root->addChild(model);
@@ -177,7 +177,7 @@ BillBoardTest::BillBoardTest()
     _camera->setPosition3D(Vec3(0, 100, 230));
     _camera->lookAt(Vec3(0,0,0), Vec3(0,1,0));
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 16);
+    TTFConfig ttfConfig(s_fontArial, 16);
     auto label1 = Label::createWithTTF(ttfConfig,"rotate+");
     auto menuItem1 = MenuItemLabel::create(label1, CC_CALLBACK_1(BillBoardTest::rotateCameraCallback,this,10));
     auto label2 = Label::createWithTTF(ttfConfig,"rotate-");
@@ -251,7 +251,7 @@ void BillBoardTest::addNewAniBillBoardWithCoords(Vec3 p)
 {
     for (unsigned int i = 0; i < 10; ++i)
     {
-        auto billboardAni = BillBoard::create("Images/grossini.png");
+        auto billboardAni = BillBoard::create(s_pathGrossini);
         billboardAni->setScale(0.5f);
         billboardAni->setPosition3D(Vec3(p.x, p.y,  -150.0f + 30 * i));
         _layerBillBoard->addChild(billboardAni);

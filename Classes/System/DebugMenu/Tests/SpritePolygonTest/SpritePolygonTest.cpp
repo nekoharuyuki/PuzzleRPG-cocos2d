@@ -44,7 +44,6 @@ SpritePolygonTest::SpritePolygonTest()
     ADD_TEST_CASE(SpritePolygonTestTPIsland);
     ADD_TEST_CASE(SpritePolygonTestAutoPolyIsland);
     ADD_TEST_CASE(SpritePolygonTestFrameAnim);
-    ADD_TEST_CASE(Issue14017Test);
 }
 
 SpritePolygonTestCase::SpritePolygonTestCase()
@@ -76,7 +75,7 @@ bool SpritePolygonTestCase::init()
     {
         if (_isNeedDebugMenu)
         {
-            TTFConfig ttfConfig("fonts/arial.ttf", 10);
+            TTFConfig ttfConfig(s_fontArial, 10);
             auto label = Label::createWithTTF(ttfConfig,"DebugDraw OFF");
             auto menuItem = MenuItemLabel::create(label, [=](Ref *ref){
                 if (_isDebugDraw){
@@ -207,7 +206,7 @@ void SpritePolygonTest1::initSprites()
     _drawNodes.pushBack(sppDrawNode);
     
     //Label
-    TTFConfig ttfConfig("fonts/arial.ttf", 8);
+    TTFConfig ttfConfig(s_fontArial, 8);
     std::string temp = "Sprite:\nPixels drawn: ";
     auto spSize = _normalSprite->getContentSize();
     auto spArea = Label::createWithTTF(ttfConfig, temp+Value((int)spSize.width*(int)spSize.height).asString());
@@ -262,7 +261,7 @@ void SpritePolygonTest2::initSprites()
     _polygonSprite->addChild(sppDrawNode);
     
     //Label
-    TTFConfig ttfConfig("fonts/arial.ttf", 8);
+    TTFConfig ttfConfig(s_fontArial, 8);
     std::string temp = "Sprite:\nPixels drawn: ";
     auto spSize = _normalSprite->getContentSize();
     auto spArea = Label::createWithTTF(ttfConfig, temp+Value((int)spSize.width*(int)spSize.height).asString());
@@ -301,7 +300,7 @@ void SpritePolygonTestSlider::initSliders()
     slider->addEventListener(CC_CALLBACK_2(SpritePolygonTestSlider::changeEpsilon, this));
     slider->setPercent((int)(sqrtf(1.0f/19.0f)*100));
     
-    auto ttfConfig = TTFConfig("fonts/arial.ttf", 8);
+    auto ttfConfig = TTFConfig(s_fontArial, 8);
     _epsilonLabel = Label::createWithTTF(ttfConfig, "Epsilon: 2.0");
     addChild(_epsilonLabel);
     _epsilonLabel->setPosition(Vec2(vsize.width/2, vsize.height/4 + 15));
@@ -369,7 +368,7 @@ Sprite* SpritePolygonTestSlider::makeSprite(const std::string &filename, const V
     ret->addChild(drawNode);
  
     //Label
-    auto ttfConfig = TTFConfig("fonts/arial.ttf", 8);
+    auto ttfConfig = TTFConfig(s_fontArial, 8);
     auto spArea = Label::createWithTTF(ttfConfig, filename+"\nVerts: "+Value((int)pinfo.getVertCount()).asString()+ "\nPixels: "+Value((int)(pinfo.getArea()/originalSize*100)).asString()+"%");
     ret->addChild(spArea);
     spArea->setAnchorPoint(Vec2(0,1));
@@ -520,7 +519,7 @@ void SpritePolygonTest5::update(float dt)
 
 SpritePolygonPerformance::SpritePolygonPerformance()
 {
-    TTFConfig ttfConfig("fonts/arial.ttf", 10);
+    TTFConfig ttfConfig(s_fontArial, 10);
     _perfLabel = Label::createWithTTF(ttfConfig, "performance test");
     addChild(_perfLabel);
     _perfLabel->setPosition(Director::getInstance()->getVisibleSize().width/2, 80);
@@ -805,61 +804,4 @@ void SpritePolygonTestFrameAnim::initSprites()
     auto animation = Animation::createWithSpriteFrames(animFrames, 0.3f);
     sprite->runAction(RepeatForever::create(Animate::create(animation)));
     
-}
-
-//
-// Issue14017Test
-//
-Issue14017Test::Issue14017Test()
-{
-    _title = "Issue 14017";
-    _subtitle = "Autopolygon around the banana";
-}
-
-void Issue14017Test::initSprites()
-{
-    auto s = Director::getInstance()->getWinSize();
-    auto offset = Vec2(0.15*s.width,0);
-    auto filename = "Images/bug14017.png";
-
-    //Sprite
-    auto pinfo = AutoPolygon::generatePolygon(filename);
-    _polygonSprite = Sprite::create(pinfo);
-    _polygonSprite->setTag(101);
-    addChild(_polygonSprite);
-    _polygonSprite->setPosition(Vec2(s)/2 + offset);
-
-    _normalSprite = Sprite::create(filename);
-    _normalSprite->setTag(100);
-    addChild(_normalSprite);
-    _normalSprite->setPosition(Vec2(s)/2 - offset);
-
-    //DrawNode
-    auto spDrawNode = DrawNode::create();
-    spDrawNode->setTag(_normalSprite->getTag());
-    spDrawNode->clear();
-    _normalSprite->addChild(spDrawNode);
-    _drawNodes.pushBack(spDrawNode);
-
-    auto sppDrawNode = DrawNode::create();
-    sppDrawNode->setTag(_polygonSprite->getTag());
-    sppDrawNode->clear();
-    _polygonSprite->addChild(sppDrawNode);
-    _drawNodes.pushBack(sppDrawNode);
-
-    //Label
-    TTFConfig ttfConfig("fonts/arial.ttf", 8);
-    std::string temp = "Sprite:\nPixels drawn: ";
-    auto spSize = _normalSprite->getContentSize();
-    auto spArea = Label::createWithTTF(ttfConfig, temp+Value((int)spSize.width*(int)spSize.height).asString());
-    _normalSprite->addChild(spArea);
-    spArea->setAnchorPoint(Vec2(0,1));
-
-    temp = "SpritePolygon:\nPixels drawn: ";
-    auto vertCount = "\nverts:"+Value((int)pinfo.getVertCount()).asString();
-    auto sppArea = Label::createWithTTF(ttfConfig, temp+Value((int)pinfo.getArea()).asString()+vertCount);
-    _polygonSprite->addChild(sppArea);
-    sppArea->setAnchorPoint(Vec2(0,1));
-
-    updateDrawNode();
 }

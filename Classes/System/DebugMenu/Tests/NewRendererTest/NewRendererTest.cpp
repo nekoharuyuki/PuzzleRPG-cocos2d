@@ -24,6 +24,7 @@
  ****************************************************************************/
 
 #include "NewRendererTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 
@@ -37,7 +38,6 @@ NewRendererTests::NewRendererTests()
     ADD_TEST_CASE(VBOFullTest);
     ADD_TEST_CASE(CaptureScreenTest);
     ADD_TEST_CASE(CaptureNodeTest);
-    ADD_TEST_CASE(BugAutoCulling);
     ADD_TEST_CASE(RendererBatchQuadTri);
     ADD_TEST_CASE(RendererUniformBatch);
     ADD_TEST_CASE(RendererUniformBatch2);
@@ -71,21 +71,21 @@ void NewSpriteTest::createSpriteTest()
 {
     Size winSize = Director::getInstance()->getWinSize();
 
-    Sprite* parent = Sprite::create("Images/grossini.png");
+    Sprite* parent = Sprite::create(s_pathGrossini);
     parent->setPosition(winSize.width/4, winSize.height/2);
-    Sprite* child1 = Sprite::create("Images/grossinis_sister1.png");
+    Sprite* child1 = Sprite::create(s_pathSister1);
     child1->setPosition(0.0f, -20.0f);
-    Sprite* child2 = Sprite::create("Images/grossinis_sister2.png");
+    Sprite* child2 = Sprite::create(s_pathSister2);
     child2->setPosition(20.0f, -20.0f);
-    Sprite* child3 = Sprite::create("Images/grossinis_sister1.png");
+    Sprite* child3 = Sprite::create(s_pathSister1);
     child3->setPosition(40.0f, -20.0f);
-    Sprite* child4 = Sprite::create("Images/grossinis_sister2.png");
+    Sprite* child4 = Sprite::create(s_pathSister2);
     child4->setPosition(60.0f, -20.0f);
-    Sprite* child5 = Sprite::create("Images/grossinis_sister2.png");
+    Sprite* child5 = Sprite::create(s_pathSister2);
     child5->setPosition(80.0f, -20.0f);
-    Sprite* child6 = Sprite::create("Images/grossinis_sister2.png");
+    Sprite* child6 = Sprite::create(s_pathSister2);
     child6->setPosition(100.0f, -20.0f);
-    Sprite* child7 = Sprite::create("Images/grossinis_sister2.png");
+    Sprite* child7 = Sprite::create(s_pathSister2);
     child7->setPosition(120.0f, -20.0f);
 
     parent->addChild(child1);
@@ -102,7 +102,7 @@ void NewSpriteTest::createNewSpriteTest()
 {
     Size winSize = Director::getInstance()->getWinSize();
 
-    Sprite* parent = Sprite::create("Images/grossini.png");
+    Sprite* parent = Sprite::create(s_pathGrossini);
     parent->setPosition(winSize.width*2/3, winSize.height/2);
     Sprite* child1 = Sprite::create("Images/grossinis_sister1.png");
     child1->setPosition(0.0f, -20.0f);
@@ -174,7 +174,7 @@ void SpriteInGroupCommand::draw(Renderer *renderer, const Mat4 &transform, uint3
 
 GroupCommandTest::GroupCommandTest()
 {
-    auto sprite = SpriteInGroupCommand::create("Images/grossini.png");
+    auto sprite = SpriteInGroupCommand::create(s_pathGrossini);
     Size winSize = Director::getInstance()->getWinSize();
     sprite->setPosition(winSize.width/2,winSize.height/2);
     addChild(sprite);
@@ -221,7 +221,7 @@ NewClippingNodeTest::NewClippingNodeTest()
 
     //Test with alpha Test
     clipper->setAlphaThreshold(0.05f);
-    auto stencil = Sprite::create("Images/grossini.png");
+    auto stencil = Sprite::create(s_pathGrossini);
     stencil->setPosition(s.width/2, s.height/2);
     clipper->setStencil(stencil);
 
@@ -420,7 +420,7 @@ CaptureScreenTest::CaptureScreenTest()
     Vec2 left(s.width / 4, s.height / 2);
     Vec2 right(s.width / 4 * 3, s.height / 2);
 	
-    auto sp1 = Sprite::create("Images/grossini.png");
+    auto sp1 = Sprite::create(s_pathGrossini);
     sp1->setPosition(left);
     auto move1 = MoveBy::create(1, Vec2(s.width/2, 0));
     auto seq1 = RepeatForever::create(Sequence::create(move1, move1->reverse(), nullptr));
@@ -433,7 +433,7 @@ CaptureScreenTest::CaptureScreenTest()
     addChild(sp2);
     sp2->runAction(seq2);
 
-    auto label1 = Label::createWithTTF(TTFConfig("fonts/arial.ttf"), "capture all");
+    auto label1 = Label::createWithTTF(TTFConfig(s_fontArial), "capture all");
     auto mi1 = MenuItemLabel::create(label1, CC_CALLBACK_1(CaptureScreenTest::onCaptured, this));
     auto menu = Menu::create(mi1, nullptr);
     addChild(menu);
@@ -493,7 +493,7 @@ CaptureNodeTest::CaptureNodeTest()
     Vec2 left(s.width / 4, s.height / 2);
     Vec2 right(s.width / 4 * 3, s.height / 2);
 
-    auto sp1 = Sprite::create("Images/grossini.png");
+    auto sp1 = Sprite::create(s_pathGrossini);
     sp1->setPosition(left);
     auto move1 = MoveBy::create(1, Vec2(s.width / 2, 0));
     auto seq1 = RepeatForever::create(Sequence::create(move1, move1->reverse(), nullptr));
@@ -506,7 +506,7 @@ CaptureNodeTest::CaptureNodeTest()
     addChild(sp2);
     sp2->runAction(seq2);
 
-    auto label1 = Label::createWithTTF(TTFConfig("fonts/arial.ttf"), "capture this scene");
+    auto label1 = Label::createWithTTF(TTFConfig(s_fontArial), "capture this scene");
     auto mi1 = MenuItemLabel::create(label1, CC_CALLBACK_1(CaptureNodeTest::onCaptured, this));
     auto menu = Menu::create(mi1, nullptr);
     addChild(menu);
@@ -551,36 +551,6 @@ void CaptureNodeTest::onCaptured(Ref*)
 
     // release the captured image
     image->release();
-}
-
-BugAutoCulling::BugAutoCulling()
-{
-    Size s = Director::getInstance()->getWinSize();
-    auto fastmap = cocos2d::experimental::TMXTiledMap::create("TileMaps/orthogonal-test2.tmx");
-    this->addChild(fastmap);
-    for (int i = 0; i < 30; i++) {
-        auto sprite = Sprite::create("Images/grossini.png");
-        sprite->setPosition(s.width/2 + s.width/10 * i, s.height/2);
-        this->addChild(sprite);
-        auto label = Label::createWithTTF(TTFConfig("fonts/arial.ttf"), "Label");
-        label->setPosition(s.width/2 + s.width/10 * i, s.height/2);
-        this->addChild(label);
-    }
-    this->scheduleOnce([=](float){
-        auto camera = Director::getInstance()->getRunningScene()->getCameras().front();
-        auto move  = MoveBy::create(2.0, Vec2(2 * s.width, 0));
-        camera->runAction(Sequence::create(move, move->reverse(),nullptr));
-    }, 1.0f, "lambda-autoculling-bug");
-}
-
-std::string BugAutoCulling::title() const
-{
-    return "Bug-AutoCulling";
-}
-
-std::string BugAutoCulling::subtitle() const
-{
-    return "Moving the camera to the right instead of moving the layer";
 }
 
 //
@@ -639,7 +609,7 @@ RendererUniformBatch::RendererUniformBatch()
     {
         for (int x=0; x<20; ++x)
         {
-            auto sprite = Sprite::create("Images/grossini.png");
+            auto sprite = Sprite::create(s_pathGrossini);
             sprite->setPosition(Vec2(x * x_inc, y * y_inc));
             sprite->setScale(0.4);
             addChild(sprite);
@@ -719,7 +689,7 @@ RendererUniformBatch2::RendererUniformBatch2()
     {
         for (int x=0; x<20; ++x)
         {
-            auto sprite = Sprite::create("Images/grossini.png");
+            auto sprite = Sprite::create(s_pathGrossini);
             sprite->setPosition(Vec2(x * x_inc, y * y_inc));
             sprite->setScale(0.4);
             addChild(sprite);

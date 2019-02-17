@@ -23,11 +23,12 @@
  ****************************************************************************/
 
 #include "UIListViewTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;
 
-const char* font_UIListViewTest = "fonts/Marker Felt.ttf";
+const char* font_UIListViewTest = s_fontArial;
 
 UIListViewTests::UIListViewTests()
 {
@@ -39,8 +40,6 @@ UIListViewTests::UIListViewTests()
     ADD_TEST_CASE(UIListViewTest_MagneticHorizontal);
     ADD_TEST_CASE(UIListViewTest_PaddingVertical);
     ADD_TEST_CASE(UIListViewTest_PaddingHorizontal);
-    ADD_TEST_CASE(Issue12692);
-    ADD_TEST_CASE(Issue8316);
 }
 
 // UIListViewTest_Vertical
@@ -68,14 +67,14 @@ bool UIListViewTest_Vertical::init()
     {
         Size widgetSize = _widget->getContentSize();
         
-        _displayValueLabel = Text::create("There are 50 items, but we only create 5 templates", "fonts/Marker Felt.ttf", 20);
+        _displayValueLabel = Text::create("There are 50 items, but we only create 5 templates", s_fontArial, 20);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f,
                                               widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f + 30));
         _uiLayer->addChild(_displayValueLabel);
         
         
-        Text* alert = Text::create("ListView vertical", "fonts/Marker Felt.ttf", 30);
+        Text* alert = Text::create("ListView vertical", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                  widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
@@ -169,15 +168,15 @@ bool UIListViewTest_Vertical::init()
         {
             float position = 75;
             // Labels
-            _indexLabels[0] = Text::create(" ", "fonts/Marker Felt.ttf", 12);
+            _indexLabels[0] = Text::create(" ", s_fontArial, 12);
             _indexLabels[0]->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
             _indexLabels[0]->setPosition(_uiLayer->getContentSize() / 2 + Size(0, position));
             _uiLayer->addChild(_indexLabels[0]);
-            _indexLabels[1] = Text::create("  ", "fonts/Marker Felt.ttf", 12);
+            _indexLabels[1] = Text::create("  ", s_fontArial, 12);
             _indexLabels[1]->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
             _indexLabels[1]->setPosition(_uiLayer->getContentSize() / 2 + Size(140, 0));
             _uiLayer->addChild(_indexLabels[1]);
-            _indexLabels[2] = Text::create(" ", "fonts/Marker Felt.ttf", 12);
+            _indexLabels[2] = Text::create(" ", s_fontArial, 12);
             _indexLabels[2]->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
             _indexLabels[2]->setPosition(_uiLayer->getContentSize() / 2 + Size(0, -position));
             _uiLayer->addChild(_indexLabels[2]);
@@ -325,7 +324,7 @@ bool UIListViewTest_Horizontal::init()
         Size widgetSize = _widget->getContentSize();
         
         _displayValueLabel = Text::create("There are 50 items, but we only create 5 templates",
-                                          "fonts/Marker Felt.ttf",
+                                          s_fontArial,
                                           20);
         
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
@@ -336,7 +335,7 @@ bool UIListViewTest_Horizontal::init()
         _uiLayer->addChild(_displayValueLabel);
         
         
-        Text* alert = Text::create("ListView horizontal", "fonts/Marker Felt.ttf", 30);
+        Text* alert = Text::create("ListView horizontal", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                 widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
@@ -500,171 +499,6 @@ void UIListViewTest_Horizontal::selectedItemEvent(Ref *pSender, ListView::EventT
     }
 }
 
-bool Issue12692::init()
-{
-    if (UIScene::init())
-    {
-        Size widgetSize = _widget->getContentSize();
-        
-        auto label = Text::create("Issue 12692", "fonts/Marker Felt.ttf", 32);
-        label->setName("Text Title");
-        label->setAnchorPoint(Vec2(0.5f, -1.0f));
-        label->setPosition(Vec2(widgetSize.width / 2.0f,
-                                widgetSize.height / 2.0f + label->getContentSize().height * 1.5f));
-        _uiLayer->addChild(label);
-        
-        
-        Text* alert = Text::create("ListView in ListView enable Scissor Clipping", "fonts/Marker Felt.ttf", 20);
-        alert->setName("Text Alert");
-        alert->setColor(Color3B(159, 168, 176));
-        alert->setPosition(Vec2(widgetSize.width / 2.0f,
-                                widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
-        _uiLayer->addChild(alert);
-        
-        Layout* root = static_cast<Layout*>(_uiLayer->getChildByTag(81));
-        
-        Layout* background = dynamic_cast<Layout*>(root->getChildByName("background_Panel"));
-        Size backgroundSize = background->getContentSize();
-        
-        // Create the list view ex
-        ListView* listView = ListView::create();
-        // set list view ex direction
-        listView->setDirection(ui::ScrollView::Direction::VERTICAL);
-        listView->setBounceEnabled(true);
-        listView->setBackGroundImage("cocosui/green_edit.png");
-        listView->setBackGroundImageScale9Enabled(true);
-        listView->setContentSize(Size(240, 130));
-        listView->setPosition(Vec2((widgetSize.width - backgroundSize.width) / 2.0f +
-                                   (backgroundSize.width - listView->getContentSize().width) / 2.0f,
-                                   (widgetSize.height - backgroundSize.height) / 2.0f +
-                                   (backgroundSize.height - listView->getContentSize().height) / 2.0f));
-        listView->setScrollBarPositionFromCorner(Vec2(7, 7));
-        listView->setClippingEnabled(true);
-        listView->setClippingType(ui::Layout::ClippingType::SCISSOR);
-        listView->setName("listview1");
-        _uiLayer->addChild(listView);
-        
-        auto list2 = ListView::create();
-        list2->setDirection(ui::ScrollView::Direction::VERTICAL);
-        list2->setBounceEnabled(true);
-        list2->setBackGroundImage("cocosui/green_edit.png");
-        list2->setBackGroundImageScale9Enabled(true);
-        list2->setContentSize(Size(240, 65));
-        list2->setClippingEnabled(true);
-        list2->setClippingType(ui::Layout::ClippingType::SCISSOR);
-        list2->setName("listview2");
-        listView->insertCustomItem(list2, 0);
-        
-        {
-            Button* default_button = Button::create("cocosui/backtotoppressed.png", "cocosui/backtotopnormal.png");
-            default_button->setName("Title Button");
-            
-            Layout* default_item = Layout::create();
-            default_item->setTouchEnabled(true);
-            default_item->setContentSize(default_button->getContentSize());
-            default_button->setPosition(Vec2(default_item->getContentSize().width / 2.0f,
-                                             default_item->getContentSize().height / 2.0f));
-            default_item->addChild(default_button);
-            
-            // set model
-            listView->setItemModel(default_item);
-            listView->pushBackDefaultItem();
-            listView->pushBackDefaultItem();
-            listView->pushBackDefaultItem();
-        }
-        {
-            Button* default_button = Button::create("cocosui/backtotoppressed.png", "cocosui/backtotopnormal.png");
-            default_button->setName("Title Button 2");
-            
-            Layout* default_item = Layout::create();
-            default_item->setTouchEnabled(true);
-            default_item->setContentSize(default_button->getContentSize());
-            default_button->setPosition(Vec2(default_item->getContentSize().width / 2.0f,
-                                             default_item->getContentSize().height / 2.0f));
-            default_item->addChild(default_button);
-            
-            // set model
-            list2->setItemModel(default_item);
-            list2->pushBackDefaultItem();
-            list2->pushBackDefaultItem();
-            list2->pushBackDefaultItem();
-        }
-        return true;
-    }
-    
-    return false;
-}
-
-
-bool Issue8316::init()
-{
-    if (UIScene::init())
-    {
-        Size widgetSize = _widget->getContentSize();
-        
-        auto label = Text::create("Issue 8316", "fonts/Marker Felt.ttf", 32);
-        label->setAnchorPoint(Vec2(0.5f, -1.0f));
-        label->setPosition(Vec2(widgetSize.width / 2.0f,
-                                widgetSize.height / 2.0f + label->getContentSize().height * 1.5f));
-        _uiLayer->addChild(label);
-        
-        Text* alert = Text::create("Can not scroll list view", "fonts/Marker Felt.ttf", 20);
-        alert->setColor(Color3B(159, 168, 176));
-        alert->setPosition(Vec2(widgetSize.width / 2.0f,
-                                widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
-        _uiLayer->addChild(alert);
-        
-        Layout* root = static_cast<Layout*>(_uiLayer->getChildByTag(81));
-        
-        Layout* background = dynamic_cast<Layout*>(root->getChildByName("background_Panel"));
-        Size backgroundSize = background->getContentSize();
-        
-        // Create the list view ex
-        ListView* listView = ListView::create();
-        // set list view ex direction
-        listView->setDirection(ui::ScrollView::Direction::VERTICAL);
-        listView->setBounceEnabled(true);
-        listView->setTouchEnabled(false);
-        listView->setBackGroundImage("cocosui/green_edit.png");
-        listView->setBackGroundImageScale9Enabled(true);
-        listView->setContentSize(Size(240, 130));
-        listView->setPosition(Vec2((widgetSize.width - backgroundSize.width) / 2.0f +
-                                   (backgroundSize.width - listView->getContentSize().width) / 2.0f,
-                                   (widgetSize.height - backgroundSize.height) / 2.0f +
-                                   (backgroundSize.height - listView->getContentSize().height) / 2.0f));
-        listView->setScrollBarPositionFromCorner(Vec2(7, 7));
-        listView->setClippingEnabled(true);
-        listView->setClippingType(ui::Layout::ClippingType::SCISSOR);
-        listView->setName("listview1");
-        
-        {
-            Button* default_button = Button::create("cocosui/backtotoppressed.png", "cocosui/backtotopnormal.png");
-            default_button->setName("Title Button");
-            
-            Layout* default_item = Layout::create();
-            default_item->setTouchEnabled(true);
-            default_item->setContentSize(default_button->getContentSize());
-            default_button->setPosition(Vec2(default_item->getContentSize().width / 2.0f,
-                                             default_item->getContentSize().height / 2.0f));
-            default_item->addChild(default_button);
-            
-            // set model
-            listView->setItemModel(default_item);
-            listView->pushBackDefaultItem();
-            listView->pushBackDefaultItem();
-            listView->pushBackDefaultItem();
-        }
-        
-        _uiLayer->addChild(listView);
-        
-      
-        return true;
-    }
-    
-    return false;
-}
-
-
 // UIListViewTest_ScrollToItem
 bool UIListViewTest_ScrollToItem::init()
 {
@@ -677,7 +511,7 @@ bool UIListViewTest_ScrollToItem::init()
     
     static int NUMBER_OF_ITEMS = 31;
     _nextIndex = 0;
-    _titleLabel = Text::create("Scroll to item", "fonts/Marker Felt.ttf", 32);
+    _titleLabel = Text::create("Scroll to item", s_fontArial, 32);
     _titleLabel->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
     _titleLabel->setPosition(Vec2(layerSize / 2) + Vec2(0, _titleLabel->getContentSize().height * 3.15f));
     _uiLayer->addChild(_titleLabel, 3);
@@ -751,7 +585,7 @@ bool UIListViewTest_Magnetic::init()
     
     Size layerSize = _uiLayer->getContentSize();
     
-    _titleLabel = Text::create("Magnetic scroll", "fonts/Marker Felt.ttf", 32);
+    _titleLabel = Text::create("Magnetic scroll", s_fontArial, 32);
     _titleLabel->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
     _titleLabel->setPosition(Vec2(layerSize / 2) + Vec2(0, _titleLabel->getContentSize().height * 3.15f));
     _uiLayer->addChild(_titleLabel, 3);
@@ -791,7 +625,7 @@ bool UIListViewTest_Magnetic::init()
     {
         for(int i = 0; i < 5; ++i)
         {
-            _indexLabels[i] = Text::create(" ", "fonts/Marker Felt.ttf", 12);
+            _indexLabels[i] = Text::create(" ", s_fontArial, 12);
             _indexLabels[i]->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
             _uiLayer->addChild(_indexLabels[i]);
         }
@@ -910,7 +744,7 @@ bool UIListViewTest_Padding::init()
 
     Size layerSize = _uiLayer->getContentSize();
 
-    _titleLabel = Text::create("Set Padding", "fonts/Marker Felt.ttf", 32);
+    _titleLabel = Text::create("Set Padding", s_fontArial, 32);
     _titleLabel->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
     _titleLabel->setPosition(Vec2(layerSize / 2) + Vec2(0, _titleLabel->getContentSize().height * 3.15f));
     _uiLayer->addChild(_titleLabel, 3);
@@ -950,7 +784,7 @@ bool UIListViewTest_Padding::init()
 
     // Slider for setting padding
     {
-        auto title = Text::create("Padding", "fonts/Marker Felt.ttf", 14);
+        auto title = Text::create("Padding", s_fontArial, 14);
         title->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
         title->setPosition(Vec2(30, 170));
         _uiLayer->addChild(title);
@@ -976,14 +810,14 @@ bool UIListViewTest_Padding::init()
 
             // Show title of slider
             {
-                auto text = Text::create(str, "fonts/Marker Felt.ttf", 12);
+                auto text = Text::create(str, s_fontArial, 12);
                 text->setAnchorPoint(Vec2::ANCHOR_MIDDLE_LEFT);
                 text->setPosition(Vec2(3, 150 - (25 * i)));
                 _uiLayer->addChild(text);
             }
             // Show value of paddings
             {
-                auto text = Text::create(str + "\nPadding=0", "fonts/Marker Felt.ttf", 12);
+                auto text = Text::create(str + "\nPadding=0", s_fontArial, 12);
                 text->setAnchorPoint(Vec2::ANCHOR_MIDDLE_LEFT);
                 text->setPosition(Vec2(layerSize.width - 65, 200 - (40 * i)));
                 _uiLayer->addChild(text);
@@ -997,7 +831,7 @@ bool UIListViewTest_Padding::init()
     {
         for(int i = 0; i < 5; ++i)
         {
-            _indexLabels[i] = Text::create(" ", "fonts/Marker Felt.ttf", 12);
+            _indexLabels[i] = Text::create(" ", s_fontArial, 12);
             _indexLabels[i]->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
             _uiLayer->addChild(_indexLabels[i]);
         }

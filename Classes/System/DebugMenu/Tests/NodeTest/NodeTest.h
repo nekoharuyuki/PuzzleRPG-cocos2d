@@ -303,21 +303,6 @@ protected:
     float _accum;
 };
 
-class NodeNormalizedPositionBugTest : public TestCocosNodeDemo
-{
-public:
-    CREATE_FUNC(NodeNormalizedPositionBugTest);
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    
-protected:
-    NodeNormalizedPositionBugTest();
-    
-    void update(float dt) override;
-    float _accum;
-    cocos2d::Sprite* sprite;
-};
-
 class NodeNameTest : public TestCocosNodeDemo
 {
 public:
@@ -329,28 +314,6 @@ public:
     virtual void onExit() override;
 
     void test(float dt);
-};
-
-class Issue16100Test : public TestCocosNodeDemo
-{
-public:
-    CREATE_FUNC(Issue16100Test);
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-
-    virtual void onEnter() override;
-    virtual void onExit() override;
-};
-
-class Issue16735Test : public TestCocosNodeDemo
-{
-public:
-    CREATE_FUNC(Issue16735Test);
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-
-    virtual void onEnter() override;
-    virtual void onExit() override;
 };
 
 #endif

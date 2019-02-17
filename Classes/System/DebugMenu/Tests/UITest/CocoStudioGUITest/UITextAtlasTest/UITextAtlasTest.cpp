@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "UITextAtlasTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;
@@ -41,7 +42,7 @@ bool UITextAtlasTest::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text* alert = Text::create("TextAtlas","fonts/Marker Felt.ttf",30);
+        Text* alert = Text::create("TextAtlas",s_fontArial,30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 1.75f));
         _uiLayer->addChild(alert);
@@ -60,7 +61,7 @@ bool UITextAtlasTest::init()
         _uiLayer->addChild(textAtlas);                
         _textAtlas = textAtlas;
 
-        TTFConfig ttfConfig("fonts/arial.ttf", 15);
+        TTFConfig ttfConfig(s_fontArial, 15);
         auto label1 = Label::createWithTTF(ttfConfig, "Print Resources");
         auto item1 = MenuItemLabel::create(label1, CC_CALLBACK_1(UITextAtlasTest::printWidgetResources, this));
         item1->setPosition(Vec2(VisibleRect::left().x + 60, VisibleRect::bottom().y + item1->getContentSize().height * 3));
@@ -86,7 +87,7 @@ bool UITextAtlasETC1ShadowTest::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text* alert = Text::create("TextAtlas With ETC1 format","fonts/Marker Felt.ttf",30);
+        Text* alert = Text::create("TextAtlas With ETC1 format",s_fontArial,30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 1.75f));
         _uiLayer->addChild(alert);
@@ -107,7 +108,7 @@ bool UITextAtlasETC1ShadowTest::init()
         labelAtlas->enableShadow(Color4B::GREEN);
         _textAtlas = textAtlas;
         
-        TTFConfig ttfConfig("fonts/arial.ttf", 15);
+        TTFConfig ttfConfig(s_fontArial, 15);
         auto label1 = Label::createWithTTF(ttfConfig, "Print Resources");
         auto item1 = MenuItemLabel::create(label1, CC_CALLBACK_1(UITextAtlasETC1ShadowTest::printWidgetResources, this));
         item1->setPosition(Vec2(VisibleRect::left().x + 60, VisibleRect::bottom().y + item1->getContentSize().height * 3));

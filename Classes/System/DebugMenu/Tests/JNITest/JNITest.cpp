@@ -40,11 +40,11 @@ JNITests::JNITests()
 
 JNITest::JNITest()
 {
-    auto nameLabel = Label::createWithTTF("JNI Test", "fonts/arial.ttf", 28);
+    auto nameLabel = Label::createWithTTF("JNI Test", s_fontArial, 28);
     nameLabel->setPosition(VisibleRect::center().x, VisibleRect::top().y - 50);
     addChild(nameLabel);
 
-    auto checkLabel = Label::createWithTTF("Please check console output", "fonts/arial.ttf", 22);
+    auto checkLabel = Label::createWithTTF("Please check console output", s_fontArial, 22);
     checkLabel->setPosition(VisibleRect::center());
     addChild(checkLabel);
 

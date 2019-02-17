@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "UIRadioButtonTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;
@@ -99,7 +100,7 @@ bool UIRadioButtonTest::init()
         _uiLayer->addChild(allowNoSelectionToggle);
         
         // Add a label for toggle
-        _allowNoSelectionText = Text::create("No selection is disallowed.", "fonts/Marker Felt.ttf", 20);
+        _allowNoSelectionText = Text::create("No selection is disallowed.", s_fontArial, 20);
         _allowNoSelectionText->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + 70));
         _uiLayer->addChild(_allowNoSelectionText);
 
@@ -164,17 +165,17 @@ bool UIRadioButtonTwoGroupsTest::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the radio button events will be displayed
-        _groupEventLabel = Text::create("RadioButtonGroup : No Event", "fonts/Marker Felt.ttf", 25);
+        _groupEventLabel = Text::create("RadioButtonGroup : No Event", s_fontArial, 25);
         _groupEventLabel->setAnchorPoint(Vec2(0.5f, -1));
         _groupEventLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + 70));
         _uiLayer->addChild(_groupEventLabel);
         
-        _buttonEventLabel = Text::create("RadioButton : No Event", "fonts/Marker Felt.ttf", 25);
+        _buttonEventLabel = Text::create("RadioButton : No Event", s_fontArial, 25);
         _buttonEventLabel->setAnchorPoint(Vec2(0.5f, -1));
         _buttonEventLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + 35));
         _uiLayer->addChild(_buttonEventLabel);
         
-        _logConsole = Text::create("", "fonts/Marker Felt.ttf", 10);
+        _logConsole = Text::create("", s_fontArial, 10);
         _logConsole->setAnchorPoint(Vec2(0, 1));
         _logConsole->setPosition(Vec2(widgetSize.width / 2.0f + 110, widgetSize.height / 2.0f + 55));
         _uiLayer->addChild(_logConsole);
@@ -232,7 +233,7 @@ bool UIRadioButtonTwoGroupsTest::init()
         clearButton->setScale(0.8f);
         _uiLayer->addChild(clearButton);
         
-        Text* text1 = Text::create("Upper radio button group is allowed non-selection, but lower one is not.", "fonts/Marker Felt.ttf", 15);
+        Text* text1 = Text::create("Upper radio button group is allowed non-selection, but lower one is not.", s_fontArial, 15);
         text1->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - 100));
         _uiLayer->addChild(text1);
 

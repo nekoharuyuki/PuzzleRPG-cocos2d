@@ -90,13 +90,4 @@ public:
     virtual std::string title() const override;
 };
 
-class Issue631 : public EffectAdvanceBaseTest
-{
-public:
-    CREATE_FUNC(Issue631);
-    virtual void onEnter() override;
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 #endif

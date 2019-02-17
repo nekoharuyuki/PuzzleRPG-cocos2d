@@ -74,7 +74,6 @@ NewLabelTests::NewLabelTests()
     ADD_TEST_CASE(LabelFNTHundredLabels);
     ADD_TEST_CASE(LabelFNTPadding);
     ADD_TEST_CASE(LabelFNTOffset);
-
     ADD_TEST_CASE(LabelTTFFontsTestNew);
     ADD_TEST_CASE(LabelTTFLongLineWrapping);
     ADD_TEST_CASE(LabelTTFCJKWrappingTest);
@@ -91,29 +90,12 @@ NewLabelTests::NewLabelTests()
     ADD_TEST_CASE(LabelAdditionalKerningTest);
     ADD_TEST_CASE(LabelAddChildTest);
     ADD_TEST_CASE(LabelSmallDimensionsTest);
-
     ADD_TEST_CASE(LabelCharMapTest);
     ADD_TEST_CASE(LabelCharMapColorTest);
-
     ADD_TEST_CASE(LabelSystemFontColor);
     ADD_TEST_CASE(LabelTTFOldNew);
     ADD_TEST_CASE(LabelFontNameTest);
-
     ADD_TEST_CASE(LabelCrashTest);
-    ADD_TEST_CASE(LabelIssue12775Test);
-    ADD_TEST_CASE(LabelIssue11585Test);
-    ADD_TEST_CASE(LabelIssue10773Test);
-    ADD_TEST_CASE(LabelIssue11576Test);
-    ADD_TEST_CASE(LabelIssue11699Test);
-    ADD_TEST_CASE(LabelIssue12409Test);
-    ADD_TEST_CASE(LabelIssue10089Test);
-    ADD_TEST_CASE(LabelIssue9255Test);
-    ADD_TEST_CASE(LabelIssue8492Test);
-    ADD_TEST_CASE(LabelIssue4428Test);
-    ADD_TEST_CASE(LabelIssue4999Test);
-    ADD_TEST_CASE(LabelIssue10688Test);
-    ADD_TEST_CASE(LabelIssue13202Test);
-    ADD_TEST_CASE(LabelIssue9500Test);
     ADD_TEST_CASE(LabelWrapByWordTest);
     ADD_TEST_CASE(LabelWrapByCharTest);
     ADD_TEST_CASE(LabelWrapNoBreakSpaceTest);
@@ -123,23 +105,13 @@ NewLabelTests::NewLabelTests()
     ADD_TEST_CASE(LabelToggleTypeTest);
     ADD_TEST_CASE(LabelSystemFontTest);
     ADD_TEST_CASE(LabelCharMapFontTest);
-    ADD_TEST_CASE(LabelIssue13846Test);
-
     ADD_TEST_CASE(LabelRichText);
     ADD_TEST_CASE(LabelStrikethrough);
     ADD_TEST_CASE(LabelUnderline);
     ADD_TEST_CASE(LabelUnderlineMultiline);
     ADD_TEST_CASE(LabelItalics);
     ADD_TEST_CASE(LabelBold);
-
     ADD_TEST_CASE(LabelLocalizationTest);
-
-    ADD_TEST_CASE(LabelIssue15214);
-    ADD_TEST_CASE(LabelIssue16293);
-    ADD_TEST_CASE(LabelIssue16471);
-    ADD_TEST_CASE(LabelIssue16717);
-    ADD_TEST_CASE(LabelIssueLineGap);
-    ADD_TEST_CASE(LabelIssue17902);
 };
 
 LabelFNTColorAndOpacity::LabelFNTColorAndOpacity()
@@ -464,7 +436,7 @@ LabelFNTandTTFEmpty::LabelFNTandTTFEmpty()
     label1->setPosition(Vec2(s.width/2, s.height - 100));
 
     // LabelTTF
-    TTFConfig ttfConfig("fonts/arial.ttf",24);
+    TTFConfig ttfConfig(s_fontArial,24);
     auto label2 = Label::createWithTTF(ttfConfig,"", TextHAlignment::CENTER,s.width);
     addChild(label2, 0, kTagBitmapAtlas2);
     label2->setPosition(Vec2(s.width/2, s.height / 2));
@@ -810,7 +782,7 @@ bool LabelFNTMultiLineAlignmentUNICODE::init()
 
     auto ttfConfig = this->_label->getTTFConfig();
     ttfConfig.fontSize = 20;
-    ttfConfig.fontFilePath = "fonts/tahoma.ttf";
+    ttfConfig.fontFilePath = s_fontArial;
     this->_label->setTTFConfig(ttfConfig);
 
     this->selectSentenceItem(this->_menuItems[0]);
@@ -937,7 +909,7 @@ LabelTTFLongLineWrapping::LabelTTFLongLineWrapping()
     auto size = Director::getInstance()->getWinSize();
 
     // Long sentence
-    TTFConfig ttfConfig("fonts/arial.ttf", 14);
+    TTFConfig ttfConfig(s_fontArial, 14);
     auto label1 = Label::createWithTTF(ttfConfig, LongSentencesExample, TextHAlignment::CENTER,size.width);
     label1->setPosition( Vec2(size.width/2, size.height/2) );
     label1->setAnchorPoint(Vec2(0.5, 1.0));
@@ -958,7 +930,7 @@ LabelTTFColor::LabelTTFColor()
 {
     auto size = Director::getInstance()->getWinSize();
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 18);
+    TTFConfig ttfConfig(s_fontArial, 18);
     // Green
     auto label1 = Label::createWithTTF(ttfConfig,"Green", TextHAlignment::CENTER, size.width);
     label1->setPosition(size.width/2, size.height * 0.5f);
@@ -992,7 +964,7 @@ LabelTTFDynamicAlignment::LabelTTFDynamicAlignment()
 {
     auto winSize = Director::getInstance()->getWinSize();
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 23);
+    TTFConfig ttfConfig(s_fontArial, 23);
     _label = Label::createWithTTF(ttfConfig, LongSentencesExample, TextHAlignment::CENTER, winSize.width);
     _label->setPosition(winSize.width / 2, winSize.height / 2);
     addChild(_label);
@@ -1061,7 +1033,7 @@ LabelTTFCJKWrappingTest::LabelTTFCJKWrappingTest()
         Vec2(size.width * 0.85, size.height * 0.8),
         Vec2(size.width * 0.85, 0), 1, Color4F(1, 0, 0, 1));
     
-    TTFConfig ttfConfig("fonts/HKYuanMini.ttf", 25, GlyphCollection::DYNAMIC);
+    TTFConfig ttfConfig(s_fontArial, 25, GlyphCollection::DYNAMIC);
     auto label1 = Label::createWithTTF(ttfConfig,
         "你好，Cocos2d-x v3的New Label.", TextHAlignment::LEFT, size.width * 0.75);
     if(label1) {
@@ -1071,7 +1043,7 @@ LabelTTFCJKWrappingTest::LabelTTFCJKWrappingTest()
         this->addChild(label1);
         // Demo for unloadFontAtlasTTF function, after it been called, all UI widget
         //  use the special font must reset font, because the old one is invalid.
-        FontAtlasCache::unloadFontAtlasTTF("fonts/HKYuanMini.ttf");
+        FontAtlasCache::unloadFontAtlasTTF(s_fontArial);
         label1->setTTFConfig(ttfConfig);
     }
 
@@ -1115,17 +1087,17 @@ LabelTTFUnicodeNew::LabelTTFUnicodeNew()
     auto winSize = Director::getInstance()->getWinSize();
 
     // Spanish
-    auto label1 = Label::createWithTTF("Buen día, ¿cómo te llamas?", "fonts/arial.ttf", 23);
+    auto label1 = Label::createWithTTF("Buen día, ¿cómo te llamas?", s_fontArial, 23);
     label1->setPosition(winSize.width / 2, winSize.height * 0.65f);
     addChild(label1);
     
     // German
-    auto label2 = Label::createWithTTF("In welcher Straße haben Sie gelebt?", "fonts/arial.ttf", 23);
+    auto label2 = Label::createWithTTF("In welcher Straße haben Sie gelebt?", s_fontArial, 23);
     label2->setPosition(winSize.width / 2, winSize.height * 0.5f);
     addChild(label2);
     
     // Chinese
-    auto label3 = Label::createWithTTF(chinese, "fonts/HKYuanMini.ttf", 24);
+    auto label3 = Label::createWithTTF(chinese, s_fontArial, 24);
     label3->setPosition(winSize.width / 2, winSize.height * 0.35f);
     addChild(label3);
 }
@@ -1148,7 +1120,7 @@ LabelTTFEmoji::LabelTTFEmoji()
     std::string emojiString = FileUtils::getInstance()->getStringFromFile("fonts/emoji.txt");
     auto winSize = Director::getInstance()->getWinSize();
     
-    auto label = Label::createWithTTF(emojiString, "fonts/NotoEmoji-Regular.ttf", 23);
+    auto label = Label::createWithTTF(emojiString, s_fontArial, 23);
     label->setPosition(winSize.width / 2, winSize.height / 2);
     label->setDimensions(winSize.width, winSize.height);
     label->setVerticalAlignment(cocos2d::TextVAlignment::CENTER);
@@ -1170,13 +1142,13 @@ std::string LabelTTFEmoji::subtitle() const
 LabelTTFFontsTestNew::LabelTTFFontsTestNew()
 {
     const char *ttfpaths[] = {
-        "fonts/A Damn Mess.ttf",
-        "fonts/Abberancy.ttf",
-        "fonts/Abduction.ttf",
-        "fonts/American Typewriter.ttf",
-        "fonts/Paint Boy.ttf",
-        "fonts/Schwarzwald.ttf",
-        "fonts/Scissor Cuts.ttf",
+        s_fontArial,
+        s_fontArial,
+        s_fontArial,
+        s_fontArial,
+        s_fontArial,
+        s_fontArial,
+        s_fontArial,
     };
 
     int fontCount = sizeof(ttfpaths) / sizeof(ttfpaths[0]);
@@ -1208,7 +1180,7 @@ std::string LabelTTFFontsTestNew::subtitle() const
 LabelTTFDistanceField::LabelTTFDistanceField()
 {
     auto size = Director::getInstance()->getWinSize();
-    TTFConfig ttfConfig("fonts/arial.ttf", 40, GlyphCollection::DYNAMIC,nullptr,true);
+    TTFConfig ttfConfig(s_fontArial, 40, GlyphCollection::DYNAMIC,nullptr,true);
 
     auto label1 = Label::createWithTTF(ttfConfig,"Distance Field",TextHAlignment::CENTER,size.width);
     label1->setPosition( Vec2(size.width/2, size.height * 0.6f) );
@@ -1275,7 +1247,7 @@ LabelOutlineAndGlowTest::LabelOutlineAndGlowTest()
     auto bg = LayerColor::create(Color4B(200,191,231,255));
     this->addChild(bg);
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 40, GlyphCollection::DYNAMIC,nullptr,true);
+    TTFConfig ttfConfig(s_fontArial, 40, GlyphCollection::DYNAMIC,nullptr,true);
 
     auto label1 = Label::createWithTTF(ttfConfig,"Glow", TextHAlignment::CENTER, size.width);
     label1->setPosition( Vec2(size.width/2, size.height*0.7) );
@@ -1356,7 +1328,7 @@ void LabelShadowTest::onEnter()
     float horizontalSliderY = slider->getPosition().y;
     float step = (subtitleY - horizontalSliderY) / 4;
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 40, GlyphCollection::DYNAMIC,nullptr,true);
+    TTFConfig ttfConfig(s_fontArial, 40, GlyphCollection::DYNAMIC,nullptr,true);
 
     shadowLabelTTF = Label::createWithTTF(ttfConfig,"TTF:Shadow");
     shadowLabelTTF->setPosition( Vec2(size.width/2, horizontalSliderY + step * (0.5f + 3)) );
@@ -1516,7 +1488,7 @@ LabelCrashTest::LabelCrashTest()
 {
     auto size = Director::getInstance()->getWinSize();
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 40, GlyphCollection::DYNAMIC,nullptr,true);
+    TTFConfig ttfConfig(s_fontArial, 40, GlyphCollection::DYNAMIC,nullptr,true);
 
     auto label1 = Label::createWithTTF(ttfConfig,"Test崩溃123", TextHAlignment::CENTER, size.width);
     label1->setPosition( Vec2(size.width/2, size.height/2) );
@@ -1543,7 +1515,7 @@ LabelTTFOldNew::LabelTTFOldNew()
     label1->setPosition(Vec2(s.width/2, delta * 2));
     label1->setColor(Color3B::RED);
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 24);
+    TTFConfig ttfConfig(s_fontArial, 24);
     auto label2 = Label::createWithTTF(ttfConfig, "Cocos2d-x Label Test");
     addChild(label2, 0, kTagBitmapAtlas2);
     label2->setPosition(Vec2(s.width/2, delta * 2));
@@ -1647,7 +1619,7 @@ LabelAlignmentTest::LabelAlignmentTest()
     menu->setPosition(Vec2(s.width - 50, s.height / 2 - 20));
     this->addChild(menu);
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 50);
+    TTFConfig ttfConfig(s_fontArial, 50);
     _label = Label::createWithTTF(ttfConfig, "abc efg hijk lmn opq rst uvw xyz");
     _label->setDimensions(200, 160);
     _label->setAnchorPoint(Vec2::ANCHOR_BOTTOM_LEFT);
@@ -1695,54 +1667,6 @@ std::string LabelAlignmentTest::subtitle() const
     return "Test text alignment";
 }
 
-LabelIssue4428Test::LabelIssue4428Test()
-{
-    auto size = Director::getInstance()->getWinSize();
-
-    auto label = Label::createWithBMFont( "fonts/bitmapFontTest3.fnt", "123\n456");
-    label->setPosition(Vec2(size.width /2.0f, size.height / 2.0f));
-    label->setAnchorPoint(Vec2::ANCHOR_BOTTOM_LEFT);
-    addChild(label);
-
-    int len = label->getStringLength();
-    for (int i = 0; i < len; ++i)
-    {
-        auto sprite = label->getLetter(i);
-        if (sprite != nullptr)
-        {
-            sprite->setFlippedY(true);
-        }
-    }
-}
-
-std::string LabelIssue4428Test::title() const
-{
-    return "New Label Bugs Test";
-}
-
-std::string LabelIssue4428Test::subtitle() const
-{
-    return "Reorder issue #4428.The label should be flipped vertically.";
-}
-
-LabelIssue4999Test::LabelIssue4999Test()
-{
-    auto label = Label::createWithTTF("Smaller font test", "fonts/arial.ttf",5);
-    label->setPosition(VisibleRect::center());
-    label->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
-    addChild(label);
-}
-
-std::string LabelIssue4999Test::title() const
-{
-    return "New Label Bugs Test";
-}
-
-std::string LabelIssue4999Test::subtitle() const
-{
-    return "Reorder issue #4999.The label should be display cleanly.";
-}
-
 LabelLineHeightTest::LabelLineHeightTest()
 {
     auto size = Director::getInstance()->getWinSize();
@@ -1750,7 +1674,7 @@ LabelLineHeightTest::LabelLineHeightTest()
     auto bg = LayerColor::create(Color4B(200,191,231,255));
     this->addChild(bg);
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 25, GlyphCollection::DYNAMIC,nullptr,false);
+    TTFConfig ttfConfig(s_fontArial, 25, GlyphCollection::DYNAMIC,nullptr,false);
 
     label = Label::createWithTTF(ttfConfig,"Test\nLine\nHeight");
     label->setPosition( Vec2(size.width/2, size.height*0.5f) );
@@ -1794,7 +1718,7 @@ LabelAdditionalKerningTest::LabelAdditionalKerningTest()
     auto bg = LayerColor::create(Color4B(200,191,231,255));
     this->addChild(bg);
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 40, GlyphCollection::DYNAMIC,nullptr,false);
+    TTFConfig ttfConfig(s_fontArial, 40, GlyphCollection::DYNAMIC,nullptr,false);
 
     label = Label::createWithTTF(ttfConfig,"Test additional kerning");
     label->setPosition(size.width/2, size.height * 0.5f);
@@ -1831,27 +1755,9 @@ std::string LabelAdditionalKerningTest::subtitle() const
     return "Testing additional kerning of label";
 }
 
-LabelIssue8492Test::LabelIssue8492Test()
-{
-    auto label = Label::createWithBMFont("fonts/bitmapFontChinese.fnt", "中国中国中国中国中国");
-    label->setDimensions(5,100);
-    label->setPosition(VisibleRect::center());
-    addChild(label);
-}
-
-std::string LabelIssue8492Test::title() const
-{
-    return "Reorder issue #8492";
-}
-
-std::string LabelIssue8492Test::subtitle() const
-{
-    return "Work fine when dimensions are not enough to fit one character";
-}
-
 LabelMultilineWithOutline::LabelMultilineWithOutline()
 {
-    auto label =  Label::createWithTTF("Multi-line text\nwith\noutline feature", "fonts/arial.ttf", 24);
+    auto label =  Label::createWithTTF("Multi-line text\nwith\noutline feature", s_fontArial, 24);
     label->enableOutline(Color4B::ORANGE,1);
     label->setPosition(VisibleRect::center());
     addChild(label);
@@ -1867,33 +1773,9 @@ std::string LabelMultilineWithOutline::subtitle() const
     return "end in string 'outline feature'";
 }
 
-
-LabelIssue9255Test::LabelIssue9255Test()
-{
-    Size s = Director::getInstance()->getWinSize();
-    auto parent = Node::create();
-    parent->setPosition(s.width/2, s.height/2);
-    parent->setVisible(false);
-    this->addChild(parent);
-
-    auto label =  Label::createWithTTF("Crashed!!!", "fonts/HKYuanMini.ttf", 24);
-    label->setPosition(VisibleRect::center());
-    parent->addChild(label);
-}
-
-std::string LabelIssue9255Test::title() const
-{
-    return "Test for Issue #9255";
-}
-
-std::string LabelIssue9255Test::subtitle() const
-{
-    return "switch to desktop and switch back. Crashed!!!";
-}
-
 LabelSmallDimensionsTest::LabelSmallDimensionsTest()
 {
-    auto label = Label::createWithSystemFont("Hello World!", "fonts/arial.ttf", 24, Size(30,100));
+    auto label = Label::createWithSystemFont("Hello World!", s_fontArial, 24, Size(30,100));
     label->setPosition(VisibleRect::center());
     addChild(label);
 }
@@ -1908,53 +1790,26 @@ std::string LabelSmallDimensionsTest::subtitle() const
     return "Testing create Label with small dimensions.Program should not dead loop";
 }
 
-LabelIssue10089Test::LabelIssue10089Test()
-{
-    auto center = VisibleRect::center();
-
-    auto labelA = Label::createWithSystemFont("create label with system font", "fonts/arial.ttf", 24);
-    auto size = labelA->getContentSize();
-    labelA->setDimensions(size.width, size.height);
-    labelA->setPosition(center.x, center.y + 50);
-    addChild(labelA);
-
-    auto labelB = Label::createWithTTF("create label with TTF", "fonts/arial.ttf", 24);
-    size = labelB->getContentSize();
-    labelB->setDimensions(size.width, size.height);
-    labelB->setPosition(center.x, center.y - 50);
-    addChild(labelB);
-}
-
-std::string LabelIssue10089Test::title() const
-{
-    return "Test for Issue #10089";
-}
-
-std::string LabelIssue10089Test::subtitle() const
-{
-    return "Should be able to see two single-line text";
-}
-
 LabelSystemFontColor::LabelSystemFontColor()
 {
     auto size = Director::getInstance()->getWinSize();
 
-    auto label1 = Label::createWithSystemFont("Color4B::Red", "fonts/arial.ttf", 20);
+    auto label1 = Label::createWithSystemFont("Color4B::Red", s_fontArial, 20);
     label1->setPosition(Vec2(size.width / 2, size.height * 0.3f));
     label1->setTextColor(Color4B::RED);
     addChild(label1);
 
-    auto label2 = Label::createWithSystemFont("Color4B::Green", "fonts/arial.ttf", 20);
+    auto label2 = Label::createWithSystemFont("Color4B::Green", s_fontArial, 20);
     label2->setPosition(Vec2(size.width / 2, size.height * 0.4f));
     label2->setTextColor(Color4B::GREEN);
     addChild(label2);
 
-    auto label3 = Label::createWithSystemFont("Color4B::Blue", "fonts/arial.ttf", 20);
+    auto label3 = Label::createWithSystemFont("Color4B::Blue", s_fontArial, 20);
     label3->setPosition(Vec2(size.width / 2, size.height * 0.5f));
     label3->setTextColor(Color4B::BLUE);
     addChild(label3);
 
-    auto label4 = Label::createWithSystemFont("Color4B(0, 0, 255, 100)", "fonts/arial.ttf", 20);
+    auto label4 = Label::createWithSystemFont("Color4B(0, 0, 255, 100)", s_fontArial, 20);
     label4->setPosition(Vec2(size.width / 2, size.height * 0.6f));
     label4->setTextColor(Color4B(0, 0, 255, 100));
     addChild(label4);
@@ -1970,118 +1825,11 @@ std::string LabelSystemFontColor::subtitle() const
     return "Testing text color of system font";
 }
 
-LabelIssue10773Test::LabelIssue10773Test()
-{
-    auto center = VisibleRect::center();
-
-    auto label = Label::createWithTTF("create label with TTF", "fonts/arial.ttf", 24);
-    label->getLetter(5);
-    label->setString("Hi");
-    label->setPosition(center.x, center.y);
-    addChild(label);
-}
-
-std::string LabelIssue10773Test::title() const
-{
-    return "Test for Issue #10773";
-}
-
-std::string LabelIssue10773Test::subtitle() const
-{
-    return "Should not crash!";
-}
-
-LabelIssue11576Test::LabelIssue11576Test()
-{
-    auto center = VisibleRect::center();
-
-    auto label = Label::createWithTTF("abcdefg", "fonts/arial.ttf", 24);
-    for (int index = 0; index < label->getStringLength(); ++index)
-    {
-        label->getLetter(index);
-    }
-
-    this->runAction(Sequence::create(DelayTime::create(2.0f), CallFunc::create([label](){
-        label->setString("Hello World!");
-    }), nullptr));
-
-    label->setPosition(center.x, center.y);
-    addChild(label);
-}
-
-std::string LabelIssue11576Test::title() const
-{
-    return "Test for Issue #11576";
-}
-
-std::string LabelIssue11576Test::subtitle() const
-{
-    return "You should see another string displayed correctly after 2 seconds.";
-}
-
-LabelIssue11699Test::LabelIssue11699Test()
-{
-    auto center = VisibleRect::center();
-
-    auto label = Label::createWithTTF("中国", "fonts/HKYuanMini.ttf", 150);
-    label->enableOutline(Color4B::RED, 2);
-    label->setPosition(center.x, center.y);
-    addChild(label);
-}
-
-std::string LabelIssue11699Test::title() const
-{
-    return "Test for Issue #11699";
-}
-
-std::string LabelIssue11699Test::subtitle() const
-{
-    return "Outline should match with the characters exactly.";
-}
-
-LabelIssue12409Test::LabelIssue12409Test()
-{
-    auto center = VisibleRect::center();
-
-    auto label = Label::createWithTTF("abcdefghijklmn", "fonts/arial.ttf", 30);
-    label->setWidth(70);
-    label->setLineBreakWithoutSpace(true);
-    label->setPosition(center.x, center.y);
-    addChild(label);
-
-    auto labelSize = label->getContentSize();
-    auto winSize = Director::getInstance()->getWinSize();
-    Vec2 labelOrigin;
-    labelOrigin.x = winSize.width / 2 - (labelSize.width / 2);
-    labelOrigin.y = winSize.height / 2 - (labelSize.height / 2);
-    Vec2 vertices[4] =
-    {
-        Vec2(labelOrigin.x, labelOrigin.y),
-        Vec2(labelOrigin.x + labelSize.width, labelOrigin.y),
-        Vec2(labelOrigin.x + labelSize.width, labelOrigin.y + labelSize.height),
-        Vec2(labelOrigin.x, labelOrigin.y + labelSize.height)
-    };
-
-    auto drawNode = DrawNode::create();
-    drawNode->drawPoly(vertices, 4, true, Color4F::WHITE);
-    addChild(drawNode);
-}
-
-std::string LabelIssue12409Test::title() const
-{
-    return "Test for Issue #12409";
-}
-
-std::string LabelIssue12409Test::subtitle() const
-{
-    return "Testing auto-wrapping without space.";
-}
-
 LabelAddChildTest::LabelAddChildTest()
 {
     auto center = VisibleRect::center();
 
-    auto label = Label::createWithTTF("Label with child node:", "fonts/arial.ttf", 24);
+    auto label = Label::createWithTTF("Label with child node:", s_fontArial, 24);
     label->setPosition(center.x, center.y);
     addChild(label);
 
@@ -2098,121 +1846,6 @@ LabelAddChildTest::LabelAddChildTest()
 std::string LabelAddChildTest::title() const
 {
     return "Label support add child nodes";
-}
-
-LabelIssue12775Test::LabelIssue12775Test()
-{
-    auto center = VisibleRect::center();
-
-    auto label = Label::createWithTTF("Hello", "fonts/xingkai-incomplete.ttf", 30);
-    label->setPosition(center.x, center.y);
-    addChild(label);
-}
-
-std::string LabelIssue12775Test::title() const
-{
-    return "Test for Issue #12775";
-}
-
-std::string LabelIssue12775Test::subtitle() const
-{
-    return "Should not crash if the font not contain a Unicode charmap.";
-}
-
-LabelIssue11585Test::LabelIssue11585Test()
-{
-    auto center = VisibleRect::center();
-
-    auto label = Label::createWithTTF("Hello World", "fonts/arial.ttf", 24);
-    label->setPosition(center.x, center.y);
-    addChild(label);
-
-    label->getLetter(0)->setColor(Color3B::RED);
-    label->getLetter(1)->setColor(Color3B::GREEN);
-    label->getLetter(2)->setColor(Color3B::BLUE);
-    auto action = RepeatForever::create(Sequence::create( 
-        FadeOut::create(2), FadeIn::create(2),nullptr));
-    label->runAction(action);
-}
-
-std::string LabelIssue11585Test::title() const
-{
-    return "Test for Issue #11585";
-}
-
-std::string LabelIssue11585Test::subtitle() const
-{
-    return "The color of letter should not be overridden by fade action.";
-}
-
-LabelIssue10688Test::LabelIssue10688Test()
-{
-    auto center = VisibleRect::center();
-
-    auto label = Label::createWithTTF("Glow MenuItemLabel", "fonts/arial.ttf", 30);
-    label->setTextColor(Color4B::RED);
-    label->enableGlow(Color4B::YELLOW);
-    auto menuItem1 = MenuItemLabel::create(label, [](Ref*){});
-    menuItem1->setAnchorPoint(Vec2::ANCHOR_MIDDLE_LEFT);
-    menuItem1->setPosition(center.x - label->getContentSize().width/2, center.y);
-
-    auto menu = Menu::create(menuItem1, NULL);
-    menu->setPosition(Vec2::ZERO);
-    this->addChild(menu);
-}
-
-std::string LabelIssue10688Test::title() const
-{
-    return "Test for Issue #10688";
-}
-
-std::string LabelIssue10688Test::subtitle() const
-{
-    return "The MenuItemLabel should be displayed in the middle of the screen.";
-}
-
-LabelIssue13202Test::LabelIssue13202Test()
-{
-    auto center = VisibleRect::center();
-
-    auto label = Label::createWithTTF("asdfghjklzxcvbnmqwertyuiop", "fonts/arial.ttf", 150);
-    label->setPosition(center);
-    addChild(label);
-
-    label->getContentSize();
-    label->setString("A");
-    this->scheduleOnce([](float dt){
-        FontAtlasCache::purgeCachedData();
-    }, 0.15f, "FontAtlasCache::purgeCachedData");
-}
-
-std::string LabelIssue13202Test::title() const
-{
-    return "Test for Issue #13202";
-}
-
-std::string LabelIssue13202Test::subtitle() const
-{
-    return "FontAtlasCache::purgeCachedData should not cause crash.";
-}
-
-LabelIssue9500Test::LabelIssue9500Test()
-{
-    auto center = VisibleRect::center();
-
-    auto label = Label::createWithTTF("Spaces should not be lost", "fonts/Fingerpop.ttf", 20);
-    label->setPosition(center);
-    addChild(label);
-}
-
-std::string LabelIssue9500Test::title() const
-{
-    return "Test for Issue #9500";
-}
-
-std::string LabelIssue9500Test::subtitle() const
-{
-    return "Spaces should not be lost if label created with Fingerpop.ttf";
 }
 
 ControlStepper *LabelLayoutBaseTest::makeControlStepper()
@@ -2400,7 +2033,7 @@ void LabelLayoutBaseTest::initSliders(const cocos2d::Size& size)
 void LabelLayoutBaseTest::initTestLabel(const cocos2d::Size& size)
 {
     auto center = VisibleRect::center();
-    _label = Label::createWithTTF("五六七八This is a very long sentence一二三四.", "fonts/HKYuanMini.ttf", 20);
+    _label = Label::createWithTTF("五六七八This is a very long sentence一二三四.", s_fontArial, 20);
     _label->setDimensions(size.width/2, size.height/2);
     _label->setPosition(center);
     _label->setName("Label");
@@ -2981,27 +2614,6 @@ std::string LabelCharMapFontTest::subtitle() const
     return "";
 }
 
-LabelIssue13846Test::LabelIssue13846Test()
-{
-    auto center = VisibleRect::center();
-    
-    auto label = Label::createWithTTF("12345", "fonts/arial.ttf", 26);
-    label->setPosition(center);
-    addChild(label);
-    
-    label->getLetter(2)->setVisible(false);
-}
-
-std::string LabelIssue13846Test::title() const
-{
-    return "Test for Issue #13846";
-}
-
-std::string LabelIssue13846Test::subtitle() const
-{
-    return "Test hide label's letter,the label should display '12 45' as expected";
-}
-
 //
 //
 
@@ -3048,7 +2660,7 @@ LabelItalics::LabelItalics()
 
 
     // LabelTTF
-    TTFConfig ttfConfig("fonts/arial.ttf",24);
+    TTFConfig ttfConfig(s_fontArial,24);
     auto label2 = Label::createWithTTF(ttfConfig, "hello non-italics", TextHAlignment::CENTER,s.width);
     addChild(label2, 0, kTagBitmapAtlas2);
     label2->setPosition(Vec2(s.width/2, s.height*2/6));
@@ -3100,7 +2712,7 @@ LabelBold::LabelBold()
 
 
     // LabelTTF
-    TTFConfig ttfConfig("fonts/arial.ttf",24);
+    TTFConfig ttfConfig(s_fontArial,24);
     auto label2 = Label::createWithTTF(ttfConfig, "hello non-bold", TextHAlignment::CENTER,s.width);
     addChild(label2, 0, kTagBitmapAtlas2);
     label2->setPosition(Vec2(s.width/2, s.height*2/6));
@@ -3152,7 +2764,7 @@ LabelUnderline::LabelUnderline()
 
 
     // LabelTTF
-    TTFConfig ttfConfig("fonts/arial.ttf",24);
+    TTFConfig ttfConfig(s_fontArial,24);
     auto label2 = Label::createWithTTF(ttfConfig, "hello non-underline", TextHAlignment::CENTER,s.width);
     addChild(label2, 0, kTagBitmapAtlas2);
     label2->setPosition(Vec2(s.width/2, s.height*2/6));
@@ -3198,7 +2810,7 @@ LabelUnderlineMultiline::LabelUnderlineMultiline()
     _label1a->enableUnderline();
 
     // ttf
-    TTFConfig ttfConfig("fonts/arial.ttf",24);
+    TTFConfig ttfConfig(s_fontArial,24);
     ttfConfig.underline = true;
     _label2a = Label::createWithTTF(ttfConfig, "hello\nunderline\nwith multiline", TextHAlignment::LEFT, s.width);
     addChild(_label2a, 0, kTagBitmapAtlas2);
@@ -3239,7 +2851,7 @@ LabelStrikethrough::LabelStrikethrough()
     _label1a->enableStrikethrough();
 
     // ttf
-    TTFConfig ttfConfig("fonts/arial.ttf",24);
+    TTFConfig ttfConfig(s_fontArial,24);
     ttfConfig.strikethrough = true;
     _label2a = Label::createWithTTF(ttfConfig, "hello\nstrikethrough\nwith multiline", TextHAlignment::RIGHT, s.width);
     addChild(_label2a, 0, kTagBitmapAtlas2);
@@ -3372,199 +2984,3 @@ void LabelLocalizationTest::onChangedRadioButtonSelect(RadioButton* radioButton,
         break;
     }
 }
-
-//
-// LabelIssue15214
-//
-LabelIssue15214::LabelIssue15214()
-{
-    auto size = Director::getInstance()->getVisibleSize();
-
-    // 1
-    Label* label = Label::createWithTTF("TTF with setColor()", "fonts/arial.ttf", 24.0f);
-    label->enableUnderline();
-    label->setColor(cocos2d::Color3B::BLUE);
-    label->setPosition(size.width/2, size.height/5*4);
-    this->addChild(label);
-
-    // 2
-    Label* label2 = Label::createWithSystemFont("System with setColor()", "Verdana", 24.0f);
-    label2->enableUnderline();
-    label2->setColor(cocos2d::Color3B::BLUE);
-    label2->setPosition(size.width/2, size.height/5*3);
-    this->addChild(label2);
-
-    // 3
-    Label* label3 = Label::createWithTTF("TTF with setTextColor()", "fonts/arial.ttf", 24.0f);
-    label3->enableUnderline();
-    label3->setTextColor(Color4B::BLUE);
-    label3->setPosition(size.width/2, size.height/5*2);
-    this->addChild(label3);
-
-    // 4
-    Label* label4 = Label::createWithSystemFont("System with setTextColor()", "Verdana", 24.0f);
-    label4->enableUnderline();
-    label4->setTextColor(Color4B::BLUE);
-    label4->setPosition(size.width/2, size.height/5*1);
-    this->addChild(label4);
-}
-
-std::string LabelIssue15214::title() const
-{
-    return "Github Issue 15214";
-}
-
-std::string LabelIssue15214::subtitle() const
-{
-    return "Font + underline: same color with setColor()";
-}
-
-//
-// LabelIssue16293
-//
-LabelIssue16293::LabelIssue16293()
-{
-    auto size = Director::getInstance()->getVisibleSize();
-    Label* label = Label::createWithTTF("012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789", "fonts/arial.ttf", 12);
-    label->setPosition(size.width/2, size.height/2);
-    this->addChild(label);
-}
-
-std::string LabelIssue16293::title() const
-{
-    return "Github Issue 16293";
-}
-
-std::string LabelIssue16293::subtitle() const
-{
-    return "No TextureAtlas resizes";
-}
-
-//
-// LabelIssue16471
-//
-LabelIssue16471::LabelIssue16471()
-{
-    auto size = Director::getInstance()->getVisibleSize();
-
-    auto node = Node::create();
-    addChild(node, 100);
-    node->setPosition(size.width/2, size.height/2);
-
-    // Used Google Translate to translate from Chinese:
-    //    Here is set to false then textLabel: TextColor valid
-    //    set to true testLabel: setTextColor invalid
-    // Original:
-    //    此处设置为false则testLabel:setTextColor有效
-    //    设置为true则testLabel:setTextColor无效
-    // if set false then  testLabel:setTextColor is useful
-    node->setCascadeColorEnabled(true);
-    Label* label = Label::createWithTTF("Should be Yellow", "fonts/arial.ttf", 12);
-    label->setTextColor(Color4B::YELLOW);
-    node->addChild(label);
-}
-
-std::string LabelIssue16471::title() const
-{
-    return "Github Issue 16471";
-}
-
-std::string LabelIssue16471::subtitle() const
-{
-    return "Label should be yellow";
-}
-
-//
-// LabelIssue16717
-//
-LabelIssue16717::LabelIssue16717()
-{
-    auto bg = Sprite::create("cocosui/Hello.png");
-    bg->setPosition(VisibleRect::center());
-    addChild(bg);
-
-    {
-        auto label = Label::createWithTTF("Hello World", "fonts/arial.ttf", 70);
-        label->setPosition(VisibleRect::center() + Vec2(0, 40));
-        label->enableOutline(Color4B(0, 255, 0, 100), 10); // Set 100 alpha for outline
-        label->setTextColor(Color4B(0, 0, 255, 100)); // Also set 100 alpha for text
-        addChild(label);
-    }
-
-    {
-        auto label = Label::createWithTTF("Hello World", "fonts/arial.ttf", 70);
-        label->setPosition(VisibleRect::center() + Vec2(0, -40));
-        label->enableOutline(Color4B(0, 255, 0, 100), 10); // Set 100 alpha for outline
-        label->setTextColor(Color4B(0, 255, 0, 100)); // Also set 100 alpha for text
-        addChild(label);
-    }
-}
-
-std::string LabelIssue16717::title() const
-{
-    return "Github Issue 16717";
-}
-
-std::string LabelIssue16717::subtitle() const
-{
-    return "";
-}
-
-//
-// LabelIssueLineGap
-//
-LabelIssueLineGap::LabelIssueLineGap()
-{
-    
-    auto size = Director::getInstance()->getWinSize();
-    
-    auto label1 = Label::createWithTTF("test \ntest", "fonts/FingerpopGap.ttf", 30);
-    label1->setPosition(Vec2(size.width / 3, size.height / 2));
-    addChild(label1);
-    
-    auto label2 = Label::createWithSystemFont("test \ntest", "fonts/FingerpopGap.ttf", 30);
-    label2->setPosition(Vec2(size.width / 3 * 1.8 , size.height / 2));
-    addChild(label2);
-}
-
-std::string LabelIssueLineGap::title() const
-{
-    return "Label line gap issue";
-}
-
-std::string LabelIssueLineGap::subtitle() const
-{
-    return "two label must have exactly the same position and distance between lines";
-}
-
-//
-// LabelIssue17902
-//
-LabelIssue17902::LabelIssue17902()
-{
-    auto center = VisibleRect::center();
-    
-    auto label = Label::createWithTTF("abcdefg\nhijklmn", "fonts/arial.ttf", 26);
-    label->setLineHeight(40);
-    label->setPosition(center);
-    addChild(label);
-
-	scheduleOnce(CC_CALLBACK_0(LabelIssue17902::purgeCachedData, this), 1.0f, "purge_cached_data");
-}
-
-void LabelIssue17902::purgeCachedData()
-{
-    FontAtlasCache::purgeCachedData();
-}
-
-std::string LabelIssue17902::title() const
-{
-    return "Github Issue 17902";
-}
-
-std::string LabelIssue17902::subtitle() const
-{
-    return "";
-}
-
-

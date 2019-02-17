@@ -43,12 +43,12 @@ enum {
 //you don't need any ifdef anymore
 static std::string fontList[] =
 {
-    "fonts/A Damn Mess.ttf",
-    "fonts/Abberancy.ttf",
-    "fonts/Abduction.ttf",
-    "fonts/Paint Boy.ttf",
-    "fonts/Schwarzwald.ttf",
-    "fonts/Scissor Cuts.ttf",
+    s_fontArial,
+    s_fontArial,
+    s_fontArial,
+    s_fontArial,
+    s_fontArial,
+    s_fontArial,
 };
 
 static int vAlignIdx = 0;
@@ -166,13 +166,13 @@ FontNoReplacementTest::FontNoReplacementTest()
 FontNoReplacementTest::~FontNoReplacementTest()
 {
 	// need to clear the caches since we change the lookup dictionary after the application init.
-	FontAtlasCache::unloadFontAtlasTTF("fonts/A Damn Mess.ttf");
+	FontAtlasCache::unloadFontAtlasTTF(s_fontArial);
 //	FontFreeType::releaseFont("fonts/A Damn Mess.ttf");
-	FontAtlasCache::unloadFontAtlasTTF("fonts/Abberancy.ttf");
+	FontAtlasCache::unloadFontAtlasTTF(s_fontArial);
 //	FontFreeType::releaseFont("fonts/Abberancy.ttf");
-	FontAtlasCache::unloadFontAtlasTTF("fonts/Abduction.ttf");
+	FontAtlasCache::unloadFontAtlasTTF(s_fontArial);
 //	FontFreeType::releaseFont("fonts/Abduction.ttf");
-	FontAtlasCache::unloadFontAtlasTTF("fonts/Schwarzwald.ttf");
+	FontAtlasCache::unloadFontAtlasTTF(s_fontArial);
 //	FontFreeType::releaseFont("fonts/Schwarzwald.ttf");
 	FileUtils::getInstance()->setFilenameLookupDictionary(ValueMap());
 }
@@ -185,10 +185,10 @@ void FontNoReplacementTest::onEnter()
 	if (_replace)
 	{
 		ValueMap dict{
-			{ "fonts/A Damn Mess.ttf", Value("fonts/arial.ttf") },
-			{ "fonts/Abberancy.ttf", Value("fonts/arial.ttf") },
-			{ "fonts/Abduction.ttf", Value("fonts/arial.ttf") },
-			{ "fonts/Schwarzwald.ttf", Value("fonts/arial.ttf") }
+			{ s_fontArial, Value(s_fontArial) },
+			{ s_fontArial, Value(s_fontArial) },
+			{ s_fontArial, Value(s_fontArial) },
+			{ s_fontArial, Value(s_fontArial) }
 		};
 
 		FileUtils::getInstance()->setFilenameLookupDictionary(dict);
@@ -208,12 +208,12 @@ void FontNoReplacementTest::onEnter()
 	removeChildByTag(kTagColor2, true);
 	removeChildByTag(kTagColor3, true);
 
-	auto top = Label::createWithTTF("fonts/A Damn Mess.ttf" + suffix, "fonts/A Damn Mess.ttf", 24);
-	auto left = Label::createWithTTF("fonts/Abberancy.ttf" + suffix, "fonts/Abberancy.ttf", fontSize,
+	auto top = Label::createWithTTF(s_fontArial + suffix, s_fontArial, 24);
+	auto left = Label::createWithTTF(s_fontArial + suffix, s_fontArial, fontSize,
 		blockSize, TextHAlignment::LEFT, verticalAlignment[0]);
-	auto center = Label::createWithTTF("fonts/Abduction.ttf" + suffix, "fonts/Abduction.ttf", fontSize,
+	auto center = Label::createWithTTF(s_fontArial + suffix, s_fontArial, fontSize,
 		blockSize, TextHAlignment::CENTER, verticalAlignment[0]);
-	auto right = Label::createWithTTF("fonts/Schwarzwald.ttf" + suffix, "fonts/Schwarzwald.ttf", fontSize,
+	auto right = Label::createWithTTF(s_fontArial + suffix, s_fontArial, fontSize,
 		blockSize, TextHAlignment::RIGHT, verticalAlignment[0]);
 
 	auto leftColor = LayerColor::create(Color4B(100, 100, 100, 255), blockSize.width, blockSize.height);

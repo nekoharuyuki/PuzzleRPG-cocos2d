@@ -51,15 +51,6 @@ private:
     cocos2d::Vector<cocos2d::Sprite*> _brushs;
 };
 
-class RenderTextureIssue937 : public RenderTextureTest
-{
-public:
-    CREATE_FUNC(RenderTextureIssue937);
-    RenderTextureIssue937();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 class RenderTextureZbuffer : public RenderTextureTest
 {
 public:
@@ -138,64 +129,6 @@ public:
 private:
     cocos2d::RenderTexture* _rend;
     cocos2d::Sprite* _spriteDraw;
-};
-
-class SpriteRenderTextureBug : public RenderTextureTest
-{
-public:
-    
-    class SimpleSprite : public cocos2d::Sprite
-    {
-    public:
-        static SimpleSprite* create(const char* filename, const cocos2d::Rect &rect);
-        SimpleSprite();
-        ~SimpleSprite();
-        virtual void draw(cocos2d::Renderer* renderer, const cocos2d::Mat4& transform, uint32_t flags);
-    public:
-        cocos2d::RenderTexture* _rt;
-    };
-        
-public:
-    CREATE_FUNC(SpriteRenderTextureBug);
-    SpriteRenderTextureBug();
-    
-    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event);
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    
-    SimpleSprite* addNewSpriteWithCoords(const cocos2d::Vec2& p);
-};
-
-class Issue16113Test : public RenderTextureTest
-{
-public:
-    CREATE_FUNC(Issue16113Test);
-    Issue16113Test();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-
-private:
-    cocos2d::RenderTexture* _rend;
-    cocos2d::Sprite* _spriteDraw;
-};
-
-class RenderTextureWithSprite3DIssue16894 : public RenderTextureTest
-{
-public:
-    CREATE_FUNC(RenderTextureWithSprite3DIssue16894);
-    RenderTextureWithSprite3DIssue16894();
-    virtual ~RenderTextureWithSprite3DIssue16894();
-
-    virtual void visit(cocos2d::Renderer *renderer, const cocos2d::Mat4& parentTransform, uint32_t parentFlags) override;
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-
-private:
-    cocos2d::Sprite3D* _ship[3];
-
-    cocos2d::RenderTexture* _renderTexDefault;
-    cocos2d::RenderTexture* _renderTexWithBuffer;
 };
 
 #endif

@@ -490,7 +490,7 @@ void ShaderBlur::createSliderCtls()
         addChild(slider);
         _sliderRadiusCtl = slider;
         
-        auto label = Label::createWithTTF("Blur Radius", "fonts/arial.ttf", 12.0f);
+        auto label = Label::createWithTTF("Blur Radius", s_fontArial, 12.0f);
         addChild(label);
         label->setPosition(Vec2(screenSize.width / 4.0f, screenSize.height / 3.0f));
     }
@@ -507,7 +507,7 @@ void ShaderBlur::createSliderCtls()
         addChild(slider);
         _sliderNumCtrl = slider;
         
-        auto label = Label::createWithTTF("Blur Sample Num", "fonts/arial.ttf", 12.0f);
+        auto label = Label::createWithTTF("Blur Sample Num", s_fontArial, 12.0f);
         addChild(label);
         label->setPosition(Vec2(screenSize.width / 4.0f, screenSize.height / 3.0f - 34.0f));
     }
@@ -518,8 +518,8 @@ bool ShaderBlur::init()
 {
     if( ShaderTestDemo::init() ) 
     {
-        _blurSprite = SpriteBlur::create("Images/grossini.png");
-        auto sprite = Sprite::create("Images/grossini.png");
+        _blurSprite = SpriteBlur::create(s_pathGrossini);
+        auto sprite = Sprite::create(s_pathGrossini);
         auto s = Director::getInstance()->getWinSize();
         _blurSprite->setPosition(Vec2(s.width/3, s.height/2 + 30.0f));
         sprite->setPosition(Vec2(2*s.width/3, s.height/2 + 30.0f));
@@ -527,13 +527,13 @@ bool ShaderBlur::init()
         addChild(_blurSprite);
         addChild(sprite);
         
-        auto label = Label::createWithTTF("Normal Sprite", "fonts/arial.ttf", 12.0f);
+        auto label = Label::createWithTTF("Normal Sprite", s_fontArial, 12.0f);
         addChild(label);
         label->setPosition(Vec2(2*s.width/3, s.height/3.0f));
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_WINRT)
         createSliderCtls();
 #else
-        auto label_blur = Label::createWithTTF("Blur Sprite", "fonts/arial.ttf", 12.0f);
+        auto label_blur = Label::createWithTTF("Blur Sprite", s_fontArial, 12.0f);
         addChild(label_blur);
         label_blur->setPosition(Vec2(s.width/3, s.height/3.0f));
 #endif
@@ -761,7 +761,7 @@ bool ShaderMultiTexture::init()
         createSliderCtl();
         
         // menu
-        auto label = Label::createWithTTF(TTFConfig("fonts/arial.ttf"), "change");
+        auto label = Label::createWithTTF(TTFConfig(s_fontArial), "change");
         auto mi = MenuItemLabel::create(label, CC_CALLBACK_1(ShaderMultiTexture::changeTexture, this));
         auto menu = Menu::create(mi, nullptr);
         addChild(menu);
@@ -777,7 +777,7 @@ void ShaderMultiTexture::changeTexture(Ref*)
 {
     static const int textureFilesCount = 3;
     static const std::string textureFiles[textureFilesCount] = {
-        "Images/grossini.png",
+        s_pathGrossini,
         "Images/grossinis_sister1.png",
         "Images/grossinis_sister2.png"
     };

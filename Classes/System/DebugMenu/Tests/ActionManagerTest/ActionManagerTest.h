@@ -119,14 +119,4 @@ protected:
     const unsigned int kRepeatForeverFlag = 0x08; // You don't need this for the test, but it's for demonstration how to activate several flags on an action.
 };
 
-class Issue14050Test : public ActionManagerTest
-{
-public:
-    CREATE_FUNC(Issue14050Test);
-
-    virtual std::string subtitle() const override;
-    virtual void onEnter() override;
-protected:
-};
-
 #endif

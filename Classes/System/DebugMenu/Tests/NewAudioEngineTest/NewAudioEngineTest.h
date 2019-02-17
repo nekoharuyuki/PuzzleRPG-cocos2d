@@ -161,17 +161,6 @@ public:
     virtual std::string title() const override;
 };
 
-class AudioIssue11143Test : public AudioEngineTestDemo
-{
-public:
-    CREATE_FUNC(AudioIssue11143Test);
-
-    virtual bool init() override;
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 class AudioPerformanceTest : public AudioEngineTestDemo
 {
 public:
@@ -234,17 +223,6 @@ public:
     
     virtual void onEnter() override;
     
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class AudioIssue16938Test : public AudioEngineTestDemo
-{
-public:
-    CREATE_FUNC(AudioIssue16938Test);
-
-    virtual void onEnter() override;
-
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 };

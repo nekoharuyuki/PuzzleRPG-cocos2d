@@ -25,6 +25,7 @@
 #include "DrawPrimitivesTest.h"
 #include "renderer/CCRenderer.h"
 #include "renderer/CCCustomCommand.h"
+#include "testResource.h"
 
 USING_NS_CC;
 
@@ -42,7 +43,6 @@ DrawPrimitivesTests::DrawPrimitivesTests()
     ADD_TEST_CASE(DrawPrimitivesTest);
     ADD_TEST_CASE(DrawNodeTest);
     ADD_TEST_CASE(PrimitivesCommandTest);
-    ADD_TEST_CASE(Issue11942Test);
 }
 
 string DrawPrimitivesBaseTest::title() const
@@ -373,7 +373,7 @@ PrimitivesCommandTest::PrimitivesCommandTest()
     _primitive->setStart(0);
 
     auto cache = Director::getInstance()->getTextureCache();
-    _texture = cache->addImage("Images/grossini.png");
+    _texture = cache->addImage(s_pathGrossini);
     _programState = GLProgramState::getOrCreateWithGLProgramName(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR);
 
     _primitive->retain();
@@ -410,32 +410,6 @@ string PrimitivesCommandTest::subtitle() const
 {
     return "Drawing Primitives using PrimitiveCommand";
 }
-
-//
-// Issue11942Test
-//
-Issue11942Test::Issue11942Test()
-{
-    auto draw = DrawNode::create();
-    addChild(draw, 10);
-
-    // draw a circle
-    draw->setLineWidth(1);
-    draw->drawCircle(VisibleRect::center() - Vec2(140,0), 50, CC_DEGREES_TO_RADIANS(90), 30, false, Color4F(CCRANDOM_0_1(), CCRANDOM_0_1(), CCRANDOM_0_1(), 1));
-    draw->setLineWidth(10);
-    draw->drawCircle(VisibleRect::center() + Vec2(140,0), 50, CC_DEGREES_TO_RADIANS(90), 30, false, Color4F(CCRANDOM_0_1(), CCRANDOM_0_1(), CCRANDOM_0_1(), 1));
-}
-
-string Issue11942Test::title() const
-{
-    return "GitHub Issue #11942";
-}
-
-string Issue11942Test::subtitle() const
-{
-    return "drawCircle() with width";
-}
-
 
 #if defined(__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
 #pragma GCC diagnostic warning "-Wdeprecated-declarations"

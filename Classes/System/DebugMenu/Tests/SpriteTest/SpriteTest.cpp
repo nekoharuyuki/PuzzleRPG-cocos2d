@@ -104,9 +104,6 @@ SpriteTests::SpriteTests()
     ADD_TEST_CASE(SpriteFramesFromFileContent);
     ADD_TEST_CASE(SpritePolygonFromFileContent);
     ADD_TEST_CASE(SpriteBatchNodeReorder);
-    ADD_TEST_CASE(SpriteBatchNodeReorderIssue744);
-    ADD_TEST_CASE(SpriteBatchNodeReorderIssue766);
-    ADD_TEST_CASE(SpriteBatchNodeReorderIssue767);
     ADD_TEST_CASE(SpriteBatchNodeReorderSameIndex);
     ADD_TEST_CASE(SpriteBatchNodeReorderOneChild);
     ADD_TEST_CASE(NodeSort);
@@ -115,11 +112,9 @@ SpriteTests::SpriteTests()
     ADD_TEST_CASE(SpriteBatchNodeChildren);
     ADD_TEST_CASE(SpriteBatchNodeChildrenZ);
     ADD_TEST_CASE(SpriteChildrenVisibility);
-    ADD_TEST_CASE(SpriteChildrenVisibilityIssue665);
     ADD_TEST_CASE(SpriteBatchNodeChildrenScale);
     ADD_TEST_CASE(SpriteNilTexture);
     ADD_TEST_CASE(SpriteSubclass);
-    ADD_TEST_CASE(SpriteBatchBug1217);
     ADD_TEST_CASE(AnimationCacheTest);
     ADD_TEST_CASE(AnimationCacheFile);
     ADD_TEST_CASE(SpriteCullTest1);
@@ -136,7 +131,6 @@ SpriteTests::SpriteTests()
     ADD_TEST_CASE(SpriteSlice9Test8);
     ADD_TEST_CASE(SpriteSlice9Test9);
     ADD_TEST_CASE(SpriteSlice9Test10);
-    ADD_TEST_CASE(Issue17119);
 };
 
 //------------------------------------------------------------------
@@ -727,196 +721,6 @@ std::string SpriteBatchNodeReorder::title() const
 std::string SpriteBatchNodeReorder::subtitle() const
 {
     return "reorder #1. Should not crash";
-}
-
-//------------------------------------------------------------------
-//
-// SpriteBatchNodeReorderIssue744
-//
-//------------------------------------------------------------------
-
-SpriteBatchNodeReorderIssue744::SpriteBatchNodeReorderIssue744()
-{
-    auto s = Director::getInstance()->getWinSize();
-    
-
-    // Testing issue #744
-    // http://code.google.com/p/cocos2d-iphone/issues/detail?id=744
-    auto batch = SpriteBatchNode::create("Images/grossini_dance_atlas.png", 15);
-    addChild(batch, 0, kTagSpriteBatchNode);        
-
-    auto sprite = Sprite::createWithTexture(batch->getTexture(),Rect(0, 0, 85, 121));
-    sprite->setPosition( Vec2(s.width/2, s.height/2) );
-    batch->addChild(sprite, 3);
-    batch->reorderChild(sprite, 1);
-}
-
-std::string SpriteBatchNodeReorderIssue744::title() const
-{
-    return "Testing SpriteBatchNode";
-}
-
-std::string SpriteBatchNodeReorderIssue744::subtitle() const
-{
-    return "reorder issue #744. Should not crash";
-}
-
-//------------------------------------------------------------------
-//
-// SpriteBatchNodeReorderIssue766
-//
-//------------------------------------------------------------------
-
-Sprite* SpriteBatchNodeReorderIssue766::makeSpriteZ(int aZ)
-{
-    Rect rcw(128,0,64,64);
-    rcw = CC_RECT_PIXELS_TO_POINTS(rcw);
-    auto sprite = Sprite::createWithTexture(batchNode->getTexture(), rcw);
-    sprite->setScale(CC_CONTENT_SCALE_FACTOR());
-    batchNode->addChild(sprite, aZ+1, 0);
-
-    //children
-    Rect rc1(0,0,64,64);
-    rc1 = CC_RECT_PIXELS_TO_POINTS(rc1);
-    auto spriteShadow = Sprite::createWithTexture(batchNode->getTexture(), rc1);
-    spriteShadow->setOpacity(128);
-    sprite->setScale(CC_CONTENT_SCALE_FACTOR());
-    sprite->addChild(spriteShadow, aZ, 3);
-
-    Rect rc2(64,0,64,64);
-    rc2 = CC_RECT_PIXELS_TO_POINTS(rc2);
-    auto spriteTop = Sprite::createWithTexture(batchNode->getTexture(), rc2);
-    sprite->setScale(CC_CONTENT_SCALE_FACTOR());
-    sprite->addChild(spriteTop, aZ+2, 3);
-
-    return sprite;
-}
-
-void SpriteBatchNodeReorderIssue766::reorderSprite(float dt)
-{
-    unschedule("issue_766_key");
-
-    batchNode->reorderChild(sprite1, 4);
-}
-
-// on "init" you need to initialize your instance
-SpriteBatchNodeReorderIssue766::SpriteBatchNodeReorderIssue766()
-{
-    batchNode = SpriteBatchNode::create("Images/piece.png", 15);
-    addChild(batchNode, 1, 0);
-
-    sprite1 = makeSpriteZ(2);
-    sprite1->setPosition(Vec2(200,160));
-
-    sprite2 = makeSpriteZ(3);
-    sprite2->setPosition(Vec2(264,160));
-
-    sprite3 = makeSpriteZ(4);
-    sprite3->setPosition(Vec2(328,160));
-
-    schedule(CC_CALLBACK_1(SpriteBatchNodeReorderIssue766::reorderSprite, this), 2, "issue_766_key");
-}
-
-std::string SpriteBatchNodeReorderIssue766::title() const
-{
-    return "Testing SpriteBatchNode";
-}
-
-std::string SpriteBatchNodeReorderIssue766::subtitle() const
-{
-    return "reorder issue #766. In 2 seconds 1 sprite will be reordered";
-}
-
-//------------------------------------------------------------------
-//
-// SpriteBatchNodeReorderIssue767
-//
-//------------------------------------------------------------------
-SpriteBatchNodeReorderIssue767::SpriteBatchNodeReorderIssue767()
-{
-    auto s = Director::getInstance()->getWinSize();        
-
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("animations/ghosts.plist", "animations/ghosts.png");
-    Node *aParent;
-    Sprite *l1, *l2a, *l2b, *l3a1, *l3a2, *l3b1, *l3b2;
-
-    //
-    // SpriteBatchNode: 3 levels of children
-    //
-    aParent = SpriteBatchNode::create("animations/ghosts.png");
-    addChild(aParent, 0, kTagSprite1);
-
-    // parent
-    l1 = Sprite::createWithSpriteFrameName("father.gif");
-    l1->setPosition(Vec2( s.width/2, s.height/2));
-    aParent->addChild(l1, 0, kTagSprite2);
-    auto l1Size = l1->getContentSize();
-
-    // child left
-    l2a = Sprite::createWithSpriteFrameName("sister1.gif");
-    l2a->setPosition(Vec2( -25 + l1Size.width/2, 0 + l1Size.height/2));
-    l1->addChild(l2a, -1, kTagSpriteLeft);
-    auto l2aSize = l2a->getContentSize();        
-
-
-    // child right
-    l2b = Sprite::createWithSpriteFrameName("sister2.gif");
-    l2b->setPosition(Vec2( +25 + l1Size.width/2, 0 + l1Size.height/2));
-    l1->addChild(l2b, 1, kTagSpriteRight);
-    auto l2bSize = l2a->getContentSize();
-
-
-    // child left bottom
-    l3a1 = Sprite::createWithSpriteFrameName("child1.gif");
-    l3a1->setScale(0.65f);
-    l3a1->setPosition(Vec2(0+l2aSize.width/2,-50+l2aSize.height/2));
-    l2a->addChild(l3a1, -1);
-
-    // child left top
-    l3a2 = Sprite::createWithSpriteFrameName("child1.gif");
-    l3a2->setScale(0.65f);
-    l3a2->setPosition(Vec2(0+l2aSize.width/2,+50+l2aSize.height/2));
-    l2a->addChild(l3a2, 1);
-
-    // child right bottom
-    l3b1 = Sprite::createWithSpriteFrameName("child1.gif");
-    l3b1->setScale(0.65f);
-    l3b1->setPosition(Vec2(0+l2bSize.width/2,-50+l2bSize.height/2));
-    l2b->addChild(l3b1, -1);
-
-    // child right top
-    l3b2 = Sprite::createWithSpriteFrameName("child1.gif");
-    l3b2->setScale(0.65f);
-    l3b2->setPosition(Vec2(0+l2bSize.width/2,+50+l2bSize.height/2));
-    l2b->addChild(l3b2, 1);
-
-    schedule(CC_CALLBACK_1(SpriteBatchNodeReorderIssue767::reorderSprites, this), 1, "issue_767_key");
-}
-
-std::string SpriteBatchNodeReorderIssue767::title() const
-{
-    return "Testing SpriteBatchNode";
-}
-
-std::string SpriteBatchNodeReorderIssue767::subtitle() const
-{
-    return "reorder issue #767. Should not crash";
-}
-
-void SpriteBatchNodeReorderIssue767::reorderSprites(float dt)
-{
-    auto spritebatch = static_cast<SpriteBatchNode*>( getChildByTag(kTagSprite1) );
-    auto father = static_cast<Sprite*>( spritebatch->getChildByTag(kTagSprite2) );
-    auto left = static_cast<Sprite*>( father->getChildByTag(kTagSpriteLeft) );
-    auto right = static_cast<Sprite*>( father->getChildByTag(kTagSpriteRight) );
-
-    int newZLeft = 1;
-
-    if( left->getLocalZOrder() == 1 )
-        newZLeft = -1;
-
-    father->reorderChild(left, newZLeft);
-    father->reorderChild(right, -newZLeft);
 }
 
 //------------------------------------------------------------------
@@ -1756,7 +1560,7 @@ void SpriteFrameTest::onEnter()
     _sprite1 = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
     _sprite1->setPosition( Vec2( s.width/2-80, s.height/2) );
 
-    auto spritebatch = SpriteBatchNode::create("animations/grossini.png");
+    auto spritebatch = SpriteBatchNode::create(s_pathGrossini);
     spritebatch->addChild(_sprite1);
     addChild(spritebatch);
 
@@ -2127,7 +1931,7 @@ SpriteBatchNodeOffsetAnchorRotation::SpriteBatchNodeOffsetAnchorRotation()
     cache->addSpriteFramesWithFile("animations/grossini.plist");
     cache->addSpriteFramesWithFile("animations/grossini_gray.plist", "animations/grossini_gray.png");
     
-    auto spritebatch = SpriteBatchNode::create("animations/grossini.png");
+    auto spritebatch = SpriteBatchNode::create(s_pathGrossini);
     addChild(spritebatch);
     
     for(int i=0;i<3;i++) 
@@ -2289,7 +2093,7 @@ SpriteBatchNodeOffsetAnchorScale::SpriteBatchNodeOffsetAnchorScale()
     cache->addSpriteFramesWithFile("animations/grossini.plist");
     cache->addSpriteFramesWithFile("animations/grossini_gray.plist", "animations/grossini_gray.png");
     
-    auto spritesheet = SpriteBatchNode::create("animations/grossini.png");
+    auto spritesheet = SpriteBatchNode::create(s_pathGrossini);
     addChild(spritesheet);
     
     for(int i=0;i<3;i++) 
@@ -2428,7 +2232,7 @@ SpriteHybrid::SpriteHybrid()
 
     // parents
     auto parent1 = Node::create();
-    auto parent2 = SpriteBatchNode::create("animations/grossini.png", 50);
+    auto parent2 = SpriteBatchNode::create(s_pathGrossini, 50);
     
     addChild(parent1, 0, kTagNode);
     addChild(parent2, 0, kTagSpriteBatchNode);
@@ -2519,7 +2323,7 @@ SpriteBatchNodeChildren::SpriteBatchNodeChildren()
     auto s = Director::getInstance()->getWinSize();
     
     // parents
-    auto batch = SpriteBatchNode::create("animations/grossini.png", 50);
+    auto batch = SpriteBatchNode::create(s_pathGrossini, 50);
     
     addChild(batch, 0, kTagSpriteBatchNode);
     
@@ -2745,82 +2549,6 @@ void SpriteChildrenVisibility::onExit()
 std::string SpriteChildrenVisibility::title() const
 {
     return "Sprite & SpriteBatchNode Visibility";
-}
-
-//------------------------------------------------------------------
-//
-// SpriteChildrenVisibilityIssue665
-//
-//------------------------------------------------------------------
-SpriteChildrenVisibilityIssue665::SpriteChildrenVisibilityIssue665()
-{
-    auto s = Director::getInstance()->getWinSize();
-
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("animations/grossini.plist");
-
-    Node *aParent;
-    Sprite *sprite1, *sprite2, *sprite3;
-    //
-    // SpriteBatchNode
-    //
-    // parents
-    aParent = SpriteBatchNode::create("animations/grossini.png", 50);
-    aParent->setPosition(Vec2(s.width/3, s.height/2));
-    addChild(aParent, 0);
-
-    sprite1 = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
-    sprite1->setPosition(Vec2(0,0));
-
-    sprite2 = Sprite::createWithSpriteFrameName("grossini_dance_02.png");
-    sprite2->setPosition(Vec2(20,30));
-
-    sprite3 = Sprite::createWithSpriteFrameName("grossini_dance_03.png");
-    sprite3->setPosition(Vec2(-20,30));
-
-    // test issue #665
-    sprite1->setVisible(false);
-
-    aParent->addChild(sprite1);
-    sprite1->addChild(sprite2, -2);
-    sprite1->addChild(sprite3, 2);
-
-    //
-    // Sprite
-    //
-    aParent = Node::create();
-    aParent->setPosition(Vec2(2*s.width/3, s.height/2));
-    addChild(aParent, 0);
-
-    sprite1 = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
-    sprite1->setPosition(Vec2(0,0));
-
-    sprite2 = Sprite::createWithSpriteFrameName("grossini_dance_02.png");
-    sprite2->setPosition(Vec2(20,30));
-
-    sprite3 = Sprite::createWithSpriteFrameName("grossini_dance_03.png");
-    sprite3->setPosition(Vec2(-20,30));
-
-    // test issue #665
-    sprite1->setVisible(false);
-
-    aParent->addChild(sprite1);
-    sprite1->addChild(sprite2, -2);
-    sprite1->addChild(sprite3, 2);
-}
-
-SpriteChildrenVisibilityIssue665::~SpriteChildrenVisibilityIssue665()
-{
-    SpriteFrameCache::getInstance()->removeUnusedSpriteFrames();
-}
-
-std::string SpriteChildrenVisibilityIssue665::title() const
-{
-    return "Sprite & SpriteBatchNode Visibility";
-}
-
-std::string SpriteChildrenVisibilityIssue665::subtitle() const
-{
-    return "No sprites should be visible";
 }
 
 //------------------------------------------------------------------
@@ -3736,44 +3464,6 @@ std::string AnimationCacheFile::title() const
 std::string AnimationCacheFile::subtitle() const
 {
     return "Sprite should be animated";
-}
-
-// SpriteBatchBug1217
-
-SpriteBatchBug1217::SpriteBatchBug1217()
-{
-    auto bn = SpriteBatchNode::create("Images/grossini_dance_atlas.png", 15);
-
-    auto s1 = Sprite::createWithTexture(bn->getTexture(), Rect(0, 0, 57, 57));
-    auto s2 = Sprite::createWithTexture(bn->getTexture(), Rect(0, 0, 57, 57));
-    auto s3 = Sprite::createWithTexture(bn->getTexture(), Rect(0, 0, 57, 57));
-
-    s1->setColor(Color3B(255, 0, 0));
-    s2->setColor(Color3B(0, 255, 0));
-    s3->setColor(Color3B(0, 0, 255));
-
-    s1->setPosition(Vec2(20,200));
-    s2->setPosition(Vec2(100,0));
-    s3->setPosition(Vec2(100,0));
-
-    bn->setPosition(Vec2(0,0));
-
-    //!!!!!
-    s1->addChild(s2);
-    s2->addChild(s3);
-    bn->addChild(s1);
-
-    addChild(bn);
-}
-
-std::string SpriteBatchBug1217::title() const
-{
-    return "SpriteBatch - Bug 1217";
-}
-
-std::string SpriteBatchBug1217::subtitle() const
-{
-    return "Adding big family to spritebatch. You shall see 3 heads";
 }
 
 //
@@ -5727,77 +5417,3 @@ SpriteSlice9Test10::SpriteSlice9Test10()
     s3->setContentSize(s3->getContentSize()*1.5);
     s3->setFlippedY(true);
 }
-
-//------------------------------------------------------------------
-//
-// Issue 17119
-//
-//------------------------------------------------------------------
-Issue17119::Issue17119()
-: _accum(0)
-{
-    Size s = Director::getInstance()->getVisibleSize();
-
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Images/issue_17119.plist");
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Images/blocks9ss.plist");
-
-
-    auto s1 = Sprite::createWithSpriteFrameName("firstPic.png");
-    addChild(s1);
-    s1->setPosition(s.width/2-s.width/3, s.height/2);
-    s1->setScale(0.25f);
-    auto p1 = Sprite::create("Images/r1.png");
-    p1->setScale(0.25f);
-    p1->setPosition(s1->getPosition());
-    addChild(p1, 10);
-
-    auto s2 = Sprite::createWithSpriteFrameName("blocks9r.png");
-    addChild(s2);
-    s2->setPosition(s.width/2, s.height/2);
-    s2->setCenterRectNormalized(Rect(1/3.f, 1/3.f, 1/3.f, 1/3.f));
-    s2->setContentSize(s2->getContentSize()*1.5);
-    auto p2 = Sprite::create("Images/r1.png");
-    p2->setScale(0.25f);
-    p2->setPosition(s2->getPosition());
-    addChild(p2, 10);
-
-    auto s3 = Sprite::create("Images/grossini.png");
-    addChild(s3);
-    s3->setPosition(s.width/2+s.width/3, s.height/2+s.height/3);
-    s3->setContentSize(s3->getContentSize()*1.5);
-    auto p3 = Sprite::create("Images/r1.png");
-    p3->setScale(0.25f);
-    p3->setPosition(s3->getPosition());
-    addChild(p3, 10);
-
-    auto s4 = Sprite::create("Images/grossini.png");
-    addChild(s4);
-    s4->setPosition(s.width/2+s.width/3, s.height/2-s.height/3);
-    s4->setContentSize(s2->getContentSize()*1.5);
-    s4->setStretchEnabled(false);
-    auto p4 = Sprite::create("Images/r1.png");
-    p4->setScale(0.25f);
-    p4->setPosition(s3->getPosition());
-    addChild(p4, 10);
-
-    _s1 = s1;
-    _s2 = s2;
-    _s3 = s3;
-    _s4 = s4;
-    scheduleUpdate();
-}
-
-void Issue17119::update(float dt)
-{
-    _accum += dt;
-    if (_accum > 0.5) {
-        _accum = 0;
-        auto flipped = _s1->isFlippedX();
-        _s1->setFlippedX(!flipped);
-        _s2->setFlippedX(!flipped);
-        _s3->setFlippedX(!flipped);
-        _s4->setFlippedX(!flipped);
-    }
-}
-
-

@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "TerrainTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 
@@ -134,7 +135,7 @@ TerrainWalkThru::TerrainWalkThru()
 
     _terrain->setSkirtHeightRatio(3);
     _terrain->setLODDistance(64,128,192);
-    _player = Player::create("Sprite3DTest/girl.c3b",_camera,_terrain);
+    _player = Player::create(s_c3bTest,_camera,_terrain);
     _player->setCameraMask(2);
     _player->setScale(0.08f);
     _player->setPositionY(_terrain->getHeight(_player->getPositionX(),_player->getPositionZ())+PLAYER_HEIGHT);
@@ -152,7 +153,7 @@ TerrainWalkThru::TerrainWalkThru()
     billboard->setCameraMask((unsigned short)CameraFlag::USER1);
     _player->addChild(billboard);
 
-    auto animation = Animation3D::create("Sprite3DTest/girl.c3b","Take 001");
+    auto animation = Animation3D::create(s_c3bTest,"Take 001");
     if (animation)
     {
         auto animate = Animate3D::create(animation);

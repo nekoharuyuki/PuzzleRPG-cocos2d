@@ -1504,7 +1504,7 @@ void TextureAsync::onEnter()
 
     auto size = Director::getInstance()->getWinSize();
 
-    auto label = Label::createWithTTF("Loading...", "fonts/Marker Felt.ttf", 32);
+    auto label = Label::createWithTTF("Loading...", s_fontArial, 32);
     label->setPosition(Vec2( size.width/2, size.height/2));
     addChild(label, 10);
 

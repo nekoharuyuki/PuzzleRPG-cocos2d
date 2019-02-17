@@ -38,7 +38,7 @@ CurlTests::CurlTests()
 
 CurlTest::CurlTest()
 {
-    auto label = Label::createWithTTF("Curl Test", "fonts/arial.ttf", 28);
+    auto label = Label::createWithTTF("Curl Test", s_fontArial, 28);
     addChild(label, 0);
     label->setPosition(VisibleRect::center().x, VisibleRect::top().y-50);
 
@@ -47,7 +47,7 @@ CurlTest::CurlTest()
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
     // create a label to display the tip string
-    _label = Label::createWithTTF("Touch the screen to connect", "fonts/arial.ttf", 22);
+    _label = Label::createWithTTF("Touch the screen to connect", s_fontArial, 22);
     _label->setPosition(VisibleRect::center());
     addChild(_label, 0);
     

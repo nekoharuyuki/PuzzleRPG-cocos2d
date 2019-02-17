@@ -74,7 +74,7 @@ bool AssetsManagerExLoaderScene::init()
         return false;
     }
 
-    auto downloadLabel = Label::createWithTTF("Start Download", "fonts/arial.ttf", 16);
+    auto downloadLabel = Label::createWithTTF("Start Download", s_fontArial, 16);
     auto downloadItem = MenuItemLabel::create(downloadLabel, CC_CALLBACK_1(AssetsManagerExLoaderScene::startDownloadCallback, this));
     downloadItem->setPosition(Vec2(VisibleRect::center().x, VisibleRect::bottom().y + 100));
     _downloadMenu = Menu::create(downloadItem, nullptr);
@@ -88,7 +88,7 @@ bool AssetsManagerExLoaderScene::init()
     _loadLayer->addChild(sprite);
     sprite->setPosition( VisibleRect::center() );
     
-    TTFConfig config("fonts/tahoma.ttf", 30);
+    TTFConfig config(s_fontArial, 30);
     _progress = Label::createWithTTF(config, "0%", TextHAlignment::CENTER);
     _progress->setPosition( Vec2(VisibleRect::center().x, VisibleRect::center().y + 50) );
     _loadLayer->addChild(_progress);

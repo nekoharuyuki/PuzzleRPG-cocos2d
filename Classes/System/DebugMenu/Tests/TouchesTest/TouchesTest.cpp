@@ -144,7 +144,7 @@ ForceTouchTest::ForceTouchTest()
 {
     auto s = Director::getInstance()->getWinSize();
 
-    _infoLabel = Label::createWithTTF(TTFConfig("fonts/arial.ttf"), "Current force value : 0.00, maximum possible force : 0.00");
+    _infoLabel = Label::createWithTTF(TTFConfig(s_fontArial), "Current force value : 0.00, maximum possible force : 0.00");
     _infoLabel->setPosition(s.width / 2, s.height / 2);
     addChild(_infoLabel);
 

@@ -26,7 +26,7 @@
 
 USING_NS_CC;
 
-#define FONT_NAME                       "fonts/Thonburi.ttf"
+#define FONT_NAME                       "fonts/arial.ttf"
 #define FONT_SIZE                       36
 
 TextInputTests::TextInputTests()

@@ -456,91 +456,6 @@ public:
     virtual std::string subtitle() const override;
 };
 
-class Issue1305 : public ActionsDemo
-{
-public:
-    CREATE_FUNC(Issue1305);
-
-    virtual void onEnter() override;
-    virtual void onExit() override;
-    void log(Node* sender);
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-private:
-    cocos2d::Sprite* _spriteTmp;
-};
-
-class Issue1305_2 : public ActionsDemo
-{
-public:
-    CREATE_FUNC(Issue1305_2);
-
-    virtual void onEnter() override;
-    void printLog1();
-    void printLog2();
-    void printLog3();
-    void printLog4();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class Issue1288 : public ActionsDemo
-{
-public:
-    CREATE_FUNC(Issue1288);
-
-    virtual void onEnter() override;
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class Issue1288_2 : public ActionsDemo
-{
-public:
-    CREATE_FUNC(Issue1288_2);
-
-    virtual void onEnter() override;
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class Issue1327 : public ActionsDemo
-{
-public:
-    CREATE_FUNC(Issue1327);
-
-    virtual void onEnter() override;
-    virtual std::string subtitle() const override;
-    virtual std::string title() const override;
-    void logSprRotation(cocos2d::Sprite* sender);
-};
-
-class Issue1398 : public ActionsDemo
-{
-public:
-    CREATE_FUNC(Issue1398);
-
-    void incrementInteger();
-    void incrementIntegerCallback(void* data);
-    virtual void onEnter() override;
-    virtual std::string subtitle() const override;
-    virtual std::string title() const override;
-private:
-    int _testInteger;
-};
-
-class Issue2599 : public ActionsDemo
-{
-public:
-    CREATE_FUNC(Issue2599);
-    
-    virtual void onEnter() override;
-    virtual std::string subtitle() const override;
-    virtual std::string title() const override;
-private:
-    int _count;
-};
-
 class ActionCatmullRom : public ActionsDemo
 {
 public:
@@ -597,49 +512,10 @@ public:
     virtual std::string subtitle() const override;
 };
 
-class Issue14936_1 : public ActionsDemo
-{
-public:
-    CREATE_FUNC(Issue14936_1);
-
-    virtual void onEnter() override;
-    virtual std::string subtitle() const override;
-    virtual std::string title() const override;
-private:
-    int _count;
-};
-
-class Issue14936_2 : public ActionsDemo
-{
-public:
-    CREATE_FUNC(Issue14936_2);
-
-    virtual void onEnter() override;
-    virtual std::string subtitle() const override;
-    virtual std::string title() const override;
-private:
-    int _count;
-};
-
 class SequenceWithFinalInstant : public ActionsDemo
 {
 public:
     CREATE_FUNC(SequenceWithFinalInstant);
-    
-    virtual std::string subtitle() const override;
-    virtual void onEnter() override;
-    virtual void onExit() override;
-    
-private:
-    cocos2d::ActionManager* _manager;
-    cocos2d::Node* _target;
-    
-};
-
-class Issue18003 : public ActionsDemo
-{
-public:
-    CREATE_FUNC(Issue18003);
     
     virtual std::string subtitle() const override;
     virtual void onEnter() override;

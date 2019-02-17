@@ -40,40 +40,6 @@
 		800682B72217CA7C00855C84 /* ActionsEaseTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682AB2217CA7C00855C84 /* ActionsEaseTest.cpp */; };
 		800682B82217CA7C00855C84 /* ActionManagerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682AE2217CA7C00855C84 /* ActionManagerTest.cpp */; };
 		800682B92217CA7C00855C84 /* ActionManagerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682AE2217CA7C00855C84 /* ActionManagerTest.cpp */; };
-		8006831F2217CA9300855C84 /* Bug-1174.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682BB2217CA9200855C84 /* Bug-1174.cpp */; };
-		800683202217CA9300855C84 /* Bug-1174.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682BB2217CA9200855C84 /* Bug-1174.cpp */; };
-		800683212217CA9300855C84 /* Bug-914.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682BF2217CA9200855C84 /* Bug-914.cpp */; };
-		800683222217CA9300855C84 /* Bug-914.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682BF2217CA9200855C84 /* Bug-914.cpp */; };
-		800683232217CA9300855C84 /* Bug-Child.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682C12217CA9200855C84 /* Bug-Child.cpp */; };
-		800683242217CA9300855C84 /* Bug-Child.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682C12217CA9200855C84 /* Bug-Child.cpp */; };
-		800683252217CA9300855C84 /* Bug-899.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682C22217CA9200855C84 /* Bug-899.cpp */; };
-		800683262217CA9300855C84 /* Bug-899.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682C22217CA9200855C84 /* Bug-899.cpp */; };
-		800683272217CA9300855C84 /* Bug-12847.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682C32217CA9200855C84 /* Bug-12847.cpp */; };
-		800683282217CA9300855C84 /* Bug-12847.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682C32217CA9200855C84 /* Bug-12847.cpp */; };
-		800683292217CA9300855C84 /* Bug-1159.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682C42217CA9200855C84 /* Bug-1159.cpp */; };
-		8006832A2217CA9300855C84 /* Bug-1159.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682C42217CA9200855C84 /* Bug-1159.cpp */; };
-		8006832B2217CA9300855C84 /* Bug-624.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682C52217CA9200855C84 /* Bug-624.cpp */; };
-		8006832C2217CA9300855C84 /* Bug-624.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682C52217CA9200855C84 /* Bug-624.cpp */; };
-		8006832D2217CA9300855C84 /* Bug-350.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682CA2217CA9200855C84 /* Bug-350.cpp */; };
-		8006832E2217CA9300855C84 /* Bug-350.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682CA2217CA9200855C84 /* Bug-350.cpp */; };
-		8006832F2217CA9300855C84 /* Bug-422.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682CB2217CA9200855C84 /* Bug-422.cpp */; };
-		800683302217CA9300855C84 /* Bug-422.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682CB2217CA9200855C84 /* Bug-422.cpp */; };
-		800683312217CA9300855C84 /* Bug-15594.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682CD2217CA9200855C84 /* Bug-15594.cpp */; };
-		800683322217CA9300855C84 /* Bug-15594.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682CD2217CA9200855C84 /* Bug-15594.cpp */; };
-		800683332217CA9300855C84 /* Bug-458.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682D12217CA9200855C84 /* Bug-458.cpp */; };
-		800683342217CA9300855C84 /* Bug-458.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682D12217CA9200855C84 /* Bug-458.cpp */; };
-		800683352217CA9300855C84 /* QuestionContainerSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682D32217CA9200855C84 /* QuestionContainerSprite.cpp */; };
-		800683362217CA9300855C84 /* QuestionContainerSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682D32217CA9200855C84 /* QuestionContainerSprite.cpp */; };
-		800683372217CA9300855C84 /* Bug-15776.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682D52217CA9200855C84 /* Bug-15776.cpp */; };
-		800683382217CA9300855C84 /* Bug-15776.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682D52217CA9200855C84 /* Bug-15776.cpp */; };
-		800683392217CA9300855C84 /* Bug-CCDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682D72217CA9200855C84 /* Bug-CCDrawNode.cpp */; };
-		8006833A2217CA9300855C84 /* Bug-CCDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682D72217CA9200855C84 /* Bug-CCDrawNode.cpp */; };
-		8006833B2217CA9300855C84 /* Bug-14327.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682D82217CA9200855C84 /* Bug-14327.cpp */; };
-		8006833C2217CA9300855C84 /* Bug-14327.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682D82217CA9200855C84 /* Bug-14327.cpp */; };
-		8006833D2217CA9300855C84 /* BugsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682DC2217CA9200855C84 /* BugsTest.cpp */; };
-		8006833E2217CA9300855C84 /* BugsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682DC2217CA9200855C84 /* BugsTest.cpp */; };
-		8006833F2217CA9300855C84 /* Bug-886.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682DD2217CA9200855C84 /* Bug-886.cpp */; };
-		800683402217CA9300855C84 /* Bug-886.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800682DD2217CA9200855C84 /* Bug-886.cpp */; };
 		8006834B2217CA9300855C84 /* BillBoardTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8006831E2217CA9300855C84 /* BillBoardTest.cpp */; };
 		8006834C2217CA9300855C84 /* BillBoardTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8006831E2217CA9300855C84 /* BillBoardTest.cpp */; };
 		800683682217CABD00855C84 /* CurrentLanguageTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8006834F2217CABC00855C84 /* CurrentLanguageTest.cpp */; };
@@ -479,40 +445,6 @@
 		800682AC2217CA7C00855C84 /* ActionsEaseTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionsEaseTest.h; sourceTree = "<group>"; };
 		800682AE2217CA7C00855C84 /* ActionManagerTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionManagerTest.cpp; sourceTree = "<group>"; };
 		800682AF2217CA7C00855C84 /* ActionManagerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionManagerTest.h; sourceTree = "<group>"; };
-		800682BB2217CA9200855C84 /* Bug-1174.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-1174.cpp"; sourceTree = "<group>"; };
-		800682BC2217CA9200855C84 /* Bug-422.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-422.h"; sourceTree = "<group>"; };
-		800682BD2217CA9200855C84 /* Bug-CCDrawNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-CCDrawNode.h"; sourceTree = "<group>"; };
-		800682BE2217CA9200855C84 /* BugsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsTest.h; sourceTree = "<group>"; };
-		800682BF2217CA9200855C84 /* Bug-914.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-914.cpp"; sourceTree = "<group>"; };
-		800682C02217CA9200855C84 /* Bug-12847.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-12847.h"; sourceTree = "<group>"; };
-		800682C12217CA9200855C84 /* Bug-Child.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-Child.cpp"; sourceTree = "<group>"; };
-		800682C22217CA9200855C84 /* Bug-899.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-899.cpp"; sourceTree = "<group>"; };
-		800682C32217CA9200855C84 /* Bug-12847.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-12847.cpp"; sourceTree = "<group>"; };
-		800682C42217CA9200855C84 /* Bug-1159.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-1159.cpp"; sourceTree = "<group>"; };
-		800682C52217CA9200855C84 /* Bug-624.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-624.cpp"; sourceTree = "<group>"; };
-		800682C62217CA9200855C84 /* Bug-899.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-899.h"; sourceTree = "<group>"; };
-		800682C72217CA9200855C84 /* Bug-1159.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-1159.h"; sourceTree = "<group>"; };
-		800682C82217CA9200855C84 /* Bug-14327.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-14327.h"; sourceTree = "<group>"; };
-		800682C92217CA9200855C84 /* Bug-350.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-350.h"; sourceTree = "<group>"; };
-		800682CA2217CA9200855C84 /* Bug-350.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-350.cpp"; sourceTree = "<group>"; };
-		800682CB2217CA9200855C84 /* Bug-422.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-422.cpp"; sourceTree = "<group>"; };
-		800682CC2217CA9200855C84 /* Bug-15594.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-15594.h"; sourceTree = "<group>"; };
-		800682CD2217CA9200855C84 /* Bug-15594.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-15594.cpp"; sourceTree = "<group>"; };
-		800682CE2217CA9200855C84 /* Bug-914.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-914.h"; sourceTree = "<group>"; };
-		800682CF2217CA9200855C84 /* Bug-624.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-624.h"; sourceTree = "<group>"; };
-		800682D12217CA9200855C84 /* Bug-458.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-458.cpp"; sourceTree = "<group>"; };
-		800682D22217CA9200855C84 /* QuestionContainerSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionContainerSprite.h; sourceTree = "<group>"; };
-		800682D32217CA9200855C84 /* QuestionContainerSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuestionContainerSprite.cpp; sourceTree = "<group>"; };
-		800682D42217CA9200855C84 /* Bug-458.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-458.h"; sourceTree = "<group>"; };
-		800682D52217CA9200855C84 /* Bug-15776.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-15776.cpp"; sourceTree = "<group>"; };
-		800682D62217CA9200855C84 /* Bug-886.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-886.h"; sourceTree = "<group>"; };
-		800682D72217CA9200855C84 /* Bug-CCDrawNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-CCDrawNode.cpp"; sourceTree = "<group>"; };
-		800682D82217CA9200855C84 /* Bug-14327.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-14327.cpp"; sourceTree = "<group>"; };
-		800682D92217CA9200855C84 /* Bug-Child.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-Child.h"; sourceTree = "<group>"; };
-		800682DA2217CA9200855C84 /* Bug-15776.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-15776.h"; sourceTree = "<group>"; };
-		800682DB2217CA9200855C84 /* Bug-1174.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bug-1174.h"; sourceTree = "<group>"; };
-		800682DC2217CA9200855C84 /* BugsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BugsTest.cpp; sourceTree = "<group>"; };
-		800682DD2217CA9200855C84 /* Bug-886.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Bug-886.cpp"; sourceTree = "<group>"; };
 		8006831D2217CA9300855C84 /* BillBoardTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillBoardTest.h; sourceTree = "<group>"; };
 		8006831E2217CA9300855C84 /* BillBoardTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BillBoardTest.cpp; sourceTree = "<group>"; };
 		8006834E2217CABC00855C84 /* CurrentLanguageTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentLanguageTest.h; sourceTree = "<group>"; };
@@ -994,7 +926,6 @@
 				800682A12217CA7C00855C84 /* ActionsTest */,
 				800682A42217CA7C00855C84 /* AllocatorTest */,
 				8006831C2217CA9300855C84 /* BillBoardTest */,
-				800682BA2217CA9200855C84 /* BugsTest */,
 				800683622217CABD00855C84 /* ClickAndMoveTest */,
 				8006835F2217CABD00855C84 /* ClippingNodeTest */,
 				800683502217CABC00855C84 /* CocosDenshionTest */,
@@ -1078,8 +1009,8 @@
 		800682A72217CA7C00855C84 /* ActionsProgressTest */ = {
 			isa = PBXGroup;
 			children = (
-				800682A82217CA7C00855C84 /* ActionsProgressTest.h */,
 				800682A92217CA7C00855C84 /* ActionsProgressTest.cpp */,
+				800682A82217CA7C00855C84 /* ActionsProgressTest.h */,
 			);
 			path = ActionsProgressTest;
 			sourceTree = "<group>";
@@ -1100,55 +1031,6 @@
 				800682AF2217CA7C00855C84 /* ActionManagerTest.h */,
 			);
 			path = ActionManagerTest;
-			sourceTree = "<group>";
-		};
-		800682BA2217CA9200855C84 /* BugsTest */ = {
-			isa = PBXGroup;
-			children = (
-				800682BB2217CA9200855C84 /* Bug-1174.cpp */,
-				800682BC2217CA9200855C84 /* Bug-422.h */,
-				800682BD2217CA9200855C84 /* Bug-CCDrawNode.h */,
-				800682BE2217CA9200855C84 /* BugsTest.h */,
-				800682BF2217CA9200855C84 /* Bug-914.cpp */,
-				800682C02217CA9200855C84 /* Bug-12847.h */,
-				800682C12217CA9200855C84 /* Bug-Child.cpp */,
-				800682C22217CA9200855C84 /* Bug-899.cpp */,
-				800682C32217CA9200855C84 /* Bug-12847.cpp */,
-				800682C42217CA9200855C84 /* Bug-1159.cpp */,
-				800682C52217CA9200855C84 /* Bug-624.cpp */,
-				800682C62217CA9200855C84 /* Bug-899.h */,
-				800682C72217CA9200855C84 /* Bug-1159.h */,
-				800682C82217CA9200855C84 /* Bug-14327.h */,
-				800682C92217CA9200855C84 /* Bug-350.h */,
-				800682CA2217CA9200855C84 /* Bug-350.cpp */,
-				800682CB2217CA9200855C84 /* Bug-422.cpp */,
-				800682CC2217CA9200855C84 /* Bug-15594.h */,
-				800682CD2217CA9200855C84 /* Bug-15594.cpp */,
-				800682CE2217CA9200855C84 /* Bug-914.h */,
-				800682CF2217CA9200855C84 /* Bug-624.h */,
-				800682D02217CA9200855C84 /* Bug-458 */,
-				800682D52217CA9200855C84 /* Bug-15776.cpp */,
-				800682D62217CA9200855C84 /* Bug-886.h */,
-				800682D72217CA9200855C84 /* Bug-CCDrawNode.cpp */,
-				800682D82217CA9200855C84 /* Bug-14327.cpp */,
-				800682D92217CA9200855C84 /* Bug-Child.h */,
-				800682DA2217CA9200855C84 /* Bug-15776.h */,
-				800682DB2217CA9200855C84 /* Bug-1174.h */,
-				800682DC2217CA9200855C84 /* BugsTest.cpp */,
-				800682DD2217CA9200855C84 /* Bug-886.cpp */,
-			);
-			path = BugsTest;
-			sourceTree = "<group>";
-		};
-		800682D02217CA9200855C84 /* Bug-458 */ = {
-			isa = PBXGroup;
-			children = (
-				800682D12217CA9200855C84 /* Bug-458.cpp */,
-				800682D22217CA9200855C84 /* QuestionContainerSprite.h */,
-				800682D32217CA9200855C84 /* QuestionContainerSprite.cpp */,
-				800682D42217CA9200855C84 /* Bug-458.h */,
-			);
-			path = "Bug-458";
 			sourceTree = "<group>";
 		};
 		8006831C2217CA9300855C84 /* BillBoardTest */ = {
@@ -2448,18 +2330,14 @@
 				8006846A2217DD0200855C84 /* RotateWorldTest.cpp in Sources */,
 				80C994362141D42B00C10E96 /* Converter.cpp in Sources */,
 				800684682217DD0200855C84 /* RenderTextureTest.cpp in Sources */,
-				800683292217CA9300855C84 /* Bug-1159.cpp in Sources */,
 				800682B62217CA7C00855C84 /* ActionsEaseTest.cpp in Sources */,
 				800685462217E36700855C84 /* UIFocusTest.cpp in Sources */,
 				800685402217E36700855C84 /* UITextAtlasTest.cpp in Sources */,
 				800684A42217E27800855C84 /* Paddle.cpp in Sources */,
-				8006833D2217CA9300855C84 /* BugsTest.cpp in Sources */,
 				800684622217DD0200855C84 /* SpriteFrameCacheTest.cpp in Sources */,
 				800685222217E36700855C84 /* UITextBMFontTest.cpp in Sources */,
-				800683212217CA9300855C84 /* Bug-914.cpp in Sources */,
 				800683DB2217CB1900855C84 /* LayerTest.cpp in Sources */,
 				80C9941E2141D42B00C10E96 /* EvolutionScene.cpp in Sources */,
-				800683232217CA9300855C84 /* Bug-Child.cpp in Sources */,
 				8006841E2217D70200855C84 /* ParallaxTest.cpp in Sources */,
 				8006850C2217E36700855C84 /* VRTest.cpp in Sources */,
 				80C994082141D42B00C10E96 /* BattleCharSprite.cpp in Sources */,
@@ -2484,15 +2362,12 @@
 				800683682217CABD00855C84 /* CurrentLanguageTest.cpp in Sources */,
 				80C9942E2141D42B00C10E96 /* CharData.cpp in Sources */,
 				8006849E2217E27800855C84 /* TileMapTest.cpp in Sources */,
-				800683352217CA9300855C84 /* QuestionContainerSprite.cpp in Sources */,
-				800683272217CA9300855C84 /* Bug-12847.cpp in Sources */,
 				800683722217CABD00855C84 /* CurlTest.cpp in Sources */,
 				80C9942A2141D42B00C10E96 /* UserOptionData.cpp in Sources */,
 				80C8626A21455CDF006FBDCD /* FirebaseHelper.cpp in Sources */,
 				8006840C2217D70200855C84 /* ParticleTest.cpp in Sources */,
 				800683A52217CAF900855C84 /* TableViewTestScene.cpp in Sources */,
 				80C9942C2141D42B00C10E96 /* MapData.cpp in Sources */,
-				8006833B2217CA9300855C84 /* Bug-14327.cpp in Sources */,
 				800684A22217E27800855C84 /* TextureCacheTest.cpp in Sources */,
 				800685362217E36700855C84 /* UIWidgetAddNodeTest.cpp in Sources */,
 				800684982217E27800855C84 /* Texture2dTest.cpp in Sources */,
@@ -2517,7 +2392,6 @@
 				800684782217DD0300855C84 /* DrawNode3D.cpp in Sources */,
 				800683B12217CAF900855C84 /* DrawPrimitivesTest.cpp in Sources */,
 				8006854A2217E36700855C84 /* WindowTest.cpp in Sources */,
-				800683372217CA9300855C84 /* Bug-15776.cpp in Sources */,
 				800683D52217CB1900855C84 /* IntervalTest.cpp in Sources */,
 				800683702217CABD00855C84 /* ConsoleTest.cpp in Sources */,
 				800684A62217E27800855C84 /* TouchesTest.cpp in Sources */,
@@ -2525,20 +2399,16 @@
 				80C994402141D42B00C10E96 /* MathHelper.cpp in Sources */,
 				800684762217DD0300855C84 /* Sprite3DTest.cpp in Sources */,
 				80C994442141D42B00C10E96 /* AudioManager.cpp in Sources */,
-				8006833F2217CA9300855C84 /* Bug-886.cpp in Sources */,
 				800684662217DD0200855C84 /* SpritePolygonTest.cpp in Sources */,
 				80C9940E2141D42B00C10E96 /* BattleChar.cpp in Sources */,
 				8006852C2217E36700855C84 /* UIPageViewTest.cpp in Sources */,
 				800683782217CABD00855C84 /* ConfigurationTest.cpp in Sources */,
-				8006832D2217CA9300855C84 /* Bug-350.cpp in Sources */,
 				8006846E2217DD0200855C84 /* SpriteTest.cpp in Sources */,
-				8006831F2217CA9300855C84 /* Bug-1174.cpp in Sources */,
 				800685322217E36700855C84 /* CocosGUIScene.cpp in Sources */,
 				8006851C2217E36700855C84 /* UITabControlTest.cpp in Sources */,
 				800685302217E36700855C84 /* UIScale9SpriteTest.cpp in Sources */,
 				800683A32217CAF900855C84 /* ExtensionsTest.cpp in Sources */,
 				80A120E72204D0BD0053B2A8 /* SceneData.cpp in Sources */,
-				800683332217CA9300855C84 /* Bug-458.cpp in Sources */,
 				8038F5F6217B47F00085F19C /* LabelRPG.cpp in Sources */,
 				8006853C2217E36700855C84 /* UIRadioButtonTest.cpp in Sources */,
 				800684AA2217E27800855C84 /* TransitionsTest.cpp in Sources */,
@@ -2560,20 +2430,16 @@
 				800683A12217CAF900855C84 /* AssetsManagerExTest.cpp in Sources */,
 				800683D72217CB1900855C84 /* LabelTestNew.cpp in Sources */,
 				800685202217E36700855C84 /* UISceneManager.cpp in Sources */,
-				800683312217CA9300855C84 /* Bug-15594.cpp in Sources */,
 				1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */,
 				8006853E2217E36700855C84 /* UILayoutTest.cpp in Sources */,
 				8006834B2217CA9300855C84 /* BillBoardTest.cpp in Sources */,
-				8006832B2217CA9300855C84 /* Bug-624.cpp in Sources */,
 				80C9943E2141D42B00C10E96 /* BaseTest.cpp in Sources */,
 				800682B22217CA7C00855C84 /* AllocatorTest.cpp in Sources */,
-				800683252217CA9300855C84 /* Bug-899.cpp in Sources */,
 				8006850E2217E36700855C84 /* VibrateTest.cpp in Sources */,
 				80C994342141D42B00C10E96 /* AppInitalizer.cpp in Sources */,
 				1AF87B8A1F6F7822007BE51C /* main.m in Sources */,
 				800685482217E36700855C84 /* UITextTest.cpp in Sources */,
 				800684282217D70200855C84 /* NewEventDispatcherTest.cpp in Sources */,
-				800683392217CA9300855C84 /* Bug-CCDrawNode.cpp in Sources */,
 				80C994242141D42B00C10E96 /* CharSelectIconSprite.cpp in Sources */,
 				800683CF2217CB1900855C84 /* FontTest.cpp in Sources */,
 				8006841C2217D70200855C84 /* NewAudioEngineTest.cpp in Sources */,
@@ -2584,7 +2450,6 @@
 				800684642217DD0200855C84 /* SceneTest.cpp in Sources */,
 				80C994022141D42B00C10E96 /* sqlite3.c in Sources */,
 				80C9941C2141D42B00C10E96 /* QuestScene.cpp in Sources */,
-				8006832F2217CA9300855C84 /* Bug-422.cpp in Sources */,
 				800682B82217CA7C00855C84 /* ActionManagerTest.cpp in Sources */,
 				800685122217E36700855C84 /* RefPtrTest.cpp in Sources */,
 				800683A72217CAF900855C84 /* CustomTableViewCell.cpp in Sources */,
@@ -2598,7 +2463,6 @@
 			files = (
 				800684272217D70200855C84 /* MultiTouchTest.cpp in Sources */,
 				800683692217CABD00855C84 /* CurrentLanguageTest.cpp in Sources */,
-				800683262217CA9300855C84 /* Bug-899.cpp in Sources */,
 				8006839C2217CAF900855C84 /* DownloaderTest.cpp in Sources */,
 				8006851B2217E36700855C84 /* UIEditBoxTest.cpp in Sources */,
 				80C9940B2141D42B00C10E96 /* PuzzleGameScene.cpp in Sources */,
@@ -2613,7 +2477,6 @@
 				800684A72217E27800855C84 /* TouchesTest.cpp in Sources */,
 				800683D02217CB1900855C84 /* FontTest.cpp in Sources */,
 				800684652217DD0200855C84 /* SceneTest.cpp in Sources */,
-				800683202217CA9300855C84 /* Bug-1174.cpp in Sources */,
 				800685292217E36700855C84 /* UILoadingBarTest.cpp in Sources */,
 				80C9942F2141D42B00C10E96 /* CharData.cpp in Sources */,
 				8006851F2217E36700855C84 /* UITextFieldTest.cpp in Sources */,
@@ -2632,7 +2495,6 @@
 				8006841F2217D70200855C84 /* ParallaxTest.cpp in Sources */,
 				80A120E82204D0BD0053B2A8 /* SceneData.cpp in Sources */,
 				800685172217E36700855C84 /* UITest.cpp in Sources */,
-				8006832A2217CA9300855C84 /* Bug-1159.cpp in Sources */,
 				8006854B2217E36700855C84 /* WindowTest.cpp in Sources */,
 				800683A42217CAF900855C84 /* ExtensionsTest.cpp in Sources */,
 				8006850F2217E36700855C84 /* VibrateTest.cpp in Sources */,
@@ -2668,17 +2530,13 @@
 				8080879A220E873500BE754A /* AppPlatform.mm in Sources */,
 				800684232217D70200855C84 /* MaterialSystemTest.cpp in Sources */,
 				800685192217E36700855C84 /* UIScrollViewTest.cpp in Sources */,
-				8006833E2217CA9300855C84 /* BugsTest.cpp in Sources */,
 				800685472217E36700855C84 /* UIFocusTest.cpp in Sources */,
 				800684132217D70200855C84 /* NodeTest.cpp in Sources */,
-				800683362217CA9300855C84 /* QuestionContainerSprite.cpp in Sources */,
 				800683D42217CB1900855C84 /* FileUtilsTest.cpp in Sources */,
-				800683222217CA9300855C84 /* Bug-914.cpp in Sources */,
 				80C994272141D42B00C10E96 /* CharselectScene.cpp in Sources */,
 				80C994372141D42B00C10E96 /* Converter.cpp in Sources */,
 				80C9941D2141D42B00C10E96 /* QuestScene.cpp in Sources */,
 				800684172217D70200855C84 /* MotionStreakTest.cpp in Sources */,
-				800683242217CA9300855C84 /* Bug-Child.cpp in Sources */,
 				8006851D2217E36700855C84 /* UITabControlTest.cpp in Sources */,
 				8006839E2217CAF900855C84 /* EffectsAdvancedTest.cpp in Sources */,
 				800683A62217CAF900855C84 /* TableViewTestScene.cpp in Sources */,
@@ -2688,9 +2546,7 @@
 				800683AA2217CAF900855C84 /* SocketIOTest.cpp in Sources */,
 				800682B72217CA7C00855C84 /* ActionsEaseTest.cpp in Sources */,
 				8006836B2217CABD00855C84 /* CocosDenshionTest.cpp in Sources */,
-				800683322217CA9300855C84 /* Bug-15594.cpp in Sources */,
 				80C9940D2141D42B00C10E96 /* BattleCharIconSprite.cpp in Sources */,
-				800683282217CA9300855C84 /* Bug-12847.cpp in Sources */,
 				800684AB2217E27800855C84 /* TransitionsTest.cpp in Sources */,
 				800682B12217CA7C00855C84 /* ActionsTest.cpp in Sources */,
 				8038F5F7217B47F00085F19C /* LabelRPG.cpp in Sources */,
@@ -2704,16 +2560,11 @@
 				800683A82217CAF900855C84 /* CustomTableViewCell.cpp in Sources */,
 				800683D22217CB1900855C84 /* MouseTest.cpp in Sources */,
 				800684692217DD0200855C84 /* RenderTextureTest.cpp in Sources */,
-				800683342217CA9300855C84 /* Bug-458.cpp in Sources */,
-				800683402217CA9300855C84 /* Bug-886.cpp in Sources */,
 				800684672217DD0200855C84 /* SpritePolygonTest.cpp in Sources */,
 				80C9943D2141D42B00C10E96 /* Controller.cpp in Sources */,
 				800684A12217E27800855C84 /* TileMapTest2.cpp in Sources */,
 				800684112217D70200855C84 /* MenuTest.cpp in Sources */,
 				8006849F2217E27800855C84 /* TileMapTest.cpp in Sources */,
-				8006832E2217CA9300855C84 /* Bug-350.cpp in Sources */,
-				800683302217CA9300855C84 /* Bug-422.cpp in Sources */,
-				8006833A2217CA9300855C84 /* Bug-CCDrawNode.cpp in Sources */,
 				800684632217DD0200855C84 /* SpriteFrameCacheTest.cpp in Sources */,
 				800685312217E36700855C84 /* UIScale9SpriteTest.cpp in Sources */,
 				800682B52217CA7C00855C84 /* ActionsProgressTest.cpp in Sources */,
@@ -2730,10 +2581,8 @@
 				800683732217CABD00855C84 /* CurlTest.cpp in Sources */,
 				800684732217DD0200855C84 /* ShaderTest.cpp in Sources */,
 				80C994072141D42B00C10E96 /* ResultScene.cpp in Sources */,
-				8006832C2217CA9300855C84 /* Bug-624.cpp in Sources */,
 				80C994332141D42B00C10E96 /* AppDelegate.cpp in Sources */,
 				80C9942B2141D42B00C10E96 /* UserOptionData.cpp in Sources */,
-				800683382217CA9300855C84 /* Bug-15776.cpp in Sources */,
 				800684A92217E27800855C84 /* Ball.cpp in Sources */,
 				800683A22217CAF900855C84 /* AssetsManagerExTest.cpp in Sources */,
 				80C994352141D42B00C10E96 /* AppInitalizer.cpp in Sources */,
@@ -2749,7 +2598,6 @@
 				8006852F2217E36700855C84 /* UIButtonTest.cpp in Sources */,
 				8006850D2217E36700855C84 /* VRTest.cpp in Sources */,
 				80C9941F2141D42B00C10E96 /* EvolutionScene.cpp in Sources */,
-				8006833C2217CA9300855C84 /* Bug-14327.cpp in Sources */,
 				800684AD2217E27800855C84 /* TextureAtlasEncryptionTest.cpp in Sources */,
 				80C9940F2141D42B00C10E96 /* BattleChar.cpp in Sources */,
 			);

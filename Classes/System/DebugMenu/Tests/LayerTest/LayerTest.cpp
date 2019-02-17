@@ -50,9 +50,6 @@ LayerTests::LayerTests()
     ADD_TEST_CASE(LayerIgnoreAnchorPointRot);
     ADD_TEST_CASE(LayerIgnoreAnchorPointScale);
     ADD_TEST_CASE(LayerExtendedBlendOpacityTest);
-    ADD_TEST_CASE(LayerBug3162A);
-    ADD_TEST_CASE(LayerBug3162B);
-    ADD_TEST_CASE(LayerColorOccludeBug);
     ADD_TEST_CASE(LayerRadialGradientTest);
 }
 
@@ -82,8 +79,8 @@ void LayerTestCascadingOpacityA::onEnter()
     auto s = Director::getInstance()->getWinSize();
     auto layer1 = Layer::create();
     
-    auto sister1 = Sprite::create("Images/grossinis_sister1.png");
-    auto sister2 = Sprite::create("Images/grossinis_sister2.png");
+    auto sister1 = Sprite::create(s_pathSister1);
+    auto sister2 = Sprite::create(s_pathSister2);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -134,8 +131,8 @@ void LayerTestCascadingOpacityB::onEnter()
     
     layer1->setPosition( Vec2(0, s.height/2));
     
-    auto sister1 = Sprite::create("Images/grossinis_sister1.png");
-    auto sister2 = Sprite::create("Images/grossinis_sister2.png");
+    auto sister1 = Sprite::create(s_pathSister1);
+    auto sister2 = Sprite::create(s_pathSister2);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -187,8 +184,8 @@ void LayerTestCascadingOpacityC::onEnter()
     
     layer1->setPosition( Vec2(0, s.height/2));
     
-    auto sister1 = Sprite::create("Images/grossinis_sister1.png");
-    auto sister2 = Sprite::create("Images/grossinis_sister2.png");
+    auto sister1 = Sprite::create(s_pathSister1);
+    auto sister2 = Sprite::create(s_pathSister2);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -235,8 +232,8 @@ void LayerTestCascadingColorA::onEnter()
     auto s = Director::getInstance()->getWinSize();
     auto layer1 = Layer::create();
     
-    auto sister1 = Sprite::create("Images/grossinis_sister1.png");
-    auto sister2 = Sprite::create("Images/grossinis_sister2.png");
+    auto sister1 = Sprite::create(s_pathSister1);
+    auto sister2 = Sprite::create(s_pathSister2);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -288,8 +285,8 @@ void LayerTestCascadingColorB::onEnter()
     
     layer1->setPosition( Vec2(0, s.height/2));
     
-    auto sister1 = Sprite::create("Images/grossinis_sister1.png");
-    auto sister2 = Sprite::create("Images/grossinis_sister2.png");
+    auto sister1 = Sprite::create(s_pathSister1);
+    auto sister2 = Sprite::create(s_pathSister2);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -340,8 +337,8 @@ void LayerTestCascadingColorC::onEnter()
     layer1->setCascadeColorEnabled(false);
     layer1->setPosition( Vec2(0, s.height/2));
     
-    auto sister1 = Sprite::create("Images/grossinis_sister1.png");
-    auto sister2 = Sprite::create("Images/grossinis_sister2.png");
+    auto sister1 = Sprite::create(s_pathSister1);
+    auto sister2 = Sprite::create(s_pathSister2);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -538,8 +535,8 @@ LayerGradientTest::LayerGradientTest()
     listener->onTouchesMoved = CC_CALLBACK_2(LayerGradientTest::onTouchesMoved, this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
-    auto label1 = Label::createWithTTF("Compressed Interpolation: Enabled", "fonts/Marker Felt.ttf", 26);
-    auto label2 = Label::createWithTTF("Compressed Interpolation: Disabled", "fonts/Marker Felt.ttf", 26);
+    auto label1 = Label::createWithTTF("Compressed Interpolation: Enabled", s_fontArial, 26);
+    auto label2 = Label::createWithTTF("Compressed Interpolation: Disabled", s_fontArial, 26);
     auto item1 = MenuItemLabel::create(label1);
     auto item2 = MenuItemLabel::create(label2);
     auto item = MenuItemToggle::createWithCallback( CC_CALLBACK_1(LayerGradientTest::toggleItem, this), item1, item2, nullptr);
@@ -622,7 +619,7 @@ void LayerIgnoreAnchorPointPos::onEnter()
     l->runAction(RepeatForever::create(seq));
     this->addChild(l, 0, kLayerIgnoreAnchorPoint);
 
-    auto child = Sprite::create("Images/grossini.png");
+    auto child = Sprite::create(s_pathGrossini);
     l->addChild(child);
     auto lsize = l->getContentSize();
     child->setPosition(Vec2(lsize.width/2, lsize.height/2));
@@ -670,7 +667,7 @@ void LayerIgnoreAnchorPointRot::onEnter()
     l->runAction(RepeatForever::create(rot));
 
 
-    auto child = Sprite::create("Images/grossini.png");
+    auto child = Sprite::create(s_pathGrossini);
     l->addChild(child);
     auto lsize = l->getContentSize();
     child->setPosition(Vec2(lsize.width/2, lsize.height/2));
@@ -721,7 +718,7 @@ void LayerIgnoreAnchorPointScale::onEnter()
 
     this->addChild(l, 0, kLayerIgnoreAnchorPoint);
 
-    auto child = Sprite::create("Images/grossini.png");
+    auto child = Sprite::create(s_pathGrossini);
     l->addChild(child);
     auto lsize = l->getContentSize();
     child->setPosition(Vec2(lsize.width/2, lsize.height/2));
@@ -782,119 +779,6 @@ std::string LayerExtendedBlendOpacityTest::title() const
 std::string LayerExtendedBlendOpacityTest::subtitle() const
 {
     return "You should see 3 layers";
-}
-
-// LayerBug3162A
-void LayerBug3162A::onEnter()
-{
-    LayerTest::onEnter();
-    
-    Size size = VisibleRect::getVisibleRect().size;
-    size.width = size.width / 2;
-    size.height = size.height / 3;
-    Color4B color[3] = {Color4B(255, 0, 0, 255), Color4B(0, 255, 0, 255), Color4B(0, 0, 255, 255)};
-    
-    for (int i = 0; i < 3; ++i)
-    {
-        _layer[i] = LayerColor::create(color[i]);
-        _layer[i]->setContentSize(size);
-        _layer[i]->setPosition(Vec2(size.width/2, size.height/2) - Vec2(20, 20));
-        _layer[i]->setOpacity(150);
-        _layer[i]->setCascadeOpacityEnabled(true);
-        if (i > 0)
-        {
-            _layer[i-1]->addChild(_layer[i]);
-        }
-    }
-    
-    this->addChild(_layer[0]);
-    
-    schedule(CC_SCHEDULE_SELECTOR(LayerBug3162A::step), 0.5, CC_REPEAT_FOREVER, 0);
-}
-
-void LayerBug3162A::step(float dt)
-{
-    _layer[0]->setCascadeOpacityEnabled(!_layer[0]->isCascadeOpacityEnabled());
-}
-
-std::string LayerBug3162A::title() const
-{
-    return "Bug 3162 red layer cascade opacity enable/disable";
-}
-
-std::string LayerBug3162A::subtitle() const
-{
-    return "g and b layer opacity is effected/diseffected with r layer";
-}
-
-// LayerBug3162B
-void LayerBug3162B::onEnter()
-{
-    LayerTest::onEnter();
-    
-    Size size = VisibleRect::getVisibleRect().size;
-    size.width = size.width / 2;
-    size.height = size.height / 3;
-    Color4B color[3] = {Color4B(200, 0, 0, 255), Color4B(150, 0, 0, 255), Color4B(100, 0, 0, 255)};
-    
-    for (int i = 0; i < 3; ++i)
-    {
-        _layer[i] = LayerColor::create(color[i]);
-        _layer[i]->setContentSize(size);
-        _layer[i]->setPosition(Vec2(size.width/2, size.height/2) - Vec2(20, 20));
-        //_layer[i]->setOpacity(150);
-        if (i > 0)
-        {
-            _layer[i-1]->addChild(_layer[i]);
-        }
-    }
-    
-    this->addChild(_layer[0]);
-    
-    _layer[0]->setCascadeColorEnabled(true);
-    _layer[1]->setCascadeColorEnabled(true);
-    _layer[2]->setCascadeColorEnabled(true);
-    
-    schedule(CC_SCHEDULE_SELECTOR(LayerBug3162B::step), 0.5, CC_REPEAT_FOREVER, 0);
-}
-
-void LayerBug3162B::step(float dt)
-{
-    _layer[0]->setCascadeColorEnabled(!_layer[0]->isCascadeColorEnabled());
-}
-
-std::string LayerBug3162B::title() const
-{
-    return "Bug 3162 bottom layer cascade color enable/disable";
-}
-
-std::string LayerBug3162B::subtitle() const
-{
-    return "u and m layer color is effected/diseffected with b layer";
-}
-
-std::string LayerColorOccludeBug::title() const
-{
-    return "Layer Color Occlude Bug Test";
-}
-
-std::string LayerColorOccludeBug::subtitle() const
-{
-    return  "Layer Color Should not occlude titles and any sprites";
-}
-
-void LayerColorOccludeBug::onEnter()
-{
-    LayerTest::onEnter();
-    Director::getInstance()->setDepthTest(true);
-    _layer = LayerColor::create(Color4B(0, 80, 95, 255));
-    addChild(_layer);
-}
-
-void LayerColorOccludeBug::onExit()
-{
-    LayerTest::onExit();
-    Director::getInstance()->setDepthTest(false);
 }
 
 // LayerRadialGradient

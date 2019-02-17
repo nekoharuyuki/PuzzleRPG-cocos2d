@@ -37,7 +37,6 @@ ParallaxTests::ParallaxTests()
 {
     ADD_TEST_CASE(Parallax1);
     ADD_TEST_CASE(Parallax2);
-    ADD_TEST_CASE(Issue2572);
 }
 
 //------------------------------------------------------------------
@@ -175,84 +174,4 @@ void Parallax2::onTouchesMoved(const std::vector<Touch*>& touches, Event  *event
 std::string Parallax2::title() const
 {
     return "Parallax: drag screen";
-}
-
-//------------------------------------------------------------------
-//
-// Issue2572
-//
-//------------------------------------------------------------------
-Issue2572::Issue2572()
-: _moveTimer(0.0f)
-, _addTimer(0.0f)
-, _preListSize(0)
-, _printCount(0)
-{
-    _addChildStep = 1.0f;
-    _wholeMoveTime = 3.0f;
-    _wholeMoveSize = Vec2(-300, 0);
-    
-    // create a parallax node, a parent node
-    _paraNode = ParallaxNode::create();
-    addChild(_paraNode, 0, kTagNode);
-
-    this->scheduleUpdate();
-}
-
-void Issue2572::update(float dt)
-{
-    _addTimer += dt;
-    _moveTimer += dt;
-    if (_moveTimer >= _wholeMoveTime) {
-        this->unscheduleUpdate();
-        return;
-    }
-
-    _paraNode->setPosition(_paraNode->getPosition() + _wholeMoveSize * dt / _wholeMoveTime);
-    
-    if (_addTimer >= _addChildStep) {
-        _addTimer = 0.0f;
-        
-        auto child = Sprite::create("Images/Icon.png");
-        Size viewSize = Director::getInstance()->getVisibleSize();
-        Vec2 offset = Vec2(viewSize.width / 2, viewSize.height/2);
-        _paraNode->addChild(child, 1, Vec2( 1, 0 ), offset );
-        
-        _childList.pushBack(child);
-    }
-
-    // After a child added, output the position of the children 3 times.
-    // Bug : The first output is much different with the second one & the third one.
-    if (_childList.size() != _preListSize) {
-        switch (_printCount) {
-            case 0:
-            case 1:
-            case 2:
-                log( "--child count-- %zd", _childList.size());
-                for (const auto& obj : _childList)
-                {
-                    Sprite* obstacle = dynamic_cast<Sprite*>( obj );
-                    log("child position : (%.2f, %.2f)", obstacle->getPositionX(), obstacle->getPositionY());
-                }
-                log("-------------------");
-                _printCount++;
-                break;
-            case 3:
-                _preListSize = _childList.size();
-                _printCount = 0;
-                break;
-            default:
-                break;
-        }
-    }
-}
-
-std::string Issue2572::title() const
-{
-    return "Issue 2572";
-}
-
-std::string Issue2572::subtitle() const
-{
-    return "Look at the output in console";
 }

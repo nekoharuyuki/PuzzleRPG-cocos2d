@@ -170,16 +170,6 @@ protected:
     std::string _filename;
 };
 
-class BugAutoCulling : public MultiSceneTest
-{
-public:
-    CREATE_FUNC(BugAutoCulling);
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-protected:
-    BugAutoCulling();
-};
-
 class RendererBatchQuadTri : public MultiSceneTest
 {
 public:

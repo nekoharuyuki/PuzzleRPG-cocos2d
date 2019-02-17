@@ -51,7 +51,7 @@ void TextureAtlasEncryptionDemo::onEnter()
     nonencryptedSprite->setPosition(Vec2(s.width * 0.25f, s.height * 0.5f));
     this->addChild(nonencryptedSprite);
     
-    auto nonencryptedSpriteLabel = Label::createWithTTF("non-encrypted", "fonts/arial.ttf", 28);
+    auto nonencryptedSpriteLabel = Label::createWithTTF("non-encrypted", s_fontArial, 28);
     nonencryptedSpriteLabel->setPosition(Vec2(s.width * 0.25f, nonencryptedSprite->getBoundingBox().getMinY() - nonencryptedSprite->getContentSize().height/2));
     this->addChild(nonencryptedSpriteLabel, 1);
     
@@ -78,7 +78,7 @@ void TextureAtlasEncryptionDemo::onEnter()
     encryptedSprite->setPosition(Vec2(s.width * 0.75f, s.height * 0.5f));
     this->addChild(encryptedSprite);
     
-    auto encryptedSpriteLabel = Label::createWithTTF("encrypted", "fonts/arial.ttf", 28);
+    auto encryptedSpriteLabel = Label::createWithTTF("encrypted", s_fontArial, 28);
     encryptedSpriteLabel->setPosition(Vec2(s.width * 0.75f, encryptedSprite->getBoundingBox().getMinY() - encryptedSpriteLabel->getContentSize().height/2));
     this->addChild(encryptedSpriteLabel, 1);
 }

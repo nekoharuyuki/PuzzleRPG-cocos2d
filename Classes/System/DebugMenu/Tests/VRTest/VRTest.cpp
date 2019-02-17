@@ -25,6 +25,7 @@
  ****************************************************************************/
 
 #include "VRTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 
@@ -43,7 +44,7 @@ VRTest1::VRTest1()
 {
     auto size = Director::getInstance()->getVisibleSize();
 
-    auto image = Sprite::create("Images/background.png");
+    auto image = Sprite::create(s_back);
     image->setPosition(size/2);
     addChild(image);
 
@@ -77,6 +78,3 @@ std::string VRTest1::subtitle() const
 {
     return "Enable / Disable it with the button";
 }
-
-
-

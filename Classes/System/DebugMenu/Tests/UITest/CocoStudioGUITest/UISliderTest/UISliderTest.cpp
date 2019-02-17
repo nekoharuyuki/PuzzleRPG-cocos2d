@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "UISliderTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;
@@ -35,7 +36,6 @@ UISliderTests::UISliderTests()
     ADD_TEST_CASE(UISliderNormalDefaultTest);
     ADD_TEST_CASE(UISliderDisabledDefaultTest);
     ADD_TEST_CASE(UISliderNewEventCallbackTest);
-    ADD_TEST_CASE(UISliderIssue12249Test);
 }
 
 // UISliderTest
@@ -63,7 +63,7 @@ bool UISliderTest::init()
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text* alert = Text::create("Slider","fonts/Marker Felt.ttf",30);
+        Text* alert = Text::create("Slider",s_fontArial,30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 1.75f));
         _uiLayer->addChild(alert);        
@@ -80,7 +80,7 @@ bool UISliderTest::init()
 
         _slider = slider;
 
-        TTFConfig ttfConfig("fonts/arial.ttf", 15);
+        TTFConfig ttfConfig(s_fontArial, 15);
         auto label1 = Label::createWithTTF(ttfConfig, "Print Resources");
         auto item1 = MenuItemLabel::create(label1, CC_CALLBACK_1(UISliderTest::printWidgetResources, this));
         item1->setPosition(Vec2(VisibleRect::left().x + 60, VisibleRect::bottom().y + item1->getContentSize().height * 3));
@@ -136,13 +136,13 @@ bool UISliderTest_Scale9::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the slider alert will be displayed
-        _displayValueLabel = Text::create("Move the slider thumb","fonts/Marker Felt.ttf",32);
+        _displayValueLabel = Text::create("Move the slider thumb",s_fontArial,32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text *alert = Text::create("Slider scale9 render","fonts/Marker Felt.ttf",30);
+        Text *alert = Text::create("Slider scale9 render",s_fontArial,30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 1.75f));
         _uiLayer->addChild(alert);
@@ -194,13 +194,13 @@ bool UISliderTest_Scale9_State_Change::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add a label in which the slider alert will be displayed
-        _displayValueLabel = Text::create("Click the slider thumb", "fonts/Marker Felt.ttf", 32);
+        _displayValueLabel = Text::create("Click the slider thumb", s_fontArial, 32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
         _uiLayer->addChild(_displayValueLabel);
 
         // Add the alert
-        Text *alert = Text::create("Slider scale9 render", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("Slider scale9 render", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 1.75f));
         _uiLayer->addChild(alert);
@@ -268,7 +268,7 @@ bool UISliderNormalDefaultTest::init()
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text* alert = Text::create("when pressed, the slider ball should scale","fonts/Marker Felt.ttf",20);
+        Text* alert = Text::create("when pressed, the slider ball should scale",s_fontArial,20);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                 widgetSize.height / 2.0f - alert->getContentSize().height * 3.75f));
@@ -321,7 +321,7 @@ bool UISliderDisabledDefaultTest::init()
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text* alert = Text::create("slider ball should be gray.","fonts/Marker Felt.ttf",20);
+        Text* alert = Text::create("slider ball should be gray.",s_fontArial,20);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                 widgetSize.height / 2.0f - alert->getContentSize().height * 3.75f));
@@ -379,7 +379,7 @@ bool UISliderNewEventCallbackTest::init()
         _uiLayer->addChild(_displayValueLabel);
 
         // Add the alert
-        Text* alert = Text::create("See console output for Slider Down and Up event.", "fonts/Marker Felt.ttf", 20);
+        Text* alert = Text::create("See console output for Slider Down and Up event.", s_fontArial, 20);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                 widgetSize.height / 2.0f - alert->getContentSize().height * 3.75f));
@@ -415,58 +415,4 @@ bool UISliderNewEventCallbackTest::init()
         return true;
     }
     return false;
-}
-
-
-// UISliderIssue12249Test
-
-UISliderIssue12249Test::UISliderIssue12249Test()
-: _displayValueLabel(nullptr)
-{
-    
-}
-
-UISliderIssue12249Test::~UISliderIssue12249Test()
-{
-}
-
-bool UISliderIssue12249Test::init()
-{
-    if (UIScene::init())
-    {
-        Size widgetSize = _widget->getContentSize();
-        
-        // Add a label in which the slider alert will be displayed
-        _displayValueLabel = TextBMFont::create("Move the slider thumb", "ccb/markerfelt24shadow.fnt");
-        _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1));
-        _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
-        _uiLayer->addChild(_displayValueLabel);
-        
-        // Create the slider
-        Slider* slider = Slider::create();
-        slider->setScale9Enabled(true);
-        slider->loadBarTexture("cocosui/sliderTrack.png");
-        slider->loadSlidBallTextures("cocosui/sliderThumb.png", "cocosui/sliderThumb.png", "");
-        slider->loadProgressBarTexture("cocosui/sliderProgress.png");
-        slider->setContentSize(Size(300, slider->getContentSize().height * 1.5));
-        slider->setMaxPercent(10000);
-        slider->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f/* + slider->getSize().height * 2.0f*/));
-        slider->addEventListener(CC_CALLBACK_2(UISliderIssue12249Test::sliderEvent, this));
-        _uiLayer->addChild(slider);
-        
-        
-        return true;
-    }
-    return false;
-}
-
-void UISliderIssue12249Test::sliderEvent(Ref *pSender, Slider::EventType type)
-{
-    if (type == Slider::EventType::ON_PERCENTAGE_CHANGED)
-    {
-        Slider* slider = dynamic_cast<Slider*>(pSender);
-        int percent = slider->getPercent();
-        int maxPercent = slider->getMaxPercent();
-        _displayValueLabel->setString(StringUtils::format("Percent %f", 10000.0 * percent / maxPercent));
-    }
 }

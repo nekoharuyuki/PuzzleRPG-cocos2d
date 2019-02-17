@@ -449,28 +449,6 @@ private:
     cocos2d::Label* _label;
 };
 
-class LabelIssue4428Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue4428Test);
-
-    LabelIssue4428Test();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssue4999Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue4999Test);
-
-    LabelIssue4999Test();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 class LabelLineHeightTest : public AtlasDemoNew
 {
 public:
@@ -501,36 +479,12 @@ private:
     cocos2d::Label* label;
 };
 
-class LabelIssue8492Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue8492Test);
-
-    LabelIssue8492Test();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 class LabelMultilineWithOutline : public AtlasDemoNew
 {
 public:
     CREATE_FUNC(LabelMultilineWithOutline);
 
     LabelMultilineWithOutline();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-// we don't support linebreak mode
-
-class LabelIssue9255Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue9255Test);
-
-    LabelIssue9255Test();
 
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
@@ -547,67 +501,12 @@ public:
     virtual std::string subtitle() const override;
 };
 
-class LabelIssue10089Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue10089Test);
-
-    LabelIssue10089Test();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 class LabelSystemFontColor : public AtlasDemoNew
 {
 public:
     CREATE_FUNC(LabelSystemFontColor);
 
     LabelSystemFontColor();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssue10773Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue10773Test);
-
-    LabelIssue10773Test();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssue11576Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue11576Test);
-
-    LabelIssue11576Test();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssue11699Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue11699Test);
-
-    LabelIssue11699Test();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssue12409Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue12409Test);
-
-    LabelIssue12409Test();
 
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
@@ -621,61 +520,6 @@ public:
     LabelAddChildTest();
 
     virtual std::string title() const override;
-};
-
-class LabelIssue12775Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue12775Test);
-
-    LabelIssue12775Test();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssue11585Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue11585Test);
-
-    LabelIssue11585Test();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssue10688Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue10688Test);
-
-    LabelIssue10688Test();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssue13202Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue13202Test);
-
-    LabelIssue13202Test();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssue9500Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue9500Test);
-
-    LabelIssue9500Test();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
 };
 
 class LabelLayoutBaseTest : public AtlasDemoNew
@@ -809,17 +653,6 @@ public:
     virtual std::string subtitle() const override;
 };
 
-class LabelIssue13846Test : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue13846Test);
-    
-    LabelIssue13846Test();
-    
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 class LabelRichText : public AtlasDemoNew
 {
 public:
@@ -910,74 +743,6 @@ public:
     cocos2d::Label* _label2;
     cocostudio::ILocalizationManager* _localizationJson;
     cocostudio::ILocalizationManager* _localizationBin;
-};
-
-class LabelIssue15214 : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue15214);
-
-    LabelIssue15214();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssue16293 : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue16293);
-
-    LabelIssue16293();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssue16471 : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue16471);
-
-    LabelIssue16471();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssue16717 : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue16717);
-
-    LabelIssue16717();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssueLineGap : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssueLineGap);
-    
-    LabelIssueLineGap();
-    
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class LabelIssue17902 : public AtlasDemoNew
-{
-public:
-    CREATE_FUNC(LabelIssue17902);
-    
-    LabelIssue17902();
-
-    virtual void purgeCachedData();
-    
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
 };
 
 #endif

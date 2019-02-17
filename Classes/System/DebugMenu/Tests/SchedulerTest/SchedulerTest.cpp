@@ -51,13 +51,9 @@ SchedulerTests::SchedulerTests()
     ADD_TEST_CASE(SchedulerUpdateFromCustom);
     ADD_TEST_CASE(RescheduleSelector);
     ADD_TEST_CASE(SchedulerDelayAndRepeat);
-    ADD_TEST_CASE(SchedulerIssue2268);
-    ADD_TEST_CASE(SchedulerIssueWithReschedule);
     ADD_TEST_CASE(ScheduleCallbackTest);
     ADD_TEST_CASE(ScheduleUpdatePriority);
-    ADD_TEST_CASE(SchedulerIssue10232);
     ADD_TEST_CASE(SchedulerRemoveAllFunctionsToBePerformedInCocosThread)
-    ADD_TEST_CASE(SchedulerIssue17149);
     ADD_TEST_CASE(SchedulerRemoveEntryWhileUpdate);
     ADD_TEST_CASE(SchedulerRemoveSelectorDuringCall);
 };
@@ -822,7 +818,7 @@ void SchedulerTimeScale::onEnter()
     auto action2 = action->clone();
     auto action3 = action->clone();
 
-    auto grossini = Sprite::create("Images/grossini.png");
+    auto grossini = Sprite::create(s_pathGrossini);
     auto tamara = Sprite::create("Images/grossinis_sister1.png");
     auto kathia = Sprite::create("Images/grossinis_sister2.png");
 
@@ -914,7 +910,7 @@ void TwoSchedulers::onEnter()
         //
         // Center
         //
-    auto grossini = Sprite::create("Images/grossini.png");
+    auto grossini = Sprite::create(s_pathGrossini);
     addChild(grossini);
     grossini->setPosition(Vec2(s.width/2,100));
     grossini->runAction(action->clone());
@@ -1010,120 +1006,6 @@ std::string TwoSchedulers::subtitle() const
     return "Three schedulers. 2 custom + 1 default. Two different time scales";
 }
 
-// SchedulerIssue2268
-
-class TestNode2 : public Node
-{
-public:
-    CREATE_FUNC(TestNode2);
-
-	~TestNode2() {
-		cocos2d::log("Delete TestNode (should not crash)");
-		this->unscheduleAllCallbacks();
-	}
-
-	void update(float /*dt*/) {
-	}
-};
-
-void SchedulerIssue2268::onEnter()
-{
-	SchedulerTestLayer::onEnter();
-
-	testNode = TestNode2::create();
-	testNode->retain();
-	testNode->schedule(SEL_SCHEDULE(&TestNode::update));
-	this->addChild(testNode);
-
-
-	this->scheduleOnce(SEL_SCHEDULE(&SchedulerIssue2268::update), 0.25f);
-}
-
-void SchedulerIssue2268::update(float /*dt*/)
-{
-	if ( testNode != nullptr ) {
-		// do something with testNode
-
-		// at some point we are done, pause the nodes actions and schedulers
-		testNode->removeFromParentAndCleanup(false);
-
-		// at some other point we are completely done with the node and want to clear it
-		testNode->unscheduleAllCallbacks();
-		testNode->release();
-		testNode = nullptr;
-
-	}
-}
-SchedulerIssue2268::~SchedulerIssue2268()
-{
-    CC_SAFE_RELEASE(testNode);
-}
-
-std::string SchedulerIssue2268::title() const
-{
-    return "Issue #2268";
-}
-
-std::string SchedulerIssue2268::subtitle() const
-{
-    return "Should not crash";
-}
-
-// SchedulerIssueWithReschedule
-// https://github.com/cocos2d/cocos2d-x/pull/17706
-
-void SchedulerIssueWithReschedule::onEnter()
-{
-	SchedulerTestLayer::onEnter();
-    
-    Size widgetSize = getContentSize();
-    
-    auto status_text = Text::create("Checking..", "fonts/Marker Felt.ttf", 18);
-    status_text->setColor(Color3B(255, 255, 255));
-    status_text->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
-    addChild(status_text);
-    
-    // schedule(callback, target, interval, repeat, delay, paused, key);
-    auto verified = std::make_shared<bool>();
-    *verified = false;
-
-	_scheduler->schedule([this, verified](float dt){
-        log("SchedulerIssueWithReschedule - first timer");
-        
-        _scheduler->schedule([this, verified](float dt){
-            log("SchedulerIssueWithReschedule - second timer. OK");
-            *verified = true;
-        }, this, 0.1f, 0, 0, false, "test_timer");
-        
-    }, this, 0.1f, 0, 0, false, "test_timer");
-    
-    _scheduler->schedule([verified, status_text](float dt){
-        if (*verified)
-        {
-            log("SchedulerIssueWithReschedule - test OK");
-            status_text->setString("OK");
-            status_text->setColor(Color3B(0, 255, 0));
-        }
-        else
-        {
-            log("SchedulerIssueWithReschedule - test failed!");
-            status_text->setString("Failed");
-            status_text->setColor(Color3B(255, 0, 0));
-        }
-
-    }, this, 0.5f, 0, 0, false, "test_verify_timer");
-}
-
-std::string SchedulerIssueWithReschedule::title() const
-{
-    return "Issue with reschedule";
-}
-
-std::string SchedulerIssueWithReschedule::subtitle() const
-{
-    return "reschedule issue with same key";
-}
-
 // ScheduleCallbackTest
 
 ScheduleCallbackTest::~ScheduleCallbackTest()
@@ -1210,32 +1092,6 @@ void ScheduleUpdatePriority::update(float /*dt*/)
 {
 }
 
-void SchedulerIssue10232::onEnter()
-{
-    SchedulerTestLayer::onEnter();
-
-    this->scheduleOnce(SEL_SCHEDULE(&SchedulerIssue2268::update), 0.25f);
-
-    this->scheduleOnce([](float /*dt*/){
-        log("SchedulerIssue10232:Schedules a lambda function");
-    }, 0.25f,"SchedulerIssue10232");
-}
-
-void SchedulerIssue10232::update(float /*dt*/)
-{
-    log("SchedulerIssue10232:Schedules a selector");
-}
-
-std::string SchedulerIssue10232::title() const
-{
-    return "Issue #10232";
-}
-
-std::string SchedulerIssue10232::subtitle() const
-{
-    return "Should not crash";
-}
-
 void SchedulerRemoveAllFunctionsToBePerformedInCocosThread::onEnter()
 {
     SchedulerTestLayer::onEnter();
@@ -1279,101 +1135,6 @@ std::string SchedulerRemoveAllFunctionsToBePerformedInCocosThread::title() const
 std::string SchedulerRemoveAllFunctionsToBePerformedInCocosThread::subtitle() const
 {
     return "Sprite should be visible";
-}
-
-//class SchedulerIssue17149: public SchedulerTestLayer
-//{
-//public:
-//    CREATE_FUNC(SchedulerIssue17149);
-//    
-//    virtual std::string title() const override;
-//    void onEnter() override;
-//    void update(float dt) override;
-//    
-//private:
-//    class ClassA
-//    {
-//    public:
-//        void update(float dt);
-//        
-//        int _member1;
-//        int _member2;
-//        int _member3;
-//    };
-//    
-//    class ClassB
-//    {
-//        void update(float dt);
-//        int _member1;
-//        int _member2;
-//        int _member3;
-//    };
-//};
-
-// SchedulerIssue17149: https://github.com/cocos2d/cocos2d-x/issues/17149
-
-SchedulerIssue17149::SchedulerIssue17149()
-{
-    _memoryPool = malloc(2018);
-}
-
-SchedulerIssue17149::~SchedulerIssue17149()
-{
-    free(_memoryPool);
-}
-
-std::string SchedulerIssue17149::title() const
-{
-    return "Issue #17149";
-}
-
-std::string SchedulerIssue17149::subtitle() const
-{
-    return "see console, result should be 'i'm ClassB: 456'";
-}
-
-void SchedulerIssue17149::onEnter()
-{
-    SchedulerTestLayer::onEnter();
-    scheduleUpdate();
-}
-
-void SchedulerIssue17149::update(float dt)
-{
-    auto classa = new (_memoryPool) ClassA();
-    CCLOG("Address one: %p", classa);
-    Director::getInstance()->getScheduler()->scheduleUpdate(classa, 1, false);
-    Director::getInstance()->getScheduler()->unscheduleUpdate(classa);
-    
-    auto classb = new (_memoryPool) ClassB();
-    CCLOG("Address one: %p", classb);
-    Director::getInstance()->getScheduler()->scheduleUpdate(classb, 1, false);
-    
-    unscheduleUpdate();
-}
-
-SchedulerIssue17149::ClassA::ClassA()
-: _member1(1)
-, _member2(2)
-, _member3(3)
-{}
-
-void SchedulerIssue17149::ClassA::update(float dt)
-{
-    CCLOG("i'm ClassA: %d%d%d", _member1, _member2, _member3);
-}
-
-SchedulerIssue17149::ClassB::ClassB()
-: _member1(4)
-, _member2(5)
-, _member3(6)
-{}
-
-void SchedulerIssue17149::ClassB::update(float dt)
-{
-    CCLOG("i'm ClassB: %d%d%d", _member1, _member2, _member3);
-    
-    Director::getInstance()->getScheduler()->unscheduleUpdate(this);
 }
 
 //------------------------------------------------------------------

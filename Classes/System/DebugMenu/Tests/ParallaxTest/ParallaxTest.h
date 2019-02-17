@@ -64,28 +64,4 @@ public:
     virtual std::string title() const override;
 };
 
-class Issue2572 : public ParallaxDemo
-{
-protected:
-    cocos2d::ParallaxNode* _paraNode;
-    float _moveTimer;
-    float _addTimer;
-    cocos2d::Vector<cocos2d::Sprite*> _childList;
-    ssize_t _preListSize;
-    int _printCount;
-    
-    float _addChildStep;
-    float _wholeMoveTime;
-    cocos2d::Vec2 _wholeMoveSize;
-
-    virtual void update(float dt) override;
-    
-public:
-    CREATE_FUNC(Issue2572);
-    Issue2572();
-    
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 #endif

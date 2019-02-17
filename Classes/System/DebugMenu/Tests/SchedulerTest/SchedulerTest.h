@@ -293,31 +293,6 @@ public:
     cocos2d::extension::ControlSlider* sliderCtl2;
 };
 
-class SchedulerIssue2268 : public SchedulerTestLayer
-{
-public:
-    CREATE_FUNC(SchedulerIssue2268);
-
-    ~SchedulerIssue2268();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    void onEnter() override;
-    void update(float dt) override;
-
-private:
-    cocos2d::Node* testNode;
-};
-
-class SchedulerIssueWithReschedule : public SchedulerTestLayer
-{
-public:
-    CREATE_FUNC(SchedulerIssueWithReschedule);
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    void onEnter() override;
-};
-
 class ScheduleCallbackTest : public SchedulerTestLayer
 {
 public:
@@ -348,18 +323,6 @@ public:
     bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
 };
 
-class SchedulerIssue10232 : public SchedulerTestLayer
-{
-public:
-    CREATE_FUNC(SchedulerIssue10232);
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-
-    void onEnter() override;
-    void update(float dt) override;
-};
-
 class SchedulerRemoveAllFunctionsToBePerformedInCocosThread : public SchedulerTestLayer
 {
 public:
@@ -373,45 +336,6 @@ public:
     
 private:
     cocos2d::Sprite *_sprite;
-};
-
-class SchedulerIssue17149: public SchedulerTestLayer
-{
-public:
-    CREATE_FUNC(SchedulerIssue17149);
-    SchedulerIssue17149();
-    ~SchedulerIssue17149();
-    
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    virtual void onEnter() override;
-    virtual void update(float dt) override;
-    
-private:
-    class ClassA
-    {
-    public:
-        ClassA();
-        
-        void update(float dt);
-        
-        int _member1;
-        int _member2;
-        int _member3;
-    };
-    
-    class ClassB
-    {
-    public:
-        ClassB();
-        void update(float dt);
-        
-        int _member1;
-        int _member2;
-        int _member3;
-    };
-    
-    void *_memoryPool;
 };
 
 class SchedulerRemoveEntryWhileUpdate: public SchedulerTestLayer

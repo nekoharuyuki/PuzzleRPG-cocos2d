@@ -51,13 +51,9 @@ EventDispatcherTests::EventDispatcherTests()
     ADD_TEST_CASE(PauseResumeTargetTest);
     ADD_TEST_CASE(PauseResumeTargetTest2);
     ADD_TEST_CASE(PauseResumeTargetTest3);
-    ADD_TEST_CASE(Issue4129);
-    ADD_TEST_CASE(Issue4160);
     ADD_TEST_CASE(DanglingNodePointersTest);
     ADD_TEST_CASE(RegisterAndUnregisterWhileEventHanldingTest);
     ADD_TEST_CASE(WindowEventsTest);
-    ADD_TEST_CASE(Issue8194);
-    ADD_TEST_CASE(Issue9898)
 }
 
 std::string EventDispatcherTestDemo::title() const
@@ -735,7 +731,7 @@ void DirectorEventTest::onEnter()
 
     Size s = Director::getInstance()->getWinSize();
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 20);
+    TTFConfig ttfConfig(s_fontArial, 20);
 
     _label1 = Label::createWithTTF(ttfConfig, "Update: 0");
     _label1->setAnchorPoint(Vec2::ANCHOR_BOTTOM_LEFT);
@@ -1281,111 +1277,6 @@ std::string PauseResumeTargetTest3::subtitle() const
     return "Sprite should not be touchable";
 }
 
-// Issue4129
-Issue4129::Issue4129()
-: _bugFixed(false)
-{
-    _customlistener = _eventDispatcher->addCustomEventListener(EVENT_COME_TO_BACKGROUND, [this](EventCustom* event){
-        
-        auto label = Label::createWithSystemFont("Yeah, this issue was fixed.", "", 20);
-        label->setAnchorPoint(Vec2(0, 0.5f));
-        label->setPosition(Vec2(VisibleRect::left() + Vec2(0, 30)));
-        this->addChild(label);
-        
-        // After test, remove it.
-        _eventDispatcher->removeEventListener(_customlistener);
-        _customlistener = nullptr;
-
-        _bugFixed = true;
-    });
-
-    auto removeAllTouchItem = MenuItemFont::create("Remove All Listeners", [this](Ref* sender){
-        auto senderItem = static_cast<MenuItemFont*>(sender);
-        senderItem->setString("Only 'Reset' item could be clicked");
-        
-        _eventDispatcher->removeAllEventListeners();
-        
-        auto nextItem = MenuItemFont::create("Reset", [=](Ref* sender){
-            CCASSERT(_bugFixed, "This issue was not fixed!");
-            getTestSuite()->restartCurrTest();
-        });
-        
-        nextItem->setFontSizeObj(16);
-        nextItem->setPosition(VisibleRect::right() + Vec2(-100, -30));
-        
-        auto menu2 = Menu::create(nextItem, nullptr);
-        menu2->setPosition(Vec2(0, 0));
-        menu2->setAnchorPoint(Vec2(0, 0));
-        this->addChild(menu2);
-        
-        // Simulate to dispatch 'come to background' event
-        _eventDispatcher->dispatchCustomEvent(EVENT_COME_TO_BACKGROUND);
-    });
-    
-    removeAllTouchItem->setFontSizeObj(16);
-    removeAllTouchItem->setPosition(VisibleRect::right() + Vec2(-100, 0));
-    
-    auto menu = Menu::create(removeAllTouchItem, nullptr);
-    menu->setPosition(Vec2(0, 0));
-    menu->setAnchorPoint(Vec2(0, 0));
-    addChild(menu);
-}
-
-Issue4129::~Issue4129()
-{
-    if (_customlistener)
-    {
-        _eventDispatcher->removeEventListener(_customlistener);
-    }
-}
-
-std::string Issue4129::title() const
-{
-    return "Issue 4129: Remove All Listeners";
-}
-
-std::string Issue4129::subtitle() const
-{
-    return "Should see 'Yeah, this issue was fixed.'";
-}
-
-// Issue4160
-Issue4160::Issue4160()
-{
-    Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    Size size = Director::getInstance()->getVisibleSize();
-    
-    auto sprite1 = TouchableSprite::create(-30);
-    sprite1->setTexture("Images/CyanSquare.png");
-    sprite1->setPosition(origin+Vec2(size.width/2, size.height/2) + Vec2(-80, 40));
-    addChild(sprite1, -10);
-    
-    auto sprite2 = TouchableSprite::create(-20);
-    sprite2->setTexture("Images/MagentaSquare.png");
-    sprite2->removeListenerOnTouchEnded(true);
-    sprite2->setPosition(origin+Vec2(size.width/2, size.height/2));
-    addChild(sprite2, -20);
-    
-    auto sprite3 = TouchableSprite::create(-10);
-    sprite3->setTexture("Images/YellowSquare.png");
-    sprite3->setPosition(Vec2(0, 0));
-    sprite2->addChild(sprite3, -1);
-}
-
-Issue4160::~Issue4160()
-{
-}
-
-std::string Issue4160::title() const
-{
-    return "Issue 4160: Out of range exception";
-}
-
-std::string Issue4160::subtitle() const
-{
-    return "Touch the red block twice \n should not crash and the red one couldn't be touched";
-}
-
 // DanglingNodePointersTest
 class DanglingNodePointersTestSprite : public Sprite
 {
@@ -1582,108 +1473,4 @@ std::string WindowEventsTest::subtitle() const
 #else
     return  "Unsupported platform.";
 #endif
-}
-
-
-// https://github.com/cocos2d/cocos2d-x/issues/8194
-Issue8194::Issue8194()
-{
-    auto origin = Director::getInstance()->getVisibleOrigin();
-    auto size = Director::getInstance()->getVisibleSize();
-    static bool nodesAdded = false;
-#define tagA 100
-#define tagB 101
-    // dispatch custom event in another custom event, make the custom event "Issue8194" take effect immediately
-    _listener = getEventDispatcher()->addCustomEventListener(Director::EVENT_AFTER_UPDATE, [this](cocos2d::EventCustom *event){
-        if (nodesAdded)
-        {
-            // CCLOG("Fire Issue8194 Event");
-            getEventDispatcher()->dispatchCustomEvent("Issue8194");
-            
-            // clear test nodes and listeners
-            getEventDispatcher()->removeCustomEventListeners("Issue8194");
-            removeChildByTag(tagA);
-            removeChildByTag(tagB);
-            nodesAdded = false;
-        }
-    });
-    
-    // When click this menuitem, it will add two node A and B, then send a custom event.
-    // Because Node B's localZOrder < A's, the custom event should process by node B.
-    auto menuItem = MenuItemFont::create("Dispatch Custom Event", [this](Ref *sender) {
-        // add nodeA to scene
-        auto nodeA = Node::create();
-        addChild(nodeA, 1, tagA);
-        
-        cocos2d::EventListenerCustom* listenerA = cocos2d::EventListenerCustom::create("Issue8194", [&](cocos2d::EventCustom *event){
-            _subtitleLabel->setString("Bug has been fixed.");
-            event->stopPropagation();
-        });
-        getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerA, nodeA);
-       
-        // add nodeB to scene
-        auto nodeB = Node::create();
-        addChild(nodeB, -1, tagB);
-        
-        cocos2d::EventListenerCustom* listenerB = cocos2d::EventListenerCustom::create("Issue8194", [&](cocos2d::EventCustom *event){
-            _subtitleLabel->setString("Bug exist yet.");
-            event->stopPropagation();
-        });
-        getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerB, nodeB);
-        
-        nodesAdded = true;
-    });
-    
-    menuItem->setPosition(origin.x + size.width/2, origin.y + size.height/2);
-    auto menu = Menu::create(menuItem, nullptr);
-    menu->setPosition(Vec2::ZERO);
-    addChild(menu);
-}
-
-Issue8194::~Issue8194()
-{
-    getEventDispatcher()->removeEventListener(_listener);
-}
-
-std::string Issue8194::title() const
-{
-    return "Issue 8194";
-}
-
-std::string Issue8194::subtitle() const
-{
-    return  "After click button, should show 'Bug has been fixed.'";
-}
-
-Issue9898::Issue9898()
-{
-    auto origin = Director::getInstance()->getVisibleOrigin();
-    auto size = Director::getInstance()->getVisibleSize();
-
-    auto nodeA = Node::create();
-    addChild(nodeA);
-
-    _listener = cocos2d::EventListenerCustom::create("Issue9898", [&](cocos2d::EventCustom *event){
-        _eventDispatcher->removeEventListener(_listener);
-        _eventDispatcher->dispatchCustomEvent("Issue9898");
-    });
-    _eventDispatcher->addEventListenerWithSceneGraphPriority(_listener, nodeA);
-
-    auto menuItem = MenuItemFont::create("Dispatch Custom Event", [&](Ref *sender) {
-        _eventDispatcher->dispatchCustomEvent("Issue9898");
-    });
-    menuItem->setPosition(origin.x + size.width/2, origin.y + size.height/2);
-    auto menu = Menu::create(menuItem, nullptr);
-    menu->setPosition(Vec2::ZERO);
-    addChild(menu);
-}
-
-std::string Issue9898::title() const
-{
-    return "Issue 9898";
-}
-
-std::string Issue9898::subtitle() const
-{
-    return  "Should not crash if dispatch event after remove\n event listener in callback";
 }

@@ -80,7 +80,6 @@ LabelTests::LabelTests()
     ADD_TEST_CASE(BMFontUnicode);
     ADD_TEST_CASE(BMFontInit);
     ADD_TEST_CASE(TTFFontInit);
-    ADD_TEST_CASE(Issue1343);
     ADD_TEST_CASE(LabelTTFAlignment);
     ADD_TEST_CASE(LabelBMFontBounds);
     ADD_TEST_CASE(TTFFontShadowAndStroke);
@@ -1503,34 +1502,6 @@ std::string TTFFontShadowAndStroke::title() const
 std::string TTFFontShadowAndStroke::subtitle() const
 {
     return "Test for support of TTF label with stroke and shadow";
-}
-
-
-// Issue1343
-
-Issue1343::Issue1343()
-{
-    auto s = Director::getInstance()->getWinSize();
-
-    auto bmFont = LabelBMFont::create();
-
-    bmFont->setFntFile("fonts/font-issue1343.fnt");
-    bmFont->setString("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz.,'");
-
-    this->addChild(bmFont);
-
-    bmFont->setScale(0.3f);
-    bmFont->setPosition(Vec2(s.width/2,s.height/4*2));
-}
-
-std::string Issue1343::title() const
-{
-    return "Issue 1343";
-}
-
-std::string Issue1343::subtitle() const
-{
-    return "You should see: ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz.,'";
 }
 
 LabelBMFontBounds::LabelBMFontBounds()

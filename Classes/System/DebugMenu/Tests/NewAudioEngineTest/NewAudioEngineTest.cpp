@@ -26,6 +26,7 @@
 #include "platform/CCPlatformConfig.h"
 #include "NewAudioEngineTest.h"
 #include "ui/CocosGUI.h"
+#include "testResource.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
@@ -33,7 +34,6 @@ using namespace cocos2d::experimental;
 
 AudioEngineTests::AudioEngineTests()
 {
-    ADD_TEST_CASE(AudioIssue11143Test);
     ADD_TEST_CASE(AudioControlTest);
     ADD_TEST_CASE(AudioLoadTest);
     ADD_TEST_CASE(PlaySimultaneouslyTest);
@@ -47,7 +47,6 @@ AudioEngineTests::AudioEngineTests()
     ADD_TEST_CASE(AudioPauseResumeAfterPlay);
     ADD_TEST_CASE(AudioPreloadSameFileMultipleTimes);
     ADD_TEST_CASE(AudioPlayFileInWritablePath);
-    ADD_TEST_CASE(AudioIssue16938Test);
     ADD_TEST_CASE(AudioPlayInFinishedCB);
     ADD_TEST_CASE(AudioUncacheInFinishedCB);
     
@@ -65,7 +64,7 @@ namespace {
         {
             auto ret = new (std::nothrow) TextButton();
             
-            TTFConfig ttfconfig("fonts/arial.ttf",25);
+            TTFConfig ttfconfig(s_fontArial,25);
             if (ret && ret->setTTFConfig(ttfconfig)) {
                 ret->setString(text);
                 ret->_onTriggered = onTriggered;
@@ -226,7 +225,7 @@ bool AudioControlTest::init()
     _updateTimeSlider = true;
     _isStopped = false;
     
-    std::string fontFilePath = "fonts/arial.ttf";
+    std::string fontFilePath = s_fontArial;
     
     auto& layerSize = this->getContentSize();
     
@@ -394,7 +393,7 @@ bool AudioLoadTest::init()
     {
         auto& layerSize = this->getContentSize();
 
-        auto stateLabel = Label::createWithTTF("status:", "fonts/arial.ttf", 30);
+        auto stateLabel = Label::createWithTTF("status:", s_fontArial, 30);
         stateLabel->setPosition(layerSize.width / 2, layerSize.height * 0.7f);
         addChild(stateLabel);
 
@@ -505,7 +504,7 @@ bool AudioProfileTest::init()
     _files[1] = "background.ogg";
 #endif
     
-    std::string fontFilePath = "fonts/arial.ttf";
+    std::string fontFilePath = s_fontArial;
     _minDelay = 1.0f;
     _time = 0.0f;
 
@@ -650,44 +649,6 @@ LargeAudioFileTest::~LargeAudioFileTest()
 std::string LargeAudioFileTest::title() const
 {
     return "Test large audio file";
-}
-
-bool AudioIssue11143Test::init()
-{
-    if (AudioEngineTestDemo::init())
-    {
-        auto& layerSize = this->getContentSize();
-
-        auto playItem = TextButton::create("play", [](TextButton* button){
-            AudioEngine::play2d("audio/SoundEffectsFX009/FX082.mp3", true);
-            AudioEngine::stopAll();
-            
-            auto audioId = AudioEngine::play2d("audio/SoundEffectsFX009/FX082.mp3", true);
-            char key[100] = {0};
-            sprintf(key, "play another sound %d", audioId);
-            button->scheduleOnce([audioId](float dt){
-                AudioEngine::stop(audioId);
-                AudioEngine::play2d("audio/SoundEffectsFX009/FX083.mp3");
-            }, 0.3f, key);
-
-        });
-        playItem->setPosition(layerSize.width * 0.5f, layerSize.height * 0.5f);
-        addChild(playItem);
-
-        return true;
-    }
-
-    return false;
-}
-
-std::string AudioIssue11143Test::title() const
-{
-    return "Test for issue 11143";
-}
-
-std::string AudioIssue11143Test::subtitle() const
-{
-    return "2 seconds after first sound play,you should hear another sound.";
 }
 
 // Enable profiles for this file
@@ -903,24 +864,6 @@ std::string AudioPauseResumeAfterPlay::title() const
 std::string AudioPauseResumeAfterPlay::subtitle() const
 {
     return "Should not crash";
-}
-
-/////////////////////////////////////////////////////////////////////////
-void AudioIssue16938Test::onEnter()
-{
-    AudioEngineTestDemo::onEnter();
-
-    AudioEngine::play2d("audio/EntireFramesTest.mp3");
-}
-
-std::string AudioIssue16938Test::title() const
-{
-    return "Issue 16938 Test";
-}
-
-std::string AudioIssue16938Test::subtitle() const
-{
-    return "Should heard the entire audio frames";
 }
 
 /////////////////////////////////////////////////////////////////////////

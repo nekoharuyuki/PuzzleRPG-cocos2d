@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "UITextFieldTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;
@@ -56,13 +57,13 @@ bool UITextFieldTest::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the textfield events will be displayed
-        _displayValueLabel = Text::create("No Event","fonts/Marker Felt.ttf",32);
+        _displayValueLabel = Text::create("No Event",s_fontArial,32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);        
         
         // Add the alert
-        Text* alert = Text::create("TextField","fonts/Marker Felt.ttf",30);
+        Text* alert = Text::create("TextField",s_fontArial,30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
@@ -134,13 +135,13 @@ bool UITextFieldTest_MaxLength::init()
         Size screenSize = Director::getInstance()->getWinSize();
         
         // Add a label in which the textfield events will be displayed
-        _displayValueLabel = Text::create("No Event","fonts/Marker Felt.ttf",32);
+        _displayValueLabel = Text::create("No Event",s_fontArial,32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(screenSize.width / 2.0f, screenSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text *alert = Text::create("TextField max length","fonts/Marker Felt.ttf",30);
+        Text *alert = Text::create("TextField max length",s_fontArial,30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(screenSize.width / 2.0f, screenSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
@@ -218,13 +219,13 @@ bool UITextFieldTest_Password::init()
         Size screenSize = Director::getInstance()->getWinSize();
         
         // Add a label in which the textfield events will be displayed
-        _displayValueLabel = Text::create("No Event","fonts/Marker Felt.ttf",32);
+        _displayValueLabel = Text::create("No Event",s_fontArial,32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(screenSize.width / 2.0f, screenSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text *alert = Text::create("TextField password","fonts/Marker Felt.ttf",30);
+        Text *alert = Text::create("TextField password",s_fontArial,30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(screenSize.width / 2.0f, screenSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
@@ -297,19 +298,19 @@ bool UITextFieldTest_LineWrap::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the textfield events will be displayed
-        _displayValueLabel = Text::create("No Event","fonts/Marker Felt.ttf",30);
+        _displayValueLabel = Text::create("No Event",s_fontArial,30);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text *alert = Text::create("TextField line wrap","fonts/Marker Felt.ttf",30);
+        Text *alert = Text::create("TextField line wrap",s_fontArial,30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075));
         _uiLayer->addChild(alert);
         
         // Create the textfield
-        TextField* textField = TextField::create("input words here","fonts/Marker Felt.ttf",30);
+        TextField* textField = TextField::create("input words here",s_fontArial,30);
         textField->ignoreContentAdaptWithSize(false);
         ((Label*)(textField->getVirtualRenderer()))->setLineBreakWithoutSpace(true);
         textField->setContentSize(Size(240, 170));
@@ -382,18 +383,18 @@ bool UITextFieldTest_TrueTypeFont::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the textfield events will be displayed
-        _displayValueLabel = Text::create("True Type Font Test - No Event","fonts/Marker Felt.ttf",32);
+        _displayValueLabel = Text::create("True Type Font Test - No Event",s_fontArial,32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text* alert = Text::create("TextField","fonts/Marker Felt.ttf",30);
+        Text* alert = Text::create("TextField",s_fontArial,30);
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
         
         // Create the textfield
-        TextField* textField = TextField::create("input words here","fonts/A Damn Mess.ttf",30);
+        TextField* textField = TextField::create("input words here",s_fontArial,30);
         
         textField->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
         textField->addEventListener(CC_CALLBACK_2(UITextFieldTest_TrueTypeFont::textFieldEvent, this));
@@ -459,13 +460,13 @@ bool UITextFieldTest_BMFont::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the textfield events will be displayed
-        _displayValueLabel = Text::create("BMFont Test - No Event","fonts/Marker Felt.ttf",32);
+        _displayValueLabel = Text::create("BMFont Test - No Event",s_fontArial,32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text* alert = Text::create("TextField","fonts/Marker Felt.ttf",30);
+        Text* alert = Text::create("TextField",s_fontArial,30);
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
         
@@ -535,13 +536,13 @@ bool UITextFieldTest_PlaceHolderColor::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the textfield events will be displayed
-        _displayValueLabel = Text::create("You should see 16.50000, 34.0000 in the output window the first time you type","fonts/Marker Felt.ttf",12);
+        _displayValueLabel = Text::create("You should see 16.50000, 34.0000 in the output window the first time you type",s_fontArial,12);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text* alert = Text::create("TextField","fonts/Marker Felt.ttf",30);
+        Text* alert = Text::create("TextField",s_fontArial,30);
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
         

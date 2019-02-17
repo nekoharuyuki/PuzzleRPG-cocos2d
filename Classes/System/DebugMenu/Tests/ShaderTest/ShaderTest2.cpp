@@ -486,7 +486,7 @@ bool EffectSpriteTest::init()
         menu->setPosition(Vec2(s.width/2,70));
         addChild(menu);
 
-        _sprite = EffectSprite::create("Images/grossini.png");
+        _sprite = EffectSprite::create(s_pathGrossini);
         _sprite->setPosition(Vec2(0, s.height/2));
         addChild(_sprite);
 

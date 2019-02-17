@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "MouseTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 
@@ -44,12 +45,12 @@ MouseEventTest::MouseEventTest()
     auto s = Director::getInstance()->getWinSize();
 
     //Create a label to display the mouse action
-    _labelAction = Label::createWithTTF("Click mouse button and see this change", "fonts/arial.ttf", 22);
+    _labelAction = Label::createWithTTF("Click mouse button and see this change", s_fontArial, 22);
     _labelAction->setPosition(Vec2(s.width/2, s.height*2/3));
     addChild(_labelAction, 0);
 
     //Create a label to display the mouse position
-    _labelPosition = Label::createWithTTF("Mouse not supported on this device", "fonts/arial.ttf", 22);
+    _labelPosition = Label::createWithTTF("Mouse not supported on this device", s_fontArial, 22);
     _labelPosition->setPosition(Vec2(s.width/2, s.height/3));
     addChild(_labelPosition);
 
