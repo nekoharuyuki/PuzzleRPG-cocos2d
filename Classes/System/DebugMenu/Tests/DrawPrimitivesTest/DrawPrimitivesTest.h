@@ -84,16 +84,4 @@ protected:
     cocos2d::PrimitiveCommand _primitiveCommand;
 };
 
-class Issue11942Test : public DrawPrimitivesBaseTest
-{
-public:
-    CREATE_FUNC(Issue11942Test);
-
-    Issue11942Test();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-
-};
-
 #endif

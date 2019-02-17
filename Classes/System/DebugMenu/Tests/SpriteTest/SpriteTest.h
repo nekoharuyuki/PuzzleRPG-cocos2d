@@ -138,45 +138,6 @@ public:
     virtual std::string subtitle() const override;
 };
 
-class SpriteBatchNodeReorderIssue744: public SpriteTestDemo
-{
-public:
-    CREATE_FUNC(SpriteBatchNodeReorderIssue744);
-
-    SpriteBatchNodeReorderIssue744();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class SpriteBatchNodeReorderIssue766 : public SpriteTestDemo
-{
-public:
-    CREATE_FUNC(SpriteBatchNodeReorderIssue766);
-
-    SpriteBatchNodeReorderIssue766();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    void reorderSprite(float dt);
-    cocos2d::Sprite* makeSpriteZ(int aZ);
-
-private:
-    cocos2d::SpriteBatchNode* batchNode;
-    cocos2d::Sprite* sprite1;
-    cocos2d::Sprite* sprite2;
-    cocos2d::Sprite* sprite3;    
-};
-
-class SpriteBatchNodeReorderIssue767 : public SpriteTestDemo
-{
-public:
-    CREATE_FUNC(SpriteBatchNodeReorderIssue767);
-
-    SpriteBatchNodeReorderIssue767();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    void reorderSprites(float dt);
-};
-
 class SpriteZVertex: public SpriteTestDemo
 {
 public:
@@ -565,16 +526,6 @@ public:
     virtual std::string title() const override;
 };
 
-class SpriteChildrenVisibilityIssue665 : public SpriteTestDemo
-{
-public:
-    CREATE_FUNC(SpriteChildrenVisibilityIssue665);
-    SpriteChildrenVisibilityIssue665();
-    virtual ~SpriteChildrenVisibilityIssue665();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 class SpriteChildrenAnchorPoint: public SpriteTestDemo
 {
 public:
@@ -761,15 +712,6 @@ public:
     virtual std::string subtitle() const override;
 };
 
-class SpriteBatchBug1217 : public SpriteTestDemo
-{
-public:
-    CREATE_FUNC(SpriteBatchBug1217);
-    SpriteBatchBug1217();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 class SpriteCullTest1 : public SpriteTestDemo
 {
 public:
@@ -914,23 +856,6 @@ public:
     SpriteGetSpriteFrameTest();
     virtual std::string title() const override { return "Sprite::getSpriteFrame(*)"; };
     virtual std::string subtitle() const override { return "setting after getting should be the same"; }
-};
-
-class Issue17119 : public SpriteTestDemo
-{
-public:
-    CREATE_FUNC(Issue17119);
-    Issue17119();
-    virtual std::string title() const override { return "Issue 17119"; };
-    virtual std::string subtitle() const override { return "flipping should work ok"; }
-
-    virtual void update(float dt) override;
-protected:
-    float _accum;
-    cocos2d::Sprite* _s1;
-    cocos2d::Sprite* _s2;
-    cocos2d::Sprite* _s3;
-    cocos2d::Sprite* _s4;
 };
 
 #endif

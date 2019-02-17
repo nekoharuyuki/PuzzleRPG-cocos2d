@@ -851,138 +851,6 @@ std::string RadiusMode2::subtitle() const
 
 //------------------------------------------------------------------
 //
-// Issue704
-//
-//------------------------------------------------------------------
-void Issue704::onEnter()
-{
-    ParticleDemo::onEnter();
-
-    _color->setColor(Color3B::BLACK);
-    removeChild(_background, true);
-    _background = nullptr;
-
-    _emitter = ParticleSystemQuad::createWithTotalParticles(100);
-    _emitter->retain();
-    addChild(_emitter, 10);
-    _emitter->setTexture(Director::getInstance()->getTextureCache()->addImage("Images/fire.png"));
-
-    // duration
-    _emitter->setDuration(ParticleSystem::DURATION_INFINITY);
-
-    // radius mode
-    _emitter->setEmitterMode(ParticleSystem::Mode::RADIUS);
-
-    // radius mode: start and end radius in pixels
-    _emitter->setStartRadius(50);
-    _emitter->setStartRadiusVar(0);
-    _emitter->setEndRadius(ParticleSystem::START_RADIUS_EQUAL_TO_END_RADIUS);
-    _emitter->setEndRadiusVar(0);
-
-    // radius mode: degrees per second
-    _emitter->setRotatePerSecond(0);
-    _emitter->setRotatePerSecondVar(0);
-
-
-    // angle
-    _emitter->setAngle(90);
-    _emitter->setAngleVar(0);
-
-    // emitter position
-    auto size = Director::getInstance()->getWinSize();
-    _emitter->setPosition(Vec2(size.width/2, size.height/2));
-    _emitter->setPosVar(Vec2::ZERO);
-
-    // life of particles
-    _emitter->setLife(5);
-    _emitter->setLifeVar(0);
-
-    // spin of particles
-    _emitter->setStartSpin(0);
-    _emitter->setStartSpinVar(0);
-    _emitter->setEndSpin(0);
-    _emitter->setEndSpinVar(0);
-
-    // color of particles
-    Color4F startColor(0.5f, 0.5f, 0.5f, 1.0f);
-    _emitter->setStartColor(startColor);
-
-    Color4F startColorVar(0.5f, 0.5f, 0.5f, 1.0f);
-    _emitter->setStartColorVar(startColorVar);
-
-    Color4F endColor(0.1f, 0.1f, 0.1f, 0.2f);
-    _emitter->setEndColor(endColor);
-
-    Color4F endColorVar(0.1f, 0.1f, 0.1f, 0.2f);
-    _emitter->setEndColorVar(endColorVar);
-
-    // size, in pixels
-    _emitter->setStartSize(16);
-    _emitter->setStartSizeVar(0);
-    _emitter->setEndSize(ParticleSystem::START_SIZE_EQUAL_TO_END_SIZE);
-
-    // emits per second
-    _emitter->setEmissionRate(_emitter->getTotalParticles() / _emitter->getLife());
-
-    // additive
-    _emitter->setBlendAdditive(false);
-
-    auto rot = RotateBy::create(16, 360);
-    _emitter->runAction(RepeatForever::create(rot));
-}
-
-std::string Issue704::title() const
-{
-    return "Issue 704. Free + Rot";
-}
-
-std::string Issue704::subtitle() const
-{
-    return "Emitted particles should not rotate";
-}
-
-//------------------------------------------------------------------
-//
-// Issue870
-//
-//------------------------------------------------------------------
-void Issue870::onEnter()
-{
-    ParticleDemo::onEnter();
-
-    _color->setColor(Color3B::BLACK);
-    removeChild(_background, true);
-    _background = nullptr;
-
-    _emitter = ParticleSystemQuad::create("Particles/SpinningPeas.plist");
-    _emitter->setTextureWithRect(Director::getInstance()->getTextureCache()->addImage("Images/particles.png"), Rect(0,0,32,32));
-    addChild(_emitter, 10);
-    _emitter->retain();
-
-    _index = 0;
-    schedule(CC_SCHEDULE_SELECTOR(Issue870::updateQuads), 2.0f);
-}
-
-void Issue870::updateQuads(float dt)
-{
-    _index = (_index + 1) % 4;
-    auto rect = Rect(_index * 32, 0, 32, 32);
-    auto system = (ParticleSystemQuad*)_emitter;
-    system->setTextureWithRect(_emitter->getTexture(), rect);
-}
-
-std::string Issue870::title() const
-{
-    return "Issue 870. SubRect";
-}
-
-std::string Issue870::subtitle() const
-{
-    return "Every 2 seconds the particle should change";
-}
-
-//------------------------------------------------------------------
-//
 // DemoParticleFromFile
 //
 //------------------------------------------------------------------
@@ -1056,22 +924,15 @@ ParticleTests::ParticleTests()
     addTestCase("ButterFlyYFlipped", [](){return DemoParticleFromFile::create("ButterFlyYFlipped"); });
     ADD_TEST_CASE(RadiusMode1);
     ADD_TEST_CASE(RadiusMode2);
-    ADD_TEST_CASE(Issue704);
-    ADD_TEST_CASE(Issue870);
-    ADD_TEST_CASE(Issue1201);
-
     ADD_TEST_CASE(MultipleParticleSystems);
     ADD_TEST_CASE(MultipleParticleSystemsBatched);
     ADD_TEST_CASE(AddAndDeleteParticleSystems);
     ADD_TEST_CASE(ReorderParticleSystems);
     ADD_TEST_CASE(PremultipliedAlphaTest);
     ADD_TEST_CASE(PremultipliedAlphaTest2);
-    ADD_TEST_CASE(Issue3990);
     ADD_TEST_CASE(ParticleAutoBatching);
     ADD_TEST_CASE(ParticleVisibleTest);
     ADD_TEST_CASE(ParticleResetTotalParticles);
-
-    ADD_TEST_CASE(ParticleIssue12310);
     ADD_TEST_CASE(ParticleSpriteFrame);
 }
 
@@ -1462,37 +1323,6 @@ void RainbowEffect::update(float dt)
 {
     _emitCounter = 0;
     ParticleSystemQuad::update(dt);
-}
-
-
-void Issue1201::onEnter()
-{
-    ParticleDemo::onEnter();
-
-    _color->setColor(Color3B::BLACK);
-    removeChild(_background, true);
-    _background = nullptr;
-
-    RainbowEffect *particle = new (std::nothrow) RainbowEffect();
-    particle->initWithTotalParticles(50);
-
-    addChild(particle);
-
-    auto s = Director::getInstance()->getWinSize();
-
-    particle->setPosition(Vec2(s.width/2, s.height/2));
-
-    _emitter = particle;
-}
-
-std::string Issue1201::title() const
-{
-    return "Issue 1201. Unfinished";
-}
-
-std::string Issue1201::subtitle() const
-{
-    return "Unfinished test. Ignore it";
 }
 
 void MultipleParticleSystems::onEnter()
@@ -1910,39 +1740,6 @@ std::string PremultipliedAlphaTest2::subtitle() const
     return "Arrows should be faded";
 }
 
-
-// Issue3990
-
-void Issue3990::onEnter()
-{
-    ParticleDemo::onEnter();
-    
-	_color->setColor(Color3B::BLACK);
-    this->removeChild(_background, true);
-    _background = nullptr;
-    
-    _emitter = ParticleSystemQuad::create("Particles/Spiral.plist");
-    
-    _emitter->setPositionType(ParticleSystem::PositionType::GROUPED);
-    _emitter->setTotalParticles(1000);
-    _emitter->setEmissionRate(_emitter->getTotalParticles() / _emitter->getLife());
-    _emitter->setPosition(VisibleRect::center());
-    
-    _emitter->retain();
-    this->addChild(_emitter ,10);
-}
-
-std::string Issue3990::title() const
-{
-    return "Issue3990, setTotalParticle should work";
-}
-
-std::string Issue3990::subtitle() const
-{
-    return "Show '998' or '999' at bottom right side";
-}
-
-
 // ParticleVisibleTest
 void ParticleVisibleTest::onEnter()
 {
@@ -2052,33 +1849,6 @@ std::string ParticleResetTotalParticles::title() const
 std::string ParticleResetTotalParticles::subtitle() const
 {
     return "it should work as well";
-}
-
-void ParticleIssue12310::onEnter()
-{
-    ParticleDemo::onEnter();
-
-    _color->setColor(Color3B::BLACK);
-    removeChild(_background, true);
-    _background = nullptr;
-
-    auto winSize = Director::getInstance()->getWinSize();
-
-    auto particle = ParticleSystemQuad::create("Particles/BoilingFoam.plist");
-    particle->setPosition(Vec2(winSize.width * 0.35f, winSize.height * 0.5f));
-    addChild(particle);
-
-    _emitter = particle;
-    _emitter->retain();
-
-    auto particle2 = ParticleSystemQuad::create("Particles/BoilingFoamStar.plist");
-    particle2->setPosition(Vec2(winSize.width * 0.65f, winSize.height * 0.5f));
-    addChild(particle2);
-}
-
-std::string ParticleIssue12310::subtitle() const
-{
-    return "You should see two Particle Emitters using different texture.";
 }
 
 //------------------------------------------------------------------

@@ -224,34 +224,6 @@ private:
     cocos2d::Sprite* _touchableSprite;
 };
 
-class Issue4129 : public EventDispatcherTestDemo
-{
-public:
-    CREATE_FUNC(Issue4129);
-    Issue4129();
-    virtual ~Issue4129();
-    
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    
-private:
-    cocos2d::EventListenerCustom* _customlistener;
-    bool _bugFixed;
-};
-
-class Issue4160 : public EventDispatcherTestDemo
-{
-public:
-    CREATE_FUNC(Issue4160);
-    Issue4160();
-    virtual ~Issue4160();
-    
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    
-private:
-};
-
 class DanglingNodePointersTest : public EventDispatcherTestDemo
 {
 public:
@@ -281,33 +253,6 @@ public:
 
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
-};
-
-class Issue8194 : public EventDispatcherTestDemo
-{
-public:
-    CREATE_FUNC(Issue8194);
-    Issue8194();
-    virtual ~Issue8194();
-    
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    
-private:
-    cocos2d::EventListenerCustom* _listener;
-};
-
-class Issue9898 : public EventDispatcherTestDemo
-{
-public:
-    CREATE_FUNC(Issue9898);
-    Issue9898();
-
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-
-private:
-    cocos2d::EventListenerCustom* _listener;
 };
 
 #endif /* defined(__samples__NewEventDispatcherTest__) */

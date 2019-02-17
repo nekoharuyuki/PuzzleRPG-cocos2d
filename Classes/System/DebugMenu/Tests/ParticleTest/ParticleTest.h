@@ -227,37 +227,6 @@ public:
     virtual std::string subtitle() const override;
 };
 
-class Issue704 : public ParticleDemo
-{
-public:
-    CREATE_FUNC(Issue704);
-    virtual void onEnter() override;
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class Issue870 : public ParticleDemo
-{
-public:
-    CREATE_FUNC(Issue870);
-    virtual void onEnter() override;
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    void updateQuads(float dt);
-
-private:
-    int _index;
-};
-
-class Issue1201 : public ParticleDemo
-{
-public:
-    CREATE_FUNC(Issue1201);
-    virtual void onEnter() override;
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 class ParticleBatchHybrid : public ParticleDemo
 {
 public:
@@ -359,15 +328,6 @@ public:
     virtual std::string subtitle() const override;
 };
 
-class Issue3990 : public ParticleDemo
-{
-public:
-    CREATE_FUNC(Issue3990);
-    virtual void onEnter() override;
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 class ParticleVisibleTest : public ParticleDemo
 {
 public:
@@ -393,14 +353,6 @@ public:
     CREATE_FUNC(ParticleResetTotalParticles);
     virtual void onEnter() override;
     virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class ParticleIssue12310 : public ParticleDemo
-{
-public:
-    CREATE_FUNC(ParticleIssue12310);
-    virtual void onEnter() override;
     virtual std::string subtitle() const override;
 };
 

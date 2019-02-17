@@ -37,8 +37,6 @@ MotionStreakTests::MotionStreakTests()
 {
     ADD_TEST_CASE(MotionStreakTest1);
     ADD_TEST_CASE(MotionStreakTest2);
-    ADD_TEST_CASE(Issue1358);
-    ADD_TEST_CASE(Issue12226);
 }
 
 //------------------------------------------------------------------
@@ -132,103 +130,6 @@ void MotionStreakTest2::onTouchesMoved(const std::vector<Touch*>& touches, Event
 std::string MotionStreakTest2::title() const
 {
     return "MotionStreak test";
-}
-
-//------------------------------------------------------------------
-//
-// Issue1358
-//
-//------------------------------------------------------------------
-
-void Issue1358::onEnter()
-{
-    MotionStreakTest::onEnter();
-    
-    // ask director the the window size
-    auto size = Director::getInstance()->getWinSize();
-    
-    _streak = MotionStreak::create(2.0f, 1.0f, 50.0f, Color3B(255, 255, 0), "Images/Icon.png");
-    addChild(_streak);
-    
-    
-    _center  = Vec2(size.width/2, size.height/2);
-    _radius = size.width/3;
-    _angle = 0.0f;
-    
-    schedule(CC_SCHEDULE_SELECTOR(Issue1358::update), 0);
-}
-
-void Issue1358::update(float dt)
-{
-    _angle += 1.0f;
-    _streak->setPosition(Vec2(_center.x + cosf(_angle/180 * M_PI)*_radius,
-                            _center.y + sinf(_angle/ 180 * M_PI)*_radius));
-}
-
-std::string Issue1358::title() const
-{
-    return "Issue 1358";
-}
-
-std::string Issue1358::subtitle() const
-{
-    return "The tail should use the texture";
-}
-
-//------------------------------------------------------------------
-//
-// Issue12226
-//
-//------------------------------------------------------------------
-
-void Issue12226::onEnter()
-{
-    MotionStreakTest::onEnter();
-
-    // ask director the the window size
-    auto size = Director::getInstance()->getWinSize();
-
-    auto radius = size.width/3;
-
-    auto outer = Sprite::create("Images/grossini.png");
-    outer->setPosition(size/2);
-    addChild(outer);
-
-
-    _streak = MotionStreak::create(1.0f, 3, radius * 1.5f, Color3B(0xA0, 0xA0, 0xA0), "ccb/particle-smoke.png");
-//    motionStreak->setOpacity(0x70);
-    _streak->setPosition(outer->getPosition());
-
-    this->addChild(_streak, outer->getLocalZOrder() - 1);
-
-    outer->setUserData(_streak);
-
-    const uint32_t length = (radius * 0.95);
-
-    std::function<void(float)> updateMotionStreak = [=](float dt) {
-
-        Vec2 position = Vec2(outer->getPositionX() + length * cosf(-1 * CC_DEGREES_TO_RADIANS(outer->getRotation() + 90.0f)),
-                             outer->getPositionY() + length * sinf(-1 * CC_DEGREES_TO_RADIANS(outer->getRotation() + 90.0f)));
-
-        _streak->setPosition(position);
-    };
-
-    outer->schedule(updateMotionStreak, 1 / 240.0f, CC_REPEAT_FOREVER, 0, "motion1scheduler");
-
-    auto rot = RotateBy::create(2, 360);
-    auto forever = RepeatForever::create(rot);
-    outer->runAction(forever);
-
-}
-
-std::string Issue12226::title() const
-{
-    return "Github Issue 12226";
-}
-
-std::string Issue12226::subtitle() const
-{
-    return "Image should look without artifacts";
 }
 
 //------------------------------------------------------------------

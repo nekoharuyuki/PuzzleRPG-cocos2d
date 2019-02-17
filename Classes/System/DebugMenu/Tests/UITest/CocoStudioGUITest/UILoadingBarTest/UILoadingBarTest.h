@@ -116,20 +116,6 @@ protected:
     
 };
 
-class UILoadingBarIssue12249 : public UIScene
-{
-public:
-    CREATE_FUNC(UILoadingBarIssue12249);
-    
-    UILoadingBarIssue12249();
-    ~UILoadingBarIssue12249();
-    virtual bool init() override;
-    void update(float delta)override;
-    
-protected:
-    int _count;
-};
-
 class UILoadingBarTest_Direction : public UIScene
 {
 public:

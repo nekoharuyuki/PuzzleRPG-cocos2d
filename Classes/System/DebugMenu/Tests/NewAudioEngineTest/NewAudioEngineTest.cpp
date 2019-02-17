@@ -33,7 +33,6 @@ using namespace cocos2d::experimental;
 
 AudioEngineTests::AudioEngineTests()
 {
-    ADD_TEST_CASE(AudioIssue11143Test);
     ADD_TEST_CASE(AudioControlTest);
     ADD_TEST_CASE(AudioLoadTest);
     ADD_TEST_CASE(PlaySimultaneouslyTest);
@@ -47,7 +46,6 @@ AudioEngineTests::AudioEngineTests()
     ADD_TEST_CASE(AudioPauseResumeAfterPlay);
     ADD_TEST_CASE(AudioPreloadSameFileMultipleTimes);
     ADD_TEST_CASE(AudioPlayFileInWritablePath);
-    ADD_TEST_CASE(AudioIssue16938Test);
     ADD_TEST_CASE(AudioPlayInFinishedCB);
     ADD_TEST_CASE(AudioUncacheInFinishedCB);
     
@@ -652,44 +650,6 @@ std::string LargeAudioFileTest::title() const
     return "Test large audio file";
 }
 
-bool AudioIssue11143Test::init()
-{
-    if (AudioEngineTestDemo::init())
-    {
-        auto& layerSize = this->getContentSize();
-
-        auto playItem = TextButton::create("play", [](TextButton* button){
-            AudioEngine::play2d("audio/SoundEffectsFX009/FX082.mp3", true);
-            AudioEngine::stopAll();
-            
-            auto audioId = AudioEngine::play2d("audio/SoundEffectsFX009/FX082.mp3", true);
-            char key[100] = {0};
-            sprintf(key, "play another sound %d", audioId);
-            button->scheduleOnce([audioId](float dt){
-                AudioEngine::stop(audioId);
-                AudioEngine::play2d("audio/SoundEffectsFX009/FX083.mp3");
-            }, 0.3f, key);
-
-        });
-        playItem->setPosition(layerSize.width * 0.5f, layerSize.height * 0.5f);
-        addChild(playItem);
-
-        return true;
-    }
-
-    return false;
-}
-
-std::string AudioIssue11143Test::title() const
-{
-    return "Test for issue 11143";
-}
-
-std::string AudioIssue11143Test::subtitle() const
-{
-    return "2 seconds after first sound play,you should hear another sound.";
-}
-
 // Enable profiles for this file
 #undef CC_PROFILER_DISPLAY_TIMERS
 #define CC_PROFILER_DISPLAY_TIMERS() Profiler::getInstance()->displayTimers()
@@ -903,24 +863,6 @@ std::string AudioPauseResumeAfterPlay::title() const
 std::string AudioPauseResumeAfterPlay::subtitle() const
 {
     return "Should not crash";
-}
-
-/////////////////////////////////////////////////////////////////////////
-void AudioIssue16938Test::onEnter()
-{
-    AudioEngineTestDemo::onEnter();
-
-    AudioEngine::play2d("audio/EntireFramesTest.mp3");
-}
-
-std::string AudioIssue16938Test::title() const
-{
-    return "Issue 16938 Test";
-}
-
-std::string AudioIssue16938Test::subtitle() const
-{
-    return "Should heard the entire audio frames";
 }
 
 /////////////////////////////////////////////////////////////////////////

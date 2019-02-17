@@ -307,24 +307,6 @@ public:
     virtual std::string title() const override;
 };
 
-class TMXBug987New : public TileDemoNew
-{
-public:
-    CREATE_FUNC(TMXBug987New);
-    TMXBug987New();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class TMXBug787New : public TileDemoNew
-{
-public:
-    CREATE_FUNC(TMXBug787New);
-    TMXBug787New();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 class TMXGIDObjectsTestNew : public TileDemoNew
 {
 public:

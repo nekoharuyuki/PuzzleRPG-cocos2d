@@ -326,24 +326,6 @@ public:
     virtual std::string title() const override;
 };
 
-class TMXBug987 : public TileDemo
-{
-public:
-    CREATE_FUNC(TMXBug987);
-    TMXBug987();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
-class TMXBug787 : public TileDemo
-{
-public:
-    CREATE_FUNC(TMXBug787);
-    TMXBug787();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-};
-
 class TMXGIDObjectsTest : public TileDemo
 {
 public:
@@ -390,24 +372,6 @@ class TMXHexAxisXTest : public TileDemo
 public:
     CREATE_FUNC(TMXHexAxisXTest);
     TMXHexAxisXTest();
-    virtual std::string title() const override;
-
-};
-
-class Issue16105Test : public TileDemo
-{
-public:
-    CREATE_FUNC(Issue16105Test);
-    Issue16105Test();
-    virtual std::string title() const override;
-
-};
-
-class Issue16512Test : public TileDemo
-{
-public:
-    CREATE_FUNC(Issue16512Test);
-    Issue16512Test();
     virtual std::string title() const override;
 
 };

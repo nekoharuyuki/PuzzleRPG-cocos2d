@@ -70,16 +70,12 @@ TileMapTests::TileMapTests()
     ADD_TEST_CASE(TMXOrthoXMLFormatTest);
     ADD_TEST_CASE(TileMapTest);
     ADD_TEST_CASE(TileMapEditTest);
-    ADD_TEST_CASE(TMXBug987);
-    ADD_TEST_CASE(TMXBug787);
     ADD_TEST_CASE(TMXGIDObjectsTest);
     ADD_TEST_CASE(TMXHexOddXTest);
     ADD_TEST_CASE(TMXHexEvenXTest);
     ADD_TEST_CASE(TMXHexOddYTest);
     ADD_TEST_CASE(TMXHexEvenYTest);
     ADD_TEST_CASE(TMXHexAxisXTest);
-    ADD_TEST_CASE(Issue16105Test);
-    ADD_TEST_CASE(Issue16512Test);
 }
 
 TileDemo::TileDemo()
@@ -1424,63 +1420,6 @@ std::string TMXOrthoXMLFormatTest::title() const
 
 //------------------------------------------------------------------
 //
-// TMXBug987
-//
-//------------------------------------------------------------------
-TMXBug987::TMXBug987()
-{
-    auto map = TMXTiledMap::create("TileMaps/orthogonal-test6.tmx");
-    addChild(map, 0, kTagTileMap);
-
-    Size CC_UNUSED s1 = map->getContentSize();
-    CCLOG("ContentSize: %f, %f", s1.width,s1.height);
-
-    auto& children = map->getChildren();
-    for(const auto &child : children) {
-        auto node = static_cast<TMXLayer*>(child);
-        node->getTexture()->setAntiAliasTexParameters();
-    }
-
-    map->setAnchorPoint(Vec2(0, 0));
-    auto layer = map->getLayer("Tile Layer 1");
-    layer->setTileGID(3, Vec2(2,2));
-}
-
-std::string TMXBug987::title() const
-{
-    return "TMX Bug 987";
-}
-
-std::string TMXBug987::subtitle() const
-{
-    return "You should see an square";
-}
-
-//------------------------------------------------------------------
-//
-// TMXBug787
-//
-//------------------------------------------------------------------
-TMXBug787::TMXBug787()
-{
-    auto map = TMXTiledMap::create("TileMaps/iso-test-bug787.tmx");
-    addChild(map, 0, kTagTileMap);
-
-    map->setScale(0.25f);
-}
-
-std::string TMXBug787::title() const
-{
-    return "TMX Bug 787";
-}
-
-std::string TMXBug787::subtitle() const
-{
-    return "You should see a map";
-}
-
-//------------------------------------------------------------------
-//
 // TMXGIDObjectsTest
 //
 //------------------------------------------------------------------
@@ -1669,56 +1608,4 @@ TMXHexAxisXTest::TMXHexAxisXTest()
 std::string TMXHexAxisXTest::title() const
 {
     return "The map should be same with in Tiled Editor";
-}
-
-//------------------------------------------------------------------
-//
-// Issue16105Test
-//
-//------------------------------------------------------------------
-Issue16105Test::Issue16105Test()
-{
-    auto color = LayerColor::create( Color4B(64,64,64,255) );
-    addChild(color, -1);
-
-    auto map = TMXTiledMap::create("TileMaps/issue16105.tmx");
-    addChild(map, 0, kTagTileMap);
-
-    Size CC_UNUSED s = map->getContentSize();
-    CCLOG("ContentSize: %f, %f", s.width,s.height);
-}
-
-std::string Issue16105Test::title() const
-{
-    return "Github Issue #16105";
-}
-
-//------------------------------------------------------------------
-//
-// Issue16512Test
-//
-//------------------------------------------------------------------
-Issue16512Test::Issue16512Test()
-{
-    auto color = LayerColor::create( Color4B(64,64,64,255) );
-    addChild(color, -1);
-
-    auto map = TMXTiledMap::create("TileMaps/issue_16512.tmx");
-    addChild(map, 0, kTagTileMap);
-
-    Size CC_UNUSED s = map->getContentSize();
-    CCLOG("ContentSize: %f, %f", s.width,s.height);
-
-    auto floor = map->getLayer("Floor");
-    for (auto x = 0; x < map->getMapSize().width; x++) {
-        for (auto y = 0; y < map->getMapSize().height; y++) {
-            Vec2 p(x, y);
-            floor->getTileAt(p);
-        }
-    }
-}
-
-std::string Issue16512Test::title() const
-{
-    return "Github Issue #16512. Should not crash";
 }

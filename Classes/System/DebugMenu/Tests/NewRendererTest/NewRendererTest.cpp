@@ -37,7 +37,6 @@ NewRendererTests::NewRendererTests()
     ADD_TEST_CASE(VBOFullTest);
     ADD_TEST_CASE(CaptureScreenTest);
     ADD_TEST_CASE(CaptureNodeTest);
-    ADD_TEST_CASE(BugAutoCulling);
     ADD_TEST_CASE(RendererBatchQuadTri);
     ADD_TEST_CASE(RendererUniformBatch);
     ADD_TEST_CASE(RendererUniformBatch2);
@@ -551,36 +550,6 @@ void CaptureNodeTest::onCaptured(Ref*)
 
     // release the captured image
     image->release();
-}
-
-BugAutoCulling::BugAutoCulling()
-{
-    Size s = Director::getInstance()->getWinSize();
-    auto fastmap = cocos2d::experimental::TMXTiledMap::create("TileMaps/orthogonal-test2.tmx");
-    this->addChild(fastmap);
-    for (int i = 0; i < 30; i++) {
-        auto sprite = Sprite::create("Images/grossini.png");
-        sprite->setPosition(s.width/2 + s.width/10 * i, s.height/2);
-        this->addChild(sprite);
-        auto label = Label::createWithTTF(TTFConfig("fonts/arial.ttf"), "Label");
-        label->setPosition(s.width/2 + s.width/10 * i, s.height/2);
-        this->addChild(label);
-    }
-    this->scheduleOnce([=](float){
-        auto camera = Director::getInstance()->getRunningScene()->getCameras().front();
-        auto move  = MoveBy::create(2.0, Vec2(2 * s.width, 0));
-        camera->runAction(Sequence::create(move, move->reverse(),nullptr));
-    }, 1.0f, "lambda-autoculling-bug");
-}
-
-std::string BugAutoCulling::title() const
-{
-    return "Bug-AutoCulling";
-}
-
-std::string BugAutoCulling::subtitle() const
-{
-    return "Moving the camera to the right instead of moving the layer";
 }
 
 //

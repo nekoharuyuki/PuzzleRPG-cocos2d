@@ -483,28 +483,6 @@ protected:
 #endif
 };
 
-/// issue 9767 setGLProgram
-class Issue9767 : public Sprite3DTestDemo
-{
-    enum class ShaderType
-    {
-        SHADER_TEX,
-        SHADER_COLOR,
-    };
-public:
-    CREATE_FUNC(Issue9767);
-    Issue9767();
-    ~Issue9767();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
-    
-    void menuCallback_SwitchShader(cocos2d::Ref* sender);
-    
-protected:
-    ShaderType          _shaderType;
-    cocos2d::Sprite3D*  _sprite;
-};
-
 /// Clipping Sprite3D
 class Sprite3DClippingTest : public Sprite3DTestDemo
 {
@@ -615,15 +593,6 @@ protected:
     cocos2d::Sprite3D* _sprite;
     cocos2d::Texture2D* _meshTex;
     std::string _texFile;
-};
-
-class Issue16155Test : public Sprite3DTestDemo
-{
-public:
-    CREATE_FUNC(Issue16155Test);
-    Issue16155Test();
-    virtual std::string title() const override;
-    virtual std::string subtitle() const override;
 };
 
 #endif

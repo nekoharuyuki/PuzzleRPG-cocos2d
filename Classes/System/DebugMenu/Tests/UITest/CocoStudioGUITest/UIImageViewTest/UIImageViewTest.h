@@ -74,12 +74,4 @@ public:
     virtual bool init() override;
 };
 
-class UIImageViewIssue12249Test : public UIScene
-{
-public:
-    CREATE_FUNC(UIImageViewIssue12249Test);
-    
-    virtual bool init() override;
-};
-
 #endif /* defined(__TestCpp__UIImageViewTest__) */

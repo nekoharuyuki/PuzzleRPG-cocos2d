@@ -63,8 +63,6 @@ FastTileMapTests::FastTileMapTests()
     ADD_TEST_CASE(TMXOrthoXMLFormatTestNew);
     ADD_TEST_CASE(TileMapTestNew);
     ADD_TEST_CASE(TileMapEditTestNew);
-    ADD_TEST_CASE(TMXBug987New);
-    ADD_TEST_CASE(TMXBug787New);
     ADD_TEST_CASE(TMXGIDObjectsTestNew);
 }
 
@@ -1281,57 +1279,6 @@ TMXOrthoXMLFormatTestNew::TMXOrthoXMLFormatTestNew()
 std::string TMXOrthoXMLFormatTestNew::title() const
 {
     return "you should see blue, green and yellow in console.";
-}
-
-//------------------------------------------------------------------
-//
-// TMXBug987New
-//
-//------------------------------------------------------------------
-TMXBug987New::TMXBug987New()
-{
-    auto map = cocos2d::experimental::TMXTiledMap::create("TileMaps/orthogonal-test6.tmx");
-    addChild(map, 0, kTagTileMap);
-
-    Size CC_UNUSED s1 = map->getContentSize();
-    CCLOG("ContentSize: %f, %f", s1.width,s1.height);
-
-    map->setAnchorPoint(Vec2(0, 0));
-    auto layer = map->getLayer("Tile Layer 1");
-    layer->setTileGID(3, Vec2(2,2));
-}
-
-std::string TMXBug987New::title() const
-{
-    return "TMX Bug 987";
-}
-
-std::string TMXBug987New::subtitle() const
-{
-    return "You should see an square";
-}
-
-//------------------------------------------------------------------
-//
-// TMXBug787New
-//
-//------------------------------------------------------------------
-TMXBug787New::TMXBug787New()
-{
-    auto map = cocos2d::experimental::TMXTiledMap::create("TileMaps/iso-test-bug787.tmx");
-    addChild(map, 0, kTagTileMap);
-
-    map->setScale(0.25f);
-}
-
-std::string TMXBug787New::title() const
-{
-    return "TMX Bug 787";
-}
-
-std::string TMXBug787New::subtitle() const
-{
-    return "You should see a map";
 }
 
 //------------------------------------------------------------------
