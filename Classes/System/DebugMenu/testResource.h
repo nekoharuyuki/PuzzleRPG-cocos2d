@@ -43,6 +43,7 @@ static const char s_SendScore[]          = "System/images/Test/SendScoreButton.p
 static const char s_PressSendScore[]     = "System/images/Test/SendScoreButtonPressed.png";
 static const char s_Power[]              = "System/images/Test/powered.png";
 static const char s_AtlasTest[]          = "System/images/Test/atlastest.png";
+static const char s_c3bTest[]            = "system/images/Test/orc.c3b";
 
 // tilemaps resource
 static const char s_TilesPng[]           = "System/images/Test/tiles.png";

@@ -27,7 +27,6 @@
 
 #include "cocos2d.h"
 #include "BaseTest.h"
-#include "testResource.h"
 
 DEFINE_TEST_SUITE(EffectAdvanceTests);
 

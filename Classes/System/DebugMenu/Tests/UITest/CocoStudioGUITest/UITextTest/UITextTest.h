@@ -27,7 +27,6 @@
 #define __TestCpp__UITextTest__
 
 #include "../UIScene.h"
-#include "testResource.h"
 
 DEFINE_TEST_SUITE(UITextTests);
 

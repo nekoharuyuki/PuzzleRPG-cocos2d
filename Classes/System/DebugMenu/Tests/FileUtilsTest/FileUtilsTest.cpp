@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "FileUtilsTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 
@@ -214,8 +215,8 @@ void TestFilenameLookup::onEnter()
     auto sharedFileUtils = FileUtils::getInstance();
 
     ValueMap dict;
-    dict["grossini.bmp"] = Value("Images/grossini.png");
-    dict["grossini.xcf"] = Value("Images/grossini.png");
+    dict["grossini.bmp"] = Value(s_pathGrossini);
+    dict["grossini.xcf"] = Value(s_pathGrossini);
 
     sharedFileUtils->setFilenameLookupDictionary(dict);
 
@@ -254,7 +255,7 @@ void TestIsFileExist::onEnter()
     Label* label = nullptr;
     bool isExist = false;
 
-    isExist = sharedFileUtils->isFileExist("Images/grossini.png");
+    isExist = sharedFileUtils->isFileExist(s_pathGrossini);
 
     label = Label::createWithSystemFont(isExist ? "Images/grossini.png exists" : "Images/grossini.png doesn't exist", "", 20);
     label->setPosition(s.width/2, s.height/3);
@@ -561,7 +562,7 @@ void TextWritePlist::onEnter()
     else
         log("write plist file failed");
 
-    auto label = Label::createWithTTF(fullPath.c_str(), "fonts/Thonburi.ttf", 6);
+    auto label = Label::createWithTTF(fullPath.c_str(), s_fontArial, 6);
     this->addChild(label);
     auto winSize = Director::getInstance()->getWinSize();
     label->setPosition(winSize.width/2, winSize.height/3);
@@ -601,11 +602,11 @@ void TestWriteString::onEnter()
 
     auto winSize = Director::getInstance()->getWinSize();
 
-    auto writeResult = Label::createWithTTF("show writeResult", "fonts/Thonburi.ttf", 18);
+    auto writeResult = Label::createWithTTF("show writeResult", s_fontArial, 18);
     this->addChild(writeResult);
     writeResult->setPosition(winSize.width / 2, winSize.height * 3 / 4);
 
-    auto readResult = Label::createWithTTF("show readResult", "fonts/Thonburi.ttf", 18);
+    auto readResult = Label::createWithTTF("show readResult", s_fontArial, 18);
     this->addChild(readResult);
     readResult->setPosition(winSize.width / 2, winSize.height / 3);
 
@@ -697,7 +698,7 @@ void TestGetContents::onEnter()
 
     auto winSize = Director::getInstance()->getWinSize();
 
-    auto readResult = Label::createWithTTF("show readResult", "fonts/Thonburi.ttf", 16);
+    auto readResult = Label::createWithTTF("show readResult", s_fontArial, 16);
     this->addChild(readResult);
     readResult->setPosition(winSize.width / 2, winSize.height / 2);
 
@@ -775,11 +776,11 @@ void TestWriteData::onEnter()
 
     auto winSize = Director::getInstance()->getWinSize();
 
-    auto writeResult = Label::createWithTTF("show writeResult", "fonts/Thonburi.ttf", 18);
+    auto writeResult = Label::createWithTTF("show writeResult", s_fontArial, 18);
     this->addChild(writeResult);
     writeResult->setPosition(winSize.width / 2, winSize.height * 3 / 4);
 
-    auto readResult = Label::createWithTTF("show readResult", "fonts/Thonburi.ttf", 18);
+    auto readResult = Label::createWithTTF("show readResult", s_fontArial, 18);
     this->addChild(readResult);
     readResult->setPosition(winSize.width / 2, winSize.height / 3);
 
@@ -835,11 +836,11 @@ void TestWriteValueMap::onEnter()
 
     auto winSize = Director::getInstance()->getWinSize();
 
-    auto writeResult = Label::createWithTTF("show writeResult", "fonts/Thonburi.ttf", 18);
+    auto writeResult = Label::createWithTTF("show writeResult", s_fontArial, 18);
     this->addChild(writeResult);
     writeResult->setPosition(winSize.width / 2, winSize.height * 3 / 4);
 
-    auto readResult = Label::createWithTTF("show readResult", "fonts/Thonburi.ttf", 18);
+    auto readResult = Label::createWithTTF("show readResult", s_fontArial, 18);
     this->addChild(readResult);
     readResult->setPosition(winSize.width / 2, winSize.height / 3);
 
@@ -940,11 +941,11 @@ void TestWriteValueVector::onEnter()
 
     auto winSize = Director::getInstance()->getWinSize();
 
-    auto writeResult = Label::createWithTTF("show writeResult", "fonts/Thonburi.ttf", 18);
+    auto writeResult = Label::createWithTTF("show writeResult", s_fontArial, 18);
     this->addChild(writeResult);
     writeResult->setPosition(winSize.width / 2, winSize.height * 3 / 4);
 
-    auto readResult = Label::createWithTTF("show readResult", "fonts/Thonburi.ttf", 18);
+    auto readResult = Label::createWithTTF("show readResult", s_fontArial, 18);
     this->addChild(readResult);
     readResult->setPosition(winSize.width / 2, winSize.height / 3);
 
@@ -1144,7 +1145,7 @@ void TestIsFileExistAsync::onEnter()
     auto s = Director::getInstance()->getWinSize();
     auto sharedFileUtils = FileUtils::getInstance();
     
-    sharedFileUtils->isFileExist("Images/grossini.png", [=](bool isExist) {
+    sharedFileUtils->isFileExist(s_pathGrossini, [=](bool isExist) {
         CCASSERT(std::this_thread::get_id() == Director::getInstance()->getCocos2dThreadId(), "Callback should be on cocos thread");
         auto label = Label::createWithSystemFont(isExist ? "Images/grossini.png exists" : "Images/grossini.png doesn't exist", "", 20);
         label->setPosition(s.width/2, s.height/3);
@@ -1289,11 +1290,11 @@ void TestWriteStringAsync::onEnter()
     
     auto winSize = Director::getInstance()->getWinSize();
     
-    auto writeResult = Label::createWithTTF("show writeResult", "fonts/Thonburi.ttf", 18);
+    auto writeResult = Label::createWithTTF("show writeResult", s_fontArial, 18);
     this->addChild(writeResult);
     writeResult->setPosition(winSize.width / 2, winSize.height * 3 / 4);
     
-    auto readResult = Label::createWithTTF("show readResult", "fonts/Thonburi.ttf", 18);
+    auto readResult = Label::createWithTTF("show readResult", s_fontArial, 18);
     this->addChild(readResult);
     readResult->setPosition(winSize.width / 2, winSize.height / 3);
     
@@ -1337,11 +1338,11 @@ void TestWriteDataAsync::onEnter()
 
     auto winSize = Director::getInstance()->getWinSize();
 
-    auto writeResult = Label::createWithTTF("show writeResult", "fonts/Thonburi.ttf", 18);
+    auto writeResult = Label::createWithTTF("show writeResult", s_fontArial, 18);
     this->addChild(writeResult);
     writeResult->setPosition(winSize.width / 2, winSize.height * 3 / 4);
 
-    auto readResult = Label::createWithTTF("show readResult", "fonts/Thonburi.ttf", 18);
+    auto readResult = Label::createWithTTF("show readResult", s_fontArial, 18);
     this->addChild(readResult);
     readResult->setPosition(winSize.width / 2, winSize.height / 3);
 

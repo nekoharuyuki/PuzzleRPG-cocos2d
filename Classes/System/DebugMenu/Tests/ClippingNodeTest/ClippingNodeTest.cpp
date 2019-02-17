@@ -853,7 +853,7 @@ void RawStencilBufferTest6::setup()
     glClear(GL_STENCIL_BUFFER_BIT);
     glFlush();
     glReadPixels(0, 0, 1, 1, GL_STENCIL_INDEX, GL_UNSIGNED_BYTE, &bits);
-    auto clearToZeroLabel = Label::createWithTTF(StringUtils::format("00=%02x", bits[0]), "fonts/arial.ttf", 20);
+    auto clearToZeroLabel = Label::createWithTTF(StringUtils::format("00=%02x", bits[0]), s_fontArial, 20);
     clearToZeroLabel->setPosition((winPoint.x / 3) * 1, winPoint.y - 10);
     this->addChild(clearToZeroLabel);
     glStencilMask(0x0F);
@@ -861,7 +861,7 @@ void RawStencilBufferTest6::setup()
     glClear(GL_STENCIL_BUFFER_BIT);
     glFlush();
     glReadPixels(0, 0, 1, 1, GL_STENCIL_INDEX, GL_UNSIGNED_BYTE, &bits);
-    auto clearToMaskLabel = Label::createWithTTF(StringUtils::format("0a=%02x", bits[0]), "fonts/arial.ttf", 20);
+    auto clearToMaskLabel = Label::createWithTTF(StringUtils::format("0a=%02x", bits[0]), s_fontArial, 20);
     clearToMaskLabel->setPosition((winPoint.x / 3) * 2, winPoint.y - 10);
     this->addChild(clearToMaskLabel);
 #endif
@@ -974,7 +974,7 @@ void ClippingToRenderTextureTest::expectedBehaviour()
 
 
     // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("Images/grossini.png");
+    auto sprite = Sprite::create(s_pathGrossini);
 
     // position the sprite on the center of the screen
     sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
@@ -1021,7 +1021,7 @@ void ClippingToRenderTextureTest::reproduceBug()
 
 
     // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("Images/grossini.png");
+    auto sprite = Sprite::create(s_pathGrossini);
 
     // position the sprite on the center of the screen
     sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));

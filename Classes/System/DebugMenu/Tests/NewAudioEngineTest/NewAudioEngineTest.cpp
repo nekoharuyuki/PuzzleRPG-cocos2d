@@ -26,6 +26,7 @@
 #include "platform/CCPlatformConfig.h"
 #include "NewAudioEngineTest.h"
 #include "ui/CocosGUI.h"
+#include "testResource.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
@@ -63,7 +64,7 @@ namespace {
         {
             auto ret = new (std::nothrow) TextButton();
             
-            TTFConfig ttfconfig("fonts/arial.ttf",25);
+            TTFConfig ttfconfig(s_fontArial,25);
             if (ret && ret->setTTFConfig(ttfconfig)) {
                 ret->setString(text);
                 ret->_onTriggered = onTriggered;
@@ -224,7 +225,7 @@ bool AudioControlTest::init()
     _updateTimeSlider = true;
     _isStopped = false;
     
-    std::string fontFilePath = "fonts/arial.ttf";
+    std::string fontFilePath = s_fontArial;
     
     auto& layerSize = this->getContentSize();
     
@@ -392,7 +393,7 @@ bool AudioLoadTest::init()
     {
         auto& layerSize = this->getContentSize();
 
-        auto stateLabel = Label::createWithTTF("status:", "fonts/arial.ttf", 30);
+        auto stateLabel = Label::createWithTTF("status:", s_fontArial, 30);
         stateLabel->setPosition(layerSize.width / 2, layerSize.height * 0.7f);
         addChild(stateLabel);
 
@@ -503,7 +504,7 @@ bool AudioProfileTest::init()
     _files[1] = "background.ogg";
 #endif
     
-    std::string fontFilePath = "fonts/arial.ttf";
+    std::string fontFilePath = s_fontArial;
     _minDelay = 1.0f;
     _time = 0.0f;
 

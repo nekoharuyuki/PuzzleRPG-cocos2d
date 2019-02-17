@@ -80,7 +80,7 @@ struct DownloaderTest : public TestCase
         bg->setContentSize(viewSize);
         
         // add a title on the top
-        auto title = Label::createWithTTF(name,"fonts/arial.ttf",16);
+        auto title = Label::createWithTTF(name,s_fontArial,16);
         title->setTag(TAG_TITLE);
         title->setAnchorPoint(Vec2(0.5, 1));
         title->setPosition(viewSize.width / 2, viewSize.height - margin);
@@ -107,7 +107,7 @@ struct DownloaderTest : public TestCase
         bg->addChild(bar, 10);
 
         // add a status label
-        auto label = Label::createWithTTF("","fonts/arial.ttf",14);
+        auto label = Label::createWithTTF("",s_fontArial,14);
         label->setTag(TAG_STATUS);
         label->setAnchorPoint(Vec2(0.5, 0.5));
         label->setPosition(Vec2(viewSize.width / 2, viewSize.height / 2));

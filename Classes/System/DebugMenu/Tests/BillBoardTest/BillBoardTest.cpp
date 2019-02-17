@@ -52,7 +52,7 @@ BillBoardRotationTest::BillBoardRotationTest()
     root->setPositionNormalized(Vec2(.5,.25));
     addChild(root);
     
-    auto model = Sprite3D::create("Images/orc.c3b");
+    auto model = Sprite3D::create(s_c3bTest);
     model->setScale(5);
     model->setRotation3D(Vec3(0,180,0));
     root->addChild(model);
@@ -251,7 +251,7 @@ void BillBoardTest::addNewAniBillBoardWithCoords(Vec3 p)
 {
     for (unsigned int i = 0; i < 10; ++i)
     {
-        auto billboardAni = BillBoard::create("Images/grossini.png");
+        auto billboardAni = BillBoard::create(s_pathGrossini);
         billboardAni->setScale(0.5f);
         billboardAni->setPosition3D(Vec3(p.x, p.y,  -150.0f + 30 * i));
         _layerBillBoard->addChild(billboardAni);

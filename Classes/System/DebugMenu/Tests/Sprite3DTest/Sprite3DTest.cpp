@@ -94,7 +94,7 @@ Sprite3DTestDemo::~Sprite3DTestDemo()
 //------------------------------------------------------------------
 Sprite3DForceDepthTest::Sprite3DForceDepthTest()
 {
-    auto orc = cocos2d::Sprite3D::create("Sprite3DTest/orc.c3b");
+    auto orc = cocos2d::Sprite3D::create(s_c3bTest);
     orc->setScale(5);
     orc->setPositionNormalized(Vec2(.5f,.3f));
     orc->setPositionZ(40);
@@ -243,7 +243,7 @@ Sprite3DUVAnimationTest::Sprite3DUVAnimationTest()
     camera->setCameraFlag(CameraFlag::USER1);
 
     //create cylinder
-    auto cylinder = Sprite3D::create("Sprite3DTest/cylinder.c3b");
+    auto cylinder = Sprite3D::create(s_c3bTest);
     auto mat = Sprite3DMaterial::createWithFilename("Sprite3DTest/UVAnimation.material");
     _state = mat->getTechniqueByIndex(0)->getPassByIndex(0)->getGLProgramState();
     cylinder->setMaterial(mat);
@@ -347,7 +347,7 @@ Sprite3DFakeShadowTest::Sprite3DFakeShadowTest()
     layer->addChild(_plane); 
 
     //create the orc
-    _orc = Sprite3D::create("Sprite3DTest/orc.c3b");
+    _orc = Sprite3D::create(s_c3bTest);
     _orc->setScale(0.2f);
     _orc->setRotation3D(Vec3(0,180,0));
     _orc->setPosition3D(Vec3(0,0,10));
@@ -550,7 +550,7 @@ Sprite3DBasicToonShaderTest::Sprite3DBasicToonShaderTest()
     auto _camera = Camera::createPerspective(60, visibleSize.width/visibleSize.height, 0.1f, 200);
     _camera->setCameraFlag(CameraFlag::USER1);
     // create a teapot
-    auto teapot = Sprite3D::create("Sprite3DTest/teapot.c3b"); 
+    auto teapot = Sprite3D::create(s_c3bTest);
     auto mat = Sprite3DMaterial::createWithFilename("Sprite3DTest/BasicToon.material");
     _state = mat->getTechniqueByIndex(0)->getPassByIndex(0)->getGLProgramState();
     teapot->setMaterial(mat);
@@ -606,7 +606,7 @@ Sprite3DLightMapTest::Sprite3DLightMapTest()
     _camera->setCameraFlag(CameraFlag::USER1);
     _camera->setPosition3D(Vec3(0,25,15));
     _camera->setRotation3D(Vec3(-35,0,0));
-    auto LightMapScene = Sprite3D::create("Sprite3DTest/LightMapScene.c3b"); 
+    auto LightMapScene = Sprite3D::create(s_c3bTest);
     LightMapScene->setScale(0.1f); 
     addChild(LightMapScene);
     addChild(_camera); 
@@ -824,13 +824,13 @@ void Sprite3DEffectTest::onTouchesEnded(const std::vector<Touch*>& touches, Even
 
 AsyncLoadSprite3DTest::AsyncLoadSprite3DTest()
 {
-    _paths.push_back("Sprite3DTest/boss.obj");
-    _paths.push_back("Sprite3DTest/girl.c3b");
-    _paths.push_back("Sprite3DTest/orc.c3b");
-    _paths.push_back("Sprite3DTest/ReskinGirl.c3b");
-    _paths.push_back("Sprite3DTest/axe.c3b");
+    _paths.push_back(s_c3bTest);
+    _paths.push_back(s_c3bTest);
+    _paths.push_back(s_c3bTest);
+    _paths.push_back(s_c3bTest);
+    _paths.push_back(s_c3bTest);
     
-    TTFConfig ttfConfig("fonts/arial.ttf", 15);
+    TTFConfig ttfConfig(s_fontArial, 15);
     auto label1 = Label::createWithTTF(ttfConfig,"AsyncLoad Sprite3D");
     auto item1 = MenuItemLabel::create(label1,CC_CALLBACK_1(AsyncLoadSprite3DTest::menuCallback_asyncLoadSprite,this) );
     
@@ -896,7 +896,7 @@ Sprite3DWithSkinTest::Sprite3DWithSkinTest()
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     
     // switch animation quality. In fact, you can set the sprite3d out of frustum to Animate3DQuality::QUALITY_NONE, it can save a lot of cpu time
-    MenuItemFont::setFontName("fonts/arial.ttf");
+    MenuItemFont::setFontName(s_fontArial);
     MenuItemFont::setFontSize(15);
     _animateQuality = (int)Animate3DQuality::QUALITY_LOW;
     _menuItem = MenuItemFont::create(getAnimationQualityMessage(), CC_CALLBACK_1(Sprite3DWithSkinTest::switchAnimationQualityCallback,this));
@@ -922,7 +922,7 @@ std::string Sprite3DWithSkinTest::subtitle() const
 
 void Sprite3DWithSkinTest::addNewSpriteWithCoords(Vec2 p)
 {
-    std::string fileName = "Sprite3DTest/orc.c3b";
+    std::string fileName = s_c3bTest;
     auto sprite = Sprite3D::create(fileName);
     sprite->setScale(3);
     sprite->setRotation3D(Vec3(0,180,0));
@@ -1035,7 +1035,7 @@ std::string Sprite3DWithSkinOutlineTest::subtitle() const
 void Sprite3DWithSkinOutlineTest::addNewSpriteWithCoords(Vec2 p)
 {
     
-    std::string fileName = "Sprite3DTest/orc.c3b";
+    std::string fileName = s_c3bTest;
     auto sprite = Sprite3D::create(fileName);
     
     auto material = Sprite3DMaterial::createWithFilename("Sprite3DTest/outline.material");
@@ -1137,7 +1137,7 @@ void Animate3DTest::update(float dt)
 
 void Animate3DTest::addSprite3D()
 {
-    std::string fileName = "Sprite3DTest/tortoise.c3b";
+    std::string fileName = s_c3bTest;
     auto sprite = Sprite3D::create(fileName);
     sprite->setScale(0.1f);
     auto s = Director::getInstance()->getWinSize();
@@ -1237,7 +1237,7 @@ std::string AttachmentTest::subtitle() const
 
 void AttachmentTest::addNewSpriteWithCoords(Vec2 p)
 {
-    std::string fileName = "Sprite3DTest/orc.c3b";
+    std::string fileName = s_c3bTest;
     auto sprite = Sprite3D::create(fileName);
     sprite->setScale(5);
     sprite->setRotation3D(Vec3(0,180,0));
@@ -1245,7 +1245,7 @@ void AttachmentTest::addNewSpriteWithCoords(Vec2 p)
     sprite->setPosition( Vec2( p.x, p.y) );
     
     //test attach
-    auto sp = Sprite3D::create("Sprite3DTest/axe.c3b");
+    auto sp = Sprite3D::create(s_c3bTest);
     sprite->getAttachNode("Bip001 R Hand")->addChild(sp);
     
     auto animation = Animation3D::create(fileName);
@@ -1267,7 +1267,7 @@ void AttachmentTest::onTouchesEnded(const std::vector<Touch*>& touches, Event* e
     }
     else
     {
-        auto sp = Sprite3D::create("Sprite3DTest/axe.c3b");
+        auto sp = Sprite3D::create(s_c3bTest);
         _sprite->getAttachNode("Bip001 R Hand")->addChild(sp);
     }
     _hasWeapon = !_hasWeapon;
@@ -1281,7 +1281,7 @@ Sprite3DReskinTest::Sprite3DReskinTest()
     auto listener = EventListenerTouchAllAtOnce::create();
     listener->onTouchesEnded = CC_CALLBACK_2(Sprite3DReskinTest::onTouchesEnded, this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
-    TTFConfig ttfConfig("fonts/arial.ttf", 20);
+    TTFConfig ttfConfig(s_fontArial, 20);
     auto label1 = Label::createWithTTF(ttfConfig,"Hair");
     auto item1 = MenuItemLabel::create(label1,CC_CALLBACK_1(Sprite3DReskinTest::menuCallback_reSkin,this) );
     auto label2 = Label::createWithTTF(ttfConfig,"Glasses");
@@ -1328,7 +1328,7 @@ std::string Sprite3DReskinTest::subtitle() const
 
 void Sprite3DReskinTest::addNewSpriteWithCoords(Vec2 p)
 {
-    std::string fileName = "Sprite3DTest/ReskinGirl.c3b";
+    std::string fileName = s_c3bTest;
     auto sprite = Sprite3D::create(fileName);
     sprite->setScale(4);
     sprite->setRotation3D(Vec3(0,0,0));
@@ -1407,7 +1407,7 @@ Sprite3DWithOBBPerformanceTest::Sprite3DWithOBBPerformanceTest()
     initDrawBox();
     
     addNewSpriteWithCoords(Vec2(s.width/2, s.height/2));
-    MenuItemFont::setFontName("fonts/arial.ttf");
+    MenuItemFont::setFontName(s_fontArial);
     MenuItemFont::setFontSize(65);
     auto decrease = MenuItemFont::create(" - ", CC_CALLBACK_1(Sprite3DWithOBBPerformanceTest::delOBBCallback, this));
     decrease->setColor(Color3B(0,200,20));
@@ -1419,7 +1419,7 @@ Sprite3DWithOBBPerformanceTest::Sprite3DWithOBBPerformanceTest()
     menu->setPosition(Vec2(s.width/2, s.height-65));
     addChild(menu, 1);
     
-    TTFConfig ttfCount("fonts/Marker Felt.ttf", 30);
+    TTFConfig ttfCount(s_fontArial, 30);
     _labelCubeCount = Label::createWithTTF(ttfCount,"0 cubes");
     _labelCubeCount->setColor(Color3B(0,200,20));
     _labelCubeCount->setPosition(Vec2(s.width/2, s.height-90));
@@ -1528,7 +1528,7 @@ void Sprite3DWithOBBPerformanceTest::initDrawBox()
 
 void Sprite3DWithOBBPerformanceTest::addNewSpriteWithCoords(Vec2 p)
 {
-    std::string fileName = "Sprite3DTest/tortoise.c3b";
+    std::string fileName = s_c3bTest;
     auto sprite = Sprite3D::create(fileName);
     AABB aabb = sprite->getAABB();
     _obbt = OBB(aabb);
@@ -1668,7 +1668,7 @@ std::string Sprite3DMirrorTest::subtitle() const
 
 void Sprite3DMirrorTest::addNewSpriteWithCoords(Vec2 p)
 {
-    std::string fileName = "Sprite3DTest/orc.c3b";
+    std::string fileName = s_c3bTest;
     auto sprite = Sprite3D::create(fileName);
     sprite->setScale(5);
     sprite->setRotation3D(Vec3(0,180,0));
@@ -1676,7 +1676,7 @@ void Sprite3DMirrorTest::addNewSpriteWithCoords(Vec2 p)
     sprite->setPosition( Vec2( p.x - 80, p.y) );
     
     //test attach
-    auto sp = Sprite3D::create("Sprite3DTest/axe.c3b");
+    auto sp = Sprite3D::create(s_c3bTest);
     sprite->getAttachNode("Bip001 R Hand")->addChild(sp);
     
     auto animation = Animation3D::create(fileName);
@@ -1699,7 +1699,7 @@ void Sprite3DMirrorTest::addNewSpriteWithCoords(Vec2 p)
     sprite->setPosition( Vec2( p.x + 80, p.y) );
     
     //test attach
-    sp = Sprite3D::create("Sprite3DTest/axe.c3b");
+    sp = Sprite3D::create(s_c3bTest);
     sprite->getAttachNode("Bip001 R Hand")->addChild(sp);
     
     animation = Animation3D::create(fileName);
@@ -1732,7 +1732,7 @@ std::string QuaternionTest::subtitle() const
 
 void QuaternionTest::addNewSpriteWithCoords(Vec2 p)
 {
-    std::string fileName = "Sprite3DTest/tortoise.c3b";
+    std::string fileName = s_c3bTest;
     auto sprite = Sprite3D::create(fileName);
     sprite->setScale(0.1f);
     auto s = Director::getInstance()->getWinSize();
@@ -1826,7 +1826,7 @@ void UseCaseSprite3D::switchCase()
     _label->setString(_useCaseTitles[_caseIdx]);
     if (_caseIdx == 0) // use case 1, 3d transparent sprite + 2d sprite
     {
-        std::string filename = "Sprite3DTest/girl.c3b";
+        std::string filename = s_c3bTest;
         auto sprite = Sprite3D::create(filename);
         sprite->setScale(0.15f);
         auto animation = Animation3D::create(filename);
@@ -1870,7 +1870,7 @@ void UseCaseSprite3D::switchCase()
         layer->setGlobalZOrder(-1);
         addChild(layer);
         
-        std::string filename = "Sprite3DTest/girl.c3b";
+        std::string filename = s_c3bTest;
         auto sprite = Sprite3D::create(filename);
         sprite->setScale(0.5f);
         auto animation = Animation3D::create(filename);
@@ -1882,7 +1882,7 @@ void UseCaseSprite3D::switchCase()
         sprite->setPosition(s.width * 0.25f, s.height * 0.125f);
         layer->addChild(sprite);
         
-        TTFConfig ttfConfig("fonts/arial.ttf", 15);
+        TTFConfig ttfConfig(s_fontArial, 15);
         auto label1 = Label::createWithTTF(ttfConfig,"Message");
         auto item1 = MenuItemLabel::create(label1,CC_CALLBACK_1(UseCaseSprite3D::menuCallback_Message,this) );
         auto label2 = Label::createWithTTF(ttfConfig,"Message");
@@ -1998,7 +1998,7 @@ void NodeAnimationTest::addNewSpriteWithCoords(Vec2 p)
     auto s = Director::getInstance()->getWinSize();
     
     // add jumping ball
-    std::string fileName = "Sprite3DTest/ball.c3b";
+    std::string fileName = s_c3bTest;
     auto sprite = Sprite3D::create(fileName);
     sprite->setRotation3D(Vec3(0, 180, 0));
     sprite->setScale(3);
@@ -2082,7 +2082,7 @@ void Sprite3DCubeMapTest::addNewSpriteWithCoords(Vec2 p)
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
     // create a teapot
-    _teapot = Sprite3D::create("Sprite3DTest/teapot.c3b");
+    _teapot = Sprite3D::create(s_c3bTest);
     _teapot->retain();
 
     // create the second texture for cylinder
@@ -2178,7 +2178,7 @@ Sprite3DClippingTest::Sprite3DClippingTest()
     this->addChild(clipSprite3D);
     clipSprite3D->setScale(3.0f);
     
-    auto sprite3D = Sprite3D::create("Sprite3DTest/orc.c3b");
+    auto sprite3D = Sprite3D::create(s_c3bTest);
     sprite3D->setScale(1.0f);
     sprite3D->setRotation3D(Vec3(0.0f, 180.0f, 0.0f));
     clipSprite3D->addChild(sprite3D);//5
@@ -2187,7 +2187,7 @@ Sprite3DClippingTest::Sprite3DClippingTest()
     
     auto seq = Sequence::create(ScaleTo::create(2.f, 3), ScaleTo::create(2.f, 0.5f), NULL);
     sprite3D->runAction(RepeatForever::create(seq));
-    auto animation = Animation3D::create("Sprite3DTest/orc.c3b");
+    auto animation = Animation3D::create(s_c3bTest);
     auto animate = Animate3D::create(animation);
     sprite3D->runAction(RepeatForever::create(animate));
     sprite3D->setForce2DQueue(true);
@@ -2214,7 +2214,7 @@ Animate3DCallbackTest::Animate3DCallbackTest()
     FileUtils::getInstance()->addSearchPath("Particle3D/scripts");
     
     auto s = Director::getInstance()->getWinSize();
-    _sprite3d = Sprite3D::create("Sprite3DTest/ReskinGirl.c3b");
+    _sprite3d = Sprite3D::create(s_c3bTest);
     _sprite3d->setPosition(Vec2(s.width / 2.0f, s.height / 3.0f));
     _sprite3d->setScale(3.0f);
     _sprite3d->setRotation3D(Vec3(0.0f, 90.0f, 0.0f));
@@ -2231,7 +2231,7 @@ Animate3DCallbackTest::Animate3DCallbackTest()
     rootps->setScale(4.0f);
     this->addChild(rootps, 0, 100);
 
-    auto animation = Animation3D::create("Sprite3DTest/ReskinGirl.c3b");
+    auto animation = Animation3D::create(s_c3bTest);
     if (animation)
     {
         auto animate = Animate3D::create(animation);
@@ -2276,7 +2276,7 @@ Sprite3DTestMeshLight::Sprite3DTestMeshLight()
 {
     auto s = Director::getInstance()->getWinSize();
 
-    auto _sprite = Sprite3D::create("Sprite3DTest/mesh_model.c3b");
+    auto _sprite = Sprite3D::create(s_c3bTest);
     _sprite->setPosition(Vec2(0, 0));
     _sprite->setScale(0.05f);
     _sprite->setCameraMask(2);
@@ -2356,7 +2356,7 @@ std::string Sprite3DVertexColorTest::subtitle() const
 
 CameraBackgroundClearTest::CameraBackgroundClearTest()
 {
-    TTFConfig ttfConfig("fonts/arial.ttf", 20);
+    TTFConfig ttfConfig(s_fontArial, 20);
     auto label1 = Label::createWithTTF(ttfConfig,"Clear Mode");
     auto item1 = MenuItemLabel::create(label1,CC_CALLBACK_1(CameraBackgroundClearTest::switch_CameraClearMode,this) );
     
@@ -2374,7 +2374,7 @@ CameraBackgroundClearTest::CameraBackgroundClearTest()
     _camera->lookAt(Vec3(0.f, 0.f, 0.f));
     addChild(_camera);
     
-    auto sprite = Sprite3D::create("Sprite3DTest/orc.c3b");
+    auto sprite = Sprite3D::create(s_c3bTest);
     addChild(sprite);
     sprite->setCameraMask(2);
     
@@ -2430,7 +2430,7 @@ MotionStreak3DTest::MotionStreak3DTest()
     camera->lookAt(Vec3(0.f, 0.f, 0.f));
     addChild(camera);
     
-    auto sprite = Sprite3D::create("Sprite3DTest/orc.c3b");
+    auto sprite = Sprite3D::create(s_c3bTest);
     sprite->setPosition(20.f, 0.f);
     addChild(sprite);
     
@@ -2469,7 +2469,7 @@ Sprite3DNormalMappingTest::Sprite3DNormalMappingTest()
     auto s = Director::getInstance()->getWinSize();
 
     {
-        auto sprite = Sprite3D::create("Sprite3DTest/sphere.c3b");
+        auto sprite = Sprite3D::create(s_c3bTest);
         sprite->setPosition(Vec2(-30, 0));
         sprite->setRotation3D(Vec3(90.0f, 0.0f, 0.0f));
         sprite->setScale(2.0);
@@ -2483,7 +2483,7 @@ Sprite3DNormalMappingTest::Sprite3DNormalMappingTest()
     CCASSERT(maxAttributes > 8, "attributes supported must be greater than 8");
     if (maxAttributes > 8)
     {
-        auto sprite = Sprite3D::create("Sprite3DTest/sphere_bumped.c3b");
+        auto sprite = Sprite3D::create(s_c3bTest);
         sprite->setPosition(Vec2(30, 0));
         sprite->setRotation3D(Vec3(90.0f, 0.0f, 0.0f));
         sprite->setScale(20.0);
@@ -2554,7 +2554,7 @@ Sprite3DPropertyTest::Sprite3DPropertyTest()
     camera->lookAt(Vec3(0.f, 0.f, 0.f));
     addChild(camera);
 
-    _sprite = Sprite3D::create("Sprite3DTest/orc.c3b");
+    _sprite = Sprite3D::create(s_c3bTest);
     _sprite->setPosition(20.f, 0.f);
     _sprite->setRotation3D(Vec3(0, 180, 0));
     _meshTex = _sprite->getMesh()->getTexture();
@@ -2567,7 +2567,7 @@ Sprite3DPropertyTest::Sprite3DPropertyTest()
     ////listener->onTouchesEnded = CC_CALLBACK_2(Sprite3DReskinTest::onTouchesEnded, this);
     //_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 20);
+    TTFConfig ttfConfig(s_fontArial, 20);
 
     auto label1 = Label::createWithTTF(ttfConfig, "Print Mesh Name");
     auto item1 = MenuItemLabel::create(label1, CC_CALLBACK_1(Sprite3DPropertyTest::printMeshName, this));

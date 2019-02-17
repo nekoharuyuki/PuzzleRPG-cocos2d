@@ -25,6 +25,7 @@
 #include "HttpClientTest.h"
 #include "../ExtensionsTest.h"
 #include <string>
+#include "testResource.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -51,67 +52,67 @@ HttpClientTest::HttpClientTest()
     addChild(menuRequest);
     
     // Get 
-    auto labelGet = Label::createWithTTF("Test Get", "fonts/arial.ttf", 22);
+    auto labelGet = Label::createWithTTF("Test Get", s_fontArial, 22);
     auto itemGet = MenuItemLabel::create(labelGet, CC_CALLBACK_1(HttpClientTest::onMenuGetTestClicked, this, false));
     itemGet->setPosition(LEFT, winSize.height - MARGIN - SPACE);
     menuRequest->addChild(itemGet);
     
     // Post
-    auto labelPost = Label::createWithTTF("Test Post", "fonts/arial.ttf", 22);
+    auto labelPost = Label::createWithTTF("Test Post", s_fontArial, 22);
     auto itemPost = MenuItemLabel::create(labelPost, CC_CALLBACK_1(HttpClientTest::onMenuPostTestClicked, this, false));
     itemPost->setPosition(LEFT, winSize.height - MARGIN - 2 * SPACE);
     menuRequest->addChild(itemPost);
     
     // Post Binary
-    auto labelPostBinary = Label::createWithTTF("Test Post Binary", "fonts/arial.ttf", 22);
+    auto labelPostBinary = Label::createWithTTF("Test Post Binary", s_fontArial, 22);
     auto itemPostBinary = MenuItemLabel::create(labelPostBinary, CC_CALLBACK_1(HttpClientTest::onMenuPostBinaryTestClicked, this, false));
     itemPostBinary->setPosition(LEFT, winSize.height - MARGIN - 3 * SPACE);
     menuRequest->addChild(itemPostBinary);
 
     // Put
-    auto labelPut = Label::createWithTTF("Test Put", "fonts/arial.ttf", 22);
+    auto labelPut = Label::createWithTTF("Test Put", s_fontArial, 22);
     auto itemPut = MenuItemLabel::create(labelPut, CC_CALLBACK_1(HttpClientTest::onMenuPutTestClicked, this, false));
     itemPut->setPosition(LEFT, winSize.height - MARGIN - 4 * SPACE);
     menuRequest->addChild(itemPut);
 
     // Delete
-    auto labelDelete = Label::createWithTTF("Test Delete", "fonts/arial.ttf", 22);
+    auto labelDelete = Label::createWithTTF("Test Delete", s_fontArial, 22);
     auto itemDelete = MenuItemLabel::create(labelDelete, CC_CALLBACK_1(HttpClientTest::onMenuDeleteTestClicked, this, false));
     itemDelete->setPosition(LEFT, winSize.height - MARGIN - 5 * SPACE);
     menuRequest->addChild(itemDelete);
 
     // Get for sendImmediate
-    labelGet = Label::createWithTTF("Test Immediate Get", "fonts/arial.ttf", 22);
+    labelGet = Label::createWithTTF("Test Immediate Get", s_fontArial, 22);
     itemGet = MenuItemLabel::create(labelGet, CC_CALLBACK_1(HttpClientTest::onMenuGetTestClicked, this, true));
     itemGet->setPosition(RIGHT, winSize.height - MARGIN - SPACE);
     menuRequest->addChild(itemGet);
 
     // Post for sendImmediate
-    labelPost = Label::createWithTTF("Test Immediate Post", "fonts/arial.ttf", 22);
+    labelPost = Label::createWithTTF("Test Immediate Post", s_fontArial, 22);
     itemPost = MenuItemLabel::create(labelPost, CC_CALLBACK_1(HttpClientTest::onMenuPostTestClicked, this, true));
     itemPost->setPosition(RIGHT, winSize.height - MARGIN - 2 * SPACE);
     menuRequest->addChild(itemPost);
 
     // Post Binary for sendImmediate
-    labelPostBinary = Label::createWithTTF("Test Immediate Post Binary", "fonts/arial.ttf", 22);
+    labelPostBinary = Label::createWithTTF("Test Immediate Post Binary", s_fontArial, 22);
     itemPostBinary = MenuItemLabel::create(labelPostBinary, CC_CALLBACK_1(HttpClientTest::onMenuPostBinaryTestClicked, this, true));
     itemPostBinary->setPosition(RIGHT, winSize.height - MARGIN - 3 * SPACE);
     menuRequest->addChild(itemPostBinary);
 
     // Put for sendImmediate
-    labelPut = Label::createWithTTF("Test Immediate Put", "fonts/arial.ttf", 22);
+    labelPut = Label::createWithTTF("Test Immediate Put", s_fontArial, 22);
     itemPut = MenuItemLabel::create(labelPut, CC_CALLBACK_1(HttpClientTest::onMenuPutTestClicked, this, true));
     itemPut->setPosition(RIGHT, winSize.height - MARGIN - 4 * SPACE);
     menuRequest->addChild(itemPut);
 
     // Delete for sendImmediate
-    labelDelete = Label::createWithTTF("Test Immediate Delete", "fonts/arial.ttf", 22);
+    labelDelete = Label::createWithTTF("Test Immediate Delete", s_fontArial, 22);
     itemDelete = MenuItemLabel::create(labelDelete, CC_CALLBACK_1(HttpClientTest::onMenuDeleteTestClicked, this, true));
     itemDelete->setPosition(RIGHT, winSize.height - MARGIN - 5 * SPACE);
     menuRequest->addChild(itemDelete);
     
     // Response Code Label
-    _labelStatusCode = Label::createWithTTF("HTTP Status Code", "fonts/arial.ttf", 18);
+    _labelStatusCode = Label::createWithTTF("HTTP Status Code", s_fontArial, 18);
     _labelStatusCode->setPosition(winSize.width / 2,  winSize.height - MARGIN - 6 * SPACE);
     addChild(_labelStatusCode);
 }

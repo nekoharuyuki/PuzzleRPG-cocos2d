@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "UILayoutTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;
@@ -61,7 +62,7 @@ bool UILayoutTest::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text* alert = Text::create("Layout", "fonts/Marker Felt.ttf", 30 );
+        Text* alert = Text::create("Layout", s_fontArial, 30 );
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                  widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
@@ -123,7 +124,7 @@ bool UILayoutTest_Color::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text* alert = Text::create("Layout color render", "fonts/Marker Felt.ttf", 30);
+        Text* alert = Text::create("Layout color render", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                  widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
@@ -187,7 +188,7 @@ bool UILayoutTest_Gradient::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text* alert = Text::create("Layout gradient render", "fonts/Marker Felt.ttf", 30);
+        Text* alert = Text::create("Layout gradient render", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                  widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
@@ -251,7 +252,7 @@ bool UILayoutTest_BackGroundImage::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text* alert = Text::create("Layout background image", "fonts/Marker Felt.ttf", 20);
+        Text* alert = Text::create("Layout background image", s_fontArial, 20);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 4.5f));
         _uiLayer->addChild(alert);
@@ -292,7 +293,7 @@ bool UILayoutTest_BackGroundImage::init()
 
         _layout = layout;
 
-        TTFConfig ttfConfig("fonts/arial.ttf", 15);
+        TTFConfig ttfConfig(s_fontArial, 15);
         auto label1 = Label::createWithTTF(ttfConfig, "Print Resources");
         auto item1 = MenuItemLabel::create(label1, CC_CALLBACK_1(UILayoutTest_BackGroundImage::printWidgetResources, this));
         item1->setPosition(Vec2(VisibleRect::left().x + 60, VisibleRect::bottom().y + item1->getContentSize().height * 3));
@@ -328,7 +329,7 @@ bool UILayoutTest_BackGroundImage_Scale9::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text* alert = Text::create("Layout background image scale9", "fonts/Marker Felt.ttf", 20);
+        Text* alert = Text::create("Layout background image scale9", s_fontArial, 20);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 4.5f));
         _uiLayer->addChild(alert);
@@ -389,7 +390,7 @@ bool UILayoutTest_Layout_Linear_Vertical::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text* alert = Text::create("Layout Linear Vertical", "fonts/Marker Felt.ttf", 20);
+        Text* alert = Text::create("Layout Linear Vertical", s_fontArial, 20);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                  widgetSize.height / 2.0f - alert->getContentSize().height * 4.5f));
@@ -465,7 +466,7 @@ bool UILayoutTest_Layout_Linear_Horizontal::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text* alert = Text::create("Layout Linear Horizontal", "fonts/Marker Felt.ttf", 20);
+        Text* alert = Text::create("Layout Linear Horizontal", s_fontArial, 20);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 4.5f));
         _uiLayer->addChild(alert);
@@ -539,7 +540,7 @@ bool UILayoutTest_Layout_Relative_Align_Parent::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text* alert = Text::create("Layout Relative Align Parent", "fonts/Marker Felt.ttf", 20);
+        Text* alert = Text::create("Layout Relative Align Parent", s_fontArial, 20);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 4.5f));
         _uiLayer->addChild(alert);
@@ -674,7 +675,7 @@ bool UILayoutTest_Layout_Relative_Location::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text* alert = Text::create("Layout Relative Location", "fonts/Marker Felt.ttf", 20);
+        Text* alert = Text::create("Layout Relative Location", s_fontArial, 20);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 4.5f));
         _uiLayer->addChild(alert);
@@ -768,7 +769,7 @@ bool UILayoutTest_Layout_Scaled_Widget::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text* alert = Text::create("Layout Scaled Widget", "fonts/Marker Felt.ttf", 20);
+        Text* alert = Text::create("Layout Scaled Widget", s_fontArial, 20);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 4.5f));
         _uiLayer->addChild(alert);

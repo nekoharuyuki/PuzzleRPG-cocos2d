@@ -639,7 +639,7 @@ void ActionAnimate::onEnter()
     for( int i=1;i<15;i++)
     {
         char szName[100] = {0};
-        sprintf(szName, "Images/grossini_dance_%02d.png", i);
+        sprintf(szName, "asset/char/chara_enemy_%02d.png", i);
         animation->addSpriteFrameWithFile(szName);
     }
     // should last 2.8 seconds. And there are 14 frames.
@@ -1415,12 +1415,12 @@ void ActionStacked::onEnter()
 
 void ActionStacked::addNewSpriteWithCoords(Vec2 p)
 {
-    int idx = CCRANDOM_0_1() * 1400 / 100;
-    int x = (idx%5) * 85;
-    int y = (idx/5) * 121;
+    int idx = CCRANDOM_0_1() * 1501 / 454;
+    int x = (idx%5) * 160;
+    int y = (idx/5) * 180;
     
     
-    auto sprite = Sprite::create("Images/grossini_dance_atlas.png", Rect(x,y,85,121));
+    auto sprite = Sprite::create("animations/animations01/Fire3.png", Rect(x,y,85,121));
     
     sprite->setPosition(p);
     this->addChild(sprite);

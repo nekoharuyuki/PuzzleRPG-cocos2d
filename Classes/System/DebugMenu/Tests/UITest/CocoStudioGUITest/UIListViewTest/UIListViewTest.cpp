@@ -23,11 +23,12 @@
  ****************************************************************************/
 
 #include "UIListViewTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;
 
-const char* font_UIListViewTest = "fonts/Marker Felt.ttf";
+const char* font_UIListViewTest = s_fontArial;
 
 UIListViewTests::UIListViewTests()
 {
@@ -66,14 +67,14 @@ bool UIListViewTest_Vertical::init()
     {
         Size widgetSize = _widget->getContentSize();
         
-        _displayValueLabel = Text::create("There are 50 items, but we only create 5 templates", "fonts/Marker Felt.ttf", 20);
+        _displayValueLabel = Text::create("There are 50 items, but we only create 5 templates", s_fontArial, 20);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f,
                                               widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f + 30));
         _uiLayer->addChild(_displayValueLabel);
         
         
-        Text* alert = Text::create("ListView vertical", "fonts/Marker Felt.ttf", 30);
+        Text* alert = Text::create("ListView vertical", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                  widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
@@ -167,15 +168,15 @@ bool UIListViewTest_Vertical::init()
         {
             float position = 75;
             // Labels
-            _indexLabels[0] = Text::create(" ", "fonts/Marker Felt.ttf", 12);
+            _indexLabels[0] = Text::create(" ", s_fontArial, 12);
             _indexLabels[0]->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
             _indexLabels[0]->setPosition(_uiLayer->getContentSize() / 2 + Size(0, position));
             _uiLayer->addChild(_indexLabels[0]);
-            _indexLabels[1] = Text::create("  ", "fonts/Marker Felt.ttf", 12);
+            _indexLabels[1] = Text::create("  ", s_fontArial, 12);
             _indexLabels[1]->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
             _indexLabels[1]->setPosition(_uiLayer->getContentSize() / 2 + Size(140, 0));
             _uiLayer->addChild(_indexLabels[1]);
-            _indexLabels[2] = Text::create(" ", "fonts/Marker Felt.ttf", 12);
+            _indexLabels[2] = Text::create(" ", s_fontArial, 12);
             _indexLabels[2]->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
             _indexLabels[2]->setPosition(_uiLayer->getContentSize() / 2 + Size(0, -position));
             _uiLayer->addChild(_indexLabels[2]);
@@ -323,7 +324,7 @@ bool UIListViewTest_Horizontal::init()
         Size widgetSize = _widget->getContentSize();
         
         _displayValueLabel = Text::create("There are 50 items, but we only create 5 templates",
-                                          "fonts/Marker Felt.ttf",
+                                          s_fontArial,
                                           20);
         
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
@@ -334,7 +335,7 @@ bool UIListViewTest_Horizontal::init()
         _uiLayer->addChild(_displayValueLabel);
         
         
-        Text* alert = Text::create("ListView horizontal", "fonts/Marker Felt.ttf", 30);
+        Text* alert = Text::create("ListView horizontal", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                 widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
@@ -510,7 +511,7 @@ bool UIListViewTest_ScrollToItem::init()
     
     static int NUMBER_OF_ITEMS = 31;
     _nextIndex = 0;
-    _titleLabel = Text::create("Scroll to item", "fonts/Marker Felt.ttf", 32);
+    _titleLabel = Text::create("Scroll to item", s_fontArial, 32);
     _titleLabel->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
     _titleLabel->setPosition(Vec2(layerSize / 2) + Vec2(0, _titleLabel->getContentSize().height * 3.15f));
     _uiLayer->addChild(_titleLabel, 3);
@@ -584,7 +585,7 @@ bool UIListViewTest_Magnetic::init()
     
     Size layerSize = _uiLayer->getContentSize();
     
-    _titleLabel = Text::create("Magnetic scroll", "fonts/Marker Felt.ttf", 32);
+    _titleLabel = Text::create("Magnetic scroll", s_fontArial, 32);
     _titleLabel->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
     _titleLabel->setPosition(Vec2(layerSize / 2) + Vec2(0, _titleLabel->getContentSize().height * 3.15f));
     _uiLayer->addChild(_titleLabel, 3);
@@ -624,7 +625,7 @@ bool UIListViewTest_Magnetic::init()
     {
         for(int i = 0; i < 5; ++i)
         {
-            _indexLabels[i] = Text::create(" ", "fonts/Marker Felt.ttf", 12);
+            _indexLabels[i] = Text::create(" ", s_fontArial, 12);
             _indexLabels[i]->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
             _uiLayer->addChild(_indexLabels[i]);
         }
@@ -743,7 +744,7 @@ bool UIListViewTest_Padding::init()
 
     Size layerSize = _uiLayer->getContentSize();
 
-    _titleLabel = Text::create("Set Padding", "fonts/Marker Felt.ttf", 32);
+    _titleLabel = Text::create("Set Padding", s_fontArial, 32);
     _titleLabel->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
     _titleLabel->setPosition(Vec2(layerSize / 2) + Vec2(0, _titleLabel->getContentSize().height * 3.15f));
     _uiLayer->addChild(_titleLabel, 3);
@@ -783,7 +784,7 @@ bool UIListViewTest_Padding::init()
 
     // Slider for setting padding
     {
-        auto title = Text::create("Padding", "fonts/Marker Felt.ttf", 14);
+        auto title = Text::create("Padding", s_fontArial, 14);
         title->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
         title->setPosition(Vec2(30, 170));
         _uiLayer->addChild(title);
@@ -809,14 +810,14 @@ bool UIListViewTest_Padding::init()
 
             // Show title of slider
             {
-                auto text = Text::create(str, "fonts/Marker Felt.ttf", 12);
+                auto text = Text::create(str, s_fontArial, 12);
                 text->setAnchorPoint(Vec2::ANCHOR_MIDDLE_LEFT);
                 text->setPosition(Vec2(3, 150 - (25 * i)));
                 _uiLayer->addChild(text);
             }
             // Show value of paddings
             {
-                auto text = Text::create(str + "\nPadding=0", "fonts/Marker Felt.ttf", 12);
+                auto text = Text::create(str + "\nPadding=0", s_fontArial, 12);
                 text->setAnchorPoint(Vec2::ANCHOR_MIDDLE_LEFT);
                 text->setPosition(Vec2(layerSize.width - 65, 200 - (40 * i)));
                 _uiLayer->addChild(text);
@@ -830,7 +831,7 @@ bool UIListViewTest_Padding::init()
     {
         for(int i = 0; i < 5; ++i)
         {
-            _indexLabels[i] = Text::create(" ", "fonts/Marker Felt.ttf", 12);
+            _indexLabels[i] = Text::create(" ", s_fontArial, 12);
             _indexLabels[i]->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
             _uiLayer->addChild(_indexLabels[i]);
         }

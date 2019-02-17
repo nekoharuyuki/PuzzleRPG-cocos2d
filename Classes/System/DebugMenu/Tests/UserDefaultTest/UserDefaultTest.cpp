@@ -28,6 +28,7 @@
 #include <vector>
 #include <sstream>
 #include <iomanip>
+#include "testResource.h"
 
 using namespace std;
 
@@ -45,11 +46,11 @@ UserDefaultTests::UserDefaultTests()
 UserDefaultTest::UserDefaultTest()
 {
     auto s = Director::getInstance()->getWinSize();
-    auto label = Label::createWithTTF("CCUserDefault test Log data see console", "fonts/arial.ttf", 22);
+    auto label = Label::createWithTTF("CCUserDefault test Log data see console", s_fontArial, 22);
     addChild(label, 0);
     label->setPosition( Vec2(s.width/2, s.height-50) );
 
-    this->_label = Label::createWithTTF("result", "fonts/arial.ttf", 12);
+    this->_label = Label::createWithTTF("result", s_fontArial, 12);
     addChild(this->_label, 0);
 
     label->setPosition(Vec2(s.width / 2, s.height - 50));

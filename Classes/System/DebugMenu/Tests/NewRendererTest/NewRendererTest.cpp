@@ -24,6 +24,7 @@
  ****************************************************************************/
 
 #include "NewRendererTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 
@@ -70,7 +71,7 @@ void NewSpriteTest::createSpriteTest()
 {
     Size winSize = Director::getInstance()->getWinSize();
 
-    Sprite* parent = Sprite::create("Images/grossini.png");
+    Sprite* parent = Sprite::create(s_pathGrossini);
     parent->setPosition(winSize.width/4, winSize.height/2);
     Sprite* child1 = Sprite::create(s_pathSister1);
     child1->setPosition(0.0f, -20.0f);
@@ -101,7 +102,7 @@ void NewSpriteTest::createNewSpriteTest()
 {
     Size winSize = Director::getInstance()->getWinSize();
 
-    Sprite* parent = Sprite::create("Images/grossini.png");
+    Sprite* parent = Sprite::create(s_pathGrossini);
     parent->setPosition(winSize.width*2/3, winSize.height/2);
     Sprite* child1 = Sprite::create("Images/grossinis_sister1.png");
     child1->setPosition(0.0f, -20.0f);
@@ -173,7 +174,7 @@ void SpriteInGroupCommand::draw(Renderer *renderer, const Mat4 &transform, uint3
 
 GroupCommandTest::GroupCommandTest()
 {
-    auto sprite = SpriteInGroupCommand::create("Images/grossini.png");
+    auto sprite = SpriteInGroupCommand::create(s_pathGrossini);
     Size winSize = Director::getInstance()->getWinSize();
     sprite->setPosition(winSize.width/2,winSize.height/2);
     addChild(sprite);
@@ -220,7 +221,7 @@ NewClippingNodeTest::NewClippingNodeTest()
 
     //Test with alpha Test
     clipper->setAlphaThreshold(0.05f);
-    auto stencil = Sprite::create("Images/grossini.png");
+    auto stencil = Sprite::create(s_pathGrossini);
     stencil->setPosition(s.width/2, s.height/2);
     clipper->setStencil(stencil);
 
@@ -419,7 +420,7 @@ CaptureScreenTest::CaptureScreenTest()
     Vec2 left(s.width / 4, s.height / 2);
     Vec2 right(s.width / 4 * 3, s.height / 2);
 	
-    auto sp1 = Sprite::create("Images/grossini.png");
+    auto sp1 = Sprite::create(s_pathGrossini);
     sp1->setPosition(left);
     auto move1 = MoveBy::create(1, Vec2(s.width/2, 0));
     auto seq1 = RepeatForever::create(Sequence::create(move1, move1->reverse(), nullptr));
@@ -432,7 +433,7 @@ CaptureScreenTest::CaptureScreenTest()
     addChild(sp2);
     sp2->runAction(seq2);
 
-    auto label1 = Label::createWithTTF(TTFConfig("fonts/arial.ttf"), "capture all");
+    auto label1 = Label::createWithTTF(TTFConfig(s_fontArial), "capture all");
     auto mi1 = MenuItemLabel::create(label1, CC_CALLBACK_1(CaptureScreenTest::onCaptured, this));
     auto menu = Menu::create(mi1, nullptr);
     addChild(menu);
@@ -492,7 +493,7 @@ CaptureNodeTest::CaptureNodeTest()
     Vec2 left(s.width / 4, s.height / 2);
     Vec2 right(s.width / 4 * 3, s.height / 2);
 
-    auto sp1 = Sprite::create("Images/grossini.png");
+    auto sp1 = Sprite::create(s_pathGrossini);
     sp1->setPosition(left);
     auto move1 = MoveBy::create(1, Vec2(s.width / 2, 0));
     auto seq1 = RepeatForever::create(Sequence::create(move1, move1->reverse(), nullptr));
@@ -505,7 +506,7 @@ CaptureNodeTest::CaptureNodeTest()
     addChild(sp2);
     sp2->runAction(seq2);
 
-    auto label1 = Label::createWithTTF(TTFConfig("fonts/arial.ttf"), "capture this scene");
+    auto label1 = Label::createWithTTF(TTFConfig(s_fontArial), "capture this scene");
     auto mi1 = MenuItemLabel::create(label1, CC_CALLBACK_1(CaptureNodeTest::onCaptured, this));
     auto menu = Menu::create(mi1, nullptr);
     addChild(menu);
@@ -608,7 +609,7 @@ RendererUniformBatch::RendererUniformBatch()
     {
         for (int x=0; x<20; ++x)
         {
-            auto sprite = Sprite::create("Images/grossini.png");
+            auto sprite = Sprite::create(s_pathGrossini);
             sprite->setPosition(Vec2(x * x_inc, y * y_inc));
             sprite->setScale(0.4);
             addChild(sprite);
@@ -688,7 +689,7 @@ RendererUniformBatch2::RendererUniformBatch2()
     {
         for (int x=0; x<20; ++x)
         {
-            auto sprite = Sprite::create("Images/grossini.png");
+            auto sprite = Sprite::create(s_pathGrossini);
             sprite->setPosition(Vec2(x * x_inc, y * y_inc));
             sprite->setScale(0.4);
             addChild(sprite);

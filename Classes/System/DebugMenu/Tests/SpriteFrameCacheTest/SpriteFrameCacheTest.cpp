@@ -25,6 +25,7 @@
  ****************************************************************************/
 
 #include "SpriteFrameCacheTest.h"
+#include "testResource.h"
 
 // enable log
 #define COCOS2D_DEBUG 1
@@ -73,7 +74,7 @@ SpriteFrameCachePixelFormatTest::SpriteFrameCachePixelFormatTest()
 void SpriteFrameCachePixelFormatTest::loadSpriteFrames(const std::string &file, cocos2d::Texture2D::PixelFormat expectedFormat)
 {
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile(file);
-    SpriteFrame *spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName("grossini.png");
+    SpriteFrame *spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(s_pathGrossini);
     Texture2D *texture = spriteFrame->getTexture();
     const ssize_t bitsPerKB = 8 * 1024;
     const double memorySize = 1.0 * texture->getBitsPerPixelForFormat() * texture->getContentSizeInPixels().width * texture->getContentSizeInPixels().height / bitsPerKB;

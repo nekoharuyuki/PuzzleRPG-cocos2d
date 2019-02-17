@@ -797,7 +797,7 @@ ConvertToNode::ConvertToNode()
     auto action = RepeatForever::create(rotate);
     for(int i = 0; i < 3; i++)
     {
-        auto sprite = Sprite::create("Images/grossini.png");
+        auto sprite = Sprite::create(s_pathGrossini);
         sprite->setPosition(Vec2( s.width/4*(i+1), s.height/2));
 
         auto point = Sprite::create("Images/r1.png");
@@ -1137,7 +1137,7 @@ NodeNormalizedPositionTest1::NodeNormalizedPositionTest1()
     positions[4] = Vec2(1,1);
 
     for(int i=0; i<5; i++) {
-        sprites[i] = Sprite::create("Images/grossini.png");
+        sprites[i] = Sprite::create(s_pathGrossini);
         sprites[i]->setPositionNormalized(positions[i]);
         addChild(sprites[i]);
     }
@@ -1170,7 +1170,7 @@ NodeNormalizedPositionTest2::NodeNormalizedPositionTest2()
     positions[4] = Vec2(1,1);
 
     for(int i=0; i<5; i++) {
-        sprites[i] = Sprite::create("Images/grossini.png");
+        sprites[i] = Sprite::create(s_pathGrossini);
         sprites[i]->setPositionNormalized(positions[i]);
         addChild(sprites[i]);
     }

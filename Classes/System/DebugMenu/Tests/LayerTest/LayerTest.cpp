@@ -535,8 +535,8 @@ LayerGradientTest::LayerGradientTest()
     listener->onTouchesMoved = CC_CALLBACK_2(LayerGradientTest::onTouchesMoved, this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
-    auto label1 = Label::createWithTTF("Compressed Interpolation: Enabled", "fonts/Marker Felt.ttf", 26);
-    auto label2 = Label::createWithTTF("Compressed Interpolation: Disabled", "fonts/Marker Felt.ttf", 26);
+    auto label1 = Label::createWithTTF("Compressed Interpolation: Enabled", s_fontArial, 26);
+    auto label2 = Label::createWithTTF("Compressed Interpolation: Disabled", s_fontArial, 26);
     auto item1 = MenuItemLabel::create(label1);
     auto item2 = MenuItemLabel::create(label2);
     auto item = MenuItemToggle::createWithCallback( CC_CALLBACK_1(LayerGradientTest::toggleItem, this), item1, item2, nullptr);
@@ -619,7 +619,7 @@ void LayerIgnoreAnchorPointPos::onEnter()
     l->runAction(RepeatForever::create(seq));
     this->addChild(l, 0, kLayerIgnoreAnchorPoint);
 
-    auto child = Sprite::create("Images/grossini.png");
+    auto child = Sprite::create(s_pathGrossini);
     l->addChild(child);
     auto lsize = l->getContentSize();
     child->setPosition(Vec2(lsize.width/2, lsize.height/2));
@@ -667,7 +667,7 @@ void LayerIgnoreAnchorPointRot::onEnter()
     l->runAction(RepeatForever::create(rot));
 
 
-    auto child = Sprite::create("Images/grossini.png");
+    auto child = Sprite::create(s_pathGrossini);
     l->addChild(child);
     auto lsize = l->getContentSize();
     child->setPosition(Vec2(lsize.width/2, lsize.height/2));
@@ -718,7 +718,7 @@ void LayerIgnoreAnchorPointScale::onEnter()
 
     this->addChild(l, 0, kLayerIgnoreAnchorPoint);
 
-    auto child = Sprite::create("Images/grossini.png");
+    auto child = Sprite::create(s_pathGrossini);
     l->addChild(child);
     auto lsize = l->getContentSize();
     child->setPosition(Vec2(lsize.width/2, lsize.height/2));

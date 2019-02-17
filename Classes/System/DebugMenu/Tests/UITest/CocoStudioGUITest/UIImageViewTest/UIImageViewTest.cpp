@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "UIImageViewTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;
@@ -44,7 +45,7 @@ bool UIImageViewTest::init()
     {
         Size widgetSize = _widget->getContentSize();
         
-        Text* alert = Text::create("ImageView", "fonts/Marker Felt.ttf", 30);
+        Text* alert = Text::create("ImageView", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                  widgetSize.height / 2.0f - alert->getContentSize().height * 1.75f));
@@ -60,7 +61,7 @@ bool UIImageViewTest::init()
         
         _image = imageView;
 
-        TTFConfig ttfConfig("fonts/arial.ttf", 15);
+        TTFConfig ttfConfig(s_fontArial, 15);
         auto label1 = Label::createWithTTF(ttfConfig, "Print Resources");
         auto item1 = MenuItemLabel::create(label1, CC_CALLBACK_1(UIImageViewTest::printWidgetResources, this));
         item1->setPosition(Vec2(VisibleRect::left().x + 60, VisibleRect::bottom().y + item1->getContentSize().height * 3));
@@ -87,7 +88,7 @@ bool UIImageViewTest_Scale9::init()
     {
         Size widgetSize = _widget->getContentSize();
         
-        Text* alert = Text::create("ImageView scale9 render", "fonts/Marker Felt.ttf", 26);
+        Text* alert = Text::create("ImageView scale9 render", s_fontArial, 26);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                  widgetSize.height / 2.0f - alert->getContentSize().height * 2.125f));
@@ -121,7 +122,7 @@ bool UIImageViewTest_Scale9_State_Change::init()
     {
         Size widgetSize = _widget->getContentSize();
 
-        Text* alert = Text::create("Click The Image", "fonts/Marker Felt.ttf", 26);
+        Text* alert = Text::create("Click The Image", s_fontArial, 26);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
             widgetSize.height / 2.0f - alert->getContentSize().height * 2.125f));
@@ -165,14 +166,14 @@ bool UIImageViewTest_ContentSize::init()
     {
         Size widgetSize = _widget->getContentSize();
         
-        Text* alert = Text::create("ImageView ContentSize Change", "fonts/Marker Felt.ttf", 26);
+        Text* alert = Text::create("ImageView ContentSize Change", s_fontArial, 26);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                 widgetSize.height / 2.0f - alert->getContentSize().height * 2.125f));
         
         _uiLayer->addChild(alert);
         
-        Text *status = Text::create("child ImageView position percent", "fonts/Marker Felt.ttf", 16);
+        Text *status = Text::create("child ImageView position percent", s_fontArial, 16);
         status->setColor(Color3B::RED);
         status->setPosition(Vec2(widgetSize.width/2, widgetSize.height/2 + 80));
         _uiLayer->addChild(status,20);
@@ -235,7 +236,7 @@ bool UIImageViewFlipTest::init()
         SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Images/blocks9ss.plist");
         Size widgetSize = _widget->getContentSize();
         
-        Text* alert = Text::create("ImageView flip test", "fonts/Marker Felt.ttf", 26);
+        Text* alert = Text::create("ImageView flip test", s_fontArial, 26);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f,
                                 widgetSize.height / 2.0f - alert->getContentSize().height * 2.125f));

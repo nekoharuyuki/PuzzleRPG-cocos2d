@@ -25,6 +25,7 @@
 #include "DrawPrimitivesTest.h"
 #include "renderer/CCRenderer.h"
 #include "renderer/CCCustomCommand.h"
+#include "testResource.h"
 
 USING_NS_CC;
 
@@ -372,7 +373,7 @@ PrimitivesCommandTest::PrimitivesCommandTest()
     _primitive->setStart(0);
 
     auto cache = Director::getInstance()->getTextureCache();
-    _texture = cache->addImage("Images/grossini.png");
+    _texture = cache->addImage(s_pathGrossini);
     _programState = GLProgramState::getOrCreateWithGLProgramName(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR);
 
     _primitive->retain();

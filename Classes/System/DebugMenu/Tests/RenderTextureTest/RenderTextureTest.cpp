@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "RenderTextureTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;
@@ -168,15 +169,15 @@ RenderTextureZbuffer::RenderTextureZbuffer()
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     
     auto size = Director::getInstance()->getWinSize();
-    auto label = Label::createWithTTF("vertexZ = 50", "fonts/Marker Felt.ttf", 64);
+    auto label = Label::createWithTTF("vertexZ = 50", s_fontArial, 64);
     label->setPosition(Vec2(size.width / 2, size.height * 0.25f));
     this->addChild(label);
 
-    auto label2 = Label::createWithTTF("vertexZ = 0", "fonts/Marker Felt.ttf", 64);
+    auto label2 = Label::createWithTTF("vertexZ = 0", s_fontArial, 64);
     label2->setPosition(Vec2(size.width / 2, size.height * 0.5f));
     this->addChild(label2);
 
-    auto label3 = Label::createWithTTF("vertexZ = -50", "fonts/Marker Felt.ttf", 64);
+    auto label3 = Label::createWithTTF("vertexZ = -50", s_fontArial, 64);
     label3->setPosition(Vec2(size.width / 2, size.height * 0.75f));
     this->addChild(label3);
 
@@ -304,8 +305,8 @@ void RenderTextureZbuffer::renderScreenShot()
 
 RenderTexturePartTest::RenderTexturePartTest()
 {
-    auto sprite1 = Sprite::create("Images/grossini.png");
-    auto sprite11 = Sprite::create("Images/grossini.png");
+    auto sprite1 = Sprite::create(s_pathGrossini);
+    auto sprite11 = Sprite::create(s_pathGrossini);
     auto sprite2 = Sprite::create("Images/grossinis_sister1.png");
     auto sprite22 = Sprite::create("Images/grossinis_sister1.png");
     Size size = Director::getInstance()->getWinSize();

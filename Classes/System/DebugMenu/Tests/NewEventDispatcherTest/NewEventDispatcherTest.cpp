@@ -731,7 +731,7 @@ void DirectorEventTest::onEnter()
 
     Size s = Director::getInstance()->getWinSize();
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 20);
+    TTFConfig ttfConfig(s_fontArial, 20);
 
     _label1 = Label::createWithTTF(ttfConfig, "Update: 0");
     _label1->setAnchorPoint(Vec2::ANCHOR_BOTTOM_LEFT);

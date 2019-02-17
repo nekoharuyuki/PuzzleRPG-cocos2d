@@ -75,7 +75,7 @@ bool SpritePolygonTestCase::init()
     {
         if (_isNeedDebugMenu)
         {
-            TTFConfig ttfConfig("fonts/arial.ttf", 10);
+            TTFConfig ttfConfig(s_fontArial, 10);
             auto label = Label::createWithTTF(ttfConfig,"DebugDraw OFF");
             auto menuItem = MenuItemLabel::create(label, [=](Ref *ref){
                 if (_isDebugDraw){
@@ -206,7 +206,7 @@ void SpritePolygonTest1::initSprites()
     _drawNodes.pushBack(sppDrawNode);
     
     //Label
-    TTFConfig ttfConfig("fonts/arial.ttf", 8);
+    TTFConfig ttfConfig(s_fontArial, 8);
     std::string temp = "Sprite:\nPixels drawn: ";
     auto spSize = _normalSprite->getContentSize();
     auto spArea = Label::createWithTTF(ttfConfig, temp+Value((int)spSize.width*(int)spSize.height).asString());
@@ -261,7 +261,7 @@ void SpritePolygonTest2::initSprites()
     _polygonSprite->addChild(sppDrawNode);
     
     //Label
-    TTFConfig ttfConfig("fonts/arial.ttf", 8);
+    TTFConfig ttfConfig(s_fontArial, 8);
     std::string temp = "Sprite:\nPixels drawn: ";
     auto spSize = _normalSprite->getContentSize();
     auto spArea = Label::createWithTTF(ttfConfig, temp+Value((int)spSize.width*(int)spSize.height).asString());
@@ -300,7 +300,7 @@ void SpritePolygonTestSlider::initSliders()
     slider->addEventListener(CC_CALLBACK_2(SpritePolygonTestSlider::changeEpsilon, this));
     slider->setPercent((int)(sqrtf(1.0f/19.0f)*100));
     
-    auto ttfConfig = TTFConfig("fonts/arial.ttf", 8);
+    auto ttfConfig = TTFConfig(s_fontArial, 8);
     _epsilonLabel = Label::createWithTTF(ttfConfig, "Epsilon: 2.0");
     addChild(_epsilonLabel);
     _epsilonLabel->setPosition(Vec2(vsize.width/2, vsize.height/4 + 15));
@@ -368,7 +368,7 @@ Sprite* SpritePolygonTestSlider::makeSprite(const std::string &filename, const V
     ret->addChild(drawNode);
  
     //Label
-    auto ttfConfig = TTFConfig("fonts/arial.ttf", 8);
+    auto ttfConfig = TTFConfig(s_fontArial, 8);
     auto spArea = Label::createWithTTF(ttfConfig, filename+"\nVerts: "+Value((int)pinfo.getVertCount()).asString()+ "\nPixels: "+Value((int)(pinfo.getArea()/originalSize*100)).asString()+"%");
     ret->addChild(spArea);
     spArea->setAnchorPoint(Vec2(0,1));
@@ -519,7 +519,7 @@ void SpritePolygonTest5::update(float dt)
 
 SpritePolygonPerformance::SpritePolygonPerformance()
 {
-    TTFConfig ttfConfig("fonts/arial.ttf", 10);
+    TTFConfig ttfConfig(s_fontArial, 10);
     _perfLabel = Label::createWithTTF(ttfConfig, "performance test");
     addChild(_perfLabel);
     _perfLabel->setPosition(Director::getInstance()->getVisibleSize().width/2, 80);

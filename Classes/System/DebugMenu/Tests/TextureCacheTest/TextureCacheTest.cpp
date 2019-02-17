@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "TextureCacheTest.h"
+#include "testResource.h"
 
 // enable log
 #define COCOS2D_DEBUG 1
@@ -41,8 +42,8 @@ TextureCacheTest::TextureCacheTest()
 {
     auto size = Director::getInstance()->getWinSize();
 
-    _labelLoading = Label::createWithTTF("loading...", "fonts/arial.ttf", 15);
-    _labelPercent = Label::createWithTTF("%0", "fonts/arial.ttf", 15);
+    _labelLoading = Label::createWithTTF("loading...", s_fontArial, 15);
+    _labelPercent = Label::createWithTTF("%0", s_fontArial, 15);
 
     _labelLoading->setPosition(Vec2(size.width / 2, size.height / 2 - 20));
     _labelPercent->setPosition(Vec2(size.width / 2, size.height / 2 + 20));
@@ -162,13 +163,13 @@ TextureCacheUnbindTest::TextureCacheUnbindTest()
 
     Label* nothing =
       Label::createWithTTF
-      ("There should be\nnothing below", "fonts/arial.ttf", 15);
+      ("There should be\nnothing below", s_fontArial, 15);
     nothing->setPosition(Vec2(size.width / 4, 5 * size.height / 6));
     this->addChild(nothing);
     
     Label* something =
       Label::createWithTTF
-      ("There should be\na white square below", "fonts/arial.ttf", 15);
+      ("There should be\na white square below", s_fontArial, 15);
     something->setPosition(Vec2(3 * size.width / 4, 5 * size.height / 6));
     this->addChild(something);
 

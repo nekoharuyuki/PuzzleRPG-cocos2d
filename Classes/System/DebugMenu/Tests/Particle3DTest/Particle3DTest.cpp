@@ -27,6 +27,7 @@
 #include "Particle3DTest.h"
 #include "Particle3D/CCParticleSystem3D.h"
 #include "Particle3D/PU/CCPUParticleSystem3D.h"
+#include "testResource.h"
 
 USING_NS_CC;
 
@@ -79,7 +80,7 @@ bool Particle3DTestDemo::init()
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
 
-    TTFConfig config("fonts/tahoma.ttf",10);
+    TTFConfig config(s_fontArial,10);
     _particleLab = Label::createWithTTF(config,"Particle Count: 0",TextHAlignment::LEFT);
     _particleLab->retain();
     _particleLab->setPosition(Vec2(0.0f, size.height / 6.0f));
@@ -450,7 +451,7 @@ bool Particle3DWithSprite3DDemo::init()
     if (!Particle3DTestDemo::init()) 
         return false;
 
-    std::string c3bfileName = "Sprite3DTest/orc.c3b";
+    std::string c3bfileName = s_c3bTest;
     auto sprite = Sprite3D::create(c3bfileName);
     this->addChild(sprite);
     sprite->setPosition3D(Vec3(-20.0f, 0.0f, 0.0f));

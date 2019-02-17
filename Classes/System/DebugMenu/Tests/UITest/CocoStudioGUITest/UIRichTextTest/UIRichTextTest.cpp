@@ -25,6 +25,7 @@
 #include "UIRichTextTest.h"
 #include "editor-support/cocostudio/CCArmatureDataManager.h"
 #include "editor-support/cocostudio/CCArmature.h"
+#include "testResource.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;
@@ -78,7 +79,7 @@ bool UIRichTextTest::init()
               Helper::getSubStringOfUTF8String(str2, 0, 2).c_str());
         
         // Add the alert
-        Text *alert = Text::create("RichText", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("RichText", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -115,7 +116,7 @@ bool UIRichTextTest::init()
         RichElementText* re1 = RichElementText::create(1, Color3B::WHITE, 255, str1, "SimSun", 10);
         RichElementText* re2 = RichElementText::create(2, Color3B::YELLOW, 255, "And this is yellow. ", "Helvetica", 10);
         RichElementText* re3 = RichElementText::create(3, Color3B::GRAY, 255, str2, "Yu Mincho", 10);
-        RichElementText* re4 = RichElementText::create(4, Color3B::GREEN, 255, "And green with TTF support. ", "fonts/Marker Felt.ttf", 10);
+        RichElementText* re4 = RichElementText::create(4, Color3B::GREEN, 255, "And green with TTF support. ", s_fontArial, 10);
         RichElementText* re5 = RichElementText::create(5, Color3B::RED, 255, "Last one is red ", "Helvetica", 10);
         
         RichElementImage* reimg = RichElementImage::create(6, Color3B::WHITE, 255, "cocosui/sliderballnormal.png");
@@ -201,7 +202,7 @@ bool UIRichTextXMLBasic::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add the alert
-        Text *alert = Text::create("RichText", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("RichText", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -302,7 +303,7 @@ bool UIRichTextXMLSmallBig::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add the alert
-        Text *alert = Text::create("RichText", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("RichText", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -403,7 +404,7 @@ bool UIRichTextXMLColor::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add the alert
-        Text *alert = Text::create("RichText", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("RichText", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -504,7 +505,7 @@ bool UIRichTextXMLSUIB::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add the alert
-        Text *alert = Text::create("RichText", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("RichText", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -605,7 +606,7 @@ bool UIRichTextXMLSUIB2::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add the alert
-        Text *alert = Text::create("RichText", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("RichText", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -706,7 +707,7 @@ bool UIRichTextXMLSUIB3::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add the alert
-        Text *alert = Text::create("RichText", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("RichText", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -807,7 +808,7 @@ bool UIRichTextXMLImg::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add the alert
-        Text *alert = Text::create("RichText", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("RichText", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -908,7 +909,7 @@ bool UIRichTextXMLUrl::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add the alert
-        Text *alert = Text::create("RichText", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("RichText", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -1009,7 +1010,7 @@ bool UIRichTextXMLUrlImg::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text *alert = Text::create("RichText", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("RichText", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -1110,7 +1111,7 @@ bool UIRichTextXMLFace::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add the alert
-        Text *alert = Text::create("RichText", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("RichText", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -1211,7 +1212,7 @@ bool UIRichTextXMLBR::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add the alert
-        Text *alert = Text::create("RichText", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("RichText", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -1312,7 +1313,7 @@ bool UIRichTextXMLInvalid::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add the alert
-        Text *alert = Text::create("Invalid XML test", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("Invalid XML test", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -1349,7 +1350,7 @@ bool UIRichTextXMLOutline::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text *alert = Text::create("Outline", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("Outline", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -1450,7 +1451,7 @@ bool UIRichTextXMLShadow::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text *alert = Text::create("Shadow", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("Shadow", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -1551,7 +1552,7 @@ bool UIRichTextXMLGlow::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text *alert = Text::create("Glow", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("Glow", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -1652,7 +1653,7 @@ bool UIRichTextXMLExtend::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add the alert
-        Text *alert = Text::create("Extend", "fonts/Marker Felt.ttf", 30);
+        Text *alert = Text::create("Extend", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.125));
         _widget->addChild(alert);
@@ -1696,7 +1697,7 @@ bool UIRichTextXMLExtend::init()
         ValueMap defaults;
         defaults[RichText::KEY_FONT_COLOR_STRING] = "#FFF";
         defaults[RichText::KEY_FONT_SIZE] = 12.0f;
-        defaults[RichText::KEY_FONT_FACE] = "fonts/Marker Felt.ttf";
+        defaults[RichText::KEY_FONT_FACE] = s_fontArial;
         defaults[RichText::KEY_ANCHOR_FONT_COLOR_STRING] = "#f0f8ff";
         defaults[RichText::KEY_ANCHOR_TEXT_BOLD] = false;
         defaults[RichText::KEY_ANCHOR_TEXT_ITALIC] = false;

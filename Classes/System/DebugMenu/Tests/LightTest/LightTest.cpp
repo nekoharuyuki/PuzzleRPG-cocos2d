@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "LightTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 
@@ -47,7 +48,7 @@ LightTest::LightTest()
     camera->lookAt(Vec3(0.0, 0.0, 0.0), Vec3(0.0, 1.0, 0.0));
     addChild(camera);
 
-    TTFConfig ttfConfig("fonts/arial.ttf", 15);
+    TTFConfig ttfConfig(s_fontArial, 15);
     _ambientLightLabel = Label::createWithTTF(ttfConfig,"Ambient Light ON");
     _ambientLightLabel->retain();
     auto menuItem0 = MenuItemLabel::create(_ambientLightLabel, CC_CALLBACK_1(LightTest::SwitchLight,this,LightType::AMBIENT));

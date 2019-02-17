@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "UIScrollViewTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;
@@ -59,14 +60,14 @@ bool UIScrollViewTest_Vertical::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the scrollview alert will be displayed
-        _displayValueLabel = Text::create("Move by vertical direction", "fonts/Marker Felt.ttf", 32);
+        _displayValueLabel = Text::create("Move by vertical direction", s_fontArial, 32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f,
                                               widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text* alert = Text::create("ScrollView vertical", "fonts/Marker Felt.ttf", 30);
+        Text* alert = Text::create("ScrollView vertical", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
@@ -138,12 +139,12 @@ bool UIScrollViewTest_Horizontal::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the scrollview alert will be displayed
-        _displayValueLabel = Text::create("Move by horizontal direction","fonts/Marker Felt.ttf",32);
+        _displayValueLabel = Text::create("Move by horizontal direction",s_fontArial,32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);            
         
-        Text* alert = Text::create("ScrollView horizontal","fonts/Marker Felt.ttf",30);
+        Text* alert = Text::create("ScrollView horizontal",s_fontArial,30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
@@ -220,13 +221,13 @@ bool UIScrollViewTest_Both::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the dragpanel events will be displayed
-        _displayValueLabel = Text::create("Move by any direction","fonts/Marker Felt.ttf",32);
+        _displayValueLabel = Text::create("Move by any direction",s_fontArial,32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text* alert = Text::create("ScrollView both","fonts/Marker Felt.ttf",30);
+        Text* alert = Text::create("ScrollView both",s_fontArial,30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
@@ -286,13 +287,13 @@ bool UIScrollViewTest_ScrollToPercentBothDirection::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the dragpanel events will be displayed
-        _displayValueLabel = Text::create("No Event", "fonts/Marker Felt.ttf",30);
+        _displayValueLabel = Text::create("No Event", s_fontArial,30);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text* alert = Text::create("ScrollView scroll to percent both direction without scroll bar","fonts/Marker Felt.ttf",20);
+        Text* alert = Text::create("ScrollView scroll to percent both direction without scroll bar",s_fontArial,20);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 4.5));
         _uiLayer->addChild(alert);
@@ -342,13 +343,13 @@ bool UIScrollViewTest_ScrollToPercentBothDirection_Bounce::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the dragpanel events will be displayed
-        _displayValueLabel = Text::create("No Event","fonts/Marker Felt.ttf",32);
+        _displayValueLabel = Text::create("No Event",s_fontArial,32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text* alert = Text::create("ScrollView scroll to percent both direction bounce","fonts/Marker Felt.ttf",20);
+        Text* alert = Text::create("ScrollView scroll to percent both direction bounce",s_fontArial,20);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 4.5));
         _uiLayer->addChild(alert);
@@ -401,14 +402,14 @@ bool UIScrollViewNestTest::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the scrollview alert will be displayed
-        _displayValueLabel = Text::create("Move by vertical direction", "fonts/Marker Felt.ttf", 32);
+        _displayValueLabel = Text::create("Move by vertical direction", s_fontArial, 32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f,
                                              widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text* alert = Text::create("ScrollView vertical", "fonts/Marker Felt.ttf", 30);
+        Text* alert = Text::create("ScrollView vertical", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
@@ -504,14 +505,14 @@ bool UIScrollViewRotated::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the scrollview alert will be displayed
-        _displayValueLabel = Text::create("Move by vertical direction", "fonts/Marker Felt.ttf", 32);
+        _displayValueLabel = Text::create("Move by vertical direction", s_fontArial, 32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f,
                                              widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text* alert = Text::create("ScrollView vertical", "fonts/Marker Felt.ttf", 30);
+        Text* alert = Text::create("ScrollView vertical", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
@@ -585,14 +586,14 @@ bool UIScrollViewDisableTest::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add a label in which the scrollview alert will be displayed
-        _displayValueLabel = Text::create("ScrollView Disable Test", "fonts/Marker Felt.ttf", 32);
+        _displayValueLabel = Text::create("ScrollView Disable Test", s_fontArial, 32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f,
                                               widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
 
         // Add the alert
-        Text* alert = Text::create("ScrollView vertical", "fonts/Marker Felt.ttf", 30);
+        Text* alert = Text::create("ScrollView vertical", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
@@ -665,14 +666,14 @@ bool UIScrollViewInnerSize::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add a label in which the scrollview alert will be displayed
-        _displayValueLabel = Text::create("ScrollView InnerSize Test", "fonts/Marker Felt.ttf", 32);
+        _displayValueLabel = Text::create("ScrollView InnerSize Test", s_fontArial, 32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f,
             widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
 
         // Add the alert
-        Text* alert = Text::create("ScrollView & InnerContainer should be align to the left and top point", "fonts/Marker Felt.ttf", 10);
+        Text* alert = Text::create("ScrollView & InnerContainer should be align to the left and top point", s_fontArial, 10);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
@@ -724,13 +725,13 @@ bool UIScrollViewTestEvents::init()
         Size widgetSize = _widget->getContentSize();
         
         // Add a label in which the dragpanel events will be displayed
-        _displayValueLabel = Text::create("(no events)","fonts/Marker Felt.ttf",32);
+        _displayValueLabel = Text::create("(no events)",s_fontArial,32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
         
         // Add the alert
-        Text* alert = Text::create("ScrollView events","fonts/Marker Felt.ttf",30);
+        Text* alert = Text::create("ScrollView events",s_fontArial,30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
@@ -806,13 +807,13 @@ bool UIScrollViewStopScrollingTest::init()
         Size widgetSize = _widget->getContentSize();
 
         // Add a label in which the time remaining till scrolling stop will be displayed.
-        _displayValueLabel = Text::create("Scrolling stop isn't scheduled", "fonts/Marker Felt.ttf", 32);
+        _displayValueLabel = Text::create("Scrolling stop isn't scheduled", s_fontArial, 32);
         _displayValueLabel->setAnchorPoint(Vec2(0.5f, -1.0f));
         _displayValueLabel->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f + _displayValueLabel->getContentSize().height * 1.5f));
         _uiLayer->addChild(_displayValueLabel);
 
         // Add the alert
-        Text* alert = Text::create("Click the button and start to scroll", "fonts/Marker Felt.ttf", 30);
+        Text* alert = Text::create("Click the button and start to scroll", s_fontArial, 30);
         alert->setColor(Color3B(159, 168, 176));
         alert->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getContentSize().height * 3.075f));
         _uiLayer->addChild(alert);
@@ -906,7 +907,7 @@ void UIScrollViewStopScrollingTest::update(float dt)
             _displayValueLabel->setString(strRemainingTime);
 
             // Show hint label.
-            auto hintLabel = Label::createWithTTF("Stopped!", "fonts/Marker Felt.ttf", 32.0f);
+            auto hintLabel = Label::createWithTTF("Stopped!", s_fontArial, 32.0f);
             Size contentSize = _uiLayer->getContentSize();
             hintLabel->setPosition(Vec2(contentSize.width / 2.0f, contentSize.height / 2.0f));
             hintLabel->runAction(Spawn::createWithTwoActions(

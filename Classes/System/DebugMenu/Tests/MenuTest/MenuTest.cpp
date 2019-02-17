@@ -87,7 +87,7 @@ MenuLayerMainMenu::MenuLayerMainMenu()
 	});
 
     item4->setFontSizeObj(20);
-    item4->setFontName("fonts/Marker Felt.ttf");
+    item4->setFontName(s_fontArial);
     
     // Label Item (LabelBMFont)
     auto label = Label::createWithBMFont("fonts/bitmapFontTest3.fnt", "configuration");
@@ -97,7 +97,7 @@ MenuLayerMainMenu::MenuLayerMainMenu()
     item5->setScale( 0.8f );
 
     // Events
-    MenuItemFont::setFontName("fonts/Marker Felt.ttf");
+    MenuItemFont::setFontName(s_fontArial);
 
     // Font Item
     auto item6= MenuItemFont::create("Quit", CC_CALLBACK_1(MenuLayerMainMenu::onQuit, this));
@@ -320,7 +320,7 @@ void MenuLayer2::menuCallbackAlign(Ref* sender)
 //------------------------------------------------------------------
 MenuLayer3::MenuLayer3()
 {
-    MenuItemFont::setFontName("fonts/Marker Felt.ttf");
+    MenuItemFont::setFontName(s_fontArial);
     MenuItemFont::setFontSize(28);
 
     auto label = Label::createWithBMFont("fonts/bitmapFontTest3.fnt", "Enable AtlasItem");
@@ -385,7 +385,7 @@ MenuLayer4::MenuLayer4()
     MenuItemFont::setFontSize(18);
     auto title1 = MenuItemFont::create("Sound");
     title1->setEnabled(false);
-    MenuItemFont::setFontName( "fonts/Marker Felt.ttf" );
+    MenuItemFont::setFontName( s_fontArial );
     MenuItemFont::setFontSize(34);
     auto item1 = MenuItemToggle::createWithCallback( CC_CALLBACK_1(MenuLayer4::menuCallback, this),
                                                                 MenuItemFont::create( "On" ),
@@ -396,7 +396,7 @@ MenuLayer4::MenuLayer4()
     MenuItemFont::setFontSize(18);
     auto title2 = MenuItemFont::create( "Music" );
     title2->setEnabled(false);
-    MenuItemFont::setFontName( "fonts/Marker Felt.ttf" );
+    MenuItemFont::setFontName( s_fontArial );
     MenuItemFont::setFontSize(34);
     auto item2 = MenuItemToggle::createWithCallback(CC_CALLBACK_1(MenuLayer4::menuCallback, this),
                                                                 MenuItemFont::create( "On" ),
@@ -407,7 +407,7 @@ MenuLayer4::MenuLayer4()
     MenuItemFont::setFontSize(18);
     auto title3 = MenuItemFont::create( "Quality" );
     title3->setEnabled( false );
-    MenuItemFont::setFontName( "fonts/Marker Felt.ttf" );
+    MenuItemFont::setFontName( s_fontArial );
     MenuItemFont::setFontSize(34);
     auto item3 = MenuItemToggle::createWithCallback(CC_CALLBACK_1(MenuLayer4::menuCallback, this),
                                                                 MenuItemFont::create( "High" ),
@@ -418,7 +418,7 @@ MenuLayer4::MenuLayer4()
     MenuItemFont::setFontSize(18);
     auto title4 = MenuItemFont::create( "Orientation" );
     title4->setEnabled(false);
-    MenuItemFont::setFontName( "fonts/Marker Felt.ttf" );
+    MenuItemFont::setFontName( s_fontArial );
     MenuItemFont::setFontSize(34);
     auto item4 = MenuItemToggle::createWithCallback(CC_CALLBACK_1(MenuLayer4::menuCallback, this),
                                                                 MenuItemFont::create( "Off" ), 
@@ -432,7 +432,7 @@ MenuLayer4::MenuLayer4()
     // you can change the one of the items by doing this
     item4->setSelectedIndex( 2 );
     
-    MenuItemFont::setFontName( "fonts/Marker Felt.ttf" );
+    MenuItemFont::setFontName( s_fontArial );
     MenuItemFont::setFontSize( 34 );
     
     auto label = Label::createWithBMFont("fonts/bitmapFontTest3.fnt",  "go back");
@@ -471,7 +471,7 @@ RemoveMenuItemWhenMove::RemoveMenuItemWhenMove()
 {
     auto s = Director::getInstance()->getWinSize();
     
-    auto label = Label::createWithTTF("click item and move, should not crash", "fonts/arial.ttf", 20);
+    auto label = Label::createWithTTF("click item and move, should not crash", s_fontArial, 20);
     label->setPosition(Vec2(s.width/2, s.height - 30));
     addChild(label);
     

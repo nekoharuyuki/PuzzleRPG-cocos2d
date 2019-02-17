@@ -81,14 +81,14 @@ void Material_MultipleSprite3D::onEnter()
     MaterialSystemBaseTest::onEnter();
 
     const char* names[] = {
-        "Sprite3DTest/ReskinGirl.c3b",
-        "Sprite3DTest/ReskinGirl.c3b",
-        "Sprite3DTest/ReskinGirl.c3b",
-        "Sprite3DTest/ReskinGirl.c3b",
-        "Sprite3DTest/ReskinGirl.c3b",
-        "Sprite3DTest/ReskinGirl.c3b",
-        "Sprite3DTest/ReskinGirl.c3b",
-        "Sprite3DTest/ReskinGirl.c3b",
+        s_c3bTest,
+        s_c3bTest,
+        s_c3bTest,
+        s_c3bTest,
+        s_c3bTest,
+        s_c3bTest,
+        s_c3bTest,
+        s_c3bTest,
     };
 
     const int totalNames = sizeof(names) / sizeof(names[0]);
@@ -123,22 +123,22 @@ void Material_2DEffects::onEnter()
 
     Material *mat1 = Material::createWithProperties(properties);
 
-    auto spriteBlur = Sprite::create("Images/grossini.png");
+    auto spriteBlur = Sprite::create(s_pathGrossini);
     spriteBlur->setPositionNormalized(Vec2(0.2f, 0.5f));
     this->addChild(spriteBlur);
     spriteBlur->setGLProgramState(mat1->getTechniqueByName("blur")->getPassByIndex(0)->getGLProgramState());
 
-    auto spriteOutline = Sprite::create("Images/grossini.png");
+    auto spriteOutline = Sprite::create(s_pathGrossini);
     spriteOutline->setPositionNormalized(Vec2(0.4f, 0.5f));
     this->addChild(spriteOutline);
     spriteOutline->setGLProgramState(mat1->getTechniqueByName("outline")->getPassByIndex(0)->getGLProgramState());
 
-    auto spriteNoise = Sprite::create("Images/grossini.png");
+    auto spriteNoise = Sprite::create(s_pathGrossini);
     spriteNoise->setPositionNormalized(Vec2(0.6f, 0.5f));
     this->addChild(spriteNoise);
     spriteNoise->setGLProgramState(mat1->getTechniqueByName("noise")->getPassByIndex(0)->getGLProgramState());
 
-    auto spriteEdgeDetect = Sprite::create("Images/grossini.png");
+    auto spriteEdgeDetect = Sprite::create(s_pathGrossini);
     spriteEdgeDetect->setPositionNormalized(Vec2(0.8f, 0.5f));
     this->addChild(spriteEdgeDetect);
     spriteEdgeDetect->setGLProgramState(mat1->getTechniqueByName("edge_detect")->getPassByIndex(0)->getGLProgramState());
@@ -220,22 +220,22 @@ void Material_AutoBindings::onEnter()
 
     Material *mat1 = Material::createWithProperties(properties);
 
-    auto spriteBlur = Sprite::create("Images/grossini.png");
+    auto spriteBlur = Sprite::create(s_pathGrossini);
     spriteBlur->setPositionNormalized(Vec2(0.2f, 0.5f));
     this->addChild(spriteBlur);
     spriteBlur->setGLProgramState(mat1->getTechniqueByName("blur")->getPassByIndex(0)->getGLProgramState());
 
-    auto spriteOutline = Sprite::create("Images/grossini.png");
+    auto spriteOutline = Sprite::create(s_pathGrossini);
     spriteOutline->setPositionNormalized(Vec2(0.4f, 0.5f));
     this->addChild(spriteOutline);
     spriteOutline->setGLProgramState(mat1->getTechniqueByName("outline")->getPassByIndex(0)->getGLProgramState());
 
-    auto spriteNoise = Sprite::create("Images/grossini.png");
+    auto spriteNoise = Sprite::create(s_pathGrossini);
     spriteNoise->setPositionNormalized(Vec2(0.6f, 0.5f));
     this->addChild(spriteNoise);
     spriteNoise->setGLProgramState(mat1->getTechniqueByName("noise")->getPassByIndex(0)->getGLProgramState());
 
-    auto spriteEdgeDetect = Sprite::create("Images/grossini.png");
+    auto spriteEdgeDetect = Sprite::create(s_pathGrossini);
     spriteEdgeDetect->setPositionNormalized(Vec2(0.8f, 0.5f));
     this->addChild(spriteEdgeDetect);
     spriteEdgeDetect->setGLProgramState(mat1->getTechniqueByName("edge_detect")->getPassByIndex(0)->getGLProgramState());
@@ -454,7 +454,7 @@ void Material_invalidate::onEnter()
     MaterialSystemBaseTest::onEnter();
 
     // ORC
-    auto sprite = Sprite3D::create("Sprite3DTest/orc.c3b");
+    auto sprite = Sprite3D::create(s_c3bTest);
     sprite->setScale(5);
     sprite->setRotation3D(Vec3(0,180,0));
     addChild(sprite);
@@ -523,7 +523,7 @@ void Material_renderState::onEnter()
     MaterialSystemBaseTest::onEnter();
 
     // ORC
-    auto sprite = Sprite3D::create("Sprite3DTest/orc.c3b");
+    auto sprite = Sprite3D::create(s_c3bTest);
     sprite->setScale(5);
     sprite->setRotation3D(Vec3(0,180,0));
     addChild(sprite);
