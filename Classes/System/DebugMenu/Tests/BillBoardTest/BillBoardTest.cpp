@@ -61,7 +61,7 @@ BillBoardRotationTest::BillBoardRotationTest()
     bill->setPosition(0, 120);
     root->addChild(bill);
     
-    auto sp = Sprite::create("Images/SpookyPeas.png");
+    auto sp = Sprite::create(s_pathSpookyPeas);
     sp->setScale(2);
     bill->addChild(sp);
     
@@ -130,7 +130,7 @@ BillBoardTest::BillBoardTest()
     }
 
     //Create rotating billboards
-    std::string imgs[3] = {"Images/Icon.png", "Images/r2.png"};
+    std::string imgs[3] = {s_Power, s_pathR2};
     for (unsigned int i = 0; i < 4; ++i)
     {
         Layer *layer = Layer::create();
@@ -145,17 +145,17 @@ BillBoardTest::BillBoardTest()
     }
 
     {
-        auto billboard = BillBoard::create("Images/Icon.png");
+        auto billboard = BillBoard::create(s_Power);
         billboard->setScale(0.2f);
         billboard->setPosition3D(Vec3(0.0f, 30.0f, 0.0f));
 
-        auto billboard2 = BillBoard::create("Images/r2.png");
+        auto billboard2 = BillBoard::create(s_pathR2);
         billboard2->setPosition3D(Vec3(0.0f, 0.0f, 100.0f));
         billboard->addChild(billboard2);
         _billboards.push_back(billboard);
         _billboards.push_back(billboard2);
 
-        auto sprite3d = Sprite3D::create("Sprite3DTest/orc.c3t");
+        auto sprite3d = Sprite3D::create(s_c3bTest);
         sprite3d->setScale(2.0f);
         sprite3d->addChild(billboard);
         sprite3d->runAction( RepeatForever::create( RotateBy::create( 10.0f, Vec3(0.0f, 360.0f, 0.0f) ) ) );
@@ -235,7 +235,7 @@ std::string BillBoardTest::subtitle() const
 }
 void BillBoardTest::addNewBillBoardWithCoords(Vec3 p)
 {
-    std::string imgs[3] = {"Images/Icon.png", "Images/r2.png"};
+    std::string imgs[3] = {s_Power, s_pathR2};
     for (unsigned int i = 0; i < 10; ++i)
     {
         auto billboard = BillBoard::create(imgs[(unsigned int)(CCRANDOM_0_1() * 1 + 0.5)]);
@@ -257,10 +257,10 @@ void BillBoardTest::addNewAniBillBoardWithCoords(Vec3 p)
         _layerBillBoard->addChild(billboardAni);
 
         auto animation = Animation::create();
-        for( int i=1;i<15;i++)
+        for( int i=1;i<12;i++)
         {
             char szName1[100] = {0};
-            sprintf(szName1, "Images/grossini_dance_%02d.png", i);
+            sprintf(szName1, "asset/char/chara_player_%d.png", i);
             animation->addSpriteFrameWithFile(szName1);
         }
         // should last 2.8 seconds. And there are 14 frames.

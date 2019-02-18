@@ -20,6 +20,7 @@ static const char s_pathModalClose2[]    = "System/images/tg_close_2.png";
 static const char s_pathGrossini[]       = "asset/char/chara_player_10.png";
 static const char s_pathSister1[]        = "asset/char/chara_player_11.png";
 static const char s_pathSister2[]        = "asset/char/chara_player_12.png";
+static const char s_pathSpookyPeas[]     = "asset/char/chara_enemy_1.png";
 static const char s_pathBlock[]          = "System/images/Test/blocks.png";
 static const char s_back[]               = "System/images/Test/background.png";
 static const char s_back1[]              = "System/images/Test/background1.png";

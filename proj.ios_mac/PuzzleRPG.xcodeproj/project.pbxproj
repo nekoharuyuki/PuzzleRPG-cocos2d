@@ -1036,8 +1036,8 @@
 		8006831C2217CA9300855C84 /* BillBoardTest */ = {
 			isa = PBXGroup;
 			children = (
-				8006831D2217CA9300855C84 /* BillBoardTest.h */,
 				8006831E2217CA9300855C84 /* BillBoardTest.cpp */,
+				8006831D2217CA9300855C84 /* BillBoardTest.h */,
 			);
 			path = BillBoardTest;
 			sourceTree = "<group>";
