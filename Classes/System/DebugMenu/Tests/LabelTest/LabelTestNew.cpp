@@ -1837,7 +1837,7 @@ LabelAddChildTest::LabelAddChildTest()
     auto jump_4ever = RepeatForever::create(jump);
     label->runAction(jump_4ever);
 
-    auto spite = Sprite::create("Images/SpookyPeas.png");
+    auto spite = Sprite::create(s_pathSpookyPeas);
     spite->setAnchorPoint(Vec2::ANCHOR_MIDDLE_LEFT);
     spite->setPosition(label->getContentSize().width, label->getContentSize().height/2);
     label->addChild(spite);
