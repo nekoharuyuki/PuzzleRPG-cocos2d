@@ -62,11 +62,12 @@ VRTest1::VRTest1()
             glview->setVR(genericvr);
         }
     });
-    button->setFontSizeObj(16);
+    button->setFontSizeObj(36);
+    button->setColor(Color3B::BLACK);
     auto menu = Menu::create(button, nullptr);
     addChild(menu);
 
-    menu->setPosition(size / 6 );
+    menu->setPosition(size / 5);
 }
 
 std::string VRTest1::title() const

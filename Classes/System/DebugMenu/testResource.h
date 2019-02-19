@@ -3,6 +3,8 @@
 
 // fonts
 static const char s_fontArial[]          = "fonts/arial.ttf";
+static const char s_fontBabarageo3[]     = "fonts/babarageo3.ttf";
+static const char s_fontMarkerFelt[]     = "fonts/Marker Felt.ttf";
 
 static const char s_pathB1[]             = "system/images/b1.png";
 static const char s_pathB2[]             = "system/images/b2.png";
@@ -22,7 +24,7 @@ static const char s_pathSister1[]        = "asset/char/chara_player_11.png";
 static const char s_pathSister2[]        = "asset/char/chara_player_12.png";
 static const char s_pathSpookyPeas[]     = "asset/char/chara_enemy_1.png";
 static const char s_pathBlock[]          = "System/images/Test/blocks.png";
-static const char s_back[]               = "System/images/Test/background.png";
+static const char s_back[]               = "asset/title/title_bg.png";
 static const char s_back1[]              = "System/images/Test/background1.png";
 static const char s_back2[]              = "System/images/Test/background2.png";
 static const char s_back3[]              = "System/images/Test/background3.png";
