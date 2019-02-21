@@ -148,7 +148,7 @@ TerrainWalkThru::TerrainWalkThru()
     _player->addChild(rootps);
     
     // add BillBoard for test blend
-    auto billboard = BillBoard::create("Images/btn-play-normal.png");
+    auto billboard = BillBoard::create(s_PlayNormal);
     billboard->setPosition3D(Vec3(0,180,0));
     billboard->setCameraMask((unsigned short)CameraFlag::USER1);
     _player->addChild(billboard);
