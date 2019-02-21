@@ -177,7 +177,7 @@ void TestSearchPath::onEnter()
 
     auto oldSearchPaths = sharedFileUtils->getOriginalSearchPaths();
     sharedFileUtils->addSearchPath("Images");
-    auto sp2 = Sprite::create("btn-about-normal.png");
+    auto sp2 = Sprite::create(s_AboutNormal);
     sp2->setPosition(VisibleRect::center() + Vec2(0, -50));
     addChild(sp2);
 
