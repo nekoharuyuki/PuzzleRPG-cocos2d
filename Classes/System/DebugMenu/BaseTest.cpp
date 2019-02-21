@@ -27,6 +27,8 @@
 #include "Controller.h"
 #include "ModalLayer.h"
 
+#include "TitleScene.h"
+
 USING_NS_CC;
 USING_NS_CC_EXT;
 
@@ -162,11 +164,18 @@ void TestList::runThisTest()
     {
         tableView->setContentOffset(_tableOffset);
     }
+    /*
+    auto bgForTestList = Sprite::create("asset/shared/bg.png");
+    if(bgForTestList){
+        bgForTestList->setAnchorPoint(Point::ZERO);
+        bgForTestList->setPosition(Point::ZERO);
+        scene->addChild(bgForTestList);
+    }*/
     
     if (_parentTest)
     {
         //Add back button.
-        TTFConfig ttfConfig("fonts/arial.ttf", 20);
+        TTFConfig ttfConfig(s_fontArial, 20);
         auto label = Label::createWithTTF(ttfConfig, "Back");
 
         auto menuItem = MenuItemLabel::create(label, std::bind(&TestBase::backsUpOneLevel, this));
@@ -180,19 +189,17 @@ void TestList::runThisTest()
     else
     {
         //Add close and "Start AutoTest" button.
-        auto closeItem = MenuItemImage::create(s_pathClose, s_pathClose, [](Ref* sender){
+        auto closeItem = MenuItemImage::create(s_pathClose, s_pathClose, [director](Ref* sender){
 #if (AUTOTEST_DEBUG)
             TestController::getInstance()->stopAutoTest();
 #endif
             TestController::destroyInstance();
-            Director::getInstance()->end();
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-            exit(0);
-#endif
+            auto scene = TitleScene::createScene();
+            director->replaceScene(scene);
         });
         closeItem->setPosition(VisibleRect::right().x - 30, VisibleRect::top().y - 30);
 #if (AUTOTEST_DEBUG)
-        auto autoTestLabel = Label::createWithTTF("Start AutoTest","fonts/arial.ttf",16);
+        auto autoTestLabel = Label::createWithTTF("Start AutoTest",s_fontArial,16);
         auto autoTestItem = MenuItemLabel::create(autoTestLabel, [&](Ref* sender){
             TestController::getInstance()->startAutoTest();
         });
@@ -238,7 +245,7 @@ TableViewCell* TestList::tableCellAtIndex(TableView *table, ssize_t idx)
     if (!cell)
     {
         cell = TableViewCell::create();
-        auto label = Label::createWithTTF(_childTestNames[idx], "fonts/arial.ttf", 20.0f);
+        auto label = Label::createWithTTF(_childTestNames[idx], s_fontArial, 20.0f);
         label->setTag(TABEL_LABEL_TAG);
         label->setPosition(200, 15);
         cell->addChild(label);
@@ -399,7 +406,7 @@ bool TestCase::init()
     if (Scene::init())
     {
         // add title and subtitle
-        TTFConfig ttfConfig("fonts/arial.ttf", 26);
+        TTFConfig ttfConfig(s_fontArial, 26);
         _titleLabel = Label::createWithTTF(ttfConfig, title());
         addChild(_titleLabel, 9999);
         _titleLabel->setPosition(VisibleRect::center().x, VisibleRect::top().y - 30);
