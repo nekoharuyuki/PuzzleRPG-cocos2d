@@ -79,7 +79,7 @@ void CrashTest::onEnter()
 {
     ActionManagerTest::onEnter();
 
-    auto child = Sprite::create(s_pathGrossini);
+    auto child = Sprite::create(s_pathCharaPlayer10);
     child->setPosition( VisibleRect::center() );
     addChild(child, 1, kTagGrossini);
 
@@ -121,7 +121,7 @@ void LogicTest::onEnter()
 {
     ActionManagerTest::onEnter();
 
-    auto grossini = Sprite::create(s_pathGrossini);
+    auto grossini = Sprite::create(s_pathCharaPlayer10);
     addChild(grossini, 0, 2);
     grossini->setPosition(VisibleRect::center());
 
@@ -166,7 +166,7 @@ void PauseTest::onEnter()
     //
     // Also, this test MUST be done, after [super onEnter]
     //
-    auto grossini = Sprite::create(s_pathGrossini);
+    auto grossini = Sprite::create(s_pathCharaPlayer10);
     addChild(grossini, 0, kTagGrossini);
     grossini->setPosition(VisibleRect::center() );
     
@@ -209,7 +209,7 @@ void StopActionTest::onEnter()
     auto pSequence = Sequence::create(pMove, pCallback, nullptr);
     pSequence->setTag(kTagSequence);
 
-    auto pChild = Sprite::create(s_pathGrossini);
+    auto pChild = Sprite::create(s_pathCharaPlayer10);
     pChild->setPosition( VisibleRect::center() );
 
     addChild(pChild, 1, kTagGrossini);
@@ -255,7 +255,7 @@ void StopAllActionsTest::onEnter()
     auto pRotate = RotateBy::create(2, 360);
     auto pRepeatRotate = RepeatForever::create(pRotate);
     
-    auto pChild = Sprite::create(s_pathGrossini);
+    auto pChild = Sprite::create(s_pathCharaPlayer10);
     pChild->setPosition( VisibleRect::center() );
     
     addChild(pChild, 1, kTagGrossini);
@@ -295,7 +295,7 @@ void ResumeTest::onEnter()
     addChild(l);
     l->setPosition(VisibleRect::center().x, VisibleRect::top().y - 75);
 
-    auto pGrossini = Sprite::create(s_pathGrossini);
+    auto pGrossini = Sprite::create(s_pathCharaPlayer10);
     addChild(pGrossini, 0, kTagGrossini);
     pGrossini->setPosition(VisibleRect::center());
 
@@ -346,7 +346,7 @@ void StopActionsByFlagsTest::onEnter()
     auto pRepeatRotate = RepeatForever::create(pRotate);
     pRepeatRotate->setFlags(kRotateFlag | kRepeatForeverFlag);
 
-    auto pChild = Sprite::create(s_pathGrossini);
+    auto pChild = Sprite::create(s_pathCharaPlayer10);
     pChild->setPosition( VisibleRect::center() );
 
     addChild(pChild, 1, kTagGrossini);

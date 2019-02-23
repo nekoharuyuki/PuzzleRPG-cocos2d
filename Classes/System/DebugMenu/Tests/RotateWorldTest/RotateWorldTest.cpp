@@ -72,9 +72,9 @@ void SpriteLayer::onEnter()
     x = size.width;
     y = size.height;
     
-    auto sprite = Sprite::create(s_pathGrossini);
-    auto spriteSister1 = Sprite::create(s_pathSister1);
-    auto spriteSister2 = Sprite::create(s_pathSister2);
+    auto sprite = Sprite::create(s_pathCharaPlayer10);
+    auto spriteSister1 = Sprite::create(s_pathCharaPlayer11);
+    auto spriteSister2 = Sprite::create(s_pathCharaPlayer12);
     
     sprite->setScale(1.5f);
     spriteSister1->setScale(1.5f);

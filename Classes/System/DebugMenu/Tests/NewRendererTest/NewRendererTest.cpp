@@ -71,21 +71,21 @@ void NewSpriteTest::createSpriteTest()
 {
     Size winSize = Director::getInstance()->getWinSize();
 
-    Sprite* parent = Sprite::create(s_pathGrossini);
+    Sprite* parent = Sprite::create(s_pathCharaPlayer10);
     parent->setPosition(winSize.width/4, winSize.height/2);
-    Sprite* child1 = Sprite::create(s_pathSister1);
+    Sprite* child1 = Sprite::create(s_pathCharaPlayer11);
     child1->setPosition(0.0f, -20.0f);
-    Sprite* child2 = Sprite::create(s_pathSister2);
+    Sprite* child2 = Sprite::create(s_pathCharaPlayer12);
     child2->setPosition(20.0f, -20.0f);
-    Sprite* child3 = Sprite::create(s_pathSister1);
+    Sprite* child3 = Sprite::create(s_pathCharaPlayer11);
     child3->setPosition(40.0f, -20.0f);
-    Sprite* child4 = Sprite::create(s_pathSister2);
+    Sprite* child4 = Sprite::create(s_pathCharaPlayer12);
     child4->setPosition(60.0f, -20.0f);
-    Sprite* child5 = Sprite::create(s_pathSister2);
+    Sprite* child5 = Sprite::create(s_pathCharaPlayer12);
     child5->setPosition(80.0f, -20.0f);
-    Sprite* child6 = Sprite::create(s_pathSister2);
+    Sprite* child6 = Sprite::create(s_pathCharaPlayer12);
     child6->setPosition(100.0f, -20.0f);
-    Sprite* child7 = Sprite::create(s_pathSister2);
+    Sprite* child7 = Sprite::create(s_pathCharaPlayer12);
     child7->setPosition(120.0f, -20.0f);
 
     parent->addChild(child1);
@@ -102,7 +102,7 @@ void NewSpriteTest::createNewSpriteTest()
 {
     Size winSize = Director::getInstance()->getWinSize();
 
-    Sprite* parent = Sprite::create(s_pathGrossini);
+    Sprite* parent = Sprite::create(s_pathCharaPlayer10);
     parent->setPosition(winSize.width*2/3, winSize.height/2);
     Sprite* child1 = Sprite::create("Images/grossinis_sister1.png");
     child1->setPosition(0.0f, -20.0f);
@@ -174,7 +174,7 @@ void SpriteInGroupCommand::draw(Renderer *renderer, const Mat4 &transform, uint3
 
 GroupCommandTest::GroupCommandTest()
 {
-    auto sprite = SpriteInGroupCommand::create(s_pathGrossini);
+    auto sprite = SpriteInGroupCommand::create(s_pathCharaPlayer10);
     Size winSize = Director::getInstance()->getWinSize();
     sprite->setPosition(winSize.width/2,winSize.height/2);
     addChild(sprite);
@@ -221,7 +221,7 @@ NewClippingNodeTest::NewClippingNodeTest()
 
     //Test with alpha Test
     clipper->setAlphaThreshold(0.05f);
-    auto stencil = Sprite::create(s_pathGrossini);
+    auto stencil = Sprite::create(s_pathCharaPlayer10);
     stencil->setPosition(s.width/2, s.height/2);
     clipper->setStencil(stencil);
 
@@ -420,7 +420,7 @@ CaptureScreenTest::CaptureScreenTest()
     Vec2 left(s.width / 4, s.height / 2);
     Vec2 right(s.width / 4 * 3, s.height / 2);
 	
-    auto sp1 = Sprite::create(s_pathGrossini);
+    auto sp1 = Sprite::create(s_pathCharaPlayer10);
     sp1->setPosition(left);
     auto move1 = MoveBy::create(1, Vec2(s.width/2, 0));
     auto seq1 = RepeatForever::create(Sequence::create(move1, move1->reverse(), nullptr));
@@ -493,7 +493,7 @@ CaptureNodeTest::CaptureNodeTest()
     Vec2 left(s.width / 4, s.height / 2);
     Vec2 right(s.width / 4 * 3, s.height / 2);
 
-    auto sp1 = Sprite::create(s_pathGrossini);
+    auto sp1 = Sprite::create(s_pathCharaPlayer10);
     sp1->setPosition(left);
     auto move1 = MoveBy::create(1, Vec2(s.width / 2, 0));
     auto seq1 = RepeatForever::create(Sequence::create(move1, move1->reverse(), nullptr));
@@ -609,7 +609,7 @@ RendererUniformBatch::RendererUniformBatch()
     {
         for (int x=0; x<20; ++x)
         {
-            auto sprite = Sprite::create(s_pathGrossini);
+            auto sprite = Sprite::create(s_pathCharaPlayer10);
             sprite->setPosition(Vec2(x * x_inc, y * y_inc));
             sprite->setScale(0.4);
             addChild(sprite);
@@ -689,7 +689,7 @@ RendererUniformBatch2::RendererUniformBatch2()
     {
         for (int x=0; x<20; ++x)
         {
-            auto sprite = Sprite::create(s_pathGrossini);
+            auto sprite = Sprite::create(s_pathCharaPlayer10);
             sprite->setPosition(Vec2(x * x_inc, y * y_inc));
             sprite->setScale(0.4);
             addChild(sprite);

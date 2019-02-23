@@ -1534,9 +1534,9 @@ void TextureAsync::loadImages(float dt)
         }
     }
 
-    textureCache->addImageAsync(s_back1, CC_CALLBACK_1(TextureAsync::imageLoaded, this));
-    textureCache->addImageAsync(s_back2, CC_CALLBACK_1(TextureAsync::imageLoaded, this));
-    textureCache->addImageAsync(s_back, CC_CALLBACK_1(TextureAsync::imageLoaded, this));
+    textureCache->addImageAsync(s_background, CC_CALLBACK_1(TextureAsync::imageLoaded, this));
+    textureCache->addImageAsync(s_background, CC_CALLBACK_1(TextureAsync::imageLoaded, this));
+    textureCache->addImageAsync(s_helloworld, CC_CALLBACK_1(TextureAsync::imageLoaded, this));
     textureCache->addImageAsync("Images/atlastest.png", CC_CALLBACK_1(TextureAsync::imageLoaded, this));
     textureCache->addImageAsync("Images/grossini_dance_atlas.png", CC_CALLBACK_1(TextureAsync::imageLoaded, this));
 }

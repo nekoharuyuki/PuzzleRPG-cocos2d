@@ -67,7 +67,7 @@ Parallax1::Parallax1()
     
 
     // background layer: another image
-    auto background = Sprite::create(s_back);
+    auto background = Sprite::create(s_helloworld);
     // scale the image (optional)
     background->setScale( 1.5f );
     // change the transform anchor point (optional)
@@ -139,7 +139,7 @@ Parallax2::Parallax2()
     
     
     // background layer: another image
-    auto background = Sprite::create(s_back);
+    auto background = Sprite::create(s_helloworld);
     // scale the image (optional)
     background->setScale( 1.5f );
     // change the transform anchor point (optional)

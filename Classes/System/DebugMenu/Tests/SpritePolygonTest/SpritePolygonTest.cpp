@@ -178,7 +178,7 @@ void SpritePolygonTest1::initSprites()
 {
     auto s = Director::getInstance()->getWinSize();
     auto offset = Vec2(0.15*s.width,0);
-    auto filename = s_pathGrossini;
+    auto filename = s_pathCharaPlayer10;
     
     //Sprite
     auto pinfo = AutoPolygon::generatePolygon(filename);
@@ -232,7 +232,7 @@ void SpritePolygonTest2::initSprites()
 {
     auto s = Director::getInstance()->getWinSize();
     auto offset = Vec2(0.15*s.width,0);
-    auto filename = s_pathGrossini;
+    auto filename = s_pathCharaPlayer10;
     Rect head = Rect(30,25,25,25);
     
     //Sprite
@@ -412,7 +412,7 @@ void SpritePolygonTest4::initSprites()
     auto vsize =Director::getInstance()->getVisibleSize();
     int count = 3;
     std::string list[] = {
-        s_pathGrossini,
+        s_pathCharaPlayer10,
         "Images/grossinis_sister1.png",
         "Images/grossinis_sister2.png"
     };
@@ -430,7 +430,7 @@ bool SpritePolygonTest5::init()
 {
     if (SpritePolygonTestCase::init())
     {
-        _polygonInfo = AutoPolygon::generatePolygon(s_pathGrossini);
+        _polygonInfo = AutoPolygon::generatePolygon(s_pathCharaPlayer10);
         loadDefaultSprites();
         initTouch();
         scheduleUpdate();
@@ -625,7 +625,7 @@ void SpritePolygonPerformance::incrementStats()
 
 void SpritePolygonPerformanceTestDynamic::initIncrementStats()
 {
-    _pinfo = AutoPolygon::generatePolygon(s_pathGrossini);
+    _pinfo = AutoPolygon::generatePolygon(s_pathCharaPlayer10);
     _incVert = _pinfo.getVertCount();
     _incTri = _pinfo.getTrianglesCount();
     _incPix = _pinfo.getArea();
@@ -652,7 +652,7 @@ SpritePerformanceTestDynamic::SpritePerformanceTestDynamic()
 
 void SpritePerformanceTestDynamic::initIncrementStats()
 {
-    auto t = Sprite::create(s_pathGrossini);
+    auto t = Sprite::create(s_pathCharaPlayer10);
     _incVert = 4;
     _incTri = 2;
     _incPix = t->getContentSize().width * t->getContentSize().height;
@@ -660,7 +660,7 @@ void SpritePerformanceTestDynamic::initIncrementStats()
 
 Sprite* SpritePerformanceTestDynamic::makeSprite()
 {
-    auto ret =  Sprite::create(s_pathGrossini);
+    auto ret =  Sprite::create(s_pathCharaPlayer10);
     ret->runAction(RepeatForever::create(RotateBy::create(1.0,360.0)));
     return ret;
 }
@@ -777,7 +777,7 @@ void SpritePolygonTestFrameAnim::initSprites()
 
         sprite->setPosition(Vec2(screen.width/6*(i%5+1), screen.height*2/3 - screen.height*(i/5)/3));
 
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale( 0.1f );
         point->setPosition( sprite->getPosition() );
         addChild(point, 10);

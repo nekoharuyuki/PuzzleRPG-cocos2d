@@ -44,7 +44,7 @@ ClickAndMoveTestCase::ClickAndMoveTestCase()
     listener->onTouchEnded = CC_CALLBACK_2(ClickAndMoveTestCase::onTouchEnded, this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     
-    auto sprite = Sprite::create(s_pathGrossini);
+    auto sprite = Sprite::create(s_pathCharaPlayer10);
     
     auto layer = LayerColor::create(Color4B(255,255,0,255));
     addChild(layer, -1);
