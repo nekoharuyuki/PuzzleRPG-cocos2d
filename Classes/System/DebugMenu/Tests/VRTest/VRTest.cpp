@@ -44,7 +44,7 @@ VRTest1::VRTest1()
 {
     auto size = Director::getInstance()->getVisibleSize();
 
-    auto image = Sprite::create(s_back);
+    auto image = Sprite::create(s_helloworld);
     image->setPosition(size/2);
     addChild(image);
 

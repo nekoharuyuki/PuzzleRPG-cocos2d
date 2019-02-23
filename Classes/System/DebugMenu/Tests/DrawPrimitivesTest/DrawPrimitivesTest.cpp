@@ -373,7 +373,7 @@ PrimitivesCommandTest::PrimitivesCommandTest()
     _primitive->setStart(0);
 
     auto cache = Director::getInstance()->getTextureCache();
-    _texture = cache->addImage(s_pathGrossini);
+    _texture = cache->addImage(s_pathCharaPlayer10);
     _programState = GLProgramState::getOrCreateWithGLProgramName(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR);
 
     _primitive->retain();

@@ -794,7 +794,7 @@ TMXIsoZorderNew::TMXIsoZorderNew()
     CCLOG("ContentSize: %f, %f", s.width,s.height);
     map->setPosition(Vec2(-s.width/2,0));
     
-    _tamara = Sprite::create(s_pathSister1);
+    _tamara = Sprite::create(s_pathCharaPlayer11);
     map->addChild(_tamara, (int)map->getChildren().size() );
     _tamara->retain();
     int mapWidth = map->getMapSize().width * map->getTileSize().width;
@@ -862,7 +862,7 @@ TMXOrthoZorderNew::TMXOrthoZorderNew()
     Size CC_UNUSED s = map->getContentSize();
     CCLOG("ContentSize: %f, %f", s.width,s.height);
     
-    _tamara = Sprite::create(s_pathSister1);
+    _tamara = Sprite::create(s_pathCharaPlayer11);
     map->addChild(_tamara,  (int)map->getChildren().size());
     _tamara->retain();
     _tamara->setAnchorPoint(Vec2(0.5f,0));
