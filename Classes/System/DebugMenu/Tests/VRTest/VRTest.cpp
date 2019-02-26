@@ -63,7 +63,7 @@ VRTest1::VRTest1()
         }
     });
     button->setFontSizeObj(36);
-    button->setColor(Color3B::BLACK);
+    button->setColor(Color3B::RED);
     auto menu = Menu::create(button, nullptr);
     addChild(menu);
 
