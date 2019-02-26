@@ -25,6 +25,7 @@
 #include "TableViewTestScene.h"
 #include "CustomTableViewCell.h"
 #include "../ExtensionsTest.h"
+#include "testResource.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -50,14 +51,13 @@ bool TableViewTest::init()
     tableView->setDelegate(this);
     this->addChild(tableView);
     tableView->reloadData();
-
+    
     auto testNode = Node::create();
     testNode->setName("testNode");
     tableView->addChild(testNode);
     tableView->removeChild(testNode, true);
     CCAssert(nullptr == tableView->getChildByName("testNode"), "The added child has been removed!");
-
-
+    
 	tableView = TableView::create(this, Size(60, 250));
 	tableView->setDirection(ScrollView::Direction::VERTICAL);
 	tableView->setPosition(Vec2(winSize.width-150,winSize.height/2-120));
@@ -89,9 +89,9 @@ TableViewCell* TableViewTest::tableCellAtIndex(TableView *table, ssize_t idx)
     if (!cell) {
         cell = new (std::nothrow) CustomTableViewCell();
         cell->autorelease();
-        auto sprite = Sprite::create("Images/Icon.png");
+        auto sprite = Sprite::create(s_pathR2);
         sprite->setAnchorPoint(Vec2::ZERO);
-        sprite->setPosition(Vec2(0, 0));
+        sprite->setPosition(Vec2(-20, -10));
         cell->addChild(sprite);
 
         auto label = Label::createWithSystemFont(string, "Helvetica", 20.0);
