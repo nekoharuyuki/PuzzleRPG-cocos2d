@@ -148,7 +148,14 @@ void TestList::runThisTest()
     _cellTouchEnabled = true;
     auto director = Director::getInstance();
     auto scene = Scene::create();
-
+    
+    auto bgForTestList = Sprite::create("asset/shared/bg.png");
+    if(bgForTestList){
+        bgForTestList->setAnchorPoint(Point::ZERO);
+        bgForTestList->setPosition(Point::ZERO);
+        scene->addChild(bgForTestList);
+    }
+    
     auto visibleSize = director->getVisibleSize();
     auto origin = director->getVisibleOrigin();
 
@@ -164,26 +171,16 @@ void TestList::runThisTest()
     {
         tableView->setContentOffset(_tableOffset);
     }
-    /*
-    auto bgForTestList = Sprite::create("asset/shared/bg.png");
-    if(bgForTestList){
-        bgForTestList->setAnchorPoint(Point::ZERO);
-        bgForTestList->setPosition(Point::ZERO);
-        scene->addChild(bgForTestList);
-    }*/
     
     if (_parentTest)
     {
         //Add back button.
-        TTFConfig ttfConfig(s_fontArial, 20);
-        auto label = Label::createWithTTF(ttfConfig, "Back");
-
-        auto menuItem = MenuItemLabel::create(label, std::bind(&TestBase::backsUpOneLevel, this));
+        auto menuItem = MenuItemImage::create("asset/synthetic/btn_back.png",
+                                              "asset/synthetic/btn_back_on.png",
+                                              std::bind(&TestBase::backsUpOneLevel, this));
         auto menu = Menu::create(menuItem, nullptr);
-
         menu->setPosition(Vec2::ZERO);
-        menuItem->setPosition(Vec2(VisibleRect::right().x - 50, VisibleRect::bottom().y + 25));
-
+        menuItem->setPosition(Vec2(VisibleRect::right().x - 95, VisibleRect::bottom().y + 35));
         scene->addChild(menu);
     }
     else
@@ -421,9 +418,9 @@ bool TestCase::init()
         _restartTestItem = MenuItemImage::create(s_pathR1, s_pathR2, CC_CALLBACK_1(TestCase::restartTestCallback, this));
         _nextTestItem = MenuItemImage::create(s_pathF1, s_pathF2, CC_CALLBACK_1(TestCase::nextTestCallback, this));
         
-        ttfConfig.fontSize = 20;
-        auto backLabel = Label::createWithTTF(ttfConfig, "Back");
-        auto backItem = MenuItemLabel::create(backLabel, CC_CALLBACK_1(TestCase::onBackCallback, this));
+        auto backItem = MenuItemImage::create("asset/synthetic/btn_back.png",
+                                              "asset/synthetic/btn_back_on.png",
+                                              CC_CALLBACK_1(TestCase::onBackCallback, this));
 
         auto menu = Menu::create(_priorTestItem, _restartTestItem, _nextTestItem, backItem, nullptr);
 
@@ -434,7 +431,7 @@ bool TestCase::init()
                                       VisibleRect::bottom().y + _restartTestItem->getContentSize().height / 2);
         _nextTestItem->setPosition(VisibleRect::center().x + _restartTestItem->getContentSize().width * 2,
                                    VisibleRect::bottom().y + _restartTestItem->getContentSize().height / 2);
-        backItem->setPosition(Vec2(VisibleRect::right().x - 50, VisibleRect::bottom().y + 25));
+        backItem->setPosition(Vec2(VisibleRect::right().x - 95, VisibleRect::bottom().y + 35));
 
         addChild(menu, 9999);
 
