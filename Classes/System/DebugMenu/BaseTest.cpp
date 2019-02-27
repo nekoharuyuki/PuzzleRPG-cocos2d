@@ -244,12 +244,14 @@ TableViewCell* TestList::tableCellAtIndex(TableView *table, ssize_t idx)
         cell = TableViewCell::create();
         auto label = Label::createWithTTF(_childTestNames[idx], s_fontArial, 20.0f);
         label->setTag(TABEL_LABEL_TAG);
+        label->setColor(Color3B::BLACK);
         label->setPosition(200, 15);
         cell->addChild(label);
     }
     else
     {
         auto label = (Label*)cell->getChildByTag(TABEL_LABEL_TAG);
+        label->setColor(Color3B::BLACK);
         label->setString(_childTestNames[idx]);
     }
 
