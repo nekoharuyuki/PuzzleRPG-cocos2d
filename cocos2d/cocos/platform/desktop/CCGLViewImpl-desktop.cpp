@@ -39,6 +39,7 @@ THE SOFTWARE.
 #include "base/ccUtils.h"
 #include "base/ccUTF8.h"
 #include "2d/CCCamera.h"
+#include "platform/CCImage.h"
 
 NS_CC_BEGIN
 
@@ -204,6 +205,7 @@ GLViewImpl::GLViewImpl(bool initglfw)
 , _monitor(nullptr)
 , _mouseX(0.0f)
 , _mouseY(0.0f)
+, _cursor(nullptr)
 {
     _viewName = "cocos2dx";
     g_keyCodeMap.clear();
@@ -455,6 +457,81 @@ void GLViewImpl::enableRetina(bool enabled)
 void GLViewImpl::setIMEKeyboardState(bool /*bOpen*/)
 {
 
+}
+
+#if CC_ICON_SET_SUPPORT
+void GLViewImpl::setIcon(const std::string& filename) const {
+    std::vector<std::string> vec = {filename};
+    this->setIcon(vec);
+}
+
+void GLViewImpl::setIcon(const std::vector<std::string>& filelist) const {
+    if (filelist.empty()) return;
+    std::vector<Image*> icons;
+    for (auto const& filename: filelist) {
+        Image* icon = new (std::nothrow) Image();
+        if (icon && icon->initWithImageFile(filename)) {
+            icons.push_back(icon);
+        } else {
+            CC_SAFE_DELETE(icon);
+        }
+    }
+
+    if (icons.empty()) return; // No valid images
+    size_t iconsCount = icons.size();
+    auto images = new GLFWimage[iconsCount];
+    for (size_t i = 0; i < iconsCount; i++) {
+        auto& image = images[i];
+        auto& icon = icons[i];
+        image.width = icon->getWidth();
+        image.height = icon->getHeight();
+        image.pixels = icon->getData();
+    };
+
+    GLFWwindow* window = this->getWindow();
+    glfwSetWindowIcon(window, iconsCount, images);
+
+    CC_SAFE_DELETE(images);
+    for (auto& icon: icons) {
+        CC_SAFE_DELETE(icon);
+    }
+}
+
+void GLViewImpl::setDefaultIcon() const {
+    GLFWwindow* window = this->getWindow();
+    glfwSetWindowIcon(window, 0, nullptr);
+}
+#endif /* CC_ICON_SET_SUPPORT */
+
+void GLViewImpl::setCursor(const std::string& filename, Vec2 hotspot) {
+
+    if (_cursor) {
+        glfwDestroyCursor(_cursor);
+        _cursor = nullptr;
+    }
+
+    Image* ccImage = new (std::nothrow) Image();
+    if (ccImage && ccImage->initWithImageFile(filename)) {
+        GLFWimage image;
+        image.width = ccImage->getWidth();
+        image.height = ccImage->getHeight();
+        image.pixels = ccImage->getData();
+        _cursor = glfwCreateCursor(&image, (int)(hotspot.x * image.width), (int)((1.0f - hotspot.y) * image.height));
+        if (_cursor) {
+            glfwSetCursor(_mainWindow, _cursor);
+        }
+    }
+    CC_SAFE_DELETE(ccImage);
+}
+
+void GLViewImpl::setDefaultCursor() {
+
+    if (_cursor) {
+        glfwDestroyCursor(_cursor);
+        _cursor = nullptr;
+    }
+
+    glfwSetCursor(_mainWindow, NULL);
 }
 
 void GLViewImpl::setCursorVisible( bool isVisible )

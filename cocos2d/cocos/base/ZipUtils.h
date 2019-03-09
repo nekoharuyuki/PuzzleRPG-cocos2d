@@ -28,11 +28,9 @@ THE SOFTWARE.
 #define __SUPPORT_ZIPUTILS_H__
 /// @cond DO_NOT_SHOW
 
-#include <string>
-#include "platform/CCPlatformConfig.h"
 #include "platform/CCPlatformMacros.h"
-#include "platform/CCPlatformDefine.h"
 #include "platform/CCFileUtils.h"
+#include <string>
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "platform/android/CCFileUtils-android.h"
@@ -266,6 +264,16 @@ typedef struct unz_file_info_s unz_file_info;
         * @since v2.0.5
         */
         bool fileExists(const std::string &fileName) const;
+
+
+        /**
+         * Get files and folders in pathname
+         *
+         * @param dirname
+         * @return
+         */
+        std::vector<std::string> listFiles(const std::string &pathname) const;
+
 
         /**
         * Get resource file data from a zip file.

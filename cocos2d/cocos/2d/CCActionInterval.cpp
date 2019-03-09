@@ -88,8 +88,8 @@ void ExtraAction::step(float /*dt*/)
 
 bool ActionInterval::initWithDuration(float d)
 {
-    _duration = d;
 
+    _duration = abs(d) <= MATH_EPSILON ? MATH_EPSILON : d;
     _elapsed = 0;
     _firstTick = true;
     _done = false;
@@ -119,7 +119,7 @@ void ActionInterval::step(float dt)
     if (_firstTick)
     {
         _firstTick = false;
-        _elapsed = 0;
+        _elapsed = MATH_EPSILON;
     }
     else
     {
@@ -332,7 +332,7 @@ void Sequence::startWithTarget(Node *target)
         return;
     }
     if (_duration > FLT_EPSILON)
-        // fix #14936 - FLT_EPSILON (instant action) / very fast duration (0.001) leads to worng split, that leads to call instant action few times
+        // fix #14936 - FLT_EPSILON (instant action) / very fast duration (0.001) leads to wrong split, that leads to call instant action few times
         _split = _actions[0]->getDuration() > FLT_EPSILON ? _actions[0]->getDuration() / _duration : 0;
     
     ActionInterval::startWithTarget(target);
@@ -481,7 +481,7 @@ Repeat::~Repeat()
 void Repeat::startWithTarget(Node *target)
 {
     _total = 0;
-    _nextDt = _innerAction->getDuration()/_duration;
+    _nextDt = _innerAction->getDuration() / _duration;
     ActionInterval::startWithTarget(target);
     _innerAction->startWithTarget(target);
 }
