@@ -44,8 +44,8 @@
 #include "UITabControlTest/UITabControlTest.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_TIZEN) && !defined(CC_TARGET_OS_TVOS)
-#include "UIVideoPlayerTest/UIVideoPlayerTest.h"
-#include "UIWebViewTest/UIWebViewTest.h"
+//#include "UIVideoPlayerTest/UIVideoPlayerTest.h"
+//#include "UIWebViewTest/UIWebViewTest.h"
 #endif
 #include "UIScale9SpriteTest.h"
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS) || (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_TIZEN) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
@@ -55,8 +55,8 @@
 GUIDynamicCreateTests::GUIDynamicCreateTests()
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_TIZEN) && !defined(CC_TARGET_OS_TVOS)
-    addTest("VideoPlayer Test", [](){ return new (std::nothrow) VideoPlayerTests; });
-    addTest("WebView Test", [](){ return new (std::nothrow) WebViewTests; });
+//    addTest("VideoPlayer Test", [](){ return new (std::nothrow) VideoPlayerTests; });
+//    addTest("WebView Test", [](){ return new (std::nothrow) WebViewTests; });
 #endif
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS) || (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_TIZEN) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
     addTest("EditBox Test", [](){ return new (std::nothrow) UIEditBoxTests; });
