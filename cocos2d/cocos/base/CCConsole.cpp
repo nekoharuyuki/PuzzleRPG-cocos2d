@@ -181,16 +181,17 @@ void log(const char * format, ...)
 
     do
     {
-        std::copy(buf + pos, buf + pos + MAX_LOG_LENGTH, tempBuf);
+        int dataSize = std::min(MAX_LOG_LENGTH, len - pos);
+        std::copy(buf + pos, buf + pos + dataSize, tempBuf);
 
-        tempBuf[MAX_LOG_LENGTH] = 0;
+        tempBuf[dataSize] = 0;
 
         MultiByteToWideChar(CP_UTF8, 0, tempBuf, -1, wszBuf, sizeof(wszBuf));
         OutputDebugStringW(wszBuf);
         WideCharToMultiByte(CP_ACP, 0, wszBuf, -1, tempBuf, sizeof(tempBuf), nullptr, FALSE);
         printf("%s", tempBuf);
 
-        pos += MAX_LOG_LENGTH;
+        pos += dataSize;
 
     } while (pos < len);
     SendLogToWindow(buf);
@@ -485,13 +486,13 @@ void Console::Command::commandGeneric(int fd, const std::string& args)
 //
 
 Console::Console()
-: _listenfd(-1)
+: _commandSeparator(DEFAULT_COMMAND_SEPARATOR)
+, _listenfd(-1)
 , _running(false)
 , _endThread(false)
 , _isIpv6Server(false)
 , _sendDebugStrings(false)
 , _bindAddress("")
-, _commandSeparator(DEFAULT_COMMAND_SEPARATOR)
 {
     createCommandAllocator();
     createCommandConfig();
@@ -743,10 +744,8 @@ void Console::loop()
     FD_SET(_listenfd, &_read_set);
     _maxfd = _listenfd;
     
-    timeout.tv_sec = 0;
-    
-    /* 0.016 seconds. Wake up once per frame at 60PFS */
-    timeout.tv_usec = 16000;
+    timeout.tv_sec = 1;
+    timeout.tv_usec = 0;
     
     while(!_endThread) {
         
@@ -790,11 +789,17 @@ void Console::loop()
                     ioctlsocket(fd, FIONREAD, &n);
 #else
                     int n = 0;
-                    ioctl(fd, FIONREAD, &n);
+                    if(ioctl(fd, FIONREAD, &n) < 0)
+                    {
+                        cocos2d::log("Abnormal error in ioctl()\n");
+                        break;
+                    }
 #endif
                     if(n == 0)
                     {
                         //no data received, or fd is closed
+                        //fix #18620. readable and no pending data means that the fd is closed.
+                        to_remove.push_back(fd); 
                         continue;
                     }
                     

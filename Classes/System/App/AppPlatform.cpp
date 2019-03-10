@@ -5,6 +5,8 @@
 //  Created by neko on 2019/02/09.
 //
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+
 #include "AppPlatform.h"
 #include <jni.h>
 #include "platform/android/jni/JniHelper.h"
@@ -53,3 +55,5 @@ AppPlatform* AppPlatform::sharedInstance()
     }
     return instance;
 }
+
+#endif
