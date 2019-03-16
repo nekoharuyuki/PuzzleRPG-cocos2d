@@ -31,7 +31,7 @@ USING_NS_CC;
 enum 
 {
     kTagNode,
-    kTagGrossini,
+    kTagCharaPlayer,
     kTagSequence,
 }; 
 
@@ -79,9 +79,9 @@ void CrashTest::onEnter()
 {
     ActionManagerTest::onEnter();
 
-    auto child = Sprite::create(s_pathGrossini);
+    auto child = Sprite::create(s_pathCharaPlayer10);
     child->setPosition( VisibleRect::center() );
-    addChild(child, 1, kTagGrossini);
+    addChild(child, 1, kTagCharaPlayer);
 
     //Sum of all action's duration is 1.5 second.
     child->runAction(RotateBy::create(1.5f, 90));
@@ -101,7 +101,7 @@ void CrashTest::onEnter()
 
 void CrashTest::removeThis()
 {
-    auto child = getChildByTag(kTagGrossini);
+    auto child = getChildByTag(kTagCharaPlayer);
     child->removeChild(child, true);
     
     getTestSuite()->enterNextTest();
@@ -121,7 +121,7 @@ void LogicTest::onEnter()
 {
     ActionManagerTest::onEnter();
 
-    auto grossini = Sprite::create(s_pathGrossini);
+    auto grossini = Sprite::create(s_pathCharaPlayer10);
     addChild(grossini, 0, 2);
     grossini->setPosition(VisibleRect::center());
 
@@ -166,8 +166,8 @@ void PauseTest::onEnter()
     //
     // Also, this test MUST be done, after [super onEnter]
     //
-    auto grossini = Sprite::create(s_pathGrossini);
-    addChild(grossini, 0, kTagGrossini);
+    auto grossini = Sprite::create(s_pathCharaPlayer10);
+    addChild(grossini, 0, kTagCharaPlayer);
     grossini->setPosition(VisibleRect::center() );
     
     auto action = MoveBy::create(1, Vec2(150,0));
@@ -181,7 +181,7 @@ void PauseTest::onEnter()
 void PauseTest::unpause(float dt)
 {
     unschedule( CC_SCHEDULE_SELECTOR(PauseTest::unpause) );
-    auto node = getChildByTag( kTagGrossini );
+    auto node = getChildByTag( kTagCharaPlayer );
     auto director = Director::getInstance();
     director->getActionManager()->resumeTarget(node);
 }
@@ -209,16 +209,16 @@ void StopActionTest::onEnter()
     auto pSequence = Sequence::create(pMove, pCallback, nullptr);
     pSequence->setTag(kTagSequence);
 
-    auto pChild = Sprite::create(s_pathGrossini);
+    auto pChild = Sprite::create(s_pathCharaPlayer10);
     pChild->setPosition( VisibleRect::center() );
 
-    addChild(pChild, 1, kTagGrossini);
+    addChild(pChild, 1, kTagCharaPlayer);
     pChild->runAction(pSequence);
 }
 
 void StopActionTest::stopAction()
 {
-    auto sprite = getChildByTag(kTagGrossini);
+    auto sprite = getChildByTag(kTagCharaPlayer);
     sprite->stopActionByTag(kTagSequence);
 }
 
@@ -255,10 +255,10 @@ void StopAllActionsTest::onEnter()
     auto pRotate = RotateBy::create(2, 360);
     auto pRepeatRotate = RepeatForever::create(pRotate);
     
-    auto pChild = Sprite::create(s_pathGrossini);
+    auto pChild = Sprite::create(s_pathCharaPlayer10);
     pChild->setPosition( VisibleRect::center() );
     
-    addChild(pChild, 1, kTagGrossini);
+    addChild(pChild, 1, kTagCharaPlayer);
     pChild->runAction(pRepeatMove);
     pChild->runAction(pRepeatScale);
     pChild->runAction(pRepeatRotate);
@@ -267,7 +267,7 @@ void StopAllActionsTest::onEnter()
 
 void StopAllActionsTest::stopAction(float time)
 {
-    auto sprite = getChildByTag(kTagGrossini);
+    auto sprite = getChildByTag(kTagCharaPlayer);
     sprite->stopAllActionsByTag(kTagSequence);
 }
 
@@ -295,8 +295,8 @@ void ResumeTest::onEnter()
     addChild(l);
     l->setPosition(VisibleRect::center().x, VisibleRect::top().y - 75);
 
-    auto pGrossini = Sprite::create(s_pathGrossini);
-    addChild(pGrossini, 0, kTagGrossini);
+    auto pGrossini = Sprite::create(s_pathCharaPlayer10);
+    addChild(pGrossini, 0, kTagCharaPlayer);
     pGrossini->setPosition(VisibleRect::center());
 
     pGrossini->runAction(ScaleBy::create(2, 2));
@@ -312,7 +312,7 @@ void ResumeTest::resumeGrossini(float time)
 {
     this->unschedule(CC_SCHEDULE_SELECTOR(ResumeTest::resumeGrossini));
 
-    auto pGrossini = getChildByTag(kTagGrossini);
+    auto pGrossini = getChildByTag(kTagCharaPlayer);
     auto director = Director::getInstance();
     director->getActionManager()->resumeTarget(pGrossini);
 }
@@ -346,10 +346,10 @@ void StopActionsByFlagsTest::onEnter()
     auto pRepeatRotate = RepeatForever::create(pRotate);
     pRepeatRotate->setFlags(kRotateFlag | kRepeatForeverFlag);
 
-    auto pChild = Sprite::create(s_pathGrossini);
+    auto pChild = Sprite::create(s_pathCharaPlayer10);
     pChild->setPosition( VisibleRect::center() );
 
-    addChild(pChild, 1, kTagGrossini);
+    addChild(pChild, 1, kTagCharaPlayer);
     pChild->runAction(pRepeatMove);
     pChild->runAction(pRepeatScale);
     pChild->runAction(pRepeatRotate);
@@ -358,7 +358,7 @@ void StopActionsByFlagsTest::onEnter()
 
 void StopActionsByFlagsTest::stopAction(float time)
 {
-    auto sprite = getChildByTag(kTagGrossini);
+    auto sprite = getChildByTag(kTagCharaPlayer);
     sprite->stopActionsByFlags(kMoveFlag | kScaleFlag);
 }
 

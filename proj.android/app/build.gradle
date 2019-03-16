@@ -1,3 +1,5 @@
+import org.gradle.internal.os.OperatingSystem
+
 apply plugin: 'com.android.application'
 
 android {
@@ -5,7 +7,7 @@ android {
     buildToolsVersion '28.0.3'
 
     defaultConfig {
-        applicationId "com.example.hoge"
+        applicationId "org.cocos2dx.PuzzleRPG"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
         versionCode 1

@@ -215,8 +215,8 @@ void TestFilenameLookup::onEnter()
     auto sharedFileUtils = FileUtils::getInstance();
 
     ValueMap dict;
-    dict["grossini.bmp"] = Value(s_pathGrossini);
-    dict["grossini.xcf"] = Value(s_pathGrossini);
+    dict["grossini.bmp"] = Value(s_pathCharaPlayer10);
+    dict["grossini.xcf"] = Value(s_pathCharaPlayer10);
 
     sharedFileUtils->setFilenameLookupDictionary(dict);
 
@@ -255,7 +255,7 @@ void TestIsFileExist::onEnter()
     Label* label = nullptr;
     bool isExist = false;
 
-    isExist = sharedFileUtils->isFileExist(s_pathGrossini);
+    isExist = sharedFileUtils->isFileExist(s_pathCharaPlayer10);
 
     label = Label::createWithSystemFont(isExist ? "Images/grossini.png exists" : "Images/grossini.png doesn't exist", "", 20);
     label->setPosition(s.width/2, s.height/3);
@@ -1145,7 +1145,7 @@ void TestIsFileExistAsync::onEnter()
     auto s = Director::getInstance()->getWinSize();
     auto sharedFileUtils = FileUtils::getInstance();
     
-    sharedFileUtils->isFileExist(s_pathGrossini, [=](bool isExist) {
+    sharedFileUtils->isFileExist(s_pathCharaPlayer10, [=](bool isExist) {
         CCASSERT(std::this_thread::get_id() == Director::getInstance()->getCocos2dThreadId(), "Callback should be on cocos thread");
         auto label = Label::createWithSystemFont(isExist ? "Images/grossini.png exists" : "Images/grossini.png doesn't exist", "", 20);
         label->setPosition(s.width/2, s.height/3);

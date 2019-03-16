@@ -653,8 +653,8 @@ void ParallaxParticle::onEnter()
     auto p = ParallaxNode::create();
     addChild(p, 5);
 
-    auto p1 = Sprite::create(s_back3);
-    auto p2 = Sprite::create(s_back3);
+    auto p1 = Sprite::create(s_background);
+    auto p2 = Sprite::create(s_background);
 
     p->addChild( p1, 1, Vec2(0.5f,1), Vec2(0,250) );
     p->addChild(p2, 2, Vec2(1.5f,1), Vec2(0,50) );
@@ -979,7 +979,7 @@ void ParticleDemo::onEnter(void)
     labelAtlas->setPosition(Vec2(s.width-66,50));
 
     // moving background
-    _background = Sprite::create(s_back3);
+    _background = Sprite::create(s_background);
     addChild(_background, 5);
     _background->setPosition( Vec2(s.width/2, s.height-180) );
 

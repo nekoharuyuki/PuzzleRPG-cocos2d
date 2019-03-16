@@ -463,7 +463,7 @@ bool EffectSpriteTest::init()
 
         auto s = Director::getInstance()->getWinSize();
 
-        auto itemPrev = MenuItemImage::create("Images/b1.png", "Images/b2.png",
+        auto itemPrev = MenuItemImage::create(s_pathB1, s_pathB2,
                                           [&](Ref *sender) {
                                               _vectorIndex--;
                                               if(_vectorIndex<0)
@@ -471,7 +471,7 @@ bool EffectSpriteTest::init()
                                               _sprite->setEffect(_effects.at(_vectorIndex));
                                           });
 
-        auto itemNext = MenuItemImage::create("Images/f1.png", "Images/f2.png",
+        auto itemNext = MenuItemImage::create(s_pathF1, s_pathF2,
                                           [&](Ref *sender) {
                                               _vectorIndex++;
                                               if(_vectorIndex>=_effects.size())
@@ -486,7 +486,7 @@ bool EffectSpriteTest::init()
         menu->setPosition(Vec2(s.width/2,70));
         addChild(menu);
 
-        _sprite = EffectSprite::create(s_pathGrossini);
+        _sprite = EffectSprite::create(s_pathCharaPlayer10);
         _sprite->setPosition(Vec2(0, s.height/2));
         addChild(_sprite);
 

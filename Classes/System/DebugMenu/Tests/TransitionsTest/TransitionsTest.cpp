@@ -281,7 +281,7 @@ TestLayer1::TestLayer1(const std::string& transitionName)
     x = size.width;
     y = size.height;
 
-    auto bg1 = Sprite::create(s_back1);
+    auto bg1 = Sprite::create(s_background);
     bg1->setPosition( Vec2(size.width/2, size.height/2) );
     addChild(bg1, -1);
 
@@ -357,7 +357,7 @@ TestLayer2::TestLayer2(const std::string& transitionName)
     x = size.width;
     y = size.height;
 
-    auto bg1 = Sprite::create(s_back2);
+    auto bg1 = Sprite::create(s_background);
     bg1->setPosition( Vec2(size.width/2, size.height/2) );
     addChild(bg1, -1);
 

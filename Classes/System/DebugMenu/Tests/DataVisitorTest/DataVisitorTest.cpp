@@ -45,7 +45,7 @@ void PrettyPrinterDemo::addSprite()
 {
     // create sprites
     
-    auto s1 = Sprite::create(s_pathGrossini);
+    auto s1 = Sprite::create(s_pathCharaPlayer10);
     auto s2 = Sprite::create("Images/grossini_dance_01.png");
     auto s3 = Sprite::create("Images/grossini_dance_02.png");
     auto s4 = Sprite::create("Images/grossini_dance_03.png");

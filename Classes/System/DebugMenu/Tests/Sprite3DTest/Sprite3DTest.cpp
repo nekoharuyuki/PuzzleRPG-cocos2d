@@ -1770,7 +1770,7 @@ UseCaseSprite3D::UseCaseSprite3D()
     _useCaseTitles[0] = "transparent 3d sprite and 2d sprite";
     _useCaseTitles[1] = "ui - 3d - ui";
     
-    auto itemPrev = MenuItemImage::create("Images/b1.png", "Images/b2.png",
+    auto itemPrev = MenuItemImage::create(s_pathB1, s_pathB2,
                                           [&](Ref *sender) {
                                               _caseIdx--;
                                               if (_caseIdx < 0)
@@ -1778,7 +1778,7 @@ UseCaseSprite3D::UseCaseSprite3D()
                                               this->switchCase();
                                           });
     
-    auto itemNext = MenuItemImage::create("Images/f1.png", "Images/f2.png",
+    auto itemNext = MenuItemImage::create(s_pathF1, s_pathF2,
                                           [&](Ref *sender) {
                                               _caseIdx++;
                                               if (_caseIdx >= (int)USECASE::MAX_CASE_NUM)
@@ -1949,7 +1949,7 @@ NodeAnimationTest::NodeAnimationTest()
 {
     auto s = Director::getInstance()->getWinSize();
     
-    auto itemPrev = MenuItemImage::create("Images/b1.png", "Images/b2.png",
+    auto itemPrev = MenuItemImage::create(s_pathB1, s_pathB2,
                                           [&](Ref *sender) {
                                               _sprites[_vectorIndex]->setVisible(false);
                                               
@@ -1962,7 +1962,7 @@ NodeAnimationTest::NodeAnimationTest()
                                               _sprites[_vectorIndex]->setVisible(true);
                                           });
     
-    auto itemNext = MenuItemImage::create("Images/f1.png", "Images/f2.png",
+    auto itemNext = MenuItemImage::create(s_pathF1, s_pathF2,
                                           [&](Ref *sender) {
                                               _sprites[_vectorIndex]->setVisible(false);
                                               
@@ -2172,7 +2172,7 @@ void Sprite3DCubeMapTest::onTouchesMoved(const std::vector<Touch*>& touches, coc
 Sprite3DClippingTest::Sprite3DClippingTest()
 {
     auto size = Director::getInstance()->getWinSize();
-    auto stencil = Sprite::create("Images/close.png");
+    auto stencil = Sprite::create(s_pathClose);
     auto clipSprite3D = ClippingNode::create();
     clipSprite3D->setStencil(stencil);
     this->addChild(clipSprite3D);

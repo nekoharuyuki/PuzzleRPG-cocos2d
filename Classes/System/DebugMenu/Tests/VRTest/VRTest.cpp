@@ -44,7 +44,7 @@ VRTest1::VRTest1()
 {
     auto size = Director::getInstance()->getVisibleSize();
 
-    auto image = Sprite::create(s_back);
+    auto image = Sprite::create(s_helloworld);
     image->setPosition(size/2);
     addChild(image);
 
@@ -63,7 +63,7 @@ VRTest1::VRTest1()
         }
     });
     button->setFontSizeObj(36);
-    button->setColor(Color3B::BLACK);
+    button->setColor(Color3B::RED);
     auto menu = Menu::create(button, nullptr);
     addChild(menu);
 

@@ -918,7 +918,7 @@ SpriteAnchorPoint::SpriteAnchorPoint()
         auto sprite = Sprite::create("Images/grossini_dance_atlas.png", Rect(85*i, 121*1, 85, 121) );
         sprite->setPosition( Vec2( s.width/4*(i+1), s.height/2) );
         
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale( 0.25f );
         point->setPosition( sprite->getPosition() );
         addChild(point, 10);
@@ -975,7 +975,7 @@ SpriteBatchNodeAnchorPoint::SpriteBatchNodeAnchorPoint()
         auto sprite = Sprite::createWithTexture(batch->getTexture(), Rect(85*i, 121*1, 85, 121));
         sprite->setPosition( Vec2( s.width/4*(i+1), s.height/2) );
         
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale( 0.25f );
         point->setPosition( sprite->getPosition() );
         addChild(point, 1);
@@ -1036,7 +1036,7 @@ void SpriteAnchorPointFromFile::onEnter()
 
         sprite->setPosition(Vec2(screen.width/6*(i%5+1), screen.height*2/3 - screen.height*(i/5)/3));
         
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale( 0.1f );
         point->setPosition( sprite->getPosition() );
         addChild(point, 10);
@@ -1560,7 +1560,7 @@ void SpriteFrameTest::onEnter()
     _sprite1 = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
     _sprite1->setPosition( Vec2( s.width/2-80, s.height/2) );
 
-    auto spritebatch = SpriteBatchNode::create(s_pathGrossini);
+    auto spritebatch = SpriteBatchNode::create(s_pathCharaPlayer10);
     spritebatch->addChild(_sprite1);
     addChild(spritebatch);
 
@@ -1860,7 +1860,7 @@ void SpriteOffsetAnchorRotation::onEnter()
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition(Vec2( s.width/4*(i+1), s.height/2));
 
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale( 0.25f );
         point->setPosition( sprite->getPosition() );
         addChild(point, 1);
@@ -1931,7 +1931,7 @@ SpriteBatchNodeOffsetAnchorRotation::SpriteBatchNodeOffsetAnchorRotation()
     cache->addSpriteFramesWithFile("animations/grossini.plist");
     cache->addSpriteFramesWithFile("animations/grossini_gray.plist", "animations/grossini_gray.png");
     
-    auto spritebatch = SpriteBatchNode::create(s_pathGrossini);
+    auto spritebatch = SpriteBatchNode::create(s_pathCharaPlayer10);
     addChild(spritebatch);
     
     for(int i=0;i<3;i++) 
@@ -1942,7 +1942,7 @@ SpriteBatchNodeOffsetAnchorRotation::SpriteBatchNodeOffsetAnchorRotation()
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition( Vec2( s.width/4*(i+1), s.height/2));
         
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale( 0.25f );
         point->setPosition( sprite->getPosition() );
         addChild(point, 200);
@@ -2021,7 +2021,7 @@ SpriteOffsetAnchorScale::SpriteOffsetAnchorScale()
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition( Vec2( s.width/4*(i+1), s.height/2) );
         
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale( 0.25f );
         point->setPosition( sprite->getPosition() );
         addChild(point, 1);
@@ -2093,7 +2093,7 @@ SpriteBatchNodeOffsetAnchorScale::SpriteBatchNodeOffsetAnchorScale()
     cache->addSpriteFramesWithFile("animations/grossini.plist");
     cache->addSpriteFramesWithFile("animations/grossini_gray.plist", "animations/grossini_gray.png");
     
-    auto spritesheet = SpriteBatchNode::create(s_pathGrossini);
+    auto spritesheet = SpriteBatchNode::create(s_pathCharaPlayer10);
     addChild(spritesheet);
     
     for(int i=0;i<3;i++) 
@@ -2104,7 +2104,7 @@ SpriteBatchNodeOffsetAnchorScale::SpriteBatchNodeOffsetAnchorScale()
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition( Vec2( s.width/4*(i+1), s.height/2) );
         
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale( 0.25f );
         point->setPosition( sprite->getPosition() );
         addChild(point, 200);
@@ -2232,7 +2232,7 @@ SpriteHybrid::SpriteHybrid()
 
     // parents
     auto parent1 = Node::create();
-    auto parent2 = SpriteBatchNode::create(s_pathGrossini, 50);
+    auto parent2 = SpriteBatchNode::create(s_pathCharaPlayer10, 50);
     
     addChild(parent1, 0, kTagNode);
     addChild(parent2, 0, kTagSpriteBatchNode);
@@ -2323,7 +2323,7 @@ SpriteBatchNodeChildren::SpriteBatchNodeChildren()
     auto s = Director::getInstance()->getWinSize();
     
     // parents
-    auto batch = SpriteBatchNode::create(s_pathGrossini, 50);
+    auto batch = SpriteBatchNode::create(s_pathCharaPlayer10, 50);
     
     addChild(batch, 0, kTagSpriteBatchNode);
     
@@ -2594,7 +2594,7 @@ SpriteChildrenAnchorPoint::SpriteChildrenAnchorPoint()
     sprite1->addChild(sprite3, -2);
     sprite1->addChild(sprite4, 3);
     
-    point = Sprite::create("Images/r1.png");
+    point = Sprite::create(s_pathR1);
     point->setScale( 0.25f );
     point->setPosition( sprite1->getPosition() );
     addChild(point, 10);
@@ -2620,7 +2620,7 @@ SpriteChildrenAnchorPoint::SpriteChildrenAnchorPoint()
     sprite1->addChild(sprite3, -2);
     sprite1->addChild(sprite4, 3);
     
-    point = Sprite::create("Images/r1.png");
+    point = Sprite::create(s_pathR1);
     point->setScale( 0.25f );
     point->setPosition( sprite1->getPosition() );
     addChild(point, 10);        
@@ -2647,7 +2647,7 @@ SpriteChildrenAnchorPoint::SpriteChildrenAnchorPoint()
     sprite1->addChild(sprite3, -2);
     sprite1->addChild(sprite4, 3);
     
-    point = Sprite::create("Images/r1.png");
+    point = Sprite::create(s_pathR1);
     point->setScale( 0.25f );
     point->setPosition( sprite1->getPosition() );
     addChild(point, 10);        
@@ -2710,7 +2710,7 @@ SpriteBatchNodeChildrenAnchorPoint::SpriteBatchNodeChildrenAnchorPoint()
     sprite1->addChild(sprite3, -2);
     sprite1->addChild(sprite4, 3);
     
-    point = Sprite::create("Images/r1.png");
+    point = Sprite::create(s_pathR1);
     point->setScale( 0.25f );
     point->setPosition( sprite1->getPosition() );
     addChild(point, 10);
@@ -2736,7 +2736,7 @@ SpriteBatchNodeChildrenAnchorPoint::SpriteBatchNodeChildrenAnchorPoint()
     sprite1->addChild(sprite3, -2);
     sprite1->addChild(sprite4, 3);
     
-    point = Sprite::create("Images/r1.png");
+    point = Sprite::create(s_pathR1);
     point->setScale( 0.25f );
     point->setPosition( sprite1->getPosition() );
     addChild(point, 10);        
@@ -2762,7 +2762,7 @@ SpriteBatchNodeChildrenAnchorPoint::SpriteBatchNodeChildrenAnchorPoint()
     sprite1->addChild(sprite3, -2);
     sprite1->addChild(sprite4, 3);
     
-    point = Sprite::create("Images/r1.png");
+    point = Sprite::create(s_pathR1);
     point->setScale( 0.25f );
     point->setPosition( sprite1->getPosition() );
     addChild(point, 10);        
@@ -3485,7 +3485,7 @@ SpriteOffsetAnchorSkew::SpriteOffsetAnchorSkew()
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition(Vec2(s.width / 4 * (i + 1), s.height / 2));
 
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale(0.25f);
         point->setPosition(sprite->getPosition());
         addChild(point, 1);
@@ -3568,7 +3568,7 @@ SpriteBatchNodeOffsetAnchorSkew::SpriteBatchNodeOffsetAnchorSkew()
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition(Vec2(s.width / 4 * (i + 1), s.height / 2));
 
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale(0.25f);
         point->setPosition(sprite->getPosition());
         addChild(point, 200);
@@ -3648,7 +3648,7 @@ SpriteOffsetAnchorSkewScale::SpriteOffsetAnchorSkewScale()
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition(Vec2(s.width / 4 * (i + 1), s.height / 2));
 
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale(0.25f);
         point->setPosition(sprite->getPosition());
         addChild(point, 1);
@@ -3737,7 +3737,7 @@ SpriteBatchNodeOffsetAnchorSkewScale::SpriteBatchNodeOffsetAnchorSkewScale()
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition(Vec2(s.width / 4 * (i + 1), s.height / 2));
 
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale(0.25f);
         point->setPosition(sprite->getPosition());
         addChild(point, 200);
@@ -3825,7 +3825,7 @@ SpriteOffsetAnchorFlip::SpriteOffsetAnchorFlip()
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition(Vec2(s.width / 4 * (i + 1), s.height / 2));
 
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale(0.25f);
         point->setPosition(sprite->getPosition());
         addChild(point, 1);
@@ -3907,7 +3907,7 @@ SpriteBatchNodeOffsetAnchorFlip::SpriteBatchNodeOffsetAnchorFlip()
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition(Vec2(s.width / 4 * (i + 1), s.height / 2));
 
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale(0.25f);
         point->setPosition(sprite->getPosition());
         addChild(point, 200);
@@ -4189,7 +4189,7 @@ SpriteOffsetAnchorRotationalSkew::SpriteOffsetAnchorRotationalSkew()
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition(Vec2(s.width/4*(i+1), s.height/2));
         
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
                             
         point->setScale(0.25f);
         point->setPosition(sprite->getPosition());
@@ -4272,7 +4272,7 @@ SpriteBatchNodeOffsetAnchorRotationalSkew::SpriteBatchNodeOffsetAnchorRotational
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition(Vec2(s.width/4*(i+1), s.height/2));
         
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         
         point->setScale(0.25f);
         point->setPosition(sprite->getPosition());
@@ -4352,7 +4352,7 @@ SpriteOffsetAnchorRotationalSkewScale::SpriteOffsetAnchorRotationalSkewScale()
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition(Vec2(s.width/4*(i+1), s.height/2));
         
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         
         point->setScale(0.25f);
         point->setPosition(sprite->getPosition());
@@ -4440,7 +4440,7 @@ SpriteBatchNodeOffsetAnchorRotationalSkewScale::SpriteBatchNodeOffsetAnchorRotat
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition(Vec2(s.width/4*(i+1), s.height/2));
         
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         
         point->setScale(0.25f);
         point->setPosition(sprite->getPosition());
@@ -4527,7 +4527,7 @@ SpriteRotationalSkewNegativeScaleChildren::SpriteRotationalSkewNegativeScaleChil
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition(Vec2(s.width/4*(i+1), s.height/2));
         
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         
         point->setScale(0.25f);
         point->setPosition(sprite->getPosition());
@@ -4594,7 +4594,7 @@ SpriteBatchNodeRotationalSkewNegativeScaleChildren::SpriteBatchNodeRotationalSke
         auto sprite = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
         sprite->setPosition(Vec2(s.width/4*(i+1), s.height/2));
 
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
 
         point->setScale(0.25f);
         point->setPosition(sprite->getPosition());
@@ -4843,17 +4843,17 @@ SpriteSlice9Test1::SpriteSlice9Test1()
         }
 
         // "anchor points"
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale(0.25f);
         point->setPosition( s1->getPosition() );
         addChild(point, 10);
 
-        auto point2 = Sprite::create("Images/r1.png");
+        auto point2 = Sprite::create(s_pathR1);
         point2->setScale(0.25f);
         point2->setPosition(s2->getPosition());
         addChild(point2, 10);
 
-        auto point3 = Sprite::create("Images/r1.png");
+        auto point3 = Sprite::create(s_pathR1);
         point3->setScale(0.25f);
         point3->setPosition(s3->getPosition());
         addChild(point3, 10);
@@ -4908,17 +4908,17 @@ SpriteSlice9Test2::SpriteSlice9Test2()
         }
 
         // "anchor points"
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale(0.25f);
         point->setPosition( s1->getPosition() );
         addChild(point, 10);
 
-        auto point2 = Sprite::create("Images/r1.png");
+        auto point2 = Sprite::create(s_pathR1);
         point2->setScale(0.25f);
         point2->setPosition(s2->getPosition());
         addChild(point2, 10);
 
-        auto point3 = Sprite::create("Images/r1.png");
+        auto point3 = Sprite::create(s_pathR1);
         point3->setScale(0.25f);
         point3->setPosition(s3->getPosition());
         addChild(point3, 10);
@@ -4973,17 +4973,17 @@ SpriteSlice9Test3::SpriteSlice9Test3()
 
 
         // "anchor points"
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale(0.25f);
         point->setPosition( s1->getPosition() );
         addChild(point, 10);
 
-        auto point2 = Sprite::create("Images/r1.png");
+        auto point2 = Sprite::create(s_pathR1);
         point2->setScale(0.25f);
         point2->setPosition(s2->getPosition());
         addChild(point2, 10);
 
-        auto point3 = Sprite::create("Images/r1.png");
+        auto point3 = Sprite::create(s_pathR1);
         point3->setScale(0.25f);
         point3->setPosition(s3->getPosition());
         addChild(point3, 10);
@@ -5037,17 +5037,17 @@ SpriteSlice9Test4::SpriteSlice9Test4()
         }
 
         // "anchor points"
-        auto point = Sprite::create("Images/r1.png");
+        auto point = Sprite::create(s_pathR1);
         point->setScale(0.1f);
         point->setPosition( s1->getPosition() );
         addChild(point, 10);
 
-        auto point2 = Sprite::create("Images/r1.png");
+        auto point2 = Sprite::create(s_pathR1);
         point2->setScale(0.1f);
         point2->setPosition(s2->getPosition());
         addChild(point2, 10);
 
-        auto point3 = Sprite::create("Images/r1.png");
+        auto point3 = Sprite::create(s_pathR1);
         point3->setScale(0.1f);
         point3->setPosition(s3->getPosition());
         addChild(point3, 10);

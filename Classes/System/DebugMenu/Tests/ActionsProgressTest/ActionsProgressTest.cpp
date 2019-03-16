@@ -80,7 +80,7 @@ void SpriteProgressToRadial::onEnter()
     auto to1 = Sequence::createWithTwoActions(ProgressTo::create(2, 100), ProgressTo::create(0, 0));
     auto to2 = Sequence::createWithTwoActions(ProgressTo::create(2, 100), ProgressTo::create(0, 0));
 
-    auto left = ProgressTimer::create(Sprite::create(s_pathSister1));
+    auto left = ProgressTimer::create(Sprite::create(s_pathCharaPlayer11));
     left->setType( ProgressTimer::Type::RADIAL );
     addChild(left);
     left->setPosition(100, s.height/2);
@@ -115,7 +115,7 @@ void SpriteProgressToHorizontal::onEnter()
     auto to1 = Sequence::createWithTwoActions(ProgressTo::create(2, 100), ProgressTo::create(0, 0));
     auto to2 = Sequence::createWithTwoActions(ProgressTo::create(2, 100), ProgressTo::create(0, 0));
     
-    auto left = ProgressTimer::create(Sprite::create(s_pathSister1));
+    auto left = ProgressTimer::create(Sprite::create(s_pathCharaPlayer11));
     left->setType(ProgressTimer::Type::BAR);
     //    Setup for a bar starting from the left since the midpoint is 0 for the x
     left->setMidpoint(Vec2(0,0));
@@ -125,7 +125,7 @@ void SpriteProgressToHorizontal::onEnter()
     left->setPosition(100, s.height/2);
     left->runAction( RepeatForever::create(to1));
     
-    auto right = ProgressTimer::create(Sprite::create(s_pathSister2));
+    auto right = ProgressTimer::create(Sprite::create(s_pathCharaPlayer12));
     right->setType(ProgressTimer::Type::BAR);
     //    Setup for a bar starting from the left since the midpoint is 1 for the x
     right->setMidpoint(Vec2(1, 0));
@@ -155,7 +155,7 @@ void SpriteProgressToVertical::onEnter()
     auto to1 = Sequence::createWithTwoActions(ProgressTo::create(2, 100), ProgressTo::create(0, 0));
     auto to2 = Sequence::createWithTwoActions(ProgressTo::create(2, 100), ProgressTo::create(0, 0));
     
-    auto left = ProgressTimer::create(Sprite::create(s_pathSister1));
+    auto left = ProgressTimer::create(Sprite::create(s_pathCharaPlayer11));
     left->setType(ProgressTimer::Type::BAR);
 
     //    Setup for a bar starting from the bottom since the midpoint is 0 for the y
@@ -166,7 +166,7 @@ void SpriteProgressToVertical::onEnter()
     left->setPosition(100, s.height/2);
     left->runAction( RepeatForever::create(to1));
     
-    auto right = ProgressTimer::create(Sprite::create(s_pathSister2));
+    auto right = ProgressTimer::create(Sprite::create(s_pathCharaPlayer12));
     right->setType(ProgressTimer::Type::BAR);
     //    Setup for a bar starting from the bottom since the midpoint is 0 for the y
     right->setMidpoint(Vec2(0, 1));
@@ -239,7 +239,7 @@ void SpriteProgressBarVarious::onEnter()
 
     auto to = Sequence::createWithTwoActions(ProgressTo::create(2, 100), ProgressTo::create(0, 0));
 
-    auto left = ProgressTimer::create(Sprite::create(s_pathSister1));
+    auto left = ProgressTimer::create(Sprite::create(s_pathCharaPlayer11));
     left->setType(ProgressTimer::Type::BAR);
 
     //    Setup for a bar starting from the bottom since the midpoint is 0 for the y
@@ -250,7 +250,7 @@ void SpriteProgressBarVarious::onEnter()
     left->setPosition(100, s.height/2);
     left->runAction(RepeatForever::create(to->clone()));
 
-    auto middle = ProgressTimer::create(Sprite::create(s_pathSister2));
+    auto middle = ProgressTimer::create(Sprite::create(s_pathCharaPlayer12));
     middle->setType(ProgressTimer::Type::BAR);
     //    Setup for a bar starting from the bottom since the midpoint is 0 for the y
     middle->setMidpoint(Vec2(0.5f, 0.5f));
@@ -260,7 +260,7 @@ void SpriteProgressBarVarious::onEnter()
     middle->setPosition(s.width/2, s.height/2);
     middle->runAction(RepeatForever::create(to->clone()));
 
-    auto right = ProgressTimer::create(Sprite::create(s_pathSister2));
+    auto right = ProgressTimer::create(Sprite::create(s_pathCharaPlayer12));
     right->setType(ProgressTimer::Type::BAR);
     //    Setup for a bar starting from the bottom since the midpoint is 0 for the y
     right->setMidpoint(Vec2(0.5f, 0.5f));
@@ -296,7 +296,7 @@ void SpriteProgressBarTintAndFade::onEnter()
 								   FadeTo::create(1.0f, 255),
 								   nullptr);
 
-    auto left = ProgressTimer::create(Sprite::create(s_pathSister1));
+    auto left = ProgressTimer::create(Sprite::create(s_pathCharaPlayer11));
     left->setType(ProgressTimer::Type::BAR);
 
     //    Setup for a bar starting from the bottom since the midpoint is 0 for the y
@@ -310,7 +310,7 @@ void SpriteProgressBarTintAndFade::onEnter()
 
     left->addChild(Label::createWithTTF("Tint", s_fontArial, 20.0f));
 
-    auto middle = ProgressTimer::create(Sprite::create(s_pathSister2));
+    auto middle = ProgressTimer::create(Sprite::create(s_pathCharaPlayer12));
     middle->setType(ProgressTimer::Type::BAR);
     //    Setup for a bar starting from the bottom since the midpoint is 0 for the y
     middle->setMidpoint(Vec2(0.5f, 0.5f));
@@ -323,7 +323,7 @@ void SpriteProgressBarTintAndFade::onEnter()
 
     middle->addChild(Label::createWithTTF("Fade", s_fontArial, 20.0f));
 
-    auto right = ProgressTimer::create(Sprite::create(s_pathSister2));
+    auto right = ProgressTimer::create(Sprite::create(s_pathCharaPlayer12));
     right->setType(ProgressTimer::Type::BAR);
     //    Setup for a bar starting from the bottom since the midpoint is 0 for the y
     right->setMidpoint(Vec2(0.5f, 0.5f));
