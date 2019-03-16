@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06A68B9B9E334ADCAD3DFD70 /* libPods-PuzzleRPG-desktop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4FF6E4803DF56946D4DA7C7 /* libPods-PuzzleRPG-desktop.a */; };
+		0F2B1A86D33F1244A3C4480D /* libPods-PuzzleRPG-mobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B9B53B55090565A1AC48F0 /* libPods-PuzzleRPG-mobile.a */; };
 		1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A88B2631FC3D9C9005C14AE /* Images.xcassets */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
@@ -405,6 +407,7 @@
 		5087E78817EB974C00C73F5D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		5087E78A17EB975400C73F5D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		52B9B53B55090565A1AC48F0 /* libPods-PuzzleRPG-mobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PuzzleRPG-mobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FDA8A02231546900DBEF91 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		80FDA8A12231546900DBEF91 /* animations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = animations; sourceTree = "<group>"; };
 		80FDA8A22231546900DBEF91 /* master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = master; sourceTree = "<group>"; };
@@ -701,13 +704,18 @@
 		80FDAA4C2231548300DBEF91 /* picojson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = picojson.h; sourceTree = "<group>"; };
 		80FDAA4D2231548300DBEF91 /* README.mkdn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mkdn; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		943DFD4A18D7206E69B21B9B /* Pods-PuzzleRPG-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuzzleRPG-mobile.release.xcconfig"; path = "Target Support Files/Pods-PuzzleRPG-mobile/Pods-PuzzleRPG-mobile.release.xcconfig"; sourceTree = "<group>"; };
+		A4FF6E4803DF56946D4DA7C7 /* libPods-PuzzleRPG-desktop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PuzzleRPG-desktop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CC89C4B2B6F74E4D3CEAC89E /* Pods-PuzzleRPG-desktop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuzzleRPG-desktop.release.xcconfig"; path = "Target Support Files/Pods-PuzzleRPG-desktop/Pods-PuzzleRPG-desktop.release.xcconfig"; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		DDA96C415F3BC54F96BD6210 /* Pods-PuzzleRPG-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuzzleRPG-mobile.debug.xcconfig"; path = "Target Support Files/Pods-PuzzleRPG-mobile/Pods-PuzzleRPG-mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		E12CF335D0BFEB9EB2308FF5 /* Pods-PuzzleRPG-desktop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuzzleRPG-desktop.debug.xcconfig"; path = "Target Support Files/Pods-PuzzleRPG-desktop/Pods-PuzzleRPG-desktop.debug.xcconfig"; sourceTree = "<group>"; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -731,6 +739,7 @@
 				D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */,
 				D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */,
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
+				0F2B1A86D33F1244A3C4480D /* libPods-PuzzleRPG-mobile.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,6 +759,7 @@
 				5087E76917EB910900C73F5D /* OpenAL.framework in Frameworks */,
 				5087E76A17EB910900C73F5D /* AVFoundation.framework in Frameworks */,
 				5087E76B17EB910900C73F5D /* AudioToolbox.framework in Frameworks */,
+				06A68B9B9E334ADCAD3DFD70 /* libPods-PuzzleRPG-desktop.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,6 +812,7 @@
 				1AF87B461F6F77D6007BE51C /* ios */,
 				503AE10617EB990700D1A890 /* mac */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				556CDDF15CAC3D8C73FC934E /* Pods */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -829,6 +840,8 @@
 				BF170DB012928DE900B8313A /* OpenGLES.framework */,
 				BF1C47EA1293683800B63C5D /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				A4FF6E4803DF56946D4DA7C7 /* libPods-PuzzleRPG-desktop.a */,
+				52B9B53B55090565A1AC48F0 /* libPods-PuzzleRPG-mobile.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -881,6 +894,17 @@
 				503AE10417EB98FF00D1A890 /* Prefix.pch */,
 			);
 			name = mac;
+			sourceTree = "<group>";
+		};
+		556CDDF15CAC3D8C73FC934E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E12CF335D0BFEB9EB2308FF5 /* Pods-PuzzleRPG-desktop.debug.xcconfig */,
+				CC89C4B2B6F74E4D3CEAC89E /* Pods-PuzzleRPG-desktop.release.xcconfig */,
+				DDA96C415F3BC54F96BD6210 /* Pods-PuzzleRPG-mobile.debug.xcconfig */,
+				943DFD4A18D7206E69B21B9B /* Pods-PuzzleRPG-mobile.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		80FDA8B92231548300DBEF91 /* Scene */ = {
@@ -2083,6 +2107,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "PuzzleRPG-mobile" */;
 			buildPhases = (
+				4451FD306F88D51E5D660F0C /* [CP] Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
@@ -2101,6 +2126,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "PuzzleRPG-desktop" */;
 			buildPhases = (
+				F78F505A78E56DBF494A2370 /* [CP] Check Pods Manifest.lock */,
 				5087E74817EB910900C73F5D /* Resources */,
 				5087E75617EB910900C73F5D /* Sources */,
 				5087E75C17EB910900C73F5D /* Frameworks */,
@@ -2139,6 +2165,7 @@
 				German,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
@@ -2216,6 +2243,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4451FD306F88D51E5D660F0C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PuzzleRPG-mobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F78F505A78E56DBF494A2370 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PuzzleRPG-desktop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
@@ -2532,6 +2606,7 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDA96C415F3BC54F96BD6210 /* Pods-PuzzleRPG-mobile.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2548,6 +2623,7 @@
 					USE_FILE32API,
 					"COCOS2D_DEBUG=1",
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(inherited)";
@@ -2556,6 +2632,7 @@
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
+					"$(inherited)",
 				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -2568,6 +2645,7 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 943DFD4A18D7206E69B21B9B /* Pods-PuzzleRPG-mobile.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2583,6 +2661,7 @@
 					USE_FILE32API,
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
 					NDEBUG,
+					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(inherited)";
@@ -2591,6 +2670,7 @@
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
+					"$(inherited)",
 				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -2603,6 +2683,7 @@
 		};
 		5087E76D17EB910900C73F5D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E12CF335D0BFEB9EB2308FF5 /* Pods-PuzzleRPG-desktop.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -2616,6 +2697,7 @@
 					USE_FILE32API,
 					"COCOS2D_DEBUG=1",
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
@@ -2627,6 +2709,7 @@
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
+					"$(inherited)",
 				);
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
 			};
@@ -2634,6 +2717,7 @@
 		};
 		5087E76E17EB910900C73F5D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC89C4B2B6F74E4D3CEAC89E /* Pods-PuzzleRPG-desktop.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -2646,6 +2730,7 @@
 					USE_FILE32API,
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
 					NDEBUG,
+					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
@@ -2657,6 +2742,7 @@
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
+					"$(inherited)",
 				);
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
 			};
@@ -2669,6 +2755,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
@@ -2683,6 +2770,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -2693,6 +2781,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
@@ -2707,6 +2796,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				VALIDATE_PRODUCT = YES;
