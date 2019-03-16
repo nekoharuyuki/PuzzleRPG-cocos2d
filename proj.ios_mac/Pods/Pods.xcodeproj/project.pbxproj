@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16C36144FF268C025B8DCC4E55E55279 /* Pods-PuzzleRPG-mobile-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBF2C2C2BE2BE76AC28BA4512A6216B /* Pods-PuzzleRPG-mobile-dummy.m */; };
+		DAE1745A453FCB0CEF276446E4E02B9B /* Pods-PuzzleRPG-desktop-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F5A12C86BC2494D441BB3584DC3F29 /* Pods-PuzzleRPG-desktop-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0BC46B44A79E48037C7AF475DA0E81E2 /* Pods-PuzzleRPG-mobile-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PuzzleRPG-mobile-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2438B0C1012C8500BF33AFF3D7D7B264 /* Pods-PuzzleRPG-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PuzzleRPG-mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		250F23483A6F07A78224ACA129059DCB /* libPods-PuzzleRPG-mobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-PuzzleRPG-mobile.a"; path = "libPods-PuzzleRPG-mobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E4A6C3B21E31D6CE915C43ED72F05F1 /* libPods-PuzzleRPG-desktop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-PuzzleRPG-desktop.a"; path = "libPods-PuzzleRPG-desktop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43F5A12C86BC2494D441BB3584DC3F29 /* Pods-PuzzleRPG-desktop-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PuzzleRPG-desktop-dummy.m"; sourceTree = "<group>"; };
+		994413DA346EFF198CBF98F0169D3C36 /* Pods-PuzzleRPG-desktop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PuzzleRPG-desktop.debug.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A519148181DDE30A56E4EA1E82B716D2 /* Pods-PuzzleRPG-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PuzzleRPG-mobile.release.xcconfig"; sourceTree = "<group>"; };
+		C1EA2D02DD7C9A30AAA1C48CD4F1DD89 /* Pods-PuzzleRPG-desktop-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PuzzleRPG-desktop-acknowledgements.plist"; sourceTree = "<group>"; };
+		CCF9C8C64C30D7C8629C599299294F8E /* Pods-PuzzleRPG-desktop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PuzzleRPG-desktop.release.xcconfig"; sourceTree = "<group>"; };
+		CFBF2C2C2BE2BE76AC28BA4512A6216B /* Pods-PuzzleRPG-mobile-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PuzzleRPG-mobile-dummy.m"; sourceTree = "<group>"; };
+		E328517DBA17F9FB7F7DDCE7E76F213F /* Pods-PuzzleRPG-mobile-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PuzzleRPG-mobile-acknowledgements.plist"; sourceTree = "<group>"; };
+		E92012F13EF55D7CD476657FC77DB6D1 /* Pods-PuzzleRPG-desktop-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PuzzleRPG-desktop-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0F4863AE41FFC175DF25FDDC60BAC70F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3FAA60B59FEA0264CEED85640D886C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12AA1732E647287E77DC671EA44D1300 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				87F51F322D91C0AEF38DD9719033B2FA /* Pods-PuzzleRPG-desktop */,
+				1C320665CF426F49E524DB897E716241 /* Pods-PuzzleRPG-mobile */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		1C320665CF426F49E524DB897E716241 /* Pods-PuzzleRPG-mobile */ = {
+			isa = PBXGroup;
+			children = (
+				0BC46B44A79E48037C7AF475DA0E81E2 /* Pods-PuzzleRPG-mobile-acknowledgements.markdown */,
+				E328517DBA17F9FB7F7DDCE7E76F213F /* Pods-PuzzleRPG-mobile-acknowledgements.plist */,
+				CFBF2C2C2BE2BE76AC28BA4512A6216B /* Pods-PuzzleRPG-mobile-dummy.m */,
+				2438B0C1012C8500BF33AFF3D7D7B264 /* Pods-PuzzleRPG-mobile.debug.xcconfig */,
+				A519148181DDE30A56E4EA1E82B716D2 /* Pods-PuzzleRPG-mobile.release.xcconfig */,
+			);
+			name = "Pods-PuzzleRPG-mobile";
+			path = "Target Support Files/Pods-PuzzleRPG-mobile";
+			sourceTree = "<group>";
+		};
+		7F3DF6ABF56538776135053EB552B075 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E4A6C3B21E31D6CE915C43ED72F05F1 /* libPods-PuzzleRPG-desktop.a */,
+				250F23483A6F07A78224ACA129059DCB /* libPods-PuzzleRPG-mobile.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87F51F322D91C0AEF38DD9719033B2FA /* Pods-PuzzleRPG-desktop */ = {
+			isa = PBXGroup;
+			children = (
+				E92012F13EF55D7CD476657FC77DB6D1 /* Pods-PuzzleRPG-desktop-acknowledgements.markdown */,
+				C1EA2D02DD7C9A30AAA1C48CD4F1DD89 /* Pods-PuzzleRPG-desktop-acknowledgements.plist */,
+				43F5A12C86BC2494D441BB3584DC3F29 /* Pods-PuzzleRPG-desktop-dummy.m */,
+				994413DA346EFF198CBF98F0169D3C36 /* Pods-PuzzleRPG-desktop.debug.xcconfig */,
+				CCF9C8C64C30D7C8629C599299294F8E /* Pods-PuzzleRPG-desktop.release.xcconfig */,
+			);
+			name = "Pods-PuzzleRPG-desktop";
+			path = "Target Support Files/Pods-PuzzleRPG-desktop";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
+				7F3DF6ABF56538776135053EB552B075 /* Products */,
+				12AA1732E647287E77DC671EA44D1300 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		23170B9FACB110FAEB2000527DE4B435 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A68F89556B4441EC7CDB69CD247C01C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		25B1D3E098F4FD0971013A5F8B16258A /* Pods-PuzzleRPG-desktop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD07260BE9967AA972BF1B03BCE06A7C /* Build configuration list for PBXNativeTarget "Pods-PuzzleRPG-desktop" */;
+			buildPhases = (
+				3A68F89556B4441EC7CDB69CD247C01C /* Headers */,
+				46C3ADA7E5D10225F937F61B21F9E263 /* Sources */,
+				0F4863AE41FFC175DF25FDDC60BAC70F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PuzzleRPG-desktop";
+			productName = "Pods-PuzzleRPG-desktop";
+			productReference = 3E4A6C3B21E31D6CE915C43ED72F05F1 /* libPods-PuzzleRPG-desktop.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C446C5E49C826E6D31FF14B49E0A7170 /* Pods-PuzzleRPG-mobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94EB35468A8FEDCFD5857F886F9A4C71 /* Build configuration list for PBXNativeTarget "Pods-PuzzleRPG-mobile" */;
+			buildPhases = (
+				23170B9FACB110FAEB2000527DE4B435 /* Headers */,
+				3B07898278E7CF707AF78EFB40E1066C /* Sources */,
+				A3FAA60B59FEA0264CEED85640D886C0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PuzzleRPG-mobile";
+			productName = "Pods-PuzzleRPG-mobile";
+			productReference = 250F23483A6F07A78224ACA129059DCB /* libPods-PuzzleRPG-mobile.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 7F3DF6ABF56538776135053EB552B075 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25B1D3E098F4FD0971013A5F8B16258A /* Pods-PuzzleRPG-desktop */,
+				C446C5E49C826E6D31FF14B49E0A7170 /* Pods-PuzzleRPG-mobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B07898278E7CF707AF78EFB40E1066C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16C36144FF268C025B8DCC4E55E55279 /* Pods-PuzzleRPG-mobile-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46C3ADA7E5D10225F937F61B21F9E263 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE1745A453FCB0CEF276446E4E02B9B /* Pods-PuzzleRPG-desktop-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0D93A296245555457DBFDEAB72756E9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A519148181DDE30A56E4EA1E82B716D2 /* Pods-PuzzleRPG-mobile.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6F428FCAD7EEADE147E5C346B687352A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		76BF2497391F04814996C044AE227F06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCF9C8C64C30D7C8629C599299294F8E /* Pods-PuzzleRPG-desktop.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		87CF1F197A29295E798CCD365E40D33D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B7F57DE673A93FCEDE404CC097BFEA73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2438B0C1012C8500BF33AFF3D7D7B264 /* Pods-PuzzleRPG-mobile.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EFFABEC4C492865B559D679F681F010A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 994413DA346EFF198CBF98F0169D3C36 /* Pods-PuzzleRPG-desktop.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87CF1F197A29295E798CCD365E40D33D /* Debug */,
+				6F428FCAD7EEADE147E5C346B687352A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94EB35468A8FEDCFD5857F886F9A4C71 /* Build configuration list for PBXNativeTarget "Pods-PuzzleRPG-mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7F57DE673A93FCEDE404CC097BFEA73 /* Debug */,
+				0D93A296245555457DBFDEAB72756E9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD07260BE9967AA972BF1B03BCE06A7C /* Build configuration list for PBXNativeTarget "Pods-PuzzleRPG-desktop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFFABEC4C492865B559D679F681F010A /* Debug */,
+				76BF2497391F04814996C044AE227F06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
