@@ -486,7 +486,7 @@ bool EffectSpriteTest::init()
         menu->setPosition(Vec2(s.width/2,70));
         addChild(menu);
 
-        _sprite = EffectSprite::create(s_pathCharaPlayer10);
+        _sprite = EffectSprite::create(s_pathCharPlayer10);
         _sprite->setPosition(Vec2(0, s.height/2));
         addChild(_sprite);
 

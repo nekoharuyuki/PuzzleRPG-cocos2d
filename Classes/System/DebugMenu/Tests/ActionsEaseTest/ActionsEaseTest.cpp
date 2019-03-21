@@ -47,27 +47,27 @@ void EaseSpriteDemo::centerSprites(unsigned int numberOfSprites)
     
     if( numberOfSprites == 0 )
     {
-        _tamara->setVisible(false);
-        _kathia->setVisible(false);
-        _grossini->setVisible(false);
+        m_charPlayer2->setVisible(false);
+        m_charPlayer3->setVisible(false);
+        m_charPlayer1->setVisible(false);
     }
     else if ( numberOfSprites == 1 )
     {
-        _tamara->setVisible(false);
-        _kathia->setVisible(false);
-        _grossini->setPosition(s.width/2, s.height/2);
+        m_charPlayer2->setVisible(false);
+        m_charPlayer3->setVisible(false);
+        m_charPlayer1->setPosition(s.width/2, s.height/2);
     }
     else if( numberOfSprites == 2 )
     {
-        _kathia->setPosition(s.width/3, s.height/2);
-        _tamara->setPosition(2*s.width/3, s.height/2);
-        _grossini->setVisible(false);
+        m_charPlayer3->setPosition(s.width/3, s.height/2);
+        m_charPlayer2->setPosition(2*s.width/3, s.height/2);
+        m_charPlayer1->setVisible(false);
     }
     else if( numberOfSprites == 3 )
     {
-        _grossini->setPosition(s.width/2, s.height/2);
-        _tamara->setPosition(s.width/4, s.height/2);
-        _kathia->setPosition(3 * s.width/4, s.height/2);
+        m_charPlayer1->setPosition(s.width/2, s.height/2);
+        m_charPlayer2->setPosition(s.width/4, s.height/2);
+        m_charPlayer3->setPosition(3 * s.width/4, s.height/2);
     }
 }
 
@@ -98,13 +98,13 @@ void SpriteEase::onEnter()
     auto seq3 = Sequence::create(move_ease_out, delay->clone(), move_ease_out_back, delay->clone(), nullptr);
     
     
-    auto a2 = _grossini->runAction(RepeatForever::create(seq1));
+    auto a2 = m_charPlayer1->runAction(RepeatForever::create(seq1));
     a2->setTag(1);
 
-    auto a1 = _tamara->runAction(RepeatForever::create(seq2));
+    auto a1 = m_charPlayer2->runAction(RepeatForever::create(seq2));
     a1->setTag(1);
 
-    auto a = _kathia->runAction(RepeatForever::create(seq3));
+    auto a = m_charPlayer3->runAction(RepeatForever::create(seq3));
     a->setTag(1);
 
     schedule(CC_SCHEDULE_SELECTOR(SpriteEase::testStopAction), 6.25f);
@@ -114,9 +114,9 @@ void SpriteEase::onEnter()
 void SpriteEase::testStopAction(float dt)
 {
     unschedule(CC_SCHEDULE_SELECTOR(SpriteEase::testStopAction));
-    _tamara->stopActionByTag(1);
-    _kathia->stopActionByTag(1);
-    _grossini->stopActionByTag(1);
+    m_charPlayer2->stopActionByTag(1);
+    m_charPlayer3->stopActionByTag(1);
+    m_charPlayer1->stopActionByTag(1);
 }
 
 std::string SpriteEase::subtitle() const
@@ -153,9 +153,9 @@ void SpriteEaseInOut::onEnter()
     auto seq2 = Sequence::create( move_ease_inout2, delay->clone(), move_ease_inout_back2, delay->clone(), nullptr);
     auto seq3 = Sequence::create( move_ease_inout3, delay->clone(), move_ease_inout_back3, delay->clone(), nullptr);
         
-    _tamara->runAction(RepeatForever::create(seq1));
-    _kathia->runAction(RepeatForever::create(seq2));
-    _grossini->runAction(RepeatForever::create(seq3));
+    m_charPlayer2->runAction(RepeatForever::create(seq1));
+    m_charPlayer3->runAction(RepeatForever::create(seq2));
+    m_charPlayer1->runAction(RepeatForever::create(seq3));
 }
 
 
@@ -190,9 +190,9 @@ void SpriteEaseExponential::onEnter()
     auto seq3 = Sequence::create(move_ease_out, delay->clone(), move_ease_out_back, delay->clone(), nullptr);
     
 
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
-    _kathia->runAction( RepeatForever::create(seq3));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
+    m_charPlayer3->runAction( RepeatForever::create(seq3));
 }
 
 
@@ -223,8 +223,8 @@ void SpriteEaseExponentialInOut::onEnter()
     
     this->positionForTwo();
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
 
 }
 
@@ -259,9 +259,9 @@ void SpriteEaseSine::onEnter()
     auto seq3 = Sequence::create(move_ease_out, delay->clone(), move_ease_out_back, delay->clone(), nullptr);
     
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
-    _kathia->runAction( RepeatForever::create(seq3));    
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
+    m_charPlayer3->runAction( RepeatForever::create(seq3));
 
 }
 
@@ -293,8 +293,8 @@ void SpriteEaseSineInOut::onEnter()
 
     this->positionForTwo();
 
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
 }
 
 
@@ -327,9 +327,9 @@ void SpriteEaseElastic::onEnter()
     auto seq2 = Sequence::create(move_ease_in, delay->clone(), move_ease_in_back, delay->clone(), nullptr);
     auto seq3 = Sequence::create(move_ease_out, delay->clone(), move_ease_out_back, delay->clone(), nullptr);
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
-    _kathia->runAction( RepeatForever::create(seq3));    
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
+    m_charPlayer3->runAction( RepeatForever::create(seq3));
 }
 
 
@@ -365,9 +365,9 @@ void SpriteEaseElasticInOut::onEnter()
     auto seq2 = Sequence::create(move_ease_inout2, delay->clone(), move_ease_inout_back2, delay->clone(), nullptr);
     auto seq3 = Sequence::create(move_ease_inout3, delay->clone(), move_ease_inout_back3, delay->clone(), nullptr);
     
-    _tamara->runAction( RepeatForever::create(seq1));
-    _kathia->runAction( RepeatForever::create(seq2));
-    _grossini->runAction( RepeatForever::create(seq3)); 
+    m_charPlayer2->runAction( RepeatForever::create(seq1));
+    m_charPlayer3->runAction( RepeatForever::create(seq2));
+    m_charPlayer1->runAction( RepeatForever::create(seq3));
 }
 
 
@@ -402,9 +402,9 @@ void SpriteEaseBounce::onEnter()
     auto seq2 = Sequence::create(move_ease_in, delay->clone(), move_ease_in_back, delay->clone(), nullptr);
     auto seq3 = Sequence::create(move_ease_out, delay->clone(), move_ease_out_back, delay->clone(), nullptr);
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
-    _kathia->runAction( RepeatForever::create(seq3));    
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
+    m_charPlayer3->runAction( RepeatForever::create(seq3));
 }
 
 
@@ -437,8 +437,8 @@ void SpriteEaseBounceInOut::onEnter()
     
     this->positionForTwo();
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
 }
 
 
@@ -472,9 +472,9 @@ void SpriteEaseBack::onEnter()
     auto seq2 = Sequence::create(move_ease_in, delay->clone(), move_ease_in_back, delay->clone(), nullptr);
     auto seq3 = Sequence::create(move_ease_out, delay->clone(), move_ease_out_back, delay->clone(), nullptr);
     
-    _grossini->runAction(RepeatForever::create(seq1));
-    _tamara->runAction(RepeatForever::create(seq2));
-    _kathia->runAction(RepeatForever::create(seq3));    
+    m_charPlayer1->runAction(RepeatForever::create(seq1));
+    m_charPlayer2->runAction(RepeatForever::create(seq2));
+    m_charPlayer3->runAction(RepeatForever::create(seq3));
 }
 
 
@@ -506,8 +506,8 @@ void SpriteEaseBackInOut::onEnter()
     
     this->positionForTwo();
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));    
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
 }
 
 
@@ -550,7 +550,7 @@ void SpriteEaseBezier::onEnter()
     
     
     // sprite 2
-    _tamara->setPosition(80,160);
+    m_charPlayer2->setPosition(80,160);
 	ccBezierConfig bezier2;
     bezier2.controlPoint_1 = Vec2(100, s.height/2);
     bezier2.controlPoint_2 = Vec2(200, -s.height/2);
@@ -561,15 +561,15 @@ void SpriteEaseBezier::onEnter()
     bezierEaseTo1->setBezierParamer(0.5, 0.5, 1.0, 1.0);
     
     // sprite 3
-    _kathia->setPosition(400,160);
+    m_charPlayer3->setPosition(400,160);
     auto bezierTo2 = BezierTo::create(2, bezier2);
     auto bezierEaseTo2 = EaseBezierAction::create(bezierTo2);
     bezierEaseTo2->setBezierParamer(0.0, 0.5, -5.0, 1.0);
 
     
-    _grossini->runAction( rep);
-    _tamara->runAction(bezierEaseTo1);
-    _kathia->runAction(bezierEaseTo2);
+    m_charPlayer1->runAction( rep);
+    m_charPlayer2->runAction(bezierEaseTo1);
+    m_charPlayer3->runAction(bezierEaseTo2);
     
 }
 
@@ -603,9 +603,9 @@ void SpriteEaseQuadratic::onEnter()
     auto seq2 = Sequence::create(move_ease_in, delay->clone(), move_ease_in_back, delay->clone(), nullptr);
     auto seq3 = Sequence::create(move_ease_out, delay->clone(), move_ease_out_back, delay->clone(), nullptr);
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
-    _kathia->runAction( RepeatForever::create(seq3));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
+    m_charPlayer3->runAction( RepeatForever::create(seq3));
 }
 
 std::string SpriteEaseQuadratic::subtitle() const
@@ -636,8 +636,8 @@ void SpriteEaseQuadraticInOut::onEnter()
     
     this->positionForTwo();
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
 }
 
 std::string SpriteEaseQuadraticInOut::subtitle()const
@@ -671,9 +671,9 @@ void SpriteEaseQuartic::onEnter()
     auto seq2 = Sequence::create(move_ease_in, delay->clone(), move_ease_in_back, delay->clone(), nullptr);
     auto seq3 = Sequence::create(move_ease_out, delay->clone(), move_ease_out_back, delay->clone(), nullptr);
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
-    _kathia->runAction( RepeatForever::create(seq3));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
+    m_charPlayer3->runAction( RepeatForever::create(seq3));
 }
 
 std::string SpriteEaseQuartic::subtitle()const
@@ -704,8 +704,8 @@ void SpriteEaseQuarticInOut::onEnter()
     
     this->positionForTwo();
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
 }
 
 std::string SpriteEaseQuarticInOut::subtitle()const
@@ -738,9 +738,9 @@ void SpriteEaseQuintic::onEnter()
     auto seq2 = Sequence::create(move_ease_in, delay->clone(), move_ease_in_back, delay->clone(), nullptr);
     auto seq3 = Sequence::create(move_ease_out, delay->clone(), move_ease_out_back, delay->clone(), nullptr);
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
-    _kathia->runAction( RepeatForever::create(seq3));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
+    m_charPlayer3->runAction( RepeatForever::create(seq3));
 }
 
 std::string SpriteEaseQuintic::subtitle()const
@@ -772,8 +772,8 @@ void SpriteEaseQuinticInOut::onEnter()
     
     this->positionForTwo();
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
 }
 
 std::string SpriteEaseQuinticInOut::subtitle()const
@@ -806,9 +806,9 @@ void SpriteEaseCircle::onEnter()
     auto seq2 = Sequence::create(move_ease_in, delay->clone(), move_ease_in_back, delay->clone(), nullptr);
     auto seq3 = Sequence::create(move_ease_out, delay->clone(), move_ease_out_back, delay->clone(), nullptr);
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
-    _kathia->runAction( RepeatForever::create(seq3));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
+    m_charPlayer3->runAction( RepeatForever::create(seq3));
 }
 
 std::string SpriteEaseCircle::subtitle()const
@@ -840,8 +840,8 @@ void SpriteEaseCircleInOut::onEnter()
     
     this->positionForTwo();
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
 }
 
 std::string SpriteEaseCircleInOut::subtitle()const
@@ -874,9 +874,9 @@ void SpriteEaseCubic::onEnter()
     auto seq2 = Sequence::create(move_ease_in, delay->clone(), move_ease_in_back, delay->clone(), nullptr);
     auto seq3 = Sequence::create(move_ease_out, delay->clone(), move_ease_out_back, delay->clone(), nullptr);
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
-    _kathia->runAction( RepeatForever::create(seq3));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
+    m_charPlayer3->runAction( RepeatForever::create(seq3));
 }
 
 std::string SpriteEaseCubic::subtitle()const
@@ -908,8 +908,8 @@ void SpriteEaseCubicInOut::onEnter()
     
     this->positionForTwo();
     
-    _grossini->runAction( RepeatForever::create(seq1));
-    _tamara->runAction( RepeatForever::create(seq2));
+    m_charPlayer1->runAction( RepeatForever::create(seq1));
+    m_charPlayer2->runAction( RepeatForever::create(seq2));
 }
 
 std::string SpriteEaseCubicInOut::title()const
@@ -946,18 +946,18 @@ void SpeedTest::onEnter()
     action2->setTag(kTagAction1);
     action3->setTag(kTagAction1);
     
-    _grossini->runAction(action2);
-    _tamara->runAction(action3);
-    _kathia->runAction(action);
+    m_charPlayer1->runAction(action2);
+    m_charPlayer2->runAction(action3);
+    m_charPlayer3->runAction(action);
     
     this->schedule(CC_SCHEDULE_SELECTOR(SpeedTest::altertime), 1.0f);//:@selector(altertime:) interval:1.0f];
 }
 
 void SpeedTest::altertime(float dt)
 {    
-    auto action1 = static_cast<Speed*>(_grossini->getActionByTag(kTagAction1));
-    auto action2 = static_cast<Speed*>(_tamara->getActionByTag(kTagAction1));
-    auto action3 = static_cast<Speed*>(_kathia->getActionByTag(kTagAction1));
+    auto action1 = static_cast<Speed*>(m_charPlayer1->getActionByTag(kTagAction1));
+    auto action2 = static_cast<Speed*>(m_charPlayer2->getActionByTag(kTagAction1));
+    auto action3 = static_cast<Speed*>(m_charPlayer3->getActionByTag(kTagAction1));
     
     action1->setSpeed( CCRANDOM_MINUS1_1() * 2 );
     action2->setSpeed( CCRANDOM_MINUS1_1() * 2 );
@@ -1009,16 +1009,16 @@ EaseSpriteDemo::EaseSpriteDemo(void)
 
 EaseSpriteDemo::~EaseSpriteDemo(void)
 {
-    _grossini->release();
-    _tamara->release();
-    _kathia->release();
+    m_charPlayer1->release();
+    m_charPlayer2->release();
+    m_charPlayer3->release();
 }
 
 void EaseSpriteDemo::positionForTwo()
 {    
-    _grossini->setPosition(VisibleRect::left().x+60, VisibleRect::bottom().y + VisibleRect::getVisibleRect().size.height*1/5);
-    _tamara->setPosition(VisibleRect::left().x+60, VisibleRect::bottom().y + VisibleRect::getVisibleRect().size.height*4/5);
-    _kathia->setVisible(false);
+    m_charPlayer1->setPosition(VisibleRect::left().x+60, VisibleRect::bottom().y + VisibleRect::getVisibleRect().size.height*1/5);
+    m_charPlayer2->setPosition(VisibleRect::left().x+60, VisibleRect::bottom().y + VisibleRect::getVisibleRect().size.height*4/5);
+    m_charPlayer3->setVisible(false);
 }
 
 
@@ -1032,15 +1032,15 @@ void EaseSpriteDemo::onEnter()
     TestCase::onEnter();
 
     // Or you can create an sprite using a filename. PNG and BMP files are supported. Probably TIFF too
-    _grossini = Sprite::create(s_pathCharaPlayer10); _grossini->retain();
-    _tamara = Sprite::create(s_pathCharaPlayer11); _tamara->retain();
-    _kathia = Sprite::create(s_pathCharaPlayer12); _kathia->retain();
+    m_charPlayer1 = Sprite::create(s_pathCharPlayer10); m_charPlayer1->retain();
+    m_charPlayer2 = Sprite::create(s_pathCharPlayer11); m_charPlayer2->retain();
+    m_charPlayer3 = Sprite::create(s_pathCharPlayer12); m_charPlayer3->retain();
     
-    addChild( _grossini, 3);
-    addChild( _kathia, 2);
-    addChild( _tamara, 1);
+    addChild( m_charPlayer1, 3);
+    addChild( m_charPlayer3, 2);
+    addChild( m_charPlayer2, 1);
 
-    _grossini->setPosition(VisibleRect::left().x + 60, VisibleRect::bottom().y+VisibleRect::getVisibleRect().size.height*1/5);
-    _kathia->setPosition(VisibleRect::left().x + 60, VisibleRect::bottom().y+VisibleRect::getVisibleRect().size.height*2.5f/5);
-    _tamara->setPosition(VisibleRect::left().x + 60, VisibleRect::bottom().y+VisibleRect::getVisibleRect().size.height*4/5);
+    m_charPlayer1->setPosition(VisibleRect::left().x + 60, VisibleRect::bottom().y+VisibleRect::getVisibleRect().size.height*1/5);
+    m_charPlayer3->setPosition(VisibleRect::left().x + 60, VisibleRect::bottom().y+VisibleRect::getVisibleRect().size.height*2.5f/5);
+    m_charPlayer2->setPosition(VisibleRect::left().x + 60, VisibleRect::bottom().y+VisibleRect::getVisibleRect().size.height*4/5);
 }

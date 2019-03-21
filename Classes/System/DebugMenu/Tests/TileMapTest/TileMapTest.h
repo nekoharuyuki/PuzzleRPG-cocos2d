@@ -210,7 +210,7 @@ public:
 
 class TMXIsoZorder : public TileDemo
 {
-    cocos2d::Sprite*    _tamara;
+    cocos2d::Sprite*    m_charPlayer2;
 public:
     CREATE_FUNC(TMXIsoZorder);
     TMXIsoZorder();
@@ -224,7 +224,7 @@ public:
 
 class TMXOrthoZorder : public TileDemo
 {
-    cocos2d::Sprite*    _tamara;
+    cocos2d::Sprite*    m_charPlayer2;
 public:
     CREATE_FUNC(TMXOrthoZorder);
     TMXOrthoZorder();
@@ -237,7 +237,7 @@ public:
 
 class TMXIsoVertexZ : public TileDemo
 {
-    cocos2d::Sprite*    _tamara;
+    cocos2d::Sprite*    m_charPlayer2;
 public:
     CREATE_FUNC(TMXIsoVertexZ);
     TMXIsoVertexZ();
@@ -252,7 +252,7 @@ public:
 
 class TMXOrthoVertexZ : public TileDemo
 {
-    cocos2d::Sprite*    _tamara;
+    cocos2d::Sprite*    m_charPlayer2;
 public:
     CREATE_FUNC(TMXOrthoVertexZ);
     TMXOrthoVertexZ();

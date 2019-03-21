@@ -1162,7 +1162,6 @@
 				80FDA9112231548300DBEF91 /* ActionsEaseTest */,
 				80FDA9142231548300DBEF91 /* ParallaxTest */,
 				80FDA9172231548300DBEF91 /* ZwoptexTest */,
-				80FDA91A2231548300DBEF91 /* precheader.h */,
 				80FDA91B2231548300DBEF91 /* CurlTest */,
 				80FDA91E2231548300DBEF91 /* UnitTest */,
 				80FDA9232231548300DBEF91 /* ConfigurationTest */,
@@ -1220,11 +1219,12 @@
 				80FDAA202231548300DBEF91 /* FontTest */,
 				80FDAA232231548300DBEF91 /* LightTest */,
 				80FDAA262231548300DBEF91 /* DownloaderTest */,
-				80FDAA292231548300DBEF91 /* precheader.cpp */,
 				80FDAA2A2231548300DBEF91 /* WindowTest */,
 				80FDAA2D2231548300DBEF91 /* OpenURLTest */,
 				80FDAA302231548300DBEF91 /* ConsoleTest */,
 				80FDAA332231548300DBEF91 /* MenuTest */,
+				80FDAA292231548300DBEF91 /* precheader.cpp */,
+				80FDA91A2231548300DBEF91 /* precheader.h */,
 			);
 			path = Tests;
 			sourceTree = "<group>";

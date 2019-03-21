@@ -518,8 +518,8 @@ bool ShaderBlur::init()
 {
     if( ShaderTestDemo::init() ) 
     {
-        _blurSprite = SpriteBlur::create(s_pathCharaPlayer10);
-        auto sprite = Sprite::create(s_pathCharaPlayer10);
+        _blurSprite = SpriteBlur::create(s_pathCharPlayer10);
+        auto sprite = Sprite::create(s_pathCharPlayer10);
         auto s = Director::getInstance()->getWinSize();
         _blurSprite->setPosition(Vec2(s.width/3, s.height/2 + 30.0f));
         sprite->setPosition(Vec2(2*s.width/3, s.height/2 + 30.0f));
@@ -777,7 +777,7 @@ void ShaderMultiTexture::changeTexture(Ref*)
 {
     static const int textureFilesCount = 3;
     static const std::string textureFiles[textureFilesCount] = {
-        s_pathCharaPlayer10,
+        s_pathCharPlayer10,
         "Images/grossinis_sister1.png",
         "Images/grossinis_sister2.png"
     };

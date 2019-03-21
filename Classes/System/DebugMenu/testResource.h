@@ -21,9 +21,9 @@ static const char s_pathModalClose1[]    = "system/images/tg_close_1.png";
 static const char s_pathModalClose2[]    = "system/images/tg_close_2.png";
 
 // chara
-static const char s_pathCharaPlayer10[]  = "asset/char/chara_player_10.png";
-static const char s_pathCharaPlayer11[]  = "asset/char/chara_player_11.png";
-static const char s_pathCharaPlayer12[]  = "asset/char/chara_player_12.png";
+static const char s_pathCharPlayer10[]  = "asset/char/chara_player_10.png";
+static const char s_pathCharPlayer11[]  = "asset/char/chara_player_11.png";
+static const char s_pathCharPlayer12[]  = "asset/char/chara_player_12.png";
 
 // background
 static const char s_helloworld[]         = "system/images/Test/HelloWorld.png";

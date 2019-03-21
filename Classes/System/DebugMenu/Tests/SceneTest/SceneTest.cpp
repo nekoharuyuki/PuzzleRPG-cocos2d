@@ -59,7 +59,7 @@ SceneTestLayer1::SceneTestLayer1()
     addChild( menu );
     
     auto s = Director::getInstance()->getWinSize();
-    auto sprite = Sprite::create(s_pathCharaPlayer10);
+    auto sprite = Sprite::create(s_pathCharPlayer10);
     addChild(sprite);
     sprite->setPosition( Vec2(s.width-40, s.height/2) );
     auto rotate = RotateBy::create(2, 360);
@@ -135,7 +135,7 @@ SceneTestLayer2::SceneTestLayer2()
     addChild( menu );
 
     auto s = Director::getInstance()->getWinSize();
-    auto sprite = Sprite::create(s_pathCharaPlayer10);
+    auto sprite = Sprite::create(s_pathCharPlayer10);
     addChild(sprite);
     sprite->setPosition( Vec2(s.width-40, s.height/2) );
     auto rotate = RotateBy::create(2, 360);
@@ -197,7 +197,7 @@ bool SceneTestLayer3::init()
 
         this->schedule(CC_SCHEDULE_SELECTOR(SceneTestLayer3::testDealloc));
 
-        auto sprite = Sprite::create(s_pathCharaPlayer10);
+        auto sprite = Sprite::create(s_pathCharPlayer10);
         addChild(sprite);
         sprite->setPosition( Vec2(s.width/2, 40) );
         auto rotate = RotateBy::create(2, 360);

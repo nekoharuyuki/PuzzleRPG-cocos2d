@@ -375,14 +375,14 @@ bool EffectBaseTest::init()
         _gridNodeTarget->addChild(bg, 0);
         bg->setPosition(VisibleRect::center());
         
-        auto grossini = Sprite::create(s_pathCharaPlayer12);
+        auto grossini = Sprite::create(s_pathCharPlayer12);
         _gridNodeTarget->addChild(grossini, 1);
         grossini->setPosition(VisibleRect::left().x+VisibleRect::getVisibleRect().size.width/3,VisibleRect::center().y);
         auto sc = ScaleBy::create(2, 5);
         auto sc_back = sc->reverse();
         grossini->runAction( RepeatForever::create(Sequence::create(sc, sc_back, nullptr) ) );
         
-        auto tamara = Sprite::create(s_pathCharaPlayer11);
+        auto tamara = Sprite::create(s_pathCharPlayer11);
         _gridNodeTarget->addChild(tamara, 1);
         tamara->setPosition(VisibleRect::left().x+2*VisibleRect::getVisibleRect().size.width/3,VisibleRect::center().y);
         auto sc2 = ScaleBy::create(2, 5);

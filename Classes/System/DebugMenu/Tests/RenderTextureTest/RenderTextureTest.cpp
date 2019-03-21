@@ -305,8 +305,8 @@ void RenderTextureZbuffer::renderScreenShot()
 
 RenderTexturePartTest::RenderTexturePartTest()
 {
-    auto sprite1 = Sprite::create(s_pathCharaPlayer10);
-    auto sprite11 = Sprite::create(s_pathCharaPlayer10);
+    auto sprite1 = Sprite::create(s_pathCharPlayer10);
+    auto sprite11 = Sprite::create(s_pathCharPlayer10);
     auto sprite2 = Sprite::create("Images/grossinis_sister1.png");
     auto sprite22 = Sprite::create("Images/grossinis_sister1.png");
     Size size = Director::getInstance()->getWinSize();
