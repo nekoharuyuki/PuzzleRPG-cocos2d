@@ -26,7 +26,7 @@
 #include "testResource.h"
 #include "Controller.h"
 #include "ModalLayer.h"
-
+#include "AudioManager.h"
 #include "TitleScene.h"
 
 USING_NS_CC;
@@ -48,6 +48,7 @@ TestBase::~TestBase()
 
 void TestBase::backsUpOneLevel()
 {
+    AudioManager::getInstance()->playSe("cansell");
     if (_parentTest)
     {
         _parentTest->runThisTest();
@@ -480,6 +481,7 @@ void TestCase::onEnter()
 
 void TestCase::restartTestCallback(Ref* sender)
 {
+    AudioManager::getInstance()->playSe("se_002");
     if (_testSuite)
     {
         _testSuite->restartCurrTest();
@@ -488,6 +490,7 @@ void TestCase::restartTestCallback(Ref* sender)
 
 void TestCase::nextTestCallback(Ref* sender)
 {
+    AudioManager::getInstance()->playSe("se_001");
     if (_testSuite)
     {
         _testSuite->enterNextTest();
@@ -496,6 +499,7 @@ void TestCase::nextTestCallback(Ref* sender)
 
 void TestCase::priorTestCallback(Ref* sender)
 {
+    AudioManager::getInstance()->playSe("se_001");
     if (_testSuite)
     {
         _testSuite->enterPreviousTest();
