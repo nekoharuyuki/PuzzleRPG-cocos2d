@@ -242,6 +242,10 @@ TableViewCell* TestList::tableCellAtIndex(TableView *table, ssize_t idx)
     if (!cell)
     {
         cell = TableViewCell::create();
+//        auto sprite = Sprite::create("asset/button/001.png");
+//        sprite->setAnchorPoint(Vec2::ZERO);
+//        sprite->setPosition(Vec2(0, 0));
+//        cell->addChild(sprite);
         auto label = Label::createWithTTF(_childTestNames[idx], s_fontArial, 20.0f);
         label->setTag(TABEL_LABEL_TAG);
         label->setColor(Color3B::BLACK);
@@ -250,11 +254,15 @@ TableViewCell* TestList::tableCellAtIndex(TableView *table, ssize_t idx)
     }
     else
     {
+//        auto sprite = Sprite::create("asset/button/001.png");
+//        sprite->setAnchorPoint(Vec2::ZERO);
+//        sprite->setPosition(Vec2(0, 0));
+//        cell->addChild(sprite);
         auto label = (Label*)cell->getChildByTag(TABEL_LABEL_TAG);
         label->setColor(Color3B::BLACK);
         label->setString(_childTestNames[idx]);
     }
-
+    
     return cell;
 }
 
