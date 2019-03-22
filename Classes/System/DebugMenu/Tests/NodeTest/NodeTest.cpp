@@ -98,10 +98,10 @@ void NodeTest2::onEnter()
 
     auto s = Director::getInstance()->getWinSize();
     
-    auto sp1 = Sprite::create(s_pathCharaPlayer11);
-    auto sp2 = Sprite::create(s_pathCharaPlayer12);
-    auto sp3 = Sprite::create(s_pathCharaPlayer11);
-    auto sp4 = Sprite::create(s_pathCharaPlayer12);
+    auto sp1 = Sprite::create(s_pathCharPlayer11);
+    auto sp2 = Sprite::create(s_pathCharPlayer12);
+    auto sp3 = Sprite::create(s_pathCharPlayer11);
+    auto sp4 = Sprite::create(s_pathCharPlayer12);
     
     sp1->setPosition(Vec2(100, s.height /2 ));
     sp2->setPosition(Vec2(380, s.height /2 ));
@@ -147,8 +147,8 @@ std::string NodeTest2::subtitle() const
 
 NodeTest4::NodeTest4()
 {
-    auto sp1 = Sprite::create(s_pathCharaPlayer11);
-    auto sp2 = Sprite::create(s_pathCharaPlayer12);
+    auto sp1 = Sprite::create(s_pathCharPlayer11);
+    auto sp2 = Sprite::create(s_pathCharPlayer12);
     
     sp1->setPosition( Vec2(100,160) );
     sp2->setPosition( Vec2(380,160) );
@@ -186,8 +186,8 @@ std::string NodeTest4::subtitle() const
 //------------------------------------------------------------------
 NodeTest5::NodeTest5()
 {
-    auto sp1 = Sprite::create(s_pathCharaPlayer11);
-    auto sp2 = Sprite::create(s_pathCharaPlayer12);
+    auto sp1 = Sprite::create(s_pathCharPlayer11);
+    auto sp2 = Sprite::create(s_pathCharPlayer12);
     
     sp1->setPosition(Vec2(100,160));
     sp2->setPosition(Vec2(380,160));
@@ -238,11 +238,11 @@ std::string NodeTest5::subtitle() const
 //------------------------------------------------------------------
 NodeTest6::NodeTest6()
 {
-    auto sp1 = Sprite::create(s_pathCharaPlayer11);
-    auto sp11 = Sprite::create(s_pathCharaPlayer11);
+    auto sp1 = Sprite::create(s_pathCharPlayer11);
+    auto sp11 = Sprite::create(s_pathCharPlayer11);
 
-    auto sp2 = Sprite::create(s_pathCharaPlayer12);
-    auto sp21 = Sprite::create(s_pathCharaPlayer12);
+    auto sp2 = Sprite::create(s_pathCharPlayer12);
+    auto sp21 = Sprite::create(s_pathCharPlayer12);
         
     sp1->setPosition(Vec2(100,160));
     sp2->setPosition(Vec2(380,160));
@@ -302,7 +302,7 @@ StressTest1::StressTest1()
 {
     auto s = Director::getInstance()->getWinSize();
 
-    auto sp1 = Sprite::create(s_pathCharaPlayer11);
+    auto sp1 = Sprite::create(s_pathCharPlayer11);
     addChild(sp1, 0, kTagSprite1);
     
     sp1->setPosition( Vec2(s.width/2, s.height/2) );        
@@ -356,7 +356,7 @@ StressTest2::StressTest2()
     
     auto sublayer = Layer::create();
     
-    auto sp1 = Sprite::create(s_pathCharaPlayer11);
+    auto sp1 = Sprite::create(s_pathCharPlayer11);
     sp1->setPosition( Vec2(80, s.height/2) );
     
     auto move = MoveBy::create(3, Vec2(350,0));
@@ -587,7 +587,7 @@ CameraOrbitTest::CameraOrbitTest()
 
     // LEFT
     s = p->getContentSize();
-    sprite = Sprite::create(s_pathCharaPlayer10);
+    sprite = Sprite::create(s_pathCharPlayer10);
     sprite->setScale(0.5f);
     p->addChild(sprite, 0);        
     sprite->setPosition( Vec2(s.width/4*1, s.height/2) );
@@ -595,7 +595,7 @@ CameraOrbitTest::CameraOrbitTest()
     sprite->runAction( RepeatForever::create( orbit ) );
     
     // CENTER
-    sprite = Sprite::create(s_pathCharaPlayer10);
+    sprite = Sprite::create(s_pathCharPlayer10);
     sprite->setScale( 1.0f );
     p->addChild(sprite, 0);        
     sprite->setPosition( Vec2(s.width/4*2, s.height/2) );
@@ -604,7 +604,7 @@ CameraOrbitTest::CameraOrbitTest()
     
     
     // RIGHT
-    sprite = Sprite::create(s_pathCharaPlayer10);
+    sprite = Sprite::create(s_pathCharPlayer10);
     sprite->setScale( 2.0f );
     p->addChild(sprite, 0);        
     sprite->setPosition( Vec2(s.width/4*3, s.height/2) );
@@ -652,7 +652,7 @@ CameraZoomTest::CameraZoomTest()
 //    Camera *cam;
     
     // LEFT
-    sprite = Sprite::create(s_pathCharaPlayer10);
+    sprite = Sprite::create(s_pathCharPlayer10);
     addChild( sprite, 0);        
     sprite->setPosition( Vec2(s.width/4*1, s.height/2) );
 //    cam = sprite->getCamera();
@@ -660,12 +660,12 @@ CameraZoomTest::CameraZoomTest()
 //    cam->setCenter(0, 0, 0);
 
     // CENTER
-    sprite = Sprite::create(s_pathCharaPlayer10);
+    sprite = Sprite::create(s_pathCharPlayer10);
     addChild( sprite, 0, 40);
     sprite->setPosition(Vec2(s.width/4*2, s.height/2));
     
     // RIGHT
-    sprite = Sprite::create(s_pathCharaPlayer10);
+    sprite = Sprite::create(s_pathCharPlayer10);
     addChild( sprite, 0, 20);
     sprite->setPosition(Vec2(s.width/4*3, s.height/2));
 
@@ -797,7 +797,7 @@ ConvertToNode::ConvertToNode()
     auto action = RepeatForever::create(rotate);
     for(int i = 0; i < 3; i++)
     {
-        auto sprite = Sprite::create(s_pathCharaPlayer10);
+        auto sprite = Sprite::create(s_pathCharPlayer10);
         sprite->setPosition(Vec2( s.width/4*(i+1), s.height/2));
 
         auto point = Sprite::create(s_pathR1);
@@ -1137,7 +1137,7 @@ NodeNormalizedPositionTest1::NodeNormalizedPositionTest1()
     positions[4] = Vec2(1,1);
 
     for(int i=0; i<5; i++) {
-        sprites[i] = Sprite::create(s_pathCharaPlayer10);
+        sprites[i] = Sprite::create(s_pathCharPlayer10);
         sprites[i]->setPositionNormalized(positions[i]);
         addChild(sprites[i]);
     }
@@ -1170,7 +1170,7 @@ NodeNormalizedPositionTest2::NodeNormalizedPositionTest2()
     positions[4] = Vec2(1,1);
 
     for(int i=0; i<5; i++) {
-        sprites[i] = Sprite::create(s_pathCharaPlayer10);
+        sprites[i] = Sprite::create(s_pathCharPlayer10);
         sprites[i]->setPositionNormalized(positions[i]);
         addChild(sprites[i]);
     }

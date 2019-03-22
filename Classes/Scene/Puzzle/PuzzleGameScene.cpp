@@ -5,6 +5,7 @@
 #include "QuestScene.h"
 #include "MapData.h"
 #include "CharData.h"
+#include "PlayerValue.h"
 #include "PartyValue.h"
 #include "AudioManager.h"
 #include "VisibleRect.h"
@@ -619,7 +620,7 @@ void PuzzleGameScene::initEnemy(Node* node)
         if(enemyData){
             enemyData->retain();
             enemyData->setMaxHp(enemyDataParam.enemyMaxHp);
-            enemyData->setHp(enemyDataParam.enemyMaxHp);
+            enemyData->setHp(enemyDataParam.enemyHp);
             enemyData->setAttack(enemyDataParam.enemyAtk);
             
             switch (enemyDataParam.enemyAttribute)
@@ -1017,6 +1018,10 @@ Spawn* PuzzleGameScene::vibratingAnimation()
 //Winアニメーション
 void PuzzleGameScene::winAnimation()
 {
+    // クエストクリアデータを保存する
+    PlayerValue::getInstance()->setClearMap(m_questNo+1);
+    PlayerValue::getInstance()->dataSave();
+    
     //白い背景を用意する
     auto whiteLayer = LayerColor::create(Color4B(255, 255, 255, 127), WINSIZE.width, WINSIZE.height);
     if(whiteLayer) {
@@ -1064,7 +1069,7 @@ void PuzzleGameScene::nextSceneWin(float dt)
 {
     // 次のシーンを生成する
     auto nextScene = CallFunc::create([dt]{
-        auto scene = ResultScene::createScene();
+        auto scene = ResultScene::createScene(m_questNo);
         auto transition = TransitionFade::create(dt, scene, Color3B::WHITE);
         Director::getInstance()->replaceScene(transition);
     });

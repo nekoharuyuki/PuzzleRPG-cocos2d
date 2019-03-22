@@ -123,22 +123,22 @@ void Material_2DEffects::onEnter()
 
     Material *mat1 = Material::createWithProperties(properties);
 
-    auto spriteBlur = Sprite::create(s_pathCharaPlayer10);
+    auto spriteBlur = Sprite::create(s_pathCharPlayer10);
     spriteBlur->setPositionNormalized(Vec2(0.2f, 0.5f));
     this->addChild(spriteBlur);
     spriteBlur->setGLProgramState(mat1->getTechniqueByName("blur")->getPassByIndex(0)->getGLProgramState());
 
-    auto spriteOutline = Sprite::create(s_pathCharaPlayer10);
+    auto spriteOutline = Sprite::create(s_pathCharPlayer10);
     spriteOutline->setPositionNormalized(Vec2(0.4f, 0.5f));
     this->addChild(spriteOutline);
     spriteOutline->setGLProgramState(mat1->getTechniqueByName("outline")->getPassByIndex(0)->getGLProgramState());
 
-    auto spriteNoise = Sprite::create(s_pathCharaPlayer10);
+    auto spriteNoise = Sprite::create(s_pathCharPlayer10);
     spriteNoise->setPositionNormalized(Vec2(0.6f, 0.5f));
     this->addChild(spriteNoise);
     spriteNoise->setGLProgramState(mat1->getTechniqueByName("noise")->getPassByIndex(0)->getGLProgramState());
 
-    auto spriteEdgeDetect = Sprite::create(s_pathCharaPlayer10);
+    auto spriteEdgeDetect = Sprite::create(s_pathCharPlayer10);
     spriteEdgeDetect->setPositionNormalized(Vec2(0.8f, 0.5f));
     this->addChild(spriteEdgeDetect);
     spriteEdgeDetect->setGLProgramState(mat1->getTechniqueByName("edge_detect")->getPassByIndex(0)->getGLProgramState());
@@ -220,22 +220,22 @@ void Material_AutoBindings::onEnter()
 
     Material *mat1 = Material::createWithProperties(properties);
 
-    auto spriteBlur = Sprite::create(s_pathCharaPlayer10);
+    auto spriteBlur = Sprite::create(s_pathCharPlayer10);
     spriteBlur->setPositionNormalized(Vec2(0.2f, 0.5f));
     this->addChild(spriteBlur);
     spriteBlur->setGLProgramState(mat1->getTechniqueByName("blur")->getPassByIndex(0)->getGLProgramState());
 
-    auto spriteOutline = Sprite::create(s_pathCharaPlayer10);
+    auto spriteOutline = Sprite::create(s_pathCharPlayer10);
     spriteOutline->setPositionNormalized(Vec2(0.4f, 0.5f));
     this->addChild(spriteOutline);
     spriteOutline->setGLProgramState(mat1->getTechniqueByName("outline")->getPassByIndex(0)->getGLProgramState());
 
-    auto spriteNoise = Sprite::create(s_pathCharaPlayer10);
+    auto spriteNoise = Sprite::create(s_pathCharPlayer10);
     spriteNoise->setPositionNormalized(Vec2(0.6f, 0.5f));
     this->addChild(spriteNoise);
     spriteNoise->setGLProgramState(mat1->getTechniqueByName("noise")->getPassByIndex(0)->getGLProgramState());
 
-    auto spriteEdgeDetect = Sprite::create(s_pathCharaPlayer10);
+    auto spriteEdgeDetect = Sprite::create(s_pathCharPlayer10);
     spriteEdgeDetect->setPositionNormalized(Vec2(0.8f, 0.5f));
     this->addChild(spriteEdgeDetect);
     spriteEdgeDetect->setGLProgramState(mat1->getTechniqueByName("edge_detect")->getPassByIndex(0)->getGLProgramState());

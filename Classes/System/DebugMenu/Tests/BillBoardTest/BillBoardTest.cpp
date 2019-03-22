@@ -251,7 +251,7 @@ void BillBoardTest::addNewAniBillBoardWithCoords(Vec3 p)
 {
     for (unsigned int i = 0; i < 10; ++i)
     {
-        auto billboardAni = BillBoard::create(s_pathCharaPlayer10);
+        auto billboardAni = BillBoard::create(s_pathCharPlayer10);
         billboardAni->setScale(0.5f);
         billboardAni->setPosition3D(Vec3(p.x, p.y,  -150.0f + 30 * i));
         _layerBillBoard->addChild(billboardAni);

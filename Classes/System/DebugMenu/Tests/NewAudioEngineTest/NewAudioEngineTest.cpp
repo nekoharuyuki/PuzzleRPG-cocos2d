@@ -27,6 +27,7 @@
 #include "NewAudioEngineTest.h"
 #include "ui/CocosGUI.h"
 #include "testResource.h"
+#include "AudioManager.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
@@ -209,6 +210,7 @@ std::string AudioEngineTestDemo::title() const
 
 void AudioEngineTestDemo::onBackCallback(cocos2d::Ref* sender)
 {
+    AudioManager::getInstance()->playSe("cansell");
     AudioEngine::end();
     TestCase::onBackCallback(sender);
 }

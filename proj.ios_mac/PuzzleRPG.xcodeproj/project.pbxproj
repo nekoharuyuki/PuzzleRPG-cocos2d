@@ -1067,9 +1067,9 @@
 			isa = PBXGroup;
 			children = (
 				80FDA8EF2231548300DBEF91 /* PlayerValue.cpp */,
-				80FDA8F02231548300DBEF91 /* PartyValue.h */,
-				80FDA8F22231548300DBEF91 /* PartyValue.cpp */,
 				80FDA8F12231548300DBEF91 /* PlayerValue.h */,
+				80FDA8F22231548300DBEF91 /* PartyValue.cpp */,
+				80FDA8F02231548300DBEF91 /* PartyValue.h */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -1162,7 +1162,6 @@
 				80FDA9112231548300DBEF91 /* ActionsEaseTest */,
 				80FDA9142231548300DBEF91 /* ParallaxTest */,
 				80FDA9172231548300DBEF91 /* ZwoptexTest */,
-				80FDA91A2231548300DBEF91 /* precheader.h */,
 				80FDA91B2231548300DBEF91 /* CurlTest */,
 				80FDA91E2231548300DBEF91 /* UnitTest */,
 				80FDA9232231548300DBEF91 /* ConfigurationTest */,
@@ -1220,11 +1219,12 @@
 				80FDAA202231548300DBEF91 /* FontTest */,
 				80FDAA232231548300DBEF91 /* LightTest */,
 				80FDAA262231548300DBEF91 /* DownloaderTest */,
-				80FDAA292231548300DBEF91 /* precheader.cpp */,
 				80FDAA2A2231548300DBEF91 /* WindowTest */,
 				80FDAA2D2231548300DBEF91 /* OpenURLTest */,
 				80FDAA302231548300DBEF91 /* ConsoleTest */,
 				80FDAA332231548300DBEF91 /* MenuTest */,
+				80FDAA292231548300DBEF91 /* precheader.cpp */,
+				80FDA91A2231548300DBEF91 /* precheader.h */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -1353,8 +1353,8 @@
 		80FDA93D2231548300DBEF91 /* DataVisitorTest */ = {
 			isa = PBXGroup;
 			children = (
-				80FDA93E2231548300DBEF91 /* DataVisitorTest.h */,
 				80FDA93F2231548300DBEF91 /* DataVisitorTest.cpp */,
+				80FDA93E2231548300DBEF91 /* DataVisitorTest.h */,
 			);
 			path = DataVisitorTest;
 			sourceTree = "<group>";
@@ -1380,12 +1380,12 @@
 		80FDA9462231548300DBEF91 /* TouchesTest */ = {
 			isa = PBXGroup;
 			children = (
+				80FDA94A2231548300DBEF91 /* TouchesTest.cpp */,
 				80FDA9472231548300DBEF91 /* TouchesTest.h */,
+				80FDA94C2231548300DBEF91 /* Ball.cpp */,
 				80FDA9482231548300DBEF91 /* Ball.h */,
 				80FDA9492231548300DBEF91 /* Paddle.cpp */,
-				80FDA94A2231548300DBEF91 /* TouchesTest.cpp */,
 				80FDA94B2231548300DBEF91 /* Paddle.h */,
-				80FDA94C2231548300DBEF91 /* Ball.cpp */,
 			);
 			path = TouchesTest;
 			sourceTree = "<group>";

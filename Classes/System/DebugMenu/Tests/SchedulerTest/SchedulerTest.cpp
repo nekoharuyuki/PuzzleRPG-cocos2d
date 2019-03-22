@@ -818,7 +818,7 @@ void SchedulerTimeScale::onEnter()
     auto action2 = action->clone();
     auto action3 = action->clone();
 
-    auto grossini = Sprite::create(s_pathCharaPlayer10);
+    auto grossini = Sprite::create(s_pathCharPlayer10);
     auto tamara = Sprite::create("Images/grossinis_sister1.png");
     auto kathia = Sprite::create("Images/grossinis_sister2.png");
 
@@ -910,7 +910,7 @@ void TwoSchedulers::onEnter()
         //
         // Center
         //
-    auto grossini = Sprite::create(s_pathCharaPlayer10);
+    auto grossini = Sprite::create(s_pathCharPlayer10);
     addChild(grossini);
     grossini->setPosition(Vec2(s.width/2,100));
     grossini->runAction(action->clone());

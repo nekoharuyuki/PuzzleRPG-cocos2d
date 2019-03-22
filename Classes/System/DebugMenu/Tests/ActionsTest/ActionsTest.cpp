@@ -97,29 +97,29 @@ void ActionsDemo::onEnter()
     TestCase::onEnter();
 
     // Or you can create an sprite using a filename. only PNG is supported now. Probably TIFF too
-    _grossini = Sprite::create(s_pathCharaPlayer10);
-    _grossini->retain();
+    m_charPlayer1 = Sprite::create(s_pathCharPlayer10);
+    m_charPlayer1->retain();
 
-    _tamara = Sprite::create(s_pathCharaPlayer11);
-    _tamara->retain();
+    m_charPlayer2 = Sprite::create(s_pathCharPlayer11);
+    m_charPlayer2->retain();
 
-    _kathia = Sprite::create(s_pathCharaPlayer12);
-    _kathia->retain();
+    m_charPlayer3 = Sprite::create(s_pathCharPlayer12);
+    m_charPlayer3->retain();
 
-    addChild(_grossini, 1);
-    addChild(_tamara, 2);
-    addChild(_kathia, 3);
+    addChild(m_charPlayer1, 1);
+    addChild(m_charPlayer2, 2);
+    addChild(m_charPlayer3, 3);
 
-    _grossini->setPosition(VisibleRect::center().x, VisibleRect::bottom().y+VisibleRect::getVisibleRect().size.height/3);
-    _tamara->setPosition(VisibleRect::center().x, VisibleRect::bottom().y+VisibleRect::getVisibleRect().size.height*2/3);
-    _kathia->setPosition(VisibleRect::center().x, VisibleRect::bottom().y+VisibleRect::getVisibleRect().size.height/2);
+    m_charPlayer1->setPosition(VisibleRect::center().x, VisibleRect::bottom().y+VisibleRect::getVisibleRect().size.height/3);
+    m_charPlayer2->setPosition(VisibleRect::center().x, VisibleRect::bottom().y+VisibleRect::getVisibleRect().size.height*2/3);
+    m_charPlayer3->setPosition(VisibleRect::center().x, VisibleRect::bottom().y+VisibleRect::getVisibleRect().size.height/2);
 }
 
 void ActionsDemo::onExit()
 {
-    _grossini->release();
-    _tamara->release();
-    _kathia->release();
+    m_charPlayer1->release();
+    m_charPlayer2->release();
+    m_charPlayer3->release();
 
     TestCase::onExit();
 }
@@ -130,27 +130,27 @@ void ActionsDemo::centerSprites(unsigned int numberOfSprites)
 
     if( numberOfSprites == 0 )
     {
-        _tamara->setVisible(false);
-        _kathia->setVisible(false);
-        _grossini->setVisible(false);
+        m_charPlayer2->setVisible(false);
+        m_charPlayer3->setVisible(false);
+        m_charPlayer1->setVisible(false);
     } 
     else if ( numberOfSprites == 1 ) 
     {
-        _tamara->setVisible(false);
-        _kathia->setVisible(false);
-        _grossini->setPosition(s.width/2, s.height/2);
+        m_charPlayer2->setVisible(false);
+        m_charPlayer3->setVisible(false);
+        m_charPlayer1->setPosition(s.width/2, s.height/2);
     }
     else if( numberOfSprites == 2 ) 
     {        
-        _kathia->setPosition(s.width/3, s.height/2);
-        _tamara->setPosition(2*s.width/3, s.height/2);
-        _grossini->setVisible(false);
+        m_charPlayer3->setPosition(s.width/3, s.height/2);
+        m_charPlayer2->setPosition(2*s.width/3, s.height/2);
+        m_charPlayer1->setVisible(false);
     } 
     else if( numberOfSprites == 3 ) 
     {
-        _grossini->setPosition(s.width/2, s.height/2);
-        _tamara->setPosition(s.width/4, s.height/2);
-        _kathia->setPosition(3 * s.width/4, s.height/2);
+        m_charPlayer1->setPosition(s.width/2, s.height/2);
+        m_charPlayer2->setPosition(s.width/4, s.height/2);
+        m_charPlayer3->setPosition(3 * s.width/4, s.height/2);
     }
 }
 
@@ -160,21 +160,21 @@ void ActionsDemo::alignSpritesLeft(unsigned int numberOfSprites)
 
     if( numberOfSprites == 1 ) 
     {
-        _tamara->setVisible(false);
-        _kathia->setVisible(false);
-        _grossini->setPosition(60, s.height/2);
+        m_charPlayer2->setVisible(false);
+        m_charPlayer3->setVisible(false);
+        m_charPlayer1->setPosition(60, s.height/2);
     } 
     else if( numberOfSprites == 2 ) 
     {        
-        _kathia->setPosition(60, s.height/3);
-        _tamara->setPosition(60, 2*s.height/3);
-        _grossini->setVisible( false );
+        m_charPlayer3->setPosition(60, s.height/3);
+        m_charPlayer2->setPosition(60, 2*s.height/3);
+        m_charPlayer1->setVisible( false );
     } 
     else if( numberOfSprites == 3 ) 
     {
-        _grossini->setPosition(60, s.height/2);
-        _tamara->setPosition(60, 2*s.height/3);
-        _kathia->setPosition(60, s.height/3);
+        m_charPlayer1->setPosition(60, s.height/2);
+        m_charPlayer2->setPosition(60, 2*s.height/3);
+        m_charPlayer3->setPosition(60, s.height/3);
     }
 }
 
@@ -195,9 +195,9 @@ void ActionMove::onEnter()
     auto actionBy = MoveBy::create(2, Vec2(80,80));
     auto actionByBack = actionBy->reverse();
 
-    _tamara->runAction( actionTo);
-    _grossini->runAction( Sequence::create(actionBy, actionByBack, nullptr));
-    _kathia->runAction(MoveTo::create(1, Vec2(40,40)));
+    m_charPlayer2->runAction( actionTo);
+    m_charPlayer1->runAction( Sequence::create(actionBy, actionByBack, nullptr));
+    m_charPlayer3->runAction(MoveTo::create(1, Vec2(40,40)));
 }
 
 std::string ActionMove::subtitle() const
@@ -218,16 +218,16 @@ void ActionMove3D::onEnter()
     
     auto s = Director::getInstance()->getWinSize();
     
-    _tamara->setPosition3D(Vec3(s.width-40, s.height-40, 0));
-    _kathia->setPosition3D(Vec3(40, 40, 0));
+    m_charPlayer2->setPosition3D(Vec3(s.width-40, s.height-40, 0));
+    m_charPlayer3->setPosition3D(Vec3(40, 40, 0));
     
     auto actionTo = MoveTo::create(2, Vec3(s.width-40, s.height-40, -100));
     auto actionBy = MoveBy::create(2, Vec3(80, 80, -100));
     auto actionByBack = actionBy->reverse();
     
-    _tamara->runAction(actionTo);
-    _grossini->runAction(Sequence::create(actionBy, actionByBack, nullptr));
-    _kathia->runAction(MoveTo::create(1, Vec3(40, 40, -100)));
+    m_charPlayer2->runAction(actionTo);
+    m_charPlayer1->runAction(Sequence::create(actionBy, actionByBack, nullptr));
+    m_charPlayer3->runAction(MoveTo::create(1, Vec3(40, 40, -100)));
 }
 
 std::string ActionMove3D::subtitle() const
@@ -250,9 +250,9 @@ void ActionScale::onEnter()
     auto actionBy = ScaleBy::create(2.0f, 1.0f, 10.0f);
     auto actionBy2 = ScaleBy::create(2.0f, 5.0f, 1.0f);
 
-    _grossini->runAction( actionTo);
-    _tamara->runAction( Sequence::create(actionBy, actionBy->reverse(), nullptr));
-    _kathia->runAction( Sequence::create(actionBy2, actionBy2->reverse(), nullptr));
+    m_charPlayer1->runAction( actionTo);
+    m_charPlayer2->runAction( Sequence::create(actionBy, actionBy->reverse(), nullptr));
+    m_charPlayer3->runAction( Sequence::create(actionBy2, actionBy2->reverse(), nullptr));
 }
 
 std::string ActionScale::subtitle() const
@@ -277,10 +277,10 @@ void ActionSkew::onEnter()
     auto actionBy2 = SkewBy::create(2, 45.0f, 45.0f);
     auto actionByBack = actionBy->reverse();
 
-    _tamara->runAction(Sequence::create(actionTo, actionToBack, nullptr));
-    _grossini->runAction(Sequence::create(actionBy, actionByBack, nullptr));
+    m_charPlayer2->runAction(Sequence::create(actionTo, actionToBack, nullptr));
+    m_charPlayer1->runAction(Sequence::create(actionBy, actionByBack, nullptr));
 
-    _kathia->runAction(Sequence::create(actionBy2, actionBy2->reverse(), nullptr));
+    m_charPlayer3->runAction(Sequence::create(actionBy2, actionBy2->reverse(), nullptr));
 }
 
 std::string ActionSkew::subtitle() const
@@ -303,9 +303,9 @@ void ActionRotationalSkew::onEnter()
     auto actionBy2 = RotateBy::create(2, 360, 0);
     auto actionBy2Back = actionBy2->reverse();
 
-    _tamara->runAction( Sequence::create(actionBy, actionByBack, nullptr) );
-    _grossini->runAction( Sequence::create(actionTo, actionToBack, nullptr) );
-    _kathia->runAction( Sequence::create(actionBy2, actionBy2Back, nullptr) );
+    m_charPlayer2->runAction( Sequence::create(actionBy, actionByBack, nullptr) );
+    m_charPlayer1->runAction( Sequence::create(actionTo, actionToBack, nullptr) );
+    m_charPlayer3->runAction( Sequence::create(actionBy2, actionBy2Back, nullptr) );
 }
 
 std::string ActionRotationalSkew::subtitle() const
@@ -320,9 +320,9 @@ void ActionRotationalSkewVSStandardSkew::onEnter()
 {
     ActionsDemo::onEnter();
 
-    _tamara->removeFromParentAndCleanup(true);
-    _grossini->removeFromParentAndCleanup(true);
-    _kathia->removeFromParentAndCleanup(true);
+    m_charPlayer2->removeFromParentAndCleanup(true);
+    m_charPlayer1->removeFromParentAndCleanup(true);
+    m_charPlayer3->removeFromParentAndCleanup(true);
 
     auto s = Director::getInstance()->getWinSize();
 
@@ -368,9 +368,9 @@ void ActionSkewRotateScale::onEnter()
 {
     ActionsDemo::onEnter();
 
-    _tamara->removeFromParentAndCleanup(true);
-    _grossini->removeFromParentAndCleanup(true);
-    _kathia->removeFromParentAndCleanup(true);
+    m_charPlayer2->removeFromParentAndCleanup(true);
+    m_charPlayer1->removeFromParentAndCleanup(true);
+    m_charPlayer3->removeFromParentAndCleanup(true);
 
     Size boxSize(100.0f, 100.0f);
 
@@ -425,13 +425,13 @@ void ActionRotate::onEnter()
     auto actionTo = RotateTo::create( 2, 45);
     auto actionTo2 = RotateTo::create( 2, -45);
     auto actionTo0 = RotateTo::create(2 , 0);
-    _tamara->runAction( Sequence::create(actionTo, actionTo0, nullptr));
+    m_charPlayer2->runAction( Sequence::create(actionTo, actionTo0, nullptr));
 
     auto actionBy = RotateBy::create(2 ,  360);
     auto actionByBack = actionBy->reverse();
-    _grossini->runAction( Sequence::create(actionBy, actionByBack, nullptr));
+    m_charPlayer1->runAction( Sequence::create(actionBy, actionByBack, nullptr));
 
-    _kathia->runAction( Sequence::create(actionTo2, actionTo0->clone(), nullptr));
+    m_charPlayer3->runAction( Sequence::create(actionTo2, actionTo0->clone(), nullptr));
 }
 
 std::string ActionRotate::subtitle() const
@@ -454,9 +454,9 @@ void ActionRotateBy3D::onEnter()
     auto actionBy2 = RotateBy::create(4, Vec3(0, 360, 0));
     auto actionBy3 = RotateBy::create(4 ,Vec3(0, 0, 360));
 
-    _tamara->runAction( Sequence::create(actionBy1, actionBy1->reverse(), nullptr));
-    _grossini->runAction( Sequence::create(actionBy2, actionBy2->reverse(), nullptr));
-    _kathia->runAction( Sequence::create(actionBy3, actionBy3->reverse(), nullptr));
+    m_charPlayer2->runAction( Sequence::create(actionBy1, actionBy1->reverse(), nullptr));
+    m_charPlayer1->runAction( Sequence::create(actionBy2, actionBy2->reverse(), nullptr));
+    m_charPlayer3->runAction( Sequence::create(actionBy3, actionBy3->reverse(), nullptr));
 }
 
 std::string ActionRotateBy3D::subtitle() const
@@ -480,9 +480,9 @@ void ActionJump::onEnter()
     auto actionUp = JumpBy::create(2, Vec2(0,0), 80, 4);
     auto actionByBack = actionBy->reverse();
 
-    _tamara->runAction( actionTo);
-    _grossini->runAction( Sequence::create(actionBy, actionByBack, nullptr));
-    _kathia->runAction( RepeatForever::create(actionUp));
+    m_charPlayer2->runAction( actionTo);
+    m_charPlayer1->runAction( Sequence::create(actionBy, actionByBack, nullptr));
+    m_charPlayer3->runAction( RepeatForever::create(actionUp));
 }
 std::string ActionJump::subtitle() const
 {
@@ -519,7 +519,7 @@ void ActionBezier::onEnter()
 
 
     // sprite 2
-    _tamara->setPosition(80,160);
+    m_charPlayer2->setPosition(80,160);
 	ccBezierConfig bezier2;
     bezier2.controlPoint_1 = Vec2(100, s.height/2);
     bezier2.controlPoint_2 = Vec2(200, -s.height/2);
@@ -528,12 +528,12 @@ void ActionBezier::onEnter()
     auto bezierTo1 = BezierTo::create(2, bezier2);    
 
     // sprite 3
-    _kathia->setPosition(400,160);
+    m_charPlayer3->setPosition(400,160);
     auto bezierTo2 = BezierTo::create(2, bezier2);
 
-    _grossini->runAction( rep);
-    _tamara->runAction(bezierTo1);
-    _kathia->runAction(bezierTo2);
+    m_charPlayer1->runAction( rep);
+    m_charPlayer2->runAction(bezierTo1);
+    m_charPlayer3->runAction(bezierTo2);
 
 }
 
@@ -556,8 +556,8 @@ void ActionBlink::onEnter()
     auto action1 = Blink::create(2, 10);
     auto action2 = Blink::create(2, 5);
 
-    _tamara->runAction( action1);
-    _kathia->runAction(action2);
+    m_charPlayer2->runAction( action1);
+    m_charPlayer3->runAction(action2);
 }
 
 std::string  ActionBlink::subtitle() const
@@ -576,7 +576,7 @@ void ActionFade::onEnter()
 
     centerSprites(2);
 
-    _tamara->setOpacity( 0 );
+    m_charPlayer2->setOpacity( 0 );
     auto action1 = FadeIn::create(1.0f);
     auto action1Back = action1->reverse();
 
@@ -585,10 +585,10 @@ void ActionFade::onEnter()
     auto action2BackReverse = action2Back->reverse();
     auto action2BackReverseReverse = action2BackReverse->reverse();
 
-    _tamara->setOpacity(122);
-    _tamara->runAction( Sequence::create( action1, action1Back, nullptr));
-    _kathia->setOpacity(122);
-    _kathia->runAction( Sequence::create( action2, action2Back,action2BackReverse,action2BackReverseReverse, nullptr));
+    m_charPlayer2->setOpacity(122);
+    m_charPlayer2->runAction( Sequence::create( action1, action1Back, nullptr));
+    m_charPlayer3->setOpacity(122);
+    m_charPlayer3->runAction( Sequence::create( action2, action2Back,action2BackReverse,action2BackReverseReverse, nullptr));
 }
 
 std::string  ActionFade::subtitle() const
@@ -612,8 +612,8 @@ void ActionTint::onEnter()
     auto action2 = TintBy::create(2, -127, -255, -127);
     auto action2Back = action2->reverse();
 
-    _tamara->runAction( action1);
-    _kathia->runAction( Sequence::create( action2, action2Back, nullptr));
+    m_charPlayer2->runAction( action1);
+    m_charPlayer3->runAction( Sequence::create( action2, action2Back, nullptr));
 }
 
 std::string  ActionTint::subtitle() const
@@ -631,7 +631,7 @@ void ActionAnimate::onEnter()
     ActionsDemo::onEnter();
 
     centerSprites(3);
-
+/*
     //
     // Manual animation
     //
@@ -647,7 +647,7 @@ void ActionAnimate::onEnter()
     animation->setRestoreOriginalFrame(true);
 
     auto action = Animate::create(animation);
-    _grossini->runAction(Sequence::create(action, action->reverse(), nullptr));
+    m_charPlayer1->runAction(Sequence::create(action, action->reverse(), nullptr));
     
     //
     // File animation
@@ -658,7 +658,7 @@ void ActionAnimate::onEnter()
     auto animation2 = cache->getAnimation("dance_1");
 
     auto action2 = Animate::create(animation2);
-    _tamara->runAction(Sequence::create(action2, action2->reverse(), nullptr));
+    m_charPlayer2->runAction(Sequence::create(action2, action2->reverse(), nullptr));
 
     _frameDisplayedListener = EventListenerCustom::create(AnimationFrameDisplayedNotification, [](EventCustom * event){
         auto userData = static_cast<AnimationFrame::DisplayedEventInfo*>(event->getUserData());
@@ -677,7 +677,7 @@ void ActionAnimate::onEnter()
 
 
     auto action3 = Animate::create(animation3);
-    _kathia->runAction(action3);
+    m_charPlayer3->runAction(action3);*/
 }
 
 void ActionAnimate::onExit()
@@ -712,7 +712,7 @@ void ActionSequence::onEnter()
         RotateBy::create( 2,  540),
         nullptr);
 
-    _grossini->runAction(action);
+    m_charPlayer1->runAction(action);
 }
 
 std::string ActionSequence::subtitle() const
@@ -731,18 +731,18 @@ void ActionSequence2::onEnter()
 
     alignSpritesLeft(1);
 
-    _grossini->setVisible(false);
+    m_charPlayer1->setVisible(false);
 
     auto action = Sequence::create(
 		Place::create(Vec2(200,200)),
 		Show::create(),
 		MoveBy::create(1, Vec2(100,0)),
 		CallFunc::create( CC_CALLBACK_0(ActionSequence2::callback1,this)),
-		CallFunc::create( CC_CALLBACK_0(ActionSequence2::callback2,this,_grossini)),
-		CallFunc::create( CC_CALLBACK_0(ActionSequence2::callback3,this,_grossini,0xbebabeba)),
+		CallFunc::create( CC_CALLBACK_0(ActionSequence2::callback2,this,m_charPlayer1)),
+		CallFunc::create( CC_CALLBACK_0(ActionSequence2::callback3,this,m_charPlayer1,0xbebabeba)),
 		nullptr);
 
-    _grossini->runAction(action);
+    m_charPlayer1->runAction(action);
 }
 
 void ActionSequence2::callback1()
@@ -800,7 +800,7 @@ void ActionSequence3::onEnter()
     array.pushBack(action3);
     array.pushBack(action4);
     auto action = Sequence::create(array);
-    _grossini->runAction(action);
+    m_charPlayer1->runAction(action);
 }
 
 std::string ActionSequence3::subtitle() const
@@ -824,7 +824,7 @@ void ActionCallFuncN::onEnter()
         CallFuncN::create( CC_CALLBACK_1(ActionCallFuncN::callback, this)),
         nullptr);
 
-    _grossini->runAction(action);
+    m_charPlayer1->runAction(action);
 }
 
 std::string ActionCallFuncN::title() const
@@ -859,7 +859,7 @@ void ActionCallFuncND::onEnter()
         CallFuncN::create( CC_CALLBACK_1(ActionCallFuncND::doRemoveFromParentAndCleanup, this, true)),
         nullptr);
 
-    _grossini->runAction(action);
+    m_charPlayer1->runAction(action);
 }
 
 std::string ActionCallFuncND::title() const
@@ -874,7 +874,7 @@ std::string ActionCallFuncND::subtitle() const
 
 void ActionCallFuncND::doRemoveFromParentAndCleanup(Node* sender, bool cleanup)
 {
-    _grossini->removeFromParentAndCleanup(cleanup);
+    m_charPlayer1->removeFromParentAndCleanup(cleanup);
 }
 
 //------------------------------------------------------------------
@@ -905,18 +905,18 @@ void ActionCallFunction::onEnter()
     auto action2 = Sequence::create(
                         ScaleBy::create(2 ,  2),
                         FadeOut::create(2),
-                        CallFunc::create( std::bind(&ActionCallFunction::callback2, this, _tamara) ),
+                        CallFunc::create( std::bind(&ActionCallFunction::callback2, this, m_charPlayer2) ),
                         nullptr);
 
     auto action3 = Sequence::create(
                         RotateBy::create(3 , 360),
                         FadeOut::create(2),
-                        CallFunc::create( std::bind(&ActionCallFunction::callback3, this, _kathia, 42) ),
+                        CallFunc::create( std::bind(&ActionCallFunction::callback3, this, m_charPlayer3, 42) ),
                         nullptr);
 
-    _grossini->runAction(action1);
-    _tamara->runAction(action2);
-    _kathia->runAction(action3);
+    m_charPlayer1->runAction(action1);
+    m_charPlayer2->runAction(action2);
+    m_charPlayer3->runAction(action3);
 }
 
 
@@ -971,7 +971,7 @@ void ActionSpawn::onEnter()
         RotateBy::create( 2,  720),
         nullptr);
 
-    _grossini->runAction(action);
+    m_charPlayer1->runAction(action);
 }
 
 std::string ActionSpawn::subtitle() const
@@ -999,7 +999,7 @@ void ActionSpawn2::onEnter()
     array.pushBack(action2);
 
     auto action = Spawn::create(array);
-    _grossini->runAction(action);
+    m_charPlayer1->runAction(action);
 }
 
 std::string ActionSpawn2::subtitle() const
@@ -1020,10 +1020,10 @@ void ActionRepeatForever::onEnter()
 
     auto action = Sequence::create(
         DelayTime::create(1),
-        CallFunc::create( std::bind( &ActionRepeatForever::repeatForever, this, _grossini) ),
+        CallFunc::create( std::bind( &ActionRepeatForever::repeatForever, this, m_charPlayer1) ),
         nullptr);
 
-    _grossini->runAction(action);
+    m_charPlayer1->runAction(action);
 }
 
 void ActionRepeatForever::repeatForever(Node* sender)
@@ -1056,8 +1056,8 @@ void ActionRotateToRepeat::onEnter()
 	auto rep1 = RepeatForever::create(seq);
 	auto rep2 = Repeat::create( seq->clone(), 10);
 
-    _tamara->runAction(rep1);
-    _kathia->runAction(rep2);
+    m_charPlayer2->runAction(rep1);
+    m_charPlayer3->runAction(rep2);
 }
 
 std::string ActionRotateToRepeat ::subtitle() const
@@ -1079,7 +1079,7 @@ void ActionReverse::onEnter()
     auto jump = JumpBy::create(2, Vec2(300,0), 50, 4);
     auto action = Sequence::create( jump, jump->reverse(), nullptr);
 
-    _grossini->runAction(action);
+    m_charPlayer1->runAction(action);
 }
 
 std::string ActionReverse::subtitle() const
@@ -1102,7 +1102,7 @@ void ActionDelayTime::onEnter()
     auto move = MoveBy::create(1, Vec2(150,0));
     auto action = Sequence::create( move, DelayTime::create(2), move, nullptr);
 
-    _grossini->runAction(action);
+    m_charPlayer1->runAction(action);
 }
 
 std::string ActionDelayTime::subtitle() const
@@ -1127,7 +1127,7 @@ void ActionReverseSequence::onEnter()
     auto seq = Sequence::create( move1, move2, move1->reverse(), nullptr);
     auto action = Sequence::create( seq, seq->reverse(), nullptr);
 
-    _grossini->runAction(action);
+    m_charPlayer1->runAction(action);
 }
 
 std::string ActionReverseSequence::subtitle() const
@@ -1160,14 +1160,14 @@ void ActionReverseSequence2::onEnter()
 
     // Test:
     //   Also test that the reverse of Hide is Show, and vice-versa
-    _kathia->runAction(action);
+    m_charPlayer3->runAction(action);
 
-	auto move_tamara = MoveBy::create(1, Vec2(100,0));
-	auto move_tamara2 = MoveBy::create(1, Vec2(50,0));
+	auto move_chara = MoveBy::create(1, Vec2(100,0));
+	auto move_chara2 = MoveBy::create(1, Vec2(50,0));
 	auto hide = Hide::create();
-	auto seq_tamara = Sequence::create( move_tamara, hide, move_tamara2, nullptr);
-	auto seq_back = seq_tamara->reverse();
-    _tamara->runAction( Sequence::create( seq_tamara, seq_back, nullptr));
+	auto seq_chara = Sequence::create( move_chara, hide, move_chara2, nullptr);
+	auto seq_back = seq_chara->reverse();
+    m_charPlayer2->runAction( Sequence::create( seq_chara, seq_back, nullptr));
 }
 std::string ActionReverseSequence2::subtitle() const
 {
@@ -1194,8 +1194,8 @@ void ActionRepeat::onEnter()
         Sequence::create(a1->clone(), a1->reverse(), nullptr)
         );
 
-    _kathia->runAction(action1);
-    _tamara->runAction(action2);
+    m_charPlayer3->runAction(action1);
+    m_charPlayer2->runAction(action2);
 }
 
 std::string ActionRepeat::subtitle() const
@@ -1233,17 +1233,17 @@ void ActionOrbit::onEnter()
         orbit3->reverse(),
         nullptr);
 
-    _kathia->runAction(RepeatForever::create(action1));
-    _tamara->runAction(RepeatForever::create(action2));
-    _grossini->runAction(RepeatForever::create(action3));
+    m_charPlayer3->runAction(RepeatForever::create(action1));
+    m_charPlayer2->runAction(RepeatForever::create(action2));
+    m_charPlayer1->runAction(RepeatForever::create(action3));
 
     auto move = MoveBy::create(3, Vec2(100,-100));
     auto move_back = move->reverse();
     auto seq = Sequence::create(move, move_back, nullptr);
     auto rfe = RepeatForever::create(seq);
-    _kathia->runAction(rfe);
-    _tamara->runAction(rfe->clone() );
-    _grossini->runAction( rfe->clone() );
+    m_charPlayer3->runAction(rfe);
+    m_charPlayer2->runAction(rfe->clone() );
+    m_charPlayer1->runAction( rfe->clone() );
 }
 
 void ActionOrbit::onExit()
@@ -1279,15 +1279,15 @@ void ActionFollow::onEnter()
     
     this->addChild(drawNode);
 
-    _grossini->setPosition(-200, s.height / 2);
+    m_charPlayer1->setPosition(-200, s.height / 2);
     auto move = MoveBy::create(2, Vec2(s.width * 3, 0));
     auto move_back = move->reverse();
     auto seq = Sequence::create(move, move_back, nullptr);
     auto rep = RepeatForever::create(seq);
 
-    _grossini->runAction(rep);
+    m_charPlayer1->runAction(rep);
 
-    this->runAction(Follow::create(_grossini, Rect(0, 0, s.width * 2 - 100, s.height)));
+    this->runAction(Follow::create(m_charPlayer1, Rect(0, 0, s.width * 2 - 100, s.height)));
 }
 
 std::string ActionFollow::subtitle() const
@@ -1316,18 +1316,18 @@ void ActionFollowWithOffset::onEnter()
     
     this->addChild(drawNode);
     
-    _grossini->setPosition(-200, s.height / 2);
+    m_charPlayer1->setPosition(-200, s.height / 2);
     auto move = MoveBy::create(2, Vec2(s.width * 3, 1));
     auto move_back = move->reverse();
     auto seq = Sequence::create(move, move_back, nullptr);
     auto rep = RepeatForever::create(seq);
     
-    _grossini->runAction(rep);
+    m_charPlayer1->runAction(rep);
     
     //sample offset values set
     float verticalOffset = -900;
     float horizontalOffset = 200;
-    this->runAction(Follow::createWithOffset(_grossini, horizontalOffset,verticalOffset,Rect(0, 0, s.width * 2 - 100, s.height)));
+    this->runAction(Follow::createWithOffset(m_charPlayer1, horizontalOffset,verticalOffset,Rect(0, 0, s.width * 2 - 100, s.height)));
 }
 
 std::string ActionFollowWithOffset::subtitle() const
@@ -1347,13 +1347,13 @@ void ActionTargeted::onEnter()
     auto rot1 = RotateBy::create(1, 360);
     auto rot2 = rot1->clone();
 
-    auto t1 = TargetedAction::create(_kathia, jump2);
-    auto t2 = TargetedAction::create(_kathia, rot2);
+    auto t1 = TargetedAction::create(m_charPlayer3, jump2);
+    auto t2 = TargetedAction::create(m_charPlayer3, rot2);
 
     auto seq = Sequence::create(jump1, t1, rot1, t2, nullptr);
     auto always = RepeatForever::create(seq);
 
-    _tamara->runAction(always);
+    m_charPlayer2->runAction(always);
 }
 
 std::string ActionTargeted::title() const
@@ -1378,13 +1378,13 @@ void ActionTargetedReverse::onEnter()
     auto rot1 = RotateBy::create(1, 360);
     auto rot2 = rot1->clone();
     
-    auto t1 = TargetedAction::create(_kathia, jump2);
-    auto t2 = TargetedAction::create(_kathia, rot2);
+    auto t1 = TargetedAction::create(m_charPlayer3, jump2);
+    auto t2 = TargetedAction::create(m_charPlayer3, rot2);
     
     auto seq = Sequence::create(jump1, t1->reverse(), rot1, t2->reverse(), nullptr);
     auto always = RepeatForever::create(seq);
     
-    _tamara->runAction(always);
+    m_charPlayer2->runAction(always);
 }
 
 std::string ActionTargetedReverse::title() const
@@ -1552,7 +1552,7 @@ void ActionCatmullRomStacked::onEnter()
     // is relative to the Catmull Rom curve, it is better to start with (0,0).
     //
     
-    _tamara->setPosition(50,50);
+    m_charPlayer2->setPosition(50,50);
     
     auto array = PointArray::create(20);
     
@@ -1569,9 +1569,9 @@ void ActionCatmullRomStacked::onEnter()
     
     auto seq = Sequence::create(action, reverse, nullptr);
     
-    _tamara->runAction(seq);
+    m_charPlayer2->runAction(seq);
     
-    _tamara->runAction(
+    m_charPlayer2->runAction(
         RepeatForever::create(
             Sequence::create(
                 MoveBy::create(0.05f, Vec2(10,0)),
@@ -1603,9 +1603,9 @@ void ActionCatmullRomStacked::onEnter()
     
     auto seq2 = Sequence::create(action2, reverse2, nullptr);
     
-    _kathia->runAction(seq2);
+    m_charPlayer3->runAction(seq2);
     
-    _kathia->runAction(
+    m_charPlayer3->runAction(
         RepeatForever::create(
             Sequence::create(
                 MoveBy::create(0.05f, Vec2(10,0)),
@@ -1662,10 +1662,10 @@ void ActionCardinalSplineStacked::onEnter()
     
     auto seq = Sequence::create(action, reverse, nullptr);
     
-    _tamara->setPosition(50,50);
-    _tamara->runAction(seq);
+    m_charPlayer2->setPosition(50,50);
+    m_charPlayer2->runAction(seq);
     
-    _tamara->runAction(
+    m_charPlayer2->runAction(
         RepeatForever::create(
             Sequence::create(
                 MoveBy::create(0.05f, Vec2(10,0)),
@@ -1688,11 +1688,11 @@ void ActionCardinalSplineStacked::onEnter()
     
     auto seq2 = Sequence::create(action2, reverse2, nullptr);
     
-    _kathia->setPosition(s.width/2,50);
+    m_charPlayer3->setPosition(s.width/2,50);
     
-    _kathia->runAction(seq2);
+    m_charPlayer3->runAction(seq2);
     
-    _kathia->runAction(
+    m_charPlayer3->runAction(
         RepeatForever::create(
             Sequence::create(
                 MoveBy::create(0.05f, Vec2(10,0)),
@@ -1736,7 +1736,7 @@ void ActionCatmullRom::onEnter()
     // is relative to the Catmull Rom curve, it is better to start with (0,0).
     //
     
-    _tamara->setPosition(50, 50);
+    m_charPlayer2->setPosition(50, 50);
     
     auto array = PointArray::create(20);
     
@@ -1753,7 +1753,7 @@ void ActionCatmullRom::onEnter()
     
     auto seq = Sequence::create(action, reverse, nullptr);
     
-    _tamara->runAction(seq);
+    m_charPlayer2->runAction(seq);
     
     auto drawNode1 = DrawNode::create();
     drawNode1->setPosition(Vec2(50,50));
@@ -1780,7 +1780,7 @@ void ActionCatmullRom::onEnter()
     
     auto seq2 = Sequence::create(action2, reverse2, nullptr);
     
-    _kathia->runAction(seq2);
+    m_charPlayer3->runAction(seq2);
     
     auto drawNode2 = DrawNode::create();
     drawNode2->drawCatmullRom(array2, 50, Color4F(0.0, 1.0, 1.0, 1.0));
@@ -1830,8 +1830,8 @@ void ActionCardinalSpline::onEnter()
     
     auto seq = Sequence::create(action, reverse, nullptr);
     
-    _tamara->setPosition(50, 50);
-    _tamara->runAction(seq);
+    m_charPlayer2->setPosition(50, 50);
+    m_charPlayer2->runAction(seq);
     
     auto drawNode1 = DrawNode::create();
     drawNode1->setPosition(Vec2(50,50));
@@ -1849,8 +1849,8 @@ void ActionCardinalSpline::onEnter()
     
     auto seq2 = Sequence::create(action2, reverse2, nullptr);
     
-    _kathia->setPosition(s.width/2, 50);
-    _kathia->runAction(seq2);
+    m_charPlayer3->setPosition(s.width/2, 50);
+    m_charPlayer3->runAction(seq2);
     
     auto drawNode2 = DrawNode::create();
     drawNode2->setPosition(Vec2(s.width/2, 50));
@@ -1891,9 +1891,9 @@ void PauseResumeActions::onEnter()
     
     this->centerSprites(3);
     
-    _tamara->runAction(RepeatForever::create(RotateBy::create(3, 360)));
-    _grossini->runAction(RepeatForever::create(RotateBy::create(3, -360)));
-    _kathia->runAction(RepeatForever::create(RotateBy::create(3, 360)));
+    m_charPlayer2->runAction(RepeatForever::create(RotateBy::create(3, 360)));
+    m_charPlayer1->runAction(RepeatForever::create(RotateBy::create(3, -360)));
+    m_charPlayer3->runAction(RepeatForever::create(RotateBy::create(3, 360)));
     
     this->schedule([&](float dt){
         log("Pausing");
@@ -1933,9 +1933,9 @@ void ActionResize::onEnter()
 {
     ActionsDemo::onEnter();
 
-    _grossini->setVisible(false);
-    _tamara->setVisible(false);
-    _kathia->setVisible(false);
+    m_charPlayer1->setVisible(false);
+    m_charPlayer2->setVisible(false);
+    m_charPlayer3->setVisible(false);
 
     Size widgetSize = getContentSize();
 
@@ -2003,7 +2003,7 @@ void ActionRemoveSelf::onEnter()
 		RemoveSelf::create(),
 		nullptr);
 
-	_grossini->runAction(action);
+	m_charPlayer1->runAction(action);
 }
 
 std::string ActionRemoveSelf::subtitle() const
@@ -2026,22 +2026,22 @@ void ActionFloatTest::onEnter()
 
     // create float action with duration and from to value, using lambda function we can easily animate any property of the Node.
     auto actionFloat = ActionFloat::create(2.f, 0, 3, [this](float value) {
-        _tamara->setScale(value);
+        m_charPlayer2->setScale(value);
     });
 
-    float grossiniY = _grossini->getPositionY();
+    float grossiniY = m_charPlayer1->getPositionY();
 
     auto actionFloat1 = ActionFloat::create(3.f, grossiniY, grossiniY + 50, [this](float value) {
-        _grossini->setPositionY(value);
+        m_charPlayer1->setPositionY(value);
     });
 
     auto actionFloat2 = ActionFloat::create(3.f, 3, 1, [this] (float value) {
-        _kathia->setScale(value);
+        m_charPlayer3->setScale(value);
     });
 
-    _tamara->runAction(actionFloat);
-    _grossini->runAction(actionFloat1);
-    _kathia->runAction(actionFloat2);
+    m_charPlayer2->runAction(actionFloat);
+    m_charPlayer1->runAction(actionFloat1);
+    m_charPlayer3->runAction(actionFloat2);
 }
 
 std::string ActionFloatTest::subtitle() const
