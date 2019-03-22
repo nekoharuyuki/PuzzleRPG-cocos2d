@@ -1380,12 +1380,12 @@
 		80FDA9462231548300DBEF91 /* TouchesTest */ = {
 			isa = PBXGroup;
 			children = (
+				80FDA94A2231548300DBEF91 /* TouchesTest.cpp */,
 				80FDA9472231548300DBEF91 /* TouchesTest.h */,
+				80FDA94C2231548300DBEF91 /* Ball.cpp */,
 				80FDA9482231548300DBEF91 /* Ball.h */,
 				80FDA9492231548300DBEF91 /* Paddle.cpp */,
-				80FDA94A2231548300DBEF91 /* TouchesTest.cpp */,
 				80FDA94B2231548300DBEF91 /* Paddle.h */,
-				80FDA94C2231548300DBEF91 /* Ball.cpp */,
 			);
 			path = TouchesTest;
 			sourceTree = "<group>";
