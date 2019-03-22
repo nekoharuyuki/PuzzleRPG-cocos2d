@@ -1067,9 +1067,9 @@
 			isa = PBXGroup;
 			children = (
 				80FDA8EF2231548300DBEF91 /* PlayerValue.cpp */,
-				80FDA8F02231548300DBEF91 /* PartyValue.h */,
-				80FDA8F22231548300DBEF91 /* PartyValue.cpp */,
 				80FDA8F12231548300DBEF91 /* PlayerValue.h */,
+				80FDA8F22231548300DBEF91 /* PartyValue.cpp */,
+				80FDA8F02231548300DBEF91 /* PartyValue.h */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -1353,8 +1353,8 @@
 		80FDA93D2231548300DBEF91 /* DataVisitorTest */ = {
 			isa = PBXGroup;
 			children = (
-				80FDA93E2231548300DBEF91 /* DataVisitorTest.h */,
 				80FDA93F2231548300DBEF91 /* DataVisitorTest.cpp */,
+				80FDA93E2231548300DBEF91 /* DataVisitorTest.h */,
 			);
 			path = DataVisitorTest;
 			sourceTree = "<group>";

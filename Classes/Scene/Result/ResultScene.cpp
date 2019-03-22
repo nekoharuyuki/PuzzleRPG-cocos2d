@@ -6,7 +6,7 @@ USING_NS_CC;
 
 using namespace cocostudio::timeline;
 
-Scene* ResultScene::createScene()
+Scene* ResultScene::createScene(int quest_no)
 {
     // 'scene' is an autorelease object
     auto scene = Scene::create();

@@ -46,10 +46,10 @@ void PrettyPrinterDemo::addSprite()
     // create sprites
     
     auto s1 = Sprite::create(s_pathCharPlayer10);
-    auto s2 = Sprite::create("Images/grossini_dance_01.png");
-    auto s3 = Sprite::create("Images/grossini_dance_02.png");
-    auto s4 = Sprite::create("Images/grossini_dance_03.png");
-    auto s5 = Sprite::create("Images/grossini_dance_04.png");
+    auto s2 = Sprite::create(s_pathCharPlayer10);
+    auto s3 = Sprite::create(s_pathCharPlayer10);
+    auto s4 = Sprite::create(s_pathCharPlayer10);
+    auto s5 = Sprite::create(s_pathCharPlayer10);
     
     s1->setPosition(50, 50);
     s2->setPosition(60, 50);
@@ -85,7 +85,7 @@ void PrettyPrinterDemo::onEnter()
     PrettyPrinter visitor;
     
     // print dictionary
-    auto dict = __Dictionary::createWithContentsOfFile("animations/animations.plist");
+    auto dict = __Dictionary::createWithContentsOfFile("system/images/Test/animations.plist");
     dict->acceptVisitor(visitor);
     log("%s", visitor.getResult().c_str());
     log("-------------------------------");

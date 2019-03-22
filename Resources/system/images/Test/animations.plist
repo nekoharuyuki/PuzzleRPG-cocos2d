@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>animations</key>
+	<dict>
+		<key>dance_1</key>
+		<dict>
+			<key>delay</key>
+			<real>0.2</real>
+			<key>frames</key>
+			<array>
+				<string>chara_enemy_1.png</string>
+				<string>chara_enemy_2.png</string>
+				<string>chara_enemy_3.png</string>
+				<string>chara_enemy_4.png</string>
+				<string>chara_enemy_5.png</string>
+				<string>chara_enemy_6.png</string>
+				<string>chara_enemy_7.png</string>
+				<string>chara_enemy_8.png</string>
+				<string>chara_enemy_9.png</string>
+			</array>
+		</dict>
+		<key>dance_2</key>
+		<dict>
+			<key>delay</key>
+			<real>0.2</real>
+			<key>frames</key>
+			<array>
+				<string>chara_princessselect_1.png</string>
+				<string>chara_princessselect_2.png</string>
+				<string>chara_princessselect_3.png</string>
+				<string>chara_princessselect_4.png</string>
+				<string>chara_princessselect_5.png</string>
+				<string>chara_princessselect_6.png</string>
+				<string>chara_princessselect_7.png</string>
+				<string>chara_princessselect_8.png</string>
+				<string>chara_princessselect_9.png</string>
+				<string>chara_princessselect_10.png</string>
+				<string>chara_princessselect_11.png</string>
+				<string>chara_princessselect_12.png</string>
+			</array>
+		</dict>
+		<key>dance_3</key>
+		<dict>
+			<key>delay</key>
+			<real>0.2</real>
+			<key>frames</key>
+			<array>
+				<string>chara_player_10.png</string>
+				<string>chara_player_11.png</string>
+				<string>chara_player_12.png</string>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>
