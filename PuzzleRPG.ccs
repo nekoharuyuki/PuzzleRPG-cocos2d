@@ -285,6 +285,14 @@
             <Image Name="resulttext_clear.png" />
             <Image Name="title_result.png" />
           </Folder>
+          <Folder Name="scenario">
+            <Image Name="ant_kao1.png" />
+            <Image Name="ant_kao2.png" />
+            <Image Name="ant_mini1.png" />
+            <Image Name="ant_mini2.png" />
+            <Image Name="ant1.png" />
+            <Image Name="ant2.png" />
+          </Folder>
           <Folder Name="shared">
             <Image Name="Attribute_1.png" />
             <Image Name="Attribute_2.png" />
@@ -407,6 +415,9 @@
           <Folder Name="result">
             <File Name="ResultScene.csb" />
             <Project Name="ResultScene.csd" Type="Scene" />
+          </Folder>
+          <Folder Name="scenario">
+            <Project Name="scenario.csd" Type="Scene" />
           </Folder>
           <Folder Name="synthetic">
             <File Name="SyntheticScene.csb" />
