@@ -905,27 +905,27 @@ TMXIsoZorder::TMXIsoZorder()
     CCLOG("ContentSize: %f, %f", s.width,s.height);
     map->setPosition(Vec2(-s.width/2,0));
     
-    _tamara = Sprite::create(s_pathCharaPlayer11);
-    map->addChild(_tamara, (int)map->getChildren().size() );
+    m_charPlayer2 = Sprite::create(s_pathCharPlayer11);
+    map->addChild(m_charPlayer2, (int)map->getChildren().size() );
     
-    _tamara->retain();
+    m_charPlayer2->retain();
     int mapWidth = map->getMapSize().width * map->getTileSize().width;
-    _tamara->setPosition(CC_POINT_PIXELS_TO_POINTS(Vec2( mapWidth/2,0)));
-    _tamara->setScale(0.5);
-    _tamara->setAnchorPoint(Vec2(0.5f,0));
+    m_charPlayer2->setPosition(CC_POINT_PIXELS_TO_POINTS(Vec2( mapWidth/2,0)));
+    m_charPlayer2->setScale(0.5);
+    m_charPlayer2->setAnchorPoint(Vec2(0.5f,0));
 
     
     auto move = MoveBy::create(10, Vec2(300,250));
     auto back = move->reverse();
     auto seq = Sequence::create(move, back,nullptr);
-    _tamara->runAction( RepeatForever::create(seq) );
+    m_charPlayer2->runAction( RepeatForever::create(seq) );
     
     schedule( CC_SCHEDULE_SELECTOR(TMXIsoZorder::repositionSprite) );
 }
 
 TMXIsoZorder::~TMXIsoZorder()
 {
-    _tamara->release();
+    m_charPlayer2->release();
 }
 
 void TMXIsoZorder::onExit()
@@ -936,7 +936,7 @@ void TMXIsoZorder::onExit()
 
 void TMXIsoZorder::repositionSprite(float dt)
 {
-    auto p = _tamara->getPosition();
+    auto p = m_charPlayer2->getPosition();
     p = CC_POINT_POINTS_TO_PIXELS(p);
     auto map = getChildByTag(kTagTileMap);
     
@@ -948,7 +948,7 @@ void TMXIsoZorder::repositionSprite(float dt)
     int newZ = 4 - (static_cast<int>(p.y) / 30);
     newZ = std::max(newZ,0);
     
-    map->reorderChild(_tamara, newZ);    
+    map->reorderChild(m_charPlayer2, newZ);
 }
 
 std::string TMXIsoZorder::title() const
@@ -975,28 +975,28 @@ TMXOrthoZorder::TMXOrthoZorder()
     Size CC_UNUSED s = map->getContentSize();
     CCLOG("ContentSize: %f, %f", s.width,s.height);
     
-    _tamara = Sprite::create(s_pathCharaPlayer11);
-    map->addChild(_tamara,  (int)map->getChildren().size());
-    _tamara->retain();
-    _tamara->setAnchorPoint(Vec2(0.5f,0));
+    m_charPlayer2 = Sprite::create(s_pathCharPlayer11);
+    map->addChild(m_charPlayer2,  (int)map->getChildren().size());
+    m_charPlayer2->retain();
+    m_charPlayer2->setAnchorPoint(Vec2(0.5f,0));
 
     
     auto move = MoveBy::create(10, Vec2(400,450));
     auto back = move->reverse();
     auto seq = Sequence::create(move, back,nullptr);
-    _tamara->runAction( RepeatForever::create(seq));
+    m_charPlayer2->runAction( RepeatForever::create(seq));
     
     schedule( CC_SCHEDULE_SELECTOR(TMXOrthoZorder::repositionSprite));
 }
 
 TMXOrthoZorder::~TMXOrthoZorder()
 {
-    _tamara->release();
+    m_charPlayer2->release();
 }
 
 void TMXOrthoZorder::repositionSprite(float dt)
 {
-    auto p = _tamara->getPosition();
+    auto p = m_charPlayer2->getPosition();
     p = CC_POINT_POINTS_TO_PIXELS(p);
     auto map = getChildByTag(kTagTileMap);
     
@@ -1009,7 +1009,7 @@ void TMXOrthoZorder::repositionSprite(float dt)
     int newZ = 4 - ( (p.y-10) / 81);
     newZ = std::max(newZ,0);
 
-    map->reorderChild(_tamara, newZ);
+    map->reorderChild(m_charPlayer2, newZ);
 }
 
 std::string TMXOrthoZorder::title() const
@@ -1040,13 +1040,13 @@ TMXIsoVertexZ::TMXIsoVertexZ()
     // because I'm lazy, I'm reusing a tile as an sprite, but since this method uses vertexZ, you
     // can use any Sprite and it will work OK.
     auto layer = map->getLayer("Trees");
-    _tamara = layer->getTileAt( Vec2(29,29) );
-    _tamara->retain();
+    m_charPlayer2 = layer->getTileAt( Vec2(29,29) );
+    m_charPlayer2->retain();
     
     auto move = MoveBy::create(10, Vec2(300,250) * (1/CC_CONTENT_SCALE_FACTOR()));
     auto back = move->reverse();
     auto seq = Sequence::create(move, back,nullptr);
-    _tamara->runAction( RepeatForever::create(seq) );
+    m_charPlayer2->runAction( RepeatForever::create(seq) );
     
     schedule( CC_SCHEDULE_SELECTOR(TMXIsoVertexZ::repositionSprite));
     
@@ -1054,17 +1054,17 @@ TMXIsoVertexZ::TMXIsoVertexZ()
 
 TMXIsoVertexZ::~TMXIsoVertexZ()
 {
-    _tamara->release();
+    m_charPlayer2->release();
 }
 
 void TMXIsoVertexZ::repositionSprite(float dt)
 {
     // tile height is 64x32
     // map size: 30x30
-    auto p = _tamara->getPosition();
+    auto p = m_charPlayer2->getPosition();
     p = CC_POINT_POINTS_TO_PIXELS(p);
     float newZ = -(p.y+32) /16;
-    _tamara->setPositionZ( newZ );
+    m_charPlayer2->setPositionZ( newZ );
 }
 
 void TMXIsoVertexZ::onEnter()
@@ -1111,14 +1111,14 @@ TMXOrthoVertexZ::TMXOrthoVertexZ()
     // because I'm lazy, I'm reusing a tile as an sprite, but since this method uses vertexZ, you
     // can use any Sprite and it will work OK.
     auto layer = map->getLayer("trees");
-    _tamara = layer->getTileAt(Vec2(0,11));
-    CCLOG("%p vertexZ: %f", _tamara, _tamara->getPositionZ());
-    _tamara->retain();
+    m_charPlayer2 = layer->getTileAt(Vec2(0,11));
+    CCLOG("%p vertexZ: %f", m_charPlayer2, m_charPlayer2->getPositionZ());
+    m_charPlayer2->retain();
 
     auto move = MoveBy::create(10, Vec2(400,450) * (1/CC_CONTENT_SCALE_FACTOR()));
     auto back = move->reverse();
     auto seq = Sequence::create(move, back,nullptr);
-    _tamara->runAction( RepeatForever::create(seq));
+    m_charPlayer2->runAction( RepeatForever::create(seq));
     
     schedule(CC_SCHEDULE_SELECTOR(TMXOrthoVertexZ::repositionSprite));
     
@@ -1126,16 +1126,16 @@ TMXOrthoVertexZ::TMXOrthoVertexZ()
 
 TMXOrthoVertexZ::~TMXOrthoVertexZ()
 {
-    _tamara->release();
+    m_charPlayer2->release();
 }
 
 void TMXOrthoVertexZ::repositionSprite(float dt)
 {
     // tile height is 101x81
     // map size: 12x12
-    auto p = _tamara->getPosition();
+    auto p = m_charPlayer2->getPosition();
     p = CC_POINT_POINTS_TO_PIXELS(p);
-    _tamara->setPositionZ( -( (p.y+81) /81) );
+    m_charPlayer2->setPositionZ( -( (p.y+81) /81) );
 }
 
 void TMXOrthoVertexZ::onEnter()

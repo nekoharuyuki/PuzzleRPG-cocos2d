@@ -1560,7 +1560,7 @@ void SpriteFrameTest::onEnter()
     _sprite1 = Sprite::createWithSpriteFrameName("grossini_dance_01.png");
     _sprite1->setPosition( Vec2( s.width/2-80, s.height/2) );
 
-    auto spritebatch = SpriteBatchNode::create(s_pathCharaPlayer10);
+    auto spritebatch = SpriteBatchNode::create(s_pathCharPlayer10);
     spritebatch->addChild(_sprite1);
     addChild(spritebatch);
 
@@ -1931,7 +1931,7 @@ SpriteBatchNodeOffsetAnchorRotation::SpriteBatchNodeOffsetAnchorRotation()
     cache->addSpriteFramesWithFile("animations/grossini.plist");
     cache->addSpriteFramesWithFile("animations/grossini_gray.plist", "animations/grossini_gray.png");
     
-    auto spritebatch = SpriteBatchNode::create(s_pathCharaPlayer10);
+    auto spritebatch = SpriteBatchNode::create(s_pathCharPlayer10);
     addChild(spritebatch);
     
     for(int i=0;i<3;i++) 
@@ -2093,7 +2093,7 @@ SpriteBatchNodeOffsetAnchorScale::SpriteBatchNodeOffsetAnchorScale()
     cache->addSpriteFramesWithFile("animations/grossini.plist");
     cache->addSpriteFramesWithFile("animations/grossini_gray.plist", "animations/grossini_gray.png");
     
-    auto spritesheet = SpriteBatchNode::create(s_pathCharaPlayer10);
+    auto spritesheet = SpriteBatchNode::create(s_pathCharPlayer10);
     addChild(spritesheet);
     
     for(int i=0;i<3;i++) 
@@ -2232,7 +2232,7 @@ SpriteHybrid::SpriteHybrid()
 
     // parents
     auto parent1 = Node::create();
-    auto parent2 = SpriteBatchNode::create(s_pathCharaPlayer10, 50);
+    auto parent2 = SpriteBatchNode::create(s_pathCharPlayer10, 50);
     
     addChild(parent1, 0, kTagNode);
     addChild(parent2, 0, kTagSpriteBatchNode);
@@ -2323,7 +2323,7 @@ SpriteBatchNodeChildren::SpriteBatchNodeChildren()
     auto s = Director::getInstance()->getWinSize();
     
     // parents
-    auto batch = SpriteBatchNode::create(s_pathCharaPlayer10, 50);
+    auto batch = SpriteBatchNode::create(s_pathCharPlayer10, 50);
     
     addChild(batch, 0, kTagSpriteBatchNode);
     

@@ -79,8 +79,8 @@ void LayerTestCascadingOpacityA::onEnter()
     auto s = Director::getInstance()->getWinSize();
     auto layer1 = Layer::create();
     
-    auto sister1 = Sprite::create(s_pathCharaPlayer11);
-    auto sister2 = Sprite::create(s_pathCharaPlayer12);
+    auto sister1 = Sprite::create(s_pathCharPlayer11);
+    auto sister2 = Sprite::create(s_pathCharPlayer12);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -131,8 +131,8 @@ void LayerTestCascadingOpacityB::onEnter()
     
     layer1->setPosition( Vec2(0, s.height/2));
     
-    auto sister1 = Sprite::create(s_pathCharaPlayer11);
-    auto sister2 = Sprite::create(s_pathCharaPlayer12);
+    auto sister1 = Sprite::create(s_pathCharPlayer11);
+    auto sister2 = Sprite::create(s_pathCharPlayer12);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -184,8 +184,8 @@ void LayerTestCascadingOpacityC::onEnter()
     
     layer1->setPosition( Vec2(0, s.height/2));
     
-    auto sister1 = Sprite::create(s_pathCharaPlayer11);
-    auto sister2 = Sprite::create(s_pathCharaPlayer12);
+    auto sister1 = Sprite::create(s_pathCharPlayer11);
+    auto sister2 = Sprite::create(s_pathCharPlayer12);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -232,8 +232,8 @@ void LayerTestCascadingColorA::onEnter()
     auto s = Director::getInstance()->getWinSize();
     auto layer1 = Layer::create();
     
-    auto sister1 = Sprite::create(s_pathCharaPlayer11);
-    auto sister2 = Sprite::create(s_pathCharaPlayer12);
+    auto sister1 = Sprite::create(s_pathCharPlayer11);
+    auto sister2 = Sprite::create(s_pathCharPlayer12);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -285,8 +285,8 @@ void LayerTestCascadingColorB::onEnter()
     
     layer1->setPosition( Vec2(0, s.height/2));
     
-    auto sister1 = Sprite::create(s_pathCharaPlayer11);
-    auto sister2 = Sprite::create(s_pathCharaPlayer12);
+    auto sister1 = Sprite::create(s_pathCharPlayer11);
+    auto sister2 = Sprite::create(s_pathCharPlayer12);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -337,8 +337,8 @@ void LayerTestCascadingColorC::onEnter()
     layer1->setCascadeColorEnabled(false);
     layer1->setPosition( Vec2(0, s.height/2));
     
-    auto sister1 = Sprite::create(s_pathCharaPlayer11);
-    auto sister2 = Sprite::create(s_pathCharaPlayer12);
+    auto sister1 = Sprite::create(s_pathCharPlayer11);
+    auto sister2 = Sprite::create(s_pathCharPlayer12);
     auto label = Label::createWithBMFont("fonts/bitmapFontTest.fnt", "Test");
     
     layer1->addChild(sister1);
@@ -480,8 +480,8 @@ LayerTestBlend::LayerTestBlend()
     auto s = Director::getInstance()->getWinSize();
     auto layer1 = LayerColor::create( Color4B(255, 255, 255, 80) );
     
-    auto sister1 = Sprite::create(s_pathCharaPlayer11);
-    auto sister2 = Sprite::create(s_pathCharaPlayer12);
+    auto sister1 = Sprite::create(s_pathCharPlayer11);
+    auto sister2 = Sprite::create(s_pathCharPlayer12);
     
     addChild(sister1);
     addChild(sister2);
@@ -619,7 +619,7 @@ void LayerIgnoreAnchorPointPos::onEnter()
     l->runAction(RepeatForever::create(seq));
     this->addChild(l, 0, kLayerIgnoreAnchorPoint);
 
-    auto child = Sprite::create(s_pathCharaPlayer10);
+    auto child = Sprite::create(s_pathCharPlayer10);
     l->addChild(child);
     auto lsize = l->getContentSize();
     child->setPosition(Vec2(lsize.width/2, lsize.height/2));
@@ -667,7 +667,7 @@ void LayerIgnoreAnchorPointRot::onEnter()
     l->runAction(RepeatForever::create(rot));
 
 
-    auto child = Sprite::create(s_pathCharaPlayer10);
+    auto child = Sprite::create(s_pathCharPlayer10);
     l->addChild(child);
     auto lsize = l->getContentSize();
     child->setPosition(Vec2(lsize.width/2, lsize.height/2));
@@ -718,7 +718,7 @@ void LayerIgnoreAnchorPointScale::onEnter()
 
     this->addChild(l, 0, kLayerIgnoreAnchorPoint);
 
-    auto child = Sprite::create(s_pathCharaPlayer10);
+    auto child = Sprite::create(s_pathCharPlayer10);
     l->addChild(child);
     auto lsize = l->getContentSize();
     child->setPosition(Vec2(lsize.width/2, lsize.height/2));

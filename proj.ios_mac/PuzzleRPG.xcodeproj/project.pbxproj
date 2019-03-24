@@ -34,6 +34,8 @@
 		5087E78B17EB975400C73F5D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5087E78A17EB975400C73F5D /* OpenGL.framework */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8068CE37223CF42C00596CF0 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8068CE36223CF42C00596CF0 /* GameController.framework */; };
+		8068CE4F2243B1C900596CF0 /* AnimationUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8068CE4D2243B1C900596CF0 /* AnimationUtility.cpp */; };
+		8068CE502243B1C900596CF0 /* AnimationUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8068CE4D2243B1C900596CF0 /* AnimationUtility.cpp */; };
 		80FDA8A82231546A00DBEF91 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 80FDA8A02231546900DBEF91 /* res */; };
 		80FDA8A92231546A00DBEF91 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 80FDA8A02231546900DBEF91 /* res */; };
 		80FDA8AA2231546A00DBEF91 /* animations in Resources */ = {isa = PBXBuildFile; fileRef = 80FDA8A12231546900DBEF91 /* animations */; };
@@ -410,6 +412,8 @@
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		52B9B53B55090565A1AC48F0 /* libPods-PuzzleRPG-mobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PuzzleRPG-mobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8068CE36223CF42C00596CF0 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		8068CE4D2243B1C900596CF0 /* AnimationUtility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationUtility.cpp; sourceTree = "<group>"; };
+		8068CE4E2243B1C900596CF0 /* AnimationUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationUtility.h; sourceTree = "<group>"; };
 		80FDA8A02231546900DBEF91 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		80FDA8A12231546900DBEF91 /* animations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = animations; sourceTree = "<group>"; };
 		80FDA8A22231546900DBEF91 /* master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = master; sourceTree = "<group>"; };
@@ -914,13 +918,13 @@
 		80FDA8B92231548300DBEF91 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				80FDA8BA2231548300DBEF91 /* Result */,
-				80FDA8BD2231548300DBEF91 /* SceneData.h */,
-				80FDA8BE2231548300DBEF91 /* Puzzle */,
 				80FDA8CB2231548300DBEF91 /* Title */,
-				80FDA8CE2231548300DBEF91 /* Menu */,
 				80FDA8E32231548300DBEF91 /* Charselect */,
+				80FDA8CE2231548300DBEF91 /* Menu */,
+				80FDA8BE2231548300DBEF91 /* Puzzle */,
+				80FDA8BA2231548300DBEF91 /* Result */,
 				80FDA8EA2231548300DBEF91 /* SceneData.cpp */,
+				80FDA8BD2231548300DBEF91 /* SceneData.h */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -937,16 +941,18 @@
 		80FDA8BE2231548300DBEF91 /* Puzzle */ = {
 			isa = PBXGroup;
 			children = (
-				80FDA8BF2231548300DBEF91 /* PuzzleGameScene.h */,
-				80FDA8C02231548300DBEF91 /* BattleCharIconSprite.h */,
-				80FDA8C12231548300DBEF91 /* BattleChar.h */,
-				80FDA8C22231548300DBEF91 /* DamageEffect.h */,
-				80FDA8C32231548300DBEF91 /* BattleCharSprite.cpp */,
+				8068CE4D2243B1C900596CF0 /* AnimationUtility.cpp */,
+				8068CE4E2243B1C900596CF0 /* AnimationUtility.h */,
 				80FDA8C42231548300DBEF91 /* PuzzleGameScene.cpp */,
-				80FDA8C52231548300DBEF91 /* BattleCharIconSprite.cpp */,
-				80FDA8C62231548300DBEF91 /* BattleCharSprite.h */,
+				80FDA8BF2231548300DBEF91 /* PuzzleGameScene.h */,
 				80FDA8C72231548300DBEF91 /* BattleChar.cpp */,
+				80FDA8C12231548300DBEF91 /* BattleChar.h */,
+				80FDA8C32231548300DBEF91 /* BattleCharSprite.cpp */,
+				80FDA8C62231548300DBEF91 /* BattleCharSprite.h */,
+				80FDA8C52231548300DBEF91 /* BattleCharIconSprite.cpp */,
+				80FDA8C02231548300DBEF91 /* BattleCharIconSprite.h */,
 				80FDA8C82231548300DBEF91 /* DamageEffect.cpp */,
+				80FDA8C22231548300DBEF91 /* DamageEffect.h */,
 				80FDA8C92231548300DBEF91 /* PuzzleSprite.cpp */,
 				80FDA8CA2231548300DBEF91 /* PuzzleSprite.h */,
 			);
@@ -965,14 +971,14 @@
 		80FDA8CE2231548300DBEF91 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				80FDA8CF2231548300DBEF91 /* MenuLayer.cpp */,
-				80FDA8D02231548300DBEF91 /* Party */,
-				80FDA8D32231548300DBEF91 /* MenuLayer.h */,
-				80FDA8D42231548300DBEF91 /* Other */,
 				80FDA8D72231548300DBEF91 /* Mypage */,
 				80FDA8DA2231548300DBEF91 /* Quest */,
-				80FDA8DD2231548300DBEF91 /* Evolution */,
+				80FDA8D02231548300DBEF91 /* Party */,
 				80FDA8E02231548300DBEF91 /* Synthetic */,
+				80FDA8DD2231548300DBEF91 /* Evolution */,
+				80FDA8D42231548300DBEF91 /* Other */,
+				80FDA8CF2231548300DBEF91 /* MenuLayer.cpp */,
+				80FDA8D32231548300DBEF91 /* MenuLayer.h */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -998,8 +1004,8 @@
 		80FDA8D72231548300DBEF91 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				80FDA8D82231548300DBEF91 /* MypageScene.h */,
 				80FDA8D92231548300DBEF91 /* MypageScene.cpp */,
+				80FDA8D82231548300DBEF91 /* MypageScene.h */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -1025,8 +1031,8 @@
 		80FDA8E02231548300DBEF91 /* Synthetic */ = {
 			isa = PBXGroup;
 			children = (
-				80FDA8E12231548300DBEF91 /* SyntheticScene.h */,
 				80FDA8E22231548300DBEF91 /* SyntheticScene.cpp */,
+				80FDA8E12231548300DBEF91 /* SyntheticScene.h */,
 			);
 			path = Synthetic;
 			sourceTree = "<group>";
@@ -1047,12 +1053,12 @@
 		80FDA8EC2231548300DBEF91 /* GameData */ = {
 			isa = PBXGroup;
 			children = (
-				80FDA8ED2231548300DBEF91 /* UserOptionData.cpp */,
 				80FDA8EE2231548300DBEF91 /* common */,
 				80FDA8F32231548300DBEF91 /* json */,
+				80FDA8ED2231548300DBEF91 /* UserOptionData.cpp */,
 				80FDA8F82231548300DBEF91 /* UserOptionData.h */,
-				80FDA8F92231548300DBEF91 /* GameDataSQL.h */,
 				80FDA8FA2231548300DBEF91 /* GameDataSQL.cpp */,
+				80FDA8F92231548300DBEF91 /* GameDataSQL.h */,
 			);
 			path = GameData;
 			sourceTree = "<group>";
@@ -1061,9 +1067,9 @@
 			isa = PBXGroup;
 			children = (
 				80FDA8EF2231548300DBEF91 /* PlayerValue.cpp */,
-				80FDA8F02231548300DBEF91 /* PartyValue.h */,
 				80FDA8F12231548300DBEF91 /* PlayerValue.h */,
 				80FDA8F22231548300DBEF91 /* PartyValue.cpp */,
+				80FDA8F02231548300DBEF91 /* PartyValue.h */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -1071,10 +1077,10 @@
 		80FDA8F32231548300DBEF91 /* json */ = {
 			isa = PBXGroup;
 			children = (
-				80FDA8F42231548300DBEF91 /* CharData.h */,
 				80FDA8F52231548300DBEF91 /* MapData.cpp */,
-				80FDA8F62231548300DBEF91 /* CharData.cpp */,
 				80FDA8F72231548300DBEF91 /* MapData.h */,
+				80FDA8F62231548300DBEF91 /* CharData.cpp */,
+				80FDA8F42231548300DBEF91 /* CharData.h */,
 			);
 			path = json;
 			sourceTree = "<group>";
@@ -1138,13 +1144,13 @@
 		80FDA90D2231548300DBEF91 /* DebugMenu */ = {
 			isa = PBXGroup;
 			children = (
+				80FDA9102231548300DBEF91 /* Tests */,
+				80FDAA382231548300DBEF91 /* Controller.cpp */,
+				80FDAA362231548300DBEF91 /* Controller.h */,
+				80FDAA392231548300DBEF91 /* BaseTest.cpp */,
+				80FDAA372231548300DBEF91 /* BaseTest.h */,
 				80FDA90E2231548300DBEF91 /* testBasic.h */,
 				80FDA90F2231548300DBEF91 /* tests.h */,
-				80FDA9102231548300DBEF91 /* Tests */,
-				80FDAA362231548300DBEF91 /* Controller.h */,
-				80FDAA372231548300DBEF91 /* BaseTest.h */,
-				80FDAA382231548300DBEF91 /* Controller.cpp */,
-				80FDAA392231548300DBEF91 /* BaseTest.cpp */,
 				80FDAA3A2231548300DBEF91 /* testResource.h */,
 			);
 			path = DebugMenu;
@@ -1156,7 +1162,6 @@
 				80FDA9112231548300DBEF91 /* ActionsEaseTest */,
 				80FDA9142231548300DBEF91 /* ParallaxTest */,
 				80FDA9172231548300DBEF91 /* ZwoptexTest */,
-				80FDA91A2231548300DBEF91 /* precheader.h */,
 				80FDA91B2231548300DBEF91 /* CurlTest */,
 				80FDA91E2231548300DBEF91 /* UnitTest */,
 				80FDA9232231548300DBEF91 /* ConfigurationTest */,
@@ -1214,11 +1219,12 @@
 				80FDAA202231548300DBEF91 /* FontTest */,
 				80FDAA232231548300DBEF91 /* LightTest */,
 				80FDAA262231548300DBEF91 /* DownloaderTest */,
-				80FDAA292231548300DBEF91 /* precheader.cpp */,
 				80FDAA2A2231548300DBEF91 /* WindowTest */,
 				80FDAA2D2231548300DBEF91 /* OpenURLTest */,
 				80FDAA302231548300DBEF91 /* ConsoleTest */,
 				80FDAA332231548300DBEF91 /* MenuTest */,
+				80FDAA292231548300DBEF91 /* precheader.cpp */,
+				80FDA91A2231548300DBEF91 /* precheader.h */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -1347,8 +1353,8 @@
 		80FDA93D2231548300DBEF91 /* DataVisitorTest */ = {
 			isa = PBXGroup;
 			children = (
-				80FDA93E2231548300DBEF91 /* DataVisitorTest.h */,
 				80FDA93F2231548300DBEF91 /* DataVisitorTest.cpp */,
+				80FDA93E2231548300DBEF91 /* DataVisitorTest.h */,
 			);
 			path = DataVisitorTest;
 			sourceTree = "<group>";
@@ -1374,12 +1380,12 @@
 		80FDA9462231548300DBEF91 /* TouchesTest */ = {
 			isa = PBXGroup;
 			children = (
+				80FDA94A2231548300DBEF91 /* TouchesTest.cpp */,
 				80FDA9472231548300DBEF91 /* TouchesTest.h */,
+				80FDA94C2231548300DBEF91 /* Ball.cpp */,
 				80FDA9482231548300DBEF91 /* Ball.h */,
 				80FDA9492231548300DBEF91 /* Paddle.cpp */,
-				80FDA94A2231548300DBEF91 /* TouchesTest.cpp */,
 				80FDA94B2231548300DBEF91 /* Paddle.h */,
-				80FDA94C2231548300DBEF91 /* Ball.cpp */,
 			);
 			path = TouchesTest;
 			sourceTree = "<group>";
@@ -2052,8 +2058,8 @@
 		80FDAA3B2231548300DBEF91 /* MathHelper */ = {
 			isa = PBXGroup;
 			children = (
-				80FDAA3C2231548300DBEF91 /* MathHelper.h */,
 				80FDAA3D2231548300DBEF91 /* MathHelper.cpp */,
+				80FDAA3C2231548300DBEF91 /* MathHelper.h */,
 			);
 			path = MathHelper;
 			sourceTree = "<group>";
@@ -2061,8 +2067,8 @@
 		80FDAA3E2231548300DBEF91 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				80FDAA3F2231548300DBEF91 /* AudioManager.h */,
 				80FDAA412231548300DBEF91 /* AudioManager.cpp */,
+				80FDAA3F2231548300DBEF91 /* AudioManager.h */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -2070,8 +2076,8 @@
 		80FDAA422231548300DBEF91 /* LabelRPG */ = {
 			isa = PBXGroup;
 			children = (
-				80FDAA442231548300DBEF91 /* LabelRPG.h */,
 				80FDAA452231548300DBEF91 /* LabelRPG.cpp */,
+				80FDAA442231548300DBEF91 /* LabelRPG.h */,
 			);
 			path = LabelRPG;
 			sourceTree = "<group>";
@@ -2319,6 +2325,7 @@
 				80FDAA822231548400DBEF91 /* FirebaseHelper.cpp in Sources */,
 				1AF87B781F6F77F7007BE51C /* AppController.mm in Sources */,
 				80FDAAEA2231548400DBEF91 /* DrawNode3D.cpp in Sources */,
+				8068CE4F2243B1C900596CF0 /* AnimationUtility.cpp in Sources */,
 				80FDAA9A2231548400DBEF91 /* UnitTest.cpp in Sources */,
 				80FDAB082231548400DBEF91 /* UISliderTest.cpp in Sources */,
 				80FDAAF42231548400DBEF91 /* ParticleTest.cpp in Sources */,
@@ -2504,6 +2511,7 @@
 				80FDAB292231548400DBEF91 /* DrawPrimitivesTest.cpp in Sources */,
 				80FDAABF2231548400DBEF91 /* MaterialSystemTest.cpp in Sources */,
 				80FDAAAB2231548400DBEF91 /* ClippingNodeTest.cpp in Sources */,
+				8068CE502243B1C900596CF0 /* AnimationUtility.cpp in Sources */,
 				80FDAA9B2231548400DBEF91 /* UnitTest.cpp in Sources */,
 				80FDAB492231548400DBEF91 /* LayerTest.cpp in Sources */,
 				80FDAB552231548400DBEF91 /* WindowTest.cpp in Sources */,

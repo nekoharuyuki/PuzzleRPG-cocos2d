@@ -156,7 +156,7 @@ DrawNode* BasicTest::shape()
 
 Sprite* BasicTest::grossini()
 {
-    auto grossini = Sprite::create(s_pathCharaPlayer10);
+    auto grossini = Sprite::create(s_pathCharPlayer10);
     grossini->setScale( 1.5 );
     return grossini;
 }
@@ -325,7 +325,7 @@ void NestedTest::setup()
         clipper->runAction(RepeatForever::create(RotateBy::create(i % 3 ? 1.33 : 1.66, i % 2 ? 90 : -90)));
         parent->addChild(clipper);
         
-        auto stencil = Sprite::create(s_pathCharaPlayer10);
+        auto stencil = Sprite::create(s_pathCharPlayer10);
         stencil->setScale( 2.5 - (i * (2.5 / depth)) );
         stencil->setAnchorPoint( Vec2(0.5, 0.5) );
         stencil->setPosition(clipper->getContentSize().width / 2, clipper->getContentSize().height / 2);
@@ -555,12 +555,12 @@ void RawStencilBufferTest::setup()
     
     for(int i = 0; i < _planeCount; ++i)
     {
-        Sprite* sprite = Sprite::create(s_pathCharaPlayer10);
+        Sprite* sprite = Sprite::create(s_pathCharPlayer10);
         sprite->setAnchorPoint(  Vec2(0.5, 0) );
         sprite->setScale( 2.5f );
         _sprites.pushBack(sprite);
 
-        Sprite* sprite2 = Sprite::create(s_pathCharaPlayer10);
+        Sprite* sprite2 = Sprite::create(s_pathCharPlayer10);
         sprite2->setAnchorPoint(  Vec2(0.5, 0) );
         sprite2->setScale( 2.5f );
         _spritesStencil.pushBack(sprite2);
@@ -974,7 +974,7 @@ void ClippingToRenderTextureTest::expectedBehaviour()
 
 
     // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create(s_pathCharaPlayer10);
+    auto sprite = Sprite::create(s_pathCharPlayer10);
 
     // position the sprite on the center of the screen
     sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
@@ -1021,7 +1021,7 @@ void ClippingToRenderTextureTest::reproduceBug()
 
 
     // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create(s_pathCharaPlayer10);
+    auto sprite = Sprite::create(s_pathCharPlayer10);
 
     // position the sprite on the center of the screen
     sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));

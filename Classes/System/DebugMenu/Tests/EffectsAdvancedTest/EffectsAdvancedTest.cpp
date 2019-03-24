@@ -277,7 +277,7 @@ void EffectAdvanceBaseTest::onEnter(void)
 
     _target1 = NodeGrid::create();
     _target1->setAnchorPoint(Vec2(0.5,0.5));
-    auto grossini = Sprite::create(s_pathCharaPlayer12);
+    auto grossini = Sprite::create(s_pathCharPlayer12);
     _target1->addChild(grossini);
     _bgNode->addChild(_target1);
     _target1->setPosition(VisibleRect::left().x+VisibleRect::getVisibleRect().size.width/3.0f, VisibleRect::bottom().y+ 200);
@@ -288,7 +288,7 @@ void EffectAdvanceBaseTest::onEnter(void)
 
     _target2 = NodeGrid::create();
     _target2->setAnchorPoint(Vec2(0.5,0.5));
-    auto tamara = Sprite::create(s_pathCharaPlayer11);
+    auto tamara = Sprite::create(s_pathCharPlayer11);
     _target2->addChild(tamara);
     _bgNode->addChild(_target2);
     _target2->setPosition(VisibleRect::left().x+2*VisibleRect::getVisibleRect().size.width/3.0f,VisibleRect::bottom().y+200);

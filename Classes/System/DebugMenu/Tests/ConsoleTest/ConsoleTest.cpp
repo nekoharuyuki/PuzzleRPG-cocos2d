@@ -135,10 +135,10 @@ ConsoleUploadFile::~ConsoleUploadFile()
 
 void ConsoleUploadFile::uploadFile()
 {
-    Data srcFileData = FileUtils::getInstance()->getDataFromFile(s_pathCharaPlayer10);
+    Data srcFileData = FileUtils::getInstance()->getDataFromFile(s_pathCharPlayer10);
     if (srcFileData.isNull())
     {
-        CCLOGERROR("ConsoleUploadFile: could not open file %s", s_pathCharaPlayer10);
+        CCLOGERROR("ConsoleUploadFile: could not open file %s", s_pathCharPlayer10);
     }
 
     std::string targetFileName = _targetFileName;

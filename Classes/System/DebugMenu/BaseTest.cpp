@@ -26,7 +26,7 @@
 #include "testResource.h"
 #include "Controller.h"
 #include "ModalLayer.h"
-
+#include "AudioManager.h"
 #include "TitleScene.h"
 
 USING_NS_CC;
@@ -48,6 +48,7 @@ TestBase::~TestBase()
 
 void TestBase::backsUpOneLevel()
 {
+    AudioManager::getInstance()->playSe("cansell");
     if (_parentTest)
     {
         _parentTest->runThisTest();
@@ -242,6 +243,10 @@ TableViewCell* TestList::tableCellAtIndex(TableView *table, ssize_t idx)
     if (!cell)
     {
         cell = TableViewCell::create();
+//        auto sprite = Sprite::create("asset/button/001.png");
+//        sprite->setAnchorPoint(Vec2::ZERO);
+//        sprite->setPosition(Vec2(0, 0));
+//        cell->addChild(sprite);
         auto label = Label::createWithTTF(_childTestNames[idx], s_fontArial, 20.0f);
         label->setTag(TABEL_LABEL_TAG);
         label->setColor(Color3B::BLACK);
@@ -250,11 +255,15 @@ TableViewCell* TestList::tableCellAtIndex(TableView *table, ssize_t idx)
     }
     else
     {
+//        auto sprite = Sprite::create("asset/button/001.png");
+//        sprite->setAnchorPoint(Vec2::ZERO);
+//        sprite->setPosition(Vec2(0, 0));
+//        cell->addChild(sprite);
         auto label = (Label*)cell->getChildByTag(TABEL_LABEL_TAG);
         label->setColor(Color3B::BLACK);
         label->setString(_childTestNames[idx]);
     }
-
+    
     return cell;
 }
 
@@ -472,6 +481,7 @@ void TestCase::onEnter()
 
 void TestCase::restartTestCallback(Ref* sender)
 {
+    AudioManager::getInstance()->playSe("se_002");
     if (_testSuite)
     {
         _testSuite->restartCurrTest();
@@ -480,6 +490,7 @@ void TestCase::restartTestCallback(Ref* sender)
 
 void TestCase::nextTestCallback(Ref* sender)
 {
+    AudioManager::getInstance()->playSe("se_001");
     if (_testSuite)
     {
         _testSuite->enterNextTest();
@@ -488,6 +499,7 @@ void TestCase::nextTestCallback(Ref* sender)
 
 void TestCase::priorTestCallback(Ref* sender)
 {
+    AudioManager::getInstance()->playSe("se_001");
     if (_testSuite)
     {
         _testSuite->enterPreviousTest();

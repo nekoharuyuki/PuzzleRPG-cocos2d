@@ -52,6 +52,7 @@ endif()
 #      Classes/HelloWorldScene.cpp
 #      )
 file(GLOB_RECURSE GAME_SOURCE RELATIVE ${CMAKE_SOURCE_DIR} CONFIGURE_DEPENDS "Classes/*.cpp")
+file(GLOB_RECURSE GAME_SOURCE RELATIVE ${CMAKE_SOURCE_DIR} CONFIGURE_DEPENDS "Classes/*.c")
 
 # list(APPEND GAME_HEADER
 #      Classes/AppDelegate.h
