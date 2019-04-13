@@ -8,6 +8,7 @@
 #include "TitleScene.h"
 #include "CharselectScene.h"
 #include "QuestScene.h"
+#include "MypageScene.h"
 #include "OtherScene.h"
 #include "PlayerValue.h"
 #include "GameDataSQL.h"
@@ -127,11 +128,14 @@ void TitleScene::mypageButtonPress(Node* node)
         if(type == ui::Widget::TouchEventType::ENDED) {
             // 何度も押されないように一度押されたらアクションを無効にする
             this->getEventDispatcher()->removeAllEventListeners();
-            // マイページからユーザーデータを確認する
-            auto startGame = CallFunc::create([]{});
+            // マイページへの遷移
+            auto transitionOtherScene = CallFunc::create([]{
+                auto transition = TransitionFade::create(0.5f, MypageScene::createScene(MypageScene::transition_title), Color3B::WHITE);
+                Director::getInstance()->replaceScene(transition);
+            });
             // 0.5秒待ってからCallFuncを呼ぶ
             auto delay = DelayTime::create(0.2f);
-            this->runAction(Sequence::create(delay, startGame, NULL));
+            this->runAction(Sequence::create(delay, transitionOtherScene, NULL));
         }
     });
 }

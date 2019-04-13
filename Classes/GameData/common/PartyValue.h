@@ -16,6 +16,20 @@ private:
     PartyValue(); //コンストラクタ
     static PartyValue* m_instance;
     
+    static int m_expTable[];
+    
+    // 保有しているキャラクターのパラメーターリスト
+    struct CharStorageParams {
+        std::string charName;
+        int charId;
+        int charHp;
+        int charAtk;
+        int charAttribute;
+        int charLevel;
+        int charExp;
+    };
+    static std::map<int, CharStorageParams> m_charStorageDataList;
+    
 public:
     ~PartyValue();
     static PartyValue* getInstance();
@@ -26,20 +40,22 @@ public:
     void dataLoad();
     void dataSave();
     
-    std::string getPartyCharId(int charId);
-    std::string getPartyCharLv(int charId);
+    void setPartyValueParam(int memberId, int storageId);
+    int getPartyMemberForStorageId(int memberId);
+    void setCharStorageParam(int storageId, int charId, int level, int exp);
+    std::string getCharStorageFromCharParam(int storageId);
     
     int getTotalHp();
+    int getAtk(int attribute);
+    int getTotalAtk();
     
-    // Party
-    CC_SYNTHESIZE(int, m_partyChar1DataCharId, PartyChar1DataCharId);
-    CC_SYNTHESIZE(int, m_partyChar1DataCharLv, PartyChar1DataCharLv);
+    bool levelUpCheck(int level, int exp);
+    int getCurrentExp(int level, int exp);
+    int getNextExp(int level);
+    int getLevel(int exp);
     
-    CC_SYNTHESIZE(int, m_partyChar2DataCharId, PartyChar2DataCharId);
-    CC_SYNTHESIZE(int, m_partyChar2DataCharLv, PartyChar2DataCharLv);
-    
-    CC_SYNTHESIZE(int, m_partyChar3DataCharId, PartyChar3DataCharId);
-    CC_SYNTHESIZE(int, m_partyChar3DataCharLv, PartyChar3DataCharLv);
+    CC_SYNTHESIZE(std::string, m_partyValue, PartyValue);
+    CC_SYNTHESIZE(std::string, m_charStorage, CharStorage);
 };
 
 #endif /* PartyValue_h */
