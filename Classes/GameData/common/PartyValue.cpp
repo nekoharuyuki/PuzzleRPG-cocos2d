@@ -16,7 +16,6 @@
 #define MAX_LEVEL 100
 
 PartyValue* PartyValue::m_instance = nullptr;
-std::map<int, PartyValue::CharStorageParams> PartyValue::m_charStorageDataList;
 
 //コンストラクタ
 PartyValue::PartyValue()
@@ -71,6 +70,7 @@ void PartyValue::dataSave()
 }
 
 // パーティーのストレージ情報を保存する
+//{ "member_1" : [ {"storageid" : 0} ], "member_2" : [ {"storageid" : 0} ], "member_3" : [ {"storageid" : 0} ] }
 void PartyValue::setPartyValueParam(int memberId, int storageId)
 {
     m_partyValue = GameDataSQL::sqliteGetValueForKey("PartyValue");
@@ -84,33 +84,24 @@ void PartyValue::setPartyValueParam(int memberId, int storageId)
     rapidjson::Document doc;
     doc.Parse<rapidjson::kParseDefaultFlags>(m_partyValue.c_str());
     
-    if (doc.HasParseError()) {
+    if (doc.HasParseError() || !doc.IsObject()) {
+        // エラー
         CCLOG("JSON ERROR.");
     }
-    if(!doc.IsObject()) {
-        CCLOG("invalid!");
-    }
     
-    std::map<int, int> memberData;
-    for(int i = 0; i < MEMBER_LOOP_COUNT; i++ ){
-        char buf[] = "";
-        strcpy(buf, "member_");
-        strcat(buf, std::to_string(i+1).c_str());
-        const rapidjson::Value& list = doc[buf];
-        for(rapidjson::SizeType j = 0; j < list.Size(); j++){
-            memberData[i] = list[j]["storageid"].GetInt();
-        }
-    }
+    int member_1 = getPartyMemberForStorageId(0);
+    int member_2 = getPartyMemberForStorageId(1);
+    int member_3 = getPartyMemberForStorageId(2);
     
     switch (memberId) {
         case 0:
-            m_partyValue = "{ ""\"member_1\""" : [ {""\"storageid\""" : " + std::to_string(storageId) + "} ], ""\"member_2\""" : [ {""\"storageid\""" : " + std::to_string(memberData[1]) + "} ], ""\"member_3\""" : [ {""\"storageid\""" : " + std::to_string(memberData[2]) + "} ] }";
+            m_partyValue = "{ ""\"member_1\""" : [ {""\"storageid\""" : " + std::to_string(storageId) + "} ], ""\"member_2\""" : [ {""\"storageid\""" : " + std::to_string(member_2) + "} ], ""\"member_3\""" : [ {""\"storageid\""" : " + std::to_string(member_3) + "} ] }";
             break;
         case 1:
-            m_partyValue = "{ ""\"member_1\""" : [ {""\"storageid\""" : " + std::to_string(memberData[0]) + "} ], ""\"member_2\""" : [ {""\"storageid\""" : " + std::to_string(storageId) + "} ], ""\"member_3\""" : [ {""\"storageid\""" : " + std::to_string(memberData[2]) + "} ] }";
+            m_partyValue = "{ ""\"member_1\""" : [ {""\"storageid\""" : " + std::to_string(member_1) + "} ], ""\"member_2\""" : [ {""\"storageid\""" : " + std::to_string(storageId) + "} ], ""\"member_3\""" : [ {""\"storageid\""" : " + std::to_string(member_3) + "} ] }";
             break;
         case 2:
-            m_partyValue = "{ ""\"member_1\""" : [ {""\"storageid\""" : " + std::to_string(memberData[0]) + "} ], ""\"member_2\""" : [ {""\"storageid\""" : " + std::to_string(memberData[1]) + "} ], ""\"member_3\""" : [ {""\"storageid\""" : " + std::to_string(storageId) + "} ] }";
+            m_partyValue = "{ ""\"member_1\""" : [ {""\"storageid\""" : " + std::to_string(member_1) + "} ], ""\"member_2\""" : [ {""\"storageid\""" : " + std::to_string(member_2) + "} ], ""\"member_3\""" : [ {""\"storageid\""" : " + std::to_string(storageId) + "} ] }";
             break;
         default:
             break;
@@ -140,35 +131,90 @@ int PartyValue::getPartyMemberForStorageId(int memberId)
     return 0;
 }
 
+bool PartyValue::isPartyMembercharacter(int storageId)
+{
+    if(storageId == 0){
+        return false;
+    }
+    for(int i = 0; i < MEMBER_LOOP_COUNT; i++){
+        int member = getPartyMemberForStorageId(i);
+        if(member == storageId){
+            return true;
+        }
+    }
+    return false;
+}
+
 // キャラクターストレージの情報を整理して格納する
+//[ { "storageId" : 0, "charId" : 0, "level" : 0, "exp" : 0} ]
 void PartyValue::setCharStorageParam(int storageId, int charId, int level, int exp)
+{
+    if(storageId != 0){
+        std::string str = "{ ""\"storageId\""" : " + std::to_string(storageId) + ", ""\"charId\""" : " + std::to_string(charId) + ", ""\"level\""" : " + std::to_string(level) + ", ""\"exp\""" : " + std::to_string(exp) + "}";
+        newCharStorageParam(str);
+    }
+}
+
+//{ \"storage\" : [ { "storageId" : 0, "charId" : 0, "level" : 0, "exp" : 0} ] , ......... }
+void PartyValue::newCharStorageParam(std::string newChar)
 {
     m_charStorage = GameDataSQL::sqliteGetValueForKey("CharStorage");
     
     if(m_charStorage == ""){
-        // 初期データを保存
-        m_charStorage = "{""\"storageId\""" : 0, ""\"charId\""" : 0, ""\"level\""" : 0, ""\"exp\""" : 0};";
-        GameDataSQL::sqliteUpdateValueForKey("CharStorage", m_charStorage.c_str());
+        m_charStorage = "{ \"storage\" : [ " + newChar + " ]}";
+    } else {
+        std::string temp = m_charStorage;
+        temp.pop_back();
+        temp.pop_back();
+        temp.pop_back();
+        m_charStorage = temp + ", " + newChar + " ]}";
     }
-    
-    
     
     //CCLOG("%s", m_charStorage.c_str());
     GameDataSQL::sqliteUpdateValueForKey("CharStorage", m_charStorage.c_str());
 }
 
 // キャラクターストレージの情報からキャラクターのパラメータを取得する
-std::string PartyValue::getCharStorageFromCharParam(int storageId)
+int PartyValue::getCharStorageFromCharId(int storageId)
 {
-    std::string charStorageParam = "";
-    return charStorageParam;
+    if(storageId == 0){
+        return 0;
+    }
+    rapidjson::Document doc;
+    doc.Parse<rapidjson::kParseDefaultFlags>(m_charStorage.c_str());
+    if (doc.HasParseError() || !doc.IsObject()) {
+        // エラー
+        CCLOG("JSON ERROR.");
+    }
+    // キーと値を変数に登録する
+    const rapidjson::Value& charList = doc["storage"];
+    std::string charStorageParam = charList[storageId]["charId"].GetString();
+    return atoi(charStorageParam.c_str());
+}
+
+int PartyValue::getMaxStorageId()
+{
+    rapidjson::Document doc;
+    doc.Parse<rapidjson::kParseDefaultFlags>(m_charStorage.c_str());
+    if (doc.HasParseError() || !doc.IsObject()) {
+        // エラー
+        CCLOG("JSON ERROR.");
+    }
+    // キーと値を変数に登録する
+    const rapidjson::Value& charList = doc["storage"];
+    return charList[charList.Size()]["storageId"].GetInt();;
 }
 
 int PartyValue::getTotalHp()
 {
     int hp = 0;
     for(int i = 0; i < MEMBER_LOOP_COUNT; i++ ){
-//        hp += partyValue[i].hp;
+        int memberId = getPartyMemberForStorageId(i);
+        int storageId = getPartyMemberForStorageId(memberId);
+        if(storageId != 0){
+            int CharId = getCharStorageFromCharId(storageId);
+            hp += CharData::getCharData(CharId).charHp;
+        }
     }
     return hp;
 }
@@ -177,9 +223,14 @@ int PartyValue::getAtk(int attribute)
 {
     int atk = 0;
     for(int i = 0; i < MEMBER_LOOP_COUNT; i++){
-//        if( attribute == partyValue[i].attribute ){
-//            atk += partyValue[i].atk;
-//        }
+        int memberId = getPartyMemberForStorageId(i);
+        int storageId = getPartyMemberForStorageId(memberId);
+        if(storageId != 0){
+            int CharId = getCharStorageFromCharId(storageId);
+            if( attribute == CharData::getCharData(CharId).charAttribute ){
+                atk += CharData::getCharData(CharId).charAtk;
+            }
+        }
     }
     return atk;
 }
@@ -188,7 +239,12 @@ int PartyValue::getTotalAtk()
 {
     int atk = 0;
     for( int i = 0; i < MEMBER_LOOP_COUNT; i++ ){
-//        atk += partyValue[i].atk;
+        int memberId = getPartyMemberForStorageId(i);
+        int storageId = getPartyMemberForStorageId(memberId);
+        if(storageId != 0){
+            int CharId = getCharStorageFromCharId(storageId);
+            atk += CharData::getCharData(CharId).charAtk;
+        }
     }
     return atk;
 }
