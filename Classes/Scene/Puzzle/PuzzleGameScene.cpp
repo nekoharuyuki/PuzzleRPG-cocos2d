@@ -321,13 +321,14 @@ void PuzzleGameScene::checksLinedPuzzles()
         int damage = 0;
         int healing = 0;
         std::set<int> attackers;
+        int index = 0;
         
         //敵にダメージを与える
         do {
             //ランダムで敵を1体選択
-            int index = m_distForMember(m_engine);
+            index = m_distForMember(m_engine);
             BattleChar* enemyData = m_memberDatum.at(index);
-            if(enemyData->getHp() > 0){
+            if(enemyData->getHp() >= 0){
                 //ダメージ・回復量の計算
                 calculateDamage(chainNum, healing, damage, attackers, enemyData);
                 int afterHp = enemyData->getHp() - damage;
@@ -351,7 +352,7 @@ void PuzzleGameScene::checksLinedPuzzles()
         
         //アタック処理
         if (damage > 0) {
-            attackToEnemy(damage, attackers);
+            attackToEnemy(index, damage, attackers);
         }
         
         //回復処理
@@ -848,17 +849,10 @@ bool PuzzleGameScene::isAttacker(PuzzleSprite::PuzzleType type, BattleChar::Elem
 }
 
 // 敵への攻撃
-void PuzzleGameScene::attackToEnemy(int damage, std::set<int> attackers)
+void PuzzleGameScene::attackToEnemy(int index, int damage, std::set<int> attackers)
 {
     // 敵のHPを取得する
-    int index;
-    BattleChar* enemyData;
-    do {
-        //ランダムで敵を選択
-        index = m_distForEnemy(m_engine);
-        enemyData = m_enemyDatum.at(index);
-        //HPが0の敵を選択した場合は、再度選択し直す
-    } while (enemyData->getHp() <= 0);
+    BattleChar* enemyData = m_enemyDatum.at(index);
     
     // 敵にダメージを与える
     int afterHp = enemyData->getHp() - damage;
