@@ -28,7 +28,7 @@ void GameDataSQL::sqliteCreateTable()
     // データベースファイルを作成する
     sqlite3 *db = NULL;
     if (sqliteOpen(&db) == SQLITE_OK) {
-        const char *sql_createtable = "CREATE TABLE test1(key TEXT,value TEXT)";
+        const char *sql_createtable = "CREATE TABLE data(key TEXT,value TEXT)";
         sqlite3_stmt *stmt = NULL;
         if (sqlite3_prepare_v2(db, sql_createtable, -1, &stmt, NULL) == SQLITE_OK) {
             if (sqlite3_step(stmt) == SQLITE_DONE){
@@ -48,7 +48,7 @@ const char *GameDataSQL::sqliteGetValueForKey(const char *key)
     __String *strValue = NULL;
     sqlite3 *db = NULL;
     if (sqliteOpen(&db) == SQLITE_OK) {
-        const char *sql_select = "SELECT value FROM test1 WHERE key=?";
+        const char *sql_select = "SELECT value FROM data WHERE key=?";
         sqlite3_stmt *stmt = NULL;
         if (sqlite3_prepare_v2(db, sql_select, -1, &stmt, NULL) == SQLITE_OK) {
             sqlite3_bind_text(stmt, 1, key, -1, SQLITE_TRANSIENT);
@@ -81,7 +81,7 @@ void GameDataSQL::sqliteSetValueForKey(const char *key, const char *value)
     CCLOG("DB File Path( %s )", fullpath.c_str());
     sqlite3 *db = NULL;
     if (sqlite3_open(fullpath.c_str(), &db) == SQLITE_OK) {
-        const char *sql_select = "REPLACE INTO test1 (key, value) VALUES (?,?)";
+        const char *sql_select = "REPLACE INTO data (key, value) VALUES (?,?)";
         sqlite3_stmt *stmt = NULL;
         if (sqlite3_prepare_v2(db, sql_select, -1, &stmt, NULL) == SQLITE_OK) {
             sqlite3_bind_text(stmt, 1, key, -1, SQLITE_TRANSIENT);
@@ -102,7 +102,7 @@ void GameDataSQL::sqliteUpdateValueForKey(const char *key,const char *value){
     fullpath += dbName;
     sqlite3 *db = NULL;
     if (sqlite3_open(fullpath.c_str(), &db) == SQLITE_OK) {
-        const char *sql_select = "UPDATE test1 SET value =? WHERE key =? ";
+        const char *sql_select = "UPDATE data SET value =? WHERE key =? ";
         sqlite3_stmt *stmt = NULL;
         if (sqlite3_prepare_v2(db, sql_select, -1, &stmt, NULL) == SQLITE_OK) {
             sqlite3_bind_text(stmt, 1, value, -1, SQLITE_TRANSIENT);

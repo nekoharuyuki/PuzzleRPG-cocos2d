@@ -187,6 +187,21 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
+          <AbstractNodeData Name="TitleBack_btn" ActionTag="-120450677" Tag="45" IconVisible="False" LeftMargin="281.5000" RightMargin="281.5000" TopMargin="520.0000" BottomMargin="28.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="207" Scale9Height="30" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="237.0000" Y="52.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="400.0000" Y="54.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.0900" />
+            <PreSize X="0.2962" Y="0.0867" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Normal" Path="asset/other/btn_titleback_on.png" Plist="" />
+            <PressedFileData Type="Normal" Path="asset/other/btn_titleback_on.png" Plist="" />
+            <NormalFileData Type="Normal" Path="asset/other/btn_titleback.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>
