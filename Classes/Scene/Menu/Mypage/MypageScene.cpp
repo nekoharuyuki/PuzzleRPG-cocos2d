@@ -1,8 +1,10 @@
 #include "MypageScene.h"
 #include "TitleScene.h"
 #include "MenuLayer.h"
+#include "CharData.h"
 #include "PlayerValue.h"
 #include "PartyValue.h"
+#include "BattleCharIconSprite.h"
 
 USING_NS_CC;
 
@@ -72,17 +74,14 @@ bool MypageScene::onCreate()
     } else {
         titleBackBtn->setVisible(false);
     }
-    
     // ユーザーデータの読み込み
     if(!onCreatePlayerValue(node)){
         return false;
     }
-    
     // パーティデータ読込み表示
     if(!onCreatePartyValue(node)){
         return false;
     }
-    
     return true;
 }
 
@@ -103,25 +102,44 @@ bool MypageScene::onCreatePlayerValue(Node* node)
 bool MypageScene::onCreatePartyValue(Node* node)
 {
     PartyValue::getInstance()->dataLoad();
+    auto partyValue = PartyValue::getInstance();
+    if(!partyValue){
+        return false;
+    }
     
+    //パーティデータ読込み表示
     for(int i = 0; i < 3; i++){
-        //        auto CharIconNode = rootNode->getChildByName<Node*>( "CharIconNode"+std::to_string(i) );
         auto CharLv = node->getChildByName<ui::Text*>( "CharLv"+std::to_string(i) );
         auto CharName = node->getChildByName<ui::Text*>( "CharName"+std::to_string(i) );
-        
-        CharLv->setString( " " );
-        CharName->setString( " " );
+        int storageId = partyValue->getPartyMemberForStorageId(i);
+        if(storageId != 0){
+            int charId = partyValue->getCharStorageFromCharId(storageId);
+            int charLevel = partyValue->getCharStorageFromCharLevel(storageId);
+            auto charDataParam = CharData::getCharData(charId);
+            CharLv->setString( "Lv"+std::to_string(charLevel) );
+            CharName->setString( charDataParam.charName );
+            auto CharIconNode = node->getChildByName<Node*>( "CharIconNode"+std::to_string(i) );
+            if(CharIconNode){
+                auto charaPlayerSprite = BattleCharIconSprite::create(charId+1, BattleCharIconSprite::CharType::Member);
+                if(charaPlayerSprite){
+                    CharIconNode->addChild( charaPlayerSprite );
+                }
+            }
+        } else {
+            CharLv->setString( " " );
+            CharName->setString( " " );
+        }
     }
-    /*
-     auto Atk = new Array();
-     auto CharName = new Array();
-     for(i = 0; i < 3; i++){
-     cc.log(i);
-     Atk[i] = rootNode->getChildByName<ui::Text*>( "Atk"+i );
-     Atk[i].setString( getAtk(i) );
-     }
-     */
+    
     auto PartyHpText = node->getChildByName<ui::Text*>( "PartyHpText" );
-    PartyHpText->setString( "100" );
+    PartyHpText->setString( std::to_string(partyValue->getTotalHp()) );
+    
+    auto Atk0 = node->getChildByName<ui::Text*>( "Atk0" );
+    Atk0->setString( std::to_string(partyValue->getAtk(1)) );
+    auto Atk1 = node->getChildByName<ui::Text*>( "Atk1" );
+    Atk1->setString( std::to_string(partyValue->getAtk(2)) );
+    auto Atk2 = node->getChildByName<ui::Text*>( "Atk2" );
+    Atk2->setString( std::to_string(partyValue->getAtk(3)) );
+    
     return true;
 }

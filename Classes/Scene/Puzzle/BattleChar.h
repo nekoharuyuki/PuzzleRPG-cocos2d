@@ -12,12 +12,12 @@ public:
     //キャラクター属性
     enum class Element
     {
-        Fire,   //火
-        Water,  //水
-        Wind,   //風
-        Holy,   //光
-        Shadow, //闇
-        None,   //なし
+        Fire   = 1,  //火
+        Water  = 2,  //水
+        Wind   = 3,  //風
+        Holy   = 4,  //光
+        Shadow = 5,  //闇
+        None   = 0,  //なし
     };
     
     float getHpPercentage(); //ヒットポイント（％値）取得

@@ -15,20 +15,7 @@ class PartyValue
 private:
     PartyValue(); //コンストラクタ
     static PartyValue* m_instance;
-    
     static int m_expTable[];
-    
-    // 保有しているキャラクターのパラメーターリスト
-    struct CharStorageParams {
-        std::string charName;
-        int charId;
-        int charHp;
-        int charAtk;
-        int charAttribute;
-        int charLevel;
-        int charExp;
-    };
-    static std::map<int, CharStorageParams> m_charStorageDataList;
     
 public:
     ~PartyValue();
@@ -42,8 +29,14 @@ public:
     
     void setPartyValueParam(int memberId, int storageId);
     int getPartyMemberForStorageId(int memberId);
+    bool isPartyMembercharacter(int storageId);
+    
     void setCharStorageParam(int storageId, int charId, int level, int exp);
-    std::string getCharStorageFromCharParam(int storageId);
+    void newCharStorageParam(std::string newChar);
+    int getCharStorageFromCharId(int storageId);
+    int getCharStorageFromCharLevel(int storageId);
+    int getCharStorageFromCharExp(int storageId);
+    int getMaxStorageId();
     
     int getTotalHp();
     int getAtk(int attribute);
