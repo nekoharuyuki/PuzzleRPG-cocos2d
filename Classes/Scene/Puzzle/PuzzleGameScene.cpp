@@ -334,12 +334,14 @@ void PuzzleGameScene::checksLinedPuzzles()
                 enemyData->setHp(afterHp);
                 
                 // ダメージ表示
-                DamageEffect* effect = DamageEffect::create();
-                if(effect){
-                    effect->setPosition(Vec2(m_enemys.at(index)->getParent()->getPositionX(),
-                                             m_enemys.at(index)->getParent()->getPositionY()));
-                    effect->showEffect(afterHp);
-                    this->addChild(effect, Damage);
+                if (damage > 0) {
+                    DamageEffect* effect = DamageEffect::create();
+                    if(effect){
+                        effect->setPosition(Vec2(m_enemys.at(index)->getParent()->getPositionX(),
+                                                 m_enemys.at(index)->getParent()->getPositionY()));
+                        effect->showEffect(damage);
+                        this->addChild(effect, Damage);
+                    }
                 }
                 
                 break;
@@ -619,8 +621,8 @@ void PuzzleGameScene::initEnemy(Node* node)
         auto enemyData = BattleChar::create();
         if(enemyData){
             enemyData->retain();
-            enemyData->setMaxHp(enemyDataParam.enemyMaxHp);
             enemyData->setHp(enemyDataParam.enemyHp);
+            enemyData->setMaxHp(enemyData->getHp());
             enemyData->setAttack(enemyDataParam.enemyAtk);
             
             switch (enemyDataParam.enemyAttribute)
