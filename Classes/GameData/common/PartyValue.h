@@ -34,6 +34,8 @@ public:
     void setCharStorageParam(int storageId, int charId, int level, int exp);
     void newCharStorageParam(std::string newChar);
     int getCharStorageFromCharId(int storageId);
+    int getCharStorageFromCharLevel(int storageId);
+    int getCharStorageFromCharExp(int storageId);
     int getMaxStorageId();
     
     int getTotalHp();

@@ -186,10 +186,57 @@ int PartyValue::getCharStorageFromCharId(int storageId)
         // エラー
         CCLOG("JSON ERROR.");
     }
-    // キーと値を変数に登録する
     const rapidjson::Value& charList = doc["storage"];
-    std::string charStorageParam = charList[storageId]["charId"].GetString();
-    return atoi(charStorageParam.c_str());
+    int charId = 0;
+    for(rapidjson::SizeType i = 0; i < charList.Size(); i++){
+        if(charList[i]["storageId"].GetInt() == storageId){
+            charId = charList[i]["charId"].GetInt();
+            return charId;
+        }
+    }
+    return charId;
+}
+int PartyValue::getCharStorageFromCharLevel(int storageId)
+{
+    if(storageId == 0){
+        return 0;
+    }
+    rapidjson::Document doc;
+    doc.Parse<rapidjson::kParseDefaultFlags>(m_charStorage.c_str());
+    if (doc.HasParseError() || !doc.IsObject()) {
+        // エラー
+        CCLOG("JSON ERROR.");
+    }
+    const rapidjson::Value& charList = doc["storage"];
+    int charLevel = 0;
+    for(rapidjson::SizeType i = 0; i < charList.Size(); i++){
+        if(charList[i]["storageId"].GetInt() == storageId){
+            charLevel = charList[i]["level"].GetInt();
+            return charLevel;
+        }
+    }
+    return charLevel;
+}
+int PartyValue::getCharStorageFromCharExp(int storageId)
+{
+    if(storageId == 0){
+        return 0;
+    }
+    rapidjson::Document doc;
+    doc.Parse<rapidjson::kParseDefaultFlags>(m_charStorage.c_str());
+    if (doc.HasParseError() || !doc.IsObject()) {
+        // エラー
+        CCLOG("JSON ERROR.");
+    }
+    const rapidjson::Value& charList = doc["storage"];
+    int charExp = 0;
+    for(rapidjson::SizeType i = 0; i < charList.Size(); i++){
+        if(charList[i]["storageId"].GetInt() == storageId){
+            charExp = charList[i]["exp"].GetInt();
+            return charExp;
+        }
+    }
+    return charExp;
 }
 
 int PartyValue::getMaxStorageId()
@@ -209,11 +256,10 @@ int PartyValue::getTotalHp()
 {
     int hp = 0;
     for(int i = 0; i < MEMBER_LOOP_COUNT; i++ ){
-        int memberId = getPartyMemberForStorageId(i);
-        int storageId = getPartyMemberForStorageId(memberId);
+        int storageId = getPartyMemberForStorageId(i);
         if(storageId != 0){
-            int CharId = getCharStorageFromCharId(storageId);
-            hp += CharData::getCharData(CharId).charHp;
+            int charId = getCharStorageFromCharId(storageId);
+            hp += CharData::getCharData(charId).charHp;
         }
     }
     return hp;
@@ -222,13 +268,12 @@ int PartyValue::getTotalHp()
 int PartyValue::getAtk(int attribute)
 {
     int atk = 0;
-    for(int i = 0; i < MEMBER_LOOP_COUNT; i++){
-        int memberId = getPartyMemberForStorageId(i);
-        int storageId = getPartyMemberForStorageId(memberId);
+    for( int i = 0; i < MEMBER_LOOP_COUNT; i++ ){
+        int storageId = getPartyMemberForStorageId(i);
         if(storageId != 0){
-            int CharId = getCharStorageFromCharId(storageId);
-            if( attribute == CharData::getCharData(CharId).charAttribute ){
-                atk += CharData::getCharData(CharId).charAtk;
+            int charId = getCharStorageFromCharId(storageId);
+            if( attribute == CharData::getCharData(charId).charAttribute ){
+                atk += CharData::getCharData(charId).charAtk;
             }
         }
     }
@@ -239,11 +284,10 @@ int PartyValue::getTotalAtk()
 {
     int atk = 0;
     for( int i = 0; i < MEMBER_LOOP_COUNT; i++ ){
-        int memberId = getPartyMemberForStorageId(i);
-        int storageId = getPartyMemberForStorageId(memberId);
+        int storageId = getPartyMemberForStorageId(i);
         if(storageId != 0){
-            int CharId = getCharStorageFromCharId(storageId);
-            atk += CharData::getCharData(CharId).charAtk;
+            int charId = getCharStorageFromCharId(storageId);
+            atk += CharData::getCharData(charId).charAtk;
         }
     }
     return atk;
