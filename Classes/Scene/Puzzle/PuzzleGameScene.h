@@ -87,7 +87,7 @@ protected:
     void initMembers(Node* node); //メンバーの表示
     void calculateDamage(int &chainNum, int &healing, int &damage, std::set<int> &attackers, BattleChar* defender); //ダメージの計算
     bool isAttacker(PuzzleSprite::PuzzleType type, BattleChar::Element element); //アタッカー判定
-    void attackToEnemy(int damage, std::set<int> attackers); //敵への攻撃
+    void attackToEnemy(int index, int damage, std::set<int> attackers); //敵への攻撃
     void healMember(int healing); //メンバーの回復
     void attackFromEnemy(); //敵からの攻撃
     void endAnimation(); //アニメーション終了時処理

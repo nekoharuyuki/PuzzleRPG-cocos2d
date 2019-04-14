@@ -1,10 +1,27 @@
+//
+//  ResultScene.cpp
+//  PuzzleRPG
+//
+//  Created by neko on 2019/04/14.
+//
+
 #include "ResultScene.h"
 #include "QuestScene.h"
 #include "AudioManager.h"
+#include "PlayerValue.h"
+#include "MapData.h"
 
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
+
+int ResultScene::m_questNo = 0;
+
+ResultScene::ResultScene()
+{
+    std::random_device device;
+    m_engine = std::default_random_engine(device());
+}
 
 Scene* ResultScene::createScene(int quest_no)
 {
@@ -13,6 +30,8 @@ Scene* ResultScene::createScene(int quest_no)
     
     // 'layer' is an autorelease object
     auto layer = ResultScene::create();
+    
+    m_questNo = quest_no;
     
     // add layer as a child to scene
     scene->addChild(layer);
@@ -33,6 +52,10 @@ bool ResultScene::onCreate()
     
     // 勝利のBGM再生
     AudioManager::getInstance()->playBgm("victory");
+    
+    // ドロップ関連の設定
+    setingDropCoin(node);
+    setingDropChar(node);
     
     // メニューへ戻るボタン
     auto startBtn = node->getChildByName<ui::Button*>("QuestMap_btn");
@@ -56,4 +79,24 @@ bool ResultScene::onCreate()
     
     this->scheduleUpdate();
     return true;
+}
+
+void ResultScene::setingDropCoin(Node* node)
+{
+    auto cointext = node->getChildByName<ui::Text*>("cointext");
+    float rnd = (rand()/(RAND_MAX + 1.0f)) * 0.4f;
+    unsigned int dropCoin = static_cast<unsigned int>((MapData::getMapData(m_questNo).mapDropCoin * (0.8f + rnd)));
+    cointext->setString(std::to_string(dropCoin));
+    
+    // ユーザーデータ作成
+    PlayerValue::getInstance()->dataLoad();
+    unsigned int useCoin = PlayerValue::getInstance()->getCoin();
+    useCoin += dropCoin;
+    PlayerValue::getInstance()->setCoin(useCoin);
+    PlayerValue::getInstance()->dataSave();
+}
+
+void ResultScene::setingDropChar(Node* node)
+{
+    
 }

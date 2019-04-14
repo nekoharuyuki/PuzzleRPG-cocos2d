@@ -321,11 +321,12 @@ void PuzzleGameScene::checksLinedPuzzles()
         int damage = 0;
         int healing = 0;
         std::set<int> attackers;
+        int index = 0;
         
         //敵にダメージを与える
         do {
             //ランダムで敵を1体選択
-            int index = m_distForMember(m_engine);
+            index = m_distForMember(m_engine);
             BattleChar* enemyData = m_memberDatum.at(index);
             if(enemyData->getHp() > 0){
                 //ダメージ・回復量の計算
@@ -334,14 +335,15 @@ void PuzzleGameScene::checksLinedPuzzles()
                 enemyData->setHp(afterHp);
                 
                 // ダメージ表示
-                DamageEffect* effect = DamageEffect::create();
-                if(effect){
-                    effect->setPosition(Vec2(m_enemys.at(index)->getParent()->getPositionX(),
-                                             m_enemys.at(index)->getParent()->getPositionY()));
-                    effect->showEffect(afterHp);
-                    this->addChild(effect, Damage);
+                if (damage > 0) {
+                    DamageEffect* effect = DamageEffect::create();
+                    if(effect){
+                        effect->setPosition(Vec2(m_enemys.at(index)->getParent()->getPositionX(),
+                                                 m_enemys.at(index)->getParent()->getPositionY()));
+                        effect->showEffect(damage);
+                        this->addChild(effect, Damage);
+                    }
                 }
-                
                 break;
             }
             //HPが0のメンバーを選択した場合は、再度選択し直す
@@ -349,7 +351,7 @@ void PuzzleGameScene::checksLinedPuzzles()
         
         //アタック処理
         if (damage > 0) {
-            attackToEnemy(damage, attackers);
+            attackToEnemy(index, damage, attackers);
         }
         
         //回復処理
@@ -619,8 +621,8 @@ void PuzzleGameScene::initEnemy(Node* node)
         auto enemyData = BattleChar::create();
         if(enemyData){
             enemyData->retain();
-            enemyData->setMaxHp(enemyDataParam.enemyMaxHp);
             enemyData->setHp(enemyDataParam.enemyHp);
+            enemyData->setMaxHp(enemyData->getHp());
             enemyData->setAttack(enemyDataParam.enemyAtk);
             
             switch (enemyDataParam.enemyAttribute)
@@ -846,17 +848,10 @@ bool PuzzleGameScene::isAttacker(PuzzleSprite::PuzzleType type, BattleChar::Elem
 }
 
 // 敵への攻撃
-void PuzzleGameScene::attackToEnemy(int damage, std::set<int> attackers)
+void PuzzleGameScene::attackToEnemy(int index, int damage, std::set<int> attackers)
 {
     // 敵のHPを取得する
-    int index;
-    BattleChar* enemyData;
-    do {
-        //ランダムで敵を選択
-        index = m_distForEnemy(m_engine);
-        enemyData = m_enemyDatum.at(index);
-        //HPが0の敵を選択した場合は、再度選択し直す
-    } while (enemyData->getHp() <= 0);
+    BattleChar* enemyData = m_enemyDatum.at(index);
     
     // 敵にダメージを与える
     int afterHp = enemyData->getHp() - damage;
@@ -1019,8 +1014,13 @@ Spawn* PuzzleGameScene::vibratingAnimation()
 void PuzzleGameScene::winAnimation()
 {
     // クエストクリアデータを保存する
-    PlayerValue::getInstance()->setClearMap(m_questNo+1);
-    PlayerValue::getInstance()->dataSave();
+    // ユーザーデータ作成
+    PlayerValue::getInstance()->dataLoad();
+    int clearMap = PlayerValue::getInstance()->getClearMap();
+    if(clearMap < m_questNo+1){
+        PlayerValue::getInstance()->setClearMap(m_questNo+1);
+        PlayerValue::getInstance()->dataSave();
+    }
     
     //白い背景を用意する
     auto whiteLayer = LayerColor::create(Color4B(255, 255, 255, 127), WINSIZE.width, WINSIZE.height);
