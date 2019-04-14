@@ -328,7 +328,7 @@ void PuzzleGameScene::checksLinedPuzzles()
             //ランダムで敵を1体選択
             index = m_distForMember(m_engine);
             BattleChar* enemyData = m_memberDatum.at(index);
-            if(enemyData->getHp() >= 0){
+            if(enemyData->getHp() > 0){
                 //ダメージ・回復量の計算
                 calculateDamage(chainNum, healing, damage, attackers, enemyData);
                 int afterHp = enemyData->getHp() - damage;
@@ -344,7 +344,6 @@ void PuzzleGameScene::checksLinedPuzzles()
                         this->addChild(effect, Damage);
                     }
                 }
-                
                 break;
             }
             //HPが0のメンバーを選択した場合は、再度選択し直す
@@ -1015,8 +1014,13 @@ Spawn* PuzzleGameScene::vibratingAnimation()
 void PuzzleGameScene::winAnimation()
 {
     // クエストクリアデータを保存する
-    PlayerValue::getInstance()->setClearMap(m_questNo+1);
-    PlayerValue::getInstance()->dataSave();
+    // ユーザーデータ作成
+    PlayerValue::getInstance()->dataLoad();
+    int clearMap = PlayerValue::getInstance()->getClearMap();
+    if(clearMap < m_questNo+1){
+        PlayerValue::getInstance()->setClearMap(m_questNo+1);
+        PlayerValue::getInstance()->dataSave();
+    }
     
     //白い背景を用意する
     auto whiteLayer = LayerColor::create(Color4B(255, 255, 255, 127), WINSIZE.width, WINSIZE.height);
