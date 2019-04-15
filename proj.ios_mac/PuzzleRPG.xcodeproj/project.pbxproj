@@ -330,8 +330,6 @@
 		80FDAB692231548400DBEF91 /* LabelRPG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDAA452231548300DBEF91 /* LabelRPG.cpp */; };
 		80FDAB6A2231548400DBEF91 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 80FDAA482231548300DBEF91 /* sqlite3.c */; };
 		80FDAB6B2231548400DBEF91 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 80FDAA482231548300DBEF91 /* sqlite3.c */; };
-		80FDAB6C2231548400DBEF91 /* README.mkdn in Resources */ = {isa = PBXBuildFile; fileRef = 80FDAA4D2231548300DBEF91 /* README.mkdn */; };
-		80FDAB6D2231548400DBEF91 /* README.mkdn in Resources */ = {isa = PBXBuildFile; fileRef = 80FDAA4D2231548300DBEF91 /* README.mkdn */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -708,7 +706,6 @@
 		80FDAA492231548300DBEF91 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		80FDAA4A2231548300DBEF91 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
 		80FDAA4C2231548300DBEF91 /* picojson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = picojson.h; sourceTree = "<group>"; };
-		80FDAA4D2231548300DBEF91 /* README.mkdn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mkdn; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		943DFD4A18D7206E69B21B9B /* Pods-PuzzleRPG-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuzzleRPG-mobile.release.xcconfig"; path = "Target Support Files/Pods-PuzzleRPG-mobile/Pods-PuzzleRPG-mobile.release.xcconfig"; sourceTree = "<group>"; };
 		A4FF6E4803DF56946D4DA7C7 /* libPods-PuzzleRPG-desktop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PuzzleRPG-desktop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2105,7 +2102,6 @@
 			isa = PBXGroup;
 			children = (
 				80FDAA4C2231548300DBEF91 /* picojson.h */,
-				80FDAA4D2231548300DBEF91 /* README.mkdn */,
 			);
 			path = picojson;
 			sourceTree = "<group>";
@@ -2231,7 +2227,6 @@
 				80FDA8AC2231546A00DBEF91 /* master in Resources */,
 				1AF87B881F6F781D007BE51C /* LaunchScreen.storyboard in Resources */,
 				80FDA8AE2231546A00DBEF91 /* sound in Resources */,
-				80FDAB6C2231548400DBEF91 /* README.mkdn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2240,7 +2235,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				80FDA8B32231546A00DBEF91 /* script in Resources */,
-				80FDAB6D2231548400DBEF91 /* README.mkdn in Resources */,
 				80FDA8AB2231546A00DBEF91 /* animations in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				80FDA8AD2231546A00DBEF91 /* master in Resources */,
