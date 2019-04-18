@@ -1013,6 +1013,9 @@ Spawn* PuzzleGameScene::vibratingAnimation()
 //Winアニメーション
 void PuzzleGameScene::winAnimation()
 {
+    // タップを無効にする
+    m_touchable = false;
+    
     // クエストクリアデータを保存する
     // ユーザーデータ作成
     PlayerValue::getInstance()->dataLoad();
@@ -1043,6 +1046,9 @@ void PuzzleGameScene::winAnimation()
 //Loseアニメーション
 void PuzzleGameScene::loseAnimation()
 {
+    // タップを無効にする
+    m_touchable = false;
+    
     //黒い背景を用意する
     auto blackLayer = LayerColor::create(Color4B(0, 0, 0, 127), WINSIZE.width, WINSIZE.height);
     if(blackLayer) {
