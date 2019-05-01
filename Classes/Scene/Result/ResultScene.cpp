@@ -9,7 +9,9 @@
 #include "QuestScene.h"
 #include "AudioManager.h"
 #include "PlayerValue.h"
+#include "PartyValue.h"
 #include "MapData.h"
+#include "BattleCharIconSprite.h"
 
 USING_NS_CC;
 
@@ -84,8 +86,7 @@ bool ResultScene::onCreate()
 void ResultScene::setingDropCoin(Node* node)
 {
     auto cointext = node->getChildByName<ui::Text*>("cointext");
-    float rnd = (rand()/(RAND_MAX + 1.0f)) * 0.4f;
-    unsigned int dropCoin = static_cast<unsigned int>((MapData::getMapData(m_questNo).mapDropCoin * (0.8f + rnd)));
+    unsigned int dropCoin = MapData::getMapData(m_questNo).mapDropCoin;
     cointext->setString(std::to_string(dropCoin));
     
     // ユーザーデータ作成
@@ -98,5 +99,27 @@ void ResultScene::setingDropCoin(Node* node)
 
 void ResultScene::setingDropChar(Node* node)
 {
-    
+    std::vector<Node*> iconArray;
+    iconArray.resize(5);
+    int range = rand() % 5 + 1;
+    auto partyValue = PartyValue::getInstance();
+    if(partyValue){
+        partyValue->dataLoad();
+        for(int i = 0; i < 5; i++) {
+            int charId = MapData::getMapData(m_questNo).mapDropChar[rand()% MapData::getMapData(m_questNo).mapDropChar.size()];
+            iconArray[i] = node->getChildByName<Node*>("char"+std::to_string(i));
+            if(iconArray[i]){
+                auto charaPlayerSprite = BattleCharIconSprite::create(charId+1, BattleCharIconSprite::CharType::Member);
+                if(charaPlayerSprite){
+                    iconArray[i]->addChild( charaPlayerSprite );
+                }
+            }
+            int storageId = partyValue->getMaxStorageId();
+            partyValue->setCharStorageParam(storageId+1, charId, 5, 0);
+            if(range == i+1){
+                break;
+            }
+        }
+        partyValue->dataSave();
+    }
 }
