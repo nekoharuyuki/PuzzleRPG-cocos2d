@@ -249,7 +249,11 @@ int PartyValue::getMaxStorageId()
     }
     // キーと値を変数に登録する
     const rapidjson::Value& charList = doc["storage"];
-    return charList[charList.Size()]["storageId"].GetInt();;
+    int storageId = 0;
+    for(rapidjson::SizeType i = 0; i < charList.Size(); i++){
+        storageId++;
+    }
+    return storageId;
 }
 
 int PartyValue::getTotalHp()
