@@ -101,11 +101,11 @@ bool MypageScene::onCreatePlayerValue(Node* node)
 // パーティデータ読込み表示
 bool MypageScene::onCreatePartyValue(Node* node)
 {
-    PartyValue::getInstance()->dataLoad();
     auto partyValue = PartyValue::getInstance();
     if(!partyValue){
         return false;
     }
+    partyValue->dataLoad();
     
     //パーティデータ読込み表示
     for(int i = 0; i < 3; i++){
