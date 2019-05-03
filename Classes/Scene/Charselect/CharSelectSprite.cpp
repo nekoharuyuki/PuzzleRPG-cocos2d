@@ -45,9 +45,9 @@ std::string CharSelectSprite::getSelectCharImageFilePath(int charId)
     //選択したキャラクターに適した画像を返す
     switch (charId)
     {
-        case 0:    return "asset/char/chara_princessselect_1.png";
-        case 1:    return "asset/char/chara_princessselect_2.png";
-        case 2:    return "asset/char/chara_princessselect_3.png";
+        case 1:    return "asset/char/chara_princessselect_1.png";
+        case 2:    return "asset/char/chara_princessselect_2.png";
+        case 3:    return "asset/char/chara_princessselect_3.png";
         default:   return "asset/Default/Sprite.png";
     }
 }

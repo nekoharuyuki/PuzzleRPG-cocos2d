@@ -84,8 +84,6 @@
 		80FDAA6B2231548400DBEF91 /* SyntheticScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8E22231548300DBEF91 /* SyntheticScene.cpp */; };
 		80FDAA6C2231548400DBEF91 /* CharSelectSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8E52231548300DBEF91 /* CharSelectSprite.cpp */; };
 		80FDAA6D2231548400DBEF91 /* CharSelectSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8E52231548300DBEF91 /* CharSelectSprite.cpp */; };
-		80FDAA6E2231548400DBEF91 /* CharSelectIconSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8E62231548300DBEF91 /* CharSelectIconSprite.cpp */; };
-		80FDAA6F2231548400DBEF91 /* CharSelectIconSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8E62231548300DBEF91 /* CharSelectIconSprite.cpp */; };
 		80FDAA702231548400DBEF91 /* CharselectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8E82231548300DBEF91 /* CharselectScene.cpp */; };
 		80FDAA712231548400DBEF91 /* CharselectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8E82231548300DBEF91 /* CharselectScene.cpp */; };
 		80FDAA722231548400DBEF91 /* SceneData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8EA2231548300DBEF91 /* SceneData.cpp */; };
@@ -452,9 +450,7 @@
 		80FDA8DF2231548300DBEF91 /* EvolutionScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EvolutionScene.cpp; sourceTree = "<group>"; };
 		80FDA8E12231548300DBEF91 /* SyntheticScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyntheticScene.h; sourceTree = "<group>"; };
 		80FDA8E22231548300DBEF91 /* SyntheticScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SyntheticScene.cpp; sourceTree = "<group>"; };
-		80FDA8E42231548300DBEF91 /* CharSelectIconSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharSelectIconSprite.h; sourceTree = "<group>"; };
 		80FDA8E52231548300DBEF91 /* CharSelectSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharSelectSprite.cpp; sourceTree = "<group>"; };
-		80FDA8E62231548300DBEF91 /* CharSelectIconSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharSelectIconSprite.cpp; sourceTree = "<group>"; };
 		80FDA8E72231548300DBEF91 /* CharSelectSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharSelectSprite.h; sourceTree = "<group>"; };
 		80FDA8E82231548300DBEF91 /* CharselectScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharselectScene.cpp; sourceTree = "<group>"; };
 		80FDA8E92231548300DBEF91 /* CharselectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharselectScene.h; sourceTree = "<group>"; };
@@ -1037,8 +1033,6 @@
 			children = (
 				80FDA8E52231548300DBEF91 /* CharSelectSprite.cpp */,
 				80FDA8E72231548300DBEF91 /* CharSelectSprite.h */,
-				80FDA8E62231548300DBEF91 /* CharSelectIconSprite.cpp */,
-				80FDA8E42231548300DBEF91 /* CharSelectIconSprite.h */,
 				80FDA8E82231548300DBEF91 /* CharselectScene.cpp */,
 				80FDA8E92231548300DBEF91 /* CharselectScene.h */,
 			);
@@ -2411,7 +2405,6 @@
 				80FDAB382231548400DBEF91 /* ShaderTest.cpp in Sources */,
 				80FDAB1C2231548400DBEF91 /* UIRadioButtonTest.cpp in Sources */,
 				80FDAACC2231548400DBEF91 /* RotateWorldTest.cpp in Sources */,
-				80FDAA6E2231548400DBEF91 /* CharSelectIconSprite.cpp in Sources */,
 				80FDAA642231548400DBEF91 /* MypageScene.cpp in Sources */,
 				80FDAB362231548400DBEF91 /* ShaderTest2.cpp in Sources */,
 				80FDAAC02231548400DBEF91 /* JNITest.cpp in Sources */,
@@ -2578,7 +2571,6 @@
 				80FDAB472231548400DBEF91 /* RenderTextureTest.cpp in Sources */,
 				80FDAB0F2231548400DBEF91 /* UIPageViewTest.cpp in Sources */,
 				80FDAB652231548400DBEF91 /* AudioManager.cpp in Sources */,
-				80FDAA6F2231548400DBEF91 /* CharSelectIconSprite.cpp in Sources */,
 				80FDAB132231548400DBEF91 /* UIScale9SpriteTest.cpp in Sources */,
 				80FDAA872231548400DBEF91 /* AppPlatform.mm in Sources */,
 				80FDAB392231548400DBEF91 /* ShaderTest.cpp in Sources */,
