@@ -99,7 +99,7 @@ void CharselectScene::onChar( SelectCharNo no )
     }
     auto AttributeNode = m_popup_2->getChildByName<Node*>( "AttributeNode" );
     if(AttributeNode){
-        auto charIconSprite = BattleCharIconSprite::create(CharData::getCharData(no).charId, BattleCharIconSprite::CharType::Member);
+        auto charIconSprite = CharIconSprite::create(CharData::getCharData(no).charId, CharIconSprite::CharType::Member);
         if(charIconSprite){
             charIconSprite->setScale(0.5f);
             AttributeNode->addChild( charIconSprite, 1 );
@@ -137,7 +137,7 @@ void CharselectScene::onYes(SelectCharNo no)
     auto NameText = m_popup_3->getChildByName<ui::Text*>( "NameText" );
     NameText->setString( CharData::getCharData(no).charName );
     auto IconCharaNode = m_popup_3->getChildByName<Node*>( "IconCharaNode" );
-    auto charIconSprite = BattleCharIconSprite::create(CharData::getCharData(no).charId, BattleCharIconSprite::CharType::Member);
+    auto charIconSprite = CharIconSprite::create(CharData::getCharData(no).charId, CharIconSprite::CharType::Member);
     if(charIconSprite){
         charIconSprite->setScale(0.5f);
         IconCharaNode->addChild( charIconSprite, 1 );

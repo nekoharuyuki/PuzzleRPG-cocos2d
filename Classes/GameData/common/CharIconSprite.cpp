@@ -1,5 +1,5 @@
 //
-//  BattleCharIconSprite.cpp
+//  CharIconSprite.cpp
 //  PuzzleRPG
 //
 //  Created by neko on 2019/05/03.
@@ -8,14 +8,14 @@
 #include "CharIconSprite.h"
 
 //コンストラクタ
-BattleCharIconSprite::BattleCharIconSprite()
+CharIconSprite::CharIconSprite()
 {
 }
 
 //インスタンス生成
-BattleCharIconSprite* BattleCharIconSprite::create(int charId, CharType charType)
+CharIconSprite* CharIconSprite::create(int charId, CharType charType)
 {
-    BattleCharIconSprite *pRet = new BattleCharIconSprite();
+    CharIconSprite *pRet = new CharIconSprite();
     if (pRet && pRet->init(charId, charType)){
         pRet->autorelease();
         return pRet;
@@ -29,7 +29,7 @@ BattleCharIconSprite* BattleCharIconSprite::create(int charId, CharType charType
 }
 
 //初期化
-bool BattleCharIconSprite::init(int charId, CharType charType)
+bool CharIconSprite::init(int charId, CharType charType)
 {
     switch (charType)
     {
@@ -52,7 +52,7 @@ bool BattleCharIconSprite::init(int charId, CharType charType)
 }
 
 //選択したキャラクターの画像を取得
-std::string BattleCharIconSprite::getSelectMemberIconImageFilePath(int charId)
+std::string CharIconSprite::getSelectMemberIconImageFilePath(int charId)
 {
     //選択したキャラクターに適した画像を返す
     switch (charId)
@@ -74,7 +74,7 @@ std::string BattleCharIconSprite::getSelectMemberIconImageFilePath(int charId)
 }
 
 //選択したキャラクターの画像を取得
-std::string BattleCharIconSprite::getSelectEnemyIconImageFilePath(int charId)
+std::string CharIconSprite::getSelectEnemyIconImageFilePath(int charId)
 {
     //選択したキャラクターに適した画像を返す
     switch (charId)

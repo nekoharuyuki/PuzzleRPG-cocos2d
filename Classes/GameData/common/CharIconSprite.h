@@ -1,5 +1,5 @@
 //
-//  CharIconSprite.hpp
+//  CharIconSprite.h
 //  PuzzleRPG
 //
 //  Created by neko on 2019/05/03.
@@ -10,10 +10,10 @@
 
 #include "cocos2d.h"
 
-class BattleCharIconSprite : public cocos2d::Sprite
+class CharIconSprite : public cocos2d::Sprite
 {
 public:
-    BattleCharIconSprite(); //コンストラクタ
+    CharIconSprite(); //コンストラクタ
     
     //キャラクター属性
     enum class CharType
@@ -22,7 +22,7 @@ public:
         Enemy,  // 敵
     };
     
-    static BattleCharIconSprite* create(int charId, CharType charType); //インスタンス生成
+    static CharIconSprite* create(int charId, CharType charType); //インスタンス生成
     virtual bool init(int charId, CharType charType); //初期化
     static std::string getSelectMemberIconImageFilePath(int charId);
     static std::string getSelectEnemyIconImageFilePath(int charId);

@@ -120,7 +120,7 @@ void PartyScene::initParty(Node* node, PartyValue* partyValue)
             if(storageId != 0){
                 int charLevel = partyValue->getCharStorageFromCharLevel(storageId);
                 auto charDataParam = CharData::getCharData(charId);
-                auto charaPlayerSprite = BattleCharIconSprite::create(charId+1, BattleCharIconSprite::CharType::Member);
+                auto charaPlayerSprite = CharIconSprite::create(charId+1, CharIconSprite::CharType::Member);
                 if(charaPlayerSprite){
                     CharIconNode->setVisible(true);
                     CharIconNode->addChild( charaPlayerSprite );
@@ -128,7 +128,7 @@ void PartyScene::initParty(Node* node, PartyValue* partyValue)
                 CharLv->setString( "Lv"+std::to_string(charLevel) );
                 CharName->setString( charDataParam.charName );
             } else {
-                auto charaPlayerSprite = BattleCharIconSprite::create(0, BattleCharIconSprite::CharType::Member);
+                auto charaPlayerSprite = CharIconSprite::create(0, CharIconSprite::CharType::Member);
                 if(charaPlayerSprite){
                     CharIconNode->setVisible(false);
                     CharIconNode->addChild( charaPlayerSprite );
@@ -163,7 +163,7 @@ void PartyScene::initStorage(Node* node, PartyValue* partyValue)
             int charId = partyValue->getCharStorageFromCharId(i);
             if(viewCount < 5){
                 auto stockIconNode = node->getChildByName<Node*>( "stock"+std::to_string(viewCount) );
-                auto charaPlayerSprite = BattleCharIconSprite::create(charId+1, BattleCharIconSprite::CharType::Member);
+                auto charaPlayerSprite = CharIconSprite::create(charId+1, CharIconSprite::CharType::Member);
                 if(charaPlayerSprite){
                     stockIconNode->addChild( charaPlayerSprite );
                 }
@@ -248,13 +248,13 @@ void PartyScene::setStockIcon(Node* node)
         if(stockIconNode){
             int current = (5 + i) - (5 + m_currentPos);
             if(m_stockList[current].storageId != 0){
-                auto charaPlayerSprite = BattleCharIconSprite::create(m_stockList[current].charId+1, BattleCharIconSprite::CharType::Member);
+                auto charaPlayerSprite = CharIconSprite::create(m_stockList[current].charId+1, CharIconSprite::CharType::Member);
                 if(charaPlayerSprite){
                     stockIconNode->setVisible(true);
                     stockIconNode->addChild( charaPlayerSprite );
                 }
             } else {
-                auto charaPlayerSprite = BattleCharIconSprite::create(0, BattleCharIconSprite::CharType::Member);
+                auto charaPlayerSprite = CharIconSprite::create(0, CharIconSprite::CharType::Member);
                 if(charaPlayerSprite){
                     stockIconNode->setVisible(false);
                     stockIconNode->addChild( charaPlayerSprite );
