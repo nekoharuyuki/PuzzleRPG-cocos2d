@@ -21,7 +21,15 @@ using namespace cocostudio::timeline;
 
 PartyScene::PartyScene()
 : m_touchable(true)
+, m_selectIcon(0)
+, m_currentPos(0)
+, m_currentLimit(0)
 {
+}
+
+PartyScene::~PartyScene()
+{
+    // データを保存する
 }
 
 Scene* PartyScene::createScene()
@@ -70,54 +78,20 @@ bool PartyScene::onCreate()
     }
     partyValue->dataLoad();
     
-    //パーティデータ読込み表示
-    for(int i = 0; i < 3; i++){
-        auto CharLv = paty_base->getChildByName<ui::Text*>( "leveltext"+std::to_string(i) );
-        auto CharName = paty_base->getChildByName<ui::Text*>( "nametext"+std::to_string(i) );
-        int storageId = partyValue->getPartyMemberForStorageId(i);
-        if(storageId != 0){
-            int charId = partyValue->getCharStorageFromCharId(storageId);
-            int charLevel = partyValue->getCharStorageFromCharLevel(storageId);
-            auto charDataParam = CharData::getCharData(charId);
-            CharLv->setString( "Lv"+std::to_string(charLevel) );
-            CharName->setString( charDataParam.charName );
-            auto CharIconNode = paty_base->getChildByName<Node*>( "party"+std::to_string(i) );
-            if(CharIconNode){
-                auto charaPlayerSprite = BattleCharIconSprite::create(charId+1, BattleCharIconSprite::CharType::Member);
-                if(charaPlayerSprite){
-                    CharIconNode->addChild( charaPlayerSprite );
-                }
-            }
-        } else {
-            CharLv->setString( " " );
-            CharName->setString( " " );
-        }
-    }
-    
-    auto hptext = paty_base->getChildByName<ui::Text*>( "hptext" );
-    hptext->setString( std::to_string(partyValue->getTotalHp()) );
-    auto atktext0 = paty_base->getChildByName<ui::Text*>( "atktext0" );
-    atktext0->setString( std::to_string(partyValue->getAtk(1)) );
-    auto atktext1 = paty_base->getChildByName<ui::Text*>( "atktext1" );
-    atktext1->setString( std::to_string(partyValue->getAtk(2)) );
-    auto atktext2 = paty_base->getChildByName<ui::Text*>( "atktext2" );
-    atktext2->setString( std::to_string(partyValue->getAtk(3)) );
-    auto healingtext = paty_base->getChildByName<ui::Text*>( "healingtext" );
-    healingtext->setString( std::to_string(partyValue->getTotalAtk()) );
-    
-    
-    
+    //パーティデータ表示
+    initParty(paty_base, partyValue);
+    initStorage(paty_base, partyValue);
     
     auto right_btn = paty_base->getChildByName<ui::Button*>( "right_btn" );
-    right_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+    right_btn->addTouchEventListener([this,paty_base](Ref* sender, ui::Widget::TouchEventType type) {
         if (type == cocos2d::ui::Widget::TouchEventType::ENDED){
-            onRight();
+            onRight(paty_base);
         }
     });
     auto left_btn = paty_base->getChildByName<ui::Button*>( "left_btn" );
-    left_btn->addTouchEventListener([this](Ref* sender, ui::Widget::TouchEventType type) {
+    left_btn->addTouchEventListener([this,paty_base](Ref* sender, ui::Widget::TouchEventType type) {
         if (type == cocos2d::ui::Widget::TouchEventType::ENDED){
-            onLeft();
+            onLeft(paty_base);
         }
     });
     
@@ -133,25 +107,96 @@ bool PartyScene::onCreate()
     return true;
 }
 
+void PartyScene::initParty(Node* node, PartyValue* partyValue)
+{
+    //パーティデータ読込み表示
+    for(int i = 0; i < 3; i++){
+        auto CharLv = node->getChildByName<ui::Text*>( "leveltext"+std::to_string(i) );
+        auto CharName = node->getChildByName<ui::Text*>( "nametext"+std::to_string(i) );
+        int storageId = partyValue->getPartyMemberForStorageId(i);
+        auto CharIconNode = node->getChildByName<Node*>( "party"+std::to_string(i) );
+        if(CharIconNode){
+            int charId = partyValue->getCharStorageFromCharId(storageId);
+            if(storageId != 0){
+                int charLevel = partyValue->getCharStorageFromCharLevel(storageId);
+                auto charDataParam = CharData::getCharData(charId);
+                auto charaPlayerSprite = BattleCharIconSprite::create(charId+1, BattleCharIconSprite::CharType::Member);
+                if(charaPlayerSprite){
+                    CharIconNode->setVisible(true);
+                    CharIconNode->addChild( charaPlayerSprite );
+                }
+                CharLv->setString( "Lv"+std::to_string(charLevel) );
+                CharName->setString( charDataParam.charName );
+            } else {
+                auto charaPlayerSprite = BattleCharIconSprite::create(0, BattleCharIconSprite::CharType::Member);
+                if(charaPlayerSprite){
+                    CharIconNode->setVisible(false);
+                    CharIconNode->addChild( charaPlayerSprite );
+                }
+                CharLv->setString( " " );
+                CharName->setString( " " );
+            }
+            m_partyList[i].charId = charId;
+            m_partyList[i].storageId = storageId;
+        }
+    }
+    
+    auto hptext = node->getChildByName<ui::Text*>( "hptext" );
+    hptext->setString( std::to_string(partyValue->getTotalHp()) );
+    auto atktext0 = node->getChildByName<ui::Text*>( "atktext0" );
+    atktext0->setString( std::to_string(partyValue->getAtk(1)) );
+    auto atktext1 = node->getChildByName<ui::Text*>( "atktext1" );
+    atktext1->setString( std::to_string(partyValue->getAtk(2)) );
+    auto atktext2 = node->getChildByName<ui::Text*>( "atktext2" );
+    atktext2->setString( std::to_string(partyValue->getAtk(3)) );
+    auto healingtext = node->getChildByName<ui::Text*>( "healingtext" );
+    healingtext->setString( std::to_string(partyValue->getTotalAtk()) );
+}
+
+void PartyScene::initStorage(Node* node, PartyValue* partyValue)
+{
+    int maxStorage = partyValue->getMaxStorageId();
+    int viewCount = 0;
+    for(int i = 1; i < maxStorage; i++ ){
+        bool isPartyMember = partyValue->isPartyMembercharacter(i);
+        if(!isPartyMember){
+            int charId = partyValue->getCharStorageFromCharId(i);
+            if(viewCount < 5){
+                auto stockIconNode = node->getChildByName<Node*>( "stock"+std::to_string(viewCount) );
+                auto charaPlayerSprite = BattleCharIconSprite::create(charId+1, BattleCharIconSprite::CharType::Member);
+                if(charaPlayerSprite){
+                    stockIconNode->addChild( charaPlayerSprite );
+                }
+            }
+            m_stockList[viewCount].charId = charId;
+            m_stockList[viewCount].storageId = i;
+            viewCount++;
+        }
+    }
+}
+
 bool PartyScene::onTouchBegan(Touch* touch, Event* unused_event)
 {
+    if (!m_touchable){
+        return false;
+    }
     // 指でなぞったラインを描画する
     this->removeChildByTag(MOTION_STREAK_TAG, true);
-    
     Point point = this->convertTouchToNodeSpace(touch);
     MotionStreak* pStreak = MotionStreak::create(0.5f, 1.0f, 10.0f, Color3B(255, 255, 0), "system/images/line.png");
     pStreak->setPosition(point);
     this->addChild(pStreak, 10, MOTION_STREAK_TAG);
     
-    if (!m_touchable){
-        return false;
-    }
+    
     
     return true;
 }
 
 void PartyScene::onTouchMoved(Touch* touch, Event* unused_event)
 {
+    if (!m_touchable){
+        return;
+    }
     // 指でなぞったラインを描画する
     Point point = this->convertTouchToNodeSpace(touch);
     MotionStreak* pStreak = (MotionStreak*)this->getChildByTag(MOTION_STREAK_TAG);
@@ -160,6 +205,9 @@ void PartyScene::onTouchMoved(Touch* touch, Event* unused_event)
 
 void PartyScene::onTouchEnded(Touch* touch, Event* unused_event)
 {
+    if (!m_touchable){
+        return;
+    }
 }
 
 void PartyScene::onTouchCancelled(Touch* touch, Event* unused_event)
@@ -167,14 +215,54 @@ void PartyScene::onTouchCancelled(Touch* touch, Event* unused_event)
     onTouchEnded(touch, unused_event);
 }
 
-void PartyScene::onRight()
+void PartyScene::onRight(Node* node)
 {
+    if (!m_touchable){
+        return;
+    }
     AudioManager::getInstance()->playSe("cur");
+    m_currentPos--;
+    setStockIcon(node);
 }
 
-void PartyScene::onLeft()
+void PartyScene::onLeft(Node* node)
 {
+    if (!m_touchable){
+        return;
+    }
     AudioManager::getInstance()->playSe("cur");
+    m_currentPos++;
+    setStockIcon(node);
+}
+
+void PartyScene::setStockIcon(Node* node)
+{
+    if( m_currentPos > 0 ){
+        m_currentPos = 0;
+    }
+    if(m_currentLimit != 0 && m_currentPos < m_currentLimit){
+        m_currentPos = m_currentLimit;
+    }
+    for(int i = 0; i < 5; i++ ){
+        auto stockIconNode = node->getChildByName<Node*>( "stock"+std::to_string(i) );
+        if(stockIconNode){
+            int current = (5 + i) - (5 + m_currentPos);
+            if(m_stockList[current].storageId != 0){
+                auto charaPlayerSprite = BattleCharIconSprite::create(m_stockList[current].charId+1, BattleCharIconSprite::CharType::Member);
+                if(charaPlayerSprite){
+                    stockIconNode->setVisible(true);
+                    stockIconNode->addChild( charaPlayerSprite );
+                }
+            } else {
+                auto charaPlayerSprite = BattleCharIconSprite::create(0, BattleCharIconSprite::CharType::Member);
+                if(charaPlayerSprite){
+                    stockIconNode->setVisible(false);
+                    stockIconNode->addChild( charaPlayerSprite );
+                }
+                m_currentLimit = m_currentPos;
+            }
+        }
+    }
 }
 
 void PartyScene::onShowStatus(int id)

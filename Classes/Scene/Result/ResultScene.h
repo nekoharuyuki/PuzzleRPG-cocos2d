@@ -26,7 +26,6 @@ private:
     void setingDropCoin(Node* node);
     void setingDropChar(Node* node);
     
-    std::default_random_engine m_engine;    //乱数生成エンジン
     static int m_questNo;                   // クエストの情報取得
 };
 

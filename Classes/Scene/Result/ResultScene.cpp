@@ -21,8 +21,6 @@ int ResultScene::m_questNo = 0;
 
 ResultScene::ResultScene()
 {
-    std::random_device device;
-    m_engine = std::default_random_engine(device());
 }
 
 Scene* ResultScene::createScene(int quest_no)

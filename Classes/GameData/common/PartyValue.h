@@ -26,6 +26,7 @@ public:
     
     void dataLoad();
     void dataSave();
+    void sortCharStorage();
     
     void setPartyValueParam(int memberId, int storageId);
     int getPartyMemberForStorageId(int memberId);
