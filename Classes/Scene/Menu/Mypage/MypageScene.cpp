@@ -4,7 +4,7 @@
 #include "CharData.h"
 #include "PlayerValue.h"
 #include "PartyValue.h"
-#include "BattleCharIconSprite.h"
+#include "CharIconSprite.h"
 
 USING_NS_CC;
 

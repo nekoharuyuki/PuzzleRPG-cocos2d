@@ -1,6 +1,6 @@
 #include "PuzzleGameScene.h"
 #include "BattleCharSprite.h"
-#include "BattleCharIconSprite.h"
+#include "CharIconSprite.h"
 #include "ResultScene.h"
 #include "QuestScene.h"
 #include "MapData.h"

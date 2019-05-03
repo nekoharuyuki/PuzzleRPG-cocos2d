@@ -1,8 +1,8 @@
 //
-//  BattleCharIconSprite.hpp
+//  CharIconSprite.hpp
 //  PuzzleRPG
 //
-//  Created by neko on 2018/06/18.
+//  Created by neko on 2019/05/03.
 //
 
 #ifndef BattleCharIconSprite_h

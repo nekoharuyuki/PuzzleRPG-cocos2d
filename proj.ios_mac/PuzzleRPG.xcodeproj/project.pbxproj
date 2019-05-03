@@ -36,6 +36,8 @@
 		8068CE37223CF42C00596CF0 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8068CE36223CF42C00596CF0 /* GameController.framework */; };
 		8068CE4F2243B1C900596CF0 /* AnimationUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8068CE4D2243B1C900596CF0 /* AnimationUtility.cpp */; };
 		8068CE502243B1C900596CF0 /* AnimationUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8068CE4D2243B1C900596CF0 /* AnimationUtility.cpp */; };
+		80E35BFA227C860A00EC3FEE /* CharIconSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80E35BF8227C860A00EC3FEE /* CharIconSprite.cpp */; };
+		80E35BFB227C860A00EC3FEE /* CharIconSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80E35BF8227C860A00EC3FEE /* CharIconSprite.cpp */; };
 		80FDA8A82231546A00DBEF91 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 80FDA8A02231546900DBEF91 /* res */; };
 		80FDA8A92231546A00DBEF91 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 80FDA8A02231546900DBEF91 /* res */; };
 		80FDA8AA2231546A00DBEF91 /* animations in Resources */ = {isa = PBXBuildFile; fileRef = 80FDA8A12231546900DBEF91 /* animations */; };
@@ -58,8 +60,6 @@
 		80FDAA512231548400DBEF91 /* BattleCharSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8C32231548300DBEF91 /* BattleCharSprite.cpp */; };
 		80FDAA522231548400DBEF91 /* PuzzleGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8C42231548300DBEF91 /* PuzzleGameScene.cpp */; };
 		80FDAA532231548400DBEF91 /* PuzzleGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8C42231548300DBEF91 /* PuzzleGameScene.cpp */; };
-		80FDAA542231548400DBEF91 /* BattleCharIconSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8C52231548300DBEF91 /* BattleCharIconSprite.cpp */; };
-		80FDAA552231548400DBEF91 /* BattleCharIconSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8C52231548300DBEF91 /* BattleCharIconSprite.cpp */; };
 		80FDAA562231548400DBEF91 /* BattleChar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8C72231548300DBEF91 /* BattleChar.cpp */; };
 		80FDAA572231548400DBEF91 /* BattleChar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8C72231548300DBEF91 /* BattleChar.cpp */; };
 		80FDAA582231548400DBEF91 /* DamageEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80FDA8C82231548300DBEF91 /* DamageEffect.cpp */; };
@@ -412,6 +412,8 @@
 		8068CE36223CF42C00596CF0 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
 		8068CE4D2243B1C900596CF0 /* AnimationUtility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationUtility.cpp; sourceTree = "<group>"; };
 		8068CE4E2243B1C900596CF0 /* AnimationUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationUtility.h; sourceTree = "<group>"; };
+		80E35BF8227C860A00EC3FEE /* CharIconSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharIconSprite.cpp; sourceTree = "<group>"; };
+		80E35BF9227C860A00EC3FEE /* CharIconSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharIconSprite.h; sourceTree = "<group>"; };
 		80FDA8A02231546900DBEF91 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		80FDA8A12231546900DBEF91 /* animations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = animations; sourceTree = "<group>"; };
 		80FDA8A22231546900DBEF91 /* master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = master; sourceTree = "<group>"; };
@@ -425,12 +427,10 @@
 		80FDA8BC2231548300DBEF91 /* ResultScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultScene.h; sourceTree = "<group>"; };
 		80FDA8BD2231548300DBEF91 /* SceneData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneData.h; sourceTree = "<group>"; };
 		80FDA8BF2231548300DBEF91 /* PuzzleGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleGameScene.h; sourceTree = "<group>"; };
-		80FDA8C02231548300DBEF91 /* BattleCharIconSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleCharIconSprite.h; sourceTree = "<group>"; };
 		80FDA8C12231548300DBEF91 /* BattleChar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleChar.h; sourceTree = "<group>"; };
 		80FDA8C22231548300DBEF91 /* DamageEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DamageEffect.h; sourceTree = "<group>"; };
 		80FDA8C32231548300DBEF91 /* BattleCharSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleCharSprite.cpp; sourceTree = "<group>"; };
 		80FDA8C42231548300DBEF91 /* PuzzleGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PuzzleGameScene.cpp; sourceTree = "<group>"; };
-		80FDA8C52231548300DBEF91 /* BattleCharIconSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleCharIconSprite.cpp; sourceTree = "<group>"; };
 		80FDA8C62231548300DBEF91 /* BattleCharSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleCharSprite.h; sourceTree = "<group>"; };
 		80FDA8C72231548300DBEF91 /* BattleChar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleChar.cpp; sourceTree = "<group>"; };
 		80FDA8C82231548300DBEF91 /* DamageEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DamageEffect.cpp; sourceTree = "<group>"; };
@@ -946,8 +946,6 @@
 				80FDA8C12231548300DBEF91 /* BattleChar.h */,
 				80FDA8C32231548300DBEF91 /* BattleCharSprite.cpp */,
 				80FDA8C62231548300DBEF91 /* BattleCharSprite.h */,
-				80FDA8C52231548300DBEF91 /* BattleCharIconSprite.cpp */,
-				80FDA8C02231548300DBEF91 /* BattleCharIconSprite.h */,
 				80FDA8C82231548300DBEF91 /* DamageEffect.cpp */,
 				80FDA8C22231548300DBEF91 /* DamageEffect.h */,
 				80FDA8C92231548300DBEF91 /* PuzzleSprite.cpp */,
@@ -1063,6 +1061,8 @@
 		80FDA8EE2231548300DBEF91 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				80E35BF8227C860A00EC3FEE /* CharIconSprite.cpp */,
+				80E35BF9227C860A00EC3FEE /* CharIconSprite.h */,
 				80FDA8EF2231548300DBEF91 /* PlayerValue.cpp */,
 				80FDA8F12231548300DBEF91 /* PlayerValue.h */,
 				80FDA8F22231548300DBEF91 /* PartyValue.cpp */,
@@ -2336,7 +2336,6 @@
 				80FDAA562231548400DBEF91 /* BattleChar.cpp in Sources */,
 				80FDAAA22231548400DBEF91 /* LabelTest.cpp in Sources */,
 				80FDAA8E2231548400DBEF91 /* ModalLayer.cpp in Sources */,
-				80FDAA542231548400DBEF91 /* BattleCharIconSprite.cpp in Sources */,
 				80FDAAA02231548400DBEF91 /* LabelTestNew.cpp in Sources */,
 				80FDAAD62231548400DBEF91 /* TextureCacheTest.cpp in Sources */,
 				80FDAA4E2231548400DBEF91 /* ResultScene.cpp in Sources */,
@@ -2345,6 +2344,7 @@
 				80FDAB2E2231548400DBEF91 /* SpriteFrameCacheTest.cpp in Sources */,
 				1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */,
 				80FDAB1A2231548400DBEF91 /* UIListViewTest.cpp in Sources */,
+				80E35BFA227C860A00EC3FEE /* CharIconSprite.cpp in Sources */,
 				80FDAADE2231548400DBEF91 /* TableViewTestScene.cpp in Sources */,
 				80FDAB0A2231548400DBEF91 /* UILoadingBarTest.cpp in Sources */,
 				80FDAB482231548400DBEF91 /* LayerTest.cpp in Sources */,
@@ -2516,6 +2516,7 @@
 				80FDAB3B2231548400DBEF91 /* NewRendererTest.cpp in Sources */,
 				80FDAA5D2231548400DBEF91 /* TitleScene.cpp in Sources */,
 				80FDAAE72231548400DBEF91 /* HttpClientTest.cpp in Sources */,
+				80E35BFB227C860A00EC3FEE /* CharIconSprite.cpp in Sources */,
 				80FDAB252231548400DBEF91 /* UIFocusTest.cpp in Sources */,
 				80FDAA7F2231548400DBEF91 /* CharData.cpp in Sources */,
 				80FDAAD72231548400DBEF91 /* TextureCacheTest.cpp in Sources */,
@@ -2567,7 +2568,6 @@
 				80FDAB312231548400DBEF91 /* EffectsAdvancedTest.cpp in Sources */,
 				80FDAB5D2231548400DBEF91 /* Controller.cpp in Sources */,
 				80FDAB3D2231548400DBEF91 /* SpritePolygonTest.cpp in Sources */,
-				80FDAA552231548400DBEF91 /* BattleCharIconSprite.cpp in Sources */,
 				80FDAAE52231548400DBEF91 /* WebSocketTest.cpp in Sources */,
 				80FDAB332231548400DBEF91 /* SchedulerTest.cpp in Sources */,
 				80FDAA532231548400DBEF91 /* PuzzleGameScene.cpp in Sources */,

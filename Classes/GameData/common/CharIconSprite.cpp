@@ -2,10 +2,10 @@
 //  BattleCharIconSprite.cpp
 //  PuzzleRPG
 //
-//  Created by neko on 2018/06/18.
+//  Created by neko on 2019/05/03.
 //
 
-#include "BattleCharIconSprite.h"
+#include "CharIconSprite.h"
 
 //コンストラクタ
 BattleCharIconSprite::BattleCharIconSprite()

@@ -10,7 +10,7 @@
 #include "CharData.h"
 #include "PlayerValue.h"
 #include "PartyValue.h"
-#include "BattleCharIconSprite.h"
+#include "CharIconSprite.h"
 #include "AudioManager.h"
 
 USING_NS_CC;
