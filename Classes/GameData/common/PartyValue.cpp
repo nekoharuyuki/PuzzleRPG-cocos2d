@@ -256,6 +256,14 @@ int PartyValue::getMaxStorageId()
     return storageId;
 }
 
+void PartyValue::sortCharStorage()
+{
+    int maxStorage = getMaxStorageId();
+    for(int i = 0; i < maxStorage; i++ ){
+        
+    }
+}
+
 int PartyValue::getTotalHp()
 {
     int hp = 0;

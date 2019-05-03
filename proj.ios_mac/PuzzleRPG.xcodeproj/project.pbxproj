@@ -1019,8 +1019,8 @@
 		80FDA8DD2231548300DBEF91 /* Evolution */ = {
 			isa = PBXGroup;
 			children = (
-				80FDA8DE2231548300DBEF91 /* EvolutionScene.h */,
 				80FDA8DF2231548300DBEF91 /* EvolutionScene.cpp */,
+				80FDA8DE2231548300DBEF91 /* EvolutionScene.h */,
 			);
 			path = Evolution;
 			sourceTree = "<group>";
@@ -1037,10 +1037,10 @@
 		80FDA8E32231548300DBEF91 /* Charselect */ = {
 			isa = PBXGroup;
 			children = (
-				80FDA8E42231548300DBEF91 /* CharSelectIconSprite.h */,
 				80FDA8E52231548300DBEF91 /* CharSelectSprite.cpp */,
-				80FDA8E62231548300DBEF91 /* CharSelectIconSprite.cpp */,
 				80FDA8E72231548300DBEF91 /* CharSelectSprite.h */,
+				80FDA8E62231548300DBEF91 /* CharSelectIconSprite.cpp */,
+				80FDA8E42231548300DBEF91 /* CharSelectIconSprite.h */,
 				80FDA8E82231548300DBEF91 /* CharselectScene.cpp */,
 				80FDA8E92231548300DBEF91 /* CharselectScene.h */,
 			);
