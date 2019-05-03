@@ -1,21 +1,21 @@
 //
-//  BattleCharIconSprite.cpp
+//  CharIconSprite.cpp
 //  PuzzleRPG
 //
-//  Created by neko on 2018/06/18.
+//  Created by neko on 2019/05/03.
 //
 
-#include "BattleCharIconSprite.h"
+#include "CharIconSprite.h"
 
 //コンストラクタ
-BattleCharIconSprite::BattleCharIconSprite()
+CharIconSprite::CharIconSprite()
 {
 }
 
 //インスタンス生成
-BattleCharIconSprite* BattleCharIconSprite::create(int charId, CharType charType)
+CharIconSprite* CharIconSprite::create(int charId, CharType charType)
 {
-    BattleCharIconSprite *pRet = new BattleCharIconSprite();
+    CharIconSprite *pRet = new CharIconSprite();
     if (pRet && pRet->init(charId, charType)){
         pRet->autorelease();
         return pRet;
@@ -29,13 +29,21 @@ BattleCharIconSprite* BattleCharIconSprite::create(int charId, CharType charType
 }
 
 //初期化
-bool BattleCharIconSprite::init(int charId, CharType charType)
+bool CharIconSprite::init(int charId, CharType charType)
 {
     switch (charType)
     {
-        case CharType::Member:
+        case CharType::MemberTypeA:
         {
-            if (!Sprite::initWithFile(getSelectMemberIconImageFilePath(charId))){
+            if (!Sprite::initWithFile(getSelectMemberIconImageTypeAFilePath(charId))){
+                return false;
+            }
+            return true;
+        }
+        case CharType::Member:
+        case CharType::MemberTypeB:
+        {
+            if (!Sprite::initWithFile(getSelectMemberIconImageTypeBFilePath(charId))){
                 return false;
             }
             return true;
@@ -52,7 +60,27 @@ bool BattleCharIconSprite::init(int charId, CharType charType)
 }
 
 //選択したキャラクターの画像を取得
-std::string BattleCharIconSprite::getSelectMemberIconImageFilePath(int charId)
+std::string CharIconSprite::getSelectMemberIconImageTypeAFilePath(int charId)
+{
+    //選択したキャラクターに適した画像を返す
+    switch (charId)
+    {
+        case 1:  return "asset/char/icon_chara_a_1.png";
+        case 2:  return "asset/char/icon_chara_a_2.png";
+        case 3:  return "asset/char/icon_chara_a_3.png";
+        case 4:  return "asset/char/icon_chara_a_4.png";
+        case 5:  return "asset/char/icon_chara_a_5.png";
+        case 6:  return "asset/char/icon_chara_a_6.png";
+        case 7:  return "asset/char/icon_chara_a_7.png";
+        case 8:  return "asset/char/icon_chara_a_8.png";
+        case 9:  return "asset/char/icon_chara_a_9.png";
+        case 10: return "asset/char/icon_chara_a_10.png";
+        case 11: return "asset/char/icon_chara_a_11.png";
+        case 12: return "asset/char/icon_chara_a_12.png";
+        default: return "asset/Default/Sprite.png";
+    }
+}
+std::string CharIconSprite::getSelectMemberIconImageTypeBFilePath(int charId)
 {
     //選択したキャラクターに適した画像を返す
     switch (charId)
@@ -74,7 +102,7 @@ std::string BattleCharIconSprite::getSelectMemberIconImageFilePath(int charId)
 }
 
 //選択したキャラクターの画像を取得
-std::string BattleCharIconSprite::getSelectEnemyIconImageFilePath(int charId)
+std::string CharIconSprite::getSelectEnemyIconImageFilePath(int charId)
 {
     //選択したキャラクターに適した画像を返す
     switch (charId)

@@ -1,6 +1,6 @@
 #include "PuzzleGameScene.h"
 #include "BattleCharSprite.h"
-#include "BattleCharIconSprite.h"
+#include "CharIconSprite.h"
 #include "ResultScene.h"
 #include "QuestScene.h"
 #include "MapData.h"
@@ -671,7 +671,7 @@ void PuzzleGameScene::initEnemy(Node* node)
             
             auto iconEnemyNode = node->getChildByName<Node*>( "enemy_base"+std::to_string(i) );
             if(iconEnemyNode){
-                auto iconEnemySprite = BattleCharIconSprite::create(enemyNo, BattleCharIconSprite::CharType::Enemy);
+                auto iconEnemySprite = CharIconSprite::create(enemyNo, CharIconSprite::CharType::Enemy);
                 if(iconEnemySprite){
                     iconEnemyNode->addChild( iconEnemySprite, ZOrder::Enemy );
                     m_enemysIcon.pushBack(iconEnemySprite);
@@ -749,7 +749,7 @@ void PuzzleGameScene::initMembers(Node* node)
         
         auto iconPlayerNode = node->getChildByName<Node*>( "CharIconNode"+std::to_string(i) );
         if(iconPlayerNode){
-            auto iconPlayerSprite = BattleCharIconSprite::create(BattleCharNo[i], BattleCharIconSprite::CharType::Member);
+            auto iconPlayerSprite = CharIconSprite::create(BattleCharNo[i], CharIconSprite::CharType::Member);
             if(iconPlayerSprite){
                 iconPlayerNode->addChild( iconPlayerSprite, ZOrder::Char );
                 m_membersIcon.pushBack(iconPlayerSprite);

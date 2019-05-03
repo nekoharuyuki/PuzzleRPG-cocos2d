@@ -4,7 +4,7 @@
 #include "CharData.h"
 #include "PlayerValue.h"
 #include "PartyValue.h"
-#include "BattleCharIconSprite.h"
+#include "CharIconSprite.h"
 
 USING_NS_CC;
 
@@ -120,7 +120,7 @@ bool MypageScene::onCreatePartyValue(Node* node)
             CharName->setString( charDataParam.charName );
             auto CharIconNode = node->getChildByName<Node*>( "CharIconNode"+std::to_string(i) );
             if(CharIconNode){
-                auto charaPlayerSprite = BattleCharIconSprite::create(charId+1, BattleCharIconSprite::CharType::Member);
+                auto charaPlayerSprite = CharIconSprite::create(charId+1, CharIconSprite::CharType::Member);
                 if(charaPlayerSprite){
                     CharIconNode->addChild( charaPlayerSprite );
                 }

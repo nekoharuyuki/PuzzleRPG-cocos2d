@@ -11,7 +11,7 @@
 #include "PlayerValue.h"
 #include "PartyValue.h"
 #include "MapData.h"
-#include "BattleCharIconSprite.h"
+#include "CharIconSprite.h"
 
 USING_NS_CC;
 
@@ -107,7 +107,7 @@ void ResultScene::setingDropChar(Node* node)
             int charId = MapData::getMapData(m_questNo).mapDropChar[rand()% MapData::getMapData(m_questNo).mapDropChar.size()];
             iconArray[i] = node->getChildByName<Node*>("char"+std::to_string(i));
             if(iconArray[i]){
-                auto charaPlayerSprite = BattleCharIconSprite::create(charId+1, BattleCharIconSprite::CharType::Member);
+                auto charaPlayerSprite = CharIconSprite::create(charId+1, CharIconSprite::CharType::Member);
                 if(charaPlayerSprite){
                     iconArray[i]->addChild( charaPlayerSprite );
                 }
