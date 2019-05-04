@@ -25,7 +25,6 @@ int PuzzleGameScene::m_questNo = 0;
 //コンストラクタ
 PuzzleGameScene::PuzzleGameScene()
 : m_movingPuzzle(nullptr)
-, m_movedPuzzle(false)
 , m_touchable(true)
 , m_maxRemovedNo(0)
 , m_chainNumber(0)
@@ -201,7 +200,6 @@ bool PuzzleGameScene::onTouchBegan(Touch* touch, Event* unused_event)
     if (!m_touchable){
         return false;
     }
-    m_movedPuzzle = false;
     m_movingPuzzle = getTouchPuzzle(touch->getLocation());
     
     if (m_movingPuzzle){
@@ -221,20 +219,15 @@ void PuzzleGameScene::onTouchMoved(Touch* touch, Event* unused_event)
     //スワイプとともにボールを移動する
     m_movingPuzzle->setPosition(m_movingPuzzle->getPosition() + touch->getDelta());
     
+    //移動しているボールが、別のボールの位置に移動
     auto touchPuzzle = getTouchPuzzle(touch->getLocation(), m_movingPuzzle->getPositionIndex());
     if (touchPuzzle && m_movingPuzzle != touchPuzzle){
-        //移動しているボールが、別のボールの位置に移動
-        m_movedPuzzle = true;
-        
         // ボール移動時のSE再生
         AudioManager::getInstance()->playSe("moving_puzzle");
-        
         //別のボールの位置インデックスを取得
         auto touchPuzzlePositionIndex = touchPuzzle->getPositionIndex();
-        
         //別のボールを移動しているボールの元の位置へ移動する
         touchPuzzle->setPositionIndexAndChangePosition(m_movingPuzzle->getPositionIndex());
-        
         //移動しているボールの情報を変更
         m_movingPuzzle->setPositionIndex(touchPuzzlePositionIndex);
     }
@@ -686,6 +679,7 @@ void PuzzleGameScene::initMembers(Node* node)
     // メンバーは仮
     std::vector<int> BattleCharNo{ 10, 11, 12, };
     
+    int allMemberHP = 0;
     for (int i = 0; i < 3; i++)
     {
         //メンバー
@@ -693,8 +687,9 @@ void PuzzleGameScene::initMembers(Node* node)
         auto charDataParam = CharData::getCharData(BattleCharNo[i]-1);
         auto memberData = BattleChar::create();
         if(memberData){
-            memberData->setMaxHp(charDataParam.charMaxHp);
-            memberData->setHp(charDataParam.charMaxHp);
+            memberData->setHp(charDataParam.charHp);
+            memberData->setMaxHp(memberData->getHp());
+            allMemberHP += memberData->getHp();
             switch (charDataParam.charAttribute)
             {
                 case 1: // 赤ボール : 火属性
@@ -749,7 +744,7 @@ void PuzzleGameScene::initMembers(Node* node)
     if(partyHpNode){
         m_hpBarForMembers = partyHpNode->getChildByName<cocos2d::ui::LoadingBar*>("hp_bar");
         if(m_hpBarForMembers){
-            m_hpBarForMembers->setPercent(100);
+            m_hpBarForMembers->setPercent(allMemberHP);
         }
     }
 }
