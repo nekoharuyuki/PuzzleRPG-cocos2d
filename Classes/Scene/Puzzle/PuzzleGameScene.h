@@ -50,7 +50,6 @@ protected:
     std::uniform_int_distribution<int> m_distForMember; //乱数の範囲
     std::uniform_int_distribution<int> m_distForEnemy; //乱数の範囲
     PuzzleSprite* m_movingPuzzle; //動かしているボール
-    bool m_movedPuzzle; //他のボールとの接触有無
     bool m_touchable; //タップの可否
     int m_maxRemovedNo; //一度に削除される最大連鎖の番号
     int m_chainNumber; //連鎖数のカウント
