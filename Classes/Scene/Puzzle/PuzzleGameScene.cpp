@@ -327,23 +327,10 @@ void PuzzleGameScene::checksLinedPuzzles()
         do {
             //ランダムで敵を1体選択
             index = m_distForMember(m_engine);
-            BattleChar* enemyData = m_memberDatum.at(index);
+            BattleChar* enemyData = m_enemyDatum.at(index);
             if(enemyData->getHp() > 0){
                 //ダメージ・回復量の計算
                 calculateDamage(chainNum, healing, damage, attackers, enemyData);
-                int afterHp = enemyData->getHp() - damage;
-                enemyData->setHp(afterHp);
-                
-                // ダメージ表示
-                if (damage > 0) {
-                    DamageEffect* effect = DamageEffect::create();
-                    if(effect){
-                        effect->setPosition(Vec2(m_enemys.at(index)->getParent()->getPositionX(),
-                                                 m_enemys.at(index)->getParent()->getPositionY()));
-                        effect->showEffect(damage);
-                        this->addChild(effect, Damage);
-                    }
-                }
                 break;
             }
             //HPが0のメンバーを選択した場合は、再度選択し直す
@@ -853,6 +840,15 @@ void PuzzleGameScene::attackToEnemy(int index, int damage, std::set<int> attacke
     // 敵のHPを取得する
     BattleChar* enemyData = m_enemyDatum.at(index);
     
+    // ダメージ表示
+    DamageEffect* effect = DamageEffect::create();
+    if(effect){
+        effect->setPosition(Vec2(m_enemys.at(index)->getParent()->getPositionX(),
+                                 m_enemys.at(index)->getParent()->getPositionY()));
+        effect->showEffect(damage);
+        this->addChild(effect, Damage);
+    }
+    
     // 敵にダメージを与える
     int afterHp = enemyData->getHp() - damage;
     if (afterHp > enemyData->getMaxHp()){
@@ -875,6 +871,11 @@ void PuzzleGameScene::attackToEnemy(int index, int damage, std::set<int> attacke
         auto seq = Sequence::create(MoveBy::create(0.1, Point(0, 10)), MoveBy::create(0.1, Point(0, -10)), nullptr);
         m_members.at(attacker)->runAction(seq);
         count++;
+    }
+    
+    //敵のHPが0以下であった場合
+    if(afterHp <= 0){
+        m_enemys.at(index)->setVisible(false);
     }
     
     //敵の全滅チェック
