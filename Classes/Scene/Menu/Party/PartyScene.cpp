@@ -21,7 +21,6 @@ using namespace cocostudio::timeline;
 
 PartyScene::PartyScene()
 : m_touchable(true)
-, m_selectIcon(0)
 , m_currentPos(0)
 , m_currentLimit(0)
 {
@@ -124,6 +123,7 @@ void PartyScene::initParty(Node* node, PartyValue* partyValue)
                 if(charaPlayerSprite){
                     CharIconNode->setVisible(true);
                     CharIconNode->addChild( charaPlayerSprite );
+                    m_partyList[i].sprite = charaPlayerSprite;
                 }
                 CharLv->setString( "Lv"+std::to_string(charLevel) );
                 CharName->setString( charDataParam.charName );
@@ -132,6 +132,7 @@ void PartyScene::initParty(Node* node, PartyValue* partyValue)
                 if(charaPlayerSprite){
                     CharIconNode->setVisible(false);
                     CharIconNode->addChild( charaPlayerSprite );
+                    m_partyList[i].sprite = charaPlayerSprite;
                 }
                 CharLv->setString( " " );
                 CharName->setString( " " );
@@ -166,6 +167,7 @@ void PartyScene::initStorage(Node* node, PartyValue* partyValue)
                 auto charaPlayerSprite = CharIconSprite::create(charId+1, CharIconSprite::CharType::Member);
                 if(charaPlayerSprite){
                     stockIconNode->addChild( charaPlayerSprite );
+                    m_stockList[viewCount].sprite = charaPlayerSprite;
                 }
             }
             m_stockList[viewCount].charId = charId;
@@ -186,8 +188,6 @@ bool PartyScene::onTouchBegan(Touch* touch, Event* unused_event)
     MotionStreak* pStreak = MotionStreak::create(0.5f, 1.0f, 10.0f, Color3B(255, 255, 0), "system/images/line.png");
     pStreak->setPosition(point);
     this->addChild(pStreak, 10, MOTION_STREAK_TAG);
-    
-    
     
     return true;
 }
@@ -213,6 +213,40 @@ void PartyScene::onTouchEnded(Touch* touch, Event* unused_event)
 void PartyScene::onTouchCancelled(Touch* touch, Event* unused_event)
 {
     onTouchEnded(touch, unused_event);
+}
+
+bool PartyScene::isTouchPartyIcon(cocos2d::Touch* touch)
+{
+    Vec2 location = touch->getLocation();
+    for (int i = 0; i < (int)m_stockList.size(); i ++) {
+        Sprite *item = m_stockList[i].sprite;
+        Rect spriteRect = Rect(item->getPosition().x - item->getContentSize().width/2,
+                               item->getPosition().y - item->getContentSize().width/2,
+                               item->getContentSize().width,
+                               item->getContentSize().height);
+        if (spriteRect.containsPoint(location)) {
+            item->setVisible(false);
+            return true;
+        }
+    }
+    return false;
+}
+
+bool PartyScene::isTouchStorageIcon(cocos2d::Touch* touch)
+{
+    Vec2 location = touch->getLocation();
+    for (int i = 0; i < (int)m_partyList.size(); i ++) {
+        Sprite *item = m_partyList[i].sprite;
+        Rect spriteRect = Rect(item->getPosition().x - item->getContentSize().width/2,
+                               item->getPosition().y - item->getContentSize().width/2,
+                               item->getContentSize().width,
+                               item->getContentSize().height);
+        if (spriteRect.containsPoint(location)) {
+            item->setVisible(false);
+            return true;
+        }
+    }
+    return false;
 }
 
 void PartyScene::onRight(Node* node)
@@ -265,12 +299,31 @@ void PartyScene::setStockIcon(Node* node)
     }
 }
 
-void PartyScene::onShowStatus(int id)
+void PartyScene::updateParty()
 {
+    auto partyValue = PartyValue::getInstance();
+    if(!partyValue){
+        return;
+    }
     
+    
+    
+    partyValue->dataSave();
 }
 
 void PartyScene::updateStorage()
+{
+    auto partyValue = PartyValue::getInstance();
+    if(!partyValue){
+        return;
+    }
+    
+    
+    
+    partyValue->dataSave();
+}
+
+void PartyScene::onShowStatus(int id)
 {
     
 }
