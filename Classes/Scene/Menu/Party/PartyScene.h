@@ -10,6 +10,7 @@
 
 #include "SceneData.h"
 #include "PartyValue.h"
+#include "CharIconSprite.h"
 
 class PartyScene :
 public SceneData,
@@ -38,26 +39,30 @@ private:
     void onLeft(Node* node);
     void setStockIcon(Node* node);
     
-    void onShowStatus(int id);
+    bool isTouchPartyIcon(cocos2d::Touch* touch);
+    bool isTouchStorageIcon(cocos2d::Touch* touch);
+    
+    void updateParty();
     void updateStorage();
+    
+    void onShowStatus(int id);
     
     struct PartyListParams {
         int charId;
         int storageId;
+        CharIconSprite* sprite;
     };
     std::map<int, PartyListParams> m_partyList;
     struct StockListParams {
         int charId;
         int storageId;
+        CharIconSprite* sprite;
     };
     std::map<int, StockListParams> m_stockList;
     
     bool m_touchable;   //キャラアイコンのタップ可否
     int m_currentPos;
     int m_currentLimit;
-    
-    int m_selectIcon;   // 選択中のキャラアイコンNo ( 1~8 : 1.2.3はパーティー / 0は選択していない　)
-    
 };
 
 #endif // __PARTY_SCENE_H__
