@@ -50,7 +50,6 @@ protected:
     std::uniform_int_distribution<int> m_distForMember; //乱数の範囲
     std::uniform_int_distribution<int> m_distForEnemy; //乱数の範囲
     PuzzleSprite* m_movingPuzzle; //動かしているボール
-    bool m_movedPuzzle; //他のボールとの接触有無
     bool m_touchable; //タップの可否
     int m_maxRemovedNo; //一度に削除される最大連鎖の番号
     int m_chainNumber; //連鎖数のカウント
@@ -87,7 +86,7 @@ protected:
     void initMembers(Node* node); //メンバーの表示
     void calculateDamage(int &chainNum, int &healing, int &damage, std::set<int> &attackers, BattleChar* defender); //ダメージの計算
     bool isAttacker(PuzzleSprite::PuzzleType type, BattleChar::Element element); //アタッカー判定
-    void attackToEnemy(int damage, std::set<int> attackers); //敵への攻撃
+    void attackToEnemy(int index, int damage, std::set<int> attackers); //敵への攻撃
     void healMember(int healing); //メンバーの回復
     void attackFromEnemy(); //敵からの攻撃
     void endAnimation(); //アニメーション終了時処理

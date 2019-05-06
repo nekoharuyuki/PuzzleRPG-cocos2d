@@ -24,12 +24,12 @@ private:
     enum SelectCharNo
     {
         SelectCharNo01 = 0, // メイ[火]
-        SelectCharNo02,     // メイ[水]
-        SelectCharNo03,     // メイ[木]
+        SelectCharNo02 = 1, // メイ[水]
+        SelectCharNo03 = 2, // メイ[木]
     };
     
-    void onChar( SelectCharNo no );
-    void onYes( SelectCharNo no );
+    void onChar(SelectCharNo no);
+    void onYes(SelectCharNo no);
     void onBack();
     void onStart(SelectCharNo no);
     

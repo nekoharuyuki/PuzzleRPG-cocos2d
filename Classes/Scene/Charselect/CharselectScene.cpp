@@ -11,7 +11,7 @@
 #include "PartyValue.h"
 #include "CharData.h"
 #include "CharSelectSprite.h"
-#include "CharSelectIconSprite.h"
+#include "CharIconSprite.h"
 #include "GameDataSQL.h"
 #include "AudioManager.h"
 
@@ -99,7 +99,7 @@ void CharselectScene::onChar( SelectCharNo no )
     }
     auto AttributeNode = m_popup_2->getChildByName<Node*>( "AttributeNode" );
     if(AttributeNode){
-        auto charIconSprite = CharSelectIconSprite::create(no);
+        auto charIconSprite = CharIconSprite::create(CharData::getCharData(no).charId, CharIconSprite::CharType::Member);
         if(charIconSprite){
             charIconSprite->setScale(0.5f);
             AttributeNode->addChild( charIconSprite, 1 );
@@ -116,7 +116,7 @@ void CharselectScene::onChar( SelectCharNo no )
     auto chara_princessselect = m_popup_2->getChildByName<Node*>( "chara_princessselect" );
     if(chara_princessselect){
         chara_princessselect->removeAllChildren();
-        auto charSprite = CharSelectSprite::create(no);
+        auto charSprite = CharSelectSprite::create(CharData::getCharData(no).charId);
         if(charSprite){
             chara_princessselect->addChild( charSprite, 1 );
         }
@@ -137,13 +137,13 @@ void CharselectScene::onYes(SelectCharNo no)
     auto NameText = m_popup_3->getChildByName<ui::Text*>( "NameText" );
     NameText->setString( CharData::getCharData(no).charName );
     auto IconCharaNode = m_popup_3->getChildByName<Node*>( "IconCharaNode" );
-    auto charIconSprite = CharSelectIconSprite::create(no);
+    auto charIconSprite = CharIconSprite::create(CharData::getCharData(no).charId, CharIconSprite::CharType::Member);
     if(charIconSprite){
         charIconSprite->setScale(0.5f);
         IconCharaNode->addChild( charIconSprite, 1 );
     }
     auto chara_princessselect = m_popup_3->getChildByName<ui::Button*>( "chara_princessselect" );
-    auto charSprite = CharSelectSprite::create( no );
+    auto charSprite = CharSelectSprite::create(CharData::getCharData(no).charId);
     if(charSprite){
         chara_princessselect->addChild( charSprite, 1 );
     }
@@ -179,13 +179,8 @@ void CharselectScene::onStart(SelectCharNo no)
         auto partyValue = PartyValue::getInstance();
         if(partyValue){
             partyValue->initialActivation();
-            partyValue->setPartyChar1DataCharId(CharData::getCharData(no).charId);
-            partyValue->setPartyChar1DataCharLv(5);
-            partyValue->setPartyChar2DataCharId(0);
-            partyValue->setPartyChar2DataCharLv(0);
-            partyValue->setPartyChar3DataCharId(0);
-            partyValue->setPartyChar3DataCharLv(0);
-            partyValue->dataSave();
+            partyValue->setCharStorageParam(1, no, 5, 0);
+            partyValue->setPartyValueParam(0, 1);
         }
         
         // クエスト選択画面へ移行

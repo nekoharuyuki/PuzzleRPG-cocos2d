@@ -1,6 +1,6 @@
 #include "PuzzleGameScene.h"
 #include "BattleCharSprite.h"
-#include "BattleCharIconSprite.h"
+#include "CharIconSprite.h"
 #include "ResultScene.h"
 #include "QuestScene.h"
 #include "MapData.h"
@@ -25,7 +25,6 @@ int PuzzleGameScene::m_questNo = 0;
 //コンストラクタ
 PuzzleGameScene::PuzzleGameScene()
 : m_movingPuzzle(nullptr)
-, m_movedPuzzle(false)
 , m_touchable(true)
 , m_maxRemovedNo(0)
 , m_chainNumber(0)
@@ -201,7 +200,6 @@ bool PuzzleGameScene::onTouchBegan(Touch* touch, Event* unused_event)
     if (!m_touchable){
         return false;
     }
-    m_movedPuzzle = false;
     m_movingPuzzle = getTouchPuzzle(touch->getLocation());
     
     if (m_movingPuzzle){
@@ -221,20 +219,15 @@ void PuzzleGameScene::onTouchMoved(Touch* touch, Event* unused_event)
     //スワイプとともにボールを移動する
     m_movingPuzzle->setPosition(m_movingPuzzle->getPosition() + touch->getDelta());
     
+    //移動しているボールが、別のボールの位置に移動
     auto touchPuzzle = getTouchPuzzle(touch->getLocation(), m_movingPuzzle->getPositionIndex());
     if (touchPuzzle && m_movingPuzzle != touchPuzzle){
-        //移動しているボールが、別のボールの位置に移動
-        m_movedPuzzle = true;
-        
         // ボール移動時のSE再生
         AudioManager::getInstance()->playSe("moving_puzzle");
-        
         //別のボールの位置インデックスを取得
         auto touchPuzzlePositionIndex = touchPuzzle->getPositionIndex();
-        
         //別のボールを移動しているボールの元の位置へ移動する
         touchPuzzle->setPositionIndexAndChangePosition(m_movingPuzzle->getPositionIndex());
-        
         //移動しているボールの情報を変更
         m_movingPuzzle->setPositionIndex(touchPuzzlePositionIndex);
     }
@@ -321,27 +314,16 @@ void PuzzleGameScene::checksLinedPuzzles()
         int damage = 0;
         int healing = 0;
         std::set<int> attackers;
+        int index = 0;
         
         //敵にダメージを与える
         do {
             //ランダムで敵を1体選択
-            int index = m_distForMember(m_engine);
-            BattleChar* enemyData = m_memberDatum.at(index);
+            index = m_distForMember(m_engine);
+            BattleChar* enemyData = m_enemyDatum.at(index);
             if(enemyData->getHp() > 0){
                 //ダメージ・回復量の計算
                 calculateDamage(chainNum, healing, damage, attackers, enemyData);
-                int afterHp = enemyData->getHp() - damage;
-                enemyData->setHp(afterHp);
-                
-                // ダメージ表示
-                DamageEffect* effect = DamageEffect::create();
-                if(effect){
-                    effect->setPosition(Vec2(m_enemys.at(index)->getParent()->getPositionX(),
-                                             m_enemys.at(index)->getParent()->getPositionY()));
-                    effect->showEffect(afterHp);
-                    this->addChild(effect, Damage);
-                }
-                
                 break;
             }
             //HPが0のメンバーを選択した場合は、再度選択し直す
@@ -349,7 +331,7 @@ void PuzzleGameScene::checksLinedPuzzles()
         
         //アタック処理
         if (damage > 0) {
-            attackToEnemy(damage, attackers);
+            attackToEnemy(index, damage, attackers);
         }
         
         //回復処理
@@ -619,8 +601,8 @@ void PuzzleGameScene::initEnemy(Node* node)
         auto enemyData = BattleChar::create();
         if(enemyData){
             enemyData->retain();
-            enemyData->setMaxHp(enemyDataParam.enemyMaxHp);
             enemyData->setHp(enemyDataParam.enemyHp);
+            enemyData->setMaxHp(enemyData->getHp());
             enemyData->setAttack(enemyDataParam.enemyAtk);
             
             switch (enemyDataParam.enemyAttribute)
@@ -669,7 +651,7 @@ void PuzzleGameScene::initEnemy(Node* node)
             
             auto iconEnemyNode = node->getChildByName<Node*>( "enemy_base"+std::to_string(i) );
             if(iconEnemyNode){
-                auto iconEnemySprite = BattleCharIconSprite::create(enemyNo, BattleCharIconSprite::CharType::Enemy);
+                auto iconEnemySprite = CharIconSprite::create(enemyNo, CharIconSprite::CharType::Enemy);
                 if(iconEnemySprite){
                     iconEnemyNode->addChild( iconEnemySprite, ZOrder::Enemy );
                     m_enemysIcon.pushBack(iconEnemySprite);
@@ -697,6 +679,7 @@ void PuzzleGameScene::initMembers(Node* node)
     // メンバーは仮
     std::vector<int> BattleCharNo{ 10, 11, 12, };
     
+    int allMemberHP = 0;
     for (int i = 0; i < 3; i++)
     {
         //メンバー
@@ -704,8 +687,9 @@ void PuzzleGameScene::initMembers(Node* node)
         auto charDataParam = CharData::getCharData(BattleCharNo[i]-1);
         auto memberData = BattleChar::create();
         if(memberData){
-            memberData->setMaxHp(charDataParam.charMaxHp);
-            memberData->setHp(charDataParam.charMaxHp);
+            memberData->setHp(charDataParam.charHp);
+            memberData->setMaxHp(memberData->getHp());
+            allMemberHP += memberData->getHp();
             switch (charDataParam.charAttribute)
             {
                 case 1: // 赤ボール : 火属性
@@ -747,7 +731,7 @@ void PuzzleGameScene::initMembers(Node* node)
         
         auto iconPlayerNode = node->getChildByName<Node*>( "CharIconNode"+std::to_string(i) );
         if(iconPlayerNode){
-            auto iconPlayerSprite = BattleCharIconSprite::create(BattleCharNo[i], BattleCharIconSprite::CharType::Member);
+            auto iconPlayerSprite = CharIconSprite::create(BattleCharNo[i], CharIconSprite::CharType::Member);
             if(iconPlayerSprite){
                 iconPlayerNode->addChild( iconPlayerSprite, ZOrder::Char );
                 m_membersIcon.pushBack(iconPlayerSprite);
@@ -760,7 +744,7 @@ void PuzzleGameScene::initMembers(Node* node)
     if(partyHpNode){
         m_hpBarForMembers = partyHpNode->getChildByName<cocos2d::ui::LoadingBar*>("hp_bar");
         if(m_hpBarForMembers){
-            m_hpBarForMembers->setPercent(100);
+            m_hpBarForMembers->setPercent(allMemberHP);
         }
     }
 }
@@ -846,17 +830,19 @@ bool PuzzleGameScene::isAttacker(PuzzleSprite::PuzzleType type, BattleChar::Elem
 }
 
 // 敵への攻撃
-void PuzzleGameScene::attackToEnemy(int damage, std::set<int> attackers)
+void PuzzleGameScene::attackToEnemy(int index, int damage, std::set<int> attackers)
 {
     // 敵のHPを取得する
-    int index;
-    BattleChar* enemyData;
-    do {
-        //ランダムで敵を選択
-        index = m_distForEnemy(m_engine);
-        enemyData = m_enemyDatum.at(index);
-        //HPが0の敵を選択した場合は、再度選択し直す
-    } while (enemyData->getHp() <= 0);
+    BattleChar* enemyData = m_enemyDatum.at(index);
+    
+    // ダメージ表示
+    DamageEffect* effect = DamageEffect::create();
+    if(effect){
+        effect->setPosition(Vec2(m_enemys.at(index)->getParent()->getPositionX(),
+                                 m_enemys.at(index)->getParent()->getPositionY()));
+        effect->showEffect(damage);
+        this->addChild(effect, Damage);
+    }
     
     // 敵にダメージを与える
     int afterHp = enemyData->getHp() - damage;
@@ -880,6 +866,11 @@ void PuzzleGameScene::attackToEnemy(int damage, std::set<int> attackers)
         auto seq = Sequence::create(MoveBy::create(0.1, Point(0, 10)), MoveBy::create(0.1, Point(0, -10)), nullptr);
         m_members.at(attacker)->runAction(seq);
         count++;
+    }
+    
+    //敵のHPが0以下であった場合
+    if(afterHp <= 0){
+        m_enemys.at(index)->setVisible(false);
     }
     
     //敵の全滅チェック
@@ -1018,9 +1009,17 @@ Spawn* PuzzleGameScene::vibratingAnimation()
 //Winアニメーション
 void PuzzleGameScene::winAnimation()
 {
+    // タップを無効にする
+    m_touchable = false;
+    
     // クエストクリアデータを保存する
-    PlayerValue::getInstance()->setClearMap(m_questNo+1);
-    PlayerValue::getInstance()->dataSave();
+    // ユーザーデータ作成
+    PlayerValue::getInstance()->dataLoad();
+    int clearMap = PlayerValue::getInstance()->getClearMap();
+    if(clearMap < m_questNo+1){
+        PlayerValue::getInstance()->setClearMap(m_questNo+1);
+        PlayerValue::getInstance()->dataSave();
+    }
     
     //白い背景を用意する
     auto whiteLayer = LayerColor::create(Color4B(255, 255, 255, 127), WINSIZE.width, WINSIZE.height);
@@ -1043,6 +1042,9 @@ void PuzzleGameScene::winAnimation()
 //Loseアニメーション
 void PuzzleGameScene::loseAnimation()
 {
+    // タップを無効にする
+    m_touchable = false;
+    
     //黒い背景を用意する
     auto blackLayer = LayerColor::create(Color4B(0, 0, 0, 127), WINSIZE.width, WINSIZE.height);
     if(blackLayer) {

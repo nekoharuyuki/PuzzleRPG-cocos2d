@@ -21,6 +21,10 @@ public:
     
     SCENE_CREATE_FUNC(MypageScene, "mypage/MypageScene.csb")
     bool onCreate() override;
+    
+private:
+    bool onCreatePlayerValue(Node* node);
+    bool onCreatePartyValue(Node* node);
 };
 
 #endif // __MYPAGE_SCENE_H__
