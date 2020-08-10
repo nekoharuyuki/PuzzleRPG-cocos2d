@@ -1,0 +1,726 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		532F809881CE46D78B007D5F /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1E885EA3276443D588413893 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				BFC5BDC5F7AA43BE8CAE1554 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		9E0C55C3860C454B8F8F7E15 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 049BA429007A4583A6294352 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				4FE2F066ECB343EB8834E0DD /* CMake Rules */,
+			);
+			dependencies = (
+				51634D6708B74D7C8A34BE07 /* PBXTargetDependency */,
+				E7391C30158344B499959654 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		00C6D3B170E640FFBEEF82F9 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMeshQuery.cpp */ = {isa = PBXBuildFile; fileRef = 79DDF1BCCADC4AFB978EFC6D /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMeshQuery.cpp */; };
+		0E76BD112F0F412588793CDC /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast/CMakeFiles/ext_recast.dir/Info.plist */ = {isa = PBXBuildFile; fileRef = A6CE1DF0D8FD4F90A44B619F /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast/CMakeFiles/ext_recast.dir/Info.plist */; };
+		176406E710BC462581A036EB /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourPathQueue.cpp */ = {isa = PBXBuildFile; fileRef = B68812E2F4114742939C939F /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourPathQueue.cpp */; };
+		24FA92F2361B4E109F5E738F /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourTileCache/DetourTileCacheBuilder.cpp */ = {isa = PBXBuildFile; fileRef = F1313D71F9E046A6A4102FEC /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourTileCache/DetourTileCacheBuilder.cpp */; };
+		4AD512748B7642F6B8C5D1FD /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourObstacleAvoidance.cpp */ = {isa = PBXBuildFile; fileRef = 3B9AF91354EE4A95BD64F79D /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourObstacleAvoidance.cpp */; };
+		4EF8C3549E154953946552D6 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DebugUtils/DetourDebugDraw.cpp */ = {isa = PBXBuildFile; fileRef = 0F81A880076242FD9EECD502 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DebugUtils/DetourDebugDraw.cpp */; };
+		5687593E0C6E4D4EBAC3E6C6 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourCrowd.cpp */ = {isa = PBXBuildFile; fileRef = E0FD64B8FFC74C8689058FFF /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourCrowd.cpp */; };
+		5C5208CBB8064AC0A5626797 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourTileCache/DetourTileCache.cpp */ = {isa = PBXBuildFile; fileRef = 2A279CFA71814BEFB28DEB98 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourTileCache/DetourTileCache.cpp */; };
+		7641AF47EF884FA798F4102B /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = BAD3BDE01FDE4EE18FB63824 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/CMakeLists.txt */; };
+		7C8D711E502F4896B2DA388C /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourCommon.cpp */ = {isa = PBXBuildFile; fileRef = 29562D80CFA94B22879F9CEF /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourCommon.cpp */; };
+		81BBA798979C46AB8DD3AB32 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMesh.cpp */ = {isa = PBXBuildFile; fileRef = FD39876D210E4D08ACD38774 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMesh.cpp */; };
+		94BA1CE778B248E5B0D8752F /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/fastlz/fastlz.c */ = {isa = PBXBuildFile; fileRef = 43050477289C4616A3B0BB48 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/fastlz/fastlz.c */; };
+		9A65BE97D3EE43AF8DA9A45E /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourAlloc.cpp */ = {isa = PBXBuildFile; fileRef = 390C0233DE3343AF8196CCD4 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourAlloc.cpp */; };
+		A634FC8F4BD64CCBB67977C8 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DebugUtils/DebugDraw.cpp */ = {isa = PBXBuildFile; fileRef = 81EA9A61124D4F2489F5A8BD /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DebugUtils/DebugDraw.cpp */; };
+		BAC93556146B44FBBB00C952 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourLocalBoundary.cpp */ = {isa = PBXBuildFile; fileRef = 12C14C50F8F344EC9EC3EBB0 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourLocalBoundary.cpp */; };
+		BC9408244E724C4EBB24B3A4 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNode.cpp */ = {isa = PBXBuildFile; fileRef = 4EA416648C7045F88D12F62A /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNode.cpp */; };
+		CCDEF47A71414EED8272D2CC /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourPathCorridor.cpp */ = {isa = PBXBuildFile; fileRef = 41F2C4D43A754117B39FC29C /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourPathCorridor.cpp */; };
+		E0C75E6AA8F24B3397F8D6E8 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMeshBuilder.cpp */ = {isa = PBXBuildFile; fileRef = 2847D851978B47BA8D8C2B63 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMeshBuilder.cpp */; };
+		FB1CBA800C1346CC94B86C96 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourProximityGrid.cpp */ = {isa = PBXBuildFile; fileRef = E1AD522292214ED7A4F8290F /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourProximityGrid.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		458E6231721846D4A62E0EDC /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		68F496B3705B4594A8F172A4 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		9B646E8810D445DDA5643C8F /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		EE1CCA38DB8048DDBDBAD248 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		1C5A2F6BA5764BAE91708357 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92C33A7EF9E444029BED8C40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 532F809881CE46D78B007D5F;
+			remoteInfo = ZERO_CHECK;
+		};
+		1E08F4947C3C4F25B14F4665 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92C33A7EF9E444029BED8C40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 994917C7D9F444E79EF2BDC2;
+			remoteInfo = ext_recast;
+		};
+		F679F8A56A2E4589AB3B88B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92C33A7EF9E444029BED8C40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 532F809881CE46D78B007D5F;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F81A880076242FD9EECD502 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DebugUtils/DetourDebugDraw.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourDebugDraw.cpp; path = DebugUtils/DetourDebugDraw.cpp; sourceTree = SOURCE_ROOT; };
+		12C14C50F8F344EC9EC3EBB0 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourLocalBoundary.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourLocalBoundary.cpp; path = DetourCrowd/DetourLocalBoundary.cpp; sourceTree = SOURCE_ROOT; };
+		1877B422C4714BF78521E18B /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		2847D851978B47BA8D8C2B63 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMeshBuilder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourNavMeshBuilder.cpp; path = Detour/DetourNavMeshBuilder.cpp; sourceTree = SOURCE_ROOT; };
+		29562D80CFA94B22879F9CEF /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourCommon.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourCommon.cpp; path = Detour/DetourCommon.cpp; sourceTree = SOURCE_ROOT; };
+		2A279CFA71814BEFB28DEB98 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourTileCache/DetourTileCache.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourTileCache.cpp; path = DetourTileCache/DetourTileCache.cpp; sourceTree = SOURCE_ROOT; };
+		390C0233DE3343AF8196CCD4 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourAlloc.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourAlloc.cpp; path = Detour/DetourAlloc.cpp; sourceTree = SOURCE_ROOT; };
+		3B9AF91354EE4A95BD64F79D /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourObstacleAvoidance.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourObstacleAvoidance.cpp; path = DetourCrowd/DetourObstacleAvoidance.cpp; sourceTree = SOURCE_ROOT; };
+		41F2C4D43A754117B39FC29C /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourPathCorridor.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourPathCorridor.cpp; path = DetourCrowd/DetourPathCorridor.cpp; sourceTree = SOURCE_ROOT; };
+		43050477289C4616A3B0BB48 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/fastlz/fastlz.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = fastlz.c; path = fastlz/fastlz.c; sourceTree = SOURCE_ROOT; };
+		4EA416648C7045F88D12F62A /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNode.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourNode.cpp; path = Detour/DetourNode.cpp; sourceTree = SOURCE_ROOT; };
+		79DDF1BCCADC4AFB978EFC6D /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMeshQuery.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourNavMeshQuery.cpp; path = Detour/DetourNavMeshQuery.cpp; sourceTree = SOURCE_ROOT; };
+		81EA9A61124D4F2489F5A8BD /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DebugUtils/DebugDraw.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DebugDraw.cpp; path = DebugUtils/DebugDraw.cpp; sourceTree = SOURCE_ROOT; };
+		A6CE1DF0D8FD4F90A44B619F /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast/CMakeFiles/ext_recast.dir/Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; name = Info.plist; path = "../../ios-build/engine/external/recast/CMakeFiles/ext_recast.dir/Info.plist"; sourceTree = SOURCE_ROOT; };
+		B68812E2F4114742939C939F /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourPathQueue.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourPathQueue.cpp; path = DetourCrowd/DetourPathQueue.cpp; sourceTree = SOURCE_ROOT; };
+		BAD3BDE01FDE4EE18FB63824 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		CB48F8B9396C485AA0948253 /* ext_recast */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libext_recast.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0FD64B8FFC74C8689058FFF /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourCrowd.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourCrowd.cpp; path = DetourCrowd/DetourCrowd.cpp; sourceTree = SOURCE_ROOT; };
+		E1AD522292214ED7A4F8290F /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourProximityGrid.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourProximityGrid.cpp; path = DetourCrowd/DetourProximityGrid.cpp; sourceTree = SOURCE_ROOT; };
+		F1313D71F9E046A6A4102FEC /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourTileCache/DetourTileCacheBuilder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourTileCacheBuilder.cpp; path = DetourTileCache/DetourTileCacheBuilder.cpp; sourceTree = SOURCE_ROOT; };
+		FD39876D210E4D08ACD38774 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMesh.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DetourNavMesh.cpp; path = Detour/DetourNavMesh.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		23BF66ECD5C34B568578BD73 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				DCC61045933E4171BEC813C7 /* CMake Rules */,
+				1877B422C4714BF78521E18B /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		290616E6BA144192BA022BEF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB48F8B9396C485AA0948253 /* ext_recast */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		61CECCB8A67746EFADF8A038 /* ext_recast */ = {
+			isa = PBXGroup;
+			children = (
+				C2A596BD3A4C4E27B1139A11 /* Source Files */,
+				8D5189C867BB4EE49B6FB4F7 /* Resources */,
+				BAD3BDE01FDE4EE18FB63824 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/CMakeLists.txt */,
+			);
+			name = ext_recast;
+			sourceTree = "<group>";
+		};
+		8D5189C867BB4EE49B6FB4F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A6CE1DF0D8FD4F90A44B619F /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast/CMakeFiles/ext_recast.dir/Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A4F4CE5AF2284AE58B7A0C6F /* External */ = {
+			isa = PBXGroup;
+			children = (
+				61CECCB8A67746EFADF8A038 /* ext_recast */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		C2A596BD3A4C4E27B1139A11 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				81EA9A61124D4F2489F5A8BD /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DebugUtils/DebugDraw.cpp */,
+				0F81A880076242FD9EECD502 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DebugUtils/DetourDebugDraw.cpp */,
+				390C0233DE3343AF8196CCD4 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourAlloc.cpp */,
+				29562D80CFA94B22879F9CEF /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourCommon.cpp */,
+				FD39876D210E4D08ACD38774 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMesh.cpp */,
+				2847D851978B47BA8D8C2B63 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMeshBuilder.cpp */,
+				79DDF1BCCADC4AFB978EFC6D /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMeshQuery.cpp */,
+				4EA416648C7045F88D12F62A /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNode.cpp */,
+				E0FD64B8FFC74C8689058FFF /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourCrowd.cpp */,
+				12C14C50F8F344EC9EC3EBB0 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourLocalBoundary.cpp */,
+				3B9AF91354EE4A95BD64F79D /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourObstacleAvoidance.cpp */,
+				41F2C4D43A754117B39FC29C /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourPathCorridor.cpp */,
+				B68812E2F4114742939C939F /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourPathQueue.cpp */,
+				E1AD522292214ED7A4F8290F /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourProximityGrid.cpp */,
+				2A279CFA71814BEFB28DEB98 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourTileCache/DetourTileCache.cpp */,
+				F1313D71F9E046A6A4102FEC /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourTileCache/DetourTileCacheBuilder.cpp */,
+				43050477289C4616A3B0BB48 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/fastlz/fastlz.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		DCC61045933E4171BEC813C7 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		F03DCE3EAC904022871B7A86 = {
+			isa = PBXGroup;
+			children = (
+				A4F4CE5AF2284AE58B7A0C6F /* External */,
+				23BF66ECD5C34B568578BD73 /* ALL_BUILD */,
+				290616E6BA144192BA022BEF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		994917C7D9F444E79EF2BDC2 /* ext_recast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CA18B83824B4D239FD9B97C /* Build configuration list for PBXNativeTarget "ext_recast" */;
+			buildPhases = (
+				07BC968FDE2D4D75BDFDB37A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A8293A90FD164DFC88BE2A30 /* PBXTargetDependency */,
+			);
+			name = ext_recast;
+			productName = ext_recast;
+			productReference = CB48F8B9396C485AA0948253 /* ext_recast */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92C33A7EF9E444029BED8C40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1160;
+			};
+			buildConfigurationList = 3F9EF8A0D3834EDFAD70A327 /* Build configuration list for PBXProject "recast" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				458E6231721846D4A62E0EDC /* Debug */,
+				68F496B3705B4594A8F172A4 /* Release */,
+				EE1CCA38DB8048DDBDBAD248 /* MinSizeRel */,
+				9B646E8810D445DDA5643C8F /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = F03DCE3EAC904022871B7A86;
+			projectDirPath = /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast;
+			projectRoot = "";
+			targets = (
+				9E0C55C3860C454B8F8F7E15 /* ALL_BUILD */,
+				532F809881CE46D78B007D5F /* ZERO_CHECK */,
+				994917C7D9F444E79EF2BDC2 /* ext_recast */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4FE2F066ECB343EB8834E0DD /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast -f /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		89D1B298EC7B496FA5EC9EF3 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		8D9697F2E6EB435AA5A188D9 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		BFC5BDC5F7AA43BE8CAE1554 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast -f /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07BC968FDE2D4D75BDFDB37A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A634FC8F4BD64CCBB67977C8 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DebugUtils/DebugDraw.cpp */,
+				4EF8C3549E154953946552D6 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DebugUtils/DetourDebugDraw.cpp */,
+				9A65BE97D3EE43AF8DA9A45E /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourAlloc.cpp */,
+				7C8D711E502F4896B2DA388C /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourCommon.cpp */,
+				81BBA798979C46AB8DD3AB32 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMesh.cpp */,
+				E0C75E6AA8F24B3397F8D6E8 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMeshBuilder.cpp */,
+				00C6D3B170E640FFBEEF82F9 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNavMeshQuery.cpp */,
+				BC9408244E724C4EBB24B3A4 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/Detour/DetourNode.cpp */,
+				5687593E0C6E4D4EBAC3E6C6 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourCrowd.cpp */,
+				BAC93556146B44FBBB00C952 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourLocalBoundary.cpp */,
+				4AD512748B7642F6B8C5D1FD /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourObstacleAvoidance.cpp */,
+				CCDEF47A71414EED8272D2CC /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourPathCorridor.cpp */,
+				176406E710BC462581A036EB /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourPathQueue.cpp */,
+				FB1CBA800C1346CC94B86C96 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourCrowd/DetourProximityGrid.cpp */,
+				5C5208CBB8064AC0A5626797 /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourTileCache/DetourTileCache.cpp */,
+				24FA92F2361B4E109F5E738F /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/DetourTileCache/DetourTileCacheBuilder.cpp */,
+				94BA1CE778B248E5B0D8752F /* /Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/fastlz/fastlz.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		51634D6708B74D7C8A34BE07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 994917C7D9F444E79EF2BDC2 /* ext_recast */;
+			targetProxy = 1E08F4947C3C4F25B14F4665 /* PBXContainerItemProxy */;
+		};
+		A8293A90FD164DFC88BE2A30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 532F809881CE46D78B007D5F /* ZERO_CHECK */;
+			targetProxy = F679F8A56A2E4589AB3B88B4 /* PBXContainerItemProxy */;
+		};
+		E7391C30158344B499959654 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 532F809881CE46D78B007D5F /* ZERO_CHECK */;
+			targetProxy = 1C5A2F6BA5764BAE91708357 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		054E731BC82E405F8647E321 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/lib/Release";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/..);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG '-std=gnu99' ";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++11' ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ext_recast;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		299E5513D4044995B705589B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/lib/RelWithDebInfo";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/..);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG '-std=gnu99' ";
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=c++11' ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ext_recast;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		3E443128C2084487962696BE /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		547AE02856F4406CAE06210B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		595941296DEA464FAB4D0A1E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		62F5A61A67CA436781386471 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast/build";
+			};
+			name = Release;
+		};
+		8BC501D950CC4EFDB4E5842F /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		95AD028F37EC456785750545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		990C26B17B5C4D35A4429D2F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/lib/MinSizeRel";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/..);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG '-std=gnu99' ";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++11' ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ext_recast;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		9BB0226C10DA46D384BB5176 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		A0E0C98F95E049C985566FE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/lib/Debug";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/external/recast/..);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "   '-std=gnu99' ";
+				OTHER_CPLUSPLUSFLAGS = "   '-std=c++11' ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ext_recast;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		A777606AF50E44828604A1FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		B2C631DFFDCF4AE28EC37C4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		B657887C57F342AC92D42FDE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast/build";
+			};
+			name = RelWithDebInfo;
+		};
+		C9688A42886440B08564A499 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast/build";
+			};
+			name = MinSizeRel;
+		};
+		E4C2B81CB9A146EA89C637CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/nekoharuyuki/Documents/PuzzleRPG/cocos2d/ios-build/engine/external/recast/build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		049BA429007A4583A6294352 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BB0226C10DA46D384BB5176 /* Debug */,
+				B2C631DFFDCF4AE28EC37C4F /* Release */,
+				3E443128C2084487962696BE /* MinSizeRel */,
+				8BC501D950CC4EFDB4E5842F /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1E885EA3276443D588413893 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A777606AF50E44828604A1FF /* Debug */,
+				95AD028F37EC456785750545 /* Release */,
+				547AE02856F4406CAE06210B /* MinSizeRel */,
+				595941296DEA464FAB4D0A1E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3F9EF8A0D3834EDFAD70A327 /* Build configuration list for PBXProject "recast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4C2B81CB9A146EA89C637CC /* Debug */,
+				62F5A61A67CA436781386471 /* Release */,
+				C9688A42886440B08564A499 /* MinSizeRel */,
+				B657887C57F342AC92D42FDE /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4CA18B83824B4D239FD9B97C /* Build configuration list for PBXNativeTarget "ext_recast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0E0C98F95E049C985566FE2 /* Debug */,
+				054E731BC82E405F8647E321 /* Release */,
+				990C26B17B5C4D35A4429D2F /* MinSizeRel */,
+				299E5513D4044995B705589B /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92C33A7EF9E444029BED8C40 /* Project object */;
+}
