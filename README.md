@@ -1,4 +1,8 @@
 # PuzzleRPG-cocos2d
+[![Github issues](https://img.shields.io/github/issues/nekoharuyuki/PuzzleRPG-cocos2d)](https://github.com/nekoharuyuki/PuzzleRPG-cocos2d/issues)
+[![Github forks](https://img.shields.io/github/forks/nekoharuyuki/PuzzleRPG-cocos2d)](https://github.com/nekoharuyuki/PuzzleRPG-cocos2d/network/members)
+[![Github stars](https://img.shields.io/github/stars/nekoharuyuki/PuzzleRPG-cocos2d)](https://github.com/nekoharuyuki/PuzzleRPG-cocos2d/stargazers)
+[![Github license](https://img.shields.io/github/license/nekoharuyuki/PuzzleRPG-cocos2d)](https://github.com/nekoharuyuki/PuzzleRPG-cocos2d/)
 ![ss_TitleScene](https://github.com/nekoharuyuki/PuzzleRPG-cocos2d/blob/master/Resources/asset/ss/ss_TitleScene.jpg)
   
 [パズルRPGの作り方](https://www.shoeisha.co.jp/book/detail/9784798141589)を参考にC++でiOS/androidアプリでの作成を行いました。  
